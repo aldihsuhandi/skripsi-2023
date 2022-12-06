@@ -7,8 +7,6 @@ Algorithm to compare:
     - Improvement
 
 Case:
-- face detection
-  - umur & gender
 - landscape detection
   - perubahan lahan (deforestation, coastline)
 - item condition detection 
