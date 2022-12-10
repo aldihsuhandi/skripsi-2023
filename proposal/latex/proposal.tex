@@ -5,6 +5,7 @@
 \usepackage{enumitem}
 \usepackage{geometry}
 \usepackage{sectsty}
+\usepackage{indentfirst}
 
 \setlist{
   listparindent=\parindent,
@@ -15,7 +16,7 @@
 \addbibresource{citation.bib}
 \graphicspath{{./images/}}
 \geometry{a4paper, top=4.0cm, bottom=3.0cm,
-          left=4.0cm, right=3.0cm,  includehead, includefoot}
+          left=4.0cm, includehead, includefoot}
 \renewcommand\contentsname{Daftar Pustaka}
 
 \begin{document}
@@ -97,8 +98,18 @@
 \addcontentsline{toc}{subsection}{\protect\numberline{}Jenis Penelitian}
 Jenis penelitian yang dilakukan adalah penelitian kuantitatif atau penelitian sistematis yang memakai data atau angka - angka yang ditambahkan penekanan terhadap pengukuran hasil yang obyektif disertai analisis statistik\autocite{pengajar-1} dan penelitian ini juga bersifat komparatif atau penelitian yang dilakukan dengan cara membandingkan persamaan atau perbedaan dari dua atau lebih atribut yang dimiliki oleh sesuatu\autocite{penerbitdeepublish-1}.
 
-\subsection{Teknik Pengumpulan Data}
+\subsection*{Fokus Penelitian}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Fokus Penelitian}
+Kajian penelitian ini difokuskan pada perbandingan dari dua algorithma pendekteksi yaitu \textbf{SSD \textit{(Single Shot Detection)}} dan \textbf{\textit{DeepForest Algorithm}}, hal yang akan penulis observasi adalah bagaimana dua algoritma ini berfungsi dan seberapa bagus performa mereka dalam berbagai macam situasi.
+
+Variabel yang penulis akan perhatikan adalah \textit{time cost} atau seberapa lama waktu yang dibutuhkan oleh algoritma tersebut untuk melakukan fungsinya (waktu \textit{training} dan waktu \textit{prediction}) dan akurasi, seberapa akurat sebuah algorithma untuk mendeksi suatu obyek, seperti seberapa akurat \textit{bounding box} yang dibuat atau persentase obyek yang terdeteksi oleh algoritma tersebut dibanding dengan berapa banyak obyek yang ada disuatu gambar atau video.
+
+
+\subsection*{Teknik Pengumpulan Data}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Teknik Pengumpulan Data}
+Teknik pengumpulan data merupakan teknik atau metode yang digunakan untuk mendapatkan data yang akan diteliti. Artinya, teknik pengupulan data memperlukan langkah yang strategis dan juga sistematis untuk mendapatkan data yang valid dan juga sesuai dengan kenyataannya\autocite{penerbitdeepublish-2}.
+
+Dalam hal pengumpulan data ini, penulis langsung melakukan percobaan pada obyek penelitian untuk mendapatkan data yang valid dan bisa direproduksi untuk mevalidasi data yang dihasilkan. Teknik yang digunakan penulis adalah teknik observasi atau pengamatan, dengan cara mengobservasi \textit{output} atau hasil apa yang diberikan saat suatu algoritma pendekteksi diberikan \textit{input} tertentu.
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
