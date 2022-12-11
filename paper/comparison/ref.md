@@ -12,3 +12,14 @@
 - https://ieeexplore.ieee.org/abstract/document/9066426
 - https://ieeexplore.ieee.org/abstract/document/9277040/
 - https://www.webology.org/data-cms/articles/20221014115225amPaper%2062.pdf
+
+
+# Used paper
+- https://ieeexplore.ieee.org/abstract/document/9066426
+- https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhu_Feature_Selective_Anchor-Free_Module_for_Single-Shot_Object_Detection_CVPR_2019_paper.pdf
+- https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_Bridging_the_Gap_Between_Anchor-Based_and_Anchor-Free_Detection_via_Adaptive_CVPR_2020_paper.pdf
+- https://arxiv.org/pdf/1808.01244.pdf
+- https://arxiv.org/pdf/1904.03797.pdf
+
+
+https://github.com/xuannianz/FSAF

@@ -1,0 +1,11 @@
+# ignore all latex project file
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.xml
+*.gz
+*.toc
