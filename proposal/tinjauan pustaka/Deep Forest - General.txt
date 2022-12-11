@@ -1,0 +1,4 @@
+DEEPFOREST SECARA GENERAL
+=========================
+
+DeepForest merupakan salah satu dari package Python yang digunakan untuk melakukan training dan prediksi individual tajuk pohon dari citra RGB udara. DeepForest menggunakan jaringan deep learning object detection untuk memprediksi bounding boxes (kotak-kotak pembatas) yang sesuai dengan bentuk pohon secara individu dalam citra RGB. DeepForest dibangun di atas model retinanet dari package torchvision dan didesain untuk membuat model pelatihan untuk pendeteksian pohon menjadi lebih sederhana.
