@@ -20,3 +20,6 @@
 - https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_Bridging_the_Gap_Between_Anchor-Based_and_Anchor-Free_Detection_via_Adaptive_CVPR_2020_paper.pdf
 - https://arxiv.org/pdf/1808.01244.pdf
 - https://arxiv.org/pdf/1904.03797.pdf
+
+
+https://github.com/xuannianz/FSAF
