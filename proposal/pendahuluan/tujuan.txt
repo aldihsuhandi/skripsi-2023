@@ -1,6 +1,0 @@
-PENDAHULUAN
-===========
-
-TUJUAN
-------
-Tujuan utama kami melakukan penelitian ini adalah untuk menghitung akurasi, lama waktu yang dibutuhkan dan biaya sumber daya (resources) yang diperlukan dari masing-masing algoritma Deep Forest dan Single Shots Detection tersebut, serta mengukur algoritma manakah yang lebih efisien apabila dibandingkan satu sama lain. Kami juga berencana untuk mencoba memodifikasi kedua algoritma tersebut untuk melihat apakah kinerja dari kedua algoritma tersebut dapat ditingkatkan lagi ke level yang lebih optimal, kemudian kami bandingkan kembali hasil dari kedua algoritma yang sudah dimodifikasi tersebut berdasarkan parameter yang telah kami tentukan di awal, yakni akurasi, waktu dan sumber daya yang diperlukan.
