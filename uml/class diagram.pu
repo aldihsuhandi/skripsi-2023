@@ -1,0 +1,199 @@
+@startuml class diagram
+' entity
+' for transaction purposes
+entity interest_levels {
+    * id: int
+    --
+    * level_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_categories {
+    * id: int
+    --
+    * category_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity user_roles {
+    * id: int
+    --
+    * role_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity payments {
+    * id: int
+    --
+    * payment_type : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity users {
+    * id: int  
+    --
+    * role_id : int <<FK>>
+    * email : string <<UNIQUE>>
+    * phone_number : string <<UNIQUE>>
+    * username : string
+    * profile_picture : string
+    * is_deleted : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity items {
+    * id: int 
+    --
+    * item_name : string
+    * item_price : long
+    * item_description : long_text
+    * item_quantity : int
+    * merchant_id : int <<FK>>
+    * category_id : int <<FK>>
+    * merchant_level_id : int <<FK>>
+    * community_level_id : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_images {
+    * id: int
+    --
+    * item_image: string
+    * item_id : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity reviews {
+    * id: int
+    --
+    * star : int
+    * item_id : int <<FK>>
+    * user_id : int <<FK>>
+      interest_level : int <<FK>>
+      description : longtext
+      review_image : longtext
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity transaction {
+    * id: int
+    --
+    * user_id: int <<FK>>
+    payment_type : int <<FK>>
+    * is_paid : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity transaction_detail {
+    * id: int
+    --
+    * transaction_id : int <<FK>>
+    * item_id : int <<FK>>
+    * quantity : int
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+' for discussion purposes
+entity posts {
+    * id: int
+    --
+    * user_id : int <<FK>>
+    * title : string
+      content : longtext
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity comments {
+    * id: int
+    --
+    * user_id : int <<FK>>
+      comment_id : <<FK>>
+      post_id : <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity comment_upvotes {
+    * user_id : int <<FK>>
+    * comment_id : int <<FK>>
+    --
+    * value : int
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity post_upvotes {
+    * user_id : int <<FK>>
+    * comment_id : int <<FK>>
+    --
+    * value : int
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+' direct communication purposes
+entity chatrooms {
+    * chatroom_id : string
+    --
+    extend_info : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity chats {
+    * id : int
+    --
+    * chatroom_id : string <<FK>>
+    * user_id : string <<FK>>
+    * message : string
+    * is_deleted : bool
+    * is_edited : bool
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+
+' relation
+' for transaction purposes
+interest_levels }o--|| items
+item_categories }o--|| items
+
+user_roles }o--|| users
+
+payments }o--o| transaction
+users }o--|| transaction
+transaction }o-|| transaction_detail
+transaction_detail ||--o{ items
+
+items }|--|| item_images
+items }|--|| reviews
+interest_levels }o--o| reviews
+users }o--|| items
+users }o--|| reviews
+
+' for discussion purposes
+comment_upvotes ||--o{ comments
+comment_upvotes ||--o{ users
+post_upvotes ||--o{ posts
+post_upvotes ||--o{ users
+
+posts }o--|| comments
+comments }o--|| comments
+
+' direct communication purposes
+users }o--o| chats
+chatrooms }o--o| chats
+
+
+@enduml
