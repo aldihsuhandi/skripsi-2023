@@ -189,7 +189,7 @@ item_categories }o--|| items
 
 user_roles }o--|| users
 
-payments }o--o| transaction
+transaction |o--o{ payments
 users }o--|| transaction
 transaction }o-|| transaction_details
 items }o--|| transaction_details
