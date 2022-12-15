@@ -1,5 +1,30 @@
 @startuml class diagram
+
+' left to right direction
+
 ' entity
+
+' direct communication purposes
+entity chatrooms {
+    * chatroom_id : string
+    --
+    extend_info : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity chats {
+    * id : int
+    --
+    * chatroom_id : string <<FK>>
+    * user_id : string <<FK>>
+    * message : string
+    * is_deleted : bool
+    * is_edited : bool
+    * gmt_create : date
+    * gmt_modified : date
+}
+
 ' for transaction purposes
 entity interest_levels {
     * id: int
@@ -23,6 +48,20 @@ entity user_roles {
     * role_name : string
     * gmt_create : date
     * gmt_modified : date
+}
+
+entity capabilities {
+    * id: int
+    --
+    * capability_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity user_capabilities {
+    * user_id : int <<FK>>
+    * capability_id : int <<FK>>
+    --
 }
 
 entity payments {
@@ -93,7 +132,7 @@ entity transaction {
     * gmt_modified : date
 }
 
-entity transaction_detail {
+entity transaction_details {
     * id: int
     --
     * transaction_id : int <<FK>>
@@ -142,27 +181,6 @@ entity post_upvotes {
     * gmt_modified : date
 }
 
-' direct communication purposes
-entity chatrooms {
-    * chatroom_id : string
-    --
-    extend_info : string
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-entity chats {
-    * id : int
-    --
-    * chatroom_id : string <<FK>>
-    * user_id : string <<FK>>
-    * message : string
-    * is_deleted : bool
-    * is_edited : bool
-    * gmt_create : date
-    * gmt_modified : date
-}
-
 
 ' relation
 ' for transaction purposes
@@ -173,17 +191,19 @@ user_roles }o--|| users
 
 payments }o--o| transaction
 users }o--|| transaction
-transaction }o-|| transaction_detail
-transaction_detail ||--o{ items
+transaction }o-|| transaction_details
+items }o--|| transaction_details
 
 items }|--|| item_images
 items }|--|| reviews
-interest_levels }o--o| reviews
-users }o--|| items
-users }o--|| reviews
+reviews |o--o{ interest_levels
+items ||--o{ users
+reviews ||--o{ users
+' users }o--|| items
+' users }o--|| reviews
 
 ' for discussion purposes
-comment_upvotes ||--o{ comments
+comments }o--|| comment_upvotes
 comment_upvotes ||--o{ users
 post_upvotes ||--o{ posts
 post_upvotes ||--o{ users
@@ -192,8 +212,13 @@ posts }o--|| comments
 comments }o--|| comments
 
 ' direct communication purposes
-users }o--o| chats
+chats |o--o{ users
 chatrooms }o--o| chats
 
+
+' user capability
+' users }o--||  user_capabilities
+user_capabilities ||--o{ users
+capabilities }o--|| user_capabilities
 
 @enduml
