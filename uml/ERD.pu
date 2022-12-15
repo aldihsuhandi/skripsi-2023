@@ -98,7 +98,31 @@ entity items {
     * merchant_id : int <<FK>>
     * category_id : int <<FK>>
     * merchant_level_id : int <<FK>>
-    * community_level_id : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_approvals {
+    * id: int
+    --
+      item_id : int <<FK>>
+    * item_name : string
+    * item_price : long
+    * item_description : long_text
+    * item_quantity : int
+    * merchant_id : int <<FK>>
+    * category_id : int <<FK>>
+    * merchant_level_id : int <<FK>>
+    * is_approved : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_image_approvals {
+    * id: int
+    --
+    * item_approval_id : int <<FK>>
+    * item_image : string
     * gmt_create : date
     * gmt_modified : date
 }
@@ -224,6 +248,14 @@ items }|--|| reviews
 reviews |o--o{ interest_levels
 items ||--o{ users
 reviews ||--o{ users
+
+' item approval
+items }o--o| item_approvals
+users }o--|| item_approvals
+item_categories }o--|| item_approvals
+interest_levels }o--|| item_approvals
+item_image_approvals ||--o{ item_approvals
+
 
 ' for discussion purposes
 comments }o--|| comment_upvotes
