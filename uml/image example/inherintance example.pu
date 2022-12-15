@@ -1,0 +1,30 @@
+@startuml inheritance example
+
+class Human{
+    - umur
+    - berat badan
+    - tinggi badan
+}
+
+class Guru {
+
+}
+
+class Murid{
+
+}
+
+class "Kepala Sekolah" {
+
+}
+
+
+skinparam groupInheritance 1
+Human <|-- "Kepala Sekolah"
+Human <|-- Murid
+Human <|-- Guru
+
+
+
+
+@enduml
