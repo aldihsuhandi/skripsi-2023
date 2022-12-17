@@ -9,4 +9,5 @@
 *.xml
 *.gz
 *.toc
-*.pdf
+
+out/
