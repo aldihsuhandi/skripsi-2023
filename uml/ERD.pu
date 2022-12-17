@@ -225,6 +225,43 @@ entity post_upvotes {
     * gmt_modified : date
 }
 
+' table for backend purpose
+entity sessions{
+    * id : string
+    --
+    * user_id : int <<FK>>
+    * session_dt : date
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity activities {
+    * id : int
+    --
+    * activity_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity user_activities {
+    * id : string
+    --
+    * user_id : int <<FK>>
+    * item_id : int <<FK>>
+    * activity_id : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+' wishlist
+entity wishlists {
+    * user_id : int <<FK>>
+    * item_id : int <<FK>>
+    --
+    * gmt_create : date
+    * gmt_modified : date
+}
+
 
 ' relation
 ' for transaction purposes
@@ -244,7 +281,7 @@ carts }o--|| cart_details
 cart_details ||--o{ items
 
 items }|--|| item_images
-items }|--|| reviews
+items }|---|| reviews
 reviews |o--o{ interest_levels
 items ||--o{ users
 reviews ||--o{ users
@@ -275,5 +312,19 @@ chatrooms }o--o| chats
 ' users }o--||  user_capabilities
 user_capabilities ||--o{ users
 capabilities }o--|| user_capabilities
+
+' table for backend purpose
+users }o--|| sessions
+users }o-|| user_activities
+items }o-|| user_activities
+' user_activities ||-o{ users
+' user_activities ||-o{ items
+user_activities ||-o{ activities
+
+' wishlist
+' users }o-|| wishlists
+' items }o-|| wishlists
+wishlists ||-o{ users
+wishlists ||-o{ items
 
 @enduml
