@@ -1,4 +1,5 @@
 @startuml class diagram
+skinparam linetype ortho
 
 ' left to right direction
 
@@ -268,7 +269,8 @@ entity wishlists {
 interest_levels }o--|| items
 item_categories }o--|| items
 
-user_roles }o--|| users
+' user_roles }o--|| users
+users ||-o{ user_roles
 
 transaction |o--o{ payments
 users }o--|| transaction
