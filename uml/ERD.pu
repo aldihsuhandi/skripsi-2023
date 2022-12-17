@@ -1,0 +1,332 @@
+@startuml class diagram
+skinparam linetype ortho
+
+' left to right direction
+
+' entity
+
+' direct communication purposes
+entity chatrooms {
+    * chatroom_id : string
+    --
+    extend_info : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity chats {
+    * id : int
+    --
+    * chatroom_id : string <<FK>>
+    * user_id : string <<FK>>
+    * message : string
+    * is_deleted : bool
+    * is_edited : bool
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+' for transaction purposes
+entity interest_levels {
+    * id: int
+    --
+    * level_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_categories {
+    * id: int
+    --
+    * category_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity user_roles {
+    * id: int
+    --
+    * role_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity capabilities {
+    * id: int
+    --
+    * capability_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity user_capabilities {
+    * user_id : int <<FK>>
+    * capability_id : int <<FK>>
+    --
+    * is_active : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity payments {
+    * id: int
+    --
+    * payment_type : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity users {
+    * id: int  
+    --
+    * role_id : int <<FK>>
+    * email : string <<UNIQUE>>
+    * phone_number : string <<UNIQUE>>
+    * username : string
+    * profile_picture : string
+    * is_deleted : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity items {
+    * id: int 
+    --
+    * item_name : string
+    * item_price : long
+    * item_description : long_text
+    * item_quantity : int
+    * merchant_id : int <<FK>>
+    * category_id : int <<FK>>
+    * merchant_level_id : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_approvals {
+    * id: int
+    --
+      item_id : int <<FK>>
+    * item_name : string
+    * item_price : long
+    * item_description : long_text
+    * item_quantity : int
+    * merchant_id : int <<FK>>
+    * category_id : int <<FK>>
+    * merchant_level_id : int <<FK>>
+    * is_approved : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_image_approvals {
+    * id: int
+    --
+    * item_approval_id : int <<FK>>
+    * item_image : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_images {
+    * id: int
+    --
+    * item_image: string
+    * item_id : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity reviews {
+    * id: int
+    --
+    * star : int
+    * item_id : int <<FK>>
+    * user_id : int <<FK>>
+      interest_level : int <<FK>>
+      description : longtext
+      review_image : longtext
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity transaction {
+    * id: int
+    --
+    * user_id: int <<FK>>
+    * payment_type : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity transaction_details {
+    * id: int
+    --
+    * transaction_id : int <<FK>>
+    * item_id : int <<FK>>
+    * quantity : int
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity carts {
+    * id : int
+    --
+    * user_id : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity cart_details {
+    * id: int
+    --
+    * cart_id : int <<FK>>
+    * item_id : int <<FK>>
+    * quantity : int
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+' for discussion purposes
+entity posts {
+    * id: int
+    --
+    * user_id : int <<FK>>
+    * title : string
+      content : longtext
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity comments {
+    * id: int
+    --
+    * user_id : int <<FK>>
+      comment_id : <<FK>>
+      post_id : <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity comment_upvotes {
+    * user_id : int <<FK>>
+    * comment_id : int <<FK>>
+    --
+    * value : int
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity post_upvotes {
+    * user_id : int <<FK>>
+    * comment_id : int <<FK>>
+    --
+    * value : int
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+' table for backend purpose
+entity sessions{
+    * id : string
+    --
+    * user_id : int <<FK>>
+    * session_dt : date
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity activities {
+    * id : int
+    --
+    * activity_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity user_activities {
+    * id : string
+    --
+    * user_id : int <<FK>>
+    * item_id : int <<FK>>
+    * activity_id : int <<FK>>
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+' wishlist
+entity wishlists {
+    * user_id : int <<FK>>
+    * item_id : int <<FK>>
+    --
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+
+' relation
+' for transaction purposes
+interest_levels }o--|| items
+item_categories }o--|| items
+
+' user_roles }o--|| users
+users ||-o{ user_roles
+
+transaction |o--o{ payments
+users }o--|| transaction
+transaction }o--|| transaction_details
+items }o--|| transaction_details
+
+' carts
+users }o--|| carts
+carts }o--|| cart_details
+cart_details ||--o{ items
+
+items }|--|| item_images
+items }|---|| reviews
+reviews |o--o{ interest_levels
+items ||--o{ users
+reviews ||--o{ users
+
+' item approval
+items }o--o| item_approvals
+users }o--|| item_approvals
+item_categories }o--|| item_approvals
+interest_levels }o--|| item_approvals
+item_image_approvals ||--o{ item_approvals
+
+
+' for discussion purposes
+comments }o--|| comment_upvotes
+comment_upvotes ||--o{ users
+post_upvotes ||--o{ posts
+post_upvotes ||--o{ users
+
+posts }o--|| comments
+comments }o--|| comments
+
+' direct communication purposes
+chats |o--o{ users
+chatrooms }o--o| chats
+
+
+' user capability
+' users }o--||  user_capabilities
+user_capabilities ||--o{ users
+capabilities }o--|| user_capabilities
+
+' table for backend purpose
+users }o--|| sessions
+users }o-|| user_activities
+items }o-|| user_activities
+' user_activities ||-o{ users
+' user_activities ||-o{ items
+user_activities ||-o{ activities
+
+' wishlist
+' users }o-|| wishlists
+' items }o-|| wishlists
+wishlists ||-o{ users
+wishlists ||-o{ items
+
+@enduml
