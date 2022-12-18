@@ -54,6 +54,9 @@
 \renewcommand\contentsname{Daftar Pustaka}
 \emergencystretch=2em
 
+% bab command
+\newcommand{\bab}[2]{\setcounter{section}{#1}\addtocounter{section}{-1}\section{Bab #1. #2}}
+
 \begin{document}
 \linespread{1.5}
 
@@ -82,8 +85,8 @@
 \tableofcontents
 
 \newpage
-\section*{Pendahuluan}
-\addcontentsline{toc}{section}{\protect\numberline{}Pendahuluan}
+\section*{Bab 1. Pendahuluan}
+\addcontentsline{toc}{section}{\protect\numberline{}Bab 1. Pendahuluan}
 
 Perkembangan teknologi yang pesat telah melahirkan banyak teknologi baru yang dapat membantu dan mempermudah kita manusia dalam menjalankan kehidupan dan melaksanakan tugas dan keinginan kita. Dari perkembangan teknologi tersebut yang memiliki dampak yang cukup tinggi adalah internet, yang dimana di negara Indonesia ini internet mendapatkan peningkatan popularitas yang dapat diukur dengan peningkatan pengguna internet tersebut dalam tiap tahun, Menurut survey yang diadakan oleh Asosiasi Penyelenggara Jasa Internet Indonesia (APJII) di tahun 2017 perkembangan pengguna internet dari tahun 2016 ke tahun 2017 memiliki pertambahan sebesar 10.56 juta (disurvey pada 2016 ada 132.7 juta dan di 2017 ada 143,26 juta)\autocite{indonesia2017infografis}.
 
@@ -97,104 +100,102 @@ Oleh karena itu kami melakukan survei untuk mengetahui tentang apa yang mungkin 
 Dari latar belakang tersebut, dimana dalam membeli sebuah barang hobi terjadi keraguan/kesulitan dalam memilih barang yang cocok untuk memulai atau membeli yang cocok, tujuan dari proyek ini adalah untuk mengajukan sebuah sistem aplikasi jual/beli barang khusus dan terfokus mengenai Hobi-hobi dimana barang yang dijual selain dapat diberi kategori, barang juga dapat diberikan dua penilaian tingkat peminatan dalam hobi tersebut sebagai filter tambahan, kita beri nama \textit{Interest Level}, penilaian tersebut diberikan oleh penjual dan juga nanti diberi oleh pembeli sebagai validasi apakah pemberian penilaian tersebut sesuai atau tidak dan juga karena ini sebuah aplikasi untuk hobby, ada sebuah forum untuk melakukan diskusi dengan cara membuat post mengenai kategori hobi yang diinginkan.
 
 \newpage
-\section*{Tinjauan Pustaka}
-\addcontentsline{toc}{section}{\protect\numberline{}Tinjauan Pustaka}
+\section*{Bab 2. Tinjauan Pustaka}
+\addcontentsline{toc}{section}{\protect\numberline{}Bab 2. Tinjauan Pustaka}
 % OOP, Functional Programming, Design Pattern, Architecural Pattern
 
-\begin{enumerate}
-    \item \textit{Object Oriented Programming}
 
-    \textit{Object Oriented Programming} adalah konsep programming yang berdasarkan \textit{objects}, sebuah \textit{object} adalah sesuatu entitas yang ada didunia nyata yang bisa diindetifikasi secara unik\autocite{liang_liang_2021}. Sebagai contoh, sebuah meja, seorang guru, dan bahkan hutang bisa dijadikan sebagai \textit{object}. 
+\subsection*{2.1 \textit{Object Oriented Programming}}
+\addcontentsline{toc}{subsection}{\protect\numberline{}2.1 \textit{Object Oriented Programming}}
+\textit{Object Oriented Programming} adalah konsep programming yang berdasarkan \textit{objects}, sebuah \textit{object} adalah sesuatu entitas yang ada didunia nyata yang bisa diindetifikasi secara unik\autocite{liang_liang_2021}. Sebagai contoh, sebuah meja, seorang guru, dan bahkan hutang bisa dijadikan sebagai \textit{object}. 
 
-    Untuk membuat sebuah \textit{object} diperlukan sebuah \textit{template} atau \textit{blueprint}, \textit{template} atau \textit{blueprint} ini dalam \textbf{OOP} disebut sebagai \textit{class}, secara definisi \textit{class} adalah sebuah \textit{blueprint} yang dipakai untuk membuat sesuatu atau \textit{object} yang lebih spesifik atau konkrit\autocite{education-erin-oop-2020}, \textit{class} biasanya hanya menampung atribut - atribut yang secara general, seperti tinggi, berat badan, umur, dan sebagainya. Sedangkan sebuah \textit{object} akan menampung \textit{value} yang lebih spesifik, seperti \textit{object} tersebut bertinggi 2 meter dan \textit{object} sudah berumur 3 tahun.
+Untuk membuat sebuah \textit{object} diperlukan sebuah \textit{template} atau \textit{blueprint}, \textit{template} atau \textit{blueprint} ini dalam \textbf{OOP} disebut sebagai \textit{class}, secara definisi \textit{class} adalah sebuah \textit{blueprint} yang dipakai untuk membuat sesuatu atau \textit{object} yang lebih spesifik atau konkrit\autocite{education-erin-oop-2020}, \textit{class} biasanya hanya menampung atribut - atribut yang secara general, seperti tinggi, berat badan, umur, dan sebagainya. Sedangkan sebuah \textit{object} akan menampung \textit{value} yang lebih spesifik, seperti \textit{object} tersebut bertinggi 2 meter dan \textit{object} sudah berumur 3 tahun.
 
-    \textbf{OOP} memiliki 4 pilar pendukung, yaitu:
-    \begin{itemize}
+\textbf{OOP} memiliki 4 pilar pendukung, yaitu:
+\begin{itemize}
 
-        \item \textit{Encapsulation}
+    \item \textit{Encapsulation}
 
-        \textit{Encapsulation} adalah konsep dimana semua atribut atau fitur yang ada didalam \textit{object} itu tidak bisa dilihat dan diubah oleh \textit{object} lain, kecuali akses tersebut didefinisikan secara explicit\autocite{education-erin-oop-2020}. Sebagai contoh, \textit{object} manusia memiliki tanggal lahir, karena tanggal lahir itu pasti tidak bisa diubah, atribut tanggal lahir dari \textit{object} tersebut hanya bisa dibaca oleh \textit{object} lain tapi tidak bisa diubah.
+    \textit{Encapsulation} adalah konsep dimana semua atribut atau fitur yang ada didalam \textit{object} itu tidak bisa dilihat dan diubah oleh \textit{object} lain, kecuali akses tersebut didefinisikan secara explicit\autocite{education-erin-oop-2020}. Sebagai contoh, \textit{object} manusia memiliki tanggal lahir, karena tanggal lahir itu pasti tidak bisa diubah, atribut tanggal lahir dari \textit{object} tersebut hanya bisa dibaca oleh \textit{object} lain tapi tidak bisa diubah.
         
-        Kohesi, konsistensi, dan enkapsulasi adalah pedoman yang baik untuk mencapai sebuah design yang jelas. Sebuah \textit{class} harus memiliki kontrak yang jelas yang mudah dijelaskan dan dipahami, seperti atribut apa saja yang bisa diakses dan diubah oleh \textit{object} atau \textit{class} lain\autocite{liang_liang_2021}.
+    Kohesi, konsistensi, dan enkapsulasi adalah pedoman yang baik untuk mencapai sebuah design yang jelas. Sebuah \textit{class} harus memiliki kontrak yang jelas yang mudah dijelaskan dan dipahami, seperti atribut apa saja yang bisa diakses dan diubah oleh \textit{object} atau \textit{class} lain\autocite{liang_liang_2021}.
 
-        \begin{figure}[h]
-            \centering
-            \begin{lstlisting}[language=Java]
+    \begin{figure}[h]
+        \centering
+        \begin{lstlisting}[language=Java]
 public class Human {
-    private Date dateOfBirth;
+private Date dateOfBirth;
 
-    public Date getDateOfBirth() {
-        return this.dateOfBirth;
-    }
+public Date getDateOfBirth() {
+    return this.dateOfBirth;
+}
 }\end{lstlisting}
-            \caption{Contoh dari \textit{encapsulation}}
-        \end{figure}
+        \caption{Contoh dari \textit{encapsulation}}
+    \end{figure}
 
-        \item \textit{Abstraction}
+    \item \textit{Abstraction}
 
-        \textit{Abstraction} dan \textit{encapsulation} adalah dua sisi dari koin yang sama, \textit{encapsulation} adalah konsep untuk mengatur akses suatu atribut, kalau \textit{abstraction} adalah \textit{class} lain tidak perlu tahu bagaimana \textit{class} ini melakukan suatu tugas\autocite{liang_liang_2021}. Sebagai contoh, saat merakit komputer, kalian hanya tau komponen - komponen didalam komputer itu apa saja, untuk merakit komputer tersebut kalian hanya perlu tau apa saja peran dari tiap komponen yang ada, tidak perlu mengetahui untuk melaksanakan peran mereka, apa yang mereka harus lakukan.
-        \newpage
+    \textit{Abstraction} dan \textit{encapsulation} adalah dua sisi dari koin yang sama, \textit{encapsulation} adalah konsep untuk mengatur akses suatu atribut, kalau \textit{abstraction} adalah \textit{class} lain tidak perlu tahu bagaimana \textit{class} ini melakukan suatu tugas\autocite{liang_liang_2021}. Sebagai contoh, saat merakit komputer, kalian hanya tau komponen - komponen didalam komputer itu apa saja, untuk merakit komputer tersebut kalian hanya perlu tau apa saja peran dari tiap komponen yang ada, tidak perlu mengetahui untuk melaksanakan peran mereka, apa yang mereka harus lakukan.
+    \newpage
         
-        \item \textit{Inheritance}
+    \item \textit{Inheritance}
 
-        \textit{Inheritance} adalah sebuah konsep dimana \textit{class} dapat mempunyai atribut dan fitur turunan dari \textit{class} lain. \textit{Class} yang mendapat fitur turunan ini disebut \textit{child class}, sedangkan \textit{class} yang diturunkan disebut \textit{parent class}\autocite{education-erin-oop-2020}. 
+    \textit{Inheritance} adalah sebuah konsep dimana \textit{class} dapat mempunyai atribut dan fitur turunan dari \textit{class} lain. \textit{Class} yang mendapat fitur turunan ini disebut \textit{child class}, sedangkan \textit{class} yang diturunkan disebut \textit{parent class}\autocite{education-erin-oop-2020}. 
 
-        Tujuan dari konsep ini adalah untuk mengurangi redudansi sebanyak mungkin, dengan cara mengeneralisasikan beberapa \textit{class}, karena beberapa \textit{class} yang berbeda bisa saya memiliki fitur atau atribute yang sama. Sebagai contoh \textit{class} guru, murid, dan kepala sekolah memiliki beberapa atribut yang sama, seperti tinggi badan, berat badan, dan umur. Semua atribut yang sama tersebut bisa dijadikan sebuah \textit{parent class} yang bernama \textit{human} dan \textit{class} guru, murid, dan kepala sekolah akan menjadi \textit{child class} dari \textit{class} tersebut\autocite{liang_liang_2021}.
+    Tujuan dari konsep ini adalah untuk mengurangi redudansi sebanyak mungkin, dengan cara mengeneralisasikan beberapa \textit{class}, karena beberapa \textit{class} yang berbeda bisa saya memiliki fitur atau atribute yang sama. Sebagai contoh \textit{class} guru, murid, dan kepala sekolah memiliki beberapa atribut yang sama, seperti tinggi badan, berat badan, dan umur. Semua atribut yang sama tersebut bisa dijadikan sebuah \textit{parent class} yang bernama \textit{human} dan \textit{class} guru, murid, dan kepala sekolah akan menjadi \textit{child class} dari \textit{class} tersebut\autocite{liang_liang_2021}.
 
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=8cm]{inheritance example.png}
-            \caption{Contoh dari \textit{inheritance}}
-        \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=8cm]{inheritance example.png}
+        \caption{Contoh dari \textit{inheritance}}
+    \end{figure}
 
-        \item \textit{Polymorphism}
+    \item \textit{Polymorphism}
 
-        \textit{Child class} adalah sebuah \textit{class} yang akan menuruni semua atribut dan fitur dari \textit{parent class}, tapi apabila dari satu \textit{parent class} memiliki 2 \textit{child class} yang memiliki fitur yang sama tapi cara melakukannya yang berbeda? contoh pisang goreng adalah sebuah makanan, tapi tidak semua makanan adalah pisang goreng, ada perubahan dari cara memasak dan cara penyajian ditiap - tiap makanan, disini konsep \textit{polymorphism} dapat dipakai. Secara definisi \textit{polymorphism} adalah kelakuan dimana \textit{child class} bisa melakukan suatu \textit{task} atau fitur yang sama seperti \textit{parent class} dengan cara yang berbeda\autocite{education-erin-oop-2020}.
-    \end{itemize} 
+    \textit{Child class} adalah sebuah \textit{class} yang akan menuruni semua atribut dan fitur dari \textit{parent class}, tapi apabila dari satu \textit{parent class} memiliki 2 \textit{child class} yang memiliki fitur yang sama tapi cara melakukannya yang berbeda? contoh pisang goreng adalah sebuah makanan, tapi tidak semua makanan adalah pisang goreng, ada perubahan dari cara memasak dan cara penyajian ditiap - tiap makanan, disini konsep \textit{polymorphism} dapat dipakai. Secara definisi \textit{polymorphism} adalah kelakuan dimana \textit{child class} bisa melakukan suatu \textit{task} atau fitur yang sama seperti \textit{parent class} dengan cara yang berbeda\autocite{education-erin-oop-2020}.
+\end{itemize} 
 
     
-    \item \textit{Funtional Programming}
-    
-    \textit{Functional Programming} adalah sebuah konsep, paradigma atau sebuah macam \textit{software development} yang menekankan titik beratnya pada penggunaan \textit{functions}, \textit{Functional Programming} sendiri bukan merupakan sebuah alat yang dapat digunakan tetapi merupakan sesuatu pegangan untuk \textit{developers} sebagai sebuah cara menulis kode\autocite{atencio2016functional}.
+\subsection*{2.2 \textit{Funtional Programming}}
+\addcontentsline{toc}{subsection}{\protect\numberline{}2.2 \textit{Functional Programming}}
+\textit{Functional Programming} adalah sebuah konsep, paradigma atau sebuah macam \textit{software development} yang menekankan titik beratnya pada penggunaan \textit{functions}, \textit{Functional Programming} sendiri bukan merupakan sebuah alat yang dapat digunakan tetapi merupakan sesuatu pegangan untuk \textit{developers} sebagai sebuah cara menulis kode\autocite{atencio2016functional}.
 
 
-    Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{function} yang lebih kecil yang memiliki sifat dapat digunakkan kembali, lebih dapat diandalkan dan mudah dimengerti, lalu \textit{functions} tersebut maka akan dapat membuat sebuah program yang lebih dapat dimengerti \autocite{atencio2016functional}. \textit{Function} yang dibuat mengikuti \textit{Functional Programming} biasa dibuat dengan melakukan parameterisasi pada \textit{function} supaya dalam menggunakannya dengan menggunakkan parameter kode tersebut dapat digunakkan kembali untuk melakukan hal yang lain. \textit{Functional Programming} memiliki empat konsep dasar, yaitu \textit{Declarative programming}, \textit{Pure functions}, \textit{Referential transparency}, dan \textit{Immutability}\autocite{atencio2016functional}.
+Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{function} yang lebih kecil yang memiliki sifat dapat digunakkan kembali, lebih dapat diandalkan dan mudah dimengerti, lalu \textit{functions} tersebut maka akan dapat membuat sebuah program yang lebih dapat dimengerti \autocite{atencio2016functional}. \textit{Function} yang dibuat mengikuti \textit{Functional Programming} biasa dibuat dengan melakukan parameterisasi pada \textit{function} supaya dalam menggunakannya dengan menggunakkan parameter kode tersebut dapat digunakkan kembali untuk melakukan hal yang lain. \textit{Functional Programming} memiliki empat konsep dasar, yaitu \textit{Declarative programming}, \textit{Pure functions}, \textit{Referential transparency}, dan \textit{Immutability}\autocite{atencio2016functional}.
 
 
-    \begin{itemize}
-        \item \textit{Declarative programming} adalah sebuah pendekatan \textit{programming} dimana sebuah kode untuk melakukan sesuatu akan ditulis menggunakan \textit{expressions} yang mendeskripsikan logika dari suatu program. Berbeda dengan Imperatif atau \textit{Procedural Programming} dimana akan ditulis secara detail bagaimana untuk melakukan sesuatu untuk mencapai hasil yang diinginkan\autocite{atencio2016functional}. 
-        \item \textit{Pure functions} adalah \textit{function} yang memiliki dua sifat, yaitu pertama, sebuah pure function hanya dan hanya bergantung pada input yang diberikan dan tidak dengan \textit{state} yang tersembunyi dan/atau external (diluar function tersebut) dan kedua, tidak merubah apapun yang diluar dari \textit{function} tersebut seperti obyek global atau parameter yang di \textit{pass} ke \textit{function} tersebut \autocite{atencio2016functional}. 
-        \item \textit{Referential transparency} adalah ketika sebuah \textit{function} menghasilkan hasil yang sama juga diberikan input yang sama \autocite{atencio2016functional}.
-        \item \textit{Immutability} adalah dimana dalam \textit{Functional Programming} untuk melestarikan sebuah data supaya \textit{Immutable} tidak bisa diganti setelah di deklarasi. Dalam konsep ini yang perlu diperhatikan adalah object seperti \textit{array} yang dapat berubah konten atau valuenya dalam sebuah function \autocite{atencio2016functional}.  
-    \end{itemize}
-
-\end{enumerate}
+\begin{itemize}
+    \item \textit{Declarative programming} adalah sebuah pendekatan \textit{programming} dimana sebuah kode untuk melakukan sesuatu akan ditulis menggunakan \textit{expressions} yang mendeskripsikan logika dari suatu program. Berbeda dengan Imperatif atau \textit{Procedural Programming} dimana akan ditulis secara detail bagaimana untuk melakukan sesuatu untuk mencapai hasil yang diinginkan\autocite{atencio2016functional}. 
+    \item \textit{Pure functions} adalah \textit{function} yang memiliki dua sifat, yaitu pertama, sebuah pure function hanya dan hanya bergantung pada input yang diberikan dan tidak dengan \textit{state} yang tersembunyi dan/atau external (diluar function tersebut) dan kedua, tidak merubah apapun yang diluar dari \textit{function} tersebut seperti obyek global atau parameter yang di \textit{pass} ke \textit{function} tersebut \autocite{atencio2016functional}. 
+    \item \textit{Referential transparency} adalah ketika sebuah \textit{function} menghasilkan hasil yang sama juga diberikan input yang sama \autocite{atencio2016functional}.
+    \item \textit{Immutability} adalah dimana dalam \textit{Functional Programming} untuk melestarikan sebuah data supaya \textit{Immutable} tidak bisa diganti setelah di deklarasi. Dalam konsep ini yang perlu diperhatikan adalah object seperti \textit{array} yang dapat berubah konten atau valuenya dalam sebuah function \autocite{atencio2016functional}.  
+\end{itemize}
 
 \newpage
-\section*{Metode Pelaksanaan}
-\addcontentsline{toc}{section}{\protect\numberline{}Metode Pelaksanaan}
+\section*{Bab 3. Metode Pelaksanaan}
+\addcontentsline{toc}{section}{\protect\numberline{}Bab 3. Metode Pelaksanaan}
 
-\subsection*{\textit{Tech Stack}}
-\addcontentsline{toc}{subsection}{\protect\numberline{}\textit{Tech Stack}}
+\subsection*{3.1 \textit{Tech Stack}}
+\addcontentsline{toc}{subsection}{\protect\numberline{}3.1 \textit{Tech Stack}}
 % mysql
 % springboot
 % reactjs base framework
 % payment API TODO: aldih
 
-\subsection*{System Architecture}
-\addcontentsline{toc}{subsection}{\protect\numberline{}System Architecture}
+\subsection*{3.2 System Architecture}
+\addcontentsline{toc}{subsection}{\protect\numberline{}3.2 System Architecture}
 % usecase diagram
 % activity diagram
 % sequence diagram secara general
 % mock up aplikasi
 
-\subsection*{Aplikasi Serupa}
-\addcontentsline{toc}{subsection}{\protect\numberline{}Aplikasi Serupa}
+\subsection*{3.3 Aplikasi Serupa}
+\addcontentsline{toc}{subsection}{\protect\numberline{}3.3 Aplikasi Serupa}
 % bikin table
 % buat +- dari aplikasi serupa ini
 
-\subsection*{Pengumpulan Data Pengguna}
-\addcontentsline{toc}{subsection}{\protect\numberline{}Pengumpulan Data Pengguna}
+\subsection*{3.4 Pengumpulan Data Pengguna}
+\addcontentsline{toc}{subsection}{\protect\numberline{}3.4 Pengumpulan Data Pengguna}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
