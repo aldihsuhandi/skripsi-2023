@@ -1,0 +1,127 @@
+@startuml sequence diagram user perspective
+
+Actor User as u
+
+Box "Front End" #LightBlue
+Participant "Home page" as hp
+
+' account management
+Participant "Login page" as lp
+Participant "Register page" as rp
+Participant "User profile page" as upp
+Participant "User update profile page" as uupp
+
+' interaction with product
+Participant "Search product page" as sip
+Participant "Product page" as ip
+Participant "Wishlist page" as wp
+Participant "Shopping cart page" as scp
+Participant "Checkout page" as cp
+
+Participant "Transaction history page" as thp
+Participant "Create review page" as crp
+
+' discussion page
+Participant "Forum page" as fp
+Participant "Create post page" as cpp
+Participant "View post page" as vpp
+end Box
+
+' backend
+Participant "Back End" as be
+
+== register flow ==
+u -> hp : click register button
+hp -> rp : redirect to register page
+rp -> rp : fill out register form
+rp -> be : <color:red>register user
+rp -> lp : redirect to login
+
+== login flow ==
+u -> hp : click login button
+hp -> lp : redirect to login page
+lp -> lp : fill out login form
+lp -> be : <color:red>login
+hp <-- lp : redirect to home page
+
+== update profile flow ==
+u -> hp : click profile page
+hp -> upp : redirect to profile page
+upp -> be : <color:red>query user profile
+upp <-- be : <color:red>return user profile
+u -> upp : click update profile
+upp -> uupp : redirect to user update profile page
+uupp -> uupp : fill out update profile form
+u -> uupp : click finish update
+uupp -> be : <color:red>update user
+upp <- uupp : redirect to user profile page
+upp -> be : <color:red>query user profile
+upp <-- be : <color:red>return user profile
+
+
+== search and buy product ==
+u -> hp : search product name in search bar
+hp -> sip : redirect to search product page
+sip -> be : <color:red>query product with condition
+sip <-- be : <color:red>return list of product
+sip -> sip : show filtered product
+u -> sip : click product listing
+sip -> ip : redirect to product page
+u -> ip : click 'add to cart'
+ip -> be : <color:red>add item to cart
+u -> ip : click shopping cart button
+ip -> scp : redirect to shopping cart page
+scp -> be : <color:red>query shopping cart detail
+scp <-- be : <color:red>return shopping cart detail
+u -> scp : click checkout button
+scp -> cp : redirect to checkout page
+u -> cp : click pay
+cp -> be : <color:red>pay
+cp -> cp : show payment successfull
+cp -> scp : redirect to shopping cart
+scp -> be : <color:red>query shopping cart detail
+scp <-- be : <color:red>return empty shopping cart
+scp -> scp : show empty shopping cart
+
+== review product ==
+u -> hp : click transaction history
+hp -> thp : redirect to transaction history page
+thp -> be : <color:red>query transation history
+thp <-- be : <color:red>return transaction history
+thp -> be : <color:red>query product in need of review
+thp <-- be : <color:red>return list of product in need of review
+u -> thp : click create review
+thp -> crp : redirect to create review page
+crp -> be : <color:red>query product detail
+crp <-- be : <color:red>return detail
+crp -> crp : fill out review form
+u -> crp : click create review
+crp -> be : <color:red>create review
+thp <-- crp : redirect to transaction history page
+
+== create post ==
+u -> hp : click forum page
+hp -> fp : redirect to forum page
+fp -> be : <color:red>query post
+fp <-- be : <color:red>return post list
+u -> fp : click 'create post'
+fp -> cpp : redirect to create post page
+cpp -> cpp : fill out create post form
+cpp -> be : <color:red>create post
+cpp -> vpp : redirect to post page
+vpp -> be : <color:red>query post detail
+vpp <-- be : <color:red>return post detail
+
+== like/dislike, comment == 
+u -> hp : click forum page
+hp -> fp : redirect to forum page
+u -> fp : click post widget
+fp -> vpp : redirect to post page
+u -> vpp : click like/dislike button
+vpp -> be : <color:red>like/dislike post
+u -> vpp : comment on post
+vpp -> vpp : fill out comment form
+vpp -> be : <color:red>create comment
+
+
+@enduml
