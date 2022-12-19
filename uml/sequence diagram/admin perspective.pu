@@ -1,0 +1,68 @@
+@startuml sequence diagram admin perspective
+
+Actor Admin as a
+Actor Merchant as m
+
+Box "Front End" #LightBlue
+Participant "Home page" as hp
+
+' account management
+Participant "User profile page" as upp
+Participant "User update profile page" as uupp
+
+' interaction with product
+Participant "Search product page" as sip
+Participant "Approval Page" as ap
+Participant "Product page" as ip
+Participant "Update Product Page" as uip
+
+' discussion page
+Participant "Forum page" as fp
+Participant "Create post page" as cpp
+Participant "View post page" as vpp
+end Box
+
+' backend
+Participant "Back End" as be
+
+== approve or reject item create / update request ==
+a -> hp : click 'approval page'
+hp -> ap : redirect to approval page
+ap -> be : <color:red>query pending approval request
+ap <-- be : <color:red>return pending approval list
+ap -> ap : show pending approval list
+a -> ap : click 'reject button' or 'approve button'
+ap -> ap : fill out 'reject form' or 'approve form'
+ap -> be : <color:red>approve or reject request
+m <-- be : <color:red>send approval request status
+
+== delete product ==
+a -> hp : search item
+hp -> sip : redirect to search product page
+sip -> be : <color:red>query product with condition
+sip <-- be : <color:red>return list of product
+sip -> sip : show filtered product
+a -> sip : click product listing
+sip -> ip : redirect to product page
+a -> ip : click delete product
+ip -> be : <color:red>delete product
+ip -> hp : redirect to home page
+
+== delete post ==
+a -> hp : click forum page
+hp -> fp : redirect to forum page
+a -> fp : click post widget
+fp -> vpp : redirect to post page
+a -> vpp : click delete post
+vpp -> be : <color:red>delete post
+vpp -> fp : redirect to forum page
+
+== delete item ==
+a -> hp : click forum page
+hp -> fp : redirect to forum page
+a -> fp : click post widget
+fp -> vpp : redirect to post page
+a -> vpp : click delete comment
+vpp -> be : <color:red>delete comment
+
+@enduml
