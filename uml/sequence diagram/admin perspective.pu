@@ -12,9 +12,15 @@ Participant "User update profile page" as uupp
 
 ' interaction with product
 Participant "Search product page" as sip
-Participant "Approval Page" as ap
+Participant "Admin Page" as ap
+Participant "Product Approval Page" as pap
 Participant "Product page" as ip
 Participant "Update Product Page" as uip
+
+' report comment and post
+Participant "Post report page" as prp
+Participant "Comment report page" as crp
+Participant "Comment report detail page" as crdp
 
 ' discussion page
 Participant "Forum page" as fp
@@ -27,14 +33,37 @@ Participant "Back End" as be
 
 == approve or reject item create / update request ==
 a -> hp : click 'approval page'
-hp -> ap : redirect to approval page
-ap -> be : <color:red>query pending approval request
-ap <-- be : <color:red>return pending approval list
-ap -> ap : show pending approval list
-a -> ap : click 'reject button' or 'approve button'
-ap -> ap : fill out 'reject form' or 'approve form'
-ap -> be : <color:red>approve or reject request
+hp -> ap : redirect to admin page
+ap -> pap : redirect to approval page
+pap -> be : <color:red>query pending approval request
+pap <-- be : <color:red>return pending approval list
+pap -> pap : show pending approval list
+a -> pap : click 'reject button' or 'approve button'
+pap -> pap : fill out 'reject form' or 'approve form'
+pap -> be : <color:red>approve or reject request
 m <-- be : <color:red>send approval request status
+
+== view post report ==
+a -> hp : click 'approval page'
+hp -> ap : redirect to admin page
+ap -> prp : redirect to post report page
+prp -> be : <color:red>query post with report
+prp <-- be : <color:red>return list post with report
+
+== view comment report ==
+a -> hp : click 'approval page'
+hp -> ap : redirect to admin page
+ap -> crp : redirect to comment report page
+crp -> be : <color:red>query comment with report
+crp <-- be : <color:red>return list of comment with report
+a -> crp : click comment
+crp -> crdp : redirect to report detail page
+crdp -> be : <color:red>query user profile
+crdp <-- be : <color:red>return user profile
+crdp -> be : <color:red>query comment detail
+crdp <-- be : <color:red>return comment detail
+crdp -> be : <color:red>query report
+crdp <-- be : <color:red>return report list
 
 == delete product ==
 a -> hp : search item
