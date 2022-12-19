@@ -1,6 +1,6 @@
 \documentclass[a4paper]{article}
 
-
+\usepackage{array}
 \usepackage[
     style=numeric, 
     backend=biber, 
@@ -202,13 +202,52 @@ public class Human {
 % sequence diagram secara general
 % mock up aplikasi
 
+\newpage
 \subsection*{Aplikasi Serupa}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Aplikasi Serupa}
 % bikin table
 % buat +- dari aplikasi serupa ini
 
+Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang kami jadi obyek oberservasi, yaitu \textit{Reddit} dan \textit{Tokopedia}.
+
+\begin{table}[h] 
+    \begin{tabular}{|m{2cm}|p{5cm}|p{5cm}|}
+        % \begin{tabular}{| c | c | c |} 
+        \hline
+        Aplikasi & Positif & Negatif \\ 
+        \hline
+        Reddit 
+        &   + \textit{community} yang sudah besar \newline 
+            + System handling \textit{post} dan komen sudah \textit{robust} \newline 
+            + Interaksi antara user sudah bagus 
+        &   - Bukan marketplace \newline 
+            - Tidak cocok untuk memberi rating konkrit kepada barang \newline 
+            - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\ 
+        \hline
+        Tokopedia
+        &   + Proses shipping dan payment sudah berbagai macam \newline  
+            + Banyak promo yang bisa didapatkan user  
+        &   - Tidak bisa mengelompokkan item berdasarkan hobi \newline 
+            - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline 
+            - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang \\ 
+        \hline
+     \end{tabular}
+\end{table}
+
 \subsection*{Pengumpulan Data Pengguna}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Pengumpulan Data Pengguna}
+
+Pengumpulan data yang kami lakukan ada lah dengan menggunakkan \textit{Google Form} membuat form survei untuk mendapatkan pendapat atas pertanyaan-pertanyaan kami terkait dengan alasan dari pembuatan aplikasi pada proyek ini, yaitu seputar pembelian barang hobi dan tingkat kesulitan dalam menemukan barang yang cocok. Dari jawaban dalam survei tersebut maka kita dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang kami butuhkan.
+
+
+Pertanyaan “Apakah anda takut untuk mengambil hobi baru karena tidak tau mulai dari mana?”, kami ajukan kepada pengisi survei untuk mendapatkan data dan konfirmasi apakah aplikasi dalam proyek kami dibutuhkan, dan dengan hasil jawaban mayoritas diatas 60\% menjawab iya, kami mendapatkan data bahwa terdapat kesulitan memulai hobi karena keraguan titik mulai hobi tersebut.
+
+
+Selanjutkan dengan “Apakah anda sering menggunakan \textit{e-commerce} untuk browsing dan mencari barang berhubungan dengan hobi anda?” untuk validasi apakah menggunakkan fasilitas online untuk membeli barang hobi itu merupakan metode yang populer. Dengan masukan yang kami dapat diatas 70\% menjawab iya maka kami mendapatkan bahwa fasilitas jual/beli barang hobi di internet itu layak dilakukan.
+
+
+Dan untuk pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ragu dan harus mencari tahu terlebih dahulu atas barang yang anda lihat apakah untuk pemula/menengah/ahli?” ini adalah untuk mengumpulkan data atas fitur utama yang kami rancang untuk aplikasi ini yaitu fitur filtrasi level kemahiran (\textit{interest level}) dari barang hobi. Dengan respons yang berjawab iya diatas 70\% maka fitur utama kami untuk aplikasi itu layak untuk diimplementasikan.
+
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
