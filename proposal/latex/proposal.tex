@@ -92,8 +92,22 @@
 \subsection*{1.1 Latar Belakang}
 \addcontentsline{toc}{subsection}{\protect\numberline{}1.1 Latar Belakang}
 
+Perkembangan teknologi yang pesat telah melahirkan banyak teknologi baru yang dapat membantu dan mempermudah kita sebagai manusia dalam menjalankan kehidupan dan melaksanakan tugas dan keinginan kita. Dari perkembangan teknologi tersebut yang memiliki dampak yang cukup tinggi adalah internet, yang dimana di Indonesia sendiri, internet mendapatkan peningkatan popularitas yang cukup drastis. Hal ini dapat diukur dengan melihat peningkatan pengguna internet tersebut di setiap tahunnya. Menurut survey yang diadakan oleh Asosiasi Penyelenggara Jasa Internet Indonesia (APJII) di tahun 2017, perkembangan pengguna internet dari tahun 2016 ke tahun 2017 memiliki pertambahan sebesar 10.56 juta (disurvey pada 2016 ada 132.7 juta dan di 2017 ada 143,26 juta)\autocite{indonesia2017infografis}.
+
+
+Dari penggunaan internet, kegiatan usaha jual/beli barang yang dilakukan secara \textit{text/chat} ataupun melalui \textit{e-commerce} merupakan kegiatan yang cukup populer saat memanfaatkan internet dimana di Indonesia di survey APJII pembelian barang memiliki 32.19\% dan jual barang 8.12\% pada layanan yang diakses ketika mengakses internet\autocite{indonesia2017infografis}. \textit{Platform} untuk mempermudah usaha kegiatan jual/beli barang dilengkapi fitur \textit{search} yang cukup, dimana barang dapat dicari dan ditemukan melalui mencari namanya atau menelusuri kategori dari barang tersebut. Kegiatan beli barang dapat untuk mendapatkan barang baku, kebutuhan sehari-hari dan lain-lain. Kategori barang yang menjadi perhatian dan sorotan kami adalah barang berhubungan dengan hobi dimana yang mengalami peningkatan popularitas belakangan ini oleh karena pandemi\autocite{langstedt2022loneliness}.
+
+
+Oleh karena itu kami melakukan survei untuk mengetahui tentang apa yang mungkin menjadi kesulitan dalam membeli barang terkait hobi di aplikasi \textit{e-commerce} dan \textit{marketplace}, dimana untuk pertanyaan kami “Apakah anda takut untuk mengambil hobi baru karena tidak tau mulai dari mana?” memiliki respon 66.7\% menjawab iya, dan juga pda pertanyaan berhubungan mengenai kesulitan untuk memilih barang yang cocok memiliki respons ya pada persentase yang diatas 50%.
+
+
+Dari gambaran tersebut, dimana dalam membeli sebuah barang hobi terjadi keraguan/kesulitan dalam memilih dan membeli barang yang cocok, tujuan dari proyek ini adalah untuk mengajukan sebuah sistem aplikasi jual/beli barang khusus dan terfokus mengenai hobi dimana barang yang dijual selain dapat diberi kategori, barang juga dapat diberikan dua penilaian tingkat peminatan dalam hobi tersebut sebagai filter tambahan, kita beri nama \textit{Interest Level}, penilaian tersebut diberikan oleh penjual dan juga nanti diberi oleh pembeli sebagai validasi apakah pemberian penilaian tersebut sesuai atau tidak dan juga karena ini sebuah aplikasi untuk hobby, ada sebuah forum untuk melakukan diskusi dengan cara membuat post mengenai kategori hobi yang diinginkan.
+
+
 \subsection*{1.2 Rumusan Masalah}
 \addcontentsline{toc}{subsection}{\protect\numberline{}1.2 Rumusan Masalah}
+
+Sesuai dengan latar belakang, rumusan masalah yang akan dikaji dalam proyek ini adalah bagaimana merancang dan membuat sebuah aplikasi \textit{marketplace} untuk jual/beli barang hobi dengan fitur filter \textit{Interest Level} atau tingkat peminatan dari tiap barang tersebut dan juga sebuah forum diskusi mengenai hobi yang berada di web dan berbentuk aplikasi web.
 
 \subsection*{1.3 Ruang Lingkup}
 \addcontentsline{toc}{subsection}{\protect\numberline{}1.3 Ruang Lingkup}
@@ -101,8 +115,15 @@
 \subsection*{1.4 Tujuan dan Manfaat}
 \addcontentsline{toc}{subsection}{\protect\numberline{}1.4 Tujuan dan Manfaat}
 
+Tujuan dari proyek ini adalah untuk membuat sebuah aplikasi \textit{marketplace} untuk jual/beli barang hobi. Yang memiliki manfaat, mempermudah pengguna untuk mencari barang hobi yang cocok. Mempermudah penjual dalam mempromosikan barang-nya kepada pelanggan melalui fitur filter \textit{Interest Level}. Menyediakan sarana diskusi mengenai hobi melewati forum.
+
 \subsection*{1.5 Metode Penelitian}
 \addcontentsline{toc}{subsection}{\protect\numberline{}1.5 Metode Penelitian}
+
+Metode Penelitian yang digunakkan adalah metode penelitian kualitatif, yang bersifat deskriptif dengan melakukan analisis\autocite{pengajar-kualitatif}, dan akan melakukan analisis dari hasil pengumpulan data yang dilakukan.
+
+
+Pengumpulan data yang kami lakukan adalah dengan membuat form survei menggunakan \textit{Google Form} untuk mendapatkan pendapat atas pertanyaan-pertanyaan yang kami miliki terkait dengan alasan dari pembuatan aplikasi pada proyek ini. Dari hal mengenai pembelian barang hobi hingga tingkat kesulitan dalam menemukan barang yang cocok. Dari semua jawaban survei yang dikumpulkan tersebutlah, kita dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang kami butuhkan.
 
 \newpage
 \section*{Bab 2. Tinjauan Pustaka}
@@ -190,7 +211,7 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
 \addcontentsline{toc}{subsection}{\protect\numberline{}3.1 Metode Pelaksanaan}
 
 
-Pengumpulan data yang kami lakukan ada lah dengan menggunakkan \textit{Google Form} membuat form survei untuk mendapatkan pendapat atas pertanyaan-pertanyaan kami terkait dengan alasan dari pembuatan aplikasi pada proyek ini, yaitu seputar pembelian barang hobi dan tingkat kesulitan dalam menemukan barang yang cocok. Dari jawaban dalam survei tersebut maka kita dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang kami butuhkan.
+Pengumpulan data yang kami lakukan adalah dengan membuat form survei menggunakan \textit{Google Form} untuk mendapatkan pendapat atas pertanyaan-pertanyaan yang kami miliki terkait dengan alasan dari pembuatan aplikasi pada proyek ini. Dari hal mengenai pembelian barang hobi hingga tingkat kesulitan dalam menemukan barang yang cocok. Dari semua jawaban survei yang dikumpulkan tersebutlah, kita dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang kami butuhkan.
 
 
 Pertanyaan “Apakah anda takut untuk mengambil hobi baru karena tidak tau mulai dari mana?”, kami ajukan kepada pengisi survei untuk mendapatkan data dan konfirmasi apakah aplikasi dalam proyek kami dibutuhkan, dan dengan hasil jawaban mayoritas diatas 60\% menjawab iya, kami mendapatkan data bahwa terdapat kesulitan memulai hobi karena keraguan titik mulai hobi tersebut.
@@ -272,6 +293,15 @@ Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang ka
         \end{itemize}
 
         \item \textit{Front end}
+        
+        \textit{Front End} adalah sebuah bagian dari halaman web yang dimana merupakan tempat interaksi pengguna, \textit{Front End} sebagai tempat interaksi pengguna maka merupakan bagian dari sebuah halaman yang sangat sering dilihat oleh pengguna kebalikan dari \textit{Back End}\autocite{codecademy-frontend}.
+        
+        \textit{Javascript} adalah bahasa pemrograman terkompilasi yang memiliki karakteristik ringan untuk dijalankan, \textit{interpreted} dan juga dengan fitur \textit{first-class functions} dimana \textit{function} dianggap seperti variabel biasa lainnya seperti \textit{string, number,} dan lain-lain. Yang dimana penggunaan \textit{Javascript} paling terkenal dan banyak digunakkan adalah dalam bahasa untuk \textit{Web} atau situs internet\autocite{javascript-mdn}.
+
+        \textit{Typescript} adalah bahasa pemrograman yang dibuat untuk memecahkan beberapa permasalahan yang ada di dalam bahasa \textit{Javascript}, salah satu contohnya adalah dengan \textit{Typescript} penggunaan \textit{Type-annotation} dapat digunakkan untuk memberi tipe dari variabel sehingga permasalahan yang mungkin dapat muncul karena karakteristik \textit{Javascript} yang \textit{loosely typed} dapat diatasi\autocite{fenton2014pro}.
+
+	    \textit{React} adalah sebuah Library untuk bahasa pemrograman \textit{Javascript} (\textit{Typescript} juga bisa) untuk membuat \textit{UI}. Fitur dari \textit{React} adalah \textit{React} menganut \textit{Declarative Programming} dan juga \textit{Functional Programming},\textit{Component Based}, \textit{Hooks} dan \textit{Lifecycle Hooks}\autocite{react-general}. \textit{Hooks} dan \textit{Lifecycle Hooks} adalah sebuah fitur yang diimplementasikan pada \textit{React v16.8} yang memberi alternatif dari menggunakkan \textit{class} untuk komponen\autocite{react-hooks, react-hooks-lifecycle}. 
+
     \end{enumerate}
 
 \end{enumerate}
