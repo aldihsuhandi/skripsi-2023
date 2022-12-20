@@ -226,6 +226,26 @@ entity post_upvotes {
     * gmt_modified : date
 }
 
+entity post_reports {
+    * id : int
+    --
+    * user_id : int <<FK>>
+    * post_id : int <<FK>>
+      report_desc : longtext
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity comment_reports {
+    * id : int
+    --
+    * user_id : int <<FK>>
+    * comment_id : int <<FK>>
+      report_desc : longtext
+    * gmt_create : date
+    * gmt_modified : date
+}
+
 ' table for backend purpose
 entity sessions{
     * id : string
@@ -328,5 +348,14 @@ user_activities ||-o{ activities
 ' items }o-|| wishlists
 wishlists ||-o{ users
 wishlists ||-o{ items
+
+' report
+' posts }o--|| post_reports
+' comments }o--|| comment_reports
+comment_reports ||--o{ comments
+post_reports ||--o{ posts
+
+comment_reports ||--o{ users
+post_reports ||--o{ users
 
 @enduml
