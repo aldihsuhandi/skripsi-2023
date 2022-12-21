@@ -1,0 +1,115 @@
+@startuml sequence diagram merchant perspective
+
+Actor Merchant as m
+
+Box "Front End" #LightBlue
+Participant "Home page" as hp
+
+' store management
+Participant "Merchant page" as mp
+Participant “Product management page” as pmp
+Participant “New product page” as npp
+Participant “Update product page” as upp
+
+'  account management
+Participant “Merchant profile page” as mpp
+Participant “Merchant update profile page” as mupp
+
+' discussion page
+Participant "Product discussion page" as pdp
+
+' chat page
+Participant “All chat page” as acp
+Participant “Personal chat page” as pcp
+
+end Box
+
+' backend
+Participant "Back End" as be
+
+
+== add new product ==
+m -> hp : click product management page
+hp -> mp : redirect to merchant page
+mp -> pmp: redirects to product management page
+pmp -> be : <color:red>query product list
+pmp <-- be : <color:red>return product list
+m -> pmp : click add new product
+pmp -> npp : redirect to new product page
+npp -> npp : fill out new product form
+m -> npp : click submit/create new product
+npp -> be : <color:red>query add new product
+pmp <- npp : redirect to product management page
+pmp -> be : <color:red>query product list
+pmp <-- be : <color:red>return product list
+
+== remove all product ==
+m -> hp : click product management page
+hp -> mp : redirect to merchant page
+mp -> pmp: redirects to product management page
+pmp -> be : <color:red>query product list
+pmp <-- be : <color:red>return product list
+m -> pmp : click remove all product
+pmp -> be : <color:red>query remove all product 
+pmp <-- be : <color:red>return product list
+
+== remove one product ==
+m -> hp : click product management page
+hp -> mp : redirect to merchant page
+mp -> pmp: redirects to product management page
+pmp -> be : <color:red>query product list
+pmp <-- be : <color:red>return product list
+m -> pmp : click remove product
+pmp -> be : <color:red>query remove specific product 
+pmp <-- be : <color:red>return product list
+
+== update product ==
+m -> hp : click product management page
+hp -> mp : redirect to merchant page
+mp -> pmp: redirects to product management page
+pmp -> be : <color:red>query product list
+pmp <-- be : <color:red>return product list
+m -> pmp : click update product
+pmp -> upp : redirect to update product page
+upp -> upp : fill update product form
+m -> upp : click finish update product
+upp -> be : <color:red>query add new product
+pmp <- upp : redirect to product management page
+pmp -> be : <color:red>query product list
+pmp <-- be : <color:red>return product list
+
+== open discussion about product ==
+m -> hp : click forum discussions page
+hp -> mp : redirect to merchant page
+mp -> pdp: redirects to discussions page
+pdp -> be : <color:red>query forum about product list
+pdp <-- be : <color:red>return forum about product list
+
+== update merchant profile ==
+m -> hp : click merchant profile page
+hp -> mpp: redirect to merchant profile page
+mpp -> be : <color:red>query merchant profile
+mpp <-- be : <color:red>return merchant profile
+m -> mupp: click update merchant profile
+mupp -> mupp: fill out update merchant profile form
+m -> mupp: click finish update
+mupp -> be : <color:red>update merchant
+mupp <- mpp: redirect to merchant profile page
+mpp -> be : <color:red>query merchant profile
+mpp <-- be : <color:red>return merchant profile
+
+== reply chat ==
+m -> hp : click forum chat page
+hp -> mp : redirect to merchant page
+mp -> acp: redirects to chat page
+acp -> be : <color:red>query all user chat
+acp <-- be : <color:red>return all user chat
+m -> acp : click user chat
+acp -> pcp : redirect to personal chat
+pcp -> be: <color:red> query chat messages
+pcp <– be: <color:red> return chat messages
+m -> pcp : send reply
+pcp -> be: <color:red>query, create reply
+
+@enduml
+
