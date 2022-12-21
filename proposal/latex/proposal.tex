@@ -2,7 +2,7 @@
 
 \usepackage{array}
 \usepackage[
-    style=numeric, 
+    style=nature, 
     backend=biber, 
     sorting=none
 ]{biblatex}
@@ -14,6 +14,7 @@
 \usepackage{times}
 \usepackage{listings}
 \usepackage{longtable}
+\usepackage{setspace}
 
 \setlist{
   listparindent=\parindent,
@@ -59,7 +60,7 @@
 \newcommand{\bab}[2]{\setcounter{section}{#1}\addtocounter{section}{-1}\section{Bab #1. #2}}
 
 \begin{document}
-\linespread{1.5}
+\setstretch{1.5}
 
 \title{Marketplace For Hobby}
 \author{Aldih Suhandi, Chandra Wijaya, Ibrahim Seto Aditama}
@@ -159,11 +160,11 @@ public class Human {
 }\end{lstlisting}
         \caption{Contoh dari \textit{encapsulation}}
     \end{figure}
+    \newpage
 
     \item \textit{Abstraction}
 
     \textit{Abstraction} dan \textit{encapsulation} adalah dua sisi dari koin yang sama, \textit{encapsulation} adalah konsep untuk mengatur akses suatu atribut, kalau \textit{abstraction} adalah \textit{class} lain tidak perlu tahu bagaimana \textit{class} ini melakukan suatu tugas\autocite{liang_liang_2021}. Sebagai contoh, saat merakit komputer, kalian hanya tau komponen - komponen didalam komputer itu apa saja, untuk merakit komputer tersebut kalian hanya perlu tau apa saja peran dari tiap komponen yang ada, tidak perlu mengetahui untuk melaksanakan peran mereka, apa yang mereka harus lakukan.
-    \newpage
         
     \item \textit{Inheritance}
 
@@ -242,27 +243,30 @@ Untuk pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang mer
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.1 Analisis perbandingan aplikasi sejenis}
 Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang kami jadi obyek oberservasi, yaitu \textit{Reddit} dan \textit{Tokopedia}.
 
-\begin{longtable}{|m{2cm}|p{5cm}|p{5cm}|}
-    \hline
-    Aplikasi & Positif & Negatif \\ 
-    \hline
-    Reddit 
-    &   + \textit{community} yang sudah besar \newline 
-        + System handling \textit{post} dan komen sudah \textit{robust} \newline 
-        + Interaksi antara user sudah bagus 
-    &   - Bukan marketplace \newline 
-        - Tidak cocok untuk memberi rating konkrit kepada barang \newline 
-        - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\ 
-    \hline
-    Tokopedia
-    &   + Proses shipping dan payment sudah berbagai macam \newline  
-        + Banyak promo yang bisa didapatkan user  
-    &   - Tidak bisa mengelompokkan item berdasarkan hobi \newline 
-        - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline 
-        - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang \\ 
-    \hline
-\end{longtable}
-
+\newpage
+\begin{figure}[h]
+    \begin{longtable}{|m{2cm}|p{5cm}|p{5cm}|}
+        \hline
+        Aplikasi & Positif & Negatif \\ 
+        \hline
+        Reddit 
+        &   + \textit{community} yang sudah besar \newline 
+            + System handling \textit{post} dan komen sudah \textit{robust} \newline 
+            + Interaksi antara user sudah bagus 
+        &   - Bukan marketplace \newline 
+            - Tidak cocok untuk memberi rating konkrit kepada barang \newline 
+            - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\ 
+        \hline
+        Tokopedia
+        &   + Proses shipping dan payment sudah berbagai macam \newline  
+            + Banyak promo yang bisa didapatkan user  
+        &   - Tidak bisa mengelompokkan item berdasarkan hobi \newline 
+            - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline 
+            - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang \\ 
+        \hline
+    \end{longtable}
+    \caption{Tabel perbandingan aplikasi serupa}
+\end{figure}
 
 \subsubsection*{3.2.2 Analisis permasalah}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 Analisis permasalah}
