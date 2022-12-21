@@ -111,6 +111,7 @@ Sesuai dengan latar belakang, rumusan masalah yang akan dikaji dalam proyek ini 
 
 \subsection*{1.3 Ruang Lingkup}
 \addcontentsline{toc}{subsection}{\protect\numberline{}1.3 Ruang Lingkup}
+Ruang lingkup dari proyek ini adalah membuat suatu \textit{marketplace} dimana seseorang bisa membeli sebuah barang yang berkaitan dengan hobi tertentu, fitur - fitur dari \textit{marketplace} ini dirancang untuk membuat memilih barang saat ingin memasuki hobi atau saat ingin lebih mendalami suatu hobi, selain menjadi \textit{marketplace} proyek juga ingin menyediakan forum dimana semua pengguna bisa bertanya, berdiskusi, ataupun menyampaikan keluh kesah dari hobi mereka.
 
 \subsection*{1.4 Tujuan dan Manfaat}
 \addcontentsline{toc}{subsection}{\protect\numberline{}1.4 Tujuan dan Manfaat}
@@ -204,6 +205,18 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
 \subsection*{2.4 \textit{Design Pattern}}
 \addcontentsline{toc}{subsection}{\protect\numberline{}2.4 \textit{Design Pattern}}
 
+\textit{Design Pattern} secara definisi adalah sesuatu cara komunikasi tiap obyek dan \textit{class} yang dikostumisasi untuk memecahkan masalah desain general didalam konteks tertentu, \textit{design pattern} membantu untuk membuat \textit{object oriented design} yang dapat digunakan secara berulang, dengan cara memberi nama, mengabstraksi, dna mengidentifikasi kunci aspek dari struktur desain tertentu\autocite{design-pattern-2588942}.
+\begin{itemize}
+    \item \textit{Facade}\\
+    \textit{Facade} adalah sesuatu \textit{class} yang memberikan \textit{interface} yang simpel ke sub-sistem yang kompleks, \textit{design pattern} ini dapat digunakan ketika butuh mengintegrasikan sesuatu \textit{library} dengan fitur yang sangat banyak tapi hanya butuh menggunakan beberapa fiturnya saja\autocite{refactoring-guru}. \textit{Singleton} juga memberikan global \textit{access point} ke instansi \textit{class} tersebut, jadi semua \textit{class} dan \textit{object} dapat membaca \textit{value} yang sama dan merubah \textit{value} tersebut secara keseluruhan\autocite{refactoring-guru}.
+    \item \textit{Singleton}\\
+    \textit{Singleton} digunakan untuk menjamin bahwa suatu \textit{class} hanya memiliki satu \textit{instance}, \textit{design pattern} ini berguna saat ingin mengontrol sebuah \textit{shared resources} seperti \textit{database}\autocite{refactoring-guru}.
+    \item \textit{Builder}\\
+    \textit{Design pattern} ini dibuat untuk memecahkan masalah ketika ada sebuah \textit{class} yang saat dibuat menjadi sebuah \textit{object} tidak semua atributnya diisi, tanpa harus membuat \textit{contructor} atau \textit{child class} banyak. \textit{Builder} mengekstrasi \textit{building steps} saat membuat suatu \textit{object} dari sebuah \textit{class} dan memindahkannya ke \textit{class} terpisah\autocite{refactoring-guru}.
+    \item \textit{Template Method}\\
+    \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
+\end{itemize}
+
 \newpage
 \section*{Bab 3. Metode Pelaksanaan}
 \addcontentsline{toc}{section}{\protect\numberline{}Bab 3. Metode Pelaksanaan}
@@ -230,7 +243,6 @@ Untuk pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang mer
 Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang kami jadi obyek oberservasi, yaitu \textit{Reddit} dan \textit{Tokopedia}.
 
 \begin{longtable}{|m{2cm}|p{5cm}|p{5cm}|}
-    % \begin{tabular}{| c | c | c |} 
     \hline
     Aplikasi & Positif & Negatif \\ 
     \hline
@@ -254,9 +266,20 @@ Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang ka
 
 \subsubsection*{3.2.2 Analisis permasalah}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 Analisis permasalah}
+Salah satu pertanyaan adalah "Apakah anda takut untuk mengambil hobi baru karena tidak tau mulai dari mana?" dan dengan responden menjawab 69.2\% iya mereka takut untuk mengambil hobi baru karena alasan yang disebut, beberapa alasan kenapa banyak orang takut untuk mengambil hobi baru adalah, 
+\begin{itemize}
+    \item mereka tidak tahu apa yang harus dibeli sebagai \textit{beginner};
+    \item mereka tidak tahu apa yang mereka beli cocok untuk \textit{interest level} mereka atau tidak;
+    \item mereka tidak tahu hal apa saya yang perlu diketahui untuk memasuki hobi tersebut.
+\end{itemize}
+Dengan 61.5\% menjawab mereka tidak punya waktu untuk mencari tahu informasi tentang hobi tersebut, satu masalah muncul yaitu "bagaimana cara mempercepat proses pemilihan barang untuk pemula hobi".
 
 \subsubsection*{3.2.3 Usulan pemecahan masalah}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.3 Usulan pemecahan masalah}
+Untuk orang yang ingin memulai hobi dan mempunyai banyak waktu untuk mencari informasi tentang hobi tersebut, solusi kami adalah membuat sebuah \textit{marketplace} dengan sebuah \textit{page} yang khusus dibuat untuk para pengguna berdiskusi, berdiskusi tentang sebuah \textit{product} dan ke siapa saja \textit{product} ditujukan.
+
+
+Untuk orang yang tidak punya waktu untuk melihat semua itu, \textit{project} ini akan menerapkan dua sistem \textit{filter}, \textit{rating} sebuah \textit{product} yang menandakan seberapa berkualitas \textit{product} tersebut dan \textit{rating interest level} dari \textit{product} yang menandakan \textit{product} tersebut itu diarahkan ke siapa. Sistem \textit{interest level rating} ini akan memiliki dua value, \textit{value} pertama adalah \textit{value} yang ditetapkan oleh penjual dan \textit{value} kedua itu yang ditetapkan oleh komunitas, jadi secara tidak langsung jika ada barang yang dengan kedua \textit{rating}nya tidak sama, sipembeli bisa menyimpulkan bahwa penjual ini tidak bisa dipercaya.
 
 
 \subsection*{3.3 Perancangan}
@@ -273,6 +296,20 @@ Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang ka
     \textit{Shumishumi} juga bisa menjadi sarana untuk berdiskusi mengenai topik dan hobi yang diminati, dengan fitur ini kami berharap dapa mempermudah \textit{user} mencari dan memasuki hobi baru.
 
     \item Fungsi-fungsi \textit{software}
+    
+
+    Fungsi dari proyek ini dibagi menjadi dua perspektif, perspektif dari pembeli dan perspektif dari penjual.
+    \begin{itemize}
+        \item Perspektif dari pembeli
+
+        Pembeli bisa mencari sebuah barang secara spesifik menggunakan nama atau siapa yang menjual barang tersebut, tapi bagi penjual yang baru ingin memasuki suatu hobi, mereka bisa mengutilisasikan fitur filter bedasarkan hobi apa yang ingin mereka masuki dan \textit{interest level} mereka. Selain itu juga pembeli juga bisa membuat review tentang barang yang mereka jual, bagaimana kualitas dari barang tersebut dan apakah barang tersebut memenuhi kriteria \textit{interest level} yang ditujukan.
+
+        Selain itu juga pembeli bisa membuat suatu \textit{post} atau \textit{comment} tentang hobi mereka, atau membaca \textit{post} yang sudah dibuat oleh pembeli lain untuk membantu mereka mendalami hobi yang mereka punya.
+
+        \item Perspektif dari penjual
+
+        Penjual bisa menjual barang, saat memasukan barang yang ingin dijual penjual harus memasukan barang itu terkait dengan hobi apa dan ditujukkan ke \textit{interest level} mana, selain itu penjual juga bisa melihat sebuah \textit{dashboard} yang berisikan \textit{review} dari pembeli dan berapa banyak barang yang sudah mereka jual.
+    \end{itemize}
 
     % sequence diagram
 
