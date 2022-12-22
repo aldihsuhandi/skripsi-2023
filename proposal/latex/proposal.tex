@@ -62,14 +62,15 @@
 \begin{document}
 \setstretch{1.5}
 
-\title{Marketplace For Hobby}
-\author{Aldih Suhandi, Chandra Wijaya, Ibrahim Seto Aditama}
+\title{PROPOSAL SKRIPSI NON KELAS\\Shumishumi - Marketplace For Hobby With Interest Level Filtering\large\\\textbf{Topic: }\textit{E-Application}}
+\author{2301862632 - Aldih Suhandi - \textit{Computer Science} / 082122704561\\2301872596 - Chandra Wijaya - \textit{Computer Science} / 081287588816\\2301867324 - Ibrahim Seto Aditama - \textit{Computer Science} / 081213423549}
+
 
 \maketitle
 \begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{logo_binus.png}\\
-    Binus University\\
+    Binus University Alam Sutera\\
     2022
 \end{figure}
 \begin{figure}[h]
@@ -229,6 +230,56 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
           \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
 \end{itemize}
 
+\subsection*{2.5 \textit{Website Mock}}
+\addcontentsline{toc}{subsection}{\protect\numberline{}2.5 \textit{Website Mock}}
+
+\subsubsection*{2.5.1 \textit{Buyer User Interface}}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}2.5.1 \textit{Buyer User Interface}}
+\begin{figure}[h]
+    \includegraphics[width=.30\textwidth]{ui/User View/Forum Discussion (All) - Post 1 [User].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/User View/Forum Discussions - All [User].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/User View/Forum Discussion - PS1 [User].png}\hfill
+    \\[\smallskipamount]
+    \includegraphics[width=.30\textwidth]{ui/User View/Item Page 1 [User].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/User View/Store Home Page [User].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/User View/Shopping Cart [User].png}\hfill
+    \caption{\textit{Mock-up user interface} untuk pembeli}
+    \centering
+\end{figure}
+
+\subsubsection*{2.5.2 \textit{Merchant User Interface}}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}2.5.2 \textit{Merchant User Interface}}
+\begin{figure}[h]
+    \includegraphics[width=.30\textwidth]{ui/Merchant View/All Chats [Merchant].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/Merchant View/Chat w User - Chat 1 [Merchant].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/Merchant View/Edit Profile [Merchant].png}\hfill
+    \\[\smallskipamount]
+    \includegraphics[width=.30\textwidth]{ui/Merchant View/Forum Discussions - All [Merchant].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/Merchant View/Product Management [Merchant].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/Merchant View/Store Home Page [Merchant].png}\hfill
+    \\[\smallskipamount]
+    \includegraphics[width=.30\textwidth]{ui/Merchant View/Update Product [Merchant].png}\hfill
+    \caption{\textit{Mock-up user interface} untuk penjual}
+    \centering
+\end{figure}
+
+\newpage
+\subsubsection*{2.5.3 \textit{Admin User Interface}}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}2.5.3 \textit{Admin User Interface}}
+\begin{figure}[h]
+    \includegraphics[width=.30\textwidth]{ui/Admin View/Admin Dashboard [Admin].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/Admin View/Approval Details [Admin].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/Admin View/Approval Page [Admin].png}\hfill
+    \\[\smallskipamount]
+    \includegraphics[width=.30\textwidth]{ui/Admin View/Reports Page - All [Admin].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/Admin View/Reports Page - Post [Admin].png}\hfill
+    \includegraphics[width=.30\textwidth]{ui/Admin View/Reports Page - Comment [Admin].png}\hfill
+    \\[\smallskipamount]
+    \includegraphics[width=.30\textwidth]{ui/Admin View/Store Home Page [Admin].png}\hfill
+    \caption{\textit{Mock-up user interface} untuk \textit{admin}}
+    \centering
+\end{figure}
+
 \newpage
 \section*{Bab 3. Metode Pelaksanaan}
 \addcontentsline{toc}{section}{\protect\numberline{}Bab 3. Metode Pelaksanaan}
@@ -245,7 +296,7 @@ Pertanyaan “Apakah anda takut untuk mengambil hobi baru karena tidak tau mulai
 Selanjutnya dengan “Apakah anda sering menggunakan \textit{e-commerce} untuk browsing dan mencari barang berhubungan dengan hobi anda?” untuk validasi apakah menggunakkan fasilitas online untuk membeli barang hobi itu merupakan metode yang populer. Dengan masukan yang kami dapat diatas 70\% menjawab iya maka kami mendapatkan bahwa fasilitas jual/beli barang hobi di internet itu layak dilakukan.
 
 
-Untuk pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ragu dan harus mencari tahu terlebih dahulu atas barang yang anda lihat apakah untuk pemula/menengah/ahli?” ini adalah untuk mengumpulkan data atas fitur utama yang kami rancang untuk aplikasi ini yaitu fitur filtrasi level kemahiran (\textit{interest level}) dari barang hobi. Dengan respons yang berjawab iya diatas 70\% maka fitur utama kami untuk aplikasi itu layak untuk diimplementasikan.
+Untuk pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ragu dan harus mencari tahu terlebih dahulu atas barang yang anda lihat apakah untuk pemula/menengah/ahli?” ini adalah untuk mengumpulkan data atas fitur utama yang kami rancang untuk aplikasi ini yaitu fitur filtrasi level peminatan(\textit{interest level}) dari barang hobi. Dengan respons yang berjawab iya diatas 70\% maka fitur utama kami untuk aplikasi itu layak untuk diimplementasikan.
 
 \subsection*{3.2 Analisis}
 \addcontentsline{toc}{subsection}{\protect\numberline{}3.2 Analisis}
@@ -362,6 +413,38 @@ Untuk orang yang tidak punya waktu untuk melihat semua itu, \textit{project} ini
 \newpage
 \subsubsection*{3.3.2 Perancangan Sistem}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.3.2 Perancangan Sistem}
+\begin{enumerate}
+    \item Desain \textit{database}\\
+    \begin{figure}[h]
+        \includegraphics[height=12cm,keepaspectratio]{erd diagram.png}
+        \centering
+        \caption{\textit{Entity Relation Diagram}}
+    \end{figure}
+    \newpage
+    \item \textit{Sequence Diagram}\\
+    \begin{itemize}
+        \item \textit{Buyer flow sequence diagram}\\
+            \begin{figure}[h]
+                \includegraphics[height=12cm,keepaspectratio]{sequence diagram user perspective.png}
+                \centering
+                \caption{\textit{Sequence diagram} dari perspektif pembeli}
+            \end{figure}
+        \newpage
+        \item \textit{Merchant flow sequence diagram}
+            \begin{figure}[h]
+                \includegraphics[height=12cm,keepaspectratio]{sequence diagram merchant perspective.png}
+                \centering
+                \caption{\textit{Sequence diagram} dari perspektif penjual}
+            \end{figure}
+        \newpage
+        \item \textit{Admin flow sequence diagram}
+            \begin{figure}[h]
+                \includegraphics[height=12cm,keepaspectratio]{sequence diagram admin perspective.png}
+                \centering
+                \caption{\textit{Sequence diagram} dari perspektif \textit{admin}}
+            \end{figure}
+    \end{itemize}
+\end{enumerate}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
