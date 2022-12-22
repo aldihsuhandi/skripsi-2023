@@ -77,8 +77,8 @@
     Diperiksa Oleh**\\
     \vspace{15mm}
     \begin{tabular}{@{}p{2.5in}@{}}
-    \centering
-    Nama Dosen - Kode Dosen
+        \centering
+        Nama Dosen - Kode Dosen
     \end{tabular}
 \end{figure}
 
@@ -135,7 +135,7 @@ Pengumpulan data yang kami lakukan adalah dengan membuat form survei menggunakan
 
 \subsection*{2.1 \textit{Object Oriented Programming}}
 \addcontentsline{toc}{subsection}{\protect\numberline{}2.1 \textit{Object Oriented Programming}}
-\textit{Object Oriented Programming} adalah konsep programming yang berdasarkan \textit{objects}, sebuah \textit{object} adalah sesuatu entitas yang ada didunia nyata yang bisa diindetifikasi secara unik\autocite{liang_liang_2021}. Sebagai contoh, sebuah meja, seorang guru, dan bahkan hutang bisa dijadikan sebagai \textit{object}. 
+\textit{Object Oriented Programming} adalah konsep programming yang berdasarkan \textit{objects}, sebuah \textit{object} adalah sesuatu entitas yang ada didunia nyata yang bisa diindetifikasi secara unik\autocite{liang_liang_2021}. Sebagai contoh, sebuah meja, seorang guru, dan bahkan hutang bisa dijadikan sebagai \textit{object}.
 
 Untuk membuat sebuah \textit{object} diperlukan sebuah \textit{template} atau \textit{blueprint}, \textit{template} atau \textit{blueprint} ini dalam \textbf{OOP} disebut sebagai \textit{class}, secara definisi \textit{class} adalah sebuah \textit{blueprint} yang dipakai untuk membuat sesuatu atau \textit{object} yang lebih spesifik atau konkrit\autocite{education-erin-oop-2020}, \textit{class} biasanya hanya menampung atribut - atribut yang secara general, seperti tinggi, berat badan, umur, dan sebagainya. Sedangkan sebuah \textit{object} akan menampung \textit{value} yang lebih spesifik, seperti \textit{object} tersebut bertinggi 2 meter dan \textit{object} sudah berumur 3 tahun.
 
@@ -144,13 +144,13 @@ Untuk membuat sebuah \textit{object} diperlukan sebuah \textit{template} atau \t
 
     \item \textit{Encapsulation}
 
-    \textit{Encapsulation} adalah konsep dimana semua atribut atau fitur yang ada didalam \textit{object} itu tidak bisa dilihat dan diubah oleh \textit{object} lain, kecuali akses tersebut didefinisikan secara explicit\autocite{education-erin-oop-2020}. Sebagai contoh, \textit{object} manusia memiliki tanggal lahir, karena tanggal lahir itu pasti tidak bisa diubah, atribut tanggal lahir dari \textit{object} tersebut hanya bisa dibaca oleh \textit{object} lain tapi tidak bisa diubah.
-        
-    Kohesi, konsistensi, dan enkapsulasi adalah pedoman yang baik untuk mencapai sebuah design yang jelas. Sebuah \textit{class} harus memiliki kontrak yang jelas yang mudah dijelaskan dan dipahami, seperti atribut apa saja yang bisa diakses dan diubah oleh \textit{object} atau \textit{class} lain\autocite{liang_liang_2021}.
+          \textit{Encapsulation} adalah konsep dimana semua atribut atau fitur yang ada didalam \textit{object} itu tidak bisa dilihat dan diubah oleh \textit{object} lain, kecuali akses tersebut didefinisikan secara explicit\autocite{education-erin-oop-2020}. Sebagai contoh, \textit{object} manusia memiliki tanggal lahir, karena tanggal lahir itu pasti tidak bisa diubah, atribut tanggal lahir dari \textit{object} tersebut hanya bisa dibaca oleh \textit{object} lain tapi tidak bisa diubah.
 
-    \begin{figure}[h]
-        \centering
-        \begin{lstlisting}[language=Java]
+          Kohesi, konsistensi, dan enkapsulasi adalah pedoman yang baik untuk mencapai sebuah design yang jelas. Sebuah \textit{class} harus memiliki kontrak yang jelas yang mudah dijelaskan dan dipahami, seperti atribut apa saja yang bisa diakses dan diubah oleh \textit{object} atau \textit{class} lain\autocite{liang_liang_2021}.
+
+          \begin{figure}[h]
+              \centering
+              \begin{lstlisting}[language=Java]
 public class Human {
     private Date dateOfBirth;
 
@@ -158,32 +158,32 @@ public class Human {
         return this.dateOfBirth;
     }
 }\end{lstlisting}
-        \caption{Contoh dari \textit{encapsulation}}
-    \end{figure}
-    \newpage
+              \caption{Contoh dari \textit{encapsulation}}
+          \end{figure}
+          \newpage
 
     \item \textit{Abstraction}
 
-    \textit{Abstraction} dan \textit{encapsulation} adalah dua sisi dari koin yang sama, \textit{encapsulation} adalah konsep untuk mengatur akses suatu atribut, kalau \textit{abstraction} adalah \textit{class} lain tidak perlu tahu bagaimana \textit{class} ini melakukan suatu tugas\autocite{liang_liang_2021}. Sebagai contoh, saat merakit komputer, kalian hanya tau komponen - komponen didalam komputer itu apa saja, untuk merakit komputer tersebut kalian hanya perlu tau apa saja peran dari tiap komponen yang ada, tidak perlu mengetahui untuk melaksanakan peran mereka, apa yang mereka harus lakukan.
-        
+          \textit{Abstraction} dan \textit{encapsulation} adalah dua sisi dari koin yang sama, \textit{encapsulation} adalah konsep untuk mengatur akses suatu atribut, kalau \textit{abstraction} adalah \textit{class} lain tidak perlu tahu bagaimana \textit{class} ini melakukan suatu tugas\autocite{liang_liang_2021}. Sebagai contoh, saat merakit komputer, kalian hanya tau komponen - komponen didalam komputer itu apa saja, untuk merakit komputer tersebut kalian hanya perlu tau apa saja peran dari tiap komponen yang ada, tidak perlu mengetahui untuk melaksanakan peran mereka, apa yang mereka harus lakukan.
+
     \item \textit{Inheritance}
 
-    \textit{Inheritance} adalah sebuah konsep dimana \textit{class} dapat mempunyai atribut dan fitur turunan dari \textit{class} lain. \textit{Class} yang mendapat fitur turunan ini disebut \textit{child class}, sedangkan \textit{class} yang diturunkan disebut \textit{parent class}\autocite{education-erin-oop-2020}. 
+          \textit{Inheritance} adalah sebuah konsep dimana \textit{class} dapat mempunyai atribut dan fitur turunan dari \textit{class} lain. \textit{Class} yang mendapat fitur turunan ini disebut \textit{child class}, sedangkan \textit{class} yang diturunkan disebut \textit{parent class}\autocite{education-erin-oop-2020}.
 
-    Tujuan dari konsep ini adalah untuk mengurangi redudansi sebanyak mungkin, dengan cara mengeneralisasikan beberapa \textit{class}, karena beberapa \textit{class} yang berbeda bisa saya memiliki fitur atau atribute yang sama. Sebagai contoh \textit{class} guru, murid, dan kepala sekolah memiliki beberapa atribut yang sama, seperti tinggi badan, berat badan, dan umur. Semua atribut yang sama tersebut bisa dijadikan sebuah \textit{parent class} yang bernama \textit{human} dan \textit{class} guru, murid, dan kepala sekolah akan menjadi \textit{child class} dari \textit{class} tersebut\autocite{liang_liang_2021}.
+          Tujuan dari konsep ini adalah untuk mengurangi redudansi sebanyak mungkin, dengan cara mengeneralisasikan beberapa \textit{class}, karena beberapa \textit{class} yang berbeda bisa saya memiliki fitur atau atribute yang sama. Sebagai contoh \textit{class} guru, murid, dan kepala sekolah memiliki beberapa atribut yang sama, seperti tinggi badan, berat badan, dan umur. Semua atribut yang sama tersebut bisa dijadikan sebuah \textit{parent class} yang bernama \textit{human} dan \textit{class} guru, murid, dan kepala sekolah akan menjadi \textit{child class} dari \textit{class} tersebut\autocite{liang_liang_2021}.
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=8cm]{inheritance example.png}
-        \caption{Contoh dari \textit{inheritance}}
-    \end{figure}
+          \begin{figure}[h]
+              \centering
+              \includegraphics[width=8cm]{inheritance example.png}
+              \caption{Contoh dari \textit{inheritance}}
+          \end{figure}
 
     \item \textit{Polymorphism}
 
-    \textit{Child class} adalah sebuah \textit{class} yang akan menuruni semua atribut dan fitur dari \textit{parent class}, tapi apabila dari satu \textit{parent class} memiliki 2 \textit{child class} yang memiliki fitur yang sama tapi cara melakukannya yang berbeda? contoh pisang goreng adalah sebuah makanan, tapi tidak semua makanan adalah pisang goreng, ada perubahan dari cara memasak dan cara penyajian ditiap - tiap makanan, disini konsep \textit{polymorphism} dapat dipakai. Secara definisi \textit{polymorphism} adalah kelakuan dimana \textit{child class} bisa melakukan suatu \textit{task} atau fitur yang sama seperti \textit{parent class} dengan cara yang berbeda\autocite{education-erin-oop-2020}.
-\end{enumerate} 
+          \textit{Child class} adalah sebuah \textit{class} yang akan menuruni semua atribut dan fitur dari \textit{parent class}, tapi apabila dari satu \textit{parent class} memiliki 2 \textit{child class} yang memiliki fitur yang sama tapi cara melakukannya yang berbeda? contoh pisang goreng adalah sebuah makanan, tapi tidak semua makanan adalah pisang goreng, ada perubahan dari cara memasak dan cara penyajian ditiap - tiap makanan, disini konsep \textit{polymorphism} dapat dipakai. Secara definisi \textit{polymorphism} adalah kelakuan dimana \textit{child class} bisa melakukan suatu \textit{task} atau fitur yang sama seperti \textit{parent class} dengan cara yang berbeda\autocite{education-erin-oop-2020}.
+\end{enumerate}
 
-    
+
 \newpage
 \subsection*{2.2 \textit{Funtional Programming}}
 \addcontentsline{toc}{subsection}{\protect\numberline{}2.2 \textit{Functional Programming}}
@@ -194,14 +194,25 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
 
 
 \begin{itemize}
-    \item \textit{Declarative programming} adalah sebuah pendekatan \textit{programming} dimana sebuah kode untuk melakukan sesuatu akan ditulis menggunakan \textit{expressions} yang mendeskripsikan logika dari suatu program. Berbeda dengan Imperatif atau \textit{Procedural Programming} dimana akan ditulis secara detail bagaimana untuk melakukan sesuatu untuk mencapai hasil yang diinginkan\autocite{atencio2016functional}. 
-    \item \textit{Pure functions} adalah \textit{function} yang memiliki dua sifat, yaitu pertama, sebuah pure function hanya dan hanya bergantung pada input yang diberikan dan tidak dengan \textit{state} yang tersembunyi dan/atau external (diluar function tersebut) dan kedua, tidak merubah apapun yang diluar dari \textit{function} tersebut seperti obyek global atau parameter yang di \textit{pass} ke \textit{function} tersebut \autocite{atencio2016functional}. 
+    \item \textit{Declarative programming} adalah sebuah pendekatan \textit{programming} dimana sebuah kode untuk melakukan sesuatu akan ditulis menggunakan \textit{expressions} yang mendeskripsikan logika dari suatu program. Berbeda dengan Imperatif atau \textit{Procedural Programming} dimana akan ditulis secara detail bagaimana untuk melakukan sesuatu untuk mencapai hasil yang diinginkan\autocite{atencio2016functional}.
+    \item \textit{Pure functions} adalah \textit{function} yang memiliki dua sifat, yaitu pertama, sebuah pure function hanya dan hanya bergantung pada input yang diberikan dan tidak dengan \textit{state} yang tersembunyi dan/atau external (diluar function tersebut) dan kedua, tidak merubah apapun yang diluar dari \textit{function} tersebut seperti obyek global atau parameter yang di \textit{pass} ke \textit{function} tersebut \autocite{atencio2016functional}.
     \item \textit{Referential transparency} adalah ketika sebuah \textit{function} menghasilkan hasil yang sama juga diberikan input yang sama \autocite{atencio2016functional}.
-    \item \textit{Immutability} adalah dimana dalam \textit{Functional Programming} untuk melestarikan sebuah data supaya \textit{Immutable} tidak bisa diganti setelah di deklarasi. Dalam konsep ini yang perlu diperhatikan adalah object seperti \textit{array} yang dapat berubah konten atau valuenya dalam sebuah function \autocite{atencio2016functional}.  
+    \item \textit{Immutability} adalah dimana dalam \textit{Functional Programming} untuk melestarikan sebuah data supaya \textit{Immutable} tidak bisa diganti setelah di deklarasi. Dalam konsep ini yang perlu diperhatikan adalah object seperti \textit{array} yang dapat berubah konten atau valuenya dalam sebuah function \autocite{atencio2016functional}.
 \end{itemize}
 
-\subsection*{2.3 \textit{Architectural Design}}
-\addcontentsline{toc}{subsection}{\protect\numberline{}2.3 \textit{Architectural Design}}
+\subsection*{2.3 \textit{Architectural Pattern}}
+\addcontentsline{toc}{subsection}{\protect\numberline{}2.3 \textit{Architectural Pattern}}
+\textit{Architectural Pattern} merupakan seperangkat prinsip dan pola kasar yang menyediakan kerangka kerja abstrak dari sebuah sistem. \textit{Architectural Pattern} menggambarkan struktural fundamental dari suatu organisasi atau skema untuk sebuah sistem yang kompleks. \textit{Architectural Pattern} dapat digunakan sebagai solusi umum yang dapat digunakan kembali \textit{(reusable)} untuk memecahkan permasalahan yang biasa terjadi dalam sebuah \textit{software architecture} didalam konteks tertentu\autocite*{architectural-pattern}. Dalam artian, \textit{Architectural Pattern} mirip dengan \textit{Design Pattern}, tetapi memiliki cakupan yang lebih luas\autocite*{archi-pattern}.
+\begin{itemize}
+    \item \textit{Object-Oriented Architecture (OOA)}\\
+          \textit{Object-Oriented Architecture} dapat digunakan jika ingin mengenkapsulasi logika dan data bersama-sama dalam komponen yang dapat digunakan kembali. \textit{Business Logic} yang kompleks yang membutuhkan abstraksi dan \textit{dynamic behaviour} dapat secara efektif menggunakan arsitektur jenis ini juga.
+    \item \textit{Layered/Tiered Architecture}\\
+          \textit{Layered/Tiered Architecture} merupakan salah satu jenis \textit{architectural pattern} yang sangat sering digunakan\autocite*{architectural-pattern}. Arsitektur jenis ini dapat digunakan untuk menyusun program yang dapat didekomposisikan menjadi beberapa kelompok \textit{subtasks}, yang masing-masing berada pada tingkat abstraksi tertentu. Setiap \textit{layer} menyediakan layanan \textit{(services)} ke \textit{layer} berikutnya yang lebih tinggi. Terdapat empat \textit{layer} utama didalam arsitektur jenis ini, yakni \textbf{\textit{Presentation Layer}}, \textbf{\textit{Application Layer}}, \textbf{\textit{Business Logic Layer}} dan \textbf{\textit{Data Access Layer}}. Arsitektur jenis ini biasanya digunakan pada aplikasi desktop dan \textit{web e-commerce} pada umumnya\autocite*{archi-pattern}.
+    \item \textit{Event-Driven Architecture (EDA)}\\
+          \textit{Event-Driven Architecture (EDA)} biasanya didasarkan pada \textit{communication model} yang digerakkan oleh pesan asinkron untuk menyebarkan informasi ke seluruh organisasi/perusahaan. \textit{EDA} mendukung \textit{allignment} yang lebih alami dengan model operasional organisasi dengan menggambarkan \textit{business activity} nya sebagai suatu rangkaian \textit{event}/peristiwa\autocite*{architectural-pattern}.
+    \item \textit{Model-View-Controller Architecture (MVC)}\\
+          \textit{Model-View-Controller Architecture} atau biasa juga disebut sebagai \textbf{MVC}, merupakan sebuah jenis \textit{architectural pattern} yang membagi sistem aplikasinya menjadi tiga bagian, yakni \textbf{\textit{Model}}, \textbf{\textit{View}} dan \textbf{\textit{Controller}}. \textbf{\textit{Model}} merupakan fungsi inti dari aplikasi dan menyimpan data, \textbf{\textit{View}} merupakan sebuah \textit{user interface (UI)} yang dapat dilihat atau berinteraksi dengan pengguna secara langsung dan \textbf{\textit{Controller}} sebagai penghubung antara \textit{model} dengan \textit{view} serta yang mengatur \textit{input} dari pengguna. Arsitektur jenis ini paling sering digunakan untuk membuat sebuah aplikasi berbasis \textit{web}\autocite*{archi-pattern}.
+\end{itemize}
 
 \subsection*{2.4 \textit{Design Pattern}}
 \addcontentsline{toc}{subsection}{\protect\numberline{}2.4 \textit{Design Pattern}}
@@ -209,13 +220,13 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
 \textit{Design Pattern} secara definisi adalah sesuatu cara komunikasi tiap obyek dan \textit{class} yang dikostumisasi untuk memecahkan masalah desain general didalam konteks tertentu, \textit{design pattern} membantu untuk membuat \textit{object oriented design} yang dapat digunakan secara berulang, dengan cara memberi nama, mengabstraksi, dna mengidentifikasi kunci aspek dari struktur desain tertentu\autocite{design-pattern-2588942}.
 \begin{itemize}
     \item \textit{Facade}\\
-    \textit{Facade} adalah sesuatu \textit{class} yang memberikan \textit{interface} yang simpel ke sub-sistem yang kompleks, \textit{design pattern} ini dapat digunakan ketika butuh mengintegrasikan sesuatu \textit{library} dengan fitur yang sangat banyak tapi hanya butuh menggunakan beberapa fiturnya saja\autocite{refactoring-guru}. \textit{Singleton} juga memberikan global \textit{access point} ke instansi \textit{class} tersebut, jadi semua \textit{class} dan \textit{object} dapat membaca \textit{value} yang sama dan merubah \textit{value} tersebut secara keseluruhan\autocite{refactoring-guru}.
+          \textit{Facade} adalah sesuatu \textit{class} yang memberikan \textit{interface} yang simpel ke sub-sistem yang kompleks, \textit{design pattern} ini dapat digunakan ketika butuh mengintegrasikan sesuatu \textit{library} dengan fitur yang sangat banyak tapi hanya butuh menggunakan beberapa fiturnya saja\autocite{refactoring-guru}. \textit{Singleton} juga memberikan global \textit{access point} ke instansi \textit{class} tersebut, jadi semua \textit{class} dan \textit{object} dapat membaca \textit{value} yang sama dan merubah \textit{value} tersebut secara keseluruhan\autocite{refactoring-guru}.
     \item \textit{Singleton}\\
-    \textit{Singleton} digunakan untuk menjamin bahwa suatu \textit{class} hanya memiliki satu \textit{instance}, \textit{design pattern} ini berguna saat ingin mengontrol sebuah \textit{shared resources} seperti \textit{database}\autocite{refactoring-guru}.
+          \textit{Singleton} digunakan untuk menjamin bahwa suatu \textit{class} hanya memiliki satu \textit{instance}, \textit{design pattern} ini berguna saat ingin mengontrol sebuah \textit{shared resources} seperti \textit{database}\autocite{refactoring-guru}.
     \item \textit{Builder}\\
-    \textit{Design pattern} ini dibuat untuk memecahkan masalah ketika ada sebuah \textit{class} yang saat dibuat menjadi sebuah \textit{object} tidak semua atributnya diisi, tanpa harus membuat \textit{contructor} atau \textit{child class} banyak. \textit{Builder} mengekstrasi \textit{building steps} saat membuat suatu \textit{object} dari sebuah \textit{class} dan memindahkannya ke \textit{class} terpisah\autocite{refactoring-guru}.
+          \textit{Design pattern} ini dibuat untuk memecahkan masalah ketika ada sebuah \textit{class} yang saat dibuat menjadi sebuah \textit{object} tidak semua atributnya diisi, tanpa harus membuat \textit{contructor} atau \textit{child class} banyak. \textit{Builder} mengekstrasi \textit{building steps} saat membuat suatu \textit{object} dari sebuah \textit{class} dan memindahkannya ke \textit{class} terpisah\autocite{refactoring-guru}.
     \item \textit{Template Method}\\
-    \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
+          \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
 \end{itemize}
 
 \newpage
@@ -247,22 +258,22 @@ Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang ka
 \begin{figure}[h]
     \begin{longtable}{|m{2cm}|p{5cm}|p{5cm}|}
         \hline
-        Aplikasi & Positif & Negatif \\ 
+        Aplikasi & Positif                                                     & Negatif             \\
         \hline
-        Reddit 
-        &   + \textit{community} yang sudah besar \newline 
-            + System handling \textit{post} dan komen sudah \textit{robust} \newline 
-            + Interaksi antara user sudah bagus 
-        &   - Bukan marketplace \newline 
-            - Tidak cocok untuk memberi rating konkrit kepada barang \newline 
-            - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\ 
+        Reddit
+                 & + \textit{community} yang sudah besar \newline
+        + System handling \textit{post} dan komen sudah \textit{robust} \newline
+        + Interaksi antara user sudah bagus
+                 & - Bukan marketplace \newline
+        - Tidak cocok untuk memberi rating konkrit kepada barang \newline
+        - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
         \hline
         Tokopedia
-        &   + Proses shipping dan payment sudah berbagai macam \newline  
-            + Banyak promo yang bisa didapatkan user  
-        &   - Tidak bisa mengelompokkan item berdasarkan hobi \newline 
-            - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline 
-            - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang \\ 
+                 & + Proses shipping dan payment sudah berbagai macam \newline
+        + Banyak promo yang bisa didapatkan user
+                 & - Tidak bisa mengelompokkan item berdasarkan hobi \newline
+        - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline
+        - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang                               \\
         \hline
     \end{longtable}
     \caption{Tabel perbandingan aplikasi serupa}
@@ -270,7 +281,7 @@ Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang ka
 
 \subsubsection*{3.2.2 Analisis permasalah}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 Analisis permasalah}
-Salah satu pertanyaan adalah "Apakah anda takut untuk mengambil hobi baru karena tidak tau mulai dari mana?" dan dengan responden menjawab 69.2\% iya mereka takut untuk mengambil hobi baru karena alasan yang disebut, beberapa alasan kenapa banyak orang takut untuk mengambil hobi baru adalah, 
+Salah satu pertanyaan adalah "Apakah anda takut untuk mengambil hobi baru karena tidak tau mulai dari mana?" dan dengan responden menjawab 69.2\% iya mereka takut untuk mengambil hobi baru karena alasan yang disebut, beberapa alasan kenapa banyak orang takut untuk mengambil hobi baru adalah,
 \begin{itemize}
     \item mereka tidak tahu apa yang harus dibeli sebagai \textit{beginner};
     \item mereka tidak tahu apa yang mereka beli cocok untuk \textit{interest level} mereka atau tidak;
@@ -293,57 +304,57 @@ Untuk orang yang tidak punya waktu untuk melihat semua itu, \textit{project} ini
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.3.1 \textit{Software Design Document}}
 \begin{enumerate}[label=\alph*. ]
     \item Deskripsi \textit{software}
-    
-    \textit{Shumishumi} adalah sebuah marketplace dimana user bisa membeli suatu barang sesuai dengan hobi dan setinggi apa \textit{interest level} mereka. Tujuan dari aplikasi ini adalah mempermudah pengguna pembeli untuk mencari barang hobi yang cocok, mempermudah penjual dalam mempromosikan barang-nya kepada pelanggan dengan fitur filter \textit{Interest Level}. 
+
+          \textit{Shumishumi} adalah sebuah marketplace dimana user bisa membeli suatu barang sesuai dengan hobi dan setinggi apa \textit{interest level} mereka. Tujuan dari aplikasi ini adalah mempermudah pengguna pembeli untuk mencari barang hobi yang cocok, mempermudah penjual dalam mempromosikan barang-nya kepada pelanggan dengan fitur filter \textit{Interest Level}.
 
 
-    \textit{Shumishumi} juga bisa menjadi sarana untuk berdiskusi mengenai topik dan hobi yang diminati, dengan fitur ini kami berharap dapa mempermudah \textit{user} mencari dan memasuki hobi baru.
+          \textit{Shumishumi} juga bisa menjadi sarana untuk berdiskusi mengenai topik dan hobi yang diminati, dengan fitur ini kami berharap dapa mempermudah \textit{user} mencari dan memasuki hobi baru.
 
     \item Fungsi-fungsi \textit{software}
-    
 
-    Fungsi dari proyek ini dibagi menjadi dua perspektif, perspektif dari pembeli dan perspektif dari penjual.
-    \begin{itemize}
-        \item Perspektif dari pembeli
 
-        Pembeli bisa mencari sebuah barang secara spesifik menggunakan nama atau siapa yang menjual barang tersebut, tapi bagi penjual yang baru ingin memasuki suatu hobi, mereka bisa mengutilisasikan fitur filter bedasarkan hobi apa yang ingin mereka masuki dan \textit{interest level} mereka. Selain itu juga pembeli juga bisa membuat review tentang barang yang mereka jual, bagaimana kualitas dari barang tersebut dan apakah barang tersebut memenuhi kriteria \textit{interest level} yang ditujukan.
+          Fungsi dari proyek ini dibagi menjadi dua perspektif, perspektif dari pembeli dan perspektif dari penjual.
+          \begin{itemize}
+              \item Perspektif dari pembeli
 
-        Selain itu juga pembeli bisa membuat suatu \textit{post} atau \textit{comment} tentang hobi mereka, atau membaca \textit{post} yang sudah dibuat oleh pembeli lain untuk membantu mereka mendalami hobi yang mereka punya.
+                    Pembeli bisa mencari sebuah barang secara spesifik menggunakan nama atau siapa yang menjual barang tersebut, tapi bagi penjual yang baru ingin memasuki suatu hobi, mereka bisa mengutilisasikan fitur filter bedasarkan hobi apa yang ingin mereka masuki dan \textit{interest level} mereka. Selain itu juga pembeli juga bisa membuat review tentang barang yang mereka jual, bagaimana kualitas dari barang tersebut dan apakah barang tersebut memenuhi kriteria \textit{interest level} yang ditujukan.
 
-        \item Perspektif dari penjual
+                    Selain itu juga pembeli bisa membuat suatu \textit{post} atau \textit{comment} tentang hobi mereka, atau membaca \textit{post} yang sudah dibuat oleh pembeli lain untuk membantu mereka mendalami hobi yang mereka punya.
 
-        Penjual bisa menjual barang, saat memasukan barang yang ingin dijual penjual harus memasukan barang itu terkait dengan hobi apa dan ditujukkan ke \textit{interest level} mana, selain itu penjual juga bisa melihat sebuah \textit{dashboard} yang berisikan \textit{review} dari pembeli dan berapa banyak barang yang sudah mereka jual.
-    \end{itemize}
+              \item Perspektif dari penjual
 
-    % sequence diagram
+                    Penjual bisa menjual barang, saat memasukan barang yang ingin dijual penjual harus memasukan barang itu terkait dengan hobi apa dan ditujukkan ke \textit{interest level} mana, selain itu penjual juga bisa melihat sebuah \textit{dashboard} yang berisikan \textit{review} dari pembeli dan berapa banyak barang yang sudah mereka jual.
+          \end{itemize}
+
+          % sequence diagram
 
     \item Kebutuhan teknologi
 
-    \begin{enumerate}
-        \item \textit{Back end} 
+          \begin{enumerate}
+              \item \textit{Back end}
 
-        \textit{Back end} atau bisa disebut juga \textit{developer's end} adalah sebuah layer yang memproses semuanya dibelakang layar dan tempat terjadinya sesuatu yang tidak bisa dilihat oleh \textit{user}\autocite{letsgodojo-frontend-backend}. Analogy yang bisa digunakan adalah saat disebuah restoran ada pelanggan yang memesan sesuatu yang spesifik ke pelayan, ini adalah bagian \textit{front end} dari restoran tersebut, setelah itu pelayan memberikan pesanan tersebut ke koki, yang akan mengambil bahan masak, momotong semua bahan - bahan tersebut, dan memasaknya sesuai resep yang sudah dibuat, koki ini yang merepresentasikan bagian \textit{backend} dari restoran tersebut\autocite{codecademy-backend}. 
+                    \textit{Back end} atau bisa disebut juga \textit{developer's end} adalah sebuah layer yang memproses semuanya dibelakang layar dan tempat terjadinya sesuatu yang tidak bisa dilihat oleh \textit{user}\autocite{letsgodojo-frontend-backend}. Analogy yang bisa digunakan adalah saat disebuah restoran ada pelanggan yang memesan sesuatu yang spesifik ke pelayan, ini adalah bagian \textit{front end} dari restoran tersebut, setelah itu pelayan memberikan pesanan tersebut ke koki, yang akan mengambil bahan masak, momotong semua bahan - bahan tersebut, dan memasaknya sesuai resep yang sudah dibuat, koki ini yang merepresentasikan bagian \textit{backend} dari restoran tersebut\autocite{codecademy-backend}.
 
-        \textit{Back end} terdiri dari dua hal, \textit{servers} yang akan meproses data dan \textit{request} dari sebuah user dan \textit{database} yang akan menyimpan data yang sudah atau yang akan mau diproses\autocite{codecademy-backend}. Dalam proyek ini, kami akan menggunakan \textit{springboot} sebagai \textit{framework} yang digunakan untuk membuat \textit{software back end}-nya dan \textit{\textbf{MySQL}} sebagai database yang digunakan.
+                    \textit{Back end} terdiri dari dua hal, \textit{servers} yang akan meproses data dan \textit{request} dari sebuah user dan \textit{database} yang akan menyimpan data yang sudah atau yang akan mau diproses\autocite{codecademy-backend}. Dalam proyek ini, kami akan menggunakan \textit{springboot} sebagai \textit{framework} yang digunakan untuk membuat \textit{software back end}-nya dan \textit{\textbf{MySQL}} sebagai database yang digunakan.
 
-        \textit{Springboot} adalah \textit{java back end framework} yang paling populer didunia, \textit{springboot} membuat menulis \textit{software back end} menjadi lebih mudah dan lebih cepat\autocite{spring-framework}, alasan kenapa kami menggunakan \textit{springboot} adalah sebagai berikut:
-        \begin{itemize}
-            \item \textit{Springboot} mempunyai banyak \textit{plugin} yang dapat di\textit{install};
-            \item komunitas \textit{springboot} itu sangat besar;
-            \item dan yang terakhir \textit{springboot} memiliki fitur \textit{Inversion of Control} dan \textit{Dependency Injection}.
-        \end{itemize}
+                    \textit{Springboot} adalah \textit{java back end framework} yang paling populer didunia, \textit{springboot} membuat menulis \textit{software back end} menjadi lebih mudah dan lebih cepat\autocite{spring-framework}, alasan kenapa kami menggunakan \textit{springboot} adalah sebagai berikut:
+                    \begin{itemize}
+                        \item \textit{Springboot} mempunyai banyak \textit{plugin} yang dapat di\textit{install};
+                        \item komunitas \textit{springboot} itu sangat besar;
+                        \item dan yang terakhir \textit{springboot} memiliki fitur \textit{Inversion of Control} dan \textit{Dependency Injection}.
+                    \end{itemize}
 
-        \item \textit{Front end}
-        
-        \textit{Front End} adalah sebuah bagian dari halaman web yang dimana merupakan tempat interaksi pengguna, \textit{Front End} sebagai tempat interaksi pengguna maka merupakan bagian dari sebuah halaman yang sangat sering dilihat oleh pengguna kebalikan dari \textit{Back End}\autocite{codecademy-frontend}.
-        
-        \textit{Javascript} adalah bahasa pemrograman terkompilasi yang memiliki karakteristik ringan untuk dijalankan, \textit{interpreted} dan juga dengan fitur \textit{first-class functions} dimana \textit{function} dianggap seperti variabel biasa lainnya seperti \textit{string, number,} dan lain-lain. Yang dimana penggunaan \textit{Javascript} paling terkenal dan banyak digunakkan adalah dalam bahasa untuk \textit{Web} atau situs internet\autocite{javascript-mdn}.
+              \item \textit{Front end}
 
-        \textit{Typescript} adalah bahasa pemrograman yang dibuat untuk memecahkan beberapa permasalahan yang ada di dalam bahasa \textit{Javascript}, salah satu contohnya adalah dengan \textit{Typescript} penggunaan \textit{Type-annotation} dapat digunakkan untuk memberi tipe dari variabel sehingga permasalahan yang mungkin dapat muncul karena karakteristik \textit{Javascript} yang \textit{loosely typed} dapat diatasi\autocite{fenton2014pro}.
+                    \textit{Front End} adalah sebuah bagian dari halaman web yang dimana merupakan tempat interaksi pengguna, \textit{Front End} sebagai tempat interaksi pengguna maka merupakan bagian dari sebuah halaman yang sangat sering dilihat oleh pengguna kebalikan dari \textit{Back End}\autocite{codecademy-frontend}.
 
-	    \textit{React} adalah sebuah Library untuk bahasa pemrograman \textit{Javascript} (\textit{Typescript} juga bisa) untuk membuat \textit{UI}. Fitur dari \textit{React} adalah \textit{React} menganut \textit{Declarative Programming} dan juga \textit{Functional Programming},\textit{Component Based}, \textit{Hooks} dan \textit{Lifecycle Hooks}\autocite{react-general}. \textit{Hooks} dan \textit{Lifecycle Hooks} adalah sebuah fitur yang diimplementasikan pada \textit{React v16.8} yang memberi alternatif dari menggunakkan \textit{class} untuk komponen\autocite{react-hooks, react-hooks-lifecycle}. 
+                    \textit{Javascript} adalah bahasa pemrograman terkompilasi yang memiliki karakteristik ringan untuk dijalankan, \textit{interpreted} dan juga dengan fitur \textit{first-class functions} dimana \textit{function} dianggap seperti variabel biasa lainnya seperti \textit{string, number,} dan lain-lain. Yang dimana penggunaan \textit{Javascript} paling terkenal dan banyak digunakkan adalah dalam bahasa untuk \textit{Web} atau situs internet\autocite{javascript-mdn}.
 
-    \end{enumerate}
+                    \textit{Typescript} adalah bahasa pemrograman yang dibuat untuk memecahkan beberapa permasalahan yang ada di dalam bahasa \textit{Javascript}, salah satu contohnya adalah dengan \textit{Typescript} penggunaan \textit{Type-annotation} dapat digunakkan untuk memberi tipe dari variabel sehingga permasalahan yang mungkin dapat muncul karena karakteristik \textit{Javascript} yang \textit{loosely typed} dapat diatasi\autocite{fenton2014pro}.
+
+                    \textit{React} adalah sebuah Library untuk bahasa pemrograman \textit{Javascript} (\textit{Typescript} juga bisa) untuk membuat \textit{UI}. Fitur dari \textit{React} adalah \textit{React} menganut \textit{Declarative Programming} dan juga \textit{Functional Programming},\textit{Component Based}, \textit{Hooks} dan \textit{Lifecycle Hooks}\autocite{react-general}. \textit{Hooks} dan \textit{Lifecycle Hooks} adalah sebuah fitur yang diimplementasikan pada \textit{React v16.8} yang memberi alternatif dari menggunakkan \textit{class} untuk komponen\autocite{react-hooks, react-hooks-lifecycle}.
+
+          \end{enumerate}
 
 \end{enumerate}
 
