@@ -141,6 +141,51 @@ Metode Penelitian yang digunakkan adalah metode penelitian kualitatif, yang bers
 
 Pengumpulan data yang dilakukan adalah dengan membuat form survei menggunakan \textit{Google Form} untuk mendapatkan pendapat atas pertanyaan-pertanyaan yang terkait dengan alasan dari pembuatan aplikasi pada proyek ini. Dari hal mengenai pembelian barang hobi hingga tingkat kesulitan dalam menemukan barang yang cocok. Dari semua jawaban survei yang dikumpulkan tersebutlah, dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang proyek ini butuhkan. 
 
+\subsection*{1.6 Aplikasi Serupa}
+\addcontentsline{toc}{subsection}{\protect\numberline{}1.6 Aplikasi Serupa}
+Untuk aplikasi serupa dari apa yang diusulkan diproyek ini, bisa dibagi menjadi dua kategori, sebuah \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Dengan kriteria tersebut, ada beberapa aplikasi yang dapat dibandingkan, seperti
+\begin{longtable}{|m{2cm}|p{5cm}|p{5cm}|}
+    \hline
+    Aplikasi & Positif                                                     & Negatif             \\
+    \hline
+    Reddit
+        & + \textit{community} yang sudah besar \newline
+            + System handling \textit{post} dan komen sudah \textit{robust} \newline
+            + Interaksi antara user sudah bagus
+        & - Bukan marketplace \newline
+            - Tidak cocok untuk memberi rating konkrit kepada barang \newline
+            - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
+    \hline
+    Tokopedia
+        & + Proses shipping dan payment sudah berbagai macam \newline
+            + Banyak promo yang bisa didapatkan user
+        & - Tidak bisa mengelompokkan item berdasarkan hobi \newline
+            - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline
+            - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang\\
+    \hline
+    KyouId
+        & + Bisa membeli barang dari negara lain (jepang) \newline
+            + Sudah integrasi langsung dengan banyak \textit{shipment service} yang ada di Indonesia \newline
+        & - Hanya terfokus kesatu jenis hobi \newline
+            - Tidak memiliki filter untuk \textit{interest level}\\
+    \hline
+    Lazada
+        & + Sudah meng-\textit{support} berbagai macam cara pembarayan\newline
+            + Sudah integrasi langsung dengan banyak \textit{shipment service} yang ada di Indonesia \newline
+            + Banyak kategori barang yang sudah ada
+        & - Tidak bisa mengelompokkan item berdasarkan hobi \newline
+            - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \\
+    \hline
+    Amazon
+        & + Memiliki \textit{internation shipping} hampir ke semua negara \newline
+            + Sudah memiliki support untuk berbagai macam mata uang \newline
+            + Miliki \textit{buyer protection} yang sangat bagus
+        & - Tidak memiliki filter yang bedasarkan hobi dan \textit{interest level} \newline
+            - Karena \textit{size} amazon yang sudah besar, banyak \textit{scammer} dan \textit{scalper} yang berkeliaran \newline
+            - Tempat yang disediakan untuk berdisuksi sangat terbatas\\
+    \hline
+\end{longtable}
+
 \newpage
 \section*{Bab 2. Tinjauan Pustaka}
 \addcontentsline{toc}{section}{\protect\numberline{}Bab 2. Tinjauan Pustaka}
@@ -430,7 +475,7 @@ Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ra
 \subsubsection*{3.2.2 \textit{Timeline}}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 \textit{Timeline}}
 
-Karena proyek ini menggunakan \textit{agile} sebagai \textbf{SDLC} yang digunakan, maka \textit{timeline} ini dipisah menjadi satu bulan pertama untuk \textit{planning} dan lima bulan yangd dipisah menjadi lima \textit{sprint} yang berbeda. Dalam satu \textit{sprint} akan dipisah lagi menjadi tiga minggu untuk masa \textit{development frontend} dan \textit{backend} secara bersamaan dan satu minggu akan dipakai untuk masa \textit{testing} untuk memastikan fitur yang di\textit{develop} tidak menggangu fitur yang sudah ada dan bisa digunakan.
+Karena proyek ini menggunakan \textit{agile} sebagai \textbf{SDLC} yang digunakan, maka \textit{timeline} ini dipisah menjadi satu bulan pertama untuk \textit{planning} dan lima bulan yangd dipisah menjadi lima \textit{sprint} yang berbeda. Dalam satu \textit{sprint} akan dipisah lagi menjadi satu minggu pertama untuk melakukan \textit{spring planning}, dua minggu untuk masa \textit{development frontend} dan \textit{backend} secara bersamaan dan satu minggu akan dipakai untuk masa \textit{testing} untuk memastikan fitur yang di\textit{develop} tidak menggangu fitur yang sudah ada dan bisa digunakan.
 
 \begin{figure}[h]
     \includegraphics[width=13cm]{sprint timeline.png}
@@ -445,50 +490,6 @@ Karena proyek ini menggunakan \textit{agile} sebagai \textbf{SDLC} yang digunaka
 \end{figure}
 
 \newpage
-\subsection*{3.3 Aplikasi Serupa}
-\addcontentsline{toc}{subsection}{\protect\numberline{}3.3 Aplikasi Serupa}
-Untuk aplikasi serupa dari apa yang diusulkan diproyek ini, bisa dibagi menjadi dua kategori, sebuah \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Dengan kriteria tersebut, ada beberapa aplikasi yang dapat dibandingkan, seperti
-\begin{longtable}{|m{2cm}|p{5cm}|p{5cm}|}
-    \hline
-    Aplikasi & Positif                                                     & Negatif             \\
-    \hline
-    Reddit
-        & + \textit{community} yang sudah besar \newline
-            + System handling \textit{post} dan komen sudah \textit{robust} \newline
-            + Interaksi antara user sudah bagus
-        & - Bukan marketplace \newline
-            - Tidak cocok untuk memberi rating konkrit kepada barang \newline
-            - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
-    \hline
-    Tokopedia
-        & + Proses shipping dan payment sudah berbagai macam \newline
-            + Banyak promo yang bisa didapatkan user
-        & - Tidak bisa mengelompokkan item berdasarkan hobi \newline
-            - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline
-            - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang\\
-    \hline
-    KyouId
-        & + Bisa membeli barang dari negara lain (jepang) \newline
-            + Sudah integrasi langsung dengan banyak \textit{shipment service} yang ada di Indonesia \newline
-        & - Hanya terfokus kesatu jenis hobi \newline
-            - Tidak memiliki filter untuk \textit{interest level}\\
-    \hline
-    Lazada
-        & + Sudah meng-\textit{support} berbagai macam cara pembarayan\newline
-            + Sudah integrasi langsung dengan banyak \textit{shipment service} yang ada di Indonesia \newline
-            + Banyak kategori barang yang sudah ada
-        & - Tidak bisa mengelompokkan item berdasarkan hobi \newline
-            - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \\
-    \hline
-    Amazon
-        & + Memiliki \textit{internation shipping} hampir ke semua negara \newline
-            + Sudah memiliki support untuk berbagai macam mata uang \newline
-            + Miliki \textit{buyer protection} yang sangat bagus
-        & - Tidak memiliki filter yang bedasarkan hobi dan \textit{interest level} \newline
-            - Karena \textit{size} amazon yang sudah besar, banyak \textit{scammer} dan \textit{scalper} yang berkeliaran \newline
-            - Tempat yang disediakan untuk berdisuksi sangat terbatas\\
-    \hline
-\end{longtable}
 
 
 % \subsubsection*{3.2.2 Perancangan Sistem}
