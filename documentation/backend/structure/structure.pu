@@ -1,3 +1,35 @@
 @startuml backend structure
+    Actor user as u
+    Participant "Front End" as fe
+ 
+    box "Back End" #LightBlue
+        Participant Controller as co
+        Participant Facade as f
+        Participant FacadeImpl as fImpl
+        Participant Validator as v
+        Participant Processor as p
+        Participant Service as s
+        Participant ServiceImpl as sImpl
+        Participant Dalgen as dg
+    end box
+    Database Database as db
+
+    fe -> co : controller api call <color:red>localhost:8080/some/url.json
+    co -> f : request
+    f -> fImpl : to facade implementation
+    fImpl -> v : validate request
+    fImpl -> p : process request
+
+    p -> s : call service
+    s -> sImpl : to service implementation
+    sImpl -> dg : sql operation (select, update, delete)
+    dg -> db : <color:red> sql statement
+    p <-- sImpl : return result
+
+    fImpl <-- p : return result
+
+    co <-- fImpl : return result
+
+    fe <-- co : <color:red>return json result
 
 @enduml
