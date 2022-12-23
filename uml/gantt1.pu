@@ -2,15 +2,17 @@
 [Planning And Requirement Analysis] lasts 7 days
 [Definining Requirements] lasts 7 days
 [Designing Architecture] lasts 14 days
-[Sprint 1] lasts 31 days
-[Sprint 2] lasts 31 days
+[Sprint 1] lasts 30 days
+[Sprint 2] lasts 30 days
 
-[FE Development Phase sprint 1] lasts 21 days 
-[BE Development Phase sprint 1] lasts 21 days
+[Sprint 1 planning] lasts 7 days
+[FE Development Phase sprint 1] lasts 14 days 
+[BE Development Phase sprint 1] lasts 14 days
 [Testing Phase sprint 1] lasts 7 days
 
-[FE Development Phase sprint 2] lasts 21 days 
-[BE Development Phase sprint 2] lasts 21 days
+[Sprint 2 planning] lasts 7 days
+[FE Development Phase sprint 2] lasts 14 days 
+[BE Development Phase sprint 2] lasts 14 days
 [Testing Phase sprint 2] lasts 7 days
 
 Project starts 2023-03-01
@@ -19,11 +21,13 @@ Project starts 2023-03-01
 [Designing Architecture] starts 2023-03-15
 [Sprint 1] starts 2023-04-01
 [Sprint 2] starts 2023-05-01
-[FE Development Phase sprint 1] starts 2023-04-01 
-[BE Development Phase sprint 1] starts 2023-04-01
+[Sprint 1 planning] starts 2023-04-01
+[FE Development Phase sprint 1] starts 2023-04-08 
+[BE Development Phase sprint 1] starts 2023-04-08
 [Testing Phase sprint 1] starts 2023-04-22
 
-[FE Development Phase sprint 2] starts 2023-05-01 
-[BE Development Phase sprint 2] starts 2023-05-01
+[Sprint 2 planning] starts 2023-05-01
+[FE Development Phase sprint 2] starts 2023-05-08 
+[BE Development Phase sprint 2] starts 2023-05-08
 [Testing Phase sprint 2] starts 2023-05-22
 @endgantt
