@@ -8,6 +8,7 @@
 *.log
 *.xml
 *.gz
+*.out
 *.toc
 *(busy)
 
