@@ -1,32 +1,39 @@
 @startgantt sprint timeline 2
-[Sprint 3] lasts 31 days
-[Sprint 4] lasts 31 days
-[Sprint 5] lasts 31 days
-[FE Development Phase sprint 3] lasts 21 days 
-[BE Development Phase sprint 3] lasts 21 days
+[Sprint 3] lasts 30 days
+[Sprint 4] lasts 30 days
+[Sprint 5] lasts 30 days
+[Sprint 3 planning] lasts 7 days
+[FE Development Phase sprint 3] lasts 14 days 
+[BE Development Phase sprint 3] lasts 14 days
 [Testing Phase sprint 3] lasts 7 days
 
-[FE Development Phase sprint 4] lasts 21 days 
-[BE Development Phase sprint 4] lasts 21 days
+[Sprint 4 planning] lasts 7 days
+[FE Development Phase sprint 4] lasts 14 days 
+[BE Development Phase sprint 4] lasts 14 days
 [Testing Phase sprint 4] lasts 7 days
 
-[FE Development Phase sprint 5] lasts 21 days 
-[BE Development Phase sprint 5] lasts 21 days
+[Sprint 5 planning] lasts 7 days
+[FE Development Phase sprint 5] lasts 14 days 
+[BE Development Phase sprint 5] lasts 14 days
 [Testing Phase sprint 5] lasts 7 days
 
 Project starts 2023-06-01
 [Sprint 3] starts 2023-06-01
 [Sprint 4] starts 2023-07-01
 [Sprint 5] starts 2023-08-01
-[FE Development Phase sprint 3] starts 2023-06-01 
-[BE Development Phase sprint 3] starts 2023-06-01
+
+[Sprint 3 planning] starts 2023-06-01
+[FE Development Phase sprint 3] starts 2023-06-08 
+[BE Development Phase sprint 3] starts 2023-06-08
 [Testing Phase sprint 3] starts 2023-06-22
 
-[FE Development Phase sprint 4] starts 2023-07-01 
-[BE Development Phase sprint 4] starts 2023-07-01
+[Sprint 4 planning] starts 2023-07-01
+[FE Development Phase sprint 4] starts 2023-07-08 
+[BE Development Phase sprint 4] starts 2023-07-08
 [Testing Phase sprint 4] starts 2023-07-22
 
-[FE Development Phase sprint 5] starts 2023-08-01 
-[BE Development Phase sprint 5] starts 2023-08-01
+[Sprint 5 planning] starts 2023-08-01
+[FE Development Phase sprint 5] starts 2023-08-08 
+[BE Development Phase sprint 5] starts 2023-08-08
 [Testing Phase sprint 5] starts 2023-08-22
 @endgantt
