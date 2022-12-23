@@ -1,4 +1,4 @@
-@startuml class diagram
+@startuml ERD
 skinparam linetype ortho
 
 ' left to right direction
