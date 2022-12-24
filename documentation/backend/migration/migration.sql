@@ -290,8 +290,8 @@ CREATE TABLE
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         PRIMARY KEY (comment_id),
         FOREIGN KEY (user_id) REFERENCES users (user_id),
-        FOREIGN KEY (repply_post_id) REFERENCES posts (post_id),
-        FOREIGN KEY (repply_comment_id) REFERENCES comments (comment_id)
+        FOREIGN KEY (reply_post_id) REFERENCES posts (post_id),
+        FOREIGN KEY (reply_comment_id) REFERENCES comments (comment_id)
     );
 
 CREATE TABLE
