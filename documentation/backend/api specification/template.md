@@ -35,7 +35,7 @@
 
 | Field Name | Field type | Mandatory | Condition | Remarks                                 | Example |
 | ---------- | ---------- | --------- | --------- | --------------------------------------- | ------- |
-| isSuccess  | Boolean    | Y         |           |                                         | true    |
+| success    | Boolean    | Y         |           |                                         | true    |
 | resultMsg  | String     | Y         |           | will contain the reason API call failed | SUCCESS |
 | resultCode | String     | Y         |           | Result Code                             | SUCCESS |
 
@@ -51,7 +51,7 @@
 ```json
 {
     "resultContext" : {
-        "isSuccess": true,
+        "success": true,
         "resultMsg": "SUCCESS",
         "resultCode": "SUCCESS"
     }
