@@ -11,27 +11,35 @@
 
 ##### Body
 
-| Field Name     | Field type | Mandatory | Condition | Remarks                     | Example                          |
-| -------------- | ---------- | --------- | --------- | --------------------------- | -------------------------------- |
-| sessionId      | String     | Y         |           |                             | e39992f3048042aeae2c279074ee40bc |
-| email          | String     | N         |           | Must be unique              | test@email.com                   |
-| username       | String     | N         |           |                             | username                         |
-| phoneNumber    | String     | N         |           | Must be unique              | 08000000                         |
-| profilePicture | String     | N         |           | Must be encoded with base64 | base64 value                     |
-| newPassword    | String     | N         |           |                             | password                         |
-| password       | String     | Y         |           |                             | password                         |
+| Field Name        | Field type        | Mandatory | Condition | Remarks | Example                          |
+| ----------------- | ----------------- | --------- | --------- | ------- | -------------------------------- |
+| sessionId         | String            | Y         |           |         | e39992f3048042aeae2c279074ee40bc |
+| userUpdateContext | UserUpdateContext | Y         |           |         |                                  |
+| password          | String            | Y         |           |         | password                         |
+
+##### UserUpdateContext
+
+| Field Name     | Field type | Mandatory | Condition | Remarks                     | Example        |
+| -------------- | ---------- | --------- | --------- | --------------------------- | -------------- |
+| email          | String     | N         |           | Must be unique              | test@email.com |
+| username       | String     | N         |           |                             | username       |
+| phoneNumber    | String     | N         |           | Must be unique              | 08000000       |
+| profilePicture | String     | N         |           | Must be encoded with base64 | base64 value   |
+| password       | String     | N         |           |                             | password       |
 
 #### Example
 
 ```json
 {
     "sessionId": "e39992f3048042aeae2c279074ee40bc",
-    "email" : "test@email.com",
-    "username": "username",
-    "phoneNumber": "080000000",
-    "profilePicture": "base64 value",
     "password": "password",
-    "newPassword": "new password"
+    "userUpdateContext": {
+        "email" : "test@email.com",
+        "username": "username",
+        "phoneNumber": "080000000",
+        "profilePicture": "base64 value",
+        "password": "new password"
+    }
 }
 ```
 
