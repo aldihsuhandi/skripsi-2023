@@ -27,11 +27,11 @@
 ##### Body
 
 
-| Field Name  | Field type | Mandatory | Condition | Remarks | Example |
-| ----------- | ---------- | --------- | --------- | ------- | ------- |
-| Result Code | ResultCode | Y         |           |         |         |
+| Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
+| ------------- | ------------- | --------- | --------- | ------- | ------- |
+| resultContext | ResultContext | Y         |           |         |         |
 
-##### ResultCode
+##### ResultContext
 
 | Field Name | Field type | Mandatory | Condition | Remarks                                 | Example |
 | ---------- | ---------- | --------- | --------- | --------------------------------------- | ------- |
@@ -50,7 +50,7 @@
 
 ```json
 {
-    "resultCode" : {
+    "resultContext" : {
         "isSuccess": true,
         "resultMsg": "SUCCESS",
         "resultCode": "SUCCESS"

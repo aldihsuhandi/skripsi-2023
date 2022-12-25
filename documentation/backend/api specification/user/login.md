@@ -32,12 +32,12 @@
 ##### Body
 
 
-| Field Name  | Field type | Mandatory | Condition | Remarks                                                                                       | Example                          |
-| ----------- | ---------- | --------- | --------- | --------------------------------------------------------------------------------------------- | -------------------------------- |
-| Result Code | ResultCode | Y         |           |                                                                                               |                                  |
-| sessionId   | String     | Y         |           | session id for this specific user, will be deactivated in 5 minutes if there is no activities | e39992f3048042aeae2c279074ee40bc |
+| Field Name    | Field type    | Mandatory | Condition | Remarks                                                                                       | Example                          |
+| ------------- | ------------- | --------- | --------- | --------------------------------------------------------------------------------------------- | -------------------------------- |
+| resultContext | ResultContext | Y         |           |                                                                                               |                                  |
+| sessionId     | String        | Y         |           | session id for this specific user, will be deactivated in 5 minutes if there is no activities | e39992f3048042aeae2c279074ee40bc |
 
-##### ResultCode
+##### ResultContext
 
 | Field Name | Field type | Mandatory | Condition | Remarks                                 | Example |
 | ---------- | ---------- | --------- | --------- | --------------------------------------- | ------- |
@@ -58,7 +58,7 @@
 
 ```json
 {
-    "resultCode" : {
+    "resultContext" : {
         "isSuccess": true,
         "resultMsg": "SUCCESS",
         "resultCode": "SUCCESS"
