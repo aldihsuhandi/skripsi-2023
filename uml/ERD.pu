@@ -253,6 +253,8 @@ entity sessions{
     --
     * user_id : string <<FK>>
     * session_dt : date
+    * is_active : boolean
+    * is_remembered : boolean
     * gmt_create : date
     * gmt_modified : date
 }

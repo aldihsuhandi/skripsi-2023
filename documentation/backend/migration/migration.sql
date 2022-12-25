@@ -114,6 +114,8 @@ CREATE TABLE
         session_id VARCHAR(255) NOT NULL,
         user_id VARCHAR(255) NOT NULL,
         session_dt TIMESTAMP NOT NULL,
+        is_active BOOLEAN DEFAULT true,
+        is_remembered BOOLEAN DEFAULT false,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         PRIMARY KEY (session_id),

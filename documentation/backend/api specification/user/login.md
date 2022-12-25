@@ -2,19 +2,20 @@
 
 | field name      | remarks                       |
 | --------------- | ----------------------------- |
-| API url         | \<url\>/user/login.json       |
+| API url         | \<url\>/user/login            |
 | API description | create login session for user |
-| API methods     | post                          |
+| API methods     | POST                          |
 
 ### Request
 #### Field Table
 
 ##### Body
 
-| Field Name | Field type | Mandatory | Condition | Remarks                         | Example        |
-| ---------- | ---------- | --------- | --------- | ------------------------------- | -------------- |
-| email      | String     | Y         |           | must be formatted like an email | test@gmail.com |
-| password   | String     | Y         |           |                                 | password       |
+| Field Name   | Field type | Mandatory | Condition | Remarks                         | Example        |
+| ------------ | ---------- | --------- | --------- | ------------------------------- | -------------- |
+| email        | String     | Y         |           | must be formatted like an email | test@gmail.com |
+| password     | String     | Y         |           |                                 | password       |
+| isRemembered | Boolean    | N         |           | default value is false          | false          |
 
 #### Example
 
