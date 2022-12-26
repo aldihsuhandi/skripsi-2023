@@ -345,3 +345,8 @@ CREATE TABLE
         FOREIGN KEY (user_id) REFERENCES users (user_id),
         FOREIGN KEY (comment_id) REFERENCES comments (comment_id)
     );
+
+INSERT INTO user_roles(role_id, role_name)
+VALUES("8e6993f7-356f-4a77-9cbb-bffbde74f5fc", "USER"),
+      ("5e462578-658c-4e40-8f06-4125f8aa413e", "MERCHANT"),
+      ("ccde9d0c-eb08-482b-b2ee-76fcf2f47ef7", "ADMIN");

@@ -16,7 +16,7 @@
 | email          | String     | Y         |           | Must be unique              | test@email.com |
 | username       | String     | Y         |           |                             | username       |
 | phoneNumber    | String     | Y         |           | Must be unique              | 08000000       |
-| profilePicture | String     | N         |           | Must be encoded with base64 | base64 value   |
+| profilePicture | Blob       | N         |           | Must be encoded with base64 | base64 value   |
 | password       | String     | Y         |           |                             | password       |
 
 #### Example
