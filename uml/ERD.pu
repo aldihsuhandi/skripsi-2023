@@ -287,6 +287,15 @@ entity wishlists {
     * gmt_modified : date
 }
 
+entity clients {
+    * client_id : string
+    --
+    * client_name : string
+    * client_secret : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
 
 ' relation
 ' for transaction purposes
