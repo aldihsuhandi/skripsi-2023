@@ -85,6 +85,7 @@ entity users {
     * username : string
     * profile_picture : string
     * is_deleted : boolean
+    * password : string
     * gmt_create : date
     * gmt_modified : date
 }

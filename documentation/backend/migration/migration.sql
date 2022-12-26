@@ -73,6 +73,7 @@ CREATE TABLE
         phone_number VARCHAR(255) UNIQUE NOT NULL,
         username VARCHAR(255) NOT NULL,
         profile_picture LONGBLOB NOT NULL,
+        password VARCHAR(255) NOT NULL,
         is_deleted BOOLEAN DEFAULT false,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
