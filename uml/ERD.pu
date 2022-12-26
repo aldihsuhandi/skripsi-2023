@@ -83,7 +83,7 @@ entity users {
     * email : string <<UNIQUE>>
     * phone_number : string <<UNIQUE>>
     * username : string
-    * profile_picture : string
+      profile_picture : string
     * is_deleted : boolean
     * password : string
     * gmt_create : date
