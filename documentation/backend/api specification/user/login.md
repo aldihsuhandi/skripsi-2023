@@ -46,13 +46,13 @@
 | resultCode | String     | Y         |           | Result Code                             | SUCCESS |
 
 ###### Possible Result Code
-| Result Code          | Remarks                                             |
-| -------------------- | --------------------------------------------------- |
-| SUCCESS              | api call success                                    |
-| PARAM_ILLEGAL        | parameter value is not expected                     |
-| SYSTEM_ERROR         | unexpected system error                             |
-| USER_NOT_FOUND       | if there is no user by that specific identification |
-| AUTHENTICATION_ERROR | authentication password doesn't match               |
+| Result Code           | Remarks                                             |
+| --------------------- | --------------------------------------------------- |
+| SUCCESS               | api call success                                    |
+| PARAM_ILLEGAL         | parameter value is not expected                     |
+| SYSTEM_ERROR          | unexpected system error                             |
+| USER_NOT_FOUND        | if there is no user by that specific identification |
+| AUTHENTICATION_FAILED | authentication password doesn't match               |
 
 #### Example
 

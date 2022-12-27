@@ -47,7 +47,7 @@
 | SUCCESS              | api call success                |
 | PARAM_ILLEGAL        | parameter value is not expected |
 | SYSTEM_ERROR         | unexpected system error         |
-| AUTHENTICATION_ERROR | user is not login               |
+| SESSION_EXPIRED | user is not login               |
 
 #### Example
 
