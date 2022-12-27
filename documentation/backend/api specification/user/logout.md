@@ -9,6 +9,13 @@
 ### Request
 #### Field Table
 
+##### Head
+| Field Name   | Field type | Mandatory | Condition | Remarks | Example        |
+| ------------ | ---------- | --------- | --------- | ------- | -------------- |
+| clientId     | String     | Y         |           |         | "clientId"     |
+| clientSecret | String     | Y         |           |         | "clientSecret" |
+| sessionId    | String     | Y         |           |         | "sessionId"    |
+
 ##### Body
 
 | Field Name | Field type | Mandatory | Condition | Remarks | Example                          |
@@ -19,7 +26,14 @@
 
 ```json
 {
-    "sessionId": "e39992f3048042aeae2c279074ee40bc"
+    "head": {
+        "clientId": "clientId",
+        "clientSecret": "clientSecret",
+        "sessionId": "e39992f3048042aeae2c279074ee40bc"
+    },
+    "body": {
+        "sessionId": "e39992f3048042aeae2c279074ee40bc"
+    }
 }
 ```
 
@@ -42,11 +56,11 @@
 | resultCode | String     | Y         |           | Result Code                             | SUCCESS |
 
 ###### Possible Result Code
-| Result Code          | Remarks                         |
-| -------------------- | ------------------------------- |
-| SUCCESS              | api call success                |
-| PARAM_ILLEGAL        | parameter value is not expected |
-| SYSTEM_ERROR         | unexpected system error         |
+| Result Code     | Remarks                         |
+| --------------- | ------------------------------- |
+| SUCCESS         | api call success                |
+| PARAM_ILLEGAL   | parameter value is not expected |
+| SYSTEM_ERROR    | unexpected system error         |
 | SESSION_EXPIRED | user is not login               |
 
 #### Example

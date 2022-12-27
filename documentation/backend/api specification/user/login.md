@@ -9,6 +9,12 @@
 ### Request
 #### Field Table
 
+##### Head
+| Field Name   | Field type | Mandatory | Condition | Remarks | Example        |
+| ------------ | ---------- | --------- | --------- | ------- | -------------- |
+| clientId     | String     | Y         |           |         | "clientId"     |
+| clientSecret | String     | Y         |           |         | "clientSecret" |
+
 ##### Body
 
 | Field Name   | Field type | Mandatory | Condition | Remarks                         | Example        |
@@ -21,8 +27,14 @@
 
 ```json
 {
-    "email": "test@gmail.com",
-    "password": "password"
+    "head": {
+        "clientId": "clientId",
+        "clientSecret": "clientSecret"
+    },
+    "body": {
+        "email": "test@gmail.com",
+        "password": "password"
+    }
 }
 ```
 

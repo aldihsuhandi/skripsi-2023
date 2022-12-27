@@ -9,6 +9,13 @@
 ### Request
 #### Field Table
 
+##### Head
+| Field Name   | Field type | Mandatory | Condition | Remarks | Example        |
+| ------------ | ---------- | --------- | --------- | ------- | -------------- |
+| clientId     | String     | Y         |           |         | "clientId"     |
+| clientSecret | String     | Y         |           |         | "clientSecret" |
+| sessionId    | String     | Y         |           |         | "sessionId"    |
+
 ##### Body
 
 | Field Name        | Field type        | Mandatory | Condition | Remarks | Example                          |
@@ -31,14 +38,20 @@
 
 ```json
 {
-    "sessionId": "e39992f3048042aeae2c279074ee40bc",
-    "password": "password",
-    "userUpdateContext": {
-        "email" : "test@email.com",
-        "username": "username",
-        "phoneNumber": "080000000",
-        "profilePicture": "base64 value",
-        "password": "new password"
+    "head": {
+        "clientId": "clientId",
+        "clientSecret": "clientSecret",
+        "sessionId": "e39992f3048042aeae2c279074ee40bc"
+    },
+    "body": {
+        "password": "password",
+        "userUpdateContext": {
+            "email" : "test@email.com",
+            "username": "username",
+            "phoneNumber": "080000000",
+            "profilePicture": "base64 value",
+            "password": "new password"
+        }
     }
 }
 ```
