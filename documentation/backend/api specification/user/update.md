@@ -18,11 +18,10 @@
 
 ##### Body
 
-| Field Name        | Field type        | Mandatory | Condition | Remarks | Example                          |
-| ----------------- | ----------------- | --------- | --------- | ------- | -------------------------------- |
-| sessionId         | String            | Y         |           |         | e39992f3048042aeae2c279074ee40bc |
-| userUpdateContext | UserUpdateContext | Y         |           |         |                                  |
-| password          | String            | Y         |           |         | password                         |
+| Field Name        | Field type        | Mandatory | Condition | Remarks | Example  |
+| ----------------- | ----------------- | --------- | --------- | ------- | -------- |
+| password          | String            | Y         |           |         | password |
+| userUpdateContext | UserUpdateContext | Y         |           |         |          |
 
 ##### UserUpdateContext
 
@@ -45,6 +44,7 @@
     },
     "body": {
         "password": "password",
+        "email": "email",
         "userUpdateContext": {
             "email" : "test@email.com",
             "username": "username",
