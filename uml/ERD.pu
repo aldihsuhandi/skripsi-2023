@@ -296,6 +296,15 @@ entity clients {
     * gmt_modified : date
 }
 
+entity otps{
+    * otp_id : string
+    --
+    * otp_type : string
+    * user_id : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
 
 ' relation
 ' for transaction purposes
@@ -372,5 +381,7 @@ post_reports ||--o{ posts
 
 comment_reports ||--o{ users
 post_reports ||--o{ users
+
+otps }o--|| users
 
 @enduml

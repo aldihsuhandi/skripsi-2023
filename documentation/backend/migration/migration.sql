@@ -347,20 +347,64 @@ CREATE TABLE
         FOREIGN KEY (comment_id) REFERENCES comments (comment_id)
     );
 
-CREATE TABLE 
+CREATE TABLE
     clients (
         client_id VARCHAR(255) NOT NULL,
         client_name VARCHAR(255) NOT NULL,
         client_secret VARCHAR(255) NOT NULL,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-        PRIMARY KEY(client_id)
+        PRIMARY KEY (client_id)
     );
 
-INSERT INTO user_roles(role_id, role_name)
-VALUES("8e6993f7-356f-4a77-9cbb-bffbde74f5fc", "USER"),
-      ("5e462578-658c-4e40-8f06-4125f8aa413e", "MERCHANT"),
-      ("ccde9d0c-eb08-482b-b2ee-76fcf2f47ef7", "ADMIN");
+CREATE TABLE
+    otp_types (
+        type_id VARCHAR(255) NOT NULL,
+        otp_type VARCHAR(255) NOT NULL,
+        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        PRIMARY KEY (type_id)
+    );
 
-INSERT INTO clients(client_id, client_name, client_secret)
-VALUES("6b8d6ac7-dc63-41ed-bb99-fba0ebcdc543", "postman", "Ev^gBi6URjKfL&z3&mjVV4f9$yHsvTtZ")
+CREATE TABLE
+    otps (
+        otp_id VARCHAR(255) NOT NULL,
+        type_id VARCHAR(255) NOT NULL,
+        user_id VARCHAR(255) NOT NULL,
+        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        PRIMARY KEY (otp_id),
+        FOREIGN KEY (user_id) REFERENCES users (user_id),
+        FOREIGN KEY (type_id) REFERENCES otp_types (type_id)
+    );
+
+INSERT INTO
+    user_roles (role_id, role_name)
+VALUES
+    ("8e6993f7-356f-4a77-9cbb-bffbde74f5fc", "USER"),
+    (
+        "5e462578-658c-4e40-8f06-4125f8aa413e",
+        "MERCHANT"
+    ),
+    ("ccde9d0c-eb08-482b-b2ee-76fcf2f47ef7", "ADMIN");
+
+INSERT INTO
+    clients (client_id, client_name, client_secret)
+VALUES
+    (
+        "6b8d6ac7-dc63-41ed-bb99-fba0ebcdc543",
+        "postman",
+        "Ev^gBi6URjKfL&z3&mjVV4f9$yHsvTtZ"
+    );
+
+INSERT INTO
+    otp_types (type_id, otp_type)
+VALUES
+    (
+        "a2c82a3b-620e-442f-b3a5-9e55f068e68b",
+        "USER_ACTIVATION"
+    ),
+    (
+        "3af59f24-f0e0-4a28-8184-816a3d99820e",
+        "FORGOT_PASSWORD"
+    );
