@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks  |
-| --------------- | -------- |
-| API url         | \<url\>/ |
-| API description |          |
-| API methods     |          |
+| field name      | remarks                     |
+| --------------- | --------------------------- |
+| API url         | \<url\>/otp/send            |
+| API description | send otp to requested email |
+| API methods     | POST                        |
 
 ### Request
 
@@ -19,14 +19,24 @@
 
 ##### Body
 
-| Field Name | Field type | Mandatory | Condition | Remarks | Example |
-| ---------- | ---------- | --------- | --------- | ------- | ------- |
-|            |            |           |           |         |         |
+| Field Name | Field type | Mandatory | Condition | Remarks                         | Example           |
+| ---------- | ---------- | --------- | --------- | ------------------------------- | ----------------- |
+| email      | String     | Y         |           |                                 | "email@email.com" |
+| otpType    | String     | Y         |           | USER_ACTIVATION,FORGOT_PASSWORD | "USER_ACTIVATION" |
 
 #### Example
 
 ```json
-
+{
+  "head": {
+    "clientId": "clientId",
+    "clientSecret": "clientSecret"
+  },
+  "body": {
+    "email": "email@email.com",
+    "otpType": "USER_ACTIVATION"
+  }
+}
 ```
 
 ### Result
@@ -49,11 +59,12 @@
 
 ###### Possible Result Code
 
-| Result Code   | Remarks                         |
-| ------------- | ------------------------------- |
-| SUCCESS       | api call success                |
-| PARAM_ILLEGAL | parameter value is not expected |
-| SYSTEM_ERROR  | unexpected system error         |
+| Result Code     | Remarks                         |
+| --------------- | ------------------------------- |
+| SUCCESS         | api call success                |
+| PARAM_ILLEGAL   | parameter value is not expected |
+| SYSTEM_ERROR    | unexpected system error         |
+| EMAIL_NOT_EXIST | email is not valid              |
 
 #### Example
 
