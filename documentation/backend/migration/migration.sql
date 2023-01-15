@@ -74,6 +74,7 @@ CREATE TABLE
         username VARCHAR(255) NOT NULL,
         profile_picture LONGBLOB,
         password VARCHAR(255) NOT NULL,
+        is_active BOOLEAN DEFAULT false,
         is_deleted BOOLEAN DEFAULT false,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
@@ -369,13 +370,24 @@ CREATE TABLE
 CREATE TABLE
     otps (
         otp_id VARCHAR(255) NOT NULL,
+        otp VARCHAR(255) NOT NULL,
+        otp_dt TIMESTAMP NOT NULL,
         type_id VARCHAR(255) NOT NULL,
-        user_id VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        is_active BOOLEAN NOT NULL DEFAULT true,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         PRIMARY KEY (otp_id),
-        FOREIGN KEY (user_id) REFERENCES users (user_id),
         FOREIGN KEY (type_id) REFERENCES otp_types (type_id)
+    );
+
+CREATE TABLE
+    contents (
+        content_name VARCHAR(255) NOT NULL,
+        content LONGTEXT NOT NULL,
+        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        PRIMARY KEY (content_name)
     );
 
 INSERT INTO
@@ -407,4 +419,12 @@ VALUES
     (
         "3af59f24-f0e0-4a28-8184-816a3d99820e",
         "FORGOT_PASSWORD"
+    );
+
+INSERT INTO
+    contents (content_name, content)
+VALUES
+    (
+        "OTP_EMAIL",
+        '<body style="background-color:#d8dee9"><table align="center" border="0" cellpadding="0" cellspacing="0" width="800" bgcolor="white" style="border:2px solid #000"><tbody><tr><td align="center"><table align="center" border="0" cellpadding="0" cellspacing="0" class="col-550" width="800"><tbody><tr><td align="center" style="background-color:#2e3440;height:50px"><a href="#" style="text-decoration:none"><p style="color:#fff;font-weight:700;font-size:30px">Shumishumi Verification</p></a></td></tr></tbody></table></td></tr><tr style="height:300px"><td align="center" style="border:none;border-bottom:2px solid #eceffb;padding-right:5px;padding-left:5px"><p style="font-weight:bolder;font-size:30px;letter-spacing:.025em;color:#000">Hello %s!</p><p style="font-weight:semibold;font-size:18px;letter-spacing:.025em;color:#000">Please use the verification code below on the Shumishumi website:</p><table align="center" border="0" cellpadding="0" cellspacing="0" width="200" bgcolor="white"><tbody><tr><td align="center" style="background-color:#88c0d0;height:50px"><p style="font-weight:bolder;font-size:25px;letter-spacing:.025em;color:#000">%s</p></td></tr></tbody></table><p style="font-weight:semibold;font-size:15px;letter-spacing:.025em;color:#000">If you didn\'t request this, you can ignore this email or let us know.<br>Thanks!<br>Shumishumi Teams</p></td></tr></tbody></table></body>'
     );

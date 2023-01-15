@@ -64,6 +64,7 @@
 | PARAM_ILLEGAL         | parameter value is not expected                     |
 | SYSTEM_ERROR          | unexpected system error                             |
 | USER_NOT_FOUND        | if there is no user by that specific identification |
+| USER_NOT_ACTIVE       | user is not active yet                              |
 | AUTHENTICATION_FAILED | authentication password doesn't match               |
 
 #### Example

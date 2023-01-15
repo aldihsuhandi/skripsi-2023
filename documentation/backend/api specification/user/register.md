@@ -17,13 +17,13 @@
 
 ##### Body
 
-| Field Name     | Field type | Mandatory | Condition | Remarks                     | Example        |
-| -------------- | ---------- | --------- | --------- | --------------------------- | -------------- |
-| email          | String     | Y         |           | Must be unique              | test@email.com |
-| username       | String     | Y         |           |                             | username       |
-| phoneNumber    | String     | Y         |           | Must be unique              | 08000000       |
-| profilePicture | Blob       | N         |           | Must be encoded with base64 | base64 value   |
-| password       | String     | Y         |           |                             | password       |
+| Field Name     | Field type | Mandatory | Condition | Remarks                                                                                                              | Example        |
+| -------------- | ---------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------- | -------------- |
+| email          | String     | Y         |           | Must be unique                                                                                                       | test@email.com |
+| username       | String     | Y         |           |                                                                                                                      | username       |
+| phoneNumber    | String     | Y         |           | Must be unique                                                                                                       | 08000000       |
+| profilePicture | Blob       | N         |           | Must be encoded with base64                                                                                          | base64 value   |
+| password       | String     | Y         |           | - atleast 8 chacater in length<br>- atleast 1 non capital letter<br>- atleast 1 number<br>- atleast 1 capital letter | password       |
 
 #### Example
 

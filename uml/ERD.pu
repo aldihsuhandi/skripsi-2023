@@ -85,6 +85,7 @@ entity users {
     * username : string
       profile_picture : string
     * is_deleted : boolean
+    * is_active : boolean
     * password : string
     * gmt_create : date
     * gmt_modified : date
@@ -299,9 +300,11 @@ entity clients {
 entity otps{
     * otp_id : string
     --
-    * type_id : string
-    * user_id : string
-    * active : boolean
+    * otp : string
+    * otp_dt : date
+    * type_id : string <<FK>>
+    * email : string
+    * is_active : boolean
     * gmt_create : date
     * gmt_modified : date
 }
@@ -310,6 +313,14 @@ entity otp_types {
     * type_id : string
     --
     * otp_type : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity contents {
+    * content_name : string
+    --
+    * content : longtext
     * gmt_create : date
     * gmt_modified : date
 }

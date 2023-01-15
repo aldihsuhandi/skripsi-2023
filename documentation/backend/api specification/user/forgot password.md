@@ -2,8 +2,8 @@
 
 | field name      | remarks              |
 | --------------- | -------------------- |
-| API url         | \<url\>/otp/validate |
-| API description | validate otp         |
+| API url         | \<url\>/user/forgot  |
+| API description | user forgot password |
 | API methods     | POST                 |
 
 ### Request
@@ -19,26 +19,24 @@
 
 ##### Body
 
-| Field Name | Field type | Mandatory | Condition | Remarks                       | Example           |
-| ---------- | ---------- | --------- | --------- | ----------------------------- | ----------------- |
-| email      | string     | Y         |           |                               | "email@email.com" |
-| otp        | string     | Y         |           |                               | "1234567890"      |
-| otpType    | string     | Y         |           | USER_ACTIVATE,FORGOT_PASSWORD | "USER_ACTIVATION" |
+| Field Name | Field type | Mandatory | Condition | Remarks                                                                                                              | Example           |
+| ---------- | ---------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| email      | string     | Y         |           | must be a valid email address                                                                                        | "email@email.com" |
+| password   | string     | Y         |           | - atleast 8 chacater in length<br>- atleast 1 non capital letter<br>- atleast 1 number<br>- atleast 1 capital letter | "password"        |
+| otp        | string     | Y         |           | must be a valid OTP                                                                                                  | "1234567890"      |
 
 #### Example
 
 ```json
-{
   "head": {
     "clientId": "clientId",
     "clientSecret": "clientSecret"
   },
   "body": {
     "email": "email@email.com",
-    "otpType": "USER_ACTIVATION",
-    "otp": "1234567890"
+    "password": "password",
+    "otp": "123456"
   }
-}
 ```
 
 ### Result
@@ -50,7 +48,6 @@
 | Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
 | ------------- | ------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext | Y         |           |         |         |
-| isActive      | boolean       | Y         |           |         |         |
 
 ##### ResultContext
 
@@ -62,15 +59,14 @@
 
 ###### Possible Result Code
 
-| Result Code          | Remarks                                   |
-| -------------------- | ----------------------------------------- |
-| SUCCESS              | api call success                          |
-| PARAM_ILLEGAL        | parameter value is not expected           |
-| SYSTEM_ERROR         | unexpected system error                   |
-| USER_NOT_ACTIVE      | user nto active                           |
-| USER_NOT_FOUND       | there is no user with that specific email |
-| OTP_NOT_EXIST        | there is no otp                           |
-| OTP_VALIDATION_ERROR | wrong otp or expired otp                  |
+| Result Code          | Remarks                         |
+| -------------------- | ------------------------------- |
+| SUCCESS              | api call success                |
+| PARAM_ILLEGAL        | parameter value is not expected |
+| SYSTEM_ERROR         | unexpected system error         |
+| USER_NOT_FOUND       | user not exist                  |
+| OTP_NOT_EXIST        | otp not exist                   |
+| OTP_VALIDATION_ERROR | otp validation error            |
 
 #### Example
 
@@ -80,7 +76,6 @@
     "success": true,
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
-  },
-  "isActive": true
+  }
 }
 ```
