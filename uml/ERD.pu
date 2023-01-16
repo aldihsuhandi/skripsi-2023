@@ -43,6 +43,14 @@ entity item_categories {
     * gmt_modified : date
 }
 
+entity hobbies {
+    * id : string
+    --
+    * hobby_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
 entity user_roles {
     * id : string
     --
@@ -100,6 +108,7 @@ entity items {
     * item_quantity : int
     * merchant_id : string <<FK>>
     * category_id : string <<FK>>
+    * hobby_id : string <<FK>>
     * merchant_level_id : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
@@ -115,6 +124,7 @@ entity item_approvals {
     * item_quantity : int
     * merchant_id : string <<FK>>
     * category_id : string <<FK>>
+    * hobby_id : string <<FK>>
     * merchant_level_id : string <<FK>>
     * is_approved : boolean
     * gmt_create : date
@@ -330,6 +340,7 @@ entity contents {
 ' for transaction purposes
 interest_levels }o--|| items
 item_categories }o--|| items
+items ||--o{ hobbies
 
 ' user_roles }o--|| users
 users ||-o{ user_roles
@@ -354,6 +365,7 @@ reviews ||--o{ users
 items }o--o| item_approvals
 users }o--|| item_approvals
 item_categories }o--|| item_approvals
+hobbies }o-|| item_approvals
 interest_levels }o--|| item_approvals
 item_image_approvals ||--o{ item_approvals
 

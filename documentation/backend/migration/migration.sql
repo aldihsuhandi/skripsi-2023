@@ -29,6 +29,15 @@ CREATE TABLE
         PRIMARY KEY (category_id)
     );
 
+CREATE TABLE 
+    hobbies (
+        hobby_id VARCHAR(255) NOT NULL,
+        hobby_name VARCHAR(255) NOT NULL,
+        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        PRIMARY KEY (hobby_id)
+    );
+
 CREATE TABLE
     interest_level (
         interest_level_id VARCHAR(255) NOT NULL,
@@ -91,12 +100,14 @@ CREATE TABLE
         item_quantity INT NOT NULL,
         merchant_id VARCHAR(255) NOT NULL,
         category_id VARCHAR(255) NOT NULL,
+        hobyy_id VARCHAR(255) NOT NULL,
         merchant_level_id VARCHAR(255) NOT NULL,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         PRIMARY KEY (item_id),
         FOREIGN KEY (merchant_id) REFERENCES users (user_id),
         FOREIGN KEY (category_id) REFERENCES item_categories (category_id),
+        FOREIGN KEY (hobby_id) REFERENCES hobbies (hobby_id),
         FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id)
     );
 
