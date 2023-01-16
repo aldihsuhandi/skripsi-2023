@@ -83,8 +83,10 @@ entity users {
     * email : string <<UNIQUE>>
     * phone_number : string <<UNIQUE>>
     * username : string
-    * profile_picture : string
+      profile_picture : string
     * is_deleted : boolean
+    * is_active : boolean
+    * password : string
     * gmt_create : date
     * gmt_modified : date
 }
@@ -253,6 +255,8 @@ entity sessions{
     --
     * user_id : string <<FK>>
     * session_dt : date
+    * is_active : boolean
+    * is_remembered : boolean
     * gmt_create : date
     * gmt_modified : date
 }
@@ -280,6 +284,43 @@ entity wishlists {
     * user_id : string <<FK>>
     * item_id : string <<FK>>
     --
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity clients {
+    * client_id : string
+    --
+    * client_name : string
+    * client_secret : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity otps{
+    * otp_id : string
+    --
+    * otp : string
+    * otp_dt : date
+    * type_id : string <<FK>>
+    * email : string
+    * is_active : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity otp_types {
+    * type_id : string
+    --
+    * otp_type : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity contents {
+    * content_name : string
+    --
+    * content : longtext
     * gmt_create : date
     * gmt_modified : date
 }
@@ -360,5 +401,8 @@ post_reports ||--o{ posts
 
 comment_reports ||--o{ users
 post_reports ||--o{ users
+
+otps }o--|| users
+otp_types ||--o{ otps
 
 @enduml

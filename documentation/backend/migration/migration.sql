@@ -72,7 +72,9 @@ CREATE TABLE
         email VARCHAR(255) UNIQUE NOT NULL,
         phone_number VARCHAR(255) UNIQUE NOT NULL,
         username VARCHAR(255) NOT NULL,
-        profile_picture LONGBLOB NOT NULL,
+        profile_picture LONGBLOB,
+        password VARCHAR(255) NOT NULL,
+        is_active BOOLEAN DEFAULT false,
         is_deleted BOOLEAN DEFAULT false,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
@@ -114,6 +116,8 @@ CREATE TABLE
         session_id VARCHAR(255) NOT NULL,
         user_id VARCHAR(255) NOT NULL,
         session_dt TIMESTAMP NOT NULL,
+        is_active BOOLEAN DEFAULT true,
+        is_remembered BOOLEAN DEFAULT false,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         PRIMARY KEY (session_id),
@@ -342,4 +346,85 @@ CREATE TABLE
         PRIMARY KEY (report_id),
         FOREIGN KEY (user_id) REFERENCES users (user_id),
         FOREIGN KEY (comment_id) REFERENCES comments (comment_id)
+    );
+
+CREATE TABLE
+    clients (
+        client_id VARCHAR(255) NOT NULL,
+        client_name VARCHAR(255) NOT NULL,
+        client_secret VARCHAR(255) NOT NULL,
+        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        PRIMARY KEY (client_id)
+    );
+
+CREATE TABLE
+    otp_types (
+        type_id VARCHAR(255) NOT NULL,
+        otp_type VARCHAR(255) NOT NULL,
+        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        PRIMARY KEY (type_id)
+    );
+
+CREATE TABLE
+    otps (
+        otp_id VARCHAR(255) NOT NULL,
+        otp VARCHAR(255) NOT NULL,
+        otp_dt TIMESTAMP NOT NULL,
+        type_id VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        is_active BOOLEAN NOT NULL DEFAULT true,
+        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        PRIMARY KEY (otp_id),
+        FOREIGN KEY (type_id) REFERENCES otp_types (type_id)
+    );
+
+CREATE TABLE
+    contents (
+        content_name VARCHAR(255) NOT NULL,
+        content LONGTEXT NOT NULL,
+        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+        PRIMARY KEY (content_name)
+    );
+
+INSERT INTO
+    user_roles (role_id, role_name)
+VALUES
+    ("8e6993f7-356f-4a77-9cbb-bffbde74f5fc", "USER"),
+    (
+        "5e462578-658c-4e40-8f06-4125f8aa413e",
+        "MERCHANT"
+    ),
+    ("ccde9d0c-eb08-482b-b2ee-76fcf2f47ef7", "ADMIN");
+
+INSERT INTO
+    clients (client_id, client_name, client_secret)
+VALUES
+    (
+        "6b8d6ac7-dc63-41ed-bb99-fba0ebcdc543",
+        "postman",
+        "Ev^gBi6URjKfL&z3&mjVV4f9$yHsvTtZ"
+    );
+
+INSERT INTO
+    otp_types (type_id, otp_type)
+VALUES
+    (
+        "a2c82a3b-620e-442f-b3a5-9e55f068e68b",
+        "USER_ACTIVATION"
+    ),
+    (
+        "3af59f24-f0e0-4a28-8184-816a3d99820e",
+        "FORGOT_PASSWORD"
+    );
+
+INSERT INTO
+    contents (content_name, content)
+VALUES
+    (
+        "OTP_EMAIL",
+        '<body style="background-color:#d8dee9"><table align="center" border="0" cellpadding="0" cellspacing="0" width="800" bgcolor="white" style="border:2px solid #000"><tbody><tr><td align="center"><table align="center" border="0" cellpadding="0" cellspacing="0" class="col-550" width="800"><tbody><tr><td align="center" style="background-color:#2e3440;height:50px"><a href="#" style="text-decoration:none"><p style="color:#fff;font-weight:700;font-size:30px">Shumishumi Verification</p></a></td></tr></tbody></table></td></tr><tr style="height:300px"><td align="center" style="border:none;border-bottom:2px solid #eceffb;padding-right:5px;padding-left:5px"><p style="font-weight:bolder;font-size:30px;letter-spacing:.025em;color:#000">Hello %s!</p><p style="font-weight:semibold;font-size:18px;letter-spacing:.025em;color:#000">Please use the verification code below on the Shumishumi website:</p><table align="center" border="0" cellpadding="0" cellspacing="0" width="200" bgcolor="white"><tbody><tr><td align="center" style="background-color:#88c0d0;height:50px"><p style="font-weight:bolder;font-size:25px;letter-spacing:.025em;color:#000">%s</p></td></tr></tbody></table><p style="font-weight:semibold;font-size:15px;letter-spacing:.025em;color:#000">If you didn\'t request this, you can ignore this email or let us know.<br>Thanks!<br>Shumishumi Teams</p></td></tr></tbody></table></body>'
     );
