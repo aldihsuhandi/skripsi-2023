@@ -1,4 +1,4 @@
-@startuml class diagram
+@startuml ERD
 skinparam linetype ortho
 
 ' left to right direction
@@ -15,7 +15,7 @@ entity chatrooms {
 }
 
 entity chats {
-    * id : int
+    * id : string
     --
     * chatroom_id : string <<FK>>
     * user_id : string <<FK>>
@@ -28,7 +28,7 @@ entity chats {
 
 ' for transaction purposes
 entity interest_levels {
-    * id: int
+    * id : string
     --
     * level_name : string
     * gmt_create : date
@@ -36,7 +36,7 @@ entity interest_levels {
 }
 
 entity item_categories {
-    * id: int
+    * id : string
     --
     * category_name : string
     * gmt_create : date
@@ -44,7 +44,7 @@ entity item_categories {
 }
 
 entity user_roles {
-    * id: int
+    * id : string
     --
     * role_name : string
     * gmt_create : date
@@ -52,7 +52,7 @@ entity user_roles {
 }
 
 entity capabilities {
-    * id: int
+    * id : string
     --
     * capability_name : string
     * gmt_create : date
@@ -60,8 +60,8 @@ entity capabilities {
 }
 
 entity user_capabilities {
-    * user_id : int <<FK>>
-    * capability_id : int <<FK>>
+    * user_id : string <<FK>>
+    * capability_id : string <<FK>>
     --
     * is_active : boolean
     * gmt_create : date
@@ -69,7 +69,7 @@ entity user_capabilities {
 }
 
 entity payments {
-    * id: int
+    * id : string
     --
     * payment_type : string
     * gmt_create : date
@@ -77,73 +77,75 @@ entity payments {
 }
 
 entity users {
-    * id: int  
+    * id : string  
     --
-    * role_id : int <<FK>>
+    * role_id : string <<FK>>
     * email : string <<UNIQUE>>
     * phone_number : string <<UNIQUE>>
     * username : string
-    * profile_picture : string
+      profile_picture : string
     * is_deleted : boolean
+    * is_active : boolean
+    * password : string
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity items {
-    * id: int 
+    * id : string 
     --
     * item_name : string
     * item_price : long
     * item_description : long_text
     * item_quantity : int
-    * merchant_id : int <<FK>>
-    * category_id : int <<FK>>
-    * merchant_level_id : int <<FK>>
+    * merchant_id : string <<FK>>
+    * category_id : string <<FK>>
+    * merchant_level_id : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity item_approvals {
-    * id: int
+    * id : string
     --
-      item_id : int <<FK>>
+      item_id : string <<FK>>
     * item_name : string
     * item_price : long
     * item_description : long_text
     * item_quantity : int
-    * merchant_id : int <<FK>>
-    * category_id : int <<FK>>
-    * merchant_level_id : int <<FK>>
+    * merchant_id : string <<FK>>
+    * category_id : string <<FK>>
+    * merchant_level_id : string <<FK>>
     * is_approved : boolean
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity item_image_approvals {
-    * id: int
+    * id : string
     --
-    * item_approval_id : int <<FK>>
+    * item_approval_id : string <<FK>>
     * item_image : string
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity item_images {
-    * id: int
+    * id : string
     --
     * item_image: string
-    * item_id : int <<FK>>
+    * item_id : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity reviews {
-    * id: int
+    * id : string
     --
     * star : int
-    * item_id : int <<FK>>
-    * user_id : int <<FK>>
-      interest_level : int <<FK>>
+    * item_id : string <<FK>>
+    * user_id : string <<FK>>
+      interest_level : string <<FK>>
       description : longtext
       review_image : longtext
     * gmt_create : date
@@ -151,37 +153,37 @@ entity reviews {
 }
 
 entity transaction {
-    * id: int
+    * id : string
     --
-    * user_id: int <<FK>>
-    * payment_type : int <<FK>>
+    * user_id : string <<FK>>
+    * payment_type : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity transaction_details {
-    * id: int
+    * id : string
     --
-    * transaction_id : int <<FK>>
-    * item_id : int <<FK>>
+    * transaction_id : string <<FK>>
+    * item_id : string <<FK>>
     * quantity : int
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity carts {
-    * id : int
+    * id : string
     --
-    * user_id : int <<FK>>
+    * user_id : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity cart_details {
-    * id: int
+    * id : string
     --
-    * cart_id : int <<FK>>
-    * item_id : int <<FK>>
+    * cart_id : string <<FK>>
+    * item_id : string <<FK>>
     * quantity : int
     * gmt_create : date
     * gmt_modified : date
@@ -189,9 +191,9 @@ entity cart_details {
 
 ' for discussion purposes
 entity posts {
-    * id: int
+    * id : string
     --
-    * user_id : int <<FK>>
+    * user_id : string <<FK>>
     * title : string
       content : longtext
     * gmt_create : date
@@ -199,18 +201,19 @@ entity posts {
 }
 
 entity comments {
-    * id: int
+    * id : string
     --
-    * user_id : int <<FK>>
-      comment_id : <<FK>>
-      post_id : <<FK>>
+    * user_id : string <<FK>>
+      comment_id : string <<FK>>
+      post_id : string <<FK>>
+    * content : longtext
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity comment_upvotes {
-    * user_id : int <<FK>>
-    * comment_id : int <<FK>>
+    * user_id : string <<FK>>
+    * comment_id : string <<FK>>
     --
     * value : int
     * gmt_create : date
@@ -218,8 +221,8 @@ entity comment_upvotes {
 }
 
 entity post_upvotes {
-    * user_id : int <<FK>>
-    * comment_id : int <<FK>>
+    * user_id : string <<FK>>
+    * post_id : string <<FK>>
     --
     * value : int
     * gmt_create : date
@@ -227,20 +230,20 @@ entity post_upvotes {
 }
 
 entity post_reports {
-    * id : int
+    * id : string
     --
-    * user_id : int <<FK>>
-    * post_id : int <<FK>>
+    * user_id : string <<FK>>
+    * post_id : string <<FK>>
       report_desc : longtext
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity comment_reports {
-    * id : int
+    * id : string
     --
-    * user_id : int <<FK>>
-    * comment_id : int <<FK>>
+    * user_id : string <<FK>>
+    * comment_id : string <<FK>>
       report_desc : longtext
     * gmt_create : date
     * gmt_modified : date
@@ -250,14 +253,16 @@ entity comment_reports {
 entity sessions{
     * id : string
     --
-    * user_id : int <<FK>>
+    * user_id : string <<FK>>
     * session_dt : date
+    * is_active : boolean
+    * is_remembered : boolean
     * gmt_create : date
     * gmt_modified : date
 }
 
 entity activities {
-    * id : int
+    * id : string
     --
     * activity_name : string
     * gmt_create : date
@@ -267,18 +272,55 @@ entity activities {
 entity user_activities {
     * id : string
     --
-    * user_id : int <<FK>>
-    * item_id : int <<FK>>
-    * activity_id : int <<FK>>
+    * user_id : string <<FK>>
+    * item_id : string <<FK>>
+    * activity_id : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
 }
 
 ' wishlist
 entity wishlists {
-    * user_id : int <<FK>>
-    * item_id : int <<FK>>
+    * user_id : string <<FK>>
+    * item_id : string <<FK>>
     --
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity clients {
+    * client_id : string
+    --
+    * client_name : string
+    * client_secret : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity otps{
+    * otp_id : string
+    --
+    * otp : string
+    * otp_dt : date
+    * type_id : string <<FK>>
+    * email : string
+    * is_active : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity otp_types {
+    * type_id : string
+    --
+    * otp_type : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity contents {
+    * content_name : string
+    --
+    * content : longtext
     * gmt_create : date
     * gmt_modified : date
 }
@@ -352,10 +394,15 @@ wishlists ||-o{ items
 ' report
 ' posts }o--|| post_reports
 ' comments }o--|| comment_reports
+comments ||-o{ users
+posts ||-o{ users
 comment_reports ||--o{ comments
 post_reports ||--o{ posts
 
 comment_reports ||--o{ users
 post_reports ||--o{ users
+
+otps }o--|| users
+otp_types ||--o{ otps
 
 @enduml
