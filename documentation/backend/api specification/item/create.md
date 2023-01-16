@@ -26,7 +26,6 @@
 | itemPrice             | long         | Y         |           | in rupiah                                                           | 100000               |
 | itemDescription       | String       | N         |           |                                                                     |                      |
 | itemQuantity          | Int          | Y         |           |                                                                     | 10                   |
-| merchantEmail         | String       | Y         |           | merchant email                                                      | "merchant@email.com" |
 | categoryName          | String       | Y         |           | item category name                                                  | "item category       |
 | hobbyName             | String       | Y         |           |                                                                     | "music"              |
 | merchantInterestLevel | String       | Y         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"           |
@@ -45,7 +44,6 @@
     "itemName": "item name", 
     "itemPrice": 100000,
     "itemQuantity": 100,
-    "merchantEmail": "merchant@email.com",
     "categoryName": "GUITAR",
     "hobby": "music",
     "merchantInterestLevel": "BEGINNER"

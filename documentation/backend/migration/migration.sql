@@ -100,7 +100,7 @@ CREATE TABLE
         item_quantity INT NOT NULL,
         merchant_id VARCHAR(255) NOT NULL,
         category_id VARCHAR(255) NOT NULL,
-        hobyy_id VARCHAR(255) NOT NULL,
+        hobby_id VARCHAR(255) NOT NULL,
         merchant_level_id VARCHAR(255) NOT NULL,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
