@@ -41,7 +41,25 @@
 #### Example
 
 ```json
-
+{
+  "head": {
+    "clientId": "clientId",
+    "clientSecret": "clientSecret",
+    "sessionId": "e39992f3048042aeae2c279074ee40bc"
+  },
+  "body": {
+    "itemId": "itemId",
+    "itemUpdateContext": {
+      "itemName": "item name", 
+      "itemPrice": 100000,
+      "itemQuantity": 100,
+      "merchantEmail": "merchant@email.com",
+      "categoryName": "GUITAR",
+      "hobby": "music",
+      "merchantInterestLevel": "BEGINNER"
+    }
+  }
+}
 ```
 
 ### Result
