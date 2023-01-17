@@ -69,10 +69,10 @@
 | Field Name    | Field type     | Mandatory | Condition | Remarks | Example |
 | ------------- | -------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext  | Y         |           |         |         |
-| pagingInfo    | PagingInfo     | Y         |           |         |         |
+| pagingContext | PagingContext  | Y         |           |         |         |
 | items         | List\<ItemVO\> | Y         |           |         |         |
 
-##### PagingInfo 
+##### PagingContext 
 | Field Name   | Field type | Mandatory | Condition | Remarks | Example |
 | ------------ | ---------- | --------- | --------- | ------- | ------- |
 | pageNumber   | int        | Y         |           |         | 0       |
@@ -138,7 +138,7 @@
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
   },
-  "pagingInfo": {
+  "pagingContext": {
     "pageNumber": 1,
     "numberOfItem": 10,
     "hasNext": true
