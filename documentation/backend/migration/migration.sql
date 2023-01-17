@@ -29,7 +29,7 @@ CREATE TABLE
         PRIMARY KEY (category_id)
     );
 
-CREATE TABLE 
+CREATE TABLE
     hobbies (
         hobby_id VARCHAR(255) NOT NULL,
         hobby_name VARCHAR(255) NOT NULL,
@@ -102,13 +102,16 @@ CREATE TABLE
         category_id VARCHAR(255) NOT NULL,
         hobby_id VARCHAR(255) NOT NULL,
         merchant_level_id VARCHAR(255) NOT NULL,
+        user_level_id VARCHAR(255),
+        is_approved BOOLEAN NOT NULL DEFAULT false,
         gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
         PRIMARY KEY (item_id),
         FOREIGN KEY (merchant_id) REFERENCES users (user_id),
         FOREIGN KEY (category_id) REFERENCES item_categories (category_id),
         FOREIGN KEY (hobby_id) REFERENCES hobbies (hobby_id),
-        FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id)
+        FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id),
+        FOREIGN KEY (user_level_id) REFERENCES interest_level (interest_level_id)
     );
 
 CREATE TABLE
@@ -223,36 +226,6 @@ CREATE TABLE
         FOREIGN KEY (user_id) REFERENCES users (user_id),
         FOREIGN KEY (item_id) REFERENCES items (item_id),
         FOREIGN KEY (interest_level) REFERENCES interest_level (interest_level_id)
-    );
-
-CREATE TABLE
-    item_approvals (
-        item_id VARCHAR(255) NOT NULL,
-        item_name VARCHAR(255) NOT NULL,
-        item_price INT NOT NULL,
-        item_description LONGTEXT NOT NULL,
-        item_quantity INT NOT NULL,
-        merchant_id VARCHAR(255) NOT NULL,
-        category_id VARCHAR(255) NOT NULL,
-        merchant_level_id VARCHAR(255) NOT NULL,
-        is_approved BOOLEAN DEFAULT false,
-        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-        PRIMARY KEY (item_id),
-        FOREIGN KEY (merchant_id) REFERENCES users (user_id),
-        FOREIGN KEY (category_id) REFERENCES item_categories (category_id),
-        FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id)
-    );
-
-CREATE TABLE
-    item_image_approvals (
-        item_image_id VARCHAR(255) NOT NULL,
-        item_image LONGBLOB NOT NULL,
-        item_id VARCHAR(255) NOT NULL,
-        gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-        gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-        PRIMARY KEY (item_image_id),
-        FOREIGN KEY (item_id) REFERENCES item_approvals (item_id)
     );
 
 CREATE TABLE
@@ -438,4 +411,20 @@ VALUES
     (
         "OTP_EMAIL",
         '<body style="background-color:#d8dee9"><table align="center" border="0" cellpadding="0" cellspacing="0" width="800" bgcolor="white" style="border:2px solid #000"><tbody><tr><td align="center"><table align="center" border="0" cellpadding="0" cellspacing="0" class="col-550" width="800"><tbody><tr><td align="center" style="background-color:#2e3440;height:50px"><a href="#" style="text-decoration:none"><p style="color:#fff;font-weight:700;font-size:30px">Shumishumi Verification</p></a></td></tr></tbody></table></td></tr><tr style="height:300px"><td align="center" style="border:none;border-bottom:2px solid #eceffb;padding-right:5px;padding-left:5px"><p style="font-weight:bolder;font-size:30px;letter-spacing:.025em;color:#000">Hello %s!</p><p style="font-weight:semibold;font-size:18px;letter-spacing:.025em;color:#000">Please use the verification code below on the Shumishumi website:</p><table align="center" border="0" cellpadding="0" cellspacing="0" width="200" bgcolor="white"><tbody><tr><td align="center" style="background-color:#88c0d0;height:50px"><p style="font-weight:bolder;font-size:25px;letter-spacing:.025em;color:#000">%s</p></td></tr></tbody></table><p style="font-weight:semibold;font-size:15px;letter-spacing:.025em;color:#000">If you didn\'t request this, you can ignore this email or let us know.<br>Thanks!<br>Shumishumi Teams</p></td></tr></tbody></table></body>'
+    );
+
+INSERT INTO
+    interest_level (interest_level_id, level_name)
+VALUES
+    (
+        "da61603a-3252-4f7d-bf07-97ef5ef168cc",
+        "BEGINNER"
+    ),
+    (
+        "ebb5d871-af7d-4b59-807c-bef5f8962e3c",
+        "INTERMEDIATE"
+    ),
+    (
+        "5684822d-ab2d-4ed6-a124-c3754035d80c",
+        "ENTHUSIAST"
     );

@@ -92,7 +92,7 @@ entity users {
     * phone_number : string <<UNIQUE>>
     * username : string
       profile_picture : string
-    * is_deleted : boolean
+    * is_deleted: boolean
     * is_active : boolean
     * password : string
     * gmt_create : date
@@ -110,32 +110,8 @@ entity items {
     * category_id : string <<FK>>
     * hobby_id : string <<FK>>
     * merchant_level_id : string <<FK>>
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-entity item_approvals {
-    * id : string
-    --
-      item_id : string <<FK>>
-    * item_name : string
-    * item_price : long
-    * item_description : long_text
-    * item_quantity : int
-    * merchant_id : string <<FK>>
-    * category_id : string <<FK>>
-    * hobby_id : string <<FK>>
-    * merchant_level_id : string <<FK>>
+      user_level_id : string <<FK>>
     * is_approved : boolean
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-entity item_image_approvals {
-    * id : string
-    --
-    * item_approval_id : string <<FK>>
-    * item_image : string
     * gmt_create : date
     * gmt_modified : date
 }
@@ -284,16 +260,27 @@ entity user_activities {
     --
     * user_id : string <<FK>>
     * item_id : string <<FK>>
-    * activity_id : string <<FK>>
+    * is_active : boolean
     * gmt_create : date
     * gmt_modified : date
 }
 
-' wishlist
-entity wishlists {
-    * user_id : string <<FK>>
-    * item_id : string <<FK>>
+entity otps {
+    * otp_id : string
     --
+    * otp : string
+    * otp_dt : date
+    * email : string <<FK>>
+    * type_id : string <<FK>>
+    * is_active : boolean 
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity otp_types {
+    * type_id : string
+    --
+    * otp_type : string
     * gmt_create : date
     * gmt_modified : date
 }
@@ -307,30 +294,18 @@ entity clients {
     * gmt_modified : date
 }
 
-entity otps{
-    * otp_id : string
-    --
-    * otp : string
-    * otp_dt : date
-    * type_id : string <<FK>>
-    * email : string
-    * is_active : boolean
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-entity otp_types {
-    * type_id : string
-    --
-    * otp_type : string
-    * gmt_create : date
-    * gmt_modified : date
-}
-
 entity contents {
     * content_name : string
     --
     * content : longtext
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity wishlists {
+    * item_id : string <<FK>>
+    * user_id : string <<FK>>
+    --
     * gmt_create : date
     * gmt_modified : date
 }
@@ -347,7 +322,7 @@ users ||-o{ user_roles
 
 transaction |o--o{ payments
 users }o--|| transaction
-transaction }o--|| transaction_details
+transaction }o-|| transaction_details
 items }o--|| transaction_details
 
 ' carts
@@ -361,15 +336,6 @@ reviews |o--o{ interest_levels
 items ||--o{ users
 reviews ||--o{ users
 
-' item approval
-items }o--o| item_approvals
-users }o--|| item_approvals
-item_categories }o--|| item_approvals
-hobbies }o-|| item_approvals
-interest_levels }o--|| item_approvals
-item_image_approvals ||--o{ item_approvals
-
-
 ' for discussion purposes
 comments }o--|| comment_upvotes
 comment_upvotes ||--o{ users
@@ -377,7 +343,7 @@ post_upvotes ||--o{ posts
 post_upvotes ||--o{ users
 
 posts }o--|| comments
-comments }o--|| comments
+comments ||-o{ comments
 
 ' direct communication purposes
 chats |o--o{ users
@@ -395,13 +361,13 @@ users }o-|| user_activities
 items }o-|| user_activities
 ' user_activities ||-o{ users
 ' user_activities ||-o{ items
-user_activities ||-o{ activities
+user_activities ||--o{ activities
 
 ' wishlist
-' users }o-|| wishlists
-' items }o-|| wishlists
-wishlists ||-o{ users
-wishlists ||-o{ items
+users }o-|| wishlists
+items }o-|| wishlists
+' wishlists ||-o{ users
+' wishlists ||-o{ items
 
 ' report
 ' posts }o--|| post_reports
