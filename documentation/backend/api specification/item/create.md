@@ -20,16 +20,16 @@
 
 ##### Body
 
-| Field Name            | Field type   | Mandatory | Condition | Remarks                                                             | Example              |
-| --------------------- | ------------ | --------- | --------- | ------------------------------------------------------------------- | -------------------- |
-| itemName              | String       | Y         |           |                                                                     | "item name"          |
-| itemPrice             | long         | Y         |           | in rupiah                                                           | 100000               |
-| itemDescription       | String       | N         |           |                                                                     |                      |
-| itemQuantity          | Int          | Y         |           |                                                                     | 10                   |
-| categoryName          | String       | Y         |           | item category name                                                  | "item category       |
-| hobbyName             | String       | Y         |           |                                                                     | "music"              |
-| merchantInterestLevel | String       | Y         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"           |
-| itemImages            | List\<Blob\> | N         |           | item images                                                         |                      |
+| Field Name            | Field type   | Mandatory | Condition | Remarks                                                             | Example        |
+| --------------------- | ------------ | --------- | --------- | ------------------------------------------------------------------- | -------------- |
+| itemName              | String       | Y         |           |                                                                     | "item name"    |
+| itemPrice             | long         | Y         |           | in rupiah                                                           | 100000         |
+| itemDescription       | String       | N         |           |                                                                     |                |
+| itemQuantity          | Int          | Y         |           |                                                                     | 10             |
+| categoryName          | String       | Y         |           | item category name                                                  | "item category |
+| hobbyName             | String       | Y         |           |                                                                     | "music"        |
+| merchantInterestLevel | String       | Y         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"     |
+| itemImages            | List\<Blob\> | N         |           | item images                                                         |                |
 
 #### Example
 
@@ -41,7 +41,7 @@
     "sessionId": "e39992f3048042aeae2c279074ee40bc"
   },
   "body": {
-    "itemName": "item name", 
+    "itemName": "item name",
     "itemPrice": 100000,
     "itemQuantity": 100,
     "categoryName": "GUITAR",
@@ -71,11 +71,15 @@
 
 ###### Possible Result Code
 
-| Result Code   | Remarks                         |
-| ------------- | ------------------------------- |
-| SUCCESS       | api call success                |
-| PARAM_ILLEGAL | parameter value is not expected |
-| SYSTEM_ERROR  | unexpected system error         |
+| Result Code       | Remarks                         |
+| ----------------- | ------------------------------- |
+| SUCCESS           | api call success                |
+| PARAM_ILLEGAL     | parameter value is not expected |
+| SYSTEM_ERROR      | unexpected system error         |
+| SESSION_EXPIRED   | session is expired              |
+| USER_NOT_FOUND    | merchant not found              |
+| USER_NOT_ACTIVE   | merchant not active             |
+| USER_ROLE_INVALID | user is not a merchant          |
 
 #### Example
 
