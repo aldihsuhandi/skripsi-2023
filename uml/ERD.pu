@@ -251,6 +251,7 @@ entity activities {
     * id : string
     --
     * activity_name : string
+    * point : int
     * gmt_create : date
     * gmt_modified : date
 }
