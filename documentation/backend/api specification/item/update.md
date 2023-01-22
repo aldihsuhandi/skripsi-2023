@@ -26,16 +26,17 @@
 | itemUpdateContext | ItemUpdateContext | Y         |           |         |                      |
 
 ##### ItemUpdateContext
-| Field Name            | Field type   | Mandatory | Condition | Remarks                                                             | Example        |
-| --------------------- | ------------ | --------- | --------- | ------------------------------------------------------------------- | -------------- |
-| itemName              | String       | Y         |           |                                                                     | "item name"    |
-| itemPrice             | long         | Y         |           | in rupiah                                                           | 100000         |
-| itemDescription       | String       | N         |           |                                                                     |                |
-| itemQuantity          | Int          | Y         |           |                                                                     | 10             |
-| categoryName          | String       | Y         |           | item category name                                                  | "item category |
-| hobbyName             | String       | Y         |           |                                                                     | "music"        |
-| merchantInterestLevel | String       | Y         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"     |
-| itemImages            | List\<Blob\> | N         |           | item images                                                         |                |
+| Field Name            | Field type     | Mandatory | Condition | Remarks                                                             | Example        |
+| --------------------- | -------------- | --------- | --------- | ------------------------------------------------------------------- | -------------- |
+| itemName              | String         | N         |           |                                                                     | "item name"    |
+| itemPrice             | long           | N         |           | in rupiah                                                           | 100000         |
+| itemDescription       | String         | N         |           |                                                                     |                |
+| itemQuantity          | Int            | N         |           |                                                                     | 10             |
+| categoryName          | String         | N         |           | item category name                                                  | "item category |
+| hobbyName             | String         | N         |           |                                                                     | "music"        |
+| merchantInterestLevel | String         | N         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"     |
+| addedItemImages       | List\<Blob\>   | N         |           | item images                                                         |                |
+| removedItemImages     | List\<String\> | N         |           | item images id                                                      |                |
 
 
 #### Example

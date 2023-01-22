@@ -81,19 +81,19 @@
 | hasNext      | boolean    | Y         |           |         | true    |
 
 ##### ItemVO
-| Field Name            | Field type   | Mandatory | Condition | Remarks                          | Example        |
-| --------------------- | ------------ | --------- | --------- | -------------------------------- | -------------- |
-| itemId                | String       | Y         |           |                                  | "itemId"       |
-| itemName              | String       | Y         |           |                                  | "itemName"     |
-| itemPrice             | long         | Y         |           | int rupiah                       | 100000         |
-| itemDescription       | String       | N         |           |                                  | "itemDesc"     |
-| itemQuantity          | int          | Y         |           |                                  | 1              |
-| merchantInfo          | UserVO       | Y         |           | merchant info                    |                |
-| categoryName          | String       | Y         |           |                                  | "itemCategory" |
-| hobby                 | String       | Y         |           |                                  | "hobbyName"    |
-| merchantLevelInterest | String       | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
-| userLevelInterest     | String       | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
-| itemImages            | List\<Blob\> | N         |           |                                  |                |
+| Field Name            | Field type          | Mandatory | Condition | Remarks                          | Example        |
+| --------------------- | ------------------- | --------- | --------- | -------------------------------- | -------------- |
+| itemId                | String              | Y         |           |                                  | "itemId"       |
+| itemName              | String              | Y         |           |                                  | "itemName"     |
+| itemPrice             | long                | Y         |           | int rupiah                       | 100000         |
+| itemDescription       | String              | N         |           |                                  | "itemDesc"     |
+| itemQuantity          | int                 | Y         |           |                                  | 1              |
+| merchantInfo          | UserVO              | Y         |           | merchant info                    |                |
+| itemCategory          | ItemCategoryVO      | Y         |           |                                  | "itemCategory" |
+| hobby                 | HobbyVO             | Y         |           |                                  | "hobbyName"    |
+| merchantLevelInterest | InterestLevelVO     | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
+| userLevelInterest     | InterestLevelVO     | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
+| itemImages            | List\<ItemImageVO\> | N         |           |                                  |                |
 
 ##### UserVO
 | Field Name     | Field type | Mandatory | Condition | Remarks          | Example          |
@@ -113,6 +113,32 @@
 | ---------- | ---------- | --------- | --------- | ------- | ---------- |
 | roleId     | String     | Y         |           |         | "roleId"   |
 | roleName   | String     | Y         |           |         | "roleName" |
+
+##### HobbyVO
+| Field Name | Field type | Mandatory | Condition | Remarks | Example     |
+| ---------- | ---------- | --------- | --------- | ------- | ----------- |
+| hobbyId    | String     | Y         |           |         | "hobbyId"   |
+| hobbyName  | String     | Y         |           |         | "hobbyName" |
+
+##### InterestLevelVO
+| Field Name        | Field type | Mandatory | Condition | Remarks                          | Example           |
+| ----------------- | ---------- | --------- | --------- | -------------------------------- | ----------------- |
+| interestLevelId   | String     | Y         |           |                                  | "interestLevelId" |
+| interestLevelName | String     | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"        |
+
+##### ItemCategoryVO
+| Field Name   | Field type | Mandatory | Condition | Remarks | Example        |
+| ------------ | ---------- | --------- | --------- | ------- | -------------- |
+| categoryId   | String     | Y         |           |         | "categoryId"   |
+| categoryName | String     | Y         |           |         | "categoryName" |
+
+##### ItemCategoryVO
+| Field Name  | Field type | Mandatory | Condition | Remarks | Example       |
+| ----------- | ---------- | --------- | --------- | ------- | ------------- |
+| itemId      | String     | Y         |           |         | "itemId"      |
+| itemImageId | String     | Y         |           |         | "itemImageId" |
+| itemImage   | Blob       | Y         |           |         | blob          |
+
 
 ##### ResultContext
 
@@ -165,12 +191,28 @@
           "roleName": "roleName"
         }
       },
-      "categoryName": "GUITAR",
-      "hobby": "music",
-      "merchantInterestLevel": "BEGINNER",
-      "userInterestLevel": "BEGINNER",
+      "itemCategory": {
+        "categoryId": "categoryId",
+        "categoryName": "categoryName"
+      },
+      "hobby": {
+        "hobbyId": "hobbyId",
+        "hobbyName": "hobbyName"
+      },
+      "merchantInterestLevel": {
+        "interestLevelId": "interestLevelId",
+        "interestLevelName": "BEGINNER"
+      },
+      "userInterestLevel": {
+        "interestLevelId": "interestLevelId",
+        "interestLevelName": "BEGINNER"
+      },
       "itemImages": [
-        imageBlob
+        {
+          "itemId": "itemId",
+          "itemImageId": "imageItemId",
+          "itemImage": blob
+        }
       ]
     }
   ]

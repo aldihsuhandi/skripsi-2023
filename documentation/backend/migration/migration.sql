@@ -109,6 +109,7 @@ CREATE TABLE item_images (
     item_image_id VARCHAR(255) NOT NULL,
     item_image LONGBLOB NOT NULL,
     item_id VARCHAR(255) NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY (item_image_id),
