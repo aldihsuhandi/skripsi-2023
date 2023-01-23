@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks  |
-| --------------- | -------- |
-| API url         | \<url\>/ |
-| API description |          |
-| API methods     |          |
+| field name      | remarks           |
+| --------------- | ----------------- |
+| API url         | \<url\>/user/info |
+| API description | query user info   |
+| API methods     | POST              |
 
 ### Request
 

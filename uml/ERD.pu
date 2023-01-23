@@ -1,4 +1,4 @@
-@startuml ERD
+startuml ERD
 skinparam linetype ortho
 
 ' left to right direction
@@ -111,6 +111,7 @@ entity items {
     * hobby_id : string <<FK>>
     * merchant_level_id : string <<FK>>
       user_level_id : string <<FK>>
+    * is_deleted : boolean
     * is_approved : boolean
     * gmt_create : date
     * gmt_modified : date

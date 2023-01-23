@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks  |
-| --------------- | -------- |
-| API url         | \<url\>/ |
-| API description |          |
-| API methods     |          |
+| field name      | remarks                            |
+| --------------- | ---------------------------------- |
+| API url         | \<url\>/item/approve               |
+| API description | approve item submitted by merchant |
+| API methods     | POST                               |
 
 ### Request
 
@@ -20,9 +20,9 @@
 
 ##### Body
 
-| Field Name | Field type | Mandatory | Condition | Remarks | Example |
-| ---------- | ---------- | --------- | --------- | ------- | ------- |
-|            |            |           |           |         |         |
+| Field Name | Field type | Mandatory | Condition | Remarks | Example  |
+| ---------- | ---------- | --------- | --------- | ------- | -------- |
+| itemId     | String     | Y         |           |         | "itemId" |
 
 #### Example
 
@@ -33,7 +33,7 @@
     "sessionId": "e39992f3048042aeae2c279074ee40bc"
   },
   "body": {
-    
+    "itemId": "itemId"
   }
 ```
 
@@ -57,12 +57,16 @@
 
 ###### Possible Result Code
 
-| Result Code     | Remarks                         |
-| --------------- | ------------------------------- |
-| SUCCESS         | api call success                |
-| PARAM_ILLEGAL   | parameter value is not expected |
-| SYSTEM_ERROR    | unexpected system error         |
-| SESSION_EXPIRED | session is expired              |
+| Result Code           | Remarks                         |
+| --------------------- | ------------------------------- |
+| SUCCESS               | api call success                |
+| PARAM_ILLEGAL         | parameter value is not expected |
+| SYSTEM_ERROR          | unexpected system error         |
+| USER_NOT_FOUND        | user not found                  |
+| USER_NOT_ACTIVE       | user not active                 |
+| ITEM_NOT_FOUND        | item not found                  |
+| ITEM_ALREADY_APPROVED | item status already approved    |
+| SESSION_EXPIRED       | user is not login               |
 
 #### Example
 

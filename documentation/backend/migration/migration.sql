@@ -94,6 +94,7 @@ CREATE TABLE items (
     hobby_id VARCHAR(255) NOT NULL,
     merchant_level_id VARCHAR(255) NOT NULL,
     user_level_id VARCHAR(255),
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
     is_approved BOOLEAN NOT NULL DEFAULT false,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),

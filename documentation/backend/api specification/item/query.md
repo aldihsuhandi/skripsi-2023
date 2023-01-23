@@ -26,7 +26,7 @@
 | pageNumber        | int               | N         |           | default value is 1                                   |         |
 | numberOfItem      | int               | N         |           | default value is 10                                  |         |
 
-##### itemFilterContext
+##### ItemFilterContext
 
 | Field Name            | Field type | Mandatory | Condition | Remarks                                                    | Example              |
 | --------------------- | ---------- | --------- | --------- | ---------------------------------------------------------- | -------------------- |
@@ -39,6 +39,7 @@
 | userInterestLevel     | String     | N         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST                           | "BEGINNER"           |
 | hobby                 | String     | N         |           |                                                            | "music"              |
 | itemCategory          | String     | N         |           |                                                            | "GUITAR"             |
+| isApproved            | boolean    | N         |           | default value is true                                      | true                 |
 
 #### Example
 
@@ -55,7 +56,8 @@
     "numberOfItem": 10,
     "itemFilterContext": {
       "hobby": "music",
-      "itemCategory": "guitar"
+      "itemCategory": "guitar",
+      "isApproved": true
     }
   }
 }
@@ -150,11 +152,12 @@
 
 ##### Possible Result Code
 
-| Result Code   | Remarks                         |
-| ------------- | ------------------------------- |
-| SUCCESS       | api call success                |
-| PARAM_ILLEGAL | parameter value is not expected |
-| SYSTEM_ERROR  | unexpected system error         |
+| Result Code     | Remarks                         |
+| --------------- | ------------------------------- |
+| SUCCESS         | api call success                |
+| PARAM_ILLEGAL   | parameter value is not expected |
+| SYSTEM_ERROR    | unexpected system error         |
+| SESSION_EXPIRED | session expired                 |
 
 #### Example
 
