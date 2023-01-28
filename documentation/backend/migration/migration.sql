@@ -117,6 +117,39 @@ CREATE TABLE item_images (
     FOREIGN KEY (item_id) REFERENCES items (item_id)
 );
 
+CREATE TABLE history_items (
+    history_item_id VARCHAR(255) NOT NULL,
+    item_id VARCHAR(255) NOT NULL,
+    item_name VARCHAR(255) NOT NULL,
+    item_price INT NOT NULL,
+    item_description LONGTEXT NOT NULL,
+    merchant_id VARCHAR(255) NOT NULL,
+    category_id VARCHAR(255) NOT NULL,
+    hobby_id VARCHAR(255) NOT NULL,
+    merchant_level_id VARCHAR(255) NOT NULL,
+    user_level_id VARCHAR(255),
+    need_review BOOLEAN NOT NULL DEFAULT false,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    PRIMARY KEY (history_item_id),
+    FOREIGN KEY (item_id) REFERENCES items (item_id),
+    FOREIGN KEY (merchant_id) REFERENCES users (user_id),
+    FOREIGN KEY (category_id) REFERENCES item_categories (category_id),
+    FOREIGN KEY (hobby_id) REFERENCES hobbies (hobby_id),
+    FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id),
+    FOREIGN KEY (user_level_id) REFERENCES interest_level (interest_level_id)
+);
+
+CREATE TABLE history_item_images (
+    history_item_image_id VARCHAR(255) NOT NULL,
+    history_item_image LONGBLOB NOT NULL,
+    history_item_id VARCHAR(255) NOT NULL,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    PRIMARY KEY (history_item_image_id),
+    FOREIGN KEY (history_item_id) REFERENCES history_items (history_item_id)
+);
+
 CREATE TABLE sessions (
     session_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
@@ -164,12 +197,12 @@ CREATE TABLE transaction (
 CREATE TABLE transaction_details (
     transaction_detail_id VARCHAR(255) NOT NULL,
     transaction_id VARCHAR(255) NOT NULL,
-    item_id VARCHAR(255) NOT NULL,
+    history_item_id VARCHAR(255) NOT NULL,
     quantity INT NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY (transaction_id),
-    FOREIGN KEY (item_id) REFERENCES items (item_id),
+    FOREIGN KEY (history_item_id) REFERENCES history_items (history_item_id),
     FOREIGN KEY (transaction_id) REFERENCES transaction (transaction_id)
 );
 
