@@ -10,6 +10,7 @@
 *.gz
 *.out
 *.toc
+*.out
 *(busy)
 
 out/
