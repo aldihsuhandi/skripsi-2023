@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks            |
-| --------------- | ------------------ |
-| API url         | \<url\>/item/query |
-| API description | query item         |
-| API methods     | POST               |
+| field name      | remarks                     |
+| --------------- | --------------------------- |
+| API url         | \<url\>/item/wishlist/query |
+| API description | query user wishlists        |
+| API methods     | POST                        |
 
 ### Request
 
@@ -12,11 +12,11 @@
 
 ##### Head
 
-| Field Name   | Field type | Mandatory | Condition                               | Remarks | Example        |
-| ------------ | ---------- | --------- | --------------------------------------- | ------- | -------------- |
-| clientId     | String     | Y         |                                         |         | "clientId"     |
-| clientSecret | String     | Y         |                                         |         | "clientSecret" |
-| sessionId    | String     | N         | need to pass sessionId if user is login |         | "sessionId"    |
+| Field Name   | Field type | Mandatory | Condition | Remarks | Example        |
+| ------------ | ---------- | --------- | --------- | ------- | -------------- |
+| clientId     | String     | Y         |           |         | "clientId"     |
+| clientSecret | String     | Y         |           |         | "clientSecret" |
+| sessionId    | String     | Y         |           |         | "sessionId"    |
 
 ##### Body
 
@@ -44,8 +44,6 @@
 #### Example
 
 ```json
-
-{
   "head": {
     "clientId": "clientId",
     "clientSecret": "clientSecret",
@@ -56,11 +54,9 @@
     "numberOfItem": 10,
     "itemFilterContext": {
       "hobby": "music",
-      "itemCategory": "guitar",
-      "isApproved": true
+      "itemCategory": "guitar"
     }
   }
-}
 ```
 
 ### Result
@@ -72,8 +68,8 @@
 | Field Name    | Field type     | Mandatory | Condition | Remarks | Example |
 | ------------- | -------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext  | Y         |           |         |         |
+| wishlistItems | List\<ItemVO\> | Y         |           |         |         |
 | pagingContext | PagingContext  | Y         |           |         |         |
-| items         | List\<ItemVO\> | Y         |           |         |         |
 
 ##### PagingContext 
 | Field Name   | Field type | Mandatory | Condition | Remarks | Example |
@@ -96,25 +92,6 @@
 | merchantLevelInterest | InterestLevelVO     | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
 | userLevelInterest     | InterestLevelVO     | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
 | itemImages            | List\<ItemImageVO\> | N         |           |                                  |                |
-
-##### UserVO
-| Field Name     | Field type | Mandatory | Condition | Remarks          | Example          |
-| -------------- | ---------- | --------- | --------- | ---------------- | ---------------- |
-| userId         | String     | Y         |           |                  | "userId"         |
-| username       | String     | Y         |           |                  | "username"       |
-| email          | String     | Y         |           |                  | "user@email.com" |
-| phoneNumber    | String     | Y         |           |                  | "081234567890"   |
-| profilePicture | Blob       | N         |           |                  |                  |
-| isActive       | boolean    | Y         |           |                  | true             |
-| isDeleted      | boolean    | Y         |           |                  | false            |
-| password       | String     | Y         |           | will be censored | "**********"     |
-| roleInfo       | RoleVO     | Y         |           |                  |                  |
-
-##### RoleVO
-| Field Name | Field type | Mandatory | Condition | Remarks | Example    |
-| ---------- | ---------- | --------- | --------- | ------- | ---------- |
-| roleId     | String     | Y         |           |         | "roleId"   |
-| roleName   | String     | Y         |           |         | "roleName" |
 
 ##### HobbyVO
 | Field Name | Field type | Mandatory | Condition | Remarks | Example     |
@@ -142,14 +119,14 @@
 | resultMsg  | String     | Y         |           | will contain the reason API call failed | SUCCESS |
 | resultCode | String     | Y         |           | Result Code                             | SUCCESS |
 
-##### Possible Result Code
+###### Possible Result Code
 
 | Result Code     | Remarks                         |
 | --------------- | ------------------------------- |
 | SUCCESS         | api call success                |
 | PARAM_ILLEGAL   | parameter value is not expected |
 | SYSTEM_ERROR    | unexpected system error         |
-| SESSION_EXPIRED | session expired                 |
+| SESSION_EXPIRED | session is expired              |
 
 #### Example
 
@@ -165,7 +142,7 @@
     "numberOfItem": 10,
     "hasNext": true
   },
-  "items": [
+  "wishlistItems": [
     {
       "itemId": "itemId", 
       "itemName": "item name", 

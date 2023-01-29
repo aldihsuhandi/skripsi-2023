@@ -151,7 +151,7 @@ entity history_items{
     * hobby_id : string <<FK>>
     * merchant_level_id : string <<FK>>
       user_level_id : string <<FK>>
-    * need_feedback : boolean
+    * need_review : boolean
     * gmt_create : date
     * gmt_modified : date
 }
