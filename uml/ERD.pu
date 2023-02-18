@@ -386,7 +386,7 @@ entity dictionary {
 ' for transaction purposes
 interest_levels }o--|| items
 item_categories }o--|| items
-items ||--o{ hobbies
+items ||-o{ hobbies
 
 ' user_roles }o--|| users
 users ||-o{ user_roles
@@ -431,8 +431,9 @@ posts }o--|| comments
 comments ||-o{ comments
 
 ' direct communication purposes
-chats |o--o{ users
-chatrooms }o--o| chats
+' users }o--o| chats
+chats |o-o{ users
+chatrooms }o-o| chats
 
 
 ' user capability
@@ -450,9 +451,9 @@ users }o-|| sessions
 
 ' wishlist
 ' users }o-|| wishlists
-' items }o-|| wishlists
+items }o-|| wishlists
 wishlists ||-o{ users
-wishlists ||-o{ items
+' wishlists ||-o{ items
 
 ' report
 ' posts }o--|| post_reports
@@ -460,7 +461,7 @@ wishlists ||-o{ items
 comments ||-o{ users
 posts ||-o{ users
 comment_reports ||--o{ comments
-post_reports ||--o{ posts
+post_reports ||-o{ posts
 
 comment_reports ||--o{ users
 post_reports ||--o{ users
@@ -476,5 +477,6 @@ item_crowds }o-|| crowds
 
 user_crowds }o-|| users
 item_crowds }o-|| items
+' items ||-o{ item_crowds
 
 @enduml
