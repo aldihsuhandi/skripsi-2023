@@ -50,15 +50,6 @@ CREATE TABLE user_roles (
     PRIMARY KEY (role_id)
 );
 
-CREATE TABLE activities (
-    activity_id VARCHAR(255) NOT NULL,
-    activity_name VARCHAR(255) NOT NULL,
-    point INT NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (activity_id)
-);
-
 CREATE TABLE payments (
     payment_id VARCHAR(255) NOT NULL,
     payment_type VARCHAR(255) NOT NULL,
@@ -204,19 +195,6 @@ CREATE TABLE transaction_details (
     PRIMARY KEY (transaction_id),
     FOREIGN KEY (history_item_id) REFERENCES history_items (history_item_id),
     FOREIGN KEY (transaction_id) REFERENCES transaction (transaction_id)
-);
-
-CREATE TABLE user_activities (
-    user_activity_id VARCHAR(255) NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    item_id VARCHAR(255) NOT NULL,
-    activity_id VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (user_activity_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id),
-    FOREIGN KEY (item_id) REFERENCES items (item_id),
-    FOREIGN KEY (activity_id) REFERENCES activities (activity_id)
 );
 
 CREATE TABLE wishlists (
@@ -379,6 +357,45 @@ CREATE TABLE contents (
     PRIMARY KEY (content_name)
 );
 
+CREATE TABLE crowds (
+    crowd_id VARCHAR(255) NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT true,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    PRIMARY KEY(crowd_id)
+);
+
+CREATE TABLE crowd_rules (
+    rule_id VARCHAR(255) NOT NULL,
+    crowd_id VARCHAR(255) NOT NULL,
+    rule_type VARCHAR(255) NOT NULL,
+    rule_value VARCHAR(4096) NOT NULL,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    PRIMARY KEY(rule_id),
+    FOREIGN KEY (crowd_id) REFERENCES crowds(crowd_id)
+);
+
+CREATE TABLE user_crowds (
+    crowd_id VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    PRIMARY KEY(crowd_id, user_id),
+    FOREIGN KEY(crowd_id) REFERENCES crowds(crowd_id),
+    FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE item_crowds (
+    crowd_id VARCHAR(255) NOT NULL,
+    item_id VARCHAR(255) NOT NULL,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    PRIMARY KEY(crowd_id, user_id),
+    FOREIGN KEY(crowd_id) REFERENCES crowds(crowd_id),
+    FOREIGN KEY(item_id) REFERENCES items(item_id)
+);
+
 INSERT INTO
     user_roles (role_id, role_name)
 VALUES
@@ -424,16 +441,6 @@ VALUES
     (
         "5684822d-ab2d-4ed6-a124-c3754035d80c",
         "ENTHUSIAST"
-    );
-
-INSERT INTO
-    activities (activity_id, activity_name, point)
-VALUES
-    ("04c9111d-a879-40aa-833b-2dc8f76fef34", "BUY", 5),
-    (
-        "34e64678-d947-48df-9cb5-15c463e967cd",
-        "LOOK",
-        2
     );
 
 INSERT INTO
