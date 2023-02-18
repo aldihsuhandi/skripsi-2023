@@ -391,7 +391,7 @@ CREATE TABLE item_crowds (
     item_id VARCHAR(255) NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    PRIMARY KEY(crowd_id, user_id),
+    PRIMARY KEY(crowd_id, item_id),
     FOREIGN KEY(crowd_id) REFERENCES crowds(crowd_id),
     FOREIGN KEY(item_id) REFERENCES items(item_id)
 );
