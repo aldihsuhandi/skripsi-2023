@@ -43,6 +43,14 @@ entity item_categories {
     * gmt_modified : date
 }
 
+entity hobbies {
+    * id : string
+    --
+    * hobby_name : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
 entity user_roles {
     * id : string
     --
@@ -84,7 +92,7 @@ entity users {
     * phone_number : string <<UNIQUE>>
     * username : string
       profile_picture : string
-    * is_deleted : boolean
+    * is_deleted: boolean
     * is_active : boolean
     * password : string
     * gmt_create : date
@@ -100,32 +108,11 @@ entity items {
     * item_quantity : int
     * merchant_id : string <<FK>>
     * category_id : string <<FK>>
+    * hobby_id : string <<FK>>
     * merchant_level_id : string <<FK>>
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-entity item_approvals {
-    * id : string
-    --
-      item_id : string <<FK>>
-    * item_name : string
-    * item_price : long
-    * item_description : long_text
-    * item_quantity : int
-    * merchant_id : string <<FK>>
-    * category_id : string <<FK>>
-    * merchant_level_id : string <<FK>>
+      user_level_id : string <<FK>>
+    * is_deleted : boolean
     * is_approved : boolean
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-entity item_image_approvals {
-    * id : string
-    --
-    * item_approval_id : string <<FK>>
-    * item_image : string
     * gmt_create : date
     * gmt_modified : date
 }
@@ -133,7 +120,7 @@ entity item_image_approvals {
 entity item_images {
     * id : string
     --
-    * item_image: string
+    * item_image: blob
     * item_id : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
@@ -147,7 +134,33 @@ entity reviews {
     * user_id : string <<FK>>
       interest_level : string <<FK>>
       description : longtext
-      review_image : longtext
+      review_image : blob
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity history_items{
+    * id : string 
+    --
+    * item_id : string <<FK>>
+    * item_name : string
+    * item_price : long
+    * item_description : long_text
+    * merchant_id : string <<FK>>
+    * category_id : string <<FK>>
+    * hobby_id : string <<FK>>
+    * merchant_level_id : string <<FK>>
+      user_level_id : string <<FK>>
+    * need_review : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity history_item_images {
+    * id : string
+    --
+    * item_image: blob
+    * item_id : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
 }
@@ -165,7 +178,7 @@ entity transaction_details {
     * id : string
     --
     * transaction_id : string <<FK>>
-    * item_id : string <<FK>>
+    * history_item_id : string <<FK>>
     * quantity : int
     * gmt_create : date
     * gmt_modified : date
@@ -261,29 +274,41 @@ entity sessions{
     * gmt_modified : date
 }
 
-entity activities {
-    * id : string
+' entity activities {
+'     * id : string
+'     --
+'     * activity_name : string
+'     * point : int
+'     * gmt_create : date
+'     * gmt_modified : date
+' }
+
+' entity user_activities {
+'     * id : string
+'     --
+'     * user_id : string <<FK>>
+'     * item_id : string <<FK>>
+'     * is_active : boolean
+'     * gmt_create : date
+'     * gmt_modified : date
+' }
+
+entity otps {
+    * otp_id : string
     --
-    * activity_name : string
+    * otp : string
+    * otp_dt : date
+    * email : string <<FK>>
+    * type_id : string <<FK>>
+    * is_active : boolean 
     * gmt_create : date
     * gmt_modified : date
 }
 
-entity user_activities {
-    * id : string
+entity otp_types {
+    * type_id : string
     --
-    * user_id : string <<FK>>
-    * item_id : string <<FK>>
-    * activity_id : string <<FK>>
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-' wishlist
-entity wishlists {
-    * user_id : string <<FK>>
-    * item_id : string <<FK>>
-    --
+    * otp_type : string
     * gmt_create : date
     * gmt_modified : date
 }
@@ -297,26 +322,6 @@ entity clients {
     * gmt_modified : date
 }
 
-entity otps{
-    * otp_id : string
-    --
-    * otp : string
-    * otp_dt : date
-    * type_id : string <<FK>>
-    * email : string
-    * is_active : boolean
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-entity otp_types {
-    * type_id : string
-    --
-    * otp_type : string
-    * gmt_create : date
-    * gmt_modified : date
-}
-
 entity contents {
     * content_name : string
     --
@@ -325,19 +330,71 @@ entity contents {
     * gmt_modified : date
 }
 
+entity wishlists {
+    * item_id : string <<FK>>
+    * user_id : string <<FK>>
+    --
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity crowds {
+    * crowd_id : string
+    --
+    * is_active : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity crowd_rules {
+    * rule_id : string
+    --
+    * crowd_id : string <<FK>>
+    * rule_type : string
+    * rule_value : string
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity user_crowds {
+    * crowd_id : string <<FK>>
+    * user_id : string <<FK>>
+    --
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity item_crowds {
+    * crowd_id : string <<FK>>
+    * item_id : string <<FK>>
+    --
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity dictionary {
+    * dictionary_id : string <<FK>>
+    --
+    * dictionary_type : string
+    * dictionary_key : string
+    * dictionary_value : string
+    * gmt_create : date
+    * gmt_modified : date
+}
 
 ' relation
 ' for transaction purposes
 interest_levels }o--|| items
 item_categories }o--|| items
+items ||-o{ hobbies
 
 ' user_roles }o--|| users
 users ||-o{ user_roles
 
 transaction |o--o{ payments
 users }o--|| transaction
-transaction }o--|| transaction_details
-items }o--|| transaction_details
+transaction }o-|| transaction_details
+history_items }o--|| transaction_details
 
 ' carts
 users }o--|| carts
@@ -350,26 +407,33 @@ reviews |o--o{ interest_levels
 items ||--o{ users
 reviews ||--o{ users
 
-' item approval
-items }o--o| item_approvals
-users }o--|| item_approvals
-item_categories }o--|| item_approvals
-interest_levels }o--|| item_approvals
-item_image_approvals ||--o{ item_approvals
+' history items
+' history_items ||--o{ items
+' history_items ||--o{ hobbies
+' history_items ||--o{ item_categories
+' history_items ||--o{ interest_levels
 
+items }o--|| history_items
+hobbies }o--|| history_items
+item_categories }o--|| history_items
+interest_levels }o--|| history_items
+history_item_images }|-|| history_items
+' history_items ||-|{ history_item_images
 
 ' for discussion purposes
 comments }o--|| comment_upvotes
 comment_upvotes ||--o{ users
-post_upvotes ||--o{ posts
+posts }o--|| post_upvotes
+' post_upvotes ||--o{ posts
 post_upvotes ||--o{ users
 
 posts }o--|| comments
-comments }o--|| comments
+comments ||-o{ comments
 
 ' direct communication purposes
-chats |o--o{ users
-chatrooms }o--o| chats
+' users }o--o| chats
+chats |o-o{ users
+chatrooms }o-o| chats
 
 
 ' user capability
@@ -378,18 +442,18 @@ user_capabilities ||--o{ users
 capabilities }o--|| user_capabilities
 
 ' table for backend purpose
-users }o--|| sessions
-users }o-|| user_activities
-items }o-|| user_activities
+users }o-|| sessions
+' users }o-|| user_activities
+' items }o-|| user_activities
 ' user_activities ||-o{ users
 ' user_activities ||-o{ items
-user_activities ||-o{ activities
+' user_activities ||--o{ activities
 
 ' wishlist
 ' users }o-|| wishlists
-' items }o-|| wishlists
+items }o-|| wishlists
 wishlists ||-o{ users
-wishlists ||-o{ items
+' wishlists ||-o{ items
 
 ' report
 ' posts }o--|| post_reports
@@ -397,12 +461,22 @@ wishlists ||-o{ items
 comments ||-o{ users
 posts ||-o{ users
 comment_reports ||--o{ comments
-post_reports ||--o{ posts
+post_reports ||-o{ posts
 
 comment_reports ||--o{ users
 post_reports ||--o{ users
 
 otps }o--|| users
 otp_types ||--o{ otps
+
+crowds ||-|{ crowd_rules
+crowds ||-|{ user_crowds
+' crowds ||-|{ item_crowds
+' user_crowds }o-|| crowds
+item_crowds }o-|| crowds
+
+user_crowds }o-|| users
+item_crowds }o-|| items
+' items ||-o{ item_crowds
 
 @enduml

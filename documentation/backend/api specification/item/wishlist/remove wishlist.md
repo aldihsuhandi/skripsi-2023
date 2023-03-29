@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks  |
-| --------------- | -------- |
-| API url         | \<url\>/ |
-| API description |          |
-| API methods     |          |
+| field name      | remarks                      |
+| --------------- | ---------------------------- |
+| API url         | \<url\>/item/wishlist/remove |
+| API description | remove item from wishlist    |
+| API methods     | POST                         |
 
 ### Request
 
@@ -20,9 +20,9 @@
 
 ##### Body
 
-| Field Name | Field type | Mandatory | Condition | Remarks | Example |
-| ---------- | ---------- | --------- | --------- | ------- | ------- |
-|            |            |           |           |         |         |
+| Field Name | Field type | Mandatory | Condition | Remarks | Example  |
+| ---------- | ---------- | --------- | --------- | ------- | -------- |
+| itemId     | String     | Y         |           |         | "itemId" |
 
 #### Example
 
@@ -33,7 +33,7 @@
     "sessionId": "e39992f3048042aeae2c279074ee40bc"
   },
   "body": {
-    
+    "itemId": "itemId"
   }
 ```
 
