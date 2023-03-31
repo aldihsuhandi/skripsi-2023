@@ -28,18 +28,17 @@
 
 ##### ItemFilterContext
 
-| Field Name            | Field type | Mandatory | Condition | Remarks                                                    | Example              |
-| --------------------- | ---------- | --------- | --------- | ---------------------------------------------------------- | -------------------- |
-| itemId                | String     | N         |           | if this field is present, this api will only return 1 item | "itemId"             |
-| itemName              | String     | N         |           |                                                            | "itemName"           |
-| minItemPrice          | int        | N         |           |                                                            | 1000                 |
-| maxItemPrice          | int        | N         |           |                                                            | 5000                 |
-| merchantEmail         | String     | N         |           |                                                            | "merchant@email.com" |
-| merchantInterestLevel | String     | N         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST                           | "BEGINNER"           |
-| userInterestLevel     | String     | N         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST                           | "BEGINNER"           |
-| hobby                 | String     | N         |           |                                                            | "music"              |
-| itemCategory          | String     | N         |           |                                                            | "GUITAR"             |
-| isApproved            | boolean    | N         |           | default value is true                                      | true                 |
+| Field Name            | Field type | Mandatory | Condition | Remarks                          | Example              |
+| --------------------- | ---------- | --------- | --------- | -------------------------------- | -------------------- |
+| itemName              | String     | N         |           |                                  | "itemName"           |
+| minItemPrice          | int        | N         |           |                                  | 1000                 |
+| maxItemPrice          | int        | N         |           |                                  | 5000                 |
+| merchantEmail         | String     | N         |           |                                  | "merchant@email.com" |
+| merchantInterestLevel | String     | N         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"           |
+| userInterestLevel     | String     | N         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"           |
+| hobby                 | String     | N         |           |                                  | "music"              |
+| itemCategory          | String     | N         |           |                                  | "GUITAR"             |
+| isApproved            | boolean    | N         |           | default value is true            | true                 |
 
 #### Example
 
