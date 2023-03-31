@@ -38,7 +38,6 @@
 | userInterestLevel     | String     | N         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"           |
 | hobby                 | String     | N         |           |                                  | "music"              |
 | itemCategory          | String     | N         |           |                                  | "GUITAR"             |
-| isApproved            | boolean    | N         |           | default value is true            | true                 |
 
 #### Example
 
