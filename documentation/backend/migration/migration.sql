@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS shumishumi;
+
 CREATE DATABASE shumishumi;
 
 USE shumishumi;
@@ -20,7 +22,7 @@ CREATE TABLE capabilities (
 
 CREATE TABLE item_categories (
     category_id VARCHAR(255) NOT NULL,
-    category_name VARCHAR(255) NOT NULL,
+    category_name VARCHAR(255) UNIQUE NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY (category_id)
@@ -28,7 +30,7 @@ CREATE TABLE item_categories (
 
 CREATE TABLE hobbies (
     hobby_id VARCHAR(255) NOT NULL,
-    hobby_name VARCHAR(255) NOT NULL,
+    hobby_name VARCHAR(255) UNIQUE NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY (hobby_id)
@@ -36,7 +38,7 @@ CREATE TABLE hobbies (
 
 CREATE TABLE interest_level (
     interest_level_id VARCHAR(255) NOT NULL,
-    level_name VARCHAR(255) NOT NULL,
+    level_name VARCHAR(255) UNIQUE NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY (interest_level_id)
@@ -44,7 +46,7 @@ CREATE TABLE interest_level (
 
 CREATE TABLE user_roles (
     role_id VARCHAR(255) NOT NULL,
-    role_name VARCHAR(255) NOT NULL,
+    role_name VARCHAR(255) UNIQUE NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     PRIMARY KEY (role_id)
@@ -84,7 +86,6 @@ CREATE TABLE items (
     category_id VARCHAR(255) NOT NULL,
     hobby_id VARCHAR(255) NOT NULL,
     merchant_level_id VARCHAR(255) NOT NULL,
-    user_level_id VARCHAR(255),
     is_deleted BOOLEAN NOT NULL DEFAULT false,
     is_approved BOOLEAN NOT NULL DEFAULT false,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
@@ -93,8 +94,7 @@ CREATE TABLE items (
     FOREIGN KEY (merchant_id) REFERENCES users (user_id),
     FOREIGN KEY (category_id) REFERENCES item_categories (category_id),
     FOREIGN KEY (hobby_id) REFERENCES hobbies (hobby_id),
-    FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id),
-    FOREIGN KEY (user_level_id) REFERENCES interest_level (interest_level_id)
+    FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id)
 );
 
 CREATE TABLE item_images (
