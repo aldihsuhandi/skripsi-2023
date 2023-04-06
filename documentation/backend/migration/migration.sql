@@ -413,6 +413,11 @@ VALUES
         "6b8d6ac7-dc63-41ed-bb99-fba0ebcdc543",
         "postman",
         "Ev^gBi6URjKfL&z3&mjVV4f9$yHsvTtZ"
+    ),
+    (
+        "dbf0201e-23a0-446b-8db3-40b1b6ed7c1f",
+        "manuel",
+        "dycvervbrngjwhryugwduo"
     );
 
 INSERT INTO
