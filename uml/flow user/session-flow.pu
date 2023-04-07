@@ -1,0 +1,31 @@
+@startuml session flow
+
+Actor user as u
+Participant "Front End" as fe
+Participant "Back End" as be
+
+u -> fe : open page
+alt when rendering navbar widget aka semua page
+    note left
+        fe already have sessionId in storage
+    end note
+    fe -> be : query session <color:red>/session/info
+    note left
+        Request:
+        - sessionId
+    end note
+    return result
+    note left
+        Result: 
+        - email
+    end note
+    alt if query session success
+        fe -> be : query user info <color:red>/user/query
+        return user info
+    else if query session return SESSION_EXPIRED
+        fe -> fe : remove sessionId from storage
+        fe -> fe : redirect to login page
+    end
+end
+
+@enduml
