@@ -79,6 +79,8 @@
 | pageNumber   | int        | Y         |           |         | 0       |
 | numberOfItem | int        | Y         |           |         | 10      |
 | hasNext      | boolean    | Y         |           |         | true    |
+| totalItem    | Long       | N         |           |         |         |
+| totalPage    | int        | N         |           |         |         |
 
 #### ItemSummary
 | Field Name      | Field type   | Mandatory | Condition | Remarks | Example |
