@@ -48,26 +48,18 @@
 | Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
 | ------------- | ------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext | Y         |           |         |         |
-| userInfo      | UserVO        | Y         |           |         |         |
+| userInfo      | UserSummary   | Y         |           |         |         |
 
-##### UserVO
-| Field Name     | Field type | Mandatory | Condition | Remarks          | Example          |
-| -------------- | ---------- | --------- | --------- | ---------------- | ---------------- |
-| userId         | String     | Y         |           |                  | "userId"         |
-| username       | String     | Y         |           |                  | "username"       |
-| email          | String     | Y         |           |                  | "user@email.com" |
-| phoneNumber    | String     | Y         |           |                  | "081234567890"   |
-| profilePicture | Blob       | N         |           |                  |                  |
-| isActive       | boolean    | Y         |           |                  | true             |
-| isDeleted      | boolean    | Y         |           |                  | false            |
-| password       | String     | Y         |           | will be censored | "**********"     |
-| roleInfo       | RoleVO     | Y         |           |                  |                  |
-
-##### RoleVO
-| Field Name | Field type | Mandatory | Condition | Remarks | Example    |
-| ---------- | ---------- | --------- | --------- | ------- | ---------- |
-| roleId     | String     | Y         |           |         | "roleId"   |
-| roleName   | String     | Y         |           |         | "roleName" |
+#### UserSummary
+| Field Name     | Field type | Mandatory | Condition | Remarks             | Example |
+| -------------- | ---------- | --------- | --------- | ------------------- | ------- |
+| email          | String     | Y         |           |                     |         |
+| phoneNumber    | String     | Y         |           |                     |         |
+| username       | String     | Y         |           |                     |         |
+| profilePicture | Blob       | Y         |           |                     |         |
+| role           | String     | Y         |           | USER/MERCHANT/ADMIN |         |
+| gmtCreate      | Date       | Y         |           |                     |         |
+| gmtModified    | Date       | Y         |           |                     |         |
 
 ##### ResultContext
 
@@ -100,13 +92,7 @@
     "email": "user@email.com",
     "phoneNumber": "081234567890",
     "profilePicture": blob,
-    "isActive": true,
-    "isDeleted": false,
-    "password": "*********",
-    "roleInfo": {
-      "roleId": "roleId",
-      "roleName": "roleName"
-    }
+    "role": "USER"
   }
 }
 ```

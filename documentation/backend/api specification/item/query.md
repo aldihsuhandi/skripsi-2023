@@ -67,11 +67,11 @@
 
 ##### Body
 
-| Field Name    | Field type     | Mandatory | Condition | Remarks | Example |
-| ------------- | -------------- | --------- | --------- | ------- | ------- |
-| resultContext | ResultContext  | Y         |           |         |         |
-| pagingContext | PagingContext  | Y         |           |         |         |
-| items         | List\<ItemVO\> | Y         |           |         |         |
+| Field Name    | Field type          | Mandatory | Condition | Remarks | Example |
+| ------------- | ------------------- | --------- | --------- | ------- | ------- |
+| resultContext | ResultContext       | Y         |           |         |         |
+| pagingContext | PagingContext       | Y         |           |         |         |
+| items         | List\<ItemSummary\> | Y         |           |         |         |
 
 ##### PagingContext 
 | Field Name   | Field type | Mandatory | Condition | Remarks | Example |
