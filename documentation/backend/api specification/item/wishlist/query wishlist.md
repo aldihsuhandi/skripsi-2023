@@ -65,11 +65,11 @@
 
 ##### Body
 
-| Field Name    | Field type     | Mandatory | Condition | Remarks | Example |
-| ------------- | -------------- | --------- | --------- | ------- | ------- |
-| resultContext | ResultContext  | Y         |           |         |         |
-| wishlistItems | List\<ItemVO\> | Y         |           |         |         |
-| pagingContext | PagingContext  | Y         |           |         |         |
+| Field Name    | Field type          | Mandatory | Condition | Remarks | Example |
+| ------------- | ------------------- | --------- | --------- | ------- | ------- |
+| resultContext | ResultContext       | Y         |           |         |         |
+| wishlistItems | List\<ItemSummary\> | Y         |           |         |         |
+| pagingContext | PagingContext       | Y         |           |         |         |
 
 ##### PagingContext 
 | Field Name   | Field type | Mandatory | Condition | Remarks | Example |
@@ -77,39 +77,35 @@
 | pageNumber   | int        | Y         |           |         | 0       |
 | numberOfItem | int        | Y         |           |         | 10      |
 | hasNext      | boolean    | Y         |           |         | true    |
+| totalItem    | Long       | N         |           |         |         |
+| totalPage    | int        | N         |           |         |         |
 
-##### ItemVO
-| Field Name            | Field type          | Mandatory | Condition | Remarks                          | Example        |
-| --------------------- | ------------------- | --------- | --------- | -------------------------------- | -------------- |
-| itemId                | String              | Y         |           |                                  | "itemId"       |
-| itemName              | String              | Y         |           |                                  | "itemName"     |
-| itemPrice             | long                | Y         |           | int rupiah                       | 100000         |
-| itemDescription       | String              | N         |           |                                  | "itemDesc"     |
-| itemQuantity          | int                 | Y         |           |                                  | 1              |
-| merchantInfo          | UserVO              | Y         |           | merchant info                    |                |
-| itemCategory          | ItemCategoryVO      | Y         |           |                                  | "itemCategory" |
-| hobby                 | HobbyVO             | Y         |           |                                  | "hobbyName"    |
-| merchantLevelInterest | InterestLevelVO     | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
-| userLevelInterest     | InterestLevelVO     | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
-| itemImages            | List\<ItemImageVO\> | N         |           |                                  |                |
+#### ItemSummary
+| Field Name      | Field type   | Mandatory | Condition | Remarks | Example |
+| --------------- | ------------ | --------- | --------- | ------- | ------- |
+| itemId          | String       | Y         |           |         |         |
+| itemName        | String       | Y         |           |         |         |
+| itemPrice       | Long         | Y         |           |         |         |
+| itemDescription | String       | Y         |           |         |         |
+| itemQuantity    | Integer      | Y         |           |         |         |
+| itemCategory    | String       | Y         |           |         |         |
+| hobby           | String       | Y         |           |         |         |
+| merchantInfo    | UserSummary  | Y         |           |         |         |
+| merchantLevel   | String       | Y         |           |         |         |
+| itemImages      | List\<Blob\> | Y         |           |         |         |
+| gmtCreate       | Date         | Y         |           |         |         |
+| gmtModified     | Date         | Y         |           |         |         |
 
-##### HobbyVO
-| Field Name | Field type | Mandatory | Condition | Remarks | Example     |
-| ---------- | ---------- | --------- | --------- | ------- | ----------- |
-| hobbyId    | String     | Y         |           |         | "hobbyId"   |
-| hobbyName  | String     | Y         |           |         | "hobbyName" |
-
-##### InterestLevelVO
-| Field Name        | Field type | Mandatory | Condition | Remarks                          | Example           |
-| ----------------- | ---------- | --------- | --------- | -------------------------------- | ----------------- |
-| interestLevelId   | String     | Y         |           |                                  | "interestLevelId" |
-| interestLevelName | String     | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"        |
-
-##### ItemCategoryVO
-| Field Name   | Field type | Mandatory | Condition | Remarks | Example        |
-| ------------ | ---------- | --------- | --------- | ------- | -------------- |
-| categoryId   | String     | Y         |           |         | "categoryId"   |
-| categoryName | String     | Y         |           |         | "categoryName" |
+#### UserSummary
+| Field Name     | Field type | Mandatory | Condition | Remarks | Example |
+| -------------- | ---------- | --------- | --------- | ------- | ------- |
+| email          | String     | Y         |           |         |         |
+| phoneNumber    | String     | Y         |           |         |         |
+| username       | String     | Y         |           |         |         |
+| profilePicture | Blob       | Y         |           |         |         |
+| role           | String     | Y         |           |         |         |
+| gmtCreate      | Date       | Y         |           |         |         |
+| gmtModified    | Date       | Y         |           |         |         |
 
 ##### ResultContext
 
@@ -150,41 +146,17 @@
       "itemQuantity": 100,
       "itemDescription": "itemDescription",
       "merchantInfo": {
-        "userId": "userId",
         "userName": "userName",
         "email": "user@email.com",
         "phoneNumber": "081234567890",
         "profilePicture": blob,
-        "isActive": true,
-        "isDeleted": false,
-        "password": "*********",
-        "roleInfo": {
-          "roleId": "roleId",
-          "roleName": "roleName"
-        }
+        "role": "roleName"
       },
-      "itemCategory": {
-        "categoryId": "categoryId",
-        "categoryName": "categoryName"
-      },
-      "hobby": {
-        "hobbyId": "hobbyId",
-        "hobbyName": "hobbyName"
-      },
-      "merchantInterestLevel": {
-        "interestLevelId": "interestLevelId",
-        "interestLevelName": "BEGINNER"
-      },
-      "userInterestLevel": {
-        "interestLevelId": "interestLevelId",
-        "interestLevelName": "BEGINNER"
-      },
+      "itemCategory": "categoryName",
+      "hobby": "hobbyName": "hobbyName",
+      "merchantInterestLevel": "BEGINNER",
       "itemImages": [
-        {
-          "itemId": "itemId",
-          "itemImageId": "imageItemId",
-          "itemImage": blob
-        }
+        blob, blob, blob
       ]
     }
   ]
