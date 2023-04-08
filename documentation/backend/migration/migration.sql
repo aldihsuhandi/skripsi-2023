@@ -66,7 +66,7 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE NOT NULL,
     phone_number VARCHAR(255) UNIQUE NOT NULL,
     username VARCHAR(255) NOT NULL,
-    profile_picture LONGBLOB,
+    profile_picture VARCHAR(255),
     password VARCHAR(255) NOT NULL,
     is_active BOOLEAN DEFAULT false,
     is_deleted BOOLEAN DEFAULT false,
@@ -80,6 +80,7 @@ CREATE TABLE items (
     item_id VARCHAR(255) NOT NULL,
     item_name VARCHAR(255) NOT NULL,
     item_price INT NOT NULL,
+    item_images VARCHAR(1024) NOT NULL,
     item_description LONGTEXT NOT NULL,
     item_quantity INT NOT NULL,
     merchant_id VARCHAR(255) NOT NULL,
@@ -97,22 +98,12 @@ CREATE TABLE items (
     FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id)
 );
 
-CREATE TABLE item_images (
-    item_image_id VARCHAR(255) NOT NULL,
-    item_image LONGBLOB NOT NULL,
-    item_id VARCHAR(255) NOT NULL,
-    is_deleted BOOLEAN NOT NULL DEFAULT false,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (item_image_id),
-    FOREIGN KEY (item_id) REFERENCES items (item_id)
-);
-
 CREATE TABLE history_items (
     history_item_id VARCHAR(255) NOT NULL,
     item_id VARCHAR(255) NOT NULL,
     item_name VARCHAR(255) NOT NULL,
     item_price INT NOT NULL,
+    item_images VARCHAR(1024) NOT NULL,
     item_description LONGTEXT NOT NULL,
     merchant_id VARCHAR(255) NOT NULL,
     category_id VARCHAR(255) NOT NULL,
@@ -129,16 +120,6 @@ CREATE TABLE history_items (
     FOREIGN KEY (hobby_id) REFERENCES hobbies (hobby_id),
     FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id),
     FOREIGN KEY (user_level_id) REFERENCES interest_level (interest_level_id)
-);
-
-CREATE TABLE history_item_images (
-    history_item_image_id VARCHAR(255) NOT NULL,
-    history_item_image LONGBLOB NOT NULL,
-    history_item_id VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (history_item_image_id),
-    FOREIGN KEY (history_item_id) REFERENCES history_items (history_item_id)
 );
 
 CREATE TABLE sessions (
@@ -397,6 +378,16 @@ CREATE TABLE item_crowds (
     PRIMARY KEY(crowd_id, item_id),
     FOREIGN KEY(crowd_id) REFERENCES crowds(crowd_id),
     FOREIGN KEY(item_id) REFERENCES items(item_id)
+);
+
+CREATE TABLE images (
+    image_id VARCHAR(255) NOT NULL,
+    image_name VARCHAR(255) NOT NULL,
+    image_ext VARCHAR(255) NOT NULL,
+    image LONGBLOB NOT NULL,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    PRIMARY KEY(image_id)
 );
 
 INSERT INTO
