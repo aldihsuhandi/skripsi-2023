@@ -2,6 +2,7 @@
 skinparam linetype ortho
 
 ' left to right direction
+' top to bottom direction
 
 ' entity
 
@@ -104,28 +105,17 @@ entity items {
     --
     * item_name : string
     * item_price : long
+    * item_images : string
     * item_description : long_text
     * item_quantity : int
     * merchant_id : string <<FK>>
     * category_id : string <<FK>>
     * hobby_id : string <<FK>>
     * merchant_level_id : string <<FK>>
-      user_level_id : string <<FK>>
     * is_deleted : boolean
-    * is_approved : boolean
     * gmt_create : date
     * gmt_modified : date
 }
-
-entity item_images {
-    * id : string
-    --
-    * item_image: blob
-    * item_id : string <<FK>>
-    * gmt_create : date
-    * gmt_modified : date
-}
-
 entity reviews {
     * id : string
     --
@@ -145,22 +135,13 @@ entity history_items{
     * item_id : string <<FK>>
     * item_name : string
     * item_price : long
+    * item_images : string
     * item_description : long_text
     * merchant_id : string <<FK>>
     * category_id : string <<FK>>
     * hobby_id : string <<FK>>
     * merchant_level_id : string <<FK>>
-      user_level_id : string <<FK>>
     * need_review : boolean
-    * gmt_create : date
-    * gmt_modified : date
-}
-
-entity history_item_images {
-    * id : string
-    --
-    * item_image: blob
-    * item_id : string <<FK>>
     * gmt_create : date
     * gmt_modified : date
 }
@@ -376,7 +357,7 @@ entity item_crowds {
 }
 
 entity dictionary {
-    * dictionary_id : string <<FK>>
+    * dictionary_id : string <<PK>>
     --
     * dictionary_type : string
     * dictionary_key : string
@@ -385,26 +366,35 @@ entity dictionary {
     * gmt_modified : date
 }
 
+entity images {
+    * image_id : string <<PK>>
+    --
+    * image_name : string
+    * image_ext : string
+    * image : blob
+    * gmt_create : date
+    * gmt_modified : date
+}
+
 ' relation
 ' for transaction purposes
-interest_levels }o--|| items
-item_categories }o--|| items
+interest_levels }o-|| items
+item_categories }o-|| items
 items ||-o{ hobbies
 
 ' user_roles }o--|| users
 users ||-o{ user_roles
 
-transaction |o--o{ payments
+transaction |o-o{ payments
 users }o--|| transaction
 transaction }o-|| transaction_details
-history_items }o--|| transaction_details
+history_items }o-|| transaction_details
 
 ' carts
 users }o--|| carts
 carts }o--|| cart_details
 cart_details ||--o{ items
 
-items }|--|| item_images
 items }|---|| reviews
 reviews |o--o{ interest_levels
 items ||--o{ users
@@ -420,8 +410,6 @@ items }o--|| history_items
 hobbies }o--|| history_items
 item_categories }o--|| history_items
 interest_levels }o--|| history_items
-history_item_images }|-|| history_items
-' history_items ||-|{ history_item_images
 
 ' for discussion purposes
 comments }o--|| comment_upvotes
@@ -434,9 +422,10 @@ posts }o--|| comments
 comments ||-o{ comments
 
 ' direct communication purposes
-' users }o--o| chats
-chats |o-o{ users
+users }o--o| chats
+' chats |o--o{ users
 chatrooms }o-o| chats
+' chats |o-o{ chatrooms
 
 
 ' user capability
@@ -453,10 +442,10 @@ users }o-|| sessions
 ' user_activities ||--o{ activities
 
 ' wishlist
-' users }o-|| wishlists
-items }o-|| wishlists
-wishlists ||-o{ users
-' wishlists ||-o{ items
+users }o--|| wishlists
+' items }o-|| wishlists
+' wishlists ||-o{ users
+wishlists ||-o{ items
 
 ' report
 ' posts }o--|| post_reports
