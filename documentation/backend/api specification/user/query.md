@@ -50,7 +50,7 @@
 | email          | String     | Y         |           |                     |         |
 | phoneNumber    | String     | Y         |           |                     |         |
 | username       | String     | Y         |           |                     |         |
-| profilePicture | String     | Y         |           |                     |         |
+| profilePicture | Blob       | Y         |           |                     |         |
 | role           | String     | Y         |           | USER/MERCHANT/ADMIN |         |
 | gmtCreate      | Date       | Y         |           |                     |         |
 | gmtModified    | Date       | Y         |           |                     |         |
@@ -85,7 +85,6 @@
     "userName": "userName",
     "email": "user@email.com",
     "phoneNumber": "081234567890",
-    "profilePicture": blob,
     "role": "USER"
   }
 }
