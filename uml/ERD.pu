@@ -209,6 +209,7 @@ entity posts {
     * user_id : string <<FK>>
     * title : string
       content : longtext
+      images : string
     * gmt_create : date
     * gmt_modified : date
 }
