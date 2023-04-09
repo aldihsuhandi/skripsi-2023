@@ -76,20 +76,20 @@
 | totalPage    | int        | N         |           |         |         |
 
 #### ItemSummary
-| Field Name      | Field type   | Mandatory | Condition | Remarks | Example |
-| --------------- | ------------ | --------- | --------- | ------- | ------- |
-| itemId          | String       | Y         |           |         |         |
-| itemName        | String       | Y         |           |         |         |
-| itemPrice       | Long         | Y         |           |         |         |
-| itemDescription | String       | Y         |           |         |         |
-| itemQuantity    | Integer      | Y         |           |         |         |
-| itemCategory    | String       | Y         |           |         |         |
-| hobby           | String       | Y         |           |         |         |
-| merchantInfo    | UserSummary  | Y         |           |         |         |
-| merchantLevel   | String       | Y         |           |         |         |
-| itemImages      | List\<Blob\> | Y         |           |         |         |
-| gmtCreate       | Date         | Y         |           |         |         |
-| gmtModified     | Date         | Y         |           |         |         |
+| Field Name      | Field type     | Mandatory | Condition | Remarks | Example |
+| --------------- | -------------- | --------- | --------- | ------- | ------- |
+| itemId          | String         | Y         |           |         |         |
+| itemName        | String         | Y         |           |         |         |
+| itemPrice       | Long           | Y         |           |         |         |
+| itemDescription | String         | Y         |           |         |         |
+| itemQuantity    | Integer        | Y         |           |         |         |
+| itemCategory    | String         | Y         |           |         |         |
+| hobby           | String         | Y         |           |         |         |
+| merchantInfo    | UserSummary    | Y         |           |         |         |
+| merchantLevel   | String         | Y         |           |         |         |
+| itemImages      | List\<String\> | Y         |           |         |         |
+| gmtCreate       | Date           | Y         |           |         |         |
+| gmtModified     | Date           | Y         |           |         |         |
 
 #### UserSummary
 | Field Name     | Field type | Mandatory | Condition | Remarks | Example |
@@ -151,7 +151,7 @@
       "hobby": "hobbyName": "hobbyName",
       "merchantInterestLevel": "BEGINNER",
       "itemImages": [
-        blob, blob, blob
+        "imageId1", "imagesId2", "imagesId3"
       ]
     }
   ]

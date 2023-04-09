@@ -51,6 +51,7 @@
 | phoneNumber    | String     | Y         |           |                     |         |
 | username       | String     | Y         |           |                     |         |
 | role           | String     | Y         |           | USER/MERCHANT/ADMIN |         |
+| profilePicture | String     | Y         |           |                     |         |
 | gmtCreate      | Date       | Y         |           |                     |         |
 | gmtModified    | Date       | Y         |           |                     |         |
 
@@ -83,6 +84,7 @@
     "userId": "userId",
     "userName": "userName",
     "email": "user@email.com",
+    "profilePicture": "images",
     "phoneNumber": "081234567890",
     "role": "USER"
   }
