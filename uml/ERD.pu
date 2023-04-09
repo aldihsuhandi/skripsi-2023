@@ -210,6 +210,8 @@ entity posts {
     * title : string
       content : longtext
       images : string
+      tags : string
+    * is_deleted : boolean
     * gmt_create : date
     * gmt_modified : date
 }

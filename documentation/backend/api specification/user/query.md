@@ -56,7 +56,7 @@
 | email          | String     | Y         |           |                     |         |
 | phoneNumber    | String     | Y         |           |                     |         |
 | username       | String     | Y         |           |                     |         |
-| profilePicture | Blob       | Y         |           |                     |         |
+| profilePicture | String     | Y         |           |                     |         |
 | role           | String     | Y         |           | USER/MERCHANT/ADMIN |         |
 | gmtCreate      | Date       | Y         |           |                     |         |
 | gmtModified    | Date       | Y         |           |                     |         |
