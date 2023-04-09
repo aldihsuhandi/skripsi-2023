@@ -105,7 +105,7 @@ entity items {
     --
     * item_name : string
     * item_price : long
-    * item_images : string
+      item_images : string
     * item_description : long_text
     * item_quantity : int
     * merchant_id : string <<FK>>

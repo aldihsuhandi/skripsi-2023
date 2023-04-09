@@ -80,7 +80,7 @@ CREATE TABLE items (
     item_id VARCHAR(255) NOT NULL,
     item_name VARCHAR(255) NOT NULL,
     item_price INT NOT NULL,
-    item_images VARCHAR(1024) NOT NULL,
+    item_images VARCHAR(1024),
     item_description LONGTEXT NOT NULL,
     item_quantity INT NOT NULL,
     merchant_id VARCHAR(255) NOT NULL,
