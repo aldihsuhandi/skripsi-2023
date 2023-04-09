@@ -20,17 +20,19 @@
 
 ##### Body
 
-| Field Name | Field type | Mandatory | Condition | Remarks | Example |
-| ---------- | ---------- | --------- | --------- | ------- | ------- |
-| itemId     | String     | Y         |           |         |         |
-| imageId    | String     | Y         |           |         |         |
+| Field Name | Field type     | Mandatory | Condition | Remarks | Example |
+| ---------- | -------------- | --------- | --------- | ------- | ------- |
+| itemId     | String         | Y         |           |         |         |
+| imageIds   | List\<String\> | Y         |           |         |         |
 
 #### Example
 
 ```json
 {
   "itemId": "itemId",
-  "imageId": "imageId"
+  "imageIds": [
+    "imageId"
+  ]
 }
 ```
 
