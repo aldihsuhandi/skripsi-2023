@@ -27,14 +27,7 @@
 #### Example
 
 ```json
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret",
-    "sessionId": "e39992f3048042aeae2c279074ee40bc"
-  },
-  "body": {
-    "itemId": "itemId"    
-  }
+  "itemId": "itemId"    
 ```
 
 ### Result

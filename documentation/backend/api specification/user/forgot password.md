@@ -28,15 +28,11 @@
 #### Example
 
 ```json
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret"
-  },
-  "body": {
-    "email": "email@email.com",
-    "password": "password",
-    "otp": "123456"
-  }
+{
+  "email": "email@email.com",
+  "password": "password",
+  "otp": "123456"
+}
 ```
 
 ### Result

@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks  |
-| --------------- | -------- |
-| API url         | \<url\>/ |
-| API description |          |
-| API methods     |          |
+| field name      | remarks                |
+| --------------- | ---------------------- |
+| API url         | \<url\>/item/image/add |
+| API description | upload image for item  |
+| API methods     | POST                   |
 
 ### Request
 
@@ -22,13 +22,15 @@
 
 | Field Name | Field type | Mandatory | Condition | Remarks | Example |
 | ---------- | ---------- | --------- | --------- | ------- | ------- |
-|            |            |           |           |         |         |
+| itemId     | String     | Y         |           |         |         |
+| image      | Blob       | Y         |           |         |         |
 
 #### Example
 
 ```json
 {
-  ;
+  "itemId": "itemId",
+  "image": Blob
 }
 ```
 
@@ -58,6 +60,8 @@
 | PARAM_ILLEGAL   | parameter value is not expected |
 | SYSTEM_ERROR    | unexpected system error         |
 | SESSION_EXPIRED | session is expired              |
+| USER_INVALID    | wrong user for the operation    |
+| ITEM_NOT_FOUND  | item not found                  |
 
 #### Example
 

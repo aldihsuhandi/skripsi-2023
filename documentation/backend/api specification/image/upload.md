@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks  |
-| --------------- | -------- |
-| API url         | \<url\>/ |
-| API description |          |
-| API methods     |          |
+| field name      | remarks              |
+| --------------- | -------------------- |
+| API url         | \<url\>/image/upload |
+| API description | to upload an image   |
+| API methods     | POST                 |
 
 ### Request
 
@@ -22,13 +22,13 @@
 
 | Field Name | Field type | Mandatory | Condition | Remarks | Example |
 | ---------- | ---------- | --------- | --------- | ------- | ------- |
-|            |            |           |           |         |         |
+| image      | Blob       | Y         |           |         |         |
 
 #### Example
 
 ```json
 {
-  ;
+  "image": Blob
 }
 ```
 
@@ -41,6 +41,7 @@
 | Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
 | ------------- | ------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext | Y         |           |         |         |
+| imageId       | String        | Y         |           |         |         |
 
 ##### ResultContext
 

@@ -28,14 +28,8 @@
 
 ```json
 {
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret"
-  },
-  "body": {
     "key": "user@email.com",
     "identifier": "email"
-  }
 }
 ```
 
@@ -56,8 +50,8 @@
 | email          | String     | Y         |           |                     |         |
 | phoneNumber    | String     | Y         |           |                     |         |
 | username       | String     | Y         |           |                     |         |
-| profilePicture | Blob       | Y         |           |                     |         |
 | role           | String     | Y         |           | USER/MERCHANT/ADMIN |         |
+| profilePicture | String     | Y         |           |                     |         |
 | gmtCreate      | Date       | Y         |           |                     |         |
 | gmtModified    | Date       | Y         |           |                     |         |
 
@@ -90,8 +84,8 @@
     "userId": "userId",
     "userName": "userName",
     "email": "user@email.com",
+    "profilePicture": "images",
     "phoneNumber": "081234567890",
-    "profilePicture": blob,
     "role": "USER"
   }
 }

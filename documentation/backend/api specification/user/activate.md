@@ -10,7 +10,7 @@
 
 #### Field Table
 
-##### Head
+##### Headers
 
 | Field Name   | Field type | Mandatory | Condition | Remarks | Example        |
 | ------------ | ---------- | --------- | --------- | ------- | -------------- |
@@ -28,14 +28,8 @@
 
 ```json
 {
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret"
-  },
-  "body": {
-    "email": "email@email.com",
-    "otp": "123456"
-  }
+  "email": "email@email.com",
+  "otp": "123456"
 }
 ```
 
