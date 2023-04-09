@@ -26,14 +26,7 @@
 
 ```json
 {
-    "head": {
-        "clientId": "clientId",
-        "clientSecret": "clientSecret",
-        "sessionId": "e39992f3048042aeae2c279074ee40bc"
-    },
-    "body": {
-        "sessionId": "e39992f3048042aeae2c279074ee40bc"
-    }
+    "sessionId": "e39992f3048042aeae2c279074ee40bc"
 }
 ```
 

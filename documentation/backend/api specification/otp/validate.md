@@ -29,15 +29,9 @@
 
 ```json
 {
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret"
-  },
-  "body": {
-    "email": "email@email.com",
-    "otpType": "USER_ACTIVATION",
-    "otp": "1234567890"
-  }
+  "email": "email@email.com",
+  "otpType": "USER_ACTIVATION",
+  "otp": "1234567890"
 }
 ```
 

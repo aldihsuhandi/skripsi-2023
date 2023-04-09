@@ -27,14 +27,8 @@
 
 ```json
 {
-    "head": {
-        "clientId": "clientId",
-        "clientSecret": "clientSecret"
-    },
-    "body": {
-        "email": "test@gmail.com",
-        "password": "password"
-    }
+    "email": "test@gmail.com",
+    "password": "password"
 }
 ```
 

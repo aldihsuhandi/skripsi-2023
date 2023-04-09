@@ -28,14 +28,8 @@
 
 ```json
 {
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret"
-  },
-  "body": {
-    "email": "email@email.com",
-    "otpType": "USER_ACTIVATION"
-  }
+  "email": "email@email.com",
+  "otpType": "USER_ACTIVATION"
 }
 ```
 

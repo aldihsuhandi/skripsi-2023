@@ -18,43 +18,29 @@
 
 ##### Body
 
-| Field Name        | Field type        | Mandatory | Condition | Remarks | Example  |
-| ----------------- | ----------------- | --------- | --------- | ------- | -------- |
-| password          | String            | Y         |           |         | password |
-| userUpdateContext | UserUpdateContext | Y         |           |         |          |
-
-##### UserUpdateContext
-
-| Field Name     | Field type | Mandatory | Condition | Remarks                                                                                                              | Example        |
-| -------------- | ---------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------- | -------------- |
-| email          | String     | N         |           | Must be unique                                                                                                       | test@email.com |
-| username       | String     | N         |           |                                                                                                                      | username       |
-| phoneNumber    | String     | N         |           | Must be unique                                                                                                       | 08000000       |
-| profilePicture | Blob       | N         |           | Must be encoded with base64                                                                                          | base64 value   |
-| password       | String     | N         |           | - atleast 8 chacater in length<br>- atleast 1 non capital letter<br>- atleast 1 number<br>- atleast 1 capital letter | password       |
-| isActive       | Boolean    | N         |           |                                                                                                                      | false          |
-| isDeleted      | Boolean    | N         |           |                                                                                                                      | false          |
+| Field Name      | Field type | Mandatory | Condition | Remarks                                                                                                              | Example        |
+| --------------- | ---------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------- | -------------- |
+| oldPassword     | String     | Y         |           |                                                                                                                      | password       |
+| email           | String     | N         |           | Must be unique                                                                                                       | test@email.com |
+| username        | String     | N         |           |                                                                                                                      | username       |
+| phoneNumber     | String     | N         |           | Must be unique                                                                                                       | 08000000       |
+| profilePicture  | Blob       | N         |           |                                                                                                                      | blob           |
+| password        | String     | N         |           | - atleast 8 chacater in length<br>- atleast 1 non capital letter<br>- atleast 1 number<br>- atleast 1 capital letter | password       |
+| confirmPassword | String     | N         |           | need to be the same with password                                                                                    | password       |
+| isActive        | Boolean    | N         |           |                                                                                                                      | false          |
+| isDeleted       | Boolean    | N         |           |                                                                                                                      | false          |
 
 #### Example
 
 ```json
 {
-    "head": {
-        "clientId": "clientId",
-        "clientSecret": "clientSecret",
-        "sessionId": "e39992f3048042aeae2c279074ee40bc"
-    },
-    "body": {
-        "password": "password",
-        "email": "email",
-        "userUpdateContext": {
-            "email" : "test@email.com",
-            "username": "username",
-            "phoneNumber": "080000000",
-            "profilePicture": "base64 value",
-            "password": "new password"
-        }
-    }
+    "oldPassword": "password",
+    "email" : "test@email.com",
+    "username": "username",
+    "phoneNumber": "080000000",
+    "profilePicture": "base64 value",
+    "password": "new password",
+    "confirmPassword": "new password"
 }
 ```
 
