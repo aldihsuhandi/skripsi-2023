@@ -30,18 +30,12 @@
 
 ```json
 {
-    "head": {
-        "clientId": "clientId",
-        "clientSecret": "clientSecret"
-    },
-    "body": {
-        "email" : "test@email.com",
-        "username": "username",
-        "phoneNumber": "080000000",
-        "profilePicture": "blob value",
-        "password": "password",
-        "confirmPassword": "password"
-    }
+    "email" : "test@email.com",
+    "username": "username",
+    "phoneNumber": "080000000",
+    "profilePicture": "blob value",
+    "password": "password",
+    "confirmPassword": "password"
 }
 ```
 

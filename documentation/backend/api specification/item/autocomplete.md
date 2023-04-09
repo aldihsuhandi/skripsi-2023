@@ -26,13 +26,9 @@
 #### Example
 
 ```json
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret"
-  },
-  "body": {
-    "autocomplete": "itemName"
-  }
+{
+  "autocomplete": "itemName"
+}
 ```
 
 ### Result
@@ -56,11 +52,11 @@
 
 ###### Possible Result Code
 
-| Result Code     | Remarks                         |
-| --------------- | ------------------------------- |
-| SUCCESS         | api call success                |
-| PARAM_ILLEGAL   | parameter value is not expected |
-| SYSTEM_ERROR    | unexpected system error         |
+| Result Code   | Remarks                         |
+| ------------- | ------------------------------- |
+| SUCCESS       | api call success                |
+| PARAM_ILLEGAL | parameter value is not expected |
+| SYSTEM_ERROR  | unexpected system error         |
 
 #### Example
 

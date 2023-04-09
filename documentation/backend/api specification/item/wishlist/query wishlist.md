@@ -44,19 +44,14 @@
 #### Example
 
 ```json
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret",
-    "sessionId": "e39992f3048042aeae2c279074ee40bc"
-  },
-  "body": {
-    "pageNumber": 1,
-    "numberOfItem": 10,
-    "itemFilterContext": {
-      "hobby": "music",
-      "itemCategory": "guitar"
-    }
+{
+  "pageNumber": 1,
+  "numberOfItem": 10,
+  "itemFilterContext": {
+    "hobby": "music",
+    "itemCategory": "guitar"
   }
+}
 ```
 
 ### Result

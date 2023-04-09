@@ -20,34 +20,26 @@
 
 ##### Body
 
-| Field Name            | Field type   | Mandatory | Condition | Remarks                                                             | Example        |
-| --------------------- | ------------ | --------- | --------- | ------------------------------------------------------------------- | -------------- |
-| itemName              | String       | Y         |           |                                                                     | "item name"    |
-| itemPrice             | long         | Y         |           | in rupiah                                                           | 100000         |
-| itemDescription       | String       | N         |           |                                                                     |                |
-| itemQuantity          | Int          | Y         |           |                                                                     | 10             |
-| categoryName          | String       | Y         |           | item category name                                                  | "item category |
-| hobbyName             | String       | Y         |           |                                                                     | "music"        |
-| merchantInterestLevel | String       | Y         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"     |
-| itemImages            | List\<Blob\> | N         |           | item images                                                         |                |
+| Field Name            | Field type | Mandatory | Condition | Remarks                                                             | Example        |
+| --------------------- | ---------- | --------- | --------- | ------------------------------------------------------------------- | -------------- |
+| itemName              | String     | Y         |           |                                                                     | "item name"    |
+| itemPrice             | long       | Y         |           | in rupiah                                                           | 100000         |
+| itemDescription       | String     | N         |           |                                                                     |                |
+| itemQuantity          | Int        | Y         |           |                                                                     | 10             |
+| categoryName          | String     | Y         |           | item category name                                                  | "item category |
+| hobbyName             | String     | Y         |           |                                                                     | "music"        |
+| merchantInterestLevel | String     | Y         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"     |
 
 #### Example
 
 ```json
 {
-  "head": {
-    "clientId": "clientId",
-    "clientSecret": "clientSecret",
-    "sessionId": "e39992f3048042aeae2c279074ee40bc"
-  },
-  "body": {
-    "itemName": "item name",
-    "itemPrice": 100000,
-    "itemQuantity": 100,
-    "categoryName": "GUITAR",
-    "hobby": "music",
-    "merchantInterestLevel": "BEGINNER"
-  }
+  "itemName": "item name",
+  "itemPrice": 100000,
+  "itemQuantity": 100,
+  "categoryName": "GUITAR",
+  "hobby": "music",
+  "merchantInterestLevel": "BEGINNER"
 }
 ```
 
