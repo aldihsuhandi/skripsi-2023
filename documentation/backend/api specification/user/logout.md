@@ -2,7 +2,7 @@
 
 | field name      | remarks                 |
 | --------------- | ----------------------- |
-| API url         | \<url\>/user/logout     |
+| API url         | \<url\>/session/logout  |
 | API description | deactivate user session |
 | API methods     | POST                    |
 
