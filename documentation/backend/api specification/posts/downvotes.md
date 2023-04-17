@@ -41,6 +41,7 @@
 | Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
 | ------------- | ------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext | Y         |           |         |         |
+| value         | int           | Y         |           |         |         |
 
 ##### ResultContext
 
@@ -67,6 +68,7 @@
     "success": true,
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
-  }
+  },
+  "value": -1
 }
 ```

@@ -42,18 +42,19 @@
 | resultContext | ResultContext | Y         |           |         |         |
 | post          | PostSummary   | Y         |           |         |         |
 
-| Field Name  | Field type     | Mandatory | Condition | Remarks | Example |
-| ----------- | -------------- | --------- | --------- | ------- | ------- |
-| postId      | String         | Y         |           |         |         |
-| title       | String         | Y         |           |         |         |
-| content     | String         | Y         |           |         |         |
-| images      | List\<String\> | N         |           |         |         |
-| tags        | List\<String\> | Y         |           |         |         |
-| userInfo    | UserSummary    | Y         |           |         |         |
-| upvote      | int            | Y         |           |         |         |
-| downvote    | int            | Y         |           |         |         |
-| gmtCreate   | Date           | Y         |           |         |         |
-| gmtModified | Date           | Y         |           |         |         |
+| Field Name      | Field type     | Mandatory | Condition | Remarks | Example |
+| --------------- | -------------- | --------- | --------- | ------- | ------- |
+| postId          | String         | Y         |           |         |         |
+| title           | String         | Y         |           |         |         |
+| content         | String         | Y         |           |         |         |
+| images          | List\<String\> | N         |           |         |         |
+| tags            | List\<String\> | Y         |           |         |         |
+| userInfo        | UserSummary    | Y         |           |         |         |
+| upvote          | int            | Y         |           |         |         |
+| downvote        | int            | Y         |           |         |         |
+| currentUservote | int            | Y         |           |         |
+| gmtCreate       | Date           | Y         |           |         |         |
+| gmtModified     | Date           | Y         |           |         |         |
 
 #### UserSummary
 | Field Name     | Field type | Mandatory | Condition | Remarks | Example |
@@ -101,6 +102,7 @@
     ],
     "upvote": 64,
     "downvote": 420,
+    "currentUserVote": 0,
     "gmtCreate": date,
     "gmtModified": date,
     "userInfo": {
