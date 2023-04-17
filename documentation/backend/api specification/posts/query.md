@@ -19,10 +19,12 @@
 
 ##### Body
 
-| Field Name | Field type     | Mandatory | Condition | Remarks | Example |
-| ---------- | -------------- | --------- | --------- | ------- | ------- |
-| title      | String         | N         |           |         |         |
-| tags       | List\<String\> | N         |           |         |         |
+| Field Name   | Field type     | Mandatory | Condition | Remarks             | Example |
+| ------------ | -------------- | --------- | --------- | ------------------- | ------- |
+| title        | String         | N         |           |                     |         |
+| tags         | List\<String\> | N         |           |                     |         |
+| pageNumber   | int            | N         |           | default value is 1  |         |
+| numberOfItem | int            | N         |           | default value is 10 |         |
 
 #### Example
 
@@ -42,20 +44,22 @@
 | ------------- | ------------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext       | Y         |           |         |         |
 | posts         | List\<PostSummary\> | Y         |           |         |         |
+| pagingContext | PagingContext       | Y         |           |         |         |
 
 ##### PostSummary
-| Field Name  | Field type     | Mandatory | Condition | Remarks | Example |
-| ----------- | -------------- | --------- | --------- | ------- | ------- |
-| postId      | String         | Y         |           |         |         |
-| title       | String         | Y         |           |         |         |
-| content     | String         | Y         |           |         |         |
-| images      | List\<String\> | N         |           |         |         |
-| tags        | List\<String\> | Y         |           |         |         |
-| userInfo    | UserSummary    | Y         |           |         |         |
-| upvote      | int            | Y         |           |         |         |
-| downvote    | int            | Y         |           |         |         |
-| gmtCreate   | Date           | Y         |           |         |         |
-| gmtModified | Date           | Y         |           |         |         |
+| Field Name      | Field type     | Mandatory | Condition | Remarks | Example |
+| --------------- | -------------- | --------- | --------- | ------- | ------- |
+| postId          | String         | Y         |           |         |         |
+| title           | String         | Y         |           |         |         |
+| content         | String         | Y         |           |         |         |
+| images          | List\<String\> | N         |           |         |         |
+| tags            | List\<String\> | Y         |           |         |         |
+| userInfo        | UserSummary    | Y         |           |         |         |
+| upvote          | int            | Y         |           |         |         |
+| downvote        | int            | Y         |           |         |         |
+| currentUservote | int            | Y         |           |         |         |
+| gmtCreate       | Date           | Y         |           |         |         |
+| gmtModified     | Date           | Y         |           |         |         |
 
 #### UserSummary
 | Field Name     | Field type | Mandatory | Condition | Remarks | Example |
@@ -67,6 +71,15 @@
 | role           | String     | Y         |           |         |         |
 | gmtCreate      | Date       | Y         |           |         |         |
 | gmtModified    | Date       | Y         |           |         |         |
+
+##### PagingContext 
+| Field Name   | Field type | Mandatory | Condition | Remarks | Example |
+| ------------ | ---------- | --------- | --------- | ------- | ------- |
+| pageNumber   | int        | Y         |           |         | 0       |
+| numberOfItem | int        | Y         |           |         | 10      |
+| hasNext      | boolean    | Y         |           |         | true    |
+| totalItem    | Long       | N         |           |         |         |
+| totalPage    | int        | N         |           |         |         |
 
 ##### ResultContext
 
@@ -104,6 +117,7 @@
       ],
       "upvote": 64,
       "downvote": 420,
+      "currentUserVote": 0,
       "gmtCreate": date,
       "gmtModified": date,
       "userInfo": {
