@@ -1,0 +1,23 @@
+@startuml submodule
+
+[facade]
+[service]
+[foundation]
+[core]
+[common]
+[web]
+[bootstrap]
+[test]
+
+
+
+bootstrap -.> test
+bootstrap -.> web
+test -.> service
+web -.> service
+service -.> core
+core -.> foundation
+foundation -.> common
+common -.> facade
+
+@enduml
