@@ -16,8 +16,8 @@ bootstrap -.> web
 test -.> service
 web -.> service
 service -.> core
-core -.> common
-common -.> foundation
-foundation -.> facade
+core -.> foundation
+foundation -.> common
+common -.> facade
 
 @enduml
