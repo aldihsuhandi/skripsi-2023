@@ -26,15 +26,17 @@
 | itemUpdateContext | ItemUpdateContext | Y         |           |         |                      |
 
 ##### ItemUpdateContext
-| Field Name            | Field type | Mandatory | Condition | Remarks                                                             | Example        |
-| --------------------- | ---------- | --------- | --------- | ------------------------------------------------------------------- | -------------- |
-| itemName              | String     | N         |           |                                                                     | "item name"    |
-| itemPrice             | long       | N         |           | in rupiah                                                           | 100000         |
-| itemDescription       | String     | N         |           |                                                                     |                |
-| itemQuantity          | Int        | N         |           |                                                                     | 10             |
-| categoryName          | String     | N         |           | item category name                                                  | "item category |
-| hobbyName             | String     | N         |           |                                                                     | "music"        |
-| merchantInterestLevel | String     | N         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"     |
+| Field Name            | Field type     | Mandatory | Condition | Remarks                                                             | Example        |
+| --------------------- | -------------- | --------- | --------- | ------------------------------------------------------------------- | -------------- |
+| itemName              | String         | N         |           |                                                                     | "item name"    |
+| itemPrice             | long           | N         |           | in rupiah                                                           | 100000         |
+| itemDescription       | String         | N         |           |                                                                     |                |
+| itemQuantity          | Int            | N         |           |                                                                     | 10             |
+| categoryName          | String         | N         |           | item category name                                                  | "item category |
+| hobbyName             | String         | N         |           |                                                                     | "music"        |
+| merchantInterestLevel | String         | N         |           | interest level set by merchant<br> BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"     |
+| addedImage            | List\<String\> | N         |           |                                                                     |                |
+| removedImage          | List\<String\> | N         |           |                                                                     |                |
 
 
 #### Example
@@ -48,7 +50,7 @@
     "itemQuantity": 100,
     "merchantEmail": "merchant@email.com",
     "categoryName": "GUITAR",
-    "hobby": "music",
+    "hobbyName": "music",
     "merchantInterestLevel": "BEGINNER"
   }
 }
