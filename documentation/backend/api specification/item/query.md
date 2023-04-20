@@ -30,6 +30,7 @@
 
 | Field Name            | Field type | Mandatory | Condition | Remarks                          | Example              |
 | --------------------- | ---------- | --------- | --------- | -------------------------------- | -------------------- |
+| itemId                | String     | N         |           |                                  |                      |
 | itemName              | String     | N         |           |                                  | "itemName"           |
 | minItemPrice          | int        | N         |           |                                  | 1000                 |
 | maxItemPrice          | int        | N         |           |                                  | 5000                 |

@@ -39,45 +39,37 @@
 
 ##### Body
 
-| Field Name    | Field type     | Mandatory | Condition | Remarks | Example |
-| ------------- | -------------- | --------- | --------- | ------- | ------- |
-| resultContext | ResultContext  | Y         |           |         |         |
-| items         | List\<ItemVO\> | Y         |           |         |         |
+| Field Name    | Field type          | Mandatory | Condition | Remarks | Example |
+| ------------- | ------------------- | --------- | --------- | ------- | ------- |
+| resultContext | ResultContext       | Y         |           |         |         |
+| items         | List\<ItemSummary\> | Y         |           |         |         |
 
-##### ItemVO
-| Field Name            | Field type   | Mandatory | Condition | Remarks                          | Example        |
-| --------------------- | ------------ | --------- | --------- | -------------------------------- | -------------- |
-| itemId                | String       | Y         |           |                                  | "itemId"       |
-| itemName              | String       | Y         |           |                                  | "itemName"     |
-| itemPrice             | long         | Y         |           | int rupiah                       | 100000         |
-| itemDescription       | String       | N         |           |                                  | "itemDesc"     |
-| itemQuantity          | int          | Y         |           |                                  | 1              |
-| merchantInfo          | UserVO       | Y         |           | merchant info                    |                |
-| categoryName          | String       | Y         |           |                                  | "itemCategory" |
-| hobby                 | String       | Y         |           |                                  | "hobbyName"    |
-| merchantLevelInterest | String       | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
-| userLevelInterest     | String       | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "ENTHUSIAST"   |
-| itemImages            | List\<Blob\> | N         |           |                                  |                |
+#### ItemSummary
+| Field Name      | Field type     | Mandatory | Condition | Remarks | Example |
+| --------------- | -------------- | --------- | --------- | ------- | ------- |
+| itemId          | String         | Y         |           |         |         |
+| itemName        | String         | Y         |           |         |         |
+| itemPrice       | Long           | Y         |           |         |         |
+| itemDescription | String         | Y         |           |         |         |
+| itemQuantity    | Integer        | Y         |           |         |         |
+| itemCategory    | String         | Y         |           |         |         |
+| hobby           | String         | Y         |           |         |         |
+| merchantInfo    | UserSummary    | Y         |           |         |         |
+| merchantLevel   | String         | Y         |           |         |         |
+| itemImages      | List\<String\> | Y         |           |         |         |
+| gmtCreate       | Date           | Y         |           |         |         |
+| gmtModified     | Date           | Y         |           |         |         |
 
-##### UserVO
-| Field Name     | Field type | Mandatory | Condition | Remarks          | Example          |
-| -------------- | ---------- | --------- | --------- | ---------------- | ---------------- |
-| userId         | String     | Y         |           |                  | "userId"         |
-| username       | String     | Y         |           |                  | "username"       |
-| email          | String     | Y         |           |                  | "user@email.com" |
-| phoneNumber    | String     | Y         |           |                  | "081234567890"   |
-| profilePicture | Blob       | N         |           |                  |                  |
-| isActive       | boolean    | Y         |           |                  | true             |
-| isDeleted      | boolean    | Y         |           |                  | false            |
-| password       | String     | Y         |           | will be censored | "**********"     |
-| roleInfo       | RoleVO     | Y         |           |                  |                  |
-
-##### RoleVO
-| Field Name | Field type | Mandatory | Condition | Remarks | Example    |
-| ---------- | ---------- | --------- | --------- | ------- | ---------- |
-| roleId     | String     | Y         |           |         | "roleId"   |
-| roleName   | String     | Y         |           |         | "roleName" |
-
+#### UserSummary
+| Field Name     | Field type | Mandatory | Condition | Remarks | Example |
+| -------------- | ---------- | --------- | --------- | ------- | ------- |
+| email          | String     | Y         |           |         |         |
+| phoneNumber    | String     | Y         |           |         |         |
+| username       | String     | Y         |           |         |         |
+| profilePicture | Blob       | Y         |           |         |         |
+| role           | String     | Y         |           |         |         |
+| gmtCreate      | Date       | Y         |           |         |         |
+| gmtModified    | Date       | Y         |           |         |         |
 
 ##### ResultContext
 
