@@ -149,7 +149,7 @@
         "role": "roleName"
       },
       "itemCategory": "categoryName",
-      "hobby": "hobbyName": "hobbyName",
+      "hobby": "music",
       "merchantInterestLevel": "BEGINNER",
       "itemImages": [
         "imageId1", "imagesId2", "imagesId3"
