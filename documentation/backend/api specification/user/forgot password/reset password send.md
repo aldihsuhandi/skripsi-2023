@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks                      |
-| --------------- | ---------------------------- |
-| API url         | \<url\>/reset_password/send  |
-| API description | to send reset password email |
-| API methods     | POST                         |
+| field name      | remarks                           |
+| --------------- | --------------------------------- |
+| API url         | \<url\>/user/forgot_password/send |
+| API description | to send forgot password email     |
+| API methods     | POST                              |
 
 ### Request
 
@@ -58,6 +58,7 @@
 | SYSTEM_ERROR    | unexpected system error         |
 | SESSION_EXPIRED | session is expired              |
 | USER_NOT_EXIST  | user is not exist               |
+| USER_NOT_ACTIVE | user is not active              |
 
 #### Example
 

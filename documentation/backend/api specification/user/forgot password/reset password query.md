@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks  |
-| --------------- | -------- |
-| API url         | \<url\>/ |
-| API description |          |
-| API methods     |          |
+| field name      | remarks                            |
+| --------------- | ---------------------------------- |
+| API url         | \<url\>/user/forgot_password/query |
+| API description | query forgot password request      |
+| API methods     | POST                               |
 
 ### Request
 

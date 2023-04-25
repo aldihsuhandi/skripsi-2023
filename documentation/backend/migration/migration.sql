@@ -456,6 +456,10 @@ INSERT INTO
     contents (content_name, content)
 VALUES
     (
+        "RESET_PASSWORD_URL_FORMAT",
+        "%s/user/reset?q=%s"
+    ),
+    (
         "OTP_EMAIL_SUBJECT",
         "Shumishumi Verification Email"
     ),
