@@ -390,6 +390,16 @@ CREATE TABLE images (
     PRIMARY KEY(image_id)
 );
 
+CREATE TABLE reset_password (
+    uuid VARCHAR(255) NOT NULL, 
+    email VARCHAR(255) NOT NULL,
+    expired_time VARCHAR(255) NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT FALSE,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    PRIMARY KEY(uuid)
+);
+
 INSERT INTO
     user_roles (role_id, role_name)
 VALUES
