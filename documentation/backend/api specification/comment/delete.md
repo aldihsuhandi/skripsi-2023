@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks             |
-| --------------- | ------------------- |
-| API url         | \<url\>/post/upvote |
-| API description | to like a post      |
-| API methods     | POST                |
+| field name      | remarks                |
+| --------------- | ---------------------- |
+| API url         | \<url\>/comment/delete |
+| API description | delete comment         |
+| API methods     | POST                   |
 
 ### Request
 
@@ -22,13 +22,13 @@
 
 | Field Name | Field type | Mandatory | Condition | Remarks | Example |
 | ---------- | ---------- | --------- | --------- | ------- | ------- |
-| postId     | String     | Y         |           |         |         |
+| commentId  | String     | Y         |           |         |         |
 
 #### Example
 
 ```json
 {
-  "postId": "postId"
+  "commentId": "comment_id"
 }
 ```
 
@@ -41,7 +41,6 @@
 | Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
 | ------------- | ------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext | Y         |           |         |         |
-| value         | int           | Y         |           |         |         |
 
 ##### ResultContext
 
@@ -53,14 +52,15 @@
 
 ###### Possible Result Code
 
-| Result Code     | Remarks                         |
-| --------------- | ------------------------------- |
-| SUCCESS         | api call success                |
-| PARAM_ILLEGAL   | parameter value is not expected |
-| SYSTEM_ERROR    | unexpected system error         |
-| SESSION_EXPIRED | session is expired              |
-| USER_NOT_EXIST  | user is not exist               |
-| USER_NOT_ACTIVE | user is not active              |
+| Result Code     | Remarks                            |
+| --------------- | ---------------------------------- |
+| SUCCESS         | api call success                   |
+| PARAM_ILLEGAL   | parameter value is not expected    |
+| SYSTEM_ERROR    | unexpected system error            |
+| SESSION_EXPIRED | session is expired                 |
+| USER_NOT_EXIST  | user is not exist                  |
+| USER_NOT_ACTIVE | user is not active                 |
+| USER_INVALID    | this user cannot do this operation |
 
 #### Example
 
@@ -70,7 +70,6 @@
     "success": true,
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
-  },
-  "value": 1
+  }
 }
 ```

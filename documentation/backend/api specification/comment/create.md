@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks             |
-| --------------- | ------------------- |
-| API url         | \<url\>/post/upvote |
-| API description | to like a post      |
-| API methods     | POST                |
+| field name      | remarks                |
+| --------------- | ---------------------- |
+| API url         | \<url\>/comment/create |
+| API description | to create comment      |
+| API methods     | POST                   |
 
 ### Request
 
@@ -20,15 +20,19 @@
 
 ##### Body
 
-| Field Name | Field type | Mandatory | Condition | Remarks | Example |
-| ---------- | ---------- | --------- | --------- | ------- | ------- |
-| postId     | String     | Y         |           |         |         |
+| Field Name | Field type | Mandatory | Condition | Remarks      | Example |
+| ---------- | ---------- | --------- | --------- | ------------ | ------- |
+| content    | String     | Y         |           |              |         |
+| replyTo    | String     | Y         |           | POST/COMMENT |         |
+| replyId    | String     | Y         |           |              |         |
 
 #### Example
 
 ```json
 {
-  "postId": "postId"
+  "content": "this is a comment content",
+  "replyTo": "POST",
+  "replyId": "post_id"
 }
 ```
 
@@ -41,7 +45,7 @@
 | Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
 | ------------- | ------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext | Y         |           |         |         |
-| value         | int           | Y         |           |         |         |
+| commentId     | String        | Y         |           |         |         |
 
 ##### ResultContext
 
@@ -71,6 +75,6 @@
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
   },
-  "value": 1
+  "commentId": "comment_id"
 }
 ```

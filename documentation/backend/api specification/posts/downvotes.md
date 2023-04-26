@@ -59,6 +59,8 @@
 | PARAM_ILLEGAL   | parameter value is not expected |
 | SYSTEM_ERROR    | unexpected system error         |
 | SESSION_EXPIRED | session is expired              |
+| USER_NOT_EXIST  | user is not exist               |
+| USER_NOT_ACTIVE | user is not active              |
 
 #### Example
 

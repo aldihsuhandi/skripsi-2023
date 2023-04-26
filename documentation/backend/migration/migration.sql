@@ -249,6 +249,7 @@ CREATE TABLE comments (
     reply_comment_id VARCHAR(255),
     reply_post_id VARCHAR(255),
     content LONGTEXT NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (comment_id),
