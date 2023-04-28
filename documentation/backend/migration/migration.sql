@@ -390,6 +390,16 @@ CREATE TABLE images (
     PRIMARY KEY(image_id)
 );
 
+CREATE TABLE reset_password (
+    uuid VARCHAR(255) NOT NULL, 
+    email VARCHAR(255) NOT NULL,
+    expired_time VARCHAR(255) NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    PRIMARY KEY(uuid)
+);
+
 INSERT INTO
     user_roles (role_id, role_name)
 VALUES
@@ -446,6 +456,22 @@ INSERT INTO
     contents (content_name, content)
 VALUES
     (
+        "RESET_PASSWORD_URL_FORMAT",
+        "%s/user/reset?q=%s"
+    ),
+    (
+        "OTP_EMAIL_SUBJECT",
+        "Shumishumi Verification Email"
+    ),
+    (
+        "RESET_PASSWORD_SUBJECT",
+        "Shumishumi Reset Password Request"
+    ),
+    (
         "OTP_EMAIL",
-        '<body style="background-color:#d8dee9"><table align="center" border="0" cellpadding="0" cellspacing="0" width="800" bgcolor="white" style="border:2px solid #000"><tbody><tr><td align="center"><table align="center" border="0" cellpadding="0" cellspacing="0" class="col-550" width="800"><tbody><tr><td align="center" style="background-color:#2e3440;height:50px"><a href="#" style="text-decoration:none"><p style="color:#fff;font-weight:700;font-size:30px">Shumishumi Verification</p></a></td></tr></tbody></table></td></tr><tr style="height:300px"><td align="center" style="border:none;border-bottom:2px solid #eceffb;padding-right:5px;padding-left:5px"><p style="font-weight:bolder;font-size:30px;letter-spacing:.025em;color:#000">Hello %s!</p><p style="font-weight:semibold;font-size:18px;letter-spacing:.025em;color:#000">Please use the verification code below on the Shumishumi website:</p><table align="center" border="0" cellpadding="0" cellspacing="0" width="200" bgcolor="white"><tbody><tr><td align="center" style="background-color:#88c0d0;height:50px"><p style="font-weight:bolder;font-size:25px;letter-spacing:.025em;color:#000">%s</p></td></tr></tbody></table><p style="font-weight:semibold;font-size:15px;letter-spacing:.025em;color:#000">If you didn\'t request this, you can ignore this email or let us know.<br>Thanks!<br>Shumishumi Teams</p></td></tr></tbody></table></body>'
+        '<body style="background-color:#d8dee9"><table align="center" border="0" cellpadding="0" cellspacing="0" width="800" bgcolor="white" style="border:2px solid #000;border-radius:20px"><tbody><tr><td align="center" bgcolor="#008ec4" style="border-top-left-radius:20px;border-top-right-radius:20px"><table align="center" border="0" cellpadding="0" cellspacing="0" class="col-550" width="800" style="padding:10px"><tbody><tr><td align="center"><img src="https://i.imgur.com/U4gwHUE.png" alt="logo" height="85px" width="auto"><p style="color:#fff;font-weight:700;font-size:30px;font-family:\'Lucida Sans\',\'Lucida Sans Regular\',\'Lucida Grande\',\'Lucida Sans Unicode\',Geneva,Verdana,sans-serif;margin:auto">Welcome to ShumiShumi!</p></td></tr></tbody></table></td></tr><tr style="height:300px"><td align="center" style="border:none;border-bottom:2px solid #eceffb;border-bottom-left-radius:20px;border-bottom-right-radius:20px;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px"><p style="font-family:sans-serif;font-weight:bolder;font-size:30px;letter-spacing:.025em;color:#000">Hello %s!</p><p style="font-family:sans-serif;text-align:left;font-weight:semibold;font-size:18px;letter-spacing:.025em;color:#000;margin:auto">Thank you for choosing <span style="font-weight:700">ShumiShumi</span>!<br><br>To continue the verification process, please use the following code below on the ShumiShumi website:</p><table align="center" border="0" cellpadding="0" cellspacing="0" width="200" bgcolor="white"><tbody><tr><td align="center" style="background-color:#00a9ea;height:50px;border-radius:10px"><p style="font-family:\'Lucida Sans\',\'Lucida Sans Regular\',\'Lucida Grande\',\'Lucida Sans Unicode\',Geneva,Verdana,sans-serif;font-weight:bolder;font-size:25px;letter-spacing:.025em;color:#000">%s</p></td></tr></tbody></table><p style="font-family:sans-serif;text-align:left;font-weight:semibold;font-size:15px;letter-spacing:.025em;color:#000">If you didn\'t request this, you can simply ignore this email or let us know. Thanks!<br><br>Best Regards,<br>ShumiShumi Teams</p><hr><p style="text-align:left;color:gray">ShumiShumi Application<br>Indonesia</p></td></tr></tbody></table></body>'
+    ),
+    (
+        "RESET_PASSWORD_EMAIL",
+        '<body style="background-color:#d8dee9"><table align="center" border="0" cellpadding="0" cellspacing="0" width="800" bgcolor="white" style="border:2px solid #000;border-radius:20px"><tbody><tr><td align="center" bgcolor="#008ec4" style="border-top-left-radius:20px;border-top-right-radius:20px"><table align="center" border="0" cellpadding="0" cellspacing="0" class="col-550" width="800" style="padding:10px"><tbody><tr><td align="center"><img src="https://i.imgur.com/U4gwHUE.png" alt="logo" height="85px" width="auto"><p style="color:#fff;font-weight:700;font-size:25px;font-family:\'Lucida Sans\',\'Lucida Sans Regular\',\'Lucida Grande\',\'Lucida Sans Unicode\',Geneva,Verdana,sans-serif;margin:auto">You have requested to reset your password!</p></td></tr></tbody></table></td></tr><tr style="height:300px"><td align="center" style="border:none;border-bottom:2px solid #eceffb;border-bottom-left-radius:20px;border-bottom-right-radius:20px;padding-top:15px;padding-bottom:15px;padding-right:30px;padding-left:30px"><p style="font-family:sans-serif;font-weight:bolder;font-size:30px;letter-spacing:.025em;color:#000">Hello %s!</p><p style="font-family:sans-serif;text-align:left;font-weight:semibold;font-size:18px;letter-spacing:.025em;color:#000;margin:auto">It seems that you have forgotten your password for your <span style="font-weight:700">ShumiShumi</span>\'s account<br><br>To reset your password, please follow the link that we have provided below:</p><table align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="white"><tbody><tr><td align="center" style="padding-top:15px"><p style="font-family:Verdana,Geneva,Tahoma,sans-serif;font-weight:200;font-size:14px;color:#00f">%s</p></td></tr></tbody></table><p style="font-family:sans-serif;text-align:left;font-weight:semibold;font-size:15px;letter-spacing:.025em;color:#000">If you didn\'t request this, you can simply ignore this email or let us know. Thanks!<br><br>Best Regards,<br>ShumiShumi Teams</p><hr><p style="text-align:left;color:gray">ShumiShumi Application<br>Indonesia</p></td></tr></tbody></table></body>'
     );
