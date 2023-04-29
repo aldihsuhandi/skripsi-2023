@@ -400,6 +400,14 @@ CREATE TABLE reset_password (
     PRIMARY KEY(uuid)
 );
 
+CREATE TABLE email_encrypt (
+    uuid VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    PRIMARY KEY(uuid)
+);
+
 INSERT INTO
     user_roles (role_id, role_name)
 VALUES
