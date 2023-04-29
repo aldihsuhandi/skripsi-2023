@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks             |
-| --------------- | ------------------- |
-| API url         | \<url\>/post/upvote |
-| API description | to like a post      |
-| API methods     | POST                |
+| field name      | remarks                  |
+| --------------- | ------------------------ |
+| API url         | \<url\>/comment/downvote |
+| API description | to dislike a comment     |
+| API methods     | POST                     |
 
 ### Request
 
@@ -22,13 +22,13 @@
 
 | Field Name | Field type | Mandatory | Condition | Remarks | Example |
 | ---------- | ---------- | --------- | --------- | ------- | ------- |
-| postId     | String     | Y         |           |         |         |
+| commentId  | String     | Y         |           |         |         |
 
 #### Example
 
 ```json
 {
-  "postId": "postId"
+  "commentId": "commentId"
 }
 ```
 
@@ -71,6 +71,6 @@
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
   },
-  "value": 1
+  "value": -1
 }
 ```

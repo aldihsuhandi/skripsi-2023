@@ -47,19 +47,19 @@
 | pagingContext | PagingContext       | Y         |           |         |         |
 
 ##### PostSummary
-| Field Name      | Field type     | Mandatory | Condition | Remarks | Example |
-| --------------- | -------------- | --------- | --------- | ------- | ------- |
-| postId          | String         | Y         |           |         |         |
-| title           | String         | Y         |           |         |         |
-| content         | String         | Y         |           |         |         |
-| images          | List\<String\> | N         |           |         |         |
-| tags            | List\<String\> | Y         |           |         |         |
-| userInfo        | UserSummary    | Y         |           |         |         |
-| upvote          | int            | Y         |           |         |         |
-| downvote        | int            | Y         |           |         |         |
-| currentUservote | int            | Y         |           |         |         |
-| gmtCreate       | Date           | Y         |           |         |         |
-| gmtModified     | Date           | Y         |           |         |         |
+| Field Name      | Field type     | Mandatory | Condition | Remarks                                                | Example |
+| --------------- | -------------- | --------- | --------- | ------------------------------------------------------ | ------- |
+| postId          | String         | Y         |           |                                                        |         |
+| title           | String         | Y         |           |                                                        |         |
+| content         | String         | Y         |           |                                                        |         |
+| images          | List\<String\> | N         |           |                                                        |         |
+| tags            | List\<String\> | Y         |           |                                                        |         |
+| userInfo        | UserSummary    | Y         |           |                                                        |         |
+| upvote          | int            | Y         |           |                                                        |         |
+| downvote        | int            | Y         |           |                                                        |         |
+| currentUserVote | int            | Y         |           | - 1 for upvote<br>- -1 for downvote<br>- 0 for neutral |         |
+| gmtCreate       | Date           | Y         |           |                                                        |         |
+| gmtModified     | Date           | Y         |           |                                                        |         |
 
 #### UserSummary
 | Field Name     | Field type | Mandatory | Condition | Remarks | Example |
