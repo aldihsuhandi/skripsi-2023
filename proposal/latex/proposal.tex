@@ -139,10 +139,12 @@ Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketp
     \item Fitur utama yang unik aplikasi adalah filter tingkat kemahiran dari barang-barang hobi.
     \item Fitur selain itu fitur utama sebuah \textit{marketplace} juga ada seperti membeli dan menjual barang, menambahkan barang untuk dijual, komunikasi antara pembeli dan penjual, \textit{review} atau ulasan atas barang.
     \item Fitur selain itu fitur utama tempat wadah berdiskusi, untuk membaca, membuat dan membalas post dan komentar.
+    \item Fitur sistem rekomendasi yang akan digunakan untuk membantu pengguna mencari barang yang mereka minati.
+    \item Integrasi dengan \textit{Midtrans} dan \textit{Xendit} sebagai \textit{payment gateway} yang akan digunakan.
     \item Dalam membangun \textit{Front-End} bahasa yang digunakan adalah \textit{Javascript} dan \textit{Framework} yang digunakkan adalah \textit{NextJs} versi 13.
     \item Dalam membuat tampilan aplikasi menggunakan \textit{html}, \textit{css} dan dengan dibantu sebuah \textit{CSS framework}, \textit{Tailwind} versi 3.2.7.
-    \item Dalam membangun \textit{Back-End} bahasa yang digunakan adalah \textit{Java} dan menggunakkan \textit{Spring Framework}.
-    \item \textit{Database} yang dipakai adalah \textit{mysql}.
+    \item Dalam membangun \textit{Back-End} bahasa yang digunakan adalah \textit{Java} dan menggunakkan \textit{Spring Framework} versi 2.7.6.
+    \item \textit{Database} yang dipakai adalah \textit{mysql} versi 8.2.4-2.
 \end{enumerate}
 
 \subsection*{1.4 Tujuan dan Manfaat}
@@ -289,8 +291,23 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
           \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
 \end{itemize}
 
-\subsection*{2.5 Aplikasi Serupa}
-\addcontentsline{toc}{subsection}{\protect\numberline{}2.5 Aplikasi Serupa}
+\subsection*{2.5 Sistem Rekomendasi}
+\addcontentsline{toc}{subsection}{\protect\numberline{}2.5 Sistem Rekomendasi}
+
+Sistem rekomendasi adalah sistem penyaringan informasi yang menyarankan sebuah produk kepada pengguna bedasarkan preferensi atau perilaku masa lalu. Sistem ini banyak digunakan di pasar \textit{online} untuk meningkatkan pengalaman, keterlibatan pengguna, dan mendorong penjualan. Dengan memberikan rekomendasi yang dipersonalisasi terhadap preferensi, pengguna dapat menemukan sebuah barang yang mungkin tidak bisa ditemukan sendiri dan meningkatkan kepuasan pengguna terhadap pasar \textit{online} yang sedang digunakan \autocite{adiwardana2019}.
+
+Kenapa sistem rekomendasi ini dibutuhkan telah dibuktikan oleh sebuah artikel yang diterbitkan pada tahun 2019 oleh Tian \textit{et al}. yang berjudul "\textit{Exploring the effects of personalized recommendation on users' satisfaction and loyalty in e-commerce}" yang menemukan bahwa pengguna \textit{platform e-commerce}  akan menghabiskan waktu 50\% lebih banyak di \textit{platform} tersebut ketika pengguna diberikan sebuah rekomendasi produk yang dipersonalisasi\autocite{tian2019exploring}. Sistem rekomendasi juga menguntungkan untuk mengurangi terjadinya \textit{information overload} yang akan dialami oleh pengguna, dengan cara hanya menampilkan produk yang ingin dilihat atau yang sesuai dengan preferensi - preferensi pengguna tersebut\autocite{karimi2018news}.
+
+Sistem rekomendasi yang akan dipakai didalam proyek ini akan berdasarkan pada teori \textit{Knowledge Graph}. \textit{Knowledge Graph} adalah sebuah \textit{graph} heterogen, dimana \textit{nodes} akan merepresentasikan sebuah hubungan antara entitas\autocite{guo2020survey}. Dengan menggunakan teori ini, semua produk dan atribut - atributnya dapat dibuat menjadi sebuah \textit{graph} untuk mempermudah memahami hubungan antara tiap produk, selain itu informasi pengguna dan preferensi mereka-pun bisa diintegrasikan ke-\textit{graph} tersebut untuk membantu prediksi rekomendasi menjadi seakurat mungkin.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=8cm]{recommendation system architecture.png}
+    \caption{Contoh simpel dari sistem rekomendasi dengan basis \textit{Knowledge Graph}}
+\end{figure}
+
+\subsection*{2.6 Aplikasi Serupa}
+\addcontentsline{toc}{subsection}{\protect\numberline{}2.6 Aplikasi Serupa}
 Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu dan dua aplikasi pasaran yang sebelumnya sudah sedikit dibahas pada bagian latar belakang. Disini, aplikasi-aplikasi tersebut dapat dikategorikan menjadi dua jenis, yaitu \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Berikut adalah perbandingan kelebihan dan kekurangannya.
 \textbf{Aplikasi-aplikasi berdasarkan penelitian terdahulu}:
 \begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}

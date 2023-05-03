@@ -1,0 +1,47 @@
+@startuml recommendation system architecture
+skinparam linetype polyline
+
+left to right direction
+
+node User {
+    actor "Samuel Rodriguez" as sam
+    actor "Steven Armstrong" as armstrong
+    actor "Jack" as jack
+}
+
+node "Interested Item" {
+    [5 String Bass] as bass
+    [Drum set] as drum
+}
+
+node "Criteria" {
+    [Interest Level] as interest
+    [Item Category] as category
+    [Hobby] as hobby
+    ' [Age] as age
+    ' [Gender] as gender
+}
+
+node "Recommended Item" {
+    [6 String Bass] as 6bass
+}
+
+sam --> bass : interested
+armstrong --> drum : interested
+jack --> bass : interested
+
+bass --> interest : intermediate
+drum ---> interest : enthusiast
+
+bass --> hobby : music
+drum ---> hobby : music
+
+bass --> category : bass
+drum ---> category : drum set
+
+
+interest <--- 6bass : enthusiast
+hobby <--- 6bass : music
+category <-- 6bass : bass
+
+@enduml
