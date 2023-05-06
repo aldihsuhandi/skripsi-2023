@@ -52,12 +52,11 @@
 
 ###### Possible Result Code
 
-| Result Code     | Remarks                         |
-| --------------- | ------------------------------- |
-| SUCCESS         | api call success                |
-| PARAM_ILLEGAL   | parameter value is not expected |
-| SYSTEM_ERROR    | unexpected system error         |
-| SESSION_EXPIRED | session is expired              |
+| Result Code   | Remarks                         |
+| ------------- | ------------------------------- |
+| SUCCESS       | api call success                |
+| PARAM_ILLEGAL | parameter value is not expected |
+| SYSTEM_ERROR  | unexpected system error         |
 
 #### Example
 
