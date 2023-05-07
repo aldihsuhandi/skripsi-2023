@@ -67,7 +67,7 @@ CREATE TABLE users (
     phone_number VARCHAR(255) UNIQUE NOT NULL,
     username VARCHAR(255) NOT NULL,
     gender VARCHAR(255) NOT NULL,
-    age INT NOT NULL,
+    date_of_birth TIMESTAMP NOT NULL,
     location VARCHAR(512) DEFAULT "",
     profile_picture VARCHAR(255),
     password VARCHAR(255) NOT NULL,
