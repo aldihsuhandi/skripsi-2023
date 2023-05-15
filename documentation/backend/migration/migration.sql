@@ -138,24 +138,14 @@ CREATE TABLE sessions (
 );
 
 CREATE TABLE carts (
-    cart_id VARCHAR(255) NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (cart_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id)
-);
-
-CREATE TABLE cart_details (
-    cart_detail_id VARCHAR(255) NOT NULL,
     item_id VARCHAR(255) NOT NULL,
-    cart_id VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
     quantity INT DEFAULT 1,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (cart_detail_id),
+    PRIMARY KEY(item_id, user_id),
     FOREIGN KEY (item_id) REFERENCES items (item_id),
-    FOREIGN KEY (cart_id) REFERENCES carts (cart_id)
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE transaction (
