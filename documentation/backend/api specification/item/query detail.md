@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks            |
-| --------------- | ------------------ |
-| API url         | \<url\>/item/query |
-| API description | query item         |
-| API methods     | POST               |
+| field name      | remarks                   |
+| --------------- | ------------------------- |
+| API url         | \<url\>/item/query/detail |
+| API description | query item detail         |
+| API methods     | POST                      |
 
 ### Request
 
@@ -20,37 +20,16 @@
 
 ##### Body
 
-| Field Name        | Field type        | Mandatory | Condition | Remarks                                              | Example |
-| ----------------- | ----------------- | --------- | --------- | ---------------------------------------------------- | ------- |
-| itemFilterContext | ItemFilterContext | N         |           | if itemFilterContext is null, will return every item |         |
-| pageNumber        | int               | N         |           | default value is 1                                   |         |
-| numberOfItem      | int               | N         |           | default value is 10                                  |         |
-
-##### ItemFilterContext
-
-| Field Name            | Field type | Mandatory | Condition | Remarks                          | Example              |
-| --------------------- | ---------- | --------- | --------- | -------------------------------- | -------------------- |
-| itemName              | String     | N         |           |                                  | "itemName"           |
-| minItemPrice          | int        | N         |           |                                  | 1000                 |
-| maxItemPrice          | int        | N         |           |                                  | 5000                 |
-| merchantEmail         | String     | N         |           |                                  | "merchant@email.com" |
-| merchantInterestLevel | String     | N         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"           |
-| userInterestLevel     | String     | N         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST | "BEGINNER"           |
-| hobby                 | String     | N         |           |                                  | "music"              |
-| itemCategory          | String     | N         |           |                                  | "GUITAR"             |
+| Field Name | Field type | Mandatory | Condition | Remarks | Example |
+| ---------- | ---------- | --------- | --------- | ------- | ------- |
+| itemId     | String     | Y         |           |         |         |
 
 #### Example
 
 ```json
 
 {
-  "pageNumber": 1,
-  "numberOfItem": 10,
-  "itemFilterContext": {
-    "hobby": "music",
-    "itemCategory": "guitar",
-    "isApproved": true
-  }
+  "itemId": "itemId"
 }
 ```
 
@@ -88,6 +67,7 @@
 | merchantInfo    | UserSummary    | Y         |           |         |         |
 | merchantLevel   | String         | Y         |           |         |         |
 | itemImages      | List\<String\> | Y         |           |         |         |
+| totalWishlist   | int            | Y         |           |         |         |
 | gmtCreate       | Date           | Y         |           |         |         |
 | gmtModified     | Date           | Y         |           |         |         |
 
@@ -128,32 +108,26 @@
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
   },
-  "pagingContext": {
-    "pageNumber": 1,
-    "numberOfItem": 10,
-    "hasNext": true
-  },
-  "items": [
-    {
-      "itemId": "itemId", 
-      "itemName": "item name", 
-      "itemPrice": 100000,
-      "itemQuantity": 100,
-      "itemDescription": "itemDescription",
-      "merchantInfo": {
-        "userName": "userName",
-        "email": "user@email.com",
-        "phoneNumber": "081234567890",
-        "profilePicture": blob,
-        "role": "roleName"
-      },
-      "itemCategory": "categoryName",
-      "hobby": "music",
-      "merchantInterestLevel": "BEGINNER",
-      "itemImages": [
-        "imageId1", "imagesId2", "imagesId3"
-      ]
-    }
-  ]
+  "item": {
+    "itemId": "itemId", 
+    "itemName": "item name", 
+    "itemPrice": 100000,
+    "itemQuantity": 100,
+    "itemDescription": "itemDescription",
+    "merchantInfo": {
+      "userName": "userName",
+      "email": "user@email.com",
+      "phoneNumber": "081234567890",
+      "profilePicture": blob,
+      "role": "roleName"
+    },
+    "itemCategory": "categoryName",
+    "hobby": "music",
+    "merchantInterestLevel": "BEGINNER",
+    "itemImages": [
+      "imageId1", "imagesId2", "imagesId3"
+    ],
+    "totalWishlist": 10
+  }
 }
 ```
