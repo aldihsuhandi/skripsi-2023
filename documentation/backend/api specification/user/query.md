@@ -45,15 +45,18 @@
 | userInfo      | UserSummary   | Y         |           |         |         |
 
 #### UserSummary
-| Field Name     | Field type | Mandatory | Condition | Remarks             | Example |
-| -------------- | ---------- | --------- | --------- | ------------------- | ------- |
-| email          | String     | Y         |           |                     |         |
-| phoneNumber    | String     | Y         |           |                     |         |
-| username       | String     | Y         |           |                     |         |
-| role           | String     | Y         |           | USER/MERCHANT/ADMIN |         |
-| profilePicture | String     | Y         |           |                     |         |
-| gmtCreate      | Date       | Y         |           |                     |         |
-| gmtModified    | Date       | Y         |           |                     |         |
+| Field Name     | Field type            | Mandatory | Condition | Remarks                                                          | Example |
+| -------------- | --------------------- | --------- | --------- | ---------------------------------------------------------------- | ------- |
+| email          | String                | Y         |           |                                                                  |         |
+| phoneNumber    | String                | Y         |           |                                                                  |         |
+| username       | String                | Y         |           |                                                                  |         |
+| role           | String                | Y         |           | USER/MERCHANT/ADMIN                                              |         |
+| profilePicture | String                | Y         |           |                                                                  |         |
+| dateOfBirth    | Date                  | N         |           |                                                                  |         |
+| gender         | String                | N         |           | Male/Female/Other                                                |         |
+| location       | Map\<String, String\> | N         |           | will include: <br>- city<br>- province<br>- postCode<br>- detail |         |
+| gmtCreate      | Date                  | Y         |           |                                                                  |         |
+| gmtModified    | Date                  | Y         |           |                                                                  |         |
 
 ##### ResultContext
 
@@ -85,6 +88,14 @@
     "userName": "userName",
     "email": "user@email.com",
     "profilePicture": "images",
+    "dateOfBirth": date,
+    "gender": "Male",
+    "location": {
+        "city": "city",
+        "province": "province",
+        "postCode": "15113",
+        "detail": "detail"
+    },
     "phoneNumber": "081234567890",
     "role": "USER"
   }

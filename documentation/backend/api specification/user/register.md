@@ -22,6 +22,8 @@
 | email           | String     | Y         |           | Must be unique                                                                                                       | test@email.com |
 | username        | String     | Y         |           |                                                                                                                      | username       |
 | phoneNumber     | String     | Y         |           | Must be unique                                                                                                       | 08000000       |
+| dateOfBirth     | Date       | Y         |           |                                                                                                                      |                |
+| gender          | String     | Y         |           | Male/Female/Other                                                                                                    |                |
 | profilePicture  | Blob       | N         |           |                                                                                                                      | blob value     |
 | password        | String     | Y         |           | - atleast 8 chacater in length<br>- atleast 1 non capital letter<br>- atleast 1 number<br>- atleast 1 capital letter | password       |
 | confirmPassword | String     | Y         |           | need to be the same with password                                                                                    | password       |
@@ -35,7 +37,9 @@
     "phoneNumber": "080000000",
     "profilePicture": "blob value",
     "password": "password",
-    "confirmPassword": "password"
+    "confirmPassword": "password",
+    "dateOfBirth": date,
+    "gender": "Male"
 }
 ```
 

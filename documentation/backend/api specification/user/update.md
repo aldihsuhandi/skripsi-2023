@@ -18,17 +18,20 @@
 
 ##### Body
 
-| Field Name      | Field type | Mandatory | Condition | Remarks                                                                                                              | Example        |
-| --------------- | ---------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------- | -------------- |
-| oldPassword     | String     | Y         |           |                                                                                                                      | password       |
-| email           | String     | N         |           | Must be unique                                                                                                       | test@email.com |
-| username        | String     | N         |           |                                                                                                                      | username       |
-| phoneNumber     | String     | N         |           | Must be unique                                                                                                       | 08000000       |
-| profilePicture  | Blob       | N         |           |                                                                                                                      | blob           |
-| password        | String     | N         |           | - atleast 8 chacater in length<br>- atleast 1 non capital letter<br>- atleast 1 number<br>- atleast 1 capital letter | password       |
-| confirmPassword | String     | N         |           | need to be the same with password                                                                                    | password       |
-| isActive        | Boolean    | N         |           |                                                                                                                      | false          |
-| isDeleted       | Boolean    | N         |           |                                                                                                                      | false          |
+| Field Name      | Field type            | Mandatory | Condition | Remarks                                                                                                              | Example        |
+| --------------- | --------------------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------- | -------------- |
+| oldPassword     | String                | Y         |           |                                                                                                                      | password       |
+| email           | String                | N         |           | Must be unique                                                                                                       | test@email.com |
+| username        | String                | N         |           |                                                                                                                      | username       |
+| phoneNumber     | String                | N         |           | Must be unique                                                                                                       | 08000000       |
+| profilePicture  | Blob                  | N         |           |                                                                                                                      | blob           |
+| password        | String                | N         |           | - atleast 8 chacater in length<br>- atleast 1 non capital letter<br>- atleast 1 number<br>- atleast 1 capital letter | password       |
+| confirmPassword | String                | N         |           | need to be the same with password                                                                                    | password       |
+| dateOfBirth     | Date                  | N         |           |                                                                                                                      |                |
+| gender          | String                | N         |           | Male/Female/Other                                                                                                    |                |
+| location        | Map\<String, String\> | N         |           | must include: <br>- city<br>- province<br>- postCode<br>- detail                                                     |                |
+| isActive        | Boolean               | N         |           |                                                                                                                      | false          |
+| isDeleted       | Boolean               | N         |           |                                                                                                                      | false          |
 
 #### Example
 
@@ -39,6 +42,14 @@
     "username": "username",
     "phoneNumber": "080000000",
     "profilePicture": "base64 value",
+    "dateOfBirth": date,
+    "gender": "Male",
+    "location": {
+        "city": "city",
+        "province": "province",
+        "postCode": "15113",
+        "detail": "detail"
+    },
     "password": "new password",
     "confirmPassword": "new password"
 }

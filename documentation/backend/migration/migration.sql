@@ -66,6 +66,9 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE NOT NULL,
     phone_number VARCHAR(255) UNIQUE NOT NULL,
     username VARCHAR(255) NOT NULL,
+    gender VARCHAR(255) NOT NULL,
+    date_of_birth TIMESTAMP NOT NULL,
+    location VARCHAR(512) DEFAULT "",
     profile_picture VARCHAR(255),
     password VARCHAR(255) NOT NULL,
     is_active BOOLEAN DEFAULT false,
@@ -342,6 +345,15 @@ CREATE TABLE contents (
     PRIMARY KEY (content_name)
 );
 
+CREATE TABLE dictionaries (
+    dictionary_name VARCHAR(255) NOT NULL,
+    display_name VARCHAR(255) NOT NULL,
+    dictionary_type VARCHAR(255) NOT NULL,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    PRIMARY KEY (dictionary_name)
+);
+
 CREATE TABLE crowds (
     crowd_id VARCHAR(255) NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT true,
@@ -459,6 +471,25 @@ VALUES
     (
         "5684822d-ab2d-4ed6-a124-c3754035d80c",
         "ENTHUSIAST"
+    );
+
+INSERT INTO
+    dictionaries (dictionary_name, display_name, dictionary_type)
+VALUES
+    (
+        "GENDER_MALE",
+        "Male",
+        "GENDER"
+    ),
+    (
+        "GENDER_FEMALE",
+        "Female",
+        "GENDER"
+    ),
+    (
+        "GENDER_OTHER",
+        "Other",
+        "GENDER"
     );
 
 INSERT INTO
