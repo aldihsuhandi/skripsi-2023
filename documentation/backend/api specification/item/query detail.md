@@ -67,7 +67,7 @@
 | merchantInfo    | UserSummary    | Y         |           |                |         |
 | merchantLevel   | String         | Y         |           |                |         |
 | itemImages      | List\<String\> | Y         |           |                |         |
-| isInWishlist    | boolean        | Y         |           | default: false |         |
+| inWishlist      | boolean        | Y         |           | default: false |         |
 | totalWishlist   | int            | Y         |           |                |         |
 | gmtCreate       | Date           | Y         |           |                |         |
 | gmtModified     | Date           | Y         |           |                |         |
@@ -128,7 +128,7 @@
     "itemImages": [
       "imageId1", "imagesId2", "imagesId3"
     ],
-    "isInWishlist": false,
+    "inWishlist": false,
     "totalWishlist": 10
   }
 }
