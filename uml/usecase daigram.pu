@@ -1,110 +1,60 @@
 @startuml usecase diagram
 
-' left to right direction
+left to right direction
 
-Actor Guest as g
+actor User as u
 
-Package User as u{
-    Actor Buyer as b
-    Actor Merchant as m
-    Actor Admin as a
+rectangle "Shumishumi"{
+    usecase "login" as login
+    usecase "register" as register
+    usecase "register as merchant" as merchantregister
+
+    usecase "update profile info" as userupdate
+    usecase  "forgot password" as password
+
+    usecase "manage item" as merchant1
+
+    usecase "manage wishlist" as wishlist
+
+    usecase "query item" as qitem
+
+    usecase "recommend item" as recommend
+
+    usecase "manage post\ndislike, like, create, update, delete" as post
+    usecase "manage comment\ndislike, like, create, update, delete" as comment
+
+    usecase "manage cart" as cart
+    usecase "do transaction" as transaction
+    usecase "item review" as review
 }
 
-Package "FRONT END" {
-    package home_page{
-        usecase "search item" as hp1
-        usecase "open item" as hp2
-        usecase "open cart" as hp3
+actor Merchant as m
 
-        usecase "open discussion page" as hp4
+u --> login
 
-        usecase "login" as hp5
-        usecase "register" as hp6
-        usecase "logout"  as hp7
-    }
+login -.> qitem : include
+qitem <.- recommend : extend
 
-    package login_page{
-        usecase "login" as lg1
-        usecase "register" as lg2
-    } 
+u --> register
+u --> merchantregister
 
-    package register_page{
-        usecase "register" as rp1
-        usecase "login" as rp2
-    }
+u --> userupdate
 
-    package discussion_page {
-        usecase "search post" as dp1
-        usecase "create post" as dp2
-        usecase "delete post" as dp3
-        usecase "edit post" as dp4
-        usecase "open post" as dp5
-        usecase "like post" as dp6
-        usecase "dislike post" as dp7
+u --> password
 
-        usecase "login" as dp8
-        usecase "register" as dp9
-        usecase "logout" as dp10
-    }
+u --> wishlist
 
-    package post_page {
-        usecase "update post" as pp1
-        usecase "delete post" as pp2
-        usecase "like post" as pp3
-        usecase "dislike post" as pp4
+u --> post
 
-        usecase "add comment" as pp5
-        usecase "update comment" as pp6
-        usecase "delete comment" as pp7
-        usecase "like comment" as pp8
-        usecase "dislike comment" as pp9
+post -.> comment : extend
 
-        usecase "login" as pp10
-        usecase "register" as pp11
-        usecase "logout" as pp12
-    }
-}
+u --> cart
 
-' guest to FE
-g -.> hp1 #Blue
-g -.> hp2 #Blue
-g -.> hp4 #Blue
-g -.> hp5 #Blue
-g -.> hp6 #Blue
-          
-g -.> dp1 #Blue
-g -.> dp5 #Blue
-g -.> dp8 #Blue
-g -.> dp9 #Blue
-           
-g -.> pp10 #Blue
-g -.> pp11 #Blue
+u --> transaction
+transaction -.> review : include
 
-' user to FE
-u -.> hp1 #Red
-u -.> hp2 #Red
-u -.> hp3 #Red
-u -.> hp4 #Red
-u -.> hp7 #Red
+u <|-- m
 
-u -.> dp1 #Red
-u -.> dp2 #Red
-u -.> dp3 #Red
-u -.> dp4 #Red
-u -.> dp5 #Red
-u -.> dp6 #Red
-u -.> dp7 #Red
-u -.> dp10 #Red
-
-u -.> pp1 #Red
-u -.> pp2 #Red
-u -.> pp3 #Red
-u -.> pp4 #Red
-u -.> pp5 #Red
-u -.> pp6 #Red
-u -.> pp7 #Red
-u -.> pp8 #Red
-u -.> pp9 #Red
-u -.> pp12 #Red
+m --> merchant1
 
 @enduml

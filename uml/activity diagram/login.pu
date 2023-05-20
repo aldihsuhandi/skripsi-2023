@@ -1,0 +1,12 @@
+@startuml login activity diagram
+
+start
+:open login form;
+repeat :fillout login form;
+:login validation;
+repeat while (is login validation successfull?) is (no)
+-> yes;
+:open homepage;
+stop
+
+@enduml

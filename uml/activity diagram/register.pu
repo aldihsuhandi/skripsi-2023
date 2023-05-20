@@ -1,0 +1,22 @@
+@startuml register activity diagram
+
+start
+:open register page;
+repeat :fill out register form;
+:validate info;
+repeat while (is register validation successfull?) is (no)
+->yes;
+split
+:send otp email to user;
+split again
+:open activate page;
+end split
+repeat :fill out otp form;
+:validate otp;
+repeat while(is otp validation successfull?) is (no)
+->yes;
+:activate user;
+stop
+
+
+@enduml
