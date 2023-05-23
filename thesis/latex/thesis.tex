@@ -126,9 +126,10 @@ Berdasarkan gambaran dan penjelasan serta data-data yang telah dikumpulkan diata
 
 Sesuai dengan latar belakang yang telah dibahas di atas, rumusan masalah yang akan dikaji dalam proyek ini dapat dirangkum menjadi beberapa poin sebagai berikut:
 \begin{enumerate}
-    \item Bagaimana merancang dan membuat sebuah aplikasi \textit{marketplace} berbasis \textit{web} untuk melakukan kegiatan jual beli barang hobi yang tidak berfokus pada hobi tertentu saja
-    \item Bagaimana merancang dan membuat sebuah aplikasi \textit{marketplace} hobi berbasis \textit{web} yang mudah digunakan oleh semua kalangan \textit{user}
-    \item Bagaimana merancang fitur untuk aplikasi \textit{marketplace} hobi ini. Dengan fitur yang dirancang adalah fitur saring \textit{Interest Level} atau fitur Tingkat Peminatan untuk barang, fitur sistem rekomendasi barang untuk \textit{user} dan juga fitur wadah diskusi untuk komunikasi komunitas aplikasi \textit{marketplace}
+    \item Bagaimana merancang sebuah aplikasi \textit{marketplace} hobi yang dapat membantu pelanggan atau \textit{user} dalam mencari barang hobi yang tepat
+    \item Bagaimana merancang sebuah aplikasi \textit{marketplace} hobi yang dapat membantu penjual atau \textit{seller} dalam mengiklankan barang hobi yang mereka jual
+    \item Bagaimana merancang fitur \textit{interest level} untuk membantu pencarian barang hobi yang tepat
+    \item Bagaimana merancang fitur utama sistem rekomendasi untuk membantu penjual mengiklankan barangnya dengan rekomendasi barang hobi ke \textit{user} yang tepat
 \end{enumerate}
 
 \subsection*{1.3 Ruang Lingkup}
@@ -136,10 +137,7 @@ Sesuai dengan latar belakang yang telah dibahas di atas, rumusan masalah yang ak
 Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketplace} terfokus untuk hobi dengan fitur utama sebuah filter terhadap tingkat kemahiran sebuah hobi, untuk menghindari pembahasan dan implementasi yang meluas dan supaya lebih terfokus maka ditetapkan batasan-batasan atau ruang lingkup sebagai berikut:
 \begin{enumerate}
     \item Aplikasi hanya berbasis dan berada dalam bentuk aplikasi \textit{website}.
-    \item Fitur utama yang unik aplikasi adalah filter tingkat kemahiran dari barang-barang hobi.
-    \item Fitur selain itu fitur utama sebuah \textit{marketplace} juga ada seperti membeli dan menjual barang, menambahkan barang untuk dijual, komunikasi antara pembeli dan penjual, \textit{review} atau ulasan atas barang.
-    \item Fitur selain itu fitur utama tempat wadah berdiskusi, untuk membaca, membuat dan membalas post dan komentar.
-    \item Fitur sistem rekomendasi yang akan digunakan untuk membantu pengguna mencari barang yang mereka minati.
+    \item Fitur utama untuk aplikasi ini adalah filter tingkat kemahiran dan  sistem rekomendasi.
     \item Integrasi dengan \textit{Midtrans} dan \textit{Xendit} sebagai \textit{payment gateway} yang akan digunakan.
     \item Dalam membangun \textit{Front-End} bahasa yang digunakan adalah \textit{Javascript} dan \textit{Framework} yang digunakkan adalah \textit{NextJs} versi 13.
     \item Dalam membuat tampilan aplikasi menggunakan \textit{html}, \textit{css} dan dengan dibantu sebuah \textit{CSS framework}, \textit{Tailwind} versi 3.2.7.
@@ -150,18 +148,19 @@ Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketp
 \subsection*{1.4 Tujuan dan Manfaat}
 \addcontentsline{toc}{subsection}{\protect\numberline{}1.4 Tujuan dan Manfaat}
 
-Tujuan dari proyek ini adalah untuk merancang sebuah aplikasi \textit{marketplace} yang akan berjalan di \textit{web} sebagai sebuah aplikasi \textit{web}. Tujuan secara khusus dapat ditulis sebagai poin sebagai berikut:
+Tujuan dari proyek ini adalah untuk merancang dan membuat sebuah aplikasi \textit{marketplace} yang berbasis \textit{web}. Tujuan secara khusus dapat ditulis sebagai poin sebagai berikut:
 \begin{enumerate}
-    \item Merancang dan membuat sebuah aplikasi \textit{marketplace} berbasis \textit{web} untuk melakukan kegiatan jual beli barang hobi yang tidak berfokus pada hobi tertentu saja.
-    \item Merancang dan membuat sebuah aplikasi \textit{marketplace} hobi berbasis \textit{web} yang mudah digunakan oleh semua kalangan pengguna.
-    \item Merancang daan membuat fitur untuk aplikasi, yaitu fitur sating \textit{Interest Level} atau fitur Tingkat Peminatan untuk barang, fitur sistem rekomendasi barang untuk \textit{user} dan juga fitur wadah diskusi untuk komunikasi komunitas aplikasi \textit{marketplace}.
+    \item Merancang dan membuat sebuah aplikasi \textit{marketplace} hobi yang dapat membantu pelanggan atau \textit{user} dalam mencari barang hobi yang tepat
+    \item Merancang dan membuat sebuah aplikasi \textit{marketplace} hobi yang dapat membantu penjual atau \textit{seller} dalam mengiklankan barang hobi yang mereka jual
+    \item Merancang dan membuat fitur \textit{interest level} untuk membantu pencarian barang hobi yang tepat
+    \item Merancang dan membuat fitur utama sistem rekomendasi untuk membantu penjual mengiklankan barangnya dengan rekomendasi barang hobi ke \textit{user} yang tepat
 \end{enumerate}
 
 Manfaat yang diharapkan dari proyek ini adalah:
 \begin{enumerate}
-    \item Memberikan opsi untuk tempat \textit{marketplace} hobi yang tidak berfokus pada hobi tertentu saja.
+    \item Memberikan opsi untuk tempat \textit{marketplace} hobi
     \item Memberikan fitur yang berguna bagi pengguna dalam mencari barang yang tepat untuk mendukung hobi mereka sesuai dengan tingkat peminatan dan kemahiran mereka.
-    \item Menyediakan tempat diskusi seputar barang hobi yang baik.
+    \item Menyediakan tempat jual beli yang tepat untuk penjual barang hobi, dimana dengan sistem rekomendasi barang dibantu didorong atau disarankan ke pengguna yang tepat.
 \end{enumerate}
 
 \subsection*{1.5 Metode Penelitian}
