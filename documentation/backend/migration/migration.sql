@@ -488,7 +488,7 @@ VALUES
     ),
     (
         "ITEM_SORTING_NAME",
-        "Name",
+        "Alphabetical",
         "ITEM_SORTING"
     ),
     (
