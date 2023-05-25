@@ -1,0 +1,38 @@
+@startuml transaction flow
+
+|User|
+:open cart page;
+:pick item to buy;
+:click buy;
+|BackEnd|
+:create transaction with status INIT;
+|FrontEnd|
+:redirect to pick payment page;
+|User|
+:pick payment type;
+:click pay;
+|BackEnd|
+:update transaction status to WAITING_PAYMENT;
+:delete item from cart;
+|FrontEnd|
+:redirect to waiting payment page;
+fork
+|User|
+:pay;
+fork again
+|BackEnd|
+repeat :check payment status;
+repeat while (payment status is done?) is (no)
+-> yes;
+:update transaction status to ONGOING;
+end fork
+|FrontEnd|
+:show transaction detail page;
+|User|
+:click transaction finish;
+|BackEnd|
+:update transaction status to DONE;
+|FrontEnd|
+:redirect to need review page;
+
+@enduml
