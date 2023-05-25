@@ -77,14 +77,6 @@ entity user_capabilities {
     * gmt_modified : date
 }
 
-entity payments {
-    * id : string
-    --
-    * payment_type : string
-    * gmt_create : date
-    * gmt_modified : date
-}
-
 entity users {
     * id : string  
     --
@@ -150,7 +142,8 @@ entity transaction {
     * id : string
     --
     * user_id : string <<FK>>
-    * payment_type : string <<FK>>
+    * payment_type : string
+    * status : string
     * gmt_create : date
     * gmt_modified : date
 }
@@ -385,7 +378,6 @@ items ||-o{ hobbies
 ' user_roles }o--|| users
 users ||-o{ user_roles
 
-transaction |o-o{ payments
 users }o--|| transaction
 transaction }o-|| transaction_details
 history_items }o-|| transaction_details

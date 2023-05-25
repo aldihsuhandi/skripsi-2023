@@ -120,7 +120,7 @@
       },
       "categoryName": "GUITAR",
       "hobby": "music",
-      "merchantInterestLevel": "BEGINNER",
+      "merchantLevel": "BEGINNER",
       "userInterestLevel": "BEGINNER",
       "itemImages": [
         "imageId"

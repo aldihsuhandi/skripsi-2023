@@ -52,14 +52,6 @@ CREATE TABLE user_roles (
     PRIMARY KEY (role_id)
 );
 
-CREATE TABLE payments (
-    payment_id VARCHAR(255) NOT NULL,
-    payment_type VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (payment_id)
-);
-
 CREATE TABLE users (
     user_id VARCHAR(255) NOT NULL,
     role_id VARCHAR(255) NOT NULL,
@@ -152,18 +144,18 @@ CREATE TABLE transaction (
     transaction_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
     payment_type VARCHAR(255) NOT NULL,
+    `status` VARCHAR(255) NOT NULL DEFAULT "INIT",
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (transaction_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id),
-    FOREIGN KEY (payment_type) REFERENCES payments (payment_id)
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE transaction_details (
     transaction_detail_id VARCHAR(255) NOT NULL,
     transaction_id VARCHAR(255) NOT NULL,
     history_item_id VARCHAR(255) NOT NULL,
-    quantity INT NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (transaction_id),
@@ -480,6 +472,36 @@ VALUES
         "GENDER_OTHER",
         "Other",
         "GENDER"
+    ),
+    (
+        "PAYMENT_QRIS",
+        "Qris",
+        "PAYMENT"
+    ),
+    (
+        "PAYMENT_VIRTUAL_ACCOUNT",
+        "BCA Virtual Account",
+        "PAYMENT"
+    ),
+    (
+        "TRANSACTION_STATUS_INIT",
+        "Init",
+        "TRANSACTION_STATUS"
+    ),
+    (
+        "TRANSACTION_STATUS_WAITING_PAYMENT",
+        "Waiting Payment",
+        "TRANSACTION_STATUS"
+    ),
+    (
+        "TRANSACTION_STATUS_ONGOING",
+        "Ongoing",
+        "TRANSACTION_STATUS"
+    ),
+    (
+        "TRANSACTION_STATUS_DONE",
+        "Done",
+        "TRANSACTION_STATUS"
     );
 
 INSERT INTO
