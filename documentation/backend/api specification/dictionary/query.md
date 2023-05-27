@@ -19,9 +19,9 @@
 
 ##### Body
 
-| Field Name    | Field type | Mandatory | Condition | Remarks | Example                       |
-| ------------- | ---------- | --------- | --------- | ------- | ----------------------------- |
-| dictionaryKey | String     | Y         |           |         | INTEREST_LEVEL,CATEGORY,HOBBY |
+| Field Name    | Field type | Mandatory | Condition | Remarks | Example                                                        |
+| ------------- | ---------- | --------- | --------- | ------- | -------------------------------------------------------------- |
+| dictionaryKey | String     | Y         |           |         | INTEREST_LEVEL,CATEGORY,HOBBY,GENDER,ITEM_SORTING,SORTING_TYPE |
 
 #### Example
 

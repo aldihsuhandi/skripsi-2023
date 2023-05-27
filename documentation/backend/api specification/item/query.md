@@ -20,11 +20,13 @@
 
 ##### Body
 
-| Field Name        | Field type        | Mandatory | Condition | Remarks                                              | Example |
-| ----------------- | ----------------- | --------- | --------- | ---------------------------------------------------- | ------- |
-| itemFilterContext | ItemFilterContext | N         |           | if itemFilterContext is null, will return every item |         |
-| pageNumber        | int               | N         |           | default value is 1                                   |         |
-| numberOfItem      | int               | N         |           | default value is 10                                  |         |
+| Field Name        | Field type        | Mandatory | Condition | Remarks                                                     | Example |
+| ----------------- | ----------------- | --------- | --------- | ----------------------------------------------------------- | ------- |
+| itemFilterContext | ItemFilterContext | N         |           | if itemFilterContext is null, will return every item        |         |
+| sorting           | String            | N         |           | default item price                                          |         |
+| sortingType       | String            | N         |           | accepted value: Descending/Ascending<br>default: Descending |         |
+| pageNumber        | int               | N         |           | default value is 1                                          |         |
+| numberOfItem      | int               | N         |           | default value is 10                                         |         |
 
 ##### ItemFilterContext
 

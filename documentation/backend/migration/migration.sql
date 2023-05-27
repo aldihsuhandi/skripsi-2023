@@ -477,6 +477,36 @@ VALUES
         "GENDER"
     ),
     (
+        "ITEM_SORTING_PRICE",
+        "Price",
+        "ITEM_SORTING"
+    ),
+    (
+        "ITEM_SORTING_NAME",
+        "Alphabetical",
+        "ITEM_SORTING"
+    ),
+    (
+        "ITEM_SORTING_GMT_CREATE",
+        "Created",
+        "ITEM_SORTING"
+    ),
+    (
+        "ITEM_SORTING_INTEREST_LEVEL",
+        "Interest level",
+        "ITEM_SORTING"
+    ),
+    (
+        "SORTING_TYPE_DESC",
+        "Descending",
+        "SORTING_TYPE"
+    ),
+    (
+        "SORTING_TYPE_ASC",
+        "Ascending",
+        "SORTING_TYPE"
+    ),
+    (
         "PAYMENT_BNI_VIRTUAL_ACCOUNT",
         "BNI Virtual Account",
         "PAYMENT"
