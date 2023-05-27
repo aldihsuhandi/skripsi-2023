@@ -540,8 +540,7 @@ VALUES
         "TRANSACTION_STATUS_CANCELED",
         "Canceled",
         "TRANSACTION_STATUS"
-    )
-    ;
+    );
 
 INSERT INTO
     contents (content_name, content)
