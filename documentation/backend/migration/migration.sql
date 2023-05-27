@@ -143,6 +143,7 @@ CREATE TABLE carts (
 CREATE TABLE transaction (
     transaction_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
+    price INT NOT NULL,
     payment_type VARCHAR(255),
     midtrans_id VARCHAR(255),
     midtrans_link VARCHAR(255),
@@ -476,12 +477,12 @@ VALUES
         "GENDER"
     ),
     (
-        "PAYMENT_QRIS",
-        "Qris",
+        "PAYMENT_BNI_VIRTUAL_ACCOUNT",
+        "BNI Virtual Account",
         "PAYMENT"
     ),
     (
-        "PAYMENT_VIRTUAL_ACCOUNT",
+        "PAYMENT_BCA_VIRTUAL_ACCOUNT",
         "BCA Virtual Account",
         "PAYMENT"
     ),
@@ -504,7 +505,13 @@ VALUES
         "TRANSACTION_STATUS_DONE",
         "Done",
         "TRANSACTION_STATUS"
-    );
+    ),
+    (
+        "TRANSACTION_STATUS_CANCELED",
+        "Canceled",
+        "TRANSACTION_STATUS"
+    )
+    ;
 
 INSERT INTO
     contents (content_name, content)

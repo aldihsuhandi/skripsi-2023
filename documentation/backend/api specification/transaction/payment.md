@@ -40,9 +40,10 @@
 
 ##### Body
 
-| Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
-| ------------- | ------------- | --------- | --------- | ------- | ------- |
-| resultContext | ResultContext | Y         |           |         |         |
+| Field Name    | Field type    | Mandatory | Condition | Remarks                                                   | Example |
+| ------------- | ------------- | --------- | --------- | --------------------------------------------------------- | ------- |
+| resultContext | ResultContext | Y         |           |                                                           |         |
+| paymentNumber | String        | Y         |           | if paymentType is BCA_VA, this will contain BCA VA number |         |
 
 ##### ResultContext
 
@@ -69,6 +70,7 @@
     "success": true,
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
-  }
+  },
+  "paymentNumber": 019238
 }
 ```
