@@ -6,10 +6,23 @@ USE shumishumi;
 
 CREATE TABLE chatrooms (
     chatroom_id VARCHAR(255) NOT NULL,
+    participant VARCHAR(1024) NOT NULL,
     extend_info VARCHAR(255),
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (chatroom_id)
+);
+
+CREATE TABLE chats (
+    chat_id VARCHAR(255) NOT NULL,
+    chatroom_id VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    `message` VARCHAR(255) NOT NULL,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    PRIMARY KEY (chat_id),
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (chatroom_id) REFERENCES chatrooms (chatroom_id)
 );
 
 CREATE TABLE capabilities (
@@ -197,19 +210,6 @@ CREATE TABLE reviews (
     FOREIGN KEY (interest_level) REFERENCES interest_level (interest_level_id)
 );
 
-CREATE TABLE chats (
-    chat_id VARCHAR(255) NOT NULL,
-    chatroom_id VARCHAR(255) NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    message VARCHAR(255) NOT NULL,
-    is_deleted BOOLEAN DEFAULT false,
-    is_edited BOOLEAN DEFAULT false,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (chat_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id),
-    FOREIGN KEY (chatroom_id) REFERENCES chatrooms (chatroom_id)
-);
 
 CREATE TABLE user_capabilities (
     user_id VARCHAR(255) NOT NULL,
