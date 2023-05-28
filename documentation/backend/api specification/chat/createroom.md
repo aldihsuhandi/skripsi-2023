@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks           |
-| --------------- | ----------------- |
-| API url         | \<url\>/chat/send |
-| API description | send chat         |
-| API methods     | POST              |
+| field name      | remarks                  |
+| --------------- | ------------------------ |
+| API url         | \<url\>/chat/room/create |
+| API description | create chat room         |
+| API methods     | POST                     |
 
 ### Request
 
@@ -22,15 +22,13 @@
 
 | Field Name | Field type | Mandatory | Condition | Remarks | Example |
 | ---------- | ---------- | --------- | --------- | ------- | ------- |
-| message    | String     | Y         |           |         |         |
-| chatroomId | String     | Y         |           |         |         |
+| userId     | String     | Y         |           |         |         |
 
 #### Example
 
 ```json
 {
-  "message": "message",
-  "cahtroomId": "id"
+  "userId": "userId"
 }
 ```
 
@@ -43,7 +41,7 @@
 | Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
 | ------------- | ------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext | Y         |           |         |         |
-| chatId        | String        | Y         |           |         |         |
+| chatroomId    | String        | Y         |           |         |         |
 
 ##### ResultContext
 
@@ -71,6 +69,6 @@
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
   },
-  "chatId": "id"
+  "chatroomId": "id"
 }
 ```

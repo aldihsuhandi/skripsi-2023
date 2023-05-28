@@ -47,6 +47,7 @@
 ##### ChatSummary
 | Field Name  | Field type | Mandatory | Condition | Remarks | Example |
 | ----------- | ---------- | --------- | --------- | ------- | ------- |
+| chatId      | String     | Y         |           |         |         |
 | message     | String     | Y         |           |         |         |
 | username    | String     | Y         |           |         |         |
 | currentUser | Boolean    | Y         |           |         |         |
@@ -94,6 +95,7 @@
   },
   "chats": [
     {
+      "chatId": "chatId",
       "message": "message1",
       "username": "username",
       "currentUser": true,
