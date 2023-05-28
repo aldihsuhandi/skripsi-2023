@@ -152,7 +152,7 @@
       },
       "itemCategory": "categoryName",
       "hobby": "music",
-      "merchantInterestLevel": "BEGINNER",
+      "merchantLevel": "BEGINNER",
       "itemImages": [
         "imageId1", "imagesId2", "imagesId3"
       ],

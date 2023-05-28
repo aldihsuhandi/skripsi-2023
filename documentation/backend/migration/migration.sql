@@ -52,14 +52,6 @@ CREATE TABLE user_roles (
     PRIMARY KEY (role_id)
 );
 
-CREATE TABLE payments (
-    payment_id VARCHAR(255) NOT NULL,
-    payment_type VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (payment_id)
-);
-
 CREATE TABLE users (
     user_id VARCHAR(255) NOT NULL,
     role_id VARCHAR(255) NOT NULL,
@@ -90,6 +82,7 @@ CREATE TABLE items (
     category_id VARCHAR(255) NOT NULL,
     hobby_id VARCHAR(255) NOT NULL,
     merchant_level_id VARCHAR(255) NOT NULL,
+    user_level_id VARCHAR(255),
     is_deleted BOOLEAN NOT NULL DEFAULT false,
     is_approved BOOLEAN NOT NULL DEFAULT false,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
@@ -113,7 +106,6 @@ CREATE TABLE history_items (
     hobby_id VARCHAR(255) NOT NULL,
     merchant_level_id VARCHAR(255) NOT NULL,
     user_level_id VARCHAR(255),
-    need_review BOOLEAN NOT NULL DEFAULT false,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (history_item_id),
@@ -151,19 +143,22 @@ CREATE TABLE carts (
 CREATE TABLE transaction (
     transaction_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
-    payment_type VARCHAR(255) NOT NULL,
+    price INT NOT NULL,
+    payment_type VARCHAR(255),
+    midtrans_id VARCHAR(255),
+    midtrans_link VARCHAR(255),
+    `status` VARCHAR(255) NOT NULL DEFAULT "INIT",
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (transaction_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id),
-    FOREIGN KEY (payment_type) REFERENCES payments (payment_id)
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE transaction_details (
     transaction_detail_id VARCHAR(255) NOT NULL,
     transaction_id VARCHAR(255) NOT NULL,
     history_item_id VARCHAR(255) NOT NULL,
-    quantity INT NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (transaction_id),
@@ -510,6 +505,41 @@ VALUES
         "SORTING_TYPE_ASC",
         "Ascending",
         "SORTING_TYPE"
+    ),
+    (
+        "PAYMENT_BNI_VIRTUAL_ACCOUNT",
+        "BNI Virtual Account",
+        "PAYMENT"
+    ),
+    (
+        "PAYMENT_BCA_VIRTUAL_ACCOUNT",
+        "BCA Virtual Account",
+        "PAYMENT"
+    ),
+    (
+        "TRANSACTION_STATUS_INIT",
+        "Init",
+        "TRANSACTION_STATUS"
+    ),
+    (
+        "TRANSACTION_STATUS_WAITING_PAYMENT",
+        "Waiting Payment",
+        "TRANSACTION_STATUS"
+    ),
+    (
+        "TRANSACTION_STATUS_ONGOING",
+        "Ongoing",
+        "TRANSACTION_STATUS"
+    ),
+    (
+        "TRANSACTION_STATUS_DONE",
+        "Done",
+        "TRANSACTION_STATUS"
+    ),
+    (
+        "TRANSACTION_STATUS_CANCELED",
+        "Canceled",
+        "TRANSACTION_STATUS"
     );
 
 INSERT INTO

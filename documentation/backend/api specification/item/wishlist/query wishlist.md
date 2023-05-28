@@ -150,7 +150,7 @@
       },
       "itemCategory": "categoryName",
       "hobby": "hobbyName": "hobbyName",
-      "merchantInterestLevel": "BEGINNER",
+      "merchantLevel": "BEGINNER",
       "itemImages": [
         blob, blob, blob
       ],

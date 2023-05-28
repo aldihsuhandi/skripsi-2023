@@ -106,11 +106,15 @@
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
   },
+  "pagingContext": {
+    "pageNumber": 1,
+    "numberOfItem": 10,
+    "hasNext": true
+  },
   "price": 100000,
   "carts": [
     {
       "quantity": 1,
-      "hasNext": false,
       "item": {
         "itemId": "itemId", 
         "itemName": "item name", 
@@ -126,7 +130,7 @@
         },
         "itemCategory": "categoryName",
         "hobby": "music",
-        "merchantInterestLevel": "BEGINNER",
+        "merchantLevel": "BEGINNER",
         "itemImages": [
           "imageId1", "imagesId2", "imagesId3"
         ],
