@@ -1,10 +1,10 @@
 ## API Specification
 
-| field name      | remarks                                |
-| --------------- | -------------------------------------- |
-| API url         | \<url\>/transaction/checkPaymentStatus |
-| API description | transaction check payment status       |
-| API methods     | POST                                   |
+| field name      | remarks                    |
+| --------------- | -------------------------- |
+| API url         | \<url\>/transaction/finish |
+| API description | finish transaction         |
+| API methods     | POST                       |
 
 ### Request
 
@@ -68,7 +68,6 @@
     "success": true,
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
-  },
-  "transactionStatus": "WAITING_PAYMENT"
+  }
 }
 ```
