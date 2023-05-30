@@ -20,11 +20,13 @@
 
 ##### Body
 
-| Field Name | Field type | Mandatory | Condition | Remarks                                  | Example |
-| ---------- | ---------- | --------- | --------- | ---------------------------------------- | ------- |
-| email      | String     | Y         |           |                                          |         |
-| type       | String     | Y         |           | MERCHANT/USER                            |         |
-| needReview | boolean    | Y         |           | if type = merchant, will always be false | false   |
+| Field Name   | Field type | Mandatory | Condition | Remarks                                  | Example |
+| ------------ | ---------- | --------- | --------- | ---------------------------------------- | ------- |
+| email        | String     | Y         |           |                                          |         |
+| type         | String     | Y         |           | MERCHANT/USER                            |         |
+| needReview   | boolean    | Y         |           | if type = merchant, will always be false | false   |
+| numberOfItem | Integer    | Y         |           | default value = 10                       |         |
+| pageNumber   | Integer    | Y         |           | default value = 1                        |         |
 
 #### Example
 
@@ -46,6 +48,7 @@
 | ------------- | --------------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext         | Y         |           |         |         |
 | reviews       | List\<ReviewSummary\> | Y         |           |         |         |
+| pagingContext | PagingContext         | Y         |           |         |         |
 
 ##### ReviewSummary
 
@@ -58,6 +61,16 @@
 | interestLevel | String         | C         |           | needReview = false, this field will be mandatory          |         |
 | desc          | String         | C         |           | needReview = false, this field will be mandatory          |         |
 | needReview    | boolean        | Y         |           |                                                           |         |
+
+##### PagingContext 
+| Field Name   | Field type | Mandatory | Condition | Remarks | Example |
+| ------------ | ---------- | --------- | --------- | ------- | ------- |
+| pageNumber   | int        | Y         |           |         | 0       |
+| numberOfItem | int        | Y         |           |         | 10      |
+| hasNext      | boolean    | Y         |           |         | true    |
+| totalItem    | Long       | N         |           |         |         |
+| totalPage    | int        | N         |           |         |         |
+
 
 ##### ResultContext
 
@@ -94,6 +107,11 @@
       "desc": "this item is good for intermediate person",
       "needReview": false
     }
-  ]
+  ],
+  "pagingContext": {
+    "pageNumber": 1,
+    "numberOfItem": 10,
+    "hasNext": true
+  },
 }
 ```

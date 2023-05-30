@@ -178,13 +178,14 @@ CREATE TABLE wishlists (
 
 CREATE TABLE reviews (
     review_id VARCHAR(255) NOT NULL,
-    star INT NOT NULL,
+    star INT DEFAULT -1,
     item_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
     merchant_id VARCHAR(255) NOT NULL,
     interest_level VARCHAR(255),
     description LONGTEXT,
-    review_image LONGBLOB,
+    review_images VARCHAR(1024),
+    need_review BOOLEAN NOT NULL DEFAULT true,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (review_id),
