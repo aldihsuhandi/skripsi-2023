@@ -78,6 +78,7 @@ CREATE TABLE items (
     item_images VARCHAR(1024),
     item_description LONGTEXT NOT NULL,
     item_quantity INT NOT NULL,
+    post_id VARCHAR(255) NOT NULL,
     merchant_id VARCHAR(255) NOT NULL,
     category_id VARCHAR(255) NOT NULL,
     hobby_id VARCHAR(255) NOT NULL,
@@ -91,7 +92,8 @@ CREATE TABLE items (
     FOREIGN KEY (merchant_id) REFERENCES users (user_id),
     FOREIGN KEY (category_id) REFERENCES item_categories (category_id),
     FOREIGN KEY (hobby_id) REFERENCES hobbies (hobby_id),
-    FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id)
+    FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id),
+    FOREIGN KEY (post_id) REFERENCES posts (post_id)
 );
 
 CREATE TABLE history_items (
