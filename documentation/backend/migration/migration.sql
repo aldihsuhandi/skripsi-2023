@@ -181,6 +181,7 @@ CREATE TABLE reviews (
     star INT NOT NULL,
     item_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
+    merchant_id VARCHAR(255) NOT NULL,
     interest_level VARCHAR(255),
     description LONGTEXT,
     review_image LONGBLOB,
@@ -188,6 +189,7 @@ CREATE TABLE reviews (
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (review_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (merchant_id) REFERENCES users (user_id),
     FOREIGN KEY (item_id) REFERENCES items (item_id),
     FOREIGN KEY (interest_level) REFERENCES interest_level (interest_level_id)
 );
@@ -446,15 +448,15 @@ INSERT INTO
     interest_level (interest_level_id, level_name)
 VALUES
     (
-        "da61603a-3252-4f7d-bf07-97ef5ef168cc",
+        "1",
         "BEGINNER"
     ),
     (
-        "ebb5d871-af7d-4b59-807c-bef5f8962e3c",
+        "3",
         "INTERMEDIATE"
     ),
     (
-        "5684822d-ab2d-4ed6-a124-c3754035d80c",
+        "5",
         "ENTHUSIAST"
     );
 
