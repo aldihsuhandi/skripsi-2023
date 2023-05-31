@@ -59,7 +59,7 @@
 | review        | int            | C         |           | 1 - 5<br>needReview = false, this field will be mandatory |         |
 | images        | List\<String\> | N         |           | needReview = true, this field must be empty               |         |
 | interestLevel | String         | C         |           | needReview = false, this field will be mandatory          |         |
-| desc          | String         | C         |           | needReview = false, this field will be mandatory          |         |
+| description   | String         | C         |           | needReview = false, this field will be mandatory          |         |
 | needReview    | boolean        | Y         |           |                                                           |         |
 
 ##### PagingContext 
@@ -104,7 +104,7 @@
       "itemId": "itemId",
       "review": 4,
       "interestLevel": "INTERMEDIATE",
-      "desc": "this item is good for intermediate person",
+      "description": "this item is good for intermediate person",
       "needReview": false
     }
   ],
