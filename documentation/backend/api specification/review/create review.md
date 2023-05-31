@@ -20,18 +20,20 @@
 
 ##### Body
 
-| Field Name    | Field type     | Mandatory | Condition | Remarks | Example |
-| ------------- | -------------- | --------- | --------- | ------- | ------- |
-| reviewId      | String         | Y         |           |         |         |
-| images        | List\<String\> | N         |           |         |         |
-| description   | String         | N         |           |         |         |
-| interestLevel | String         | N         |           |         |         |
+| Field Name    | Field type     | Mandatory | Condition | Remarks                          | Example |
+| ------------- | -------------- | --------- | --------- | -------------------------------- | ------- |
+| reviewId      | String         | Y         |           |                                  |         |
+| review        | int            | Y         |           | 1 - 5                            |         |
+| images        | List\<String\> | N         |           |                                  |         |
+| description   | String         | N         |           |                                  |         |
+| interestLevel | String         | Y         |           | BEGINNER,INTERMEDIATE,ENTHUSIAST |         |
 
 #### Example
 
 ```json
 {
   "reviewId": "reviewId",
+  "review": 4,
   "images": [
     "imagesId1", "imagesId2"
   ],
