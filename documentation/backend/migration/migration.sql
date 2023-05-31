@@ -177,7 +177,7 @@ CREATE TABLE transaction_details (
     quantity INT NOT NULL DEFAULT 1,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (transaction_id),
+    PRIMARY KEY (transaction_detail_id),
     FOREIGN KEY (history_item_id) REFERENCES history_items (history_item_id),
     FOREIGN KEY (transaction_id) REFERENCES transaction (transaction_id)
 );
