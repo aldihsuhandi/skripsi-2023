@@ -22,7 +22,6 @@
 
 | Field Name   | Field type | Mandatory | Condition | Remarks                                  | Example |
 | ------------ | ---------- | --------- | --------- | ---------------------------------------- | ------- |
-| email        | String     | Y         |           |                                          |         |
 | type         | String     | Y         |           | MERCHANT/USER                            |         |
 | needReview   | boolean    | Y         |           | if type = merchant, will always be false | false   |
 | numberOfItem | Integer    | Y         |           | default value = 10                       |         |
@@ -32,7 +31,6 @@
 
 ```json
 {
-  "email": "email",
   "type": "USER",
   "needReview": true
 }
