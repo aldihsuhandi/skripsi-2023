@@ -177,7 +177,7 @@ CREATE TABLE transaction_details (
     quantity INT NOT NULL DEFAULT 1,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (transaction_id),
+    PRIMARY KEY (transaction_detail_id),
     FOREIGN KEY (history_item_id) REFERENCES history_items (history_item_id),
     FOREIGN KEY (transaction_id) REFERENCES transaction (transaction_id)
 );
@@ -194,16 +194,19 @@ CREATE TABLE wishlists (
 
 CREATE TABLE reviews (
     review_id VARCHAR(255) NOT NULL,
-    star INT NOT NULL,
+    star INT DEFAULT -1,
     item_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
+    merchant_id VARCHAR(255) NOT NULL,
     interest_level VARCHAR(255),
     description LONGTEXT,
-    review_image LONGBLOB,
+    review_images VARCHAR(1024),
+    need_review BOOLEAN NOT NULL DEFAULT true,
     gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
     PRIMARY KEY (review_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (merchant_id) REFERENCES users (user_id),
     FOREIGN KEY (item_id) REFERENCES items (item_id),
     FOREIGN KEY (interest_level) REFERENCES interest_level (interest_level_id)
 );
@@ -448,15 +451,15 @@ INSERT INTO
     interest_level (interest_level_id, level_name)
 VALUES
     (
-        "da61603a-3252-4f7d-bf07-97ef5ef168cc",
+        "1",
         "BEGINNER"
     ),
     (
-        "ebb5d871-af7d-4b59-807c-bef5f8962e3c",
+        "3",
         "INTERMEDIATE"
     ),
     (
-        "5684822d-ab2d-4ed6-a124-c3754035d80c",
+        "5",
         "ENTHUSIAST"
     );
 
