@@ -81,6 +81,7 @@
 | Field Name      | Field type     | Mandatory | Condition | Remarks        | Example |
 | --------------- | -------------- | --------- | --------- | -------------- | ------- |
 | itemId          | String         | Y         |           |                |         |
+| postId          | String         | Y         |           |                |         |
 | itemName        | String         | Y         |           |                |         |
 | itemPrice       | Long           | Y         |           |                |         |
 | itemDescription | String         | Y         |           |                |         |
@@ -139,6 +140,7 @@
   "items": [
     {
       "itemId": "itemId", 
+      "postId": "postId",
       "itemName": "item name", 
       "itemPrice": 100000,
       "itemQuantity": 100,

@@ -71,6 +71,20 @@ CREATE TABLE users (
     FOREIGN KEY (role_id) REFERENCES user_roles (role_id)
 );
 
+CREATE TABLE posts (
+    post_id VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content LONGTEXT,
+    images VARCHAR(1024),
+    tags VARCHAR(1024) NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    PRIMARY KEY (post_id),
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
+);
+
 CREATE TABLE items (
     item_id VARCHAR(255) NOT NULL,
     item_name VARCHAR(255) NOT NULL,
@@ -78,6 +92,7 @@ CREATE TABLE items (
     item_images VARCHAR(1024),
     item_description LONGTEXT NOT NULL,
     item_quantity INT NOT NULL,
+    post_id VARCHAR(255) NOT NULL,
     merchant_id VARCHAR(255) NOT NULL,
     category_id VARCHAR(255) NOT NULL,
     hobby_id VARCHAR(255) NOT NULL,
@@ -91,7 +106,8 @@ CREATE TABLE items (
     FOREIGN KEY (merchant_id) REFERENCES users (user_id),
     FOREIGN KEY (category_id) REFERENCES item_categories (category_id),
     FOREIGN KEY (hobby_id) REFERENCES hobbies (hobby_id),
-    FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id)
+    FOREIGN KEY (merchant_level_id) REFERENCES interest_level (interest_level_id),
+    FOREIGN KEY (post_id) REFERENCES posts (post_id)
 );
 
 CREATE TABLE history_items (
@@ -215,20 +231,6 @@ CREATE TABLE user_capabilities (
     PRIMARY KEY (user_id, capability_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (capability_id) REFERENCES capabilities (capability_id)
-);
-
-CREATE TABLE posts (
-    post_id VARCHAR(255) NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    content LONGTEXT,
-    images VARCHAR(1024),
-    tags VARCHAR(1024) NOT NULL,
-    is_deleted BOOLEAN NOT NULL DEFAULT false,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (post_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE comments (
