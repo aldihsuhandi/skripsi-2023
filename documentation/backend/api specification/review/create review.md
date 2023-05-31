@@ -24,7 +24,7 @@
 | ------------- | -------------- | --------- | --------- | ------- | ------- |
 | reviewId      | String         | Y         |           |         |         |
 | images        | List\<String\> | N         |           |         |         |
-| desc          | String         | N         |           |         |         |
+| description   | String         | N         |           |         |         |
 | interestLevel | String         | N         |           |         |         |
 
 #### Example
@@ -35,7 +35,7 @@
   "images": [
     "imagesId1", "imagesId2"
   ],
-  "desc": "review desc",
+  "description": "review desc",
   "interestLevel": "INTERMEDIATE"
 }
 ```
