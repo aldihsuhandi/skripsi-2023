@@ -60,12 +60,14 @@
 
 ###### Possible Result Code
 
-| Result Code     | Remarks                         |
-| --------------- | ------------------------------- |
-| SUCCESS         | api call success                |
-| PARAM_ILLEGAL   | parameter value is not expected |
-| SYSTEM_ERROR    | unexpected system error         |
-| SESSION_EXPIRED | session is expired              |
+| Result Code      | Remarks                         |
+| ---------------- | ------------------------------- |
+| SUCCESS          | api call success                |
+| PARAM_ILLEGAL    | parameter value is not expected |
+| SYSTEM_ERROR     | unexpected system error         |
+| SESSION_EXPIRED  | session is expired              |
+| USER_INVALID     | user is not valid               |
+| REVIEW_NOT_FOUND | review not found                |
 
 #### Example
 
