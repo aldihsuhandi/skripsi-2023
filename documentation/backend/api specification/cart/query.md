@@ -70,15 +70,17 @@
 | gmtModified     | Date           | Y         |           |                |         |
 
 ###### UserSummary
-| Field Name     | Field type | Mandatory | Condition | Remarks | Example |
-| -------------- | ---------- | --------- | --------- | ------- | ------- |
-| email          | String     | Y         |           |         |         |
-| phoneNumber    | String     | Y         |           |         |         |
-| username       | String     | Y         |           |         |         |
-| profilePicture | Blob       | Y         |           |         |         |
-| role           | String     | Y         |           |         |         |
-| gmtCreate      | Date       | Y         |           |         |         |
-| gmtModified    | Date       | Y         |           |         |         |
+| Field Name     | Field type | Mandatory | Condition | Remarks         | Example |
+| -------------- | ---------- | --------- | --------- | --------------- | ------- |
+| email          | String     | Y         |           |                 |         |
+| phoneNumber    | String     | Y         |           |                 |         |
+| username       | String     | Y         |           |                 |         |
+| profilePicture | Blob       | Y         |           |                 |         |
+| role           | String     | Y         |           |                 |         |
+| canWhatsapp    | Booelan    | Y         |           | Default = false |         |
+| canTelegram    | Booelan    | Y         |           | Default = false |         |
+| gmtCreate      | Date       | Y         |           |                 |         |
+| gmtModified    | Date       | Y         |           |                 |         |
 
 ##### ResultContext
 
@@ -126,7 +128,9 @@
           "email": "user@email.com",
           "phoneNumber": "081234567890",
           "profilePicture": blob,
-          "role": "roleName"
+          "role": "roleName",
+          "canWhatsapp": false,
+          "canTelegram": true
         },
         "itemCategory": "categoryName",
         "hobby": "music",
