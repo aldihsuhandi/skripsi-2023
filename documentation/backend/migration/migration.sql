@@ -71,6 +71,20 @@ CREATE TABLE users (
     FOREIGN KEY (role_id) REFERENCES user_roles (role_id)
 );
 
+CREATE TABLE posts (
+    post_id VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content LONGTEXT,
+    images VARCHAR(1024),
+    tags VARCHAR(1024) NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
+    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    PRIMARY KEY (post_id),
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
+);
+
 CREATE TABLE items (
     item_id VARCHAR(255) NOT NULL,
     item_name VARCHAR(255) NOT NULL,
@@ -217,20 +231,6 @@ CREATE TABLE user_capabilities (
     PRIMARY KEY (user_id, capability_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (capability_id) REFERENCES capabilities (capability_id)
-);
-
-CREATE TABLE posts (
-    post_id VARCHAR(255) NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    content LONGTEXT,
-    images VARCHAR(1024),
-    tags VARCHAR(1024) NOT NULL,
-    is_deleted BOOLEAN NOT NULL DEFAULT false,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (post_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE comments (
