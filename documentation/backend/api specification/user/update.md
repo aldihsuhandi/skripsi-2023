@@ -32,6 +32,8 @@
 | location        | Map\<String, String\> | N         |           | must include: <br>- city<br>- province<br>- postCode<br>- detail                                                     |                |
 | isActive        | Boolean               | N         |           |                                                                                                                      | false          |
 | isDeleted       | Boolean               | N         |           |                                                                                                                      | false          |
+| canWhatsapp     | Boolean               | N         |           | default = false                                                                                                      |                |
+| canTelegram     | Boolean               | N         |           | default = false                                                                                                      |                |
 
 #### Example
 

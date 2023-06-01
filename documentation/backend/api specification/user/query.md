@@ -55,6 +55,8 @@
 | dateOfBirth    | Date                  | N         |           |                                                                  |         |
 | gender         | String                | N         |           | Male/Female/Other                                                |         |
 | location       | Map\<String, String\> | N         |           | will include: <br>- city<br>- province<br>- postCode<br>- detail |         |
+| canWhatsapp    | Booelan               | Y         |           | Default = false                                                  |         |
+| canTelegram    | Booelan               | Y         |           | Default = false                                                  |         |
 | gmtCreate      | Date                  | Y         |           |                                                                  |         |
 | gmtModified    | Date                  | Y         |           |                                                                  |         |
 
@@ -97,7 +99,9 @@
         "detail": "detail"
     },
     "phoneNumber": "081234567890",
-    "role": "USER"
+    "role": "roleName",
+    "canWhatsapp": false,
+    "canTelegram": true
   }
 }
 ```
