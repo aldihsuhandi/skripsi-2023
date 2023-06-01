@@ -46,7 +46,7 @@
 | ------------- | ---------------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext          | Y         |           |         |         |
 | comments      | List\<CommentSummary\> | Y         |           |         |         |
-| hasNext       | boolean                | Y         |           |         |         |
+| pagingContext | PagingContext          | Y         |           |         |         |
 
 ##### CommentSummary
 
@@ -118,6 +118,10 @@
       "gmtModified": date
     }
   ],
-  "hasNext": true
+  "pagingContext": {
+    "pageNumber": 1,
+    "numberOfItem": 10,
+    "hasNext": true
+  },
 }
 ```
