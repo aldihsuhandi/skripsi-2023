@@ -4,43 +4,35 @@ CREATE DATABASE shumishumi;
 
 USE shumishumi;
 
-CREATE TABLE capabilities (
-    capability_id VARCHAR(255) NOT NULL,
-    capability_name VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (capability_id)
-);
-
 CREATE TABLE item_categories (
     category_id VARCHAR(255) NOT NULL,
     category_name VARCHAR(255) UNIQUE NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (category_id)
 );
 
 CREATE TABLE hobbies (
     hobby_id VARCHAR(255) NOT NULL,
     hobby_name VARCHAR(255) UNIQUE NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (hobby_id)
 );
 
 CREATE TABLE interest_level (
     interest_level_id VARCHAR(255) NOT NULL,
     level_name VARCHAR(255) UNIQUE NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (interest_level_id)
 );
 
 CREATE TABLE user_roles (
     role_id VARCHAR(255) NOT NULL,
     role_name VARCHAR(255) UNIQUE NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (role_id)
 );
 
@@ -55,11 +47,12 @@ CREATE TABLE users (
     location VARCHAR(512) DEFAULT "",
     profile_picture VARCHAR(255),
     password VARCHAR(255) NOT NULL,
+    review INT DEFAULT 0,
     is_active BOOLEAN DEFAULT false,
     is_deleted BOOLEAN DEFAULT false,
     extend_info VARCHAR(2048) DEFAULT "",
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (user_id),
     FOREIGN KEY (role_id) REFERENCES user_roles (role_id)
 );
@@ -72,8 +65,8 @@ CREATE TABLE posts (
     images VARCHAR(1024),
     tags VARCHAR(1024) NOT NULL,
     is_deleted BOOLEAN NOT NULL DEFAULT false,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (post_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
@@ -91,10 +84,11 @@ CREATE TABLE items (
     hobby_id VARCHAR(255) NOT NULL,
     merchant_level_id VARCHAR(255) NOT NULL,
     user_level_id VARCHAR(255),
+    review int DEFAULT 0,
     is_deleted BOOLEAN NOT NULL DEFAULT false,
     is_approved BOOLEAN NOT NULL DEFAULT false,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (item_id),
     FOREIGN KEY (merchant_id) REFERENCES users (user_id),
     FOREIGN KEY (category_id) REFERENCES item_categories (category_id),
@@ -115,8 +109,8 @@ CREATE TABLE history_items (
     hobby_id VARCHAR(255) NOT NULL,
     merchant_level_id VARCHAR(255) NOT NULL,
     user_level_id VARCHAR(255),
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (history_item_id),
     FOREIGN KEY (item_id) REFERENCES items (item_id),
     FOREIGN KEY (merchant_id) REFERENCES users (user_id),
@@ -132,8 +126,8 @@ CREATE TABLE sessions (
     session_dt TIMESTAMP NOT NULL,
     is_active BOOLEAN DEFAULT true,
     is_remembered BOOLEAN DEFAULT false,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (session_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
@@ -142,8 +136,8 @@ CREATE TABLE carts (
     item_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
     quantity INT DEFAULT 1,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY(item_id, user_id),
     FOREIGN KEY (item_id) REFERENCES items (item_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id)
@@ -157,8 +151,8 @@ CREATE TABLE transaction (
     midtrans_id VARCHAR(255),
     midtrans_link VARCHAR(255),
     `status` VARCHAR(255) NOT NULL DEFAULT "INIT",
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (transaction_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
@@ -168,8 +162,8 @@ CREATE TABLE transaction_details (
     transaction_id VARCHAR(255) NOT NULL,
     history_item_id VARCHAR(255) NOT NULL,
     quantity INT NOT NULL DEFAULT 1,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (transaction_detail_id),
     FOREIGN KEY (history_item_id) REFERENCES history_items (history_item_id),
     FOREIGN KEY (transaction_id) REFERENCES transaction (transaction_id)
@@ -178,8 +172,8 @@ CREATE TABLE transaction_details (
 CREATE TABLE wishlists (
     user_id VARCHAR(255) NOT NULL,
     item_id VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (user_id, item_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (item_id) REFERENCES items (item_id)
@@ -195,8 +189,8 @@ CREATE TABLE reviews (
     description LONGTEXT,
     review_images VARCHAR(1024),
     need_review BOOLEAN NOT NULL DEFAULT true,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (review_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (merchant_id) REFERENCES users (user_id),
@@ -211,8 +205,8 @@ CREATE TABLE comments (
     reply_post_id VARCHAR(255),
     content LONGTEXT NOT NULL,
     is_deleted BOOLEAN NOT NULL DEFAULT false,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (comment_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (reply_post_id) REFERENCES posts (post_id),
@@ -223,8 +217,8 @@ CREATE TABLE post_upvotes (
     user_id VARCHAR(255) NOT NULL,
     post_id VARCHAR(255) NOT NULL,
     value INT DEFAULT 0,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (user_id, post_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (post_id) REFERENCES posts (post_id)
@@ -234,8 +228,8 @@ CREATE TABLE comment_upvotes (
     user_id VARCHAR(255) NOT NULL,
     comment_id VARCHAR(255) NOT NULL,
     value INT DEFAULT 0,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (user_id, comment_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (comment_id) REFERENCES comments (comment_id)
@@ -246,8 +240,8 @@ CREATE TABLE post_reports (
     user_id VARCHAR(255) NOT NULL,
     post_id VARCHAR(255) NOT NULL,
     report_desc VARCHAR(255),
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (report_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (post_id) REFERENCES posts (post_id)
@@ -258,8 +252,8 @@ CREATE TABLE comment_reports (
     user_id VARCHAR(255) NOT NULL,
     comment_id VARCHAR(255) NOT NULL,
     report_desc VARCHAR(255),
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (report_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (comment_id) REFERENCES comments (comment_id)
@@ -269,16 +263,16 @@ CREATE TABLE clients (
     client_id VARCHAR(255) NOT NULL,
     client_name VARCHAR(255) NOT NULL,
     client_secret VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (client_id)
 );
 
 CREATE TABLE otp_types (
     type_id VARCHAR(255) NOT NULL,
     otp_type VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (type_id)
 );
 
@@ -289,8 +283,8 @@ CREATE TABLE otps (
     type_id VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT true,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (otp_id),
     FOREIGN KEY (type_id) REFERENCES otp_types (type_id)
 );
@@ -298,8 +292,8 @@ CREATE TABLE otps (
 CREATE TABLE contents (
     content_name VARCHAR(255) NOT NULL,
     content LONGTEXT NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (content_name)
 );
 
@@ -307,16 +301,16 @@ CREATE TABLE dictionaries (
     dictionary_name VARCHAR(255) NOT NULL,
     display_name VARCHAR(255) NOT NULL,
     dictionary_type VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (dictionary_name)
 );
 
 CREATE TABLE crowds (
     crowd_id VARCHAR(255) NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT true,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY(crowd_id)
 );
 
@@ -325,8 +319,8 @@ CREATE TABLE crowd_rules (
     crowd_id VARCHAR(255) NOT NULL,
     rule_type VARCHAR(255) NOT NULL,
     rule_value VARCHAR(4096) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY(rule_id),
     FOREIGN KEY (crowd_id) REFERENCES crowds(crowd_id)
 );
@@ -334,8 +328,8 @@ CREATE TABLE crowd_rules (
 CREATE TABLE user_crowds (
     crowd_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY(crowd_id, user_id),
     FOREIGN KEY(crowd_id) REFERENCES crowds(crowd_id),
     FOREIGN KEY(user_id) REFERENCES users(user_id)
@@ -344,8 +338,8 @@ CREATE TABLE user_crowds (
 CREATE TABLE item_crowds (
     crowd_id VARCHAR(255) NOT NULL,
     item_id VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY(crowd_id, item_id),
     FOREIGN KEY(crowd_id) REFERENCES crowds(crowd_id),
     FOREIGN KEY(item_id) REFERENCES items(item_id)
@@ -356,8 +350,8 @@ CREATE TABLE images (
     image_name VARCHAR(255) NOT NULL,
     image_ext VARCHAR(255) NOT NULL,
     image LONGBLOB NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY(image_id)
 );
 
@@ -366,16 +360,16 @@ CREATE TABLE reset_password (
     email VARCHAR(255) NOT NULL,
     expired_time VARCHAR(255) NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY(uuid)
 );
 
 CREATE TABLE email_encrypt (
     uuid VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
+    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY(uuid)
 );
 
