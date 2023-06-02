@@ -57,6 +57,7 @@
 | price         | Long                             | Y         |           |         |         |
 | status        | String                           | Y         |           |         |         |
 | paymentType   | String                           | Y         |           |         |         |
+| paymentCode   | String                           | Y         |           |         |         |
 | details       | List\<TransactionDetailSummary\> | Y         |           |         |         |
 | gmtCreate     | Date                             | Y         |           |         |         |
 
@@ -120,6 +121,7 @@
     "price": 69420,
     "status": "Waiting Payment",
     "paymentType": "BCA Virtual Account",
+    "paymentCode": "NO VA BCA",
     "gmtCreate": date,
     "details": [
         {
