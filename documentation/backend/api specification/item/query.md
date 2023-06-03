@@ -91,6 +91,7 @@
 | merchantInfo    | UserSummary    | Y         |           |                |         |
 | merchantLevel   | String         | Y         |           |                |         |
 | itemImages      | List\<String\> | Y         |           |                |         |
+| review          | double         | Y         |           | Defualt = 0.0  |         |
 | inWishlist      | boolean        | Y         |           | default: false |         |
 | gmtCreate       | Date           | Y         |           |                |         |
 | gmtModified     | Date           | Y         |           |                |         |
@@ -147,6 +148,7 @@
       "itemPrice": 100000,
       "itemQuantity": 100,
       "itemDescription": "itemDescription",
+      "review": 0.0,
       "merchantInfo": {
         "userName": "userName",
         "email": "user@email.com",
