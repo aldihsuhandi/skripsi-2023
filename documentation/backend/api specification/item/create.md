@@ -56,6 +56,8 @@
 | Field Name    | Field type    | Mandatory | Condition | Remarks | Example |
 | ------------- | ------------- | --------- | --------- | ------- | ------- |
 | resultContext | ResultContext | Y         |           |         |         |
+| itemId        | String        | Y         |           |         |         |
+
 
 ##### ResultContext
 
@@ -85,6 +87,7 @@
     "success": true,
     "resultMsg": "SUCCESS",
     "resultCode": "SUCCESS"
-  }
+  },
+  "itemId": "itemId"
 }
 ```
