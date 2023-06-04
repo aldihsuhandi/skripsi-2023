@@ -138,7 +138,7 @@ CREATE TABLE carts (
     quantity INT DEFAULT 1,
     gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
     gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
-    PRIMARY KEY(item_id, user_id),
+    PRIMARY KEY (item_id, user_id),
     FOREIGN KEY (item_id) REFERENCES items (item_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
@@ -306,43 +306,24 @@ CREATE TABLE dictionaries (
     PRIMARY KEY (dictionary_name)
 );
 
-CREATE TABLE crowds (
-    crowd_id VARCHAR(255) NOT NULL,
-    is_active BOOLEAN NOT NULL DEFAULT true,
-    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
-    PRIMARY KEY(crowd_id)
-);
-
-CREATE TABLE crowd_rules (
-    rule_id VARCHAR(255) NOT NULL,
-    crowd_id VARCHAR(255) NOT NULL,
-    rule_type VARCHAR(255) NOT NULL,
-    rule_value VARCHAR(4096) NOT NULL,
-    gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
-    gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
-    PRIMARY KEY(rule_id),
-    FOREIGN KEY (crowd_id) REFERENCES crowds(crowd_id)
-);
-
-CREATE TABLE user_crowds (
-    crowd_id VARCHAR(255) NOT NULL,
+CREATE TABLE activities (
+    activity_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
+    activity_value int DEFAULT 0,
+    activity VARCHAR(255) NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
     gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
-    PRIMARY KEY(crowd_id, user_id),
-    FOREIGN KEY(crowd_id) REFERENCES crowds(crowd_id),
-    FOREIGN KEY(user_id) REFERENCES users(user_id)
+    PRIMARY KEY (activity_id),
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
-CREATE TABLE item_crowds (
-    crowd_id VARCHAR(255) NOT NULL,
-    item_id VARCHAR(255) NOT NULL,
+CREATE TABLE knowledges (
+    knowledge_key VARCHAR(255) NOT NULL,
+    knowledge_type VARCHAR(255) NOT NULL,
+    knowledge VARCHAR(4096) DEFAULT "",
     gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
     gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
-    PRIMARY KEY(crowd_id, item_id),
-    FOREIGN KEY(crowd_id) REFERENCES crowds(crowd_id),
-    FOREIGN KEY(item_id) REFERENCES items(item_id)
+    PRIMARY KEY (knowledge_type, knowledge_key)
 );
 
 CREATE TABLE images (
@@ -352,17 +333,17 @@ CREATE TABLE images (
     image LONGBLOB NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
     gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
-    PRIMARY KEY(image_id)
+    PRIMARY KEY (image_id)
 );
 
 CREATE TABLE reset_password (
-    uuid VARCHAR(255) NOT NULL, 
+    uuid VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     expired_time VARCHAR(255) NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
     gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
     gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
-    PRIMARY KEY(uuid)
+    PRIMARY KEY (uuid)
 );
 
 CREATE TABLE email_encrypt (
@@ -370,8 +351,18 @@ CREATE TABLE email_encrypt (
     email VARCHAR(255) NOT NULL,
     gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
     gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
-    PRIMARY KEY(uuid)
+    PRIMARY KEY (uuid)
 );
+
+INSERT INTO
+    knowledges (knowledge_key, knowledge_type)
+VALUES
+    ("KNOWLEDGE_MERCHANT_LEVEL", "BEGINNER"),
+    ("KNOWLEDGE_MERCHANT_LEVEL", "INTERMEDIATE"),
+    ("KNOWLEDGE_MERCHANT_LEVEL", "ENTHUSIAST"),
+    ("KNOWLEDGE_USER_LEVEL", "BEGINNER"),
+    ("KNOWLEDGE_USER_LEVEL", "INTERMEDIATE"),
+    ("KNOWLEDGE_USER_LEVEL", "ENTHUSIAST");
 
 INSERT INTO
     user_roles (role_id, role_name)
@@ -412,42 +403,17 @@ VALUES
 INSERT INTO
     interest_level (interest_level_id, level_name)
 VALUES
-    (
-        "1",
-        "BEGINNER"
-    ),
-    (
-        "3",
-        "INTERMEDIATE"
-    ),
-    (
-        "5",
-        "ENTHUSIAST"
-    );
+    ("1", "BEGINNER"),
+    ("3", "INTERMEDIATE"),
+    ("5", "ENTHUSIAST");
 
 INSERT INTO
     dictionaries (dictionary_name, display_name, dictionary_type)
 VALUES
-    (
-        "GENDER_MALE",
-        "Male",
-        "GENDER"
-    ),
-    (
-        "GENDER_FEMALE",
-        "Female",
-        "GENDER"
-    ),
-    (
-        "GENDER_OTHER",
-        "Other",
-        "GENDER"
-    ),
-    (
-        "ITEM_SORTING_PRICE",
-        "Price",
-        "ITEM_SORTING"
-    ),
+    ("GENDER_MALE", "Male", "GENDER"),
+    ("GENDER_FEMALE", "Female", "GENDER"),
+    ("GENDER_OTHER", "Other", "GENDER"),
+    ("ITEM_SORTING_PRICE", "Price", "ITEM_SORTING"),
     (
         "ITEM_SORTING_NAME",
         "Alphabetical",
@@ -468,11 +434,7 @@ VALUES
         "Descending",
         "SORTING_TYPE"
     ),
-    (
-        "SORTING_TYPE_ASC",
-        "Ascending",
-        "SORTING_TYPE"
-    ),
+    ("SORTING_TYPE_ASC", "Ascending", "SORTING_TYPE"),
     (
         "PAYMENT_BNI_VIRTUAL_ACCOUNT",
         "BNI Virtual Account",
