@@ -136,6 +136,7 @@ CREATE TABLE carts (
     item_id VARCHAR(255) NOT NULL,
     user_id VARCHAR(255) NOT NULL,
     quantity INT DEFAULT 1,
+    selected boolean DEFAULT false,
     gmt_create TIMESTAMP NOT NULL DEFAULT NOW(),
     gmt_modified TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
     PRIMARY KEY (item_id, user_id),
