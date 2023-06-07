@@ -420,8 +420,8 @@ VALUES
         "ITEM_SORTING"
     ),
     (
-        "ITEM_SORTING_GMT_CREATE",
-        "Created",
+        "ITEM_SORTING_REVIEW",
+        "Review",
         "ITEM_SORTING"
     ),
     (
