@@ -64,6 +64,7 @@
 | itemDescription | String         | Y         |           |                |         |
 | itemQuantity    | Integer        | Y         |           |                |         |
 | itemCategory    | String         | Y         |           |                |         |
+| review          | double         | Y         |           | Default = 0.0  |         |
 | hobby           | String         | Y         |           |                |         |
 | merchantInfo    | UserSummary    | Y         |           |                |         |
 | merchantLevel   | String         | Y         |           |                |         |
@@ -117,6 +118,7 @@
     "itemPrice": 100000,
     "itemQuantity": 100,
     "itemDescription": "itemDescription",
+    "review": 0.0,
     "merchantInfo": {
       "userName": "userName",
       "email": "user@email.com",

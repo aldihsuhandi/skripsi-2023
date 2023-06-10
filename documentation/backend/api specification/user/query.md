@@ -55,6 +55,7 @@
 | dateOfBirth    | Date                  | N         |           |                                                                  |         |
 | gender         | String                | N         |           | Male/Female/Other                                                |         |
 | location       | Map\<String, String\> | N         |           | will include: <br>- city<br>- province<br>- postCode<br>- detail |         |
+| review         | double                | Y         |           | Defualt = 0.0                                                    |         |
 | canWhatsapp    | Booelan               | Y         |           | Default = false                                                  |         |
 | canTelegram    | Booelan               | Y         |           | Default = false                                                  |         |
 | gmtCreate      | Date                  | Y         |           |                                                                  |         |
@@ -92,6 +93,7 @@
     "profilePicture": "images",
     "dateOfBirth": date,
     "gender": "Male",
+    "review": 0.0,
     "location": {
         "city": "city",
         "province": "province",
