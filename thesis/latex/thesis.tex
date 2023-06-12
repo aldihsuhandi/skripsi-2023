@@ -297,6 +297,37 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
           \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
 \end{itemize}
 
+\subsubbab{2.1.5 \textit{Software Testing}}
+
+Secara general manusia pasti akan melakukan kesalahan, apa lagi didalam \textit{software development} hal ini sangat kelihatan saat dengan pasti adanya \textit{bug} didalam \textit{software} yang dikerjakan, ini adalah salah satu alasan kenapa \textit{software testing} itu dibutuhkan, untuk menemukan masalah dan memperbaikinya. Alasan satu lagi \textit{software testing} dilakukan adalah untuk membuat keputusan, apakah \textit{software} yang sedang dibuat ini sudah mempunyai kualitas yang dapat diterima \autocite{jorgensen2018software}.
+
+Secara definisi dasar, \textit{software testing} adalah suatu metode untuk mengecek apakah sebuah produk atau \textit{software} sudah sama dengan kebutuhan - kebutuhan dan memastikan \textit{software} tersebut tidak memiliki kecacatan\autocite{guru99-software-testing}.
+
+\textit{Software testing} bisa digeneralisasikan menjadi 2 tipe, yaitu:
+\begin{itemize}
+    \item \textit{Blackbox testing}
+
+        \textit{Blackbox testing} atau sering disebut \textit{specification-based testing}, adalah testing yang dilakukan bedasarkan dengan spesifikasi \textit{software} tersebut. Metode testing ini disebut \textit{blackbox testing} karena sebuah sistem atau program itu akan dianggap seperti kotak hitam yang tidak bisa dilihat isinya, tapi diketahui apa saja yang bisa dilakukan oleh kotak hitam tersebut\autocite{jorgensen2018software}.
+
+        Kelebihan dari metode \textit{testing} ini adalah, \textit{unit test} yang dibuat itu berdiri sendiri dari bagaimana impelmentasi yang ada didalam \textit{software} tersebut, jadi jika ada perubahan implementasi \textit{test case} yang sebelumnya dibuat akan tetap bisa dipakai dan \textit{testcase} untuk \textit{blackbox testing} dapat dibuat saat masa \textit{development} sedang berjalan, jadi bisa mengurangi masa pengerjaan \textit{project}\autocite{jorgensen2018software}.
+
+
+    \item \textit{Whitebox testing}
+
+        \textit{Whitebox testing} adalah metode \textit{testing} yang dimana semua struktur internal, desain, dan implementasi dites untuk memperbaiki desain, kegunaan, dan keamanan. Terminologi \textit{whitebox} ini menganggap \textit{software} itu seperti box yang transparan, dimana semua isinya (implementasi dari sebuah fungsi dan pilihan desain yang diambil) akan kelihatan dalam fase pengetesan\autocite{guru99-whitebox-testing}.
+
+        Salah satu tipe \textit{whitebox testing} adalah \textit{unit testing}. \textit{Unit testing} adalah \textit{test case} yang biasanya ditulis oleh \textit{developer} untuk melakukan pengetesan disetiap blok kode yang sedang dikembangkan\autocite{guru99-whitebox-testing}. Ada dua teknik yang bisa diterapkan saat melakukan \textit{whitebox testing}, yaitu:
+        \begin{itemize}
+            \item \textit{Statement Coverage}
+
+            teknik ini membutuhkan semua \textit{statement} yang ada didalam \textit{code base} sudah tertutupi oleh \textit{test case} dari \textit{whitebox testing}.
+ 
+            \item \textit{Branch Coverage}
+
+            teknik ini membutuhkan semua \textit{branch} atau \textit{path} yang ada didalam \textit{code base} sudah tertutupi oleh \textit{test case} dari \textit{whitebox testing}.
+        \end{itemize}
+\end{itemize}
+
 \subsubbab{2.1.5 Sistem Rekomendasi}
 Sistem rekomendasi adalah sistem penyaringan informasi yang menyarankan sebuah produk kepada pengguna bedasarkan preferensi atau perilaku masa lalu. Sistem ini banyak digunakan di pasar \textit{online} untuk meningkatkan pengalaman, keterlibatan pengguna, dan mendorong penjualan. Dengan memberikan rekomendasi yang dipersonalisasi terhadap preferensi, pengguna dapat menemukan sebuah barang yang mungkin tidak bisa ditemukan sendiri dan meningkatkan kepuasan pengguna terhadap pasar \textit{online} yang sedang digunakan \autocite{adiwardana2019}.
 
