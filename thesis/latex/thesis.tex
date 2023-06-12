@@ -58,26 +58,37 @@
 \emergencystretch=2em
 
 % bab command
-\newcommand{\bab}[2]{\setcounter{section}{#1}\addtocounter{section}{-1}\section{Bab #1. #2}}
+\newcommand{\bab}[1]{%
+    \section*{#1}%
+    \addcontentsline{toc}{section}{\protect\numberline{}#1}%
+}
+
+\newcommand{\subbab}[1]{%
+    \subsection*{#1}%
+    \addcontentsline{toc}{subsection}{\protect\numberline{}#1}%
+}
+
+\newcommand{\subsubbab}[1]{%
+    \subsubsection*{#1}%
+    \addcontentsline{toc}{subsubsection}{\protect\numberline{}#1}%
+}
 
 \begin{document}
 \setstretch{1.5}
 
 \title{SKRIPSI NON KELAS\\Shumishumi - Marketplace For Hobby With Interest Level Filtering and Recommendation System Using Knowledge Graph Implementation\large\\\textbf{Topic: }\textit{E-Application}}
 \author{2301862632 - Aldih Suhandi - \textit{Computer Science} / 082122704561\\2301872596 - Chandra Wijaya - \textit{Computer Science} / 081287588816\\2301867324 - Ibrahim Seto Aditama - \textit{Computer Science} / 081213423549}
-
-
 \maketitle
 \begin{figure}[h]
     \centering
-    \includegraphics[width=10cm,height=5cm]{logo_binus.png}\\
+    \includegraphics[width=8cm,height=4cm]{logo_binus.png}\\
     Binus University Alam Sutera\\
-    2022
+    2023
 \end{figure}
 \begin{figure}[h]
     \centering
     Diperiksa Oleh**\\
-    \begin{tabular}{@{}p{2.5in}@{}}
+    \begin{tabular}{@{}p{2in}@{}}
         \centering
         \includegraphics[width=3cm]{ttd.png} \\
         D5186 - Pualam Dipa Nusantara
@@ -89,11 +100,9 @@
 \tableofcontents
 
 \newpage
-\section*{Bab 1. Pendahuluan}
-\addcontentsline{toc}{section}{\protect\numberline{}Bab 1. Pendahuluan}
+\bab{Bab 1. Pendahuluan}
 
-\subsection*{1.1 Latar Belakang}
-\addcontentsline{toc}{subsection}{\protect\numberline{}1.1 Latar Belakang}
+\subbab{1.1 Latar Belakang}
 
 Hobi dapat diartikan sebagai suatu aktivitas yang dilakukan dalam waktu luang dengan tujuan untuk mendapatkan rasa kebahagiaan. Hobi ini juga dapat menjadi distraksi dari rasa gelisah yang dimiliki atau dialami oleh seseorang. Hobi juga dapat memberi rasa tujuan hidup kepada seseorang, terutama ketika hobi tersebut dapat dilakukan bersama-sama dengan sebuah kelompok yang memiliki minat hobi yang sejenis\autocite{zaidi2022passion}.
 
@@ -127,11 +136,8 @@ Tentunya aplikasi \textit{online marketplace} seperti yang dikerjakan pada penel
 
 Berdasarkan gambaran dan penjelasan serta data-data yang telah dikumpulkan diatas, dapat disimpulkan bahwa adanya peningkatan aktivitas jual beli barang melalui internet yang begitu besar (dari barang kebutuhan hobi maupun tidak) dalam beberapa tahun belakangan ini. Ditambah lagi dengan kesulitannya untuk memulai sebuah kegiatan hobi karena tidak yakin atas barang yang cocok sebagai titik awal untuk memulainya. Maka dari itu, proyek yang dikerjakan ini bermaksud untuk merancang dan membuat sebuah aplikasi berbasis \textit{web} yang berfokus pada kegiatan jual beli barang kebutuhan hobi apa saja tanpa merujuk pada satu atau beberapa hobi yang spesifik. Aplikasi ini diberi nama \textbf{ShumiShumi}. Aplikasi ini memiliki dua fitur utama dan satu fitur pendukung. Fitur utama pertama adalah \textit{Interest Level Filtering} yang merupakan sebuah sistem saring tambahan yang bekerja berdasarkan penilaian tingkat minat hobi yang diberikan oleh sisi penjual dan pembeli. Fitur kedua adalah sistem rekomendasi. Layaknya sistem rekomendasi pada umumnya, sistem ini yang akan menampilkan produk-produk paling relevan terhadap penggunanya. Fitur terakhir yang juga merupakan fitur pendukung dari aplikasi ini adalah sebuah tempat atau wadah untuk melakukan diskusi bagi para pengguna. Disini, para pengguna dapat berdiskusi untuk membahas mengenai barang-barang kebutuhan yang sesuai dengan hobinya masing-masing.
 
-% Berdasarkan gambaran dan penjelasan serta data-data yang telah dikumpulkan diatas, dapat disimpulkan bahwa adanya peningkatan aktivitas jual beli barang melalui internet (dari barang kebutuhan hobi maupun tidak) yang begitu besar dalam beberapa tahun belakangan ini dan melihat kesulitannya untuk memulai sebuah kegiatan hobi karena tidak yakin atas barang yang cocok sebagai titik awal untuk memulainya. Maka dari itu, proyek yang dikerjakan ini bermaksud untuk merancang dan membuat sebuah aplikasi berbasis \textit{web} yang berfokus pada kegiatan jual beli barang kebutuhan hobi apa saja tanpa merujuk pada satu atau beberapa hobi yang spesifik. Aplikasi \textit{web} ini dilengkapi dengan sebuah fitur unik. Fitur tersebut merupakan sebuah fitur penilaian yang diberikan oleh penjual dan pembeli kepada suatu barang berdasarkan tingkat minatnya (\textit{Interest Level}) yang cocok agar dapat membantu meningkatkan keyakinan \textit{user} untuk memilih barang kebutuhan hobi yang sesuai dengan hobi yang ingin dilakukan. Misalnya, untuk hobi bermain gitar. Apabila \textit{user} baru menjalani hobi tersebut atau baru saja belajar bermain gitar, tentunya gitar yang cocok untuk memulai belajar adalah sebuah gitar akustik biasa. Maka dari itu, untuk sebuah produk berupa gitar akustik biasa ('biasa' disini berarti yang berstandar rata-rata atau bukan yang bermerek terkenal dan mahal) akan diberikan penilaian setara dengan "Beginner" atau "Pemula" oleh penjual dari barang tersebut. Dan penilaian dari penjual tersebut dapat di nilai kembali oleh pembeli sebagai validasi apakah penilaian tersebut cocok dengan barang yang dijualnya, dan begitu seterusnya untuk produk-produk hobi lainnya. Fitur selanjutnya adalah sebuah tempat/wadah untuk melakukan diskusi. Proses diskusi ini dapat dilakukan melalui sebuah postingan yang di\textit{post} pada kategori hobi yang sesuai dengan minatnya. Tujuannya agar orang-orang yang tertarik dengan hobi tersebut dapat saling berdiskusi/berinteraksi untuk membahas barang kebutuhan hobi apa saja yang cocok dengan hobi yang mereka minati tersebut. Terakhir, fitur yang akan diimplementasikan adalah sebuah sistem rekomendasi. Sistem rekomendasi ini bekerja berdasarkan seberapa banyakkah barang-barang kebutuhan hobi tertentu yang telah \textit{user} tersebut cari atau lihat selama menggunakan aplikasi \textit{web} ini.
 
-
-\subsection*{1.2 Rumusan Masalah}
-\addcontentsline{toc}{subsection}{\protect\numberline{}1.2 Rumusan Masalah}
+\subbab{1.2 Rumusan Masalah}
 
 Sesuai dengan latar belakang yang telah dibahas di atas, rumusan masalah yang akan dikaji dalam proyek ini dapat dirangkum menjadi beberapa poin sebagai berikut:
 \begin{enumerate}
@@ -141,8 +147,7 @@ Sesuai dengan latar belakang yang telah dibahas di atas, rumusan masalah yang ak
     \item Bagaimana merancang fitur utama sistem rekomendasi untuk membantu penjual mengiklankan barangnya dengan rekomendasi barang hobi ke \textit{user} yang tepat
 \end{enumerate}
 
-\subsection*{1.3 Ruang Lingkup}
-\addcontentsline{toc}{subsection}{\protect\numberline{}1.3 Ruang Lingkup}
+\subbab{1.3 Ruang Lingkup}
 Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketplace} terfokus untuk hobi dengan fitur utama sebuah filter terhadap tingkat kemahiran sebuah hobi, untuk menghindari pembahasan dan implementasi yang meluas dan supaya lebih terfokus maka ditetapkan batasan-batasan atau ruang lingkup sebagai berikut:
 \begin{enumerate}
     \item Aplikasi hanya berbasis dan berada dalam bentuk aplikasi \textit{website}.
@@ -154,8 +159,7 @@ Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketp
     \item \textit{Database} yang dipakai adalah \textit{mysql} versi 8.2.4-2.
 \end{enumerate}
 
-\subsection*{1.4 Tujuan dan Manfaat}
-\addcontentsline{toc}{subsection}{\protect\numberline{}1.4 Tujuan dan Manfaat}
+\subbab{1.4 Tujuan dan Manfaat}
 
 Tujuan dari proyek ini adalah untuk merancang dan membuat sebuah aplikasi \textit{marketplace} yang berbasis \textit{web}. Tujuan secara khusus dapat ditulis sebagai poin sebagai berikut:
 \begin{enumerate}
@@ -172,16 +176,14 @@ Manfaat yang diharapkan dari proyek ini adalah:
     \item Menyediakan tempat jual beli yang tepat untuk penjual barang hobi, dimana dengan sistem rekomendasi barang dibantu didorong atau disarankan ke pengguna yang tepat.
 \end{enumerate}
 
-\subsection*{1.5 Metode Penelitian}
-\addcontentsline{toc}{subsection}{\protect\numberline{}1.5 Metode Penelitian}
+\subbab{1.5 Metode Penelitian}
 
 Metode Penelitian yang digunakkan adalah metode penelitian kualitatif, yang bersifat deskriptif dengan melakukan analisis\autocite{pengajar-kualitatif}, dan akan melakukan analisis dari hasil pengumpulan data yang dilakukan.
 
 
 Pengumpulan data yang dilakukan adalah dengan membuat form survei menggunakan \textit{Google Form} untuk mendapatkan pendapat atas pertanyaan-pertanyaan yang terkait dengan alasan dari pembuatan aplikasi pada proyek ini. Dari hal mengenai pembelian barang hobi hingga tingkat kesulitan dalam menemukan barang yang cocok. Dari semua jawaban survei yang dikumpulkan tersebutlah, dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang proyek ini butuhkan.
 
-\subsection*{1.6 Sistematika Penulisan}
-\addcontentsline{toc}{subsection}{\protect\numberline{}1.6 Sistematika Penulisan}
+\subbab{1.6 Sistematika Penulisan}
 \textit{\textbf{Bab 1: Pendahuluan}} \newline
 Bab pertama ini akan menjelaskan tentang latar belakang, rumusan masalah, tujuan, manfaat, ruang lingkup, dan metode penelitian yang dilakukan didalam proyek ini.
 
@@ -198,13 +200,13 @@ Bab keempat ini menjelaskan hasil penelitian dan pembahasan. Hasil penelitian ya
 Bab kelima ini akan memaparkan beberapa kesimpulan yang dapat diambil dan saran - saran yang didasarkan pada hasil yang didapatkan, dibab ini juga akan menyimpulkan apakahh ide aplikasi ini mempunyai potensi tinggi jika diimplementasikan didunia nyata.
 
 \newpage
-\section*{Bab 2. Tinjauan Pustaka}
-\addcontentsline{toc}{section}{\protect\numberline{}Bab 2. Tinjauan Pustaka}
+\bab{Bab 2. Tinjauan Pustaka}
 % OOP, Functional Programming, Design Pattern, Architecural Pattern
 
 
-\subsection*{2.1 \textit{Object Oriented Programming}}
-\addcontentsline{toc}{subsection}{\protect\numberline{}2.1 \textit{Object Oriented Programming}}
+\subbab{2.1 Teori - Teori Umum}
+
+\subsubbab{2.1.1 \textit{Object Oriented Programming}}
 \textit{Object Oriented Programming} adalah konsep programming yang berdasarkan \textit{objects}, sebuah \textit{object} adalah sesuatu entitas yang ada didunia nyata yang bisa diindetifikasi secara unik\autocite{liang_liang_2021}. Sebagai contoh, sebuah meja, seorang guru, dan bahkan hutang bisa dijadikan sebagai \textit{object}.
 
 Untuk membuat sebuah \textit{object} diperlukan sebuah \textit{template} atau \textit{blueprint}, \textit{template} atau \textit{blueprint} ini dalam \textbf{OOP} disebut sebagai \textit{class}, secara definisi \textit{class} adalah sebuah \textit{blueprint} yang dipakai untuk membuat sesuatu atau \textit{object} yang lebih spesifik atau konkrit\autocite{education-erin-oop-2020}, \textit{class} biasanya hanya menampung atribut - atribut yang secara general, seperti tinggi, berat badan, umur, dan sebagainya. Sedangkan sebuah \textit{object} akan menampung \textit{value} yang lebih spesifik, seperti \textit{object} tersebut bertinggi 2 meter dan \textit{object} sudah berumur 3 tahun.
@@ -255,8 +257,7 @@ public class Human {
 
 
 % \newpage
-\subsection*{2.2 \textit{Functional Programming}}
-\addcontentsline{toc}{subsection}{\protect\numberline{}2.2 \textit{Functional Programming}}
+\subsubbab{2.1.2 \textit{Functional Programming}}
 \textit{Functional Programming} adalah sebuah konsep, paradigma atau sebuah macam \textit{software development} yang menekankan titik beratnya pada penggunaan \textit{functions}, \textit{Functional Programming} sendiri bukan merupakan sebuah alat yang dapat digunakan tetapi merupakan sesuatu pegangan untuk \textit{developers} sebagai sebuah cara menulis kode\autocite{atencio2016functional}.
 
 
@@ -270,8 +271,7 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
     \item \textit{Immutability} adalah dimana dalam \textit{Functional Programming} untuk melestarikan sebuah data supaya \textit{Immutable} tidak bisa diganti setelah di deklarasi. Dalam konsep ini yang perlu diperhatikan adalah object seperti \textit{array} yang dapat berubah konten atau valuenya dalam sebuah function \autocite{atencio2016functional}.
 \end{itemize}
 
-\subsection*{2.3 \textit{Architectural Pattern}}
-\addcontentsline{toc}{subsection}{\protect\numberline{}2.3 \textit{Architectural Pattern}}
+\subsubbab{2.1.3 \textit{Architectural Pattern}}
 \textit{Architectural Pattern} merupakan seperangkat prinsip dan pola kasar yang menyediakan kerangka kerja abstrak dari sebuah sistem. \textit{Architectural Pattern} menggambarkan struktural fundamental dari suatu organisasi atau skema untuk sebuah sistem yang kompleks. \textit{Architectural Pattern} dapat digunakan sebagai solusi umum yang dapat digunakan kembali \textit{(reusable)} untuk memecahkan permasalahan yang biasa terjadi dalam sebuah \textit{software architecture} didalam konteks tertentu\autocite{architectural-pattern}. Dalam artian, \textit{Architectural Pattern} mirip dengan \textit{Design Pattern}, tetapi memiliki cakupan yang lebih luas\autocite{archi-pattern}.
 \begin{itemize}
     \item \textit{Object-Oriented Architecture (OOA)}\\
@@ -284,9 +284,7 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
           \textit{Model-View-Controller Architecture} atau biasa juga disebut sebagai \textbf{MVC}, merupakan sebuah jenis \textit{architectural pattern} yang membagi sistem aplikasinya menjadi tiga bagian, yakni \textbf{\textit{Model}}, \textbf{\textit{View}} dan \textbf{\textit{Controller}}. \textbf{\textit{Model}} merupakan fungsi inti dari aplikasi dan menyimpan data, \textbf{\textit{View}} merupakan sebuah \textit{user interface (UI)} yang dapat dilihat atau berinteraksi dengan pengguna secara langsung dan \textbf{\textit{Controller}} sebagai penghubung antara \textit{model} dengan \textit{view} serta yang mengatur \textit{input} dari pengguna. Arsitektur jenis ini paling sering digunakan untuk membuat sebuah aplikasi berbasis \textit{web}\autocite{archi-pattern}.
 \end{itemize}
 
-\subsection*{2.4 \textit{Design Pattern}}
-\addcontentsline{toc}{subsection}{\protect\numberline{}2.4 \textit{Design Pattern}}
-
+\subsubbab{2.1.4 \textit{Design Pattern}}
 \textit{Design Pattern} secara definisi adalah sesuatu cara komunikasi tiap obyek dan \textit{class} yang dikostumisasi untuk memecahkan masalah desain general didalam konteks tertentu, \textit{design pattern} membantu untuk membuat \textit{object oriented design} yang dapat digunakan secara berulang, dengan cara memberi nama, mengabstraksi, dna mengidentifikasi kunci aspek dari struktur desain tertentu\autocite{design-pattern-2588942}.
 \begin{itemize}
     \item \textit{Facade}\\
@@ -299,9 +297,7 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
           \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
 \end{itemize}
 
-\subsection*{2.5 Sistem Rekomendasi}
-\addcontentsline{toc}{subsection}{\protect\numberline{}2.5 Sistem Rekomendasi}
-
+\subsubbab{2.1.5 Sistem Rekomendasi}
 Sistem rekomendasi adalah sistem penyaringan informasi yang menyarankan sebuah produk kepada pengguna bedasarkan preferensi atau perilaku masa lalu. Sistem ini banyak digunakan di pasar \textit{online} untuk meningkatkan pengalaman, keterlibatan pengguna, dan mendorong penjualan. Dengan memberikan rekomendasi yang dipersonalisasi terhadap preferensi, pengguna dapat menemukan sebuah barang yang mungkin tidak bisa ditemukan sendiri dan meningkatkan kepuasan pengguna terhadap pasar \textit{online} yang sedang digunakan \autocite{adiwardana2019}.
 
 Kenapa sistem rekomendasi ini dibutuhkan telah dibuktikan oleh sebuah artikel yang diterbitkan pada tahun 2019 oleh Tian \textit{et al}. yang berjudul "\textit{Exploring the effects of personalized recommendation on users' satisfaction and loyalty in e-commerce}" yang menemukan bahwa pengguna \textit{platform e-commerce}  akan menghabiskan waktu 50\% lebih banyak di \textit{platform} tersebut ketika pengguna diberikan sebuah rekomendasi produk yang dipersonalisasi\autocite{tian2019exploring}. Sistem rekomendasi juga menguntungkan untuk mengurangi terjadinya \textit{information overload} yang akan dialami oleh pengguna, dengan cara hanya menampilkan produk yang ingin dilihat atau yang sesuai dengan preferensi - preferensi pengguna tersebut\autocite{karimi2018news}.
@@ -314,8 +310,7 @@ Sistem rekomendasi yang akan dipakai didalam proyek ini akan berdasarkan pada te
     \caption{Contoh simpel dari sistem rekomendasi dengan basis \textit{Knowledge Graph}}
 \end{figure}
 
-\subsection*{2.6 Aplikasi Serupa}
-\addcontentsline{toc}{subsection}{\protect\numberline{}2.6 Aplikasi Serupa}
+\subbab{2.2 Aplikasi Serupa}
 Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu dan dua aplikasi pasaran yang sebelumnya sudah sedikit dibahas pada bagian latar belakang. Disini, aplikasi-aplikasi tersebut dapat dikategorikan menjadi dua jenis, yaitu \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Berikut adalah perbandingan kelebihan dan kekurangannya.
 \textbf{Aplikasi-aplikasi berdasarkan penelitian terdahulu}:
 \begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}
@@ -385,104 +380,10 @@ Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitia
     \hline
 \end{longtable}
 
-% \begin{longtable}{|m{2cm}|p{5cm}|p{5cm}|}
-%     \hline
-%     Aplikasi & Positif                                                                           & Negatif          \\
-%     \hline
-%     Reddit
-%              & + \textit{community} yang sudah besar \newline
-%     + System handling \textit{post} dan komen sudah \textit{robust} \newline
-%     + Interaksi antara user sudah bagus
-%              & - Bukan marketplace \newline
-%     - Tidak cocok untuk memberi rating konkrit kepada barang \newline
-%     - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat                    \\
-%     \hline
-%     Tokopedia
-%              & + Proses shipping dan payment sudah berbagai macam \newline
-%     + Banyak promo yang bisa didapatkan user
-%              & - Tidak bisa mengelompokkan item berdasarkan hobi \newline
-%     - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline
-%     - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang                                                  \\
-%     \hline
-%     KyouId
-%              & + Bisa membeli barang dari negara lain (jepang) \newline
-%     + Sudah integrasi langsung dengan banyak \textit{shipment service} yang ada di Indonesia \newline
-%              & - Hanya terfokus kesatu jenis hobi \newline
-%     - Tidak memiliki filter untuk \textit{interest level}                                                           \\
-%     \hline
-%     Lazada
-%              & + Sudah meng-\textit{support} berbagai macam cara pembarayan\newline
-%     + Sudah integrasi langsung dengan banyak \textit{shipment service} yang ada di Indonesia \newline
-%     + Banyak kategori barang yang sudah ada
-%              & - Tidak bisa mengelompokkan item berdasarkan hobi \newline
-%     - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \\
-%     \hline
-%     Amazon
-%              & + Memiliki \textit{internation shipping} hampir ke semua negara \newline
-%     + Sudah memiliki support untuk berbagai macam mata uang \newline
-%     + Miliki \textit{buyer protection} yang sangat bagus
-%              & - Tidak memiliki filter yang bedasarkan hobi dan \textit{interest level} \newline
-%     - Karena \textit{size} amazon yang sudah besar, banyak \textit{scammer} dan \textit{scalper} yang berkeliaran \newline
-%     - Tempat yang disediakan untuk berdisuksi sangat terbatas                                                       \\
-%     \hline
-% \end{longtable}
-
-% \subsection*{2.5 \textit{Website Mock}}
-% \addcontentsline{toc}{subsection}{\protect\numberline{}2.5 \textit{Website Mock}}
-
-% \subsubsection*{2.5.1 \textit{Buyer User Interface}}
-% \addcontentsline{toc}{subsubsection}{\protect\numberline{}2.5.1 \textit{Buyer User Interface}}
-% \begin{figure}[h]
-%     \includegraphics[width=.30\textwidth]{ui/User View/Forum Discussion (All) - Post 1 [User].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/User View/Forum Discussions - All [User].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/User View/Forum Discussion - PS1 [User].png}\hfill
-%     \\[\smallskipamount]
-%     \includegraphics[width=.30\textwidth]{ui/User View/Item Page 1 [User].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/User View/Store Home Page [User].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/User View/Shopping Cart [User].png}\hfill
-%     \caption{\textit{Mock-up user interface} untuk pembeli}
-%     \centering
-% \end{figure}
-
-% \subsubsection*{2.5.2 \textit{Merchant User Interface}}
-% \addcontentsline{toc}{subsubsection}{\protect\numberline{}2.5.2 \textit{Merchant User Interface}}
-% \begin{figure}[h]
-%     \includegraphics[width=.30\textwidth]{ui/Merchant View/All Chats [Merchant].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/Merchant View/Chat w User - Chat 1 [Merchant].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/Merchant View/Edit Profile [Merchant].png}\hfill
-%     \\[\smallskipamount]
-%     \includegraphics[width=.30\textwidth]{ui/Merchant View/Forum Discussions - All [Merchant].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/Merchant View/Product Management [Merchant].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/Merchant View/Store Home Page [Merchant].png}\hfill
-%     \\[\smallskipamount]
-%     \includegraphics[width=.30\textwidth]{ui/Merchant View/Update Product [Merchant].png}\hfill
-%     \caption{\textit{Mock-up user interface} untuk penjual}
-%     \centering
-% \end{figure}
-
-% \newpage
-% \subsubsection*{2.5.3 \textit{Admin User Interface}}
-% \addcontentsline{toc}{subsubsection}{\protect\numberline{}2.5.3 \textit{Admin User Interface}}
-% \begin{figure}[h]
-%     \includegraphics[width=.30\textwidth]{ui/Admin View/Admin Dashboard [Admin].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/Admin View/Approval Details [Admin].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/Admin View/Approval Page [Admin].png}\hfill
-%     \\[\smallskipamount]
-%     \includegraphics[width=.30\textwidth]{ui/Admin View/Reports Page - All [Admin].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/Admin View/Reports Page - Post [Admin].png}\hfill
-%     \includegraphics[width=.30\textwidth]{ui/Admin View/Reports Page - Comment [Admin].png}\hfill
-%     \\[\smallskipamount]
-%     \includegraphics[width=.30\textwidth]{ui/Admin View/Store Home Page [Admin].png}\hfill
-%     \caption{\textit{Mock-up user interface} untuk \textit{admin}}
-%     \centering
-% \end{figure}
 
 \newpage
-\section*{Bab 3. Metode Pelaksanaan}
-\addcontentsline{toc}{section}{\protect\numberline{}Bab 3. Metode Pelaksanaan}
-\subsection*{3.1 Metode Pengumpulan Data}
-\addcontentsline{toc}{subsection}{\protect\numberline{}3.1 Metode Pengumpulan Data}
-
+\bab{Bab 3. Metode Penelitian}
+\subbab{3.1 Metode Penelitian}
 
 Pengumpulan data yang lakukan adalah dengan membuat form survei menggunakan \textit{Google Form} untuk mendapatkan pendapat atas pertanyaan-pertanyaan yang terkait dengan alasan dari pembuatan aplikasi pada proyek ini. Dari hal mengenai pembelian barang hobi hingga tingkat kesulitan dalam menemukan barang yang cocok. Dari semua jawaban survei yang dikumpulkan tersebutlah, dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang proyek ini butuhkan.
 
@@ -495,61 +396,9 @@ Selanjutnya dengan “Apakah anda sering menggunakan \textit{e-commerce} untuk b
 
 Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ragu dan harus mencari tahu terlebih dahulu atas barang yang anda lihat apakah untuk pemula/menengah/ahli?” ini adalah untuk mengumpulkan data atas fitur utama yang dirancang yaitu fitur filtrasi level peminatan(\textit{interest level}) dari suatu hobi Dengan respons yang berjawab iya diatas 70\% maka fitur utama dari proyek ini layak untuk diimplementasikan.
 
-% \subsection*{3.2 Analisis}
-% \addcontentsline{toc}{subsection}{\protect\numberline{}3.2 Analisis}
+\subbab{3.2 Metode Pengembangan Sistem}
 
-% \subsubsection*{3.2.1 Analisis perbandingan aplikasi sejenis}
-% \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.1 Analisis perbandingan aplikasi sejenis}
-% Terdapat dua aplikasi serupa dengan aplikasi didalam proposal proyek ini yang kami jadi obyek oberservasi, yaitu \textit{Reddit} dan \textit{Tokopedia}.
-
-% \newpage
-% \begin{figure}[h]
-%     \begin{longtable}{|m{2cm}|p{5cm}|p{5cm}|}
-%         \hline
-%         Aplikasi & Positif                                                     & Negatif             \\
-%         \hline
-%         Reddit
-%                  & + \textit{community} yang sudah besar \newline
-%         + System handling \textit{post} dan komen sudah \textit{robust} \newline
-%         + Interaksi antara user sudah bagus
-%                  & - Bukan marketplace \newline
-%         - Tidak cocok untuk memberi rating konkrit kepada barang \newline
-%         - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
-%         \hline
-%         Tokopedia
-%                  & + Proses shipping dan payment sudah berbagai macam \newline
-%         + Banyak promo yang bisa didapatkan user
-%                  & - Tidak bisa mengelompokkan item berdasarkan hobi \newline
-%         - User akan sulit mencari item yang cocok bagi mereka karena ketidakadaannya interest level untuk item tersebut \newline
-%         - Tidak ada forum dedikasi diskusi, hanya untuk diskusi barang                               \\
-%         \hline
-%     \end{longtable}
-%     \caption{Tabel perbandingan aplikasi serupa}
-% \end{figure}
-
-% \subsubsection*{3.2.2 Analisis permasalah}
-% \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 Analisis permasalah}
-% Salah satu pertanyaan adalah "Apakah anda takut untuk mengambil hobi baru karena tidak tau mulai dari mana?" dan dengan responden menjawab 69.2\% iya mereka takut untuk mengambil hobi baru karena alasan yang disebut, beberapa alasan kenapa banyak orang takut untuk mengambil hobi baru adalah,
-% \begin{itemize}
-%     \item mereka tidak tahu apa yang harus dibeli sebagai \textit{beginner};
-%     \item mereka tidak tahu apa yang mereka beli cocok untuk \textit{interest level} mereka atau tidak;
-%     \item mereka tidak tahu hal apa saya yang perlu diketahui untuk memasuki hobi tersebut.
-% \end{itemize}
-% Dengan 61.5\% menjawab mereka tidak punya waktu untuk mencari tahu informasi tentang hobi tersebut, satu masalah muncul yaitu "bagaimana cara mempercepat proses pemilihan barang untuk pemula hobi".
-
-% \subsubsection*{3.2.3 Usulan pemecahan masalah}
-% \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.3 Usulan pemecahan masalah}
-% Untuk orang yang ingin memulai hobi dan mempunyai banyak waktu untuk mencari informasi tentang hobi tersebut, solusi kami adalah membuat sebuah \textit{marketplace} dengan sebuah \textit{page} yang khusus dibuat untuk para pengguna berdiskusi, berdiskusi tentang sebuah \textit{product} dan ke siapa saja \textit{product} ditujukkan.
-
-
-% Untuk orang yang tidak punya waktu untuk melihat semua itu, \textit{project} ini akan menerapkan dua sistem \textit{filter}, \textit{rating} sebuah \textit{product} yang menandakan seberapa berkualitas \textit{product} tersebut dan \textit{rating interest level} dari \textit{product} yang menandakan \textit{product} tersebut itu diarahkan ke siapa. Sistem \textit{interest level rating} ini akan memiliki dua value, \textit{value} pertama adalah \textit{value} yang ditetapkan oleh penjual dan \textit{value} kedua itu yang ditetapkan oleh komunitas, jadi secara tidak langsung jika ada barang yang dengan kedua \textit{rating}nya tidak sama, sipembeli bisa menyimpulkan bahwa penjual ini tidak bisa dipercaya.
-
-
-\subsection*{3.2 Metode Pengembangan Sistem}
-\addcontentsline{toc}{subsection}{\protect\numberline{}3.2 Metode Pengembangan Sistem}
-
-\subsubsection*{3.2.1 \textit{Software Design Document}}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.1 \textit{Software Design Document}}
+\subsubbab{3.2.1 \textit{Software Design Document}}
 \begin{enumerate}[label=\alph*. ]
     \item Deskripsi \textit{software}
 
@@ -611,22 +460,23 @@ Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ra
 
 
 \newpage
-\subsubsection*{3.2.2 \textit{Timeline}}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 \textit{Timeline}}
+\subsubbab{3.2.2 Perancangan Sistem}
+% \subsubsection*{3.2.2 \textit{Timeline}}
+% \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 \textit{Timeline}}
 
-Karena proyek ini menggunakan \textit{agile} sebagai \textbf{SDLC} yang digunakan, maka \textit{timeline} ini dipisah menjadi satu bulan pertama untuk \textit{planning} dan lima bulan yangd dipisah menjadi lima \textit{sprint} yang berbeda. Dalam satu \textit{sprint} akan dipisah lagi menjadi satu minggu pertama untuk melakukan \textit{spring planning}, dua minggu untuk masa \textit{development frontend} dan \textit{backend} secara bersamaan dan satu minggu akan dipakai untuk masa \textit{testing} untuk memastikan fitur yang di\textit{develop} tidak menggangu fitur yang sudah ada dan bisa digunakan.
+% Karena proyek ini menggunakan \textit{agile} sebagai \textbf{SDLC} yang digunakan, maka \textit{timeline} ini dipisah menjadi satu bulan pertama untuk \textit{planning} dan lima bulan yangd dipisah menjadi lima \textit{sprint} yang berbeda. Dalam satu \textit{sprint} akan dipisah lagi menjadi satu minggu pertama untuk melakukan \textit{spring planning}, dua minggu untuk masa \textit{development frontend} dan \textit{backend} secara bersamaan dan satu minggu akan dipakai untuk masa \textit{testing} untuk memastikan fitur yang di\textit{develop} tidak menggangu fitur yang sudah ada dan bisa digunakan.
 
-\begin{figure}[h]
-    \includegraphics[width=13cm]{sprint timeline.png}
-    \centering
-    \caption{\textit{Timeline} untuk bulan maret sampai mei.}
-\end{figure}
+% \begin{figure}[h]
+%     \includegraphics[width=13cm]{sprint timeline.png}
+%     \centering
+%     \caption{\textit{Timeline} untuk bulan maret sampai mei.}
+% \end{figure}
 
-\begin{figure}[h]
-    \includegraphics[width=13cm]{sprint timeline 2.png}
-    \centering
-    \caption{\textit{Timeline} untuk bulan juni sampai agustus.}
-\end{figure}
+% \begin{figure}[h]
+%     \includegraphics[width=13cm]{sprint timeline 2.png}
+%     \centering
+%     \caption{\textit{Timeline} untuk bulan juni sampai agustus.}
+% \end{figure}
 
 \newpage
 
