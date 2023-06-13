@@ -319,7 +319,52 @@ Sistem rekomendasi yang akan dipakai didalam proyek ini akan berdasarkan pada te
 \subsubbab{2.1.6 \textit{Unified Modeling Languages} (UML)}
 \textit{Unified Modeling Languages} atau biasa juga disebut sebagai UML merupakan sebuah bahasa pemodelan standar yang terdiri dari satu set diagram. Bahasa pemodelan yang terdiri dari diagram-diagram ini dikembangkan dengan tujuan untuk membantu para \textit{software developers} dan \textit{system developers} untuk membangun dan memvisualisasikan serta mendokumentasikan struktur sistem pada sebuah perangkat lunak (\textit{software}). Bahasa pemodelan ini juga dapat digunakan untuk memodelkan sebuah alur bisnis ataupun sebuah sistem yang bukan merupakan perangkat lunak (\textit{non-software system})\autocite{what-is-UML}.
 
-Untuk sekarang, UML sudah berada di versi 2.5, yang dimana pada versi ini mendefinisakan lima belas teknik diagram yang berbeda untuk memodelkan suatu sistem. Diagram-diagram tersebut dibagi menjadi dua kelompok besar yakni, \textit{Structure Diagrams} yang digunakan untuk memodelkan struktur pada suatu sistem dan \textit{Behavioral Diagrams} yang digunakan untuk memodelkan alur kejadian/perilaku yang akan dijalankan pada sistem tersebut. \textit{Class Diagram, Object Diagram} dan \textit{Component Diagram} merupakan beberapa contoh dari \textit{Structure Diagrams}. Sedangkan, \textit{Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram} merupakan contoh dari \textit{Behavioral Diagrams}\autocite{system-analysis-design-oop-with-uml-5}.
+Untuk sekarang, UML sudah berada di versi 2.5, yang dimana pada versi ini terdapat lima belas teknik diagram yang berbeda yang dapat digunakan untuk memodelkan suatu sistem. Diagram-diagram tersebut dibagi menjadi dua kelompok besar yakni, \textit{Structure Diagrams} yang digunakan untuk memodelkan struktur pada suatu sistem dan \textit{Behavioral Diagrams} yang digunakan untuk memodelkan alur kejadian/perilaku yang akan dijalankan pada sistem tersebut. \textit{Class Diagram} merupakan salah satu contoh diagram yang termasuk ke dalam kelompok \textit{Structure Diagrams}. Sedangkan, \textit{Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram} merupakan contoh diagram yang masuk ke dalam kelompok \textit{Behavioral Diagrams}\autocite{systemanalysisdesign-with-uml-5}.
+
+Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML yang akan digunakan untuk menggambarkan sistem yang dibuat, diagram-diagram tersebut antara lain, \textit{Class Diagram, Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram}. Berikut adalah penjelasan lebih detailnya mengenai empat jenis diagram UML tersebut: 
+\begin{itemize}
+    \item \textit{Class Diagram}\\
+    \textit{Class Diagram} merupakan salah satu jenis diagram UML yang masuk ke dalam kelompok \textit{Structure Diagrams}. Diagram ini berupa sebuah model statis yang menunjukkan struktur kelas (\textit{class}) dan hubungan antar kelasnya yang tetap konstan di dalam suatu sistem dari waktu ke waktu. Diagram ini menggambarkan perilaku (\textit{behavior}) dan status\textit{states} dari kelasnya dengan hubungan antar kelasnya\autocite{systemanalysisdesign-class-diagram}. Singkatnya, \textit{class diagram} adalah sebuah jenis diagram berstruktur statis yang menggambarkan struktur sistem dengan menunjukkan kelas-kelas sistemnya, atribut-atributnya, operasi/metode yang berjalan dan hubungan antar objek/kelasnya\autocite{what-is-class-diagram}. Komponen-komponen yang ada pada \textit{class diagram}:
+    \begin{itemize}
+        \item \textit{Class}\\
+        \textit{Class} merupakan komponen utama pada \textit{class diagram}. Pada \textit{class diagram}, \textit{class} itulah yang bertugas untuk menyimpan dan mengelola informasi dalam sistem. Didalam proses analisis, \textit{class} itu mengacu pada orang, tempat dan hal-hal lain yang informasinya akan ditangkap oleh sistem. Sedangkan, selama proses desain dan implementasi, \textit{class} dapat mengacu kepada sebuah objek implementasi yang digunakan untuk membangun sistem tersebut seperti, \textit{windows, forms} dan lain sebagainya. Setiap \textit{class} digambarkan sebagai sebuah persegi atau persegi panjang yang dibagi ke dalam tiga bagian, yaitu nama dari \textit{class} tersebut yang berada di paling atas, \textit{attributes} yang berada di bawah nama \textit{class} (bagian tengah/baris kedua) didalam persegi panjang tersebut. Kemudian pada bagian paling persegi panjang tersebut adalah tempat untuk menginisialisasikan operasi/metode (\textit{operations}) yang digunakan\autocite{systemanalysisdesign-class-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=4cm]{class example from class diagram.png}
+            \caption{Contoh dari \textit{class}}
+        \end{figure}
+        \item \textit{Attributes}\\
+        \textit{Attributes} adalah sebuah properti dari \textit{class} yang berisikan informasi-informasi yang ingin ditangkap. Seperti contoh: nama seseorang beserta dengan umurnya dan alamatnya. \textit{Attributes} ini juga dapat dihitung (\textit{calculated}) ataupun diturunkan (\textit{derived}) ke \textit{attribute} lainnya\autocite{systemanalysisdesign-class-diagram}.
+        \textit{Attributes} juga dapat dibagi menjadi tiga jenis berdasarkan visibilitasnya dalam \textit{class diagram}, ketiga jenis tersebut antara lain:
+        \begin{itemize}
+            \item \textit{Public Attribute}\\
+            \textit{Public Attribute} merupakan jenis \textit{attribute} yang tidak disembunyikan dari \textit{class} lainnya (publik). Ini berarti \textit{attribute} jenis ini dapat diakses secara publik dari objek/\textit{class} manapun\autocite{systemanalysisdesign-class-diagram}.
+            \item \textit{Protected Atrribute}\\
+            \textit{Protected Attribute} merupakan sebuah jenis \textit{attribute} yang disembunyikan dari semua \textit{class} lain kecuali \textit{subclass} dari \textit{class} yang menyimpan attribute tersebut\autocite{systemanalysisdesign-class-diagram}. 
+            \item \textit{Private Atrribute}\\
+            \textit{Private Attribute} merupakan jenis \textit{attribute} yang disembunyikan dari \textit{class} lainnya dan hanya dapat diakses oleh \textit{class} yang menyimpan \textit{attribute} tersebut\autocite{systemanalysisdesign-class-diagram}.
+        \end{itemize}
+        \item \textit{Operations}\\
+        \textit{Operations} atau juga bisa disebut sebagai \textit{method}/(metode), ialah sebuah aksi atau fungsi (\textit{functions}) yang dapat dilakukan oleh \textit{class} tersebut. \textit{Operations} dibagi ke dalam empat jenis yakni, \textit{constructor, query, update} dan \textit{destructor}.
+        \begin{itemize}
+            \item \textit{Constructor Operation}\\
+            \textit{Constructor Operation} merupakan sebuah operasi yang bertugas untuk membuat (\textit{create}) sebuah \textit{instance} dari \textit{class}. Biasanya, \textit{operation} jenis ini tidak secara eksplisit ditampilkan di dalam \textit{class diagram} dikarenakan hanya mengimplementasikan sebuah \textit{function} yang \textit{basic}. Contoh: sebuah \textit{class} bernama "Pasien" memiliki sebuah \textit{method} bernama \textbf{insert()}, yang dimana \textit{method} tersebut akan membuat sebuah \textit{instance} pasien baru ketika ada pasien yang masuk ke dalam sistem tersebut\autocite{systemanalysisdesign-class-diagram}.
+            \item \textit{Query Operation}\\
+            \textit{Query Operation} WIP
+            \item \textit{Update Operation}\\
+            WIP
+            \item \textit{Destructor Operation}\\
+            WIP
+        \end{itemize}
+    \end{itemize}
+
+    \item \textit{Activity Diagram}\\
+    WIP
+    \item \textit{Use-Case Diagram}\\
+    WIP
+    \item \textit{Sequence Diagram}\\
+    WIP
+\end{itemize}
 
 \subbab{2.2 Aplikasi Serupa}
 Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu dan dua aplikasi pasaran yang sebelumnya sudah sedikit dibahas pada bagian latar belakang. Disini, aplikasi-aplikasi tersebut dapat dikategorikan menjadi dua jenis, yaitu \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Berikut adalah perbandingan kelebihan dan kekurangannya.
