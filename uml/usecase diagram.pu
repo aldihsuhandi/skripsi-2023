@@ -1,0 +1,60 @@
+@startuml usecase diagram
+
+left to right direction
+
+skinparam actor {
+    Location right
+    StereotypeFontStyle bold
+}
+
+actor user as u
+actor merchant as m
+
+rectangle shumishumi {
+    usecase "manage item" as manage_item
+
+    usecase "login" as login
+    usecase "activate" as activate
+    usecase "register" as register
+    usecase "forgot password" as forgotpassword
+
+    usecase "become a merchant" as be_merchant
+
+    usecase "manage cart" as cart
+    usecase "manage discussion" as discussion
+
+    usecase "do transaction" as trx
+    usecase "manage and view review" as review
+}
+
+' user
+u -- login
+u -- register
+u -- forgotpassword
+u -- be_merchant
+
+u -- cart
+u -- discussion
+
+u -- trx
+
+u -- review
+
+' merchant
+login -- m
+register -- m
+forgotpassword -- m
+
+cart --- m
+discussion -- m
+
+trx -- m
+
+review -- m
+
+manage_item -- m
+
+
+register .> activate : <<include>>
+
+@enduml
