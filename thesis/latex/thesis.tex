@@ -316,7 +316,14 @@ Sistem rekomendasi yang akan dipakai didalam proyek ini akan berdasarkan pada te
     \caption{Contoh simpel dari sistem rekomendasi dengan basis \textit{Knowledge Graph}}
 \end{figure}
 
-\subsubbab{2.1.6 \textit{Unified Modeling Languages} (UML)}
+\subbab{2.1.6 Internet}
+Internet merupakan sebuah bentuk dari infrastruktur jaringan global yang menghubungkan miliaran komputer (ataupun perangkat lainnya) di seluruh dunia satu sama lain dan ke \textit{World Wide Web}\autocite{javatpoint-internet}. Internet dibangun/di-\textit{setup} dengan menggunakan bantuan transmisi data dari kabel-kabel \textit{fiber optic} atau kabel tembaga dan berbagai macam media jaringan lainnya. Bahkan, untuk mengakses internet melalui layanan seperti 2G, 3G dan 4G atau Wifi, pengaturan fisik dari kabel-kabel jaringan tersebut masih diperlukan\autocite{gfg-internet}. 
+WIP
+
+\subbab{2.1.7 \textit{API Call}}
+WIP
+
+\subsubbab{2.1.8 \textit{Unified Modeling Languages} (UML)}
 \textit{Unified Modeling Languages} atau biasa juga disebut sebagai UML merupakan sebuah bahasa pemodelan standar yang terdiri dari satu set diagram. Bahasa pemodelan yang terdiri dari diagram-diagram ini dikembangkan dengan tujuan untuk membantu para \textit{software developers} dan \textit{system developers} untuk membangun dan memvisualisasikan serta mendokumentasikan struktur sistem pada sebuah perangkat lunak (\textit{software}). Bahasa pemodelan ini juga dapat digunakan untuk memodelkan sebuah alur bisnis ataupun sebuah sistem yang bukan merupakan perangkat lunak (\textit{non-software system})\autocite{what-is-UML}.
 
 Untuk sekarang, UML sudah berada di versi 2.5, yang dimana pada versi ini terdapat lima belas teknik diagram yang berbeda yang dapat digunakan untuk memodelkan suatu sistem. Diagram-diagram tersebut dibagi menjadi dua kelompok besar yakni, \textit{Structure Diagrams} yang digunakan untuk memodelkan struktur pada suatu sistem dan \textit{Behavioral Diagrams} yang digunakan untuk memodelkan alur kejadian/perilaku yang akan dijalankan pada sistem tersebut. \textit{Class Diagram} merupakan salah satu contoh diagram yang termasuk ke dalam kelompok \textit{Structure Diagrams}. Sedangkan, \textit{Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram} merupakan contoh diagram yang masuk ke dalam kelompok \textit{Behavioral Diagrams}\autocite{systemanalysisdesign-with-uml-5}.
@@ -324,14 +331,14 @@ Untuk sekarang, UML sudah berada di versi 2.5, yang dimana pada versi ini terdap
 Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML yang akan digunakan untuk menggambarkan sistem yang dibuat, diagram-diagram tersebut antara lain, \textit{Class Diagram, Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram}. Berikut adalah penjelasan lebih detailnya mengenai empat jenis diagram UML tersebut: 
 \begin{itemize}
     \item \textit{Class Diagram}\\
-    \textit{Class Diagram} merupakan salah satu jenis diagram UML yang masuk ke dalam kelompok \textit{Structure Diagrams}. Diagram ini berupa sebuah model statis yang menunjukkan struktur kelas (\textit{class}) dan hubungan antar kelasnya yang tetap konstan di dalam suatu sistem dari waktu ke waktu. Diagram ini menggambarkan perilaku (\textit{behavior}) dan status\textit{states} dari kelasnya dengan hubungan antar kelasnya\autocite{systemanalysisdesign-class-diagram}. Singkatnya, \textit{class diagram} adalah sebuah jenis diagram berstruktur statis yang menggambarkan struktur sistem dengan menunjukkan kelas-kelas sistemnya, atribut-atributnya, operasi/metode yang berjalan dan hubungan antar objek/kelasnya\autocite{what-is-class-diagram}. Komponen-komponen yang ada pada \textit{class diagram}:
+    \textit{Class Diagram} merupakan salah satu jenis diagram UML yang masuk ke dalam kelompok \textit{Structure Diagrams}. Diagram ini berupa sebuah model statis yang menunjukkan struktur kelas (\textit{class}) dan hubungan antar kelasnya yang tetap konstan di dalam suatu sistem dari waktu ke waktu. Diagram ini menggambarkan perilaku (\textit{behavior}) dan status\textit{states} dari kelasnya dengan hubungan antar kelasnya\autocite{systemanalysisdesign-class-diagram}. Singkatnya, \textit{class diagram} adalah sebuah jenis diagram berstruktur statis yang menggambarkan struktur sistem dengan menunjukkan kelas-kelas sistemnya, atribut-atributnya, operasi/metode yang berjalan dan hubungan antar kelasnya\autocite{what-is-class-diagram}. Berikut adalah komponen-komponen yang ada pada \textit{class diagram}:
     \begin{itemize}
         \item \textit{Class}\\
         \textit{Class} merupakan komponen utama pada \textit{class diagram}. Pada \textit{class diagram}, \textit{class} itulah yang bertugas untuk menyimpan dan mengelola informasi dalam sistem. Didalam proses analisis, \textit{class} itu mengacu pada orang, tempat dan hal-hal lain yang informasinya akan ditangkap oleh sistem. Sedangkan, selama proses desain dan implementasi, \textit{class} dapat mengacu kepada sebuah objek implementasi yang digunakan untuk membangun sistem tersebut seperti, \textit{windows, forms} dan lain sebagainya. Setiap \textit{class} digambarkan sebagai sebuah persegi atau persegi panjang yang dibagi ke dalam tiga bagian, yaitu nama dari \textit{class} tersebut yang berada di paling atas, \textit{attributes} yang berada di bawah nama \textit{class} (bagian tengah/baris kedua) didalam persegi panjang tersebut. Kemudian pada bagian paling persegi panjang tersebut adalah tempat untuk menginisialisasikan operasi/metode (\textit{operations}) yang digunakan\autocite{systemanalysisdesign-class-diagram}.
         \begin{figure}[h]
             \centering
-            \includegraphics[width=4cm]{class example from class diagram.png}
-            \caption{Contoh dari \textit{class}}
+            \includegraphics[scale=0.75]{class example from class diagram.png}
+            \caption{Contoh dari sebuah \textit{class}}
         \end{figure}
         \item \textit{Attributes}\\
         \textit{Attributes} adalah sebuah properti dari \textit{class} yang berisikan informasi-informasi yang ingin ditangkap. Seperti contoh: nama seseorang beserta dengan umurnya dan alamatnya. \textit{Attributes} ini juga dapat dihitung (\textit{calculated}) ataupun diturunkan (\textit{derived}) ke \textit{attribute} lainnya\autocite{systemanalysisdesign-class-diagram}.
@@ -345,23 +352,150 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \textit{Private Attribute} merupakan jenis \textit{attribute} yang disembunyikan dari \textit{class} lainnya dan hanya dapat diakses oleh \textit{class} yang menyimpan \textit{attribute} tersebut\autocite{systemanalysisdesign-class-diagram}.
         \end{itemize}
         \item \textit{Operations}\\
-        \textit{Operations} atau juga bisa disebut sebagai \textit{method}/(metode), ialah sebuah aksi atau fungsi (\textit{functions}) yang dapat dilakukan oleh \textit{class} tersebut. \textit{Operations} dibagi ke dalam empat jenis yakni, \textit{constructor, query, update} dan \textit{destructor}.
+        \textit{Operations} atau juga bisa disebut sebagai \textit{method}/(metode), ialah sebuah aksi atau fungsi (\textit{functions}) yang dapat dilakukan oleh \textit{class} tersebut. \textit{Operations} dibagi ke dalam empat jenis yakni, \textit{constructor, query, update} dan \textit{destructor}\autocite{systemanalysisdesign-class-diagram}.
         \begin{itemize}
             \item \textit{Constructor Operation}\\
-            \textit{Constructor Operation} merupakan sebuah operasi yang bertugas untuk membuat (\textit{create}) sebuah \textit{instance} dari \textit{class}. Biasanya, \textit{operation} jenis ini tidak secara eksplisit ditampilkan di dalam \textit{class diagram} dikarenakan hanya mengimplementasikan sebuah \textit{function} yang \textit{basic}. Contoh: sebuah \textit{class} bernama "Pasien" memiliki sebuah \textit{method} bernama \textbf{insert()}, yang dimana \textit{method} tersebut akan membuat sebuah \textit{instance} pasien baru ketika ada pasien yang masuk ke dalam sistem tersebut\autocite{systemanalysisdesign-class-diagram}.
+            \textit{Constructor Operation} merupakan sebuah operasi yang bertugas untuk membuat (\textit{create}) sebuah \textit{instance} dari \textit{class}. Biasanya, \textit{operation} jenis ini tidak secara eksplisit ditampilkan di dalam \textit{class diagram} dikarenakan hanya mengimplementasikan sebuah \textit{function} yang \textit{basic}\autocite{systemanalysisdesign-class-diagram}.
             \item \textit{Query Operation}\\
-            \textit{Query Operation} WIP
+            \textit{Query Operation} merupakan jenis \textit{operation} yang membuat informasi mengenai \textit{state} (status) dari suatu objek tersedia untuk objek lain tanpa mengubah objek tersebut ke dalam bentuk apapun\autocite{systemanalysisdesign-class-diagram}. 
             \item \textit{Update Operation}\\
-            WIP
+            \textit{Update Operation} merupakan sebuah jenis operasi yang bertugas untuk mengubah sebuah \textit{value} dari beberapa atau semua atribut objek. Hal ini juga dapat mengakibatkan perubahan dari \textit{state} (status) objek-objek tersebut\autocite{systemanalysisdesign-class-diagram}. 
             \item \textit{Destructor Operation}\\
-            WIP
+            \textit{Destructor Operation} adalah sebuah jenis \textit{operation} yang bertugas untuk menghapus atau menghilangkan objek dari sistem tersebut\autocite{systemanalysisdesign-class-diagram}.
         \end{itemize}
+    \end{itemize}
+    Di dalam \textit{class diagram}, sebuah \textit{class} dapat terlibat dalam satu atau lebih hubungan/\textit{relationship} dengan \textit{class} lainnya. Secara garis besar, hubungan-hubungan antarkelas di dalam \textit{class diagram} terbagi sebagai berikut:
+    \begin{itemize}
+        \item \textit{Association}\\
+        \textit{Association} dapat diartikan sebagai hubungan struktural antara dua \textit{class} yang sederajat\autocite{what-is-class-diagram}. Ini menandakan adanya asosiasi/hubungan antara satu \textit{class} dengan satu \textit{class} lain. Salah satu contoh hubungan ini adalah seorang pasien yang menjadwalkan sebuah \textit{appointment}. Hubungan antara \textit{class} 'Pasien' dengan \textit{class} 'Appointment' adalah sebuah \textit{association}\autocite{systemanalysisdesign-class-diagram-relations}.\\
+        \textbf{Representasi Grafis}:\\
+        \includegraphics[scale=0.5]{class diagram - association example.png}
+        \item \textit{Generalization (Inheritance)}\\
+        \textit{Generalization} merupakan sebuah hubungan yang menggambarkan sebuah \textit{class} yang mewarisi/(\textit{inherit attribute}) atau \textit{operation} dari \textit{class} yang lain\autocite{what-is-class-diagram}. Hubungan jenis ini merepresentasikan sebuah relasi berbentuk \textit{"is-a"} atau \textit{"a-kind-of"} antarkelas. Contoh hubungan ini adalah seperti halnya hubungan antara 'Pelanggan' dan 'Karyawan'. Kedua-duanya merupakan turunan dari \textit{class} 'Orang' atau '\textit{Person}'. \textit{Class} 'Orang' dapat dinamakan sebagai \textit{superclass} karena \textit{class} itulah yang mewarisi kedua \textit{class} lainnya, sedangkan 'Karyawan' dan 'Pelanggan' dapat disebut sebagai sebuah \textit{subclass}, karena kedua \textit{class} tersebut diwarisi oleh sebuah \textit{class} lain\autocite{systemanalysisdesign-class-diagram-relations}.\\
+        \textbf{Representasi Grafis}:\\
+        \includegraphics[scale=0.5]{class diagram generalization example.png}
+        \item \textit{Aggregation}\\
+        \textit{Aggregation} merupakan jenis \textit{association} yang spesial/khusus. Hubungan ini merepresentasikan hubungan \textit{"a-part-of"} atau \textit{"has-parts"}. Contoh nyatanya adalah 'mahasiswa merupakan bagian dari sebuah kelas', 'seorang karyawan merupakan bagian dari sebuah perusahaan' dan 'mesin adalah bagian dari sebuah mobil'. Sama seperti hubungan \textit{Generalization}, hubungan \textit{Aggregation} juga dapat dibentuk menjadi sebuah hirarki\autocite{systemanalysisdesign-class-diagram-relations}.\\
+        \textbf{Representasi Grafis}:\\
+        \includegraphics[scale=0.5]{class diagram - aggregation example.png}
+        \item \textit{Composition}\\
+        \textit{Composition} merupakan sebuah hubungan yang mirip dengan \textit{aggregation}. Namun yang membedakannya adalah apabila \textit{superclass}-nya dihancurkan, maka bagian-bagiannya atau dalam kata lain (\textit{subclass}) dari \textit{superclass} itu juga akan hancur. Contohnya adalah kepala, tangan dan kaki merupakan bagian tubuh dari seseorang, apabila orangnya tidak ada, maka kepala, tangan dan kaki orang tersebut juga tidak ada\autocite{what-is-class-diagram}.\\
+        \textbf{Representasi Grafis}:\\
+        \includegraphics[scale=0.5]{class diagram composition example.png}
+    \end{itemize}
+    \textit{Relationship} juga dapat memiliki \textit{multiplicity}. \textit{Multiplicity} inilah yang mendokumentasikan bagaimana sebuah \textit{instance} dari sebuah objek dapat diasosiasikan dengan \textit{instance} lainnya. \textit{Multiplicity} biasanya dituliskan sebagai angka dalam bentuk format "angka minimum.. angka maksimum"\autocite{systemanalysisdesign-class-diagram}. Berapa banyak objek dari setiap \textit{class} yang mengambil bagian dalam \textit{relationship} dan \textit{multiplicity} dapat dinyatakan sebagai berikut:
+    \begin{itemize}
+        \item \textit{Exactly One} (1)\\
+        \includegraphics[scale=0.5]{multiplicity exactly one.png}\\
+        Departemen hanya memiliki satu dan hanya satu bos saja.
+        \item \textit{Zero or One} (0.. 1)\\
+        \includegraphics[scale=0.5]{multiplicity zero to one example.png}\\
+        Seorang karyawan dapat menikahi dengan nol atau satu pasangan.
+        \item \textit{Many} atau \textit{Zero or More} (* atau 0.. *)\\
+        \includegraphics[scale=0.5]{multiplicity many example.png}\\
+        Orang tua dapat memiliki nol hingga banyak anak.
+        \item \textit{One or More} (1.. *)\\
+        \includegraphics[scale=0.5]{multiplicity one or more example.png}\\
+        Seorang guru dapat memiliki satu atau lebih murid.
+        \item \textit{Exact Number} atau \textit{Specified Range} (8 atau 2.. 5)\\
+        \includegraphics[scale=0.5]{multiplicity specified range example.png}\\
+        Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).
+        \item \textit{Multiple, Disjoint Ranges} (1.. 4, 7)\\
+        \includegraphics[scale=0.5]{multiplicity multiple disjoint ranges example.png}\\
+        Seorang murid dapat mengikuti satu atau dua hingga lima kegiatan ekstrakulikuler.
     \end{itemize}
 
     \item \textit{Activity Diagram}\\
-    WIP
+    \textit{Acticity Diagram} merupakan salah satu jenis diagram UML yang termasuk ke dalam kelompok \textit{Behavioral Diagrams}. Diagram ini digunakan untuk memodelkan perilaku (\textit{behavior}) di dalam suatu proses bisnis yang tidak tergantung oleh objek. \textit{Activity Diagram} dapat digunakan untuk memodelkan semua jenis proses, dimulai dari alur kerja pada sebuah proses \textit{high-level business} yang melibatkan banyak kasus (\textit{use case}) yang berbeda-beda hingga ke detail dari tiap individual kasus yang ada dan detail yang lebih spesifik pada masing-masing metode yang digunakan\autocite{systemanalysisdesign-activity-diagram}. Berikut adalah notasi-notasi yang digunakan di dalam \textit{activity diagram}:
+    \begin{itemize}
+        \item \textit{Activity}
+        \begin{itemize}
+            \item Digunakan sebagai representasi dari serangkian \textit{action}
+            \item Dilabelkan sesuai dengan namanya
+            \item Digambarkan sebagai sebuah persegi panjang bersudut tumpul\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.5]{Activity_transparent.png}
+        \end{itemize}
+        \item \textit{Action}
+        \begin{itemize}
+            \item Merupakan sebuah \textit{behavior} yang sederhana dan tidak dapat diuraikan lagi
+            \item Menggambarkan sebuah \textit{task}/tugas yang harus dilakukan\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.35]{Action_transparent.png}
+        \end{itemize}
+        \item \textit{Object Node}
+        \begin{itemize}
+            \item Digunakan untuk merepresentasikan objek yang terhubung ke sekumpulan aliran objek\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.45]{ObjectNode_transparent.png}
+        \end{itemize}
+        \item \textit{Control Flow}
+        \begin{itemize}
+            \item Menunjukkan urutan eksekusi di dalam \textit{activity diagram}
+            \item Biasanya digambarkan sebagai arah panah\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.5]{Control Flow_transparent.png}
+        \end{itemize}
+        \item \textit{Object Flow}
+        \begin{itemize}
+            \item Menunjukkan aliran objek dari satu \textit{activity} (atau \textit{action}) ke \textit{activity} (atau \textit{action}) lainnya
+            \item Biasanya digambarkan sebagai arah panah dengan garis yang putus-putus\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.5]{Object Flow_transparent.png}
+        \end{itemize}
+        \item \textit{Initial Node}
+        \begin{itemize}
+            \item Menggambarkan awal dari serangkain \textit{activity} atau \textit{action} pada \textit{activity diagram}\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.45]{Initial Node_transparent.png}
+        \end{itemize}
+        \item \textit{Final Activity Node}
+        \begin{itemize}
+            \item Digunakan sebagai tanda untuk memberhentikan semua aliran kontrol dan aliran objek dalam suatu \textit{activity} atau \textit{action}\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.45]{Final Activity Node_transparent.png}
+        \end{itemize}
+        \item \textit{Final Flow Node}
+        \begin{itemize}
+            \item Digunakan untuk menghentikan aliran kontrol atau aliran objek tertentu\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.45]{Final flow node_transparent.png}
+        \end{itemize}
+        \item \textit{Decision Node}
+        \begin{itemize}
+            \item Digunakan untuk menggambarkan sebuah \textit{test condition} untuk memastikan aliran kontrol atau objek tersebut hanya berjalan pada satu jalur saja
+            \item Biasanya diberikan label sesuai dengan kriteria dari keputusan yang dibutuhkan untuk lanjut melewati jalur tertentu\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.5]{Decision Node_transparent.png}
+        \end{itemize}
+        \item \textit{Merge Node}
+        \begin{itemize}
+            \item Digunakan untuk menyatukan kembali jalur \textit{decision} berbeda yang sebelumnya sudah dibuat menggunakan \textit{Decision Node}\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.5]{Merge Node_transparent.png}
+        \end{itemize}
+        \item \textit{Fork Node}
+        \begin{itemize}
+            \item Digunakan untuk membagi \textit{behavior} menjadi sebuah serangkaian \textit{activity} atau \textit{action} yang berjalan secara bersamaan/paralel\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.5]{Fork Node_transparent.png}
+        \end{itemize}
+        \item \textit{Join Node}
+        \begin{itemize}
+            \item Digunakan untuk menggabungkan kembali serangkaian \textit{activity} atau \textit{action} yang paralel tersebut\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.5]{Join Node_transparent.png}
+        \end{itemize}
+        \item \textit{Swimlane}
+        \begin{itemize}
+            \item Digunakan untuk memecah \textit{activity diagram} menjadi beberapa baris dan kolom dengan tujuan untuk menentukan masing-masing \textit{activity} atau \textit{action} ke individu atau objek yang bertanggung jawab untuk menjalankan \textit{activity} atau \textit{action}
+            \item Biasanya diberikan label yang berisikan nama atau dari individu atau objek yang bertanggung jawab\autocite{systemanalysisdesign-activity-diagram}\\
+                  Contoh gambar:\\
+                  \includegraphics[scale=0.5]{Swimlane_transparent.png}
+        \end{itemize}
+    \end{itemize}
     \item \textit{Use-Case Diagram}\\
-    WIP
+    \textit{Use-Case Diagram} merupakan salah satu jenis diagram UML yang digunakan untuk menentukan konteks dan \textit{requirements} dari sebuah sistem serta memvalidasi bentuk arsitektur dari sebuah sistem yang digambarkan dengan mengimplementasikan satu atau beberapa \textit{test case}. 
     \item \textit{Sequence Diagram}\\
     WIP
 \end{itemize}
