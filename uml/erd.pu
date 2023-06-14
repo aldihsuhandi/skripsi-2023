@@ -186,6 +186,7 @@ entity otp {
     * otp : varchar 
     * otp_dt : date
     * otp_type : varchar
+    * email : varchar
     * is_active : boolean
     * gmt_create : date
     * gmt_modified : date
