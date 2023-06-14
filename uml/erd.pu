@@ -1,0 +1,298 @@
+@startuml erd
+
+left to right direction
+skinparam linetype ortho
+
+entity item_categories {
+    * category_id : varchar <<generated>>
+    --
+    * category_name : varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity hobbies {
+    * hobby_id : varchar <<generated>>
+    --
+    * hobby_name : varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity interest_level {
+    * interest_level_id : varchar <<generated>>
+    --
+    * level_name varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity user_roles {
+    * role_id : varchar <<generated>>
+    --
+    * role_name : varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity users {
+    * user_id : varchar <<generated>>
+    --
+    * role_id : varchar <<PK>>
+    * email : varchar <<UNIQUE>>
+    * phone_number : varchar <<UNIQUE>>
+    * username : varchar <<UNIQUE>>
+    * gender : varchar
+    * date_of_birth : date
+      location : varchar
+      profile_picture : varchar
+    * review : double
+    * is_active : boolean
+    * is_deleted : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity items {
+    * item_id : varchar <<generated>>
+    --
+    * item_name : varchar
+    * item_price : number
+    * item_images : varchar
+    * item_descriptio : longtext
+    * item_quantity : number
+    * merchant_id : varchar <<FK>>
+    * category_id : varchar <<FK>>
+    * hobbby_id : varchar <<FK>>
+    * merchant_level_id : varchar <<FK>>
+      user_level_id : varchar <<FK>>
+    * review : double
+    * is_deleted : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity history_items {
+    * history_items : varchar <<generated>>
+    --
+    * item_id : varchar <<FK>>
+    * item_name : varchar
+    * item_price : number
+    * item_images : varchar
+    * item_descriptio : longtext
+    * item_quantity : number
+    * merchant_id : varchar <<FK>>
+    * category_id : varchar <<FK>>
+    * hobbby_id : varchar <<FK>>
+    * merchant_level_id : varchar <<FK>>
+      user_level_id : varchar <<FK>>
+    * review : double
+    * is_deleted : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity sessions {
+    * session_id : varchar <<generated>>
+    --
+    * user_id : varchar <<FK>>
+    * session_dt : date
+    * is_active : boolean
+    * is_remembered : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity cart {
+    * item_id : varchar <<FK>>
+    * user_id : varchar <<FK>>
+    --
+    * quantity : number
+    * selected : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity transactions {
+    * trx_id : varchar <<generated>>
+    --
+    * user_id : varchar <<FK>>
+    * price : number
+      payment_type : varchar
+      midtrans_id : varchar
+      midtrans_link : varchar
+    * status : varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity transaction_detail{
+    * trx_detail_id : varchar <<generated>>
+    --
+    * trx_id : varchar <<FK>>
+    * history_item_id : varchar <<FK>>
+    * quantity : int 
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity wishlist {
+    * item_id : varchar <<FK>>
+    * user_id : varchar <<FK>>
+    --
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity reviews {
+    * review_id : varchar <<generated>>
+    --
+    * star : int
+    * item_id : varchar <<FK>>
+    * user_id : varchar <<FK>>
+    * merchant_id : varchar <<FK>>
+      interest_level : varchar <<FK>>
+      description : longtext
+      review_images : varchar
+    * need_review : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity comment {
+    * comment_id : varchar <<generated>>
+    --
+    * user_id : varchar <<PK>>
+      reply_comment_id : varchar <<PK>>
+      reply_item_id : varchar <<PK>>
+    * content : longtext
+    * is_deleted : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity clients {
+    * client_id : varchar <<generated>>
+    --
+    * client_name : varchar
+    * client_secret : varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity otp {
+    * otp_id : varchar <<generated>>
+    --
+    * otp : varchar 
+    * otp_dt : date
+    * otp_type : varchar
+    * is_active : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity contents {
+    * content_name : varchar
+    --
+    * content : longtext
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity dictionaries {
+    * dictionary_name : varchar
+    --
+    * dictionary_type : varchar
+    * display_name : varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity activities {
+    * activity_id : varchar <<generated>>
+    --
+    * user_id : varchar <<FK>>
+    * activity_value : int
+    * activity : varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity knowledge {
+    * knowledge_key : varchar
+    --
+    * knowledge_type : varchar
+    * knowledge : varchar
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity images {
+    * image_id : varchar
+    --
+    * image_name : varchar
+    * image_ext : varchar
+    * image : longblob
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity reset_password {
+    * uuid : varchar <<generated>>
+    --
+    * email : varchar
+    * expired_time : date
+    * is_active : boolean
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+entity email_encrypt{
+    * uuid : varchar <<generated>>
+    --
+    * email : varchar 
+    * gmt_create : date
+    * gmt_modified : date
+}
+
+users }o-|| user_roles
+
+items }o--|| hobbies
+items }o--|| interest_level
+item_categories ||--o{ items
+users ||--o{ items
+
+items ||-o{ history_items
+
+item_categories ||--o{ history_items
+hobbies ||--o{ history_items
+interest_level ||--o{ history_items
+users ||--o{ history_items
+
+users ||-o{ sessions
+
+items ||--o{ cart
+users ||--o{ cart
+' cart }o-|| users
+
+' users ||--o{ transactions
+transactions }o--|| users
+transaction_detail }|--|| transactions
+' transactions ||-|{ transaction_detail
+
+transaction_detail ||--|| history_items
+
+items ||-o{ wishlist
+users ||-o{ wishlist
+
+reviews }o-|| users
+reviews }o-|| items
+interest_level ||--o{ reviews
+
+comment }o--|| comment
+comment }o-|| users
+comment }o-|| items
+
+activities }o--|| users
+
+@enduml
