@@ -1,0 +1,29 @@
+@startuml login
+
+|user|
+start
+:press login button;
+|shumishumi|
+:redirect to login page;
+|user|
+repeat :fill out login form;
+:submit login form;
+|shumishumi|
+:validate login form;
+:query user info;
+|shumishumi|
+if (user is active?) then (no)
+    :show warning message user is not active;
+    :redirect to activate page;
+    |user|
+    stop
+endif
+|shumishumi|
+:create session;
+repeat while(login process success?) is (no)
+-> yes;
+:redirect to homepage;
+|user|
+stop
+
+@enduml

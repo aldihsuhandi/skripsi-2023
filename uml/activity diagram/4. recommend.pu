@@ -1,0 +1,19 @@
+@startuml recommend
+
+|user|
+start
+:open home page;
+|shumishumi|
+if (if not login) then (no)
+:dont recommend product;
+|user|
+stop
+endif
+
+|shumishumi|
+:calculate product recommendation;
+:show recommend product;
+|user|
+stop
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml query item list
+|user|
+start
+:open homepage;
+|shumishumi|
+:query all item with pagination;
+:show item;
+|user|
+stop
+@enduml

@@ -1,0 +1,18 @@
+@startuml activate user
+
+|user|
+start
+:get otp from email;
+repeat 
+:fillout otp form;
+|shumishumi|
+:process otp;
+backward:show error message;
+repeat while(is otp process success?) is (no)
+-> yes;
+:activate user;
+:redirect to login page;
+|user|
+stop
+
+@enduml
