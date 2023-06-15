@@ -52,6 +52,7 @@
 \sectionfont{\centering}
 \addbibresource{citation/citation.bib}
 \addbibresource{citation/aldih.bib}
+\addbibresource{citation/chandra.bib}
 \graphicspath{{./images/}}
 \geometry{a4paper, top=4.0cm, bottom=3.0cm,
           left=4.0cm, includehead, includefoot}
@@ -871,9 +872,14 @@ Selanjutnya dengan “Apakah anda sering menggunakan \textit{e-commerce} untuk b
 
 Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ragu dan harus mencari tahu terlebih dahulu atas barang yang anda lihat apakah untuk pemula/menengah/ahli?” ini adalah untuk mengumpulkan data atas fitur utama yang dirancang yaitu fitur filtrasi level peminatan(\textit{interest level}) dari suatu hobi Dengan respons yang berjawab iya diatas 70\% maka fitur utama dari proyek ini layak untuk diimplementasikan.
 
-\subbab{3.2 Metode Pengembangan Sistem}
+\subbab{3.2 Analisis}
+\subsubbab{3.2.1 Analisis sistem yang sudah berjalan atau perbandingan aplikasi sejenis}
+\subsubbab{}
 
-\subsubbab{3.2.1 \textit{Software Design Document}}
+
+\subbab{3.3 Metode Pengembangan Sistem}
+
+\subsubbab{3.3.1 \textit{Software Design Document}}
 \begin{enumerate}[label=\alph*. ]
     \item Deskripsi \textit{software}
 
@@ -903,9 +909,6 @@ Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ra
     \item Kebutuhan teknologi
 
           \begin{enumerate}
-              \item \textit{Software Development Life-Cycle - Agile}\\
-                    \textbf{SDLC} yang dipakai dalam proyek ini adalah \textit{Agile}, dikarenakan \textit{agile} dapat membantu proyek ini dikerjakan dalam \textit{size} yang lebih kecil dan bisa diwujudkan dengan \textit{timeframe} yang masuk akal dan bersifat \textit{continuous} jadi lebih fleksible saat menghadapi perubahan \textit{requirement}\autocite{atlassian-agile}.
-
               \item \textit{Back end}
 
                     \textit{Back end} atau bisa disebut juga \textit{developer's end} adalah sebuah layer yang memproses semuanya dibelakang layar dan tempat terjadinya sesuatu yang tidak bisa dilihat oleh \textit{user}\autocite{letsgodojo-frontend-backend}. Analogy yang bisa digunakan adalah saat disebuah restoran ada pelanggan yang memesan sesuatu yang spesifik ke pelayan, ini adalah bagian \textit{front end} dari restoran tersebut, setelah itu pelayan memberikan pesanan tersebut ke koki, yang akan mengambil bahan masak, momotong semua bahan - bahan tersebut, dan memasaknya sesuai resep yang sudah dibuat, koki ini yang merepresentasikan bagian \textit{backend} dari restoran tersebut\autocite{codecademy-backend}.
@@ -923,11 +926,154 @@ Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ra
 
                     \textit{Front End} adalah sebuah bagian dari halaman web yang dimana merupakan tempat interaksi pengguna, \textit{Front End} sebagai tempat interaksi pengguna maka merupakan bagian dari sebuah halaman yang sangat sering dilihat oleh pengguna kebalikan dari \textit{Back End}\autocite{codecademy-frontend}.
 
-                    \textit{Javascript} adalah bahasa pemrograman terkompilasi yang memiliki karakteristik ringan untuk dijalankan, \textit{interpreted} dan juga dengan fitur \textit{first-class functions} dimana \textit{function} dianggap seperti variabel biasa lainnya seperti \textit{string, number,} dan lain-lain. Yang dimana penggunaan \textit{Javascript} paling terkenal dan banyak digunakkan adalah dalam bahasa untuk \textit{Web} atau situs internet\autocite{javascript-mdn}.
+                    \begin{itemize}
+                        \item \textit{JavaScript}
+                        
+                        \textit{Programming Language} yang digunakkan adalah bahasa yang sesuai dengan framework untuk FrontEnd yang dipilih, dimana yang digunakkan dalam proyek ini adalah \textit{NextJs} yaitu \textit{framework} yang berbasis dari \textit{React Library} sehingga bahasa pemogramman yang digunakkan adalah \textit{JavaScript}. 
 
-                    \textit{Typescript} adalah bahasa pemrograman yang dibuat untuk memecahkan beberapa permasalahan yang ada di dalam bahasa \textit{Javascript}, salah satu contohnya adalah dengan \textit{Typescript} penggunaan \textit{Type-annotation} dapat digunakkan untuk memberi tipe dari variabel sehingga permasalahan yang mungkin dapat muncul karena karakteristik \textit{Javascript} yang \textit{loosely typed} dapat diatasi\autocite{fenton2014pro}.
+                        Dimana \textit{JavaScript} sendiri adalah bahasa pemrograman yang banyak digunakkan dan dapat berkerja di kebanyakan \textit{web browser} dan juga \textit{browser} pada perangkat-perangkat lain seperti tablet, ponsel. \textit{JavaScript} sendiri memiliki karakteristik atau ciri-ciri sebagai sebuah bahasa pemrograman yang \textit{high-level}, \textit{dynamic}, dan \textit{interpreted} yang dalam implementasi dan penggunaanya cocok untuk gaya pemrograman \textit{object-oriented} dan juga \textit{functional programming} . Selain itu karakteristik yang signifikan adalah bahwa \textit{variable} dari JavaScript ini bersifat tidak memiliki tipe (\textit{untyped}). Dengan penggunaan \textit{NodeJs} kode \textit{JavaScript} sekarang juga dapat digunakkan diluar dari \textit{web browsers} \autocite{Js_book_Flanagan_2020}.
 
-                    \textit{React} adalah sebuah Library untuk bahasa pemrograman \textit{Javascript} (\textit{Typescript} juga bisa) untuk membuat \textit{UI}. Fitur dari \textit{React} adalah \textit{React} menganut \textit{Declarative Programming} dan juga \textit{Functional Programming},\textit{Component Based}, \textit{Hooks} dan \textit{Lifecycle Hooks}\autocite{react-general}. \textit{Hooks} dan \textit{Lifecycle Hooks} adalah sebuah fitur yang diimplementasikan pada \textit{React v16.8} yang memberi alternatif dari menggunakkan \textit{class} untuk komponen\autocite{react-hooks, react-hooks-lifecycle}.
+                        \item \textit{Typescript}
+
+                        Teknologi yang digunakkan juga pada proyek ini sebagai pendukung dari \textit{JavaScript} adalah \textit{Typescript}. \textit{Typescript} sendiri adalah bahasa pemrograman yang dibangun diatas \textit{JavaScript} dimana fitur-fitur dan fungsionalitas \textit{JavaScript} masih ada tetapi ditambah fitur baru dialam \textit{Typescript} sehingga bisa dibilang \textit{Typescript} merupakan \textit{superset} dari \textit{JavaScript}.
+    
+                        Alasan dari penggunaan \textit{Typescript} adalah untuk menyelesaikan masalah dimana salah satu sifat atau karakteristik jadi \textit{JavaScript} adalah dimana \textit{variable} yang bersifat \textit{untyped}. \textit{Typescript} menyelesaikan masalah ini dengan mengimplementasikan \textit{strongly-typed} pada \textit{JavaScript} dengan menggunakan fitur seperti \textit{Interface}, \textit{Type}, \textit{Type Annotation} dan lain-lain. Dengan menggunakan \textit{Typescript} dan ekstensi yang benar maka saat melakukan \textit{development} dapat fitur type \textit{inference} yang dapat membantu mengecek \textit{bug} yang mungkin terjadi disaat \textit{run-time} \autocite{TypeScript_official}.
+
+                        \item \textit{React}
+                        
+                        \textit{React} adalah sebuah Library untuk bahasa pemrograman \textit{Javascript} (\textit{Typescript} juga bisa) untuk membuat UI. Fitur dari \textit{React} adalah \textit{React} menganut \textit{Declarative Programming} dan juga \textit{Functional Programming},\textit{Component Based}, \textit{Hooks} dan \textit{Lifecycle Hooks}\autocite{react-general}. \textit{Hooks} dan \textit{Lifecycle Hooks} adalah sebuah fitur yang diimplementasikan pada \textit{React v16.8} yang memberi alternatif dari menggunakkan \textit{class} untuk komponen\autocite{react-hooks, react-hooks-lifecycle}.
+                        
+                        \item \textit{Virtual DOM}
+                        
+                        \textit{Virtual DOM} (\textbf{VDOM}) disebut juga sebagai \textit{React} \textit{DOM} adalah konsep yang dibuat untuk memudahkan \textit{developer} dengan menghilangkan kebutuhan untuk manipulasi \textit{DOM} secara manual. \textit{VDOM} adalah sebuah representasi UI dari browser yang disinkronkan dengan \textit{DOM} yang asli, \textit{developer} ketika melakukan perubahan UI dalam \textit{React} pertama yang dilakukan adalah merubah \textit{VDOM} lalu dilakukan perubahan di \textit{DOM} yang asli \autocite{React_VDOM_DOM}. Dengan \textit{Virtual DOM} \textit{React} dapat melakukan perubahan dengan efisien dengan melakukan komparasi element yang baru dengan yang sebelumnya dan hanya melakukan \textit{update} yang diperlukan \autocite{React_rendering_needed}.
+
+                        \item Arkitektur berbasis komponen
+                        
+                        Dalam \textit{React} mendukung membuat dan juga membangun komponen/\textit{component}, dimana komponen tersebut bisa dibilang sebagai \textit{function} yang terpisah yang dapat menerima data, melakukan manipulasi data dan menggunakannya untuk membuat UI dan sama seperti \textit{Function} komponen ini dapat digunakan berulang kali dan dengan data-data yang berbeda sesuai dengan kebutuhan dari yang memanggil komponen tersebut \autocite{React_official}.
+
+                        \item Bersifat Deklaratif dalam Membangun UI
+                        
+                        Deklaratif dimana di \textit{React} untuk melakukan perubahan pada \textit{UI} yang kita hanya perlu lakukan adalah memberi bagaimana keadaan dan tampilan \textit{UI} yang baru dan maka \textit{React} akan melakukan \textit{update} untuk menampilkan yang baru, pengguna tidak perlu secara \textit{Imperative} menangani transisi dari keadaan \textit{UI} yang lama ke yang baru \autocite{React_official}. 
+
+                        \item \textit{State} Dan \textit{Props} Sebuah Komponen
+                        
+                        \textit{State} dan \textit{Props} adalah \textit{JavaScript} \textit{Objects} yang menyimpan dan memiliki informasi yang akan digunakkan oleh komponen untuk diproses dan merubah sebuah hasil \textit{render} dari sebuah komponen \autocite{React_state_props}.
+
+                        State adalah variabel yang dikelola oleh komponen yang membuat dan menggunakannya sendiri, dan \textit{Props} adalah variabel adalah data/informasi yang diberikan kepada komponen dari luar mirip seperti parameter yang diberikan sebuah \textit{Function} \autocite{React_state_props}.
+
+                        \item Fitur Functional Komponen
+                        
+                        Fitur untuk mendukung membangun komponen dengan \textit{Function} di mulai dengan \textit{React} versi 16.8 yang memperkenalkan fitur baru yaitu \textit{Hooks} dimana dalam \textit{React} ditambahkan cara baru untuk membuat komponen yang dapat menggunakkan fitur \textit{State} dan \textit{Props} tanpa harus membuatnya menggunakkan class \autocite{React_functional_components_hooks}. 
+
+                        Banyak alasan terhadap cara membuat komponen baru dengan \textit{Function} sehingga membuat Functional Component, yaitu bagaimana komponen dengan \textit{class} memiliki masalah dimana \textit{logic} susah digunakan ulang diantara komponen, menggunakan komponen fungsional untuk mencapai implementasi yang kompleks tergolong lebih simpel dibanding implementasi menggunakan class dan juga dengan menggunakan komponen fungsional, dalam menulis kode untuk membangun di \textit{React} bisa terlepas dari kata kunci \textit{this} milik \textit{JavaScript} yang tertulis di blog \textit{update} \textit{React} 16.8 memiliki cara kerja yang berbeda dengan kata kunci this di bahasa pemrograman yang berbeda \autocite{React_functional_components_hooks}.
+
+                        \textit{React} \textit{Hooks} sendiri adalah fitur yang disediakan supaya dapat menggunakan fitur lain dari \textit{React} dalam komponen. \textit{Hooks} dapat memiliki macam dan dapat di gabungkan berbagai tipe untuk membuat Hook baru \autocite{React_general_hooks} \textit{Hooks} yang dipakai dalam proyek ini adalah Hook \textit{useEffect} dan useState. 
+
+                        \item \textit{useEffect}
+                        
+                        Hook \textit{useEffect} digunakkan untuk melakukan sinkronisasi dengan sistem eksternal, \textit{useEffect} ini berjalan setelah dalam 2 situasi, pertama ketika sebuah komponen selesai \textit{render} dan kedua setiap kali dibutuhkan dijalankan lagi yang dimana dapat diatur di dependency dari sebuah \textit{useEffect}. Contoh yang diberikan oleh dokumentasi di web resmi \textit{React} adalah membuat koneksi server, melakukan logging ketika sebuah komponen muncul di layar. Dan dalam proyek ini contoh penggunaan Hook \textit{useEffect} adalah untuk melakukan pengambilan data dari database setelah sebuah page atau komponen sudah selesai ditampilkan atau di \textit{render} oleh \textit{React} \autocite{React_useEffect}.
+
+                        \begin{figure}[h]
+                            \centering
+                            \begin{lstlisting}[language=HTML]
+useEffect(() => {
+    console.log("mounted");
+} , []);
+                            \end{lstlisting}
+                            \caption{Contoh penggunaan \textit{useEffect}}
+                        \end{figure}
+
+                        Dari kutipan kode diatas adalah penggunaan dari \textit{useEffect}, dimana akan dilakukan console log ketika dan hanya ketika komponen yang memanggil \textit{useEffect} tersebut selelai melakukan render.
+
+                        \begin{figure}[h]
+                            \centering
+                            \begin{lstlisting}[language=HTML]
+useEffect(() => {
+    console.log("mounted");
+} , [count]);
+                            \end{lstlisting}
+                            \caption{Contoh penggunaan \textit{useEffect} dengan \textit{dependency}}
+                        \end{figure}
+
+                        Dan dari kutipan kode diatas adalah penggunaan \textit{useEffect} yang mirip dengan yang sebelumnya tetapi dengan mengunakkan fitur \textit{dependencies} yang ada, dimana \textit{useEffect} akan berjalan ketika komponen yang memanggil selesai melakukan \textit{render} dan juga berjalan lagi ketika terjadi \textit{re-render} dan nilai dari variabel “count” terjadi perubahan di \textit{re-render} yang terjadi.
+
+                        \item \textit{useState}
+
+                        Hook \textit{useState} tergolong dalam \textit{State} \textit{Hooks} yang dideskripsikan sebagai fitur yang memberi fungsionalitas kepada komponen sehingga dapat mengingat informasi seperti input user \autocite{Banks_Porcello_2020}. Hook \textit{useState} memiliki dua fungsionalitas yang penting, yaitu mengingat data diantara \textit{render} dan juga dapat melakukan perubahan pada data tersebut. Dalam \textit{React} ketika ada perubahan maka komponen yang bersangkutan di \textit{VDOM} akan diubah dan perubahan itu direfleksikan di \textit{DOM} yang sesungguhnya dengan melakukan rerender, dengan menggunakkan \textit{useState} maka data sebelum terjadinya \textit{render} lagi akan tersimpan atau “diingat”, dan dengan \textit{useState} data tersebut dapat diubah sesuai dengan kebutuhan sehingga melakukan perubahan \textit{VDOM} dan DOM, rerender dilaksanakan \autocite{React_useState}.
+
+                        Cara deklarasi Hook \textit{useState} adalah sebagai berikut:
+
+                        \begin{figure}[h]
+                            \centering
+                            \begin{lstlisting}[language=HTML]
+const [name, setName] = useState("initialValues");
+                            \end{lstlisting}
+                            \caption{Contoh deklarasi penggunaan \textit{useState}}
+                        \end{figure}
+
+                        \textit{Hook} \textit{useState} dipanggil seperti \textit{Function} yang menerima parameter sebuah nilai awalan (di kutipan kode bernilai “initialValues”) dan mengembalikan/\textit{return} array dengan 2 value di elemen pertama \textit{array} adalah value untuk mengakses data (di kutipan kode bernama “name”) dan elemen kedua adalah sebuah \textit{Function} cara melakukan perubahan dari value (di kutipan kode bernama “setName”). 
+
+                        Data yang disimpan oleh “name” pada awalnya akan beruba “initialValues” sesuai dengan nilai yang diberikan pada \textit{useState} dan akan berubah ketika “setName” dipanggil dan diberikan nilai baru, dimana “name” akan mengikuti nilai yang baru \autocite{React_useState}.
+
+                        \item \textit{Node.js} dan \textit{NPM} 
+                        
+                        \textit{Node.js} adalah sebuah \textit{JavaScript} runtime environment yang memungkinkan menjalankan diluar browser web dan biasa digunakkan untuk membangun sebuah BackEnd menggunakkan \textit{JavaScript}. Dikarenakan BackEnd dalam proyek ini menggunakkan teknologi yang berbeda, \textit{Node.js} disini digunakan oleh \textit{NextJs} \autocite{Nextjs_use_webpack}.
+
+	                    Selain dari \textit{Node.js} untuk \textit{NextJs}, \textit{Node.js} digunakkan untuk mengutilisasikan Node Package Manager \textit{(NPM)}. \textit{NPM} adalah sebuah sebuah \textit{Command-Line Tool} yang diinstal bersamaan dengan \textit{Node.js} dan membawa fungsionalitas untuk melakukan instalasi kode yang sudah dipublish oleh \textit{developer} lain yang dapat membantu dalam membangun sebuah aplikasi tanpa harus membuat ulang seluruh hal yang dibutuhkan \autocite{Banks_Porcello_2020_npm}.
+
+                        \item \textit{NextJs}
+                        
+                        \textit{React} hanyalah sebuah \textit{Library} yang dapat digunakkan untuk membantu membuat sebuah aplikasi web dan masih banyak hal yang tidak di tangani atau diselesaikan oleh \textit{React}, seperti \textit{bundling} kode. Oleh karena itu dalam menggunakkan \textit{React} banyak solusi yang berbagai macam untuk banyak hal dan juga karena itu banyak sumber daya pihak ketiga yang dapat dicari dan digunakkan \autocite{Nextjs_general}.
+
+	                    Aspek dari \textit{React} diatas menjadi hal yang bagus bagi \textit{developer} yang ingin mengendalikan banyak hal dalam aplikasinya, tetapi oleh karena aspek tersebut upaya yang diperlukan untuk membuat aplikasi \textit{React} sangatlah besar untuk konfigurasi banyak hal. Oleh karena itu dalam proyek ini melakukan adopsi \textit{Framework} yang berbasis \textit{React} yaitu Next.js yang dapat mengatasi upaya besar yang dibutuhkan dalam konfigurasi dan memulai sebuah aplikasi dan juga memiliki fitur-fitur optimisasi yang sudah built-in disediakan dan aktif ketika menggunakkan \textit{NextJs} \autocite{Nextjs_general}.
+
+	                    Salah satu konfigurasi yang ditangani oleh \textit{NextJs} dalam \textit{code transformation}, yaitu \textit{compilation}, \textit{minification}, \textit{bundling} dan \textit{code splitting}, yang sudah ditangani oleh \textit{compiler} yang dibuat oleh \textit{NextJs} untuk menangani hal tersebut \autocite{Nextjs_compiler}.
+
+                        \item \textit{code transformation} \textit{Compiling}
+                        
+                        \textit{Nextjs} sudah dikonfigurasikan untuk menangani proses translasi kode menjadi versi kode yang dapat dibaca oleh browser \autocite{Nextjs_compiling}. Dari kecepatan kompilasi sendiri, \textit{compiler} yang default oleh \textit{NextJs} itu 17 kali lebih cepat dari \textit{Babel} (\textit{compiler} lain yang biasa digunakkan di \textit{Create-React-App}), dan sudah menjadi \textit{compiler} bawaan/\textit{default} ketika menggunakkan \textit{NextJs} diatas versi 12 \autocite{Nextjs_depth_compiler}.
+
+                        \item \textit{code transformation} \textit{Minifying}
+                        
+                        \textit{Minifying} adalah proses dimana terjadi proses penghapusan \textit{formatting}, \textit{comments} dari kode, sehingga hasil akhir ukuran file menjadi lebih kecil \autocite{Nextjs_minifiying}.
+
+                        \item \textit{code transformation} \textit{Bundling} 
+                        
+                        \textit{Bundling} adalah proses dimana dilakukan penggabungan \textit{Merging} file-file dan yang ada menjadi bundles yang teroptimisasi untuk digunakkan oleh \textit{browser} \autocite{Nextjs_bundling}.
+
+                        \item \textit{code transformation} \textit{Code splitting} 
+                        
+                        Dalam sebuah aplikasi yang memiliki beberapa halaman, halaman-halaman tersebut memiliki \textit{entry point} yang berbeda, berarti tiap halaman membutuhkan kode-kode yang berbeda yang dibutuhkan untuk menjalankan halaman tersebut. \textit{code splitting} adalah proses dimana \textit{bundle} yang sudah dibuat di pisah-pisah tergantung dengan kebutuhan tiap \textit{entry point} dari halaman-halaman \autocite{Nextjs_code_splitting}.
+
+                        Dengan tiap halaman dan \textit{entry point} memiliki bagian dari kode yang sudah di \textit{bundling}, maka tiap halaman akan hanya memuat dan memproses kode yang diperlukan halaman yang bersangkutan sehingga terjadi peningkatan waktu untuk membuka halaman \autocite{Nextjs_code_splitting}. 
+
+                        \item \textit{Vercel}
+                        
+                        Dalam \textit{Deploying} aplikasi web untuk \textit{FrontEnd} digunakkan \textit{Vercel platform}, yang dimana pencipta \textit{Vercel} adalah sama dengan \textit{NextJs} dan oleh karena itu \textit{Vercel} merupakan \textit{platform/tool} yang didesain secara utama untuk melakukan \textit{deployment} aplikasi \textit{NextJs}. Fitur utama dari \textit{Vercel} ini adalah kemudahan dalam melakukan \textit{deployment} aplikasi web yang sangat simpel dan juga sangat cepat untuk langsung dapat diakses \autocite{Nextjs_vercel}.
+
+                        \item \textit{Library NPM}
+                        
+                        Dalam membangun aplikasi proyek ini, ada beberapa \textit{Library} yang kami instalasi dan gunakkan untuk mempermudah \textit{development} dan untuk menghindari melakukan penulisan kode ulang untuk masalah yang bukan menjadi topik.
+
+                        \item \textit{Axios}
+                        
+                        Axios adalah sebuah \textit{Library/Package} untuk melakukan \textit{request} yang memiliki banyak fitur yang sangat berguna dalam melakukan \textit{API Call} di aplikasi kami. Fitur yang menjadi sorotan adalah \textit{Axios} cocok atau kompatibel dengan \textit{Promise} yang ada di \textit{JavaScript} dan fitur transformasi otomatis untuk data \textit{JSON} \autocite{axios_github_general}.
+
+                        \item \textit{Formik}
+                        
+                        \textit{Formik} adalah \textit{Library} berukuran kecil yang bertujuan untuk memudahkan proses membuat dan manipulasi data dalam segala hal mengenai formulir atau \textit{form}. Hal yang \textit{Formik} bantu adalah ketiga hal yang setiap formulir perlukan, yaitu mengambil atau memasukan data dari atau ke formulir, validasi input, pesan error yang ada dan untuk proses ketika formulir dikumpulkan \autocite{formik_overview}.
+
+                        \item \textit{react-infinite-scroll}
+                        
+                        \textit{react-infinite-scroll} adalah \textit{Library kecil} untuk sebuah data atau konten yang dapat tergulir secara terus-menerus sampai data habis. \textit{Library} ini dipilih karena ukurannya yang kecil dan fitur yang lengkap. Ketika dideteksi pengguna sudah di data paling akhir maka akan ada sebuah aksi yang dijalankan untuk mengambil data yang baru untuk ditampilkan selanjutnya \autocite{infinite_scroll_overview}.
+
+                        \item \textit{react-paginate}
+                        
+                        \textit{react-paginate} adalah \textit{Library} untuk fitur paginasi konten atau data yang tidak muat di satu halaman. Cara menggunakannya adalah dengan spesifikasi styling untuk komponen paginasi, halaman pertama, apa yang terjadi jika di klik, dan jangkauan dari halaman yang ditampilkan \autocite{react-paginate}.
+
+                    \end{itemize}
+
+                    
 
           \end{enumerate}
 
