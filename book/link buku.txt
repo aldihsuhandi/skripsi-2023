@@ -1,0 +1,3 @@
+https://malenezi.github.io/malenezi/SE401/Books/Software-Testing-A-Craftsman-s-Approach-Fourth-Edition-Paul-C-Jorgensen.pdf
+https://aws.amazon.com/caching/
+https://www.businessinsider.com/guides/tech/what-is-cache?op=1
