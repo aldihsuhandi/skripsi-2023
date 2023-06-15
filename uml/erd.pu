@@ -59,11 +59,11 @@ entity items {
     * item_name : varchar
     * item_price : number
     * item_images : varchar
-    * item_descriptio : longtext
+    * item_description : longtext
     * item_quantity : number
     * merchant_id : varchar <<FK>>
     * category_id : varchar <<FK>>
-    * hobbby_id : varchar <<FK>>
+    * hobby_id : varchar <<FK>>
     * merchant_level_id : varchar <<FK>>
       user_level_id : varchar <<FK>>
     * review : double
@@ -290,7 +290,7 @@ reviews }o-|| users
 reviews }o-|| items
 interest_level ||--o{ reviews
 
-comment }o--|| comment
+comment }o--o| comment
 comment }o-|| users
 comment }o-|| items
 

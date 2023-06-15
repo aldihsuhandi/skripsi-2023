@@ -1,0 +1,392 @@
+@startuml class diagram
+
+left to right direction
+skinparam linetype ortho
+
+skinparam rectangle {
+  BorderColor Transparent
+  BackgroundColor Transparent
+}
+
+rectangle {
+    rectangle {
+        class ItemController <<CONTROLLER>> {
+            + autocomplete()
+            + create()
+            + update()
+            + delete()
+            + queryDetail()
+            + query()
+            + recommend()
+        }
+
+        class SessionController <<CONTROLLER>> {
+            + info()
+        }
+
+        class UserController <<CONTROLLER>> {
+            + activate()
+            + login()
+            + logout()
+            + register()
+            + merchantApply()
+            + query()
+            + update()
+        }
+
+        class CartController <<CONTROLLER>> {
+            + addToCart()
+            + updateCart()
+            + queryCart()
+            + calculatePrice()
+            + select()
+        }
+
+        class TransactionController <<CONTROLLER>> {
+            + create()
+            + payment()
+            + detail()
+            + query()
+            + finish()
+            + cancel()
+        }
+
+        class ReviewController<<CONTROLLER>> {
+            + query()
+            + detail()
+            + create()
+        }
+
+        class WishlistController<<CONTROLLER>> {
+            + add()
+            + remove()
+            + query()
+        }
+
+        class CommentController <<CONTROLLER>> {
+            + create()
+            + edit()
+            + delete()
+            + query()
+        }
+    }
+
+    rectangle {
+
+        class UserRole {
+            - roleId : string
+            - roleName : string
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+    
+        class User {
+            - userId : string
+            - role : UserRole
+            - email : string
+            - phoneNumber : string
+            - username : string
+            - gender : string
+            - dob : date
+            - location : map<string, string>
+            - profilePicture : string
+            - review : double
+            - isActive : boolean
+            - isDeleted : boolean
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+            + calculateReview()
+        }
+
+        class ItemCategory<<MODELL>> {
+            - categoryId : string
+            - categoryName : string
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        class Hobby<<MODELL>> {
+            - hobbyId : string
+            - hobbyName : string
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+    
+        class InterestLevel <<MODEL>> {
+            - levelId : string
+            - levelName : string
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        class Item <<MODEL>> {
+            - itemId : string
+            - itemName : string
+            - itemPrice : long
+            - itemImages : list<string>
+            - description : string
+            - quantity : int
+            - merchant : User
+            - category : ItemCategory
+            - hobby : Hobby
+            - merchantLevel : InterestLevel
+            - userLevel : userLevel
+            - review : double
+            - isDeleted : boolean
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+            + calculateReview()
+            + calculateUserLevel()
+            + createHistory()
+        }
+
+        class HistoryItem <<MODEL>> {
+            - historyId : string
+            - item : Item
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        class Session <<MODEL>> {
+            - sessionId : varchar
+            - userId : varchar
+            - sessionDt : date
+            - isActive : boolean
+            - isRemembered : boolean
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+            + checkIsExpired()
+        }
+
+        class Cart <<MODEL>> {
+            - item : Item
+            - userId : string
+            - quantity : int
+            - selected : boolean
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        Class Transaction<<MODEL>> {
+            - trxId : string
+            - userId : string
+            - price : long
+            - details : list<TransactionDetail>
+            - paymentType : string
+            - midtransId : string
+            - midtransLink : string
+            - status : string
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        class TransactionDetail<<MODEL>> {
+            - trxDetailId : string
+            - historyItem : HistoryItem
+            - quantity : int
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        class Wishlist<<MODEL>> {
+            - itemId : string
+            - userId : string
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+    
+        class Review<<MODEL>> {
+            - reviewId : string
+            - itemId : string
+            - userId : string
+            - merchant_id : string
+            - star : int
+            - interestLevel : InterestLevel
+            - description
+            - reviewImages : list<string>
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        class Comment <<MODEL>> {
+            - commentId : string
+            - replyCommentId : string
+            - replyItemId : string
+            - content : string
+            - isDeleted : boolean
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        class Client <<MODEL>> {
+            - clientId : string
+            - clientName : string
+            - clientSecret : string
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+        class Activity <<MODEL>> {
+            - activityId : string
+            - userId : string
+            - value : int
+            - activity : map<string, string>
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+
+
+        class ResetPassword <<MODEL>> {
+            - uuid : string
+            - email : string
+            - expiredTime : string
+            - isActive : string
+            - gmtCreate : date
+            - gmtModified : date
+            + getter()
+            + setter()
+        }
+    }
+}
+
+rectangle {
+    class OtpController <<CONTROLLER>> {
+        + send()
+    }
+
+    class ImageController <<CONTROLLER>> {
+        + download()
+        + updload()
+    }
+
+    class DictionaryController <<CONTROLLER>> {
+        + query()
+    }
+    class Knowledge <<MODEL>> {
+        - knowledgeKey : string
+        - knowledgeType : string
+        - knowledge : list<string>
+        - gmtCreate : date
+        - gmtModified : date
+        + getter()
+        + setter()
+    }
+
+    class Dictionary <<MODEL>> {
+        - dictionaryName : string
+        - displayName : string
+        - dictionaryType : string
+        - gmtCreate : date
+        - gmtModified : date
+        + getter()
+        + setter()
+    }
+
+    class OTP <<MODEL>> {
+        - otpId : string
+        - otp : string
+        - otpType : string
+        - email : string
+        - isActive : boolean
+        - gmtCreate : date
+        - gmtModified : date
+        + getter()
+        + setter()
+    }
+
+
+    class Image <<MODEL>> {
+        - imageId : string
+        - image : Image
+        + getter()
+        + setter()
+    }
+
+    class EmailEncrypt <<MODELL>> {
+        - uuid : string
+        - email : string
+        - gmtCreate : date
+        - gmtModified : date
+        + getter()
+        + setter()
+    }
+}
+
+' controller and model relation
+ItemController -|> Item
+SessionController --|> Session
+UserController --|> User
+UserController --|> ResetPassword
+CartController --|> Cart
+TransactionController -|> Transaction
+WishlistController -|> Wishlist
+ReviewController -|> Review
+CommentController -|> Comment
+DictionaryController --|> Dictionary
+OtpController -|> OTP
+ImageController -|> Image
+
+' model relation
+User "0..*" -- "1..1" UserRole
+Session "0..*" -- "1..1" User
+User "1..1" -- "0..*" Item
+
+User "1..1" -- "0..*" Activity
+
+Item "0..*" -- "1..1" ItemCategory
+Item "0..*" -- "1..1" Hobby
+InterestLevel "1..1" -- "0..*" Item
+' Item "0..*" - "1..1" User
+
+Item "1..1" - "0..*" HistoryItem
+
+Cart "0..*" -- "1..1" Item
+Cart "0..*" -- "1..1" User
+
+User "1..1" -- "0..*" Transaction
+Transaction "1..1" -- "1..*" TransactionDetail
+TransactionDetail "0..*" - "1..1" HistoryItem
+
+User "1..1" - "0..*" Wishlist
+Item "1..1" - "0..*" Wishlist
+
+Review "0..*" -- "1..1" User
+Review "0..*" -- "1..1" Item
+
+Comment "0..*" -- "0..1" Comment
+Item "1..1" - "0..*" Comment
+User "1..1" - "0..*" Comment
+
+@enduml
