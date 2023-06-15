@@ -1,0 +1,9 @@
+@startuml example of class
+
+class class_A {
+    - Attribute 1
+    - Attribute 2
+    + Method A()
+}
+
+@enduml

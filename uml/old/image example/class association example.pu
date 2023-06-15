@@ -1,0 +1,13 @@
+@startuml class association example
+
+class class_a {
+
+}
+
+class class_b {
+
+}
+
+class_a -right- class_b
+
+@enduml
