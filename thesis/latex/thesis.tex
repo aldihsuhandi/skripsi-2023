@@ -50,7 +50,8 @@
 \lstset{style=mystyle}
 
 \sectionfont{\centering}
-\addbibresource{citation.bib}
+\addbibresource{citation/citation.bib}
+\addbibresource{citation/aldih.bib}
 \graphicspath{{./images/}}
 \geometry{a4paper, top=4.0cm, bottom=3.0cm,
           left=4.0cm, includehead, includefoot}
@@ -76,7 +77,7 @@
 \begin{document}
 \setstretch{1.5}
 
-\title{SKRIPSI NON KELAS\\Shumishumi - Marketplace For Hobby With Interest Level Filtering and Recommendation System Using Knowledge Graph Implementation\large\\\textbf{Topic: }\textit{E-Application}}
+\title{SKRIPSI NON KELAS\\Shumishumi - Online Marketplace For Hobby With Interest Level Filtering and Recommendation System Using Knowledge Graph Implementation\large\\\textbf{Topic: }\textit{E-Application}}
 \author{2301862632 - Aldih Suhandi - \textit{Computer Science} / 082122704561\\2301872596 - Chandra Wijaya - \textit{Computer Science} / 081287588816\\2301867324 - Ibrahim Seto Aditama - \textit{Computer Science} / 081213423549}
 \maketitle
 \begin{figure}[h]
@@ -191,7 +192,7 @@ Pengumpulan data yang dilakukan adalah dengan membuat form survei menggunakan \t
 
 \subbab{1.6 Sistematika Penulisan}
 \textit{\textbf{Bab 1: Pendahuluan}} \newline
-Bab pertama ini akan menjelaskan tentang latar belakang, rumusan masalah, tujuan, manfaat, ruang lingkup, dan metode penelitian yang dilakukan didalam proyek ini.
+Bab pertama ini akan menjelaskan tentang latar belakang, rumusan masalah, tujuan, manfaat, ruang lingkup, dan metode penelitian yang dilakukan di dalam proyek ini.
 
 \textit{\textbf{Bab 2: Tinjauan Referensi}}\newline
 Bab kedua menjelaskan tentang teori-teori yang digunakan sebagai acuan saat melakukan pembahasan masalah, menyimpulkan masalah tersebut menjadi \textit{requirement - requirement} yang bisa dijadikan pacuan saat membuat fitur dari aplikasi ini, dan hal-hal yang digunakan saat proses penulisan kode dan pengetesan fitur.
@@ -222,7 +223,7 @@ Untuk membuat sebuah \textit{object} diperlukan sebuah \textit{template} atau \t
 
     \item \textit{Encapsulation}
 
-          \textit{Encapsulation} adalah konsep dimana semua atribut atau fitur yang ada didalam \textit{object} itu tidak bisa dilihat dan diubah oleh \textit{object} lain, kecuali akses tersebut didefinisikan secara explicit\autocite{education-erin-oop-2020}. Sebagai contoh, \textit{object} manusia memiliki tanggal lahir, karena tanggal lahir itu pasti tidak bisa diubah, atribut tanggal lahir dari \textit{object} tersebut hanya bisa dibaca oleh \textit{object} lain tapi tidak bisa diubah.
+          \textit{Encapsulation} adalah konsep dimana semua atribut atau fitur yang ada di dalam \textit{object} itu tidak bisa dilihat dan diubah oleh \textit{object} lain, kecuali akses tersebut didefinisikan secara explicit\autocite{education-erin-oop-2020}. Sebagai contoh, \textit{object} manusia memiliki tanggal lahir, karena tanggal lahir itu pasti tidak bisa diubah, atribut tanggal lahir dari \textit{object} tersebut hanya bisa dibaca oleh \textit{object} lain tapi tidak bisa diubah.
 
           Kohesi, konsistensi, dan enkapsulasi adalah pedoman yang baik untuk mencapai sebuah design yang jelas. Sebuah \textit{class} harus memiliki kontrak yang jelas yang mudah dijelaskan dan dipahami, seperti atribut apa saja yang bisa diakses dan diubah oleh \textit{object} atau \textit{class} lain\autocite{liang_liang_2021}.
 
@@ -242,7 +243,7 @@ public class Human {
 
     \item \textit{Abstraction}
 
-          \textit{Abstraction} dan \textit{encapsulation} adalah dua sisi dari koin yang sama, \textit{encapsulation} adalah konsep untuk mengatur akses suatu atribut, kalau \textit{abstraction} adalah \textit{class} lain tidak perlu tahu bagaimana \textit{class} ini melakukan suatu tugas\autocite{liang_liang_2021}. Sebagai contoh, saat merakit komputer, kalian hanya tau komponen - komponen didalam komputer itu apa saja, untuk merakit komputer tersebut kalian hanya perlu tau apa saja peran dari tiap komponen yang ada, tidak perlu mengetahui untuk melaksanakan peran mereka, apa yang mereka harus lakukan.
+          \textit{Abstraction} dan \textit{encapsulation} adalah dua sisi dari koin yang sama, \textit{encapsulation} adalah konsep untuk mengatur akses suatu atribut, kalau \textit{abstraction} adalah \textit{class} lain tidak perlu tahu bagaimana \textit{class} ini melakukan suatu tugas\autocite{liang_liang_2021}. Sebagai contoh, saat merakit komputer, kalian hanya tau komponen - komponen di dalam komputer itu apa saja, untuk merakit komputer tersebut kalian hanya perlu tau apa saja peran dari tiap komponen yang ada, tidak perlu mengetahui untuk melaksanakan peran mereka, apa yang mereka harus lakukan.
 
     \item \textit{Inheritance}
 
@@ -278,12 +279,12 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
 \end{itemize}
 
 \subsubbab{2.1.3 \textit{Architectural Pattern}}
-\textit{Architectural Pattern} merupakan seperangkat prinsip dan pola kasar yang menyediakan kerangka kerja abstrak dari sebuah sistem. \textit{Architectural Pattern} menggambarkan struktural fundamental dari suatu organisasi atau skema untuk sebuah sistem yang kompleks. \textit{Architectural Pattern} dapat digunakan sebagai solusi umum yang dapat digunakan kembali \textit{(reusable)} untuk memecahkan permasalahan yang biasa terjadi dalam sebuah \textit{software architecture} didalam konteks tertentu\autocite{architectural-pattern}. Dalam artian, \textit{Architectural Pattern} mirip dengan \textit{Design Pattern}, tetapi memiliki cakupan yang lebih luas\autocite{archi-pattern}.
+\textit{Architectural Pattern} merupakan seperangkat prinsip dan pola kasar yang menyediakan kerangka kerja abstrak dari sebuah sistem. \textit{Architectural Pattern} menggambarkan struktural fundamental dari suatu organisasi atau skema untuk sebuah sistem yang kompleks. \textit{Architectural Pattern} dapat digunakan sebagai solusi umum yang dapat digunakan kembali \textit{(reusable)} untuk memecahkan permasalahan yang biasa terjadi dalam sebuah \textit{software architecture} di dalam konteks tertentu\autocite{architectural-pattern}. Dalam artian, \textit{Architectural Pattern} mirip dengan \textit{Design Pattern}, tetapi memiliki cakupan yang lebih luas\autocite{archi-pattern}.
 \begin{itemize}
     \item \textit{Object-Oriented Architecture (OOA)}\\
           \textit{Object-Oriented Architecture} dapat digunakan jika ingin mengenkapsulasi logika dan data bersama-sama dalam komponen yang dapat digunakan kembali. \textit{Business Logic} yang kompleks yang membutuhkan abstraksi dan \textit{dynamic behaviour} dapat secara efektif menggunakan arsitektur jenis ini juga\autocite{architectural-pattern}.
     \item \textit{Layered/Tiered Architecture}\\
-          \textit{Layered/Tiered Architecture} merupakan salah satu jenis \textit{architectural pattern} yang sangat sering digunakan\autocite{architectural-pattern}. Arsitektur jenis ini dapat digunakan untuk menyusun program yang dapat didekomposisikan menjadi beberapa kelompok \textit{subtasks}, yang masing-masing berada pada tingkat abstraksi tertentu. Setiap \textit{layer} menyediakan layanan \textit{(services)} ke \textit{layer} berikutnya yang lebih tinggi. Terdapat empat \textit{layer} utama didalam arsitektur jenis ini, yakni \textbf{\textit{Presentation Layer}}, \textbf{\textit{Application Layer}}, \textbf{\textit{Business Logic Layer}} dan \textbf{\textit{Data Access Layer}}. Arsitektur jenis ini biasanya digunakan pada aplikasi desktop dan \textit{web e-commerce} pada umumnya\autocite{archi-pattern}.
+          \textit{Layered/Tiered Architecture} merupakan salah satu jenis \textit{architectural pattern} yang sangat sering digunakan\autocite{architectural-pattern}. Arsitektur jenis ini dapat digunakan untuk menyusun program yang dapat didekomposisikan menjadi beberapa kelompok \textit{subtasks}, yang masing-masing berada pada tingkat abstraksi tertentu. Setiap \textit{layer} menyediakan layanan \textit{(services)} ke \textit{layer} berikutnya yang lebih tinggi. Terdapat empat \textit{layer} utama di dalam arsitektur jenis ini, yakni \textbf{\textit{Presentation Layer}}, \textbf{\textit{Application Layer}}, \textbf{\textit{Business Logic Layer}} dan \textbf{\textit{Data Access Layer}}. Arsitektur jenis ini biasanya digunakan pada aplikasi desktop dan \textit{web e-commerce} pada umumnya\autocite{archi-pattern}.
     \item \textit{Event-Driven Architecture (EDA)}\\
           \textit{Event-Driven Architecture (EDA)} biasanya didasarkan pada \textit{communication model} yang digerakkan oleh pesan asinkron untuk menyebarkan informasi ke seluruh organisasi/perusahaan. \textit{EDA} mendukung \textit{allignment} yang lebih alami dengan model operasional organisasi dengan menggambarkan \textit{business activity} nya sebagai suatu rangkaian \textit{event}/peristiwa\autocite{architectural-pattern}.
     \item \textit{Model-View-Controller Architecture (MVC)}\\
@@ -291,7 +292,7 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
 \end{itemize}
 
 \subsubbab{2.1.4 \textit{Design Pattern}}
-\textit{Design Pattern} secara definisi adalah sesuatu cara komunikasi tiap obyek dan \textit{class} yang dikostumisasi untuk memecahkan masalah desain general didalam konteks tertentu, \textit{design pattern} membantu untuk membuat \textit{object oriented design} yang dapat digunakan secara berulang, dengan cara memberi nama, mengabstraksi, dna mengidentifikasi kunci aspek dari struktur desain tertentu\autocite{design-pattern-2588942}.
+\textit{Design Pattern} secara definisi adalah sesuatu cara komunikasi tiap obyek dan \textit{class} yang dikostumisasi untuk memecahkan masalah desain general di dalam konteks tertentu, \textit{design pattern} membantu untuk membuat \textit{object oriented design} yang dapat digunakan secara berulang, dengan cara memberi nama, mengabstraksi, dna mengidentifikasi kunci aspek dari struktur desain tertentu\autocite{design-pattern-2588942}.
 \begin{itemize}
     \item \textit{Facade}\\
           \textit{Facade} adalah sesuatu \textit{class} yang memberikan \textit{interface} yang simpel ke sub-sistem yang kompleks, \textit{design pattern} ini dapat digunakan ketika butuh mengintegrasikan sesuatu \textit{library} dengan fitur yang sangat banyak tapi hanya butuh menggunakan beberapa fiturnya saja\autocite{refactoring-guru}. \textit{Singleton} juga memberikan global \textit{access point} ke instansi \textit{class} tersebut, jadi semua \textit{class} dan \textit{object} dapat membaca \textit{value} yang sama dan merubah \textit{value} tersebut secara keseluruhan\autocite{refactoring-guru}.
@@ -303,18 +304,89 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
           \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
 \end{itemize}
 
-\subsubbab{2.1.5 Sistem Rekomendasi}
-Sistem rekomendasi adalah sistem penyaringan informasi yang menyarankan sebuah produk kepada pengguna bedasarkan preferensi atau perilaku masa lalu. Sistem ini banyak digunakan di pasar \textit{online} untuk meningkatkan pengalaman, keterlibatan pengguna, dan mendorong penjualan. Dengan memberikan rekomendasi yang dipersonalisasi terhadap preferensi, pengguna dapat menemukan sebuah barang yang mungkin tidak bisa ditemukan sendiri dan meningkatkan kepuasan pengguna terhadap pasar \textit{online} yang sedang digunakan \autocite{adiwardana2019}.
+\subsubbab{2.1.5 \textit{Software Testing}}
+
+Secara general manusia pasti akan melakukan kesalahan, apa lagi di dalam \textit{software development} hal ini sangat kelihatan saat dengan pasti adanya \textit{bug} di dalam \textit{software} yang dikerjakan, ini adalah salah satu alasan kenapa \textit{software testing} itu dibutuhkan, untuk menemukan masalah dan memperbaikinya. Alasan satu lagi \textit{software testing} dilakukan adalah untuk membuat keputusan, apakah \textit{software} yang sedang dibuat ini sudah mempunyai kualitas yang dapat diterima \autocite{jorgensen2018software}.
+
+Secara definisi dasar, \textit{software testing} adalah suatu metode untuk mengecek apakah sebuah produk atau \textit{software} sudah sama dengan kebutuhan - kebutuhan dan memastikan \textit{software} tersebut tidak memiliki kecacatan\autocite{guru99-software-testing}.
+
+\textit{Software testing} bisa digeneralisasikan menjadi 2 tipe, yaitu:
+\begin{itemize}
+    \item \textit{Blackbox testing}
+
+        \textit{Blackbox testing} atau sering disebut \textit{specification-based testing}, adalah testing yang dilakukan berdasarkan dengan spesifikasi \textit{software} tersebut. Metode testing ini disebut \textit{blackbox testing} karena sebuah sistem atau program itu akan dianggap seperti kotak hitam yang tidak bisa dilihat isinya, tapi diketahui apa saja yang bisa dilakukan oleh kotak hitam tersebut\autocite{jorgensen2018software}.
+
+        Kelebihan dari metode \textit{testing} ini adalah, \textit{unit test} yang dibuat itu berdiri sendiri dari bagaimana implementasi yang ada di dalam \textit{software} tersebut, jadi jika ada perubahan implementasi \textit{test case} yang sebelumnya dibuat akan tetap bisa dipakai dan \textit{testcase} untuk \textit{blackbox testing} dapat dibuat saat masa \textit{development} sedang berjalan, jadi bisa mengurangi masa pengerjaan \textit{project}\autocite{jorgensen2018software}.
+
+
+    \item \textit{Whitebox testing}
+
+        \textit{Whitebox testing} adalah metode \textit{testing} yang dimana semua struktur internal, desain, dan implementasi dites untuk memperbaiki desain, kegunaan, dan keamanan. Terminologi \textit{whitebox} ini menganggap \textit{software} itu seperti box yang transparan, dimana semua isinya (implementasi dari sebuah fungsi dan pilihan desain yang diambil) akan kelihatan dalam fase pengetesan\autocite{guru99-whitebox-testing}.
+
+        Salah satu tipe \textit{whitebox testing} adalah \textit{unit testing}. \textit{Unit testing} adalah \textit{test case} yang biasanya ditulis oleh \textit{developer} untuk melakukan pengetesan disetiap blok kode yang sedang dikembangkan\autocite{guru99-whitebox-testing}. Ada dua teknik yang bisa diterapkan saat melakukan \textit{whitebox testing}, yaitu:
+        \begin{itemize}
+            \item \textit{Statement Coverage}
+
+            teknik ini membutuhkan semua \textit{statement} yang ada di dalam \textit{code base} sudah tertutupi oleh \textit{test case} dari \textit{whitebox testing}.
+ 
+            \item \textit{Branch Coverage}
+
+            teknik ini membutuhkan semua \textit{branch} atau \textit{path} yang ada di dalam \textit{code base} sudah tertutupi oleh \textit{test case} dari \textit{whitebox testing}.
+        \end{itemize}
+\end{itemize}
+
+\subsubbab{2.1.6 Sistem Rekomendasi}
+Sistem rekomendasi adalah sistem penyaringan informasi yang menyarankan sebuah produk kepada pengguna berdasarkan preferensi atau perilaku masa lalu. Sistem ini banyak digunakan di pasar \textit{online} untuk meningkatkan pengalaman, keterlibatan pengguna, dan mendorong penjualan. Dengan memberikan rekomendasi yang dipersonalisasi terhadap preferensi, pengguna dapat menemukan sebuah barang yang mungkin tidak bisa ditemukan sendiri dan meningkatkan kepuasan pengguna terhadap pasar \textit{online} yang sedang digunakan \autocite{adiwardana2019}.
 
 Kenapa sistem rekomendasi ini dibutuhkan telah dibuktikan oleh sebuah artikel yang diterbitkan pada tahun 2019 oleh Tian \textit{et al}. yang berjudul "\textit{Exploring the effects of personalized recommendation on users' satisfaction and loyalty in e-commerce}" yang menemukan bahwa pengguna \textit{platform e-commerce}  akan menghabiskan waktu 50\% lebih banyak di \textit{platform} tersebut ketika pengguna diberikan sebuah rekomendasi produk yang dipersonalisasi\autocite{tian2019exploring}. Sistem rekomendasi juga menguntungkan untuk mengurangi terjadinya \textit{information overload} yang akan dialami oleh pengguna, dengan cara hanya menampilkan produk yang ingin dilihat atau yang sesuai dengan preferensi - preferensi pengguna tersebut\autocite{karimi2018news}.
 
-Sistem rekomendasi yang akan dipakai didalam proyek ini akan berdasarkan pada teori \textit{Knowledge Graph}. \textit{Knowledge Graph} adalah sebuah \textit{graph} heterogen, dimana \textit{nodes} akan merepresentasikan sebuah hubungan antara entitas\autocite{guo2020survey}. Dengan menggunakan teori ini, semua produk dan atribut - atributnya dapat dibuat menjadi sebuah \textit{graph} untuk mempermudah memahami hubungan antara tiap produk, selain itu informasi pengguna dan preferensi mereka-pun bisa diintegrasikan ke-\textit{graph} tersebut untuk membantu prediksi rekomendasi menjadi seakurat mungkin.
+Sistem rekomendasi yang akan dipakai di dalam proyek ini akan berdasarkan pada teori \textit{Knowledge Graph}. \textit{Knowledge Graph} adalah sebuah \textit{graph} heterogen, dimana \textit{nodes} akan merepresentasikan sebuah hubungan antara entitas\autocite{guo2020survey}. Dengan menggunakan teori ini, semua produk dan atribut - atributnya dapat dibuat menjadi sebuah \textit{graph} untuk mempermudah memahami hubungan antara tiap produk, selain itu informasi pengguna dan preferensi mereka-pun bisa diintegrasikan ke-\textit{graph} tersebut untuk membantu prediksi rekomendasi menjadi seakurat mungkin.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=8cm]{recommendation system architecture.png}
     \caption{Contoh simpel dari sistem rekomendasi dengan basis \textit{Knowledge Graph}}
 \end{figure}
+
+\subsubbab{2.1.7 \textit{Caching}}
+Secara definisi \textit{caching} adalah sebuah \textit{data storage layer} yang bersifat sementara dan digunakan untuk mempercepat permintaan data dibanding mengakses lokasi penyimpanan utama data tersebut. Fungsi utama \textit{cache} adalah menurunkan proses permintaan data ke lokasi penyimpanan utama yang lambat dengan cara menaruh data tersebut ke \textit{storage layer} yang lebih cepat seperti RAM\autocite{AWS-caching}. Berikut adalah kelebihan dari sistem \textit{caching}:
+
+\begin{itemize}
+    \item \textit{Cache} membuat semuanya berjalan lebih cepat. Manfaat utama dari cache adalah menurunkan \textit{response time} yang dibutuhkan untuk memproses sebuah \textit{request}. Seperti contoh, dengan menyimpan salinan lokan file dari sebuah \textit{website} saat pertama kali dikunjungi, pada kunjungan berikutnya browser tidak perlu membuang waktu dan sumber daya untuk mengunduh informasi tersebut karena sudah disimpan di penyimpanan lokal\autocite{businessinsider_cache}.
+
+    \item Menghilangi \textit{Database Hotspot}. Dibanyak aplikasi kemungkinan hanya sebagian kecil data yang akan diakses lebih sering dibandingkan dengan data lainnya, seperti \textit{profile} selebriti yang terkenal atau produk yang diminati banyak orang. Hal ini dapat menyebabkan \textit{hot spots} di \textit{database} yang digunakan dan mungkin memerlukan penyediaan \textit{resource database} yang berlebihan berdasarkan \textit{throughput} atau jumlah data yang dapat ditangani\autocite{AWS-caching}. \textit{Cache} mengatasi hal ini dengan memunkinkan \textit{software} untuk mengakses memori lokalnya seperti RAM dibandingkan membuat \textit{request} untuk meng-\textit{query} data dari \textit{database}, yang dapat menjadi operasi yang mahal.
+
+    \item \textit{Cache} juga bisa mengurangi beban di \textit{backend}, dengan cara mengalihkan sebagian besar beban operasi \textit{query} ke memori lokal dari \textit{database backend}, hal ini akan mencegah terjadinya performa yang menurun atau \textit{crashing} ketika ada lonjakan \textit{traffic}.
+\end{itemize}
+
+
+
+\subsubbab{2.1.8 \textit{Asynchronous Processing}}
+\textit{Asynchronous Processing} adalah kebalikan dari \textit{synchronous processing} yang akan mengeksekusi setiap proses secara linear sesuai dengan berjalannya waktu. Sebagai contoh, diberikan dua pemanggilan ke `\textit{request.get}` dalam \textit{synchronous processing} pemanggilan kedua tidak akan dijalankan sebelum pemanggilan pertama sudah selesai. Sedangkan dengan menggunakan model \textit{asynchronous processing} dua pemanggilan tersebut bisa dilakukan secara bersamaan\autocite{Williams_Benfield_Warner_Zadka_Mitchell_Samuel_Tardy_2019}.
+
+\subsubbab{2.1.9 \textit{Agile Scrum}}
+\textit{Agile} adalah kumpulan metodologi yang bisa membantu tim yang men-\textit{develop} suatu proyek untuk berfikir dan bekerja lebih efisien dan membantu untuk mengambil keputusan yang lebih baik\autocite{Stellman_Greene_2016}. Salah satu dari metodologi tersebut adalah \textit{scrum}, \textit{scrum} adalah \textit{project management framework} yang membantu tim untuk menyusun dan mengelola \textit{task - task} yang ada dengan serangkaian nilai, prinsi, dan praktik\autocite{atlassian-agile-scrum}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=6cm]{images/sprint_cycle-c.png}
+    \caption{Contoh dari struktur \textit{scrum}\autocite{atlassian-agile-scrum}}
+\end{figure}
+
+Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{scrum} sendiri dapat disesuaikan dengan kebutuhan organisasi atau tim yang sedang menggunakan \textit{scrum}, secara umum \textit{scrum framework} itu memiliki enam kunci kegiatan yang mungkin diikuti oleh tim \textit{scrum}:
+\begin{enumerate}
+    \item \textit{Backlog grooming}, kegiatan ini adalah tanggung jawab dari \textit{product owner} yang bertujuan membantu tim \textit{scrum} untuk terus menyempurnakan, memprioritaskan, dan memperjelas \textit{item backlog} dibantu dari masukan \textit{users} dan tim \textit{developement}.
+
+    \item \textit{Sprint planning} adalah kegiatan untuk mendefinisikan '\textit{scope}' atau batasan - batasan yang akan dikerjakan oleh tim \textit{development} di \textit{sprint} yang akan datang dan memastikan \textit{user stories} yang akan dikerjakan itu bisa dikerjakan dan diimplementasikan selama \textit{sprint}.
+
+    \item \textit{Sprint} adalah waktu (biasanya dua minggu) yang dipakai untuk mengerjakan semua \textit{user stories} yang sudah didefinisikan pada fase \textit{sprint planning}. 
+
+    \item \textit{Daily Scrum} adalah sebuah \textit{meeting} yang singkat setiap hari (biasanya pagi hari) yang diadakan untuk tim \textit{development} melakukan diskusi jika ada halangan dalam mengerjakan \textit{task} dan memberikan \textit{update} tentang \textit{task}.
+
+    \item \textit{Sprint Review}, adalah \textit{meeting} yang dilaksanakan setelah sebuah \textit{sprint} selesai, dimana semua tim yang berpartisipasi untuk meminta feedback terhadap semua \textit{user stories} yang berhasil dikerjakan di \textit{sprint} ini.
+
+    \item \textit{Sprint Retro}, adalah \textit{meeting} dimana semua tim yang berpartisipasi berkumpul untuk mendiskusikan apa saja yang bekerja dengan lancar dan apa saja yang tidak bekerja sama sekali atau mengalami kendala. Idenya adalah \textit{meeting} ini akan membuat tim \textit{scrum} tempat untuk berdiskusi apa saja yang perlu diperbaiki di \textit{sprint} kedepannya.
+\end{enumerate}
 
 \subsubbab{2.1.6 Internet}
 Internet merupakan sebuah bentuk dari infrastruktur jaringan komunikasi global yang menghubungkan miliaran komputer (ataupun perangkat lainnya) satu sama lain yang tersebar di seluruh dunia\autocite{javatpoint-internet}. Kata "Internet" sendiri berasal dari bahasa latin, yakni dari kata "\textit{inter}" dan "\textit{net}". Kata "\textit{inter}" memilki arti sebagai "antara" dan kata "\textit{net}" yang berarti "jaringan". Kata "\textit{net}" ini jugalah yang merupakan singkatan dari kata \textit{network}\autocite{arti-kata-internet}. Internet dibangun/di-\textit{setup} dengan menggunakan bantuan transmisi data dari kabel-kabel \textit{fiber optic} atau kabel tembaga dan berbagai macam media jaringan lainnya\autocite{gfg-internet}. Ada beberapa istilah penting yang sangat berhubungan dengan jaringan internet, seperti:
@@ -409,6 +481,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \includegraphics[scale=0.5]{class diagram - association example.png}
             \caption{Contoh dari relasi \textit{Association}}
         \end{figure}
+        \newpage
         \item \textit{Generalization (Inheritance)}\\
         \textit{Generalization} merupakan sebuah hubungan yang menggambarkan sebuah \textit{class} yang mewarisi/(\textit{inherit attribute}) atau \textit{operation} dari \textit{class} yang lain\autocite{what-is-class-diagram}. Hubungan jenis ini merepresentasikan sebuah relasi berbentuk \textit{"is-a"} atau \textit{"a-kind-of"} antarkelas. Contoh hubungan ini adalah seperti halnya hubungan antara 'Pelanggan' dan 'Karyawan'. Kedua-duanya merupakan turunan dari \textit{class} 'Orang' atau '\textit{Person}'. \textit{Class} 'Orang' dapat dinamakan sebagai \textit{superclass} karena \textit{class} itulah yang mewarisi kedua \textit{class} lainnya, sedangkan 'Karyawan' dan 'Pelanggan' dapat disebut sebagai sebuah \textit{subclass}, karena kedua \textit{class} tersebut diwarisi oleh sebuah \textit{class} lain\autocite{systemanalysisdesign-class-diagram-relations}.\\
         \textbf{Representasi Grafis}:\\
@@ -425,8 +498,12 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \includegraphics[scale=0.5]{class diagram - aggregation example.png}
             \caption{Contoh dari relasi \textit{Aggregation}}
         \end{figure}
-        \item \textit{Composition}\\
-        \textit{Composition} merupakan sebuah hubungan yang mirip dengan \textit{aggregation}. Namun yang membedakannya adalah apabila \textit{superclass}-nya dihancurkan, maka bagian-bagiannya atau dalam kata lain (\textit{subclass}) dari \textit{superclass} itu juga akan hancur. Contohnya adalah kepala, tangan dan kaki merupakan bagian tubuh dari seseorang, apabila orangnya tidak ada, maka kepala, tangan dan kaki orang tersebut juga tidak ada\autocite{what-is-class-diagram}.\\
+
+        \newpage
+        \item \textit{Composition}
+
+        \textit{Composition} merupakan sebuah hubungan yang mirip dengan \textit{aggregation}. Namun yang membedakannya adalah apabila \textit{superclass}-nya dihancurkan, maka bagian-bagiannya atau dalam kata lain (\textit{subclass}) dari \textit{superclass} itu juga akan hancur. Contohnya adalah kepala, tangan dan kaki merupakan bagian tubuh dari seseorang, apabila orangnya tidak ada, maka kepala, tangan dan kaki orang tersebut juga tidak ada\autocite{what-is-class-diagram}.
+
         \textbf{Representasi Grafis}:\\
         \begin{figure}[h]
             \centering
@@ -491,6 +568,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
                   Contoh gambar:\\
                   \includegraphics[scale=0.5]{Activity_transparent.png}
         \end{itemize}
+        \newpage
         \item \textit{Action}
         \begin{itemize}
             \item Merupakan sebuah \textit{behavior} yang sederhana dan tidak dapat diuraikan lagi
@@ -518,6 +596,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
                   Contoh gambar:\\
                   \includegraphics[scale=0.5]{Object Flow_transparent.png}
         \end{itemize}
+        \newpage
         \item \textit{Initial Node}
         \begin{itemize}
             \item Menggambarkan awal dari serangkain \textit{activity} atau \textit{action} pada \textit{activity diagram}\autocite{systemanalysisdesign-activity-diagram}\\
@@ -543,6 +622,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
                   Contoh gambar:\\
                   \includegraphics[scale=0.5]{Decision Node_transparent.png}
         \end{itemize}
+        \newpage
         \item \textit{Merge Node}
         \begin{itemize}
             \item Digunakan untuk menyatukan kembali jalur \textit{decision} berbeda yang sebelumnya sudah dibuat menggunakan \textit{Decision Node}\autocite{systemanalysisdesign-activity-diagram}\\
@@ -592,6 +672,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \includegraphics[scale=0.5]{use case - use case.png}
             \caption{Bentuk dari \textit{use case}}
         \end{figure}
+        \newpage
         \item \textit{Subject Boundary}\\
         Komponen inilah yang merepresentasikan ruang lingkup \textit{subject} yang ingin ditampilkan (sebuah sistem atau proses bisnis individu)\autocite{systemanalysisdesign-use-case-diagram}. 
         \begin{figure}[h]
@@ -611,8 +692,14 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \begin{figure}[h]
             \centering
             \includegraphics[scale=0.5]{use case - include.png}
-            \caption{Bentuk dari \textit{Include Relationship}}
+            \caption{Bentuk dari \textit{Include Relationship}}ctor
+Merupakan komponen yang menggambarkan ’seseorang’ atau ’sistem’ memperoleh
+benefit dari dan berada di luar sistem tersebut. Actor ini ikut berpartisipasi dalam
+sequence dengan mengirim dan/atau menerima message dan biasanya actor tersebut
+diletakkan di bagain teratas pada diagram(Alan Dennis, 2015f).
+39
         \end{figure}
+        \newpage
         \item \textit{'Extends' Relationship}\\
         Merupakan sebuah ekstensi dari use case untuk menyertakan suatu \textit{behavior} yang opsional\autocite{systemanalysisdesign-use-case-diagram}.
         \begin{figure}[h]
@@ -636,6 +723,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \caption{Contoh sederhana dari \textit{Sequence Diagram} dalam kasus penarikan tunai di ATM}
     \end{figure}
     Berikut adalah komponen-komponen yang ada pada \textit{Sequence Diagram}:
+        \newpage
     \begin{itemize}
         \item \textit{Actor}\\
         Merupakan komponen yang menggambarkan 'seseorang' atau 'sistem' memperoleh \textit{benefit} dari dan berada di luar sistem tersebut. \textit{Actor} ini ikut berpartisipasi dalam \textit{sequence} dengan mengirim dan/atau menerima \textit{message} dan biasanya \textit{actor} tersebut diletakkan di bagain teratas pada diagram\autocite{systemanalysisdesign-sequence-diagram}.
@@ -801,7 +889,7 @@ Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ra
           \begin{itemize}
               \item Perspektif dari pembeli
 
-                    Pembeli bisa mencari sebuah barang secara spesifik menggunakan nama atau siapa yang menjual barang tersebut, tapi bagi penjual yang baru ingin memasuki suatu hobi, mereka bisa mengutilisasikan fitur filter bedasarkan hobi apa yang ingin mereka masuki dan \textit{interest level} mereka. Selain itu juga pembeli juga bisa membuat review tentang barang yang mereka jual, bagaimana kualitas dari barang tersebut dan apakah barang tersebut memenuhi kriteria \textit{interest level} yang ditujukkan.
+                    Pembeli bisa mencari sebuah barang secara spesifik menggunakan nama atau siapa yang menjual barang tersebut, tapi bagi penjual yang baru ingin memasuki suatu hobi, mereka bisa mengutilisasikan fitur filter berdasarkan hobi apa yang ingin mereka masuki dan \textit{interest level} mereka. Selain itu juga pembeli juga bisa membuat review tentang barang yang mereka jual, bagaimana kualitas dari barang tersebut dan apakah barang tersebut memenuhi kriteria \textit{interest level} yang ditujukkan.
 
                     Selain itu juga pembeli bisa membuat suatu \textit{post} atau \textit{comment} tentang hobi mereka, atau membaca \textit{post} yang sudah dibuat oleh pembeli lain untuk membantu mereka mendalami hobi yang mereka punya.
 
