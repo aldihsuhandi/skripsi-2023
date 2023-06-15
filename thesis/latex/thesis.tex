@@ -316,12 +316,47 @@ Sistem rekomendasi yang akan dipakai didalam proyek ini akan berdasarkan pada te
     \caption{Contoh simpel dari sistem rekomendasi dengan basis \textit{Knowledge Graph}}
 \end{figure}
 
-\subbab{2.1.6 Internet}
-Internet merupakan sebuah bentuk dari infrastruktur jaringan global yang menghubungkan miliaran komputer (ataupun perangkat lainnya) di seluruh dunia satu sama lain dan ke \textit{World Wide Web}\autocite{javatpoint-internet}. Internet dibangun/di-\textit{setup} dengan menggunakan bantuan transmisi data dari kabel-kabel \textit{fiber optic} atau kabel tembaga dan berbagai macam media jaringan lainnya. Bahkan, untuk mengakses internet melalui layanan seperti 2G, 3G dan 4G atau Wifi, pengaturan fisik dari kabel-kabel jaringan tersebut masih diperlukan\autocite{gfg-internet}. 
-WIP
+\subsubbab{2.1.6 Internet}
+Internet merupakan sebuah bentuk dari infrastruktur jaringan komunikasi global yang menghubungkan miliaran komputer (ataupun perangkat lainnya) satu sama lain yang tersebar di seluruh dunia\autocite{javatpoint-internet}. Kata "Internet" sendiri berasal dari bahasa latin, yakni dari kata "\textit{inter}" dan "\textit{net}". Kata "\textit{inter}" memilki arti sebagai "antara" dan kata "\textit{net}" yang berarti "jaringan". Kata "\textit{net}" ini jugalah yang merupakan singkatan dari kata \textit{network}\autocite{arti-kata-internet}. Internet dibangun/di-\textit{setup} dengan menggunakan bantuan transmisi data dari kabel-kabel \textit{fiber optic} atau kabel tembaga dan berbagai macam media jaringan lainnya\autocite{gfg-internet}. Ada beberapa istilah penting yang sangat berhubungan dengan jaringan internet, seperti:
+\begin{itemize}
+    \item \textit{Client}\\
+    \textit{Client} merupakaan sebuah istilah yang digunakan untuk mendefinisikan perangkat-perangkat pengguna (\textit{end-user devices}) yang tersambung langsung ke internet dan meminta/me-\textit{request} layanan kepada server. Contoh: sebuah laptop atau \textit{smartphone} yang tersambung ke wifi dan meminta \textit{request} kepada server untuk mengunduh sebuah aplikasi\autocite{arti-client-server}.
+    \item \textit{Server}\\
+    \textit{Server} merupakan sebuah istilah yang digunakan untuk mendefinisikan perangkat komputer besar yang bertugas untuk memberikan layanan kepada perangkat lain yang tersambung dengan jaringan internet. Contoh: sebuah server yang memberikan layanan kepada \textit{end-user devices} untuk mengunduh suatu aplikasi\autocite{arti-client-server}.
+    \item \textit{Internet Service Provider} (ISP)\\
+    \textit{Internet Service Provider} atau yang biasa disebut sebagai ISP, merupakan sebuah organisasi yang menyediakan layanan untuk mengakses, menggunakan, mengelola atau ikut berpatisipasi di dalam jaringan internet. ISP dapat berbentuk sebagai organisasi komersial, organisasi milik komunitas, \textit{non-profit} atau bahkan milik pribadi\autocite{what-is-isp}. 
+    \item \textit{IP Address}\\
+    \textit{IP Address} merupakan sebuah alamat unik yang mengidentifikasi sebuah perangkat di dalam jaringan internet, layaknya sebuah alamat rumah yang mengidentifikasi lokasi/tempat rumah tersebut berada. Dalam kata lain, \textit{IP Address} adalah sebuah alat pengidentifikasi yang memungkinkan pengiriman informasi antarperangkat dan berisikan informasi lokasi yang memungkinkan sebuah perangkat dapat diakses untuk komunikasi di dalam jaringan internet\autocite{what-is-ip-address}. \textit{IP Address} terdiri dari sederetan angka yang dipisahkan oleh tanda titik (.). Deretan angka pada \textit{IP Address} itu adalah unik, sehingga bentuk deretannya dapat berbeda-beda dari satu perangkat dengan perangkat lainnya\autocite{javatpoint-internet}. Contoh bentuk dari \textit{IP Address}: 192.168.10.69
+    \item \textit{Domain Name System} (DNS)\\
+    \textit{Domain Name System} atau biasa disebut sebagai DNS, merupakan sebuah alat yang bertugas untuk menerjemahkan \textit{IP Address} menjadi suatu nama domain (\textit{domain name})\autocite{what-is-dns}. Sedangkan (\textit{Domain name}) atau nama domain itu sendiri adalah sebuah rangkaian teks yang didapat dari pemetaan deretan angka pada \textit{IP Address} yang digunakan untuk mengakses sebuah situs web (\textit{website}). Contoh beberapa nama domain antara lain, 'google.com', 'twitter.com' dan 'binusmaya.binus.ac.id'\autocite{what-is-domain-name}. Pada dasarnya, DNS itu bagaikan sebuah buku telepon untuk internet. Pengguna dapat mengakses segala macam informasi secara \textit{online} melalui \textit{domain name} seperti 'yahoo.com' atau 'youtube.com', yang kemudian diketik melalui sebuah \textit{web browsers} seperti Google Chrome atau Firefox. Lalu \textit{web browser} tersebut berinteraksi melalui \textit{IP Address} yang kemudian \textit{domain name} yang di \textit{request} sebelumnya dapat diterjemahkan oleh DNS menjadi \textit{IP Address} yang sesuai sehingga \textit{web browser} dapat memuat informasi yang diinginkan oleh penggunanya\autocite{what-is-dns}.
+    \item \textit{Web Browser, Web Page, Website} dan \textit{Web Server}
+    \begin{itemize}
+        \item \textit{Web Browser}\\
+        \textit{Web Browser} merupakan sebuah aplikasi perangkat lunak yang digunakan untuk menelusuri, mengakses dan memuat berbagai macam \textit{web page} yang tersedia di internet\autocite{web-browsers}.
+        \item \textit{Web Page}\\
+        \textit{Web Page} merupakan sebuah dokumen/halaman yang dapat ditampilkan pada \textit{web browser}. \textit{Web Page} ini biasa juga disebut sebagai "\textit{pages}"\autocite{webpage-website-webserver}.
+        \item \textit{Website}\\
+        \textit{Website} adalah sebuah koleksi dari \textit{web page} yang dikelompokkan dalam suatu kelompok bersamaan dan biasanya saling terhubung satu sama lain. \textit{Website} biasanya juga disebut sebagai "\textit{site}"\autocite{webpage-website-webserver}.
+        \item \textit{Web Server}\\
+        \textit{Web Server} merupakan sebuah aplikasi perangkat lunak yang dihosting pada komputer khusus yang berguna untuk memberikan/menampilkan \textit{website} ketika di-\textit{request} oleh \textit{web browser}\autocite{web-browsers}.
+    \end{itemize}
+    \item \textit{Internet Connection Protocols}\\
+    Saat melintasi di dalam jaringan internet, data yang dikirim tersebut terlebih dahulu dipecah menjadi bagian-bagian yang lebih kecil yang dinamakan sebagai "\textit{packet}". Informasi IP terlampir pada tiap paket yang ada, dan informasi IP inilah yang membantu merutekan jalan agar pengiriman paket tersebut tiba di tempat tujuan yang tepat. Tempat tujuan dari paket-paket ini adalah alamat IP (\textit{IP Address}) dari masing-masing perangkat/domain yang terhubung dengan internet\autocite{what-is-internet-protocol}. Maka dari itu, agar pengiriman paket-paket ini berjalan dengan lancar, maka dibutuhkannya sebuah sistem protokol yang dapat membantu dan menjaga pengiriman paket-paket saat dikirimkan melewati internet.
+    \textit{Internet Connection Protocols} (IP) merupakan sebuah protokol atau seperangkat aturan yang digunakan untuk \textit{routing}/perutean dan menangani pengiriman paket data agar dapat berjalan melintasi jaringan internet dan tiba di tempat tujuan yang tepat\autocite{what-is-internet-protocol}. Berikut adalah beberapa macam jenis \textit{Internet Protocols} yang sering digunakan:
+    \begin{itemize}
+        \item TCP/IP (\textit{Transmission Control Protocol/Internet Protocol})\\
+        TCP/IP merupakan salah satu bentuk dari protokol transport, yang berarti protokol ini menentukan cara datanya dikirim dan diterima\autocite{what-is-internet-protocol}. Pada sistem protokol ini, protokol IP memastikan bahwa setiap perangkat yang terhubung dengan internet memilki nomor seri yang khusus (\textit{IP Address}). Lalu, protokol TCP lah yang menentukan bagaimana data tersebut akan dipertukarkan melalui internet. TCP ini juga yang menentukan bagaimana data tersebut akan dipecah menjadi paket IP dan memastikan bahwa paket tersebut memiliki informasi mengenai sumber pengiriman data, tempat tujuan data yang dikirimkan, urutan pengiriman dari data tersebut serta memeriksa apakah data yang telah dikirim tiba di tempat tujuan yang benar\autocite{types-of-internet-protocols}.
+        \item UDP/IP (\textit{User Datagram Protocol/Internet Protocol})\\
+        Mirip seperti TCP/IP, UDP/IP juga merupakan sebuah protokol transport. Namun, UDP/IP ini bekerja lebih cepat dibandingkan TCP/IP, tetapi juga kurang dapat diandalkan. Karena, pada proses pengiriman paket datanya, protokol ini tidak memastikan bahwa paket yang terkirim tersebut berurutan/teratur sesuai dengan urutannya dan tidak membuat koneksi sebelum memulai atau menerima transmisi dalam proses pengririman data\autocite{what-is-internet-protocol}.
+        \item FTP (\textit{File Transfer Protocol})\\
+        \textit{File Transfer Protocol} (FTP) adalah sebuah sistem protokol internet yang memungkinkan pengguna untuk mentransfer/memindahkan data berupa \textit{file} seperti dokumen, text, \textit{file} multimedia (gambar, video atau audio), sebuah \textit{program file}, dan lain sebagainya\autocite{javatpoint-internet}.
+        \item HTTP (\textit{Hyper Text Transfer Protocol})\\
+        Protokol jenis ini digunakan untuk mentransfer \textit{hypertext} (format text yang dapat berisi tautan ke text lain) melalui internet dan didefinisikan dengan "www" (\textit{World Wide Web}) untuk mentransfer informasi didalamnya. Protokol ini juga yang menentukan berbagai tindakan/\textit{action} yang harus dilakukan oleh \textit{web browser} sebagai \textit{response} atas panggilan yang dilakukan untuk mengakses \textit{web page} tertentu. HTTP inilah yang digunakan untuk berbagi berbagai macam \textit{file} multimedia di \textit{World Wide Web}\autocite{types-of-internet-protocols}.
+    \end{itemize}
+\end{itemize}
 
-\subbab{2.1.7 \textit{API Call}}
-WIP
+\subsubbab{2.1.7 \textit{API Call}}
+\textit{Application Programming Interface} atau biasa juga disebut sebagai API, merupakan sekumpulan definisi dan protokol yang dapat digunakan untuk membangun dan mengintegrasikan aplikasi perangkat lunak\autocite{whats-api}. Adanya API memungkinkan para \textit{developer} untuk menghindari pekerjaan berulang yang berlebihan, alih-alih membangun dan membangun kembali fungsi aplikasi yang sudah ada, \textit{developer} dapat memasukkan yang sudah ada ke dalam aplikasi baru mereka dengan memformat permintaan sesuai kebutuhan API\autocite{whats-api-2}. \textit{API Calls} merupakan media yang digunakan untuk berinteraksi. Sebuah \textit{API Call} atau juga disebut sebagai \textit{API Request} adalah pesan yang dikirim ke server yang meminta API untuk menyediakan sebuah layanan atau informasi tertentu. \textit{API Calls} berpindah dari \textit{client} menuju ke \textit{API Endpoint} (tempat yang dituju oleh \textit{API Call}). \textit{API Endpoint} biasa berupa sebuah aplikasi \textit{web} da server. Server tersebut menerima \textit{API Call}, lalu memprosesnya, mengeksekuisnya dan mengirimkan respons yang dimana respons ini biasa disebut dengan istilah \textit{API Response}\autocite{whats-api-call}. Salah satu contoh nyatanya kegunaan dari API adalah misal, seseorang sedang mencari tiket hotel pada sebuah situs \textit{travel}. Situs tersebut kemudian mengirimkan \textit{API Call} ke beberapa perusahaan hotel dan menerima balik sebuah respons (\textit{API Response}) berupa informasi mengenai hotel-hotel tersebut, seperti lokasi hotel, jumlah kamar yang tersedia hingga harga penginapan untuk masing-masing jenis kamarnya.
 
 \subsubbab{2.1.8 \textit{Unified Modeling Languages} (UML)}
 \textit{Unified Modeling Languages} atau biasa juga disebut sebagai UML merupakan sebuah bahasa pemodelan standar yang terdiri dari satu set diagram. Bahasa pemodelan yang terdiri dari diagram-diagram ini dikembangkan dengan tujuan untuk membantu para \textit{software developers} dan \textit{system developers} untuk membangun dan memvisualisasikan serta mendokumentasikan struktur sistem pada sebuah perangkat lunak (\textit{software}). Bahasa pemodelan ini juga dapat digunakan untuk memodelkan sebuah alur bisnis ataupun sebuah sistem yang bukan merupakan perangkat lunak (\textit{non-software system})\autocite{what-is-UML}.
@@ -329,7 +364,7 @@ WIP
 Untuk sekarang, UML sudah berada di versi 2.5, yang dimana pada versi ini terdapat lima belas teknik diagram yang berbeda yang dapat digunakan untuk memodelkan suatu sistem. Diagram-diagram tersebut dibagi menjadi dua kelompok besar yakni, \textit{Structure Diagrams} yang digunakan untuk memodelkan struktur pada suatu sistem dan \textit{Behavioral Diagrams} yang digunakan untuk memodelkan alur kejadian/perilaku yang akan dijalankan pada sistem tersebut. \textit{Class Diagram} merupakan salah satu contoh diagram yang termasuk ke dalam kelompok \textit{Structure Diagrams}. Sedangkan, \textit{Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram} merupakan contoh diagram yang masuk ke dalam kelompok \textit{Behavioral Diagrams}\autocite{systemanalysisdesign-with-uml-5}.
 
 Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML yang akan digunakan untuk menggambarkan sistem yang dibuat, diagram-diagram tersebut antara lain, \textit{Class Diagram, Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram}. Berikut adalah penjelasan lebih detailnya mengenai empat jenis diagram UML tersebut: 
-\begin{itemize}
+\begin{enumerate}
     \item \textit{Class Diagram}\\
     \textit{Class Diagram} merupakan salah satu jenis diagram UML yang masuk ke dalam kelompok \textit{Structure Diagrams}. Diagram ini berupa sebuah model statis yang menunjukkan struktur kelas (\textit{class}) dan hubungan antar kelasnya yang tetap konstan di dalam suatu sistem dari waktu ke waktu. Diagram ini menggambarkan perilaku (\textit{behavior}) dan status\textit{states} dari kelasnya dengan hubungan antar kelasnya\autocite{systemanalysisdesign-class-diagram}. Singkatnya, \textit{class diagram} adalah sebuah jenis diagram berstruktur statis yang menggambarkan struktur sistem dengan menunjukkan kelas-kelas sistemnya, atribut-atributnya, operasi/metode yang berjalan dan hubungan antar kelasnya\autocite{what-is-class-diagram}. Berikut adalah komponen-komponen yang ada pada \textit{class diagram}:
     \begin{itemize}
@@ -369,40 +404,80 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \item \textit{Association}\\
         \textit{Association} dapat diartikan sebagai hubungan struktural antara dua \textit{class} yang sederajat\autocite{what-is-class-diagram}. Ini menandakan adanya asosiasi/hubungan antara satu \textit{class} dengan satu \textit{class} lain. Salah satu contoh hubungan ini adalah seorang pasien yang menjadwalkan sebuah \textit{appointment}. Hubungan antara \textit{class} 'Pasien' dengan \textit{class} 'Appointment' adalah sebuah \textit{association}\autocite{systemanalysisdesign-class-diagram-relations}.\\
         \textbf{Representasi Grafis}:\\
-        \includegraphics[scale=0.5]{class diagram - association example.png}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{class diagram - association example.png}
+            \caption{Contoh dari relasi \textit{Association}}
+        \end{figure}
         \item \textit{Generalization (Inheritance)}\\
         \textit{Generalization} merupakan sebuah hubungan yang menggambarkan sebuah \textit{class} yang mewarisi/(\textit{inherit attribute}) atau \textit{operation} dari \textit{class} yang lain\autocite{what-is-class-diagram}. Hubungan jenis ini merepresentasikan sebuah relasi berbentuk \textit{"is-a"} atau \textit{"a-kind-of"} antarkelas. Contoh hubungan ini adalah seperti halnya hubungan antara 'Pelanggan' dan 'Karyawan'. Kedua-duanya merupakan turunan dari \textit{class} 'Orang' atau '\textit{Person}'. \textit{Class} 'Orang' dapat dinamakan sebagai \textit{superclass} karena \textit{class} itulah yang mewarisi kedua \textit{class} lainnya, sedangkan 'Karyawan' dan 'Pelanggan' dapat disebut sebagai sebuah \textit{subclass}, karena kedua \textit{class} tersebut diwarisi oleh sebuah \textit{class} lain\autocite{systemanalysisdesign-class-diagram-relations}.\\
         \textbf{Representasi Grafis}:\\
-        \includegraphics[scale=0.5]{class diagram generalization example.png}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.375]{class diagram generalization example.png}
+            \caption{Contoh dari relasi \textit{Generalization}}
+        \end{figure}
         \item \textit{Aggregation}\\
         \textit{Aggregation} merupakan jenis \textit{association} yang spesial/khusus. Hubungan ini merepresentasikan hubungan \textit{"a-part-of"} atau \textit{"has-parts"}. Contoh nyatanya adalah 'mahasiswa merupakan bagian dari sebuah kelas', 'seorang karyawan merupakan bagian dari sebuah perusahaan' dan 'mesin adalah bagian dari sebuah mobil'. Sama seperti hubungan \textit{Generalization}, hubungan \textit{Aggregation} juga dapat dibentuk menjadi sebuah hirarki\autocite{systemanalysisdesign-class-diagram-relations}.\\
         \textbf{Representasi Grafis}:\\
-        \includegraphics[scale=0.5]{class diagram - aggregation example.png}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{class diagram - aggregation example.png}
+            \caption{Contoh dari relasi \textit{Aggregation}}
+        \end{figure}
         \item \textit{Composition}\\
         \textit{Composition} merupakan sebuah hubungan yang mirip dengan \textit{aggregation}. Namun yang membedakannya adalah apabila \textit{superclass}-nya dihancurkan, maka bagian-bagiannya atau dalam kata lain (\textit{subclass}) dari \textit{superclass} itu juga akan hancur. Contohnya adalah kepala, tangan dan kaki merupakan bagian tubuh dari seseorang, apabila orangnya tidak ada, maka kepala, tangan dan kaki orang tersebut juga tidak ada\autocite{what-is-class-diagram}.\\
         \textbf{Representasi Grafis}:\\
-        \includegraphics[scale=0.5]{class diagram composition example.png}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{class diagram composition example.png}
+            \caption{Contoh dari relasi \textit{Composition}}
+        \end{figure}
     \end{itemize}
     \textit{Relationship} juga dapat memiliki \textit{multiplicity}. \textit{Multiplicity} inilah yang mendokumentasikan bagaimana sebuah \textit{instance} dari sebuah objek dapat diasosiasikan dengan \textit{instance} lainnya. \textit{Multiplicity} biasanya dituliskan sebagai angka dalam bentuk format "angka minimum.. angka maksimum"\autocite{systemanalysisdesign-class-diagram}. Berapa banyak objek dari setiap \textit{class} yang mengambil bagian dalam \textit{relationship} dan \textit{multiplicity} dapat dinyatakan sebagai berikut:
     \begin{itemize}
         \item \textit{Exactly One} (1)\\
-        \includegraphics[scale=0.5]{multiplicity exactly one.png}\\
-        Departemen hanya memiliki satu dan hanya satu bos saja.
+        % \begin{figure}[h]
+        %     \centering
+            \includegraphics[scale=0.475]{multiplicity exactly one.png}\\
+            Departemen hanya memiliki satu dan hanya satu bos saja.
+            % \caption{Departemen hanya memiliki satu dan hanya satu bos saja.}
+        % \end{figure}
         \item \textit{Zero or One} (0.. 1)\\
-        \includegraphics[scale=0.5]{multiplicity zero to one example.png}\\
-        Seorang karyawan dapat menikahi dengan nol atau satu pasangan.
+        % \begin{figure}[h]
+        %     \centering
+            \includegraphics[scale=0.475]{multiplicity zero to one example.png}\\
+            Seorang karyawan dapat menikahi dengan nol atau satu pasangan.
+            % \caption{Seorang karyawan dapat menikahi dengan nol atau satu pasangan.}
+        % \end{figure}
         \item \textit{Many} atau \textit{Zero or More} (* atau 0.. *)\\
-        \includegraphics[scale=0.5]{multiplicity many example.png}\\
-        Orang tua dapat memiliki nol hingga banyak anak.
+        % \begin{figure}[h]
+        %     \centering
+            \includegraphics[scale=0.475]{multiplicity many example.png}\\
+            Orang tua dapat memiliki nol hingga banyak anak.
+            % \caption{Orang tua dapat memiliki nol hingga banyak anak.}
+        % \end{figure}
         \item \textit{One or More} (1.. *)\\
-        \includegraphics[scale=0.5]{multiplicity one or more example.png}\\
-        Seorang guru dapat memiliki satu atau lebih murid.
+        % \begin{figure}[h]
+        %     \centering
+            \includegraphics[scale=0.475]{multiplicity one or more example.png}\\
+            Seorang guru dapat memiliki satu atau lebih murid.
+            % \caption{Seorang guru dapat memiliki satu atau lebih murid.}
+        % \end{figure}
         \item \textit{Exact Number} atau \textit{Specified Range} (8 atau 2.. 5)\\
-        \includegraphics[scale=0.5]{multiplicity specified range example.png}\\
-        Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).
+        % \begin{figure}[h]
+        %     \centering
+            \includegraphics[scale=0.475]{multiplicity specified range example.png}\\
+            Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).
+            % \caption{Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).}
+        % \end{figure}
         \item \textit{Multiple, Disjoint Ranges} (1.. 4, 7)\\
-        \includegraphics[scale=0.5]{multiplicity multiple disjoint ranges example.png}\\
-        Seorang murid dapat mengikuti satu atau dua hingga lima kegiatan ekstrakulikuler.
+        % \begin{figure}[h]
+        %     \centering
+            \includegraphics[scale=0.475]{multiplicity multiple disjoint ranges example.png}\\
+            Seorang murid dapat mengikuti satu atau dua hingga lima kegiatan ekstrakulikuler.
+            % \caption{Seorang murid dapat mengikuti satu atau dua hingga lima kegiatan ekstrakulikuler.}
+        % \end{figure}
     \end{itemize}
 
     \item \textit{Activity Diagram}\\
@@ -489,16 +564,138 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \item \textit{Swimlane}
         \begin{itemize}
             \item Digunakan untuk memecah \textit{activity diagram} menjadi beberapa baris dan kolom dengan tujuan untuk menentukan masing-masing \textit{activity} atau \textit{action} ke individu atau objek yang bertanggung jawab untuk menjalankan \textit{activity} atau \textit{action}
-            \item Biasanya diberikan label yang berisikan nama atau dari individu atau objek yang bertanggung jawab\autocite{systemanalysisdesign-activity-diagram}\\
+            \item Biasanya diberikan label yang berisikan nama dari individu atau objek yang bertanggung jawab\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
                   \includegraphics[scale=0.5]{Swimlane_transparent.png}
         \end{itemize}
     \end{itemize}
     \item \textit{Use-Case Diagram}\\
-    \textit{Use-Case Diagram} merupakan salah satu jenis diagram UML yang digunakan untuk menentukan konteks dan \textit{requirements} dari sebuah sistem serta memvalidasi bentuk arsitektur dari sebuah sistem yang digambarkan dengan mengimplementasikan satu atau beberapa \textit{test case}. 
+    \textit{Use-Case Diagram} merupakan salah satu jenis diagram UML yang digunakan untuk menentukan konteks dan \textit{requirements} dari sebuah sistem serta memvalidasi bentuk arsitektur dari sebuah sistem yang digambarkan dengan mengimplementasikan satu atau beberapa \textit{test case}/\textit{use case}\autocite{systemanalysisdesign-use-case-diagram}.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{use case diagram simple example.png}
+        \caption{Contoh bentuk dari \textit{use-case diagram}}
+    \end{figure}\\
+    \textit{Use-Case Diagram} biasanya dibuat dan digunakan pada tahap awal \textit{development} suatu aplikasi. Tujuan dari dibuatnya \textit{use-case diagram} antara lain, menentukan konteks pada sebuah sistem, memvalidasi arsitektur dari suatu sistem, menetapkan \textit{requirements} yang dibutuhkan oleh sebuah sistem dan mendorong adanya implementasi dan menghasilkan \textit{test case}/\textit{use case} pada sistem tersebut. Berikut adalah komponen-komponen yang ada pada \textit{Use-Case Diagram}:
+    \begin{itemize}
+        \item \textit{Actor}\\
+        Merupakan sebuah komponen yang menggambarkan 'seseorang' atau sebuah 'sistem' yang memperoleh \textit{benefit} dari \textit{subject} dan berada di luar \textit{subject boundary}. Biasanya digambarkan sebagai sebuah \textit{stick figure} atau sebuah figur bukan manusia lainnya dan diberi label sesui dengan \textit{role}-nya. \textit{Actor} ini juga dapat di asosiasikan dengan \textit{actor} lainnya melalui asosiasi \textit{specialization/superclass} yang ditandai dengan arah panah dengan mata panah yang berongga (\textit{hollow})\autocite{systemanalysisdesign-use-case-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{use case - actor.png}
+            \caption{Bentuk dari \textit{actor}}
+        \end{figure}
+        \item \textit{Use Case}\\
+        Merupakan sebuah komponen yang menggambarkan bagian utama dari fungsionalitas sistem. \textit{Use Case} ini dapat \textit{extend} ke \textit{use case} lain dan juga dapat \textit{include} \textit{use case} lain. Komponen ini berada di dalam \textit{subject boundary} dan biasanya diberi label sesuai dengan fungsi/\textit{use case} yang ingin di tampilkan\autocite{systemanalysisdesign-use-case-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{use case - use case.png}
+            \caption{Bentuk dari \textit{use case}}
+        \end{figure}
+        \item \textit{Subject Boundary}\\
+        Komponen inilah yang merepresentasikan ruang lingkup \textit{subject} yang ingin ditampilkan (sebuah sistem atau proses bisnis individu)\autocite{systemanalysisdesign-use-case-diagram}. 
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{use case - subject boundary.png}
+            \caption{Bentuk dari \textit{subject boundary}}
+        \end{figure}
+        \item \textit{Association Relationship}\\
+        Komponen inilah yang menghubungkan \textit{actor} dengan \textit{use case} yang berinteraksi dengannya\autocite{systemanalysisdesign-use-case-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{use case - association.png}
+            \caption{Bentuk dari \textit{Association Relationship}}
+        \end{figure}
+        \item \textit{'Include' Relationship}\\
+        Merupakan penyertaan fungsionalitas dari satu \textit{use case} di dalam \textit{use case} lainnya\autocite{systemanalysisdesign-use-case-diagram}. Ini menandakan bahwa \textit{use case} yang di-\textit{include}  tersebut bersifat wajib dan merupakan bagian dari \textit{use case} dasarnya. Salah satu contoh kasusnya adalah apabila seseorang ingin membaca buku, maka orang tersebut harus membuka bukunya terlebih dahulu. Ini menandakan bahwa \textit{use case} 'Membaca Buku' meng-\textit{include} \textit{use case} 'Membuka Buku', karena, apabila seseorang ingin membaca buku, maka sudah pasti buku tersebut harus dibuka terlebih dahulu\autocite{educativeio-include-extend-usecase}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{use case - include.png}
+            \caption{Bentuk dari \textit{Include Relationship}}
+        \end{figure}
+        \item \textit{'Extends' Relationship}\\
+        Merupakan sebuah ekstensi dari use case untuk menyertakan suatu \textit{behavior} yang opsional\autocite{systemanalysisdesign-use-case-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{use case - extend.png}
+            \caption{Bentuk dari \textit{Extend Relationship}}
+        \end{figure}
+        \item \textit{Generalization Relationship}\\
+        Mewakili sebuah penggunaan \textit{use case} khusus ke \textit{use case} yang lebih umum\autocite{systemanalysisdesign-use-case-diagram}. Relasi \textit{generalization} adalah hubungan \textit{parent-child} antar-\textit{use case}\autocite{what-is-usecase-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{use case - generalization.png}
+            \caption{Bentuk dari \textit{Generalization Relationship}}
+        \end{figure}
+    \end{itemize}
     \item \textit{Sequence Diagram}\\
-    WIP
-\end{itemize}
+    \textit{Sequence Diagram} merupakan sebuah jenis \textit{interaction diagram} yang menjelaskan detail bagaimana sebuah operasi dilakukan. Diagram ini menangkap interaksi antar objek dalam konteks kolaborasi. \textit{Sequence Diagram} berfokus pada waktu dan menunjukkan urutan interaksi secara visual dengan menggunakan sumbu vertikal diagram untuk merepresentasikan waktu, pesan apa yang dikirim dan kapan\autocite{what-is-sequence-diagram}.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=6cm,height=4cm]{sequence diagram simple example.png}
+        \caption{Contoh sederhana dari \textit{Sequence Diagram} dalam kasus penarikan tunai di ATM}
+    \end{figure}
+    Berikut adalah komponen-komponen yang ada pada \textit{Sequence Diagram}:
+    \begin{itemize}
+        \item \textit{Actor}\\
+        Merupakan komponen yang menggambarkan 'seseorang' atau 'sistem' memperoleh \textit{benefit} dari dan berada di luar sistem tersebut. \textit{Actor} ini ikut berpartisipasi dalam \textit{sequence} dengan mengirim dan/atau menerima \textit{message} dan biasanya \textit{actor} tersebut diletakkan di bagain teratas pada diagram\autocite{systemanalysisdesign-sequence-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{use case - actor.png}
+            \caption{Bentuk dari \textit{actor}}
+        \end{figure}
+        \item \textit{Object}\\
+        Merupakan sebuah objek yang ikut berpatisipasi di dalam \textit{sequence} dengan mengirim dan/atau menerima \textit{message}. Biasanya juga diletakkan di bagian teratas diagram seperti layaknya \textit{actor}\autocite{systemanalysisdesign-sequence-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{sequence - object.png}
+            \caption{Bentuk dari \textit{object}}
+        \end{figure}
+        \item \textit{Lifeline}\\
+        Komponen yang menunjukkan masa waktu hidup suatu objek di dalam \textit{sequence}\autocite{systemanalysisdesign-sequence-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{sequence - lifeline.png}
+            \caption{Bentuk dari \textit{lifeline}}
+        \end{figure}
+        \item \textit{Execution Occurrence}\\
+        Merupakan sebuah persegi panjang yang ditempatkan di atas sejajar dengan \textit{lifeline} yang menandakan kapan suatu objek mengirim atau menerima \textit{message}\autocite{systemanalysisdesign-sequence-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{sequence - execution occurrence.png}
+            \caption{Bentuk dari \textit{execution occurrence}}
+        \end{figure}
+        \item \textit{Message}\\
+        Berguna untuk menyampaikan informasi dari satu objek ke objek lainnya\autocite{systemanalysisdesign-sequence-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{sequence - message.png}
+            \caption{Bentuk dari \textit{message}}
+        \end{figure}
+        \item \textit{Guard Condition}\\
+        Komponen ini yang mewakili pengujian yang harus dipenuhi agar pesan dapat dikirim\autocite{systemanalysisdesign-sequence-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=6cm,height=1cm]{sequence - guard condition.png}
+            \caption{Bentuk dari \textit{guard condition}}
+        \end{figure}
+        \newpage
+        \item \textit{Object Destruction}\\
+        Sebuah tanda "X" ditempatkan di akhir \textit{lifeline} suatu objek untuk menunjukkan bahwa objek tersebut akan hilang\autocite{systemanalysisdesign-sequence-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1cm,height=1cm]{sequence - object destruction.png}
+            \caption{Bentuk dari \textit{object destruction}}
+        \end{figure}
+        \item \textit{Frame}\\
+        Menunjukkan konteks \textit{sequence diagram}\autocite{systemanalysisdesign-sequence-diagram}.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.45]{sequence - frame.png}
+            \caption{Bentuk dari \textit{frame}}
+        \end{figure}
+    \end{itemize}
+\end{enumerate}
 
 \subbab{2.2 Aplikasi Serupa}
 Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu dan dua aplikasi pasaran yang sebelumnya sudah sedikit dibahas pada bagian latar belakang. Disini, aplikasi-aplikasi tersebut dapat dikategorikan menjadi dua jenis, yaitu \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Berikut adalah perbandingan kelebihan dan kekurangannya.

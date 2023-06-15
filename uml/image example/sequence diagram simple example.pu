@@ -1,0 +1,16 @@
+@startuml sequence diagram simple example
+
+User -> ATM: Insert Card
+ATM -> User: Request PIN
+User -> ATM: Input PIN
+ATM -> Bank: Verifying
+Bank -> ATM: Verifying Success
+ATM -> User: Show Transaction Option
+User -> ATM: Choose to Withdraw Cash
+ATM -> User: Request Amount
+User -> ATM: Input Amount
+ATM -> Bank: Verifying
+Bank -> ATM: Verifying Success
+ATM -> User: Give Cash
+
+@enduml
