@@ -18,8 +18,6 @@ rectangle shumishumi {
     usecase "register" as register
     usecase "forgot password" as forgotpassword
 
-    usecase "recommend product" as recommend
-    usecase "show item" as show
 
     usecase "search item" as search
 
@@ -66,7 +64,5 @@ manage_item -- m
 
 
 register .> activate : <<include>>
-login .> recommend : <<extend>>
-show <. login : <<include>>
 
 @enduml

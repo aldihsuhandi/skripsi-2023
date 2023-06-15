@@ -22,7 +22,7 @@ entity hobbies {
 entity interest_level {
     * interest_level_id : varchar <<generated>>
     --
-    * level_name varchar
+    * level_name : varchar
     * gmt_create : date
     * gmt_modified : date
 }
