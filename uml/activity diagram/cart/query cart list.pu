@@ -1,0 +1,8 @@
+@startuml query cart list
+|user|
+start
+:click cart button;
+|system|
+:redirect to cart page;
+stop
+@enduml

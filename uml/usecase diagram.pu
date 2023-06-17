@@ -16,9 +16,11 @@ rectangle shumishumi {
     usecase "login" as login
     usecase "activate" as activate
     usecase "register" as register
+    usecase "logout" as logout
     usecase "forgot password" as forgotpassword
 
 
+    usecase "open detail item" as detail
     usecase "search item" as search
 
     usecase "become a merchant" as be_merchant
@@ -32,6 +34,7 @@ rectangle shumishumi {
 
 ' user
 u -- login
+u -- logout
 
 u -- search
 
@@ -48,6 +51,7 @@ u -- review
 
 ' merchant
 login -- m
+logout -- m
 register -- m
 forgotpassword -- m
 
@@ -64,5 +68,6 @@ manage_item -- m
 
 
 register .> activate : <<include>>
+search .> detail : <<extend>>
 
 @enduml

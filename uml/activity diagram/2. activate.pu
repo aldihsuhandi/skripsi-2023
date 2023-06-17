@@ -5,14 +5,14 @@ start
 :get otp from email;
 repeat 
 :fillout otp form;
-|shumishumi|
+|system|
 :process otp;
+:check if otp process success;
 backward:show error message;
-repeat while(is otp process success?) is (no)
+repeat while() is (no)
 -> yes;
 :activate user;
 :redirect to login page;
-|user|
 stop
 
 @enduml

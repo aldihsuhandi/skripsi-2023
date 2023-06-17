@@ -3,27 +3,28 @@
 |user|
 start
 :press login button;
-|shumishumi|
+|system|
 :redirect to login page;
 |user|
 repeat :fill out login form;
 :submit login form;
-|shumishumi|
+|system|
 :validate login form;
 :query user info;
-|shumishumi|
-if (user is active?) then (no)
+|system|
+:check if user is active;
+if () then (no)
     :show warning message user is not active;
     :redirect to activate page;
-    |user|
     stop
 endif
-|shumishumi|
-:create session;
-repeat while(login process success?) is (no)
 -> yes;
+:create session;
+:check if login process success;
+backward:show error message;
+repeat while() is (false)
+-> true;
 :redirect to homepage;
-|user|
 stop
 
 @enduml

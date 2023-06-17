@@ -1,0 +1,12 @@
+@startuml see item detail
+|user|
+:click item card;
+|system|
+:query item detail;
+:check if user login;
+if () then (yes)
+:create activity record;
+endif
+:redirect to item detail page;
+stop
+@enduml

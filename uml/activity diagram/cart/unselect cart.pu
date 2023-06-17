@@ -1,0 +1,15 @@
+@startuml select or unselect cart
+
+|user|
+start
+:click cart button;
+|system|
+:redirect to cart page;
+|user|
+:select or unselect cart;
+|system|
+:select or unselect cart;
+:recalculate price;
+stop
+
+@enduml

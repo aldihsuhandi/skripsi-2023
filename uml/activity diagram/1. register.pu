@@ -3,20 +3,21 @@
 |user|
 start
 :press register button;
-|shumishumi|
+|system|
 :redirect to register page;
 |user|
 repeat
 :fill out register form;
 :submit register form;
-|shumishumi|
+|system|
 :validate register form;
-repeat while (register validation success?) is (no)
+:check if register validation success;
+backward:show error message;
+repeat while () is (no)
 -> yes;
 :create user;
 :send otp email to user;
 :redirect to activate page;
-|user|
 stop
  
 @enduml

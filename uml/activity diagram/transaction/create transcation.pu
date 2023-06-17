@@ -1,0 +1,37 @@
+@startuml
+
+|user|
+start
+:open cart page;
+:click buy;
+|system|
+:validate if there are selected cart;
+if () then (no)
+:show error message;
+stop
+endif
+-> yes;
+:query selected cart;
+:create transaction\nwith INIT status;
+:redirect to payment page;
+|user|
+:choose payment;
+:click pay;
+|system|
+:create midtrans payment request;
+|midtrans|
+:create payment request;
+:check if payment request is successful;
+if () then (no)
+|system|
+:show error message;
+stop
+endif
+|system|
+:delete selected cart;
+:update item quantity;
+:update transaction status to\nWAITING_PAYMENT;
+:redirect to transaction detail page;
+stop
+
+@enduml
