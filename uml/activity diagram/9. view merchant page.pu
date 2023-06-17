@@ -1,0 +1,11 @@
+@startuml view merchant page
+
+|user|
+start
+:open item detail;
+:click merchant widget;
+|system|
+:redirect to merchant page;
+stop
+
+@enduml

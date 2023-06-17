@@ -1,0 +1,18 @@
+@startuml view user review list
+
+|user|
+:open profile dropdown;
+:click 'review';
+|system|
+:redirect to review list page;
+:set review filter to\n'need to be reviewed';
+repeat
+:show review list;
+|user|
+:is user want to query\nreview different filter?;
+backward:adjust review filter;
+repeat while() is (yes)
+-> no;
+stop
+
+@enduml

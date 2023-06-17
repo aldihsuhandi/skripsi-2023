@@ -1,0 +1,18 @@
+@startuml create review
+
+|user|
+:open review page;
+:click create review button;
+|system|
+:redirect to create review form;
+|user|
+:fill out review form;
+:click submit button;
+|system|
+:create review;
+:calculate item interest level;
+:calculate item star;
+:calculate merchant star;
+stop
+
+@enduml
