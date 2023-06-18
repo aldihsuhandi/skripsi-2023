@@ -1,0 +1,74 @@
+@startuml search item
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Home page" as home
+participant "Search page" as search
+end box
+
+box "back end"
+participant ItemController as ic
+participant ImageController as imc
+
+participant ItemQueryProcessor as queryproc
+participant ImageDownloadProc as downproc
+
+participant Image as img
+participant Item as im
+participant ItemCategory as icm
+participant InterestLevel as ilm
+participant Hobby as hm
+participant User as um
+end box
+
+database shumishumi as db
+
+u -> home++ : search item
+home -> search --++ : redirect to search page
+
+search -> ic++ : /item/query
+ic -> queryproc++: process
+
+queryproc -> im++ : query
+im -> db++ : query
+return result
+loop for every item in result
+queryproc -> icm++ : query
+icm -> db++: query
+return result
+
+queryproc -> ilm++ : query
+ilm -> db++: query
+return result
+
+queryproc -> hm++ : query
+hm -> db++: query
+return result
+queryproc -> um++ : query
+um -> db++: query
+return result
+
+queryproc -> im : compose neccessary info
+deactivate um
+deactivate icm
+deactivate ilm
+deactivate hm
+end
+
+return result
+return result
+return JSON_RESPONSE
+
+loop for every item in response
+    search -> imc++ : /image/download
+    imc -> downproc++ : process
+    downproc -> img++ : query
+    img -> db++ : query
+    return result
+    return result
+    return result
+end
+
+@enduml

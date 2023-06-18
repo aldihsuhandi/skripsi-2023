@@ -1,0 +1,17 @@
+@startuml update user info
+
+|user|
+start
+:open user info page;
+:click update button;
+|system|
+:redirect to update form;
+|user|
+:fill out update form;
+:click submit button;
+|system|
+:update user info;
+:redirect to user info page;
+stop
+
+@enduml

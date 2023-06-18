@@ -1,0 +1,11 @@
+@startuml see user info
+
+|user|
+start
+:open profile dropdown menu;
+:click user card;
+|system|
+:redirect to user info page;
+stop
+
+@enduml

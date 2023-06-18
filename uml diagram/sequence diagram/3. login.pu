@@ -1,0 +1,61 @@
+@startuml login
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Home page" as home
+participant "Login page" as login
+end box
+
+box "back end"
+participant "UserController" as uc
+
+participant "UserLoginProcessor" as loginproc
+
+participant "User" as um
+participant "Session" as sm
+end box
+
+database shumishumi as db
+
+u -> home++ : click login button
+home -> login --++ : redirect to login page
+
+autonumber inc a
+u -> login : fill out login form
+autonumber inc a
+u -> login : click login button
+
+login -> uc++ : /user/login
+uc -> loginproc++ : process
+
+loginproc -> um++ : query
+um -> db++ : query
+return result
+loginproc -> um : validate password
+alt if password validation failed
+    loginproc <-- um : result
+    uc <-- loginproc : result
+
+    login <-- uc : JSON_RESPONSE
+    u <-- login : show error message
+else if password validation success
+    autonumber inc b
+    loginproc <-- um --: success result
+
+    create sm
+    loginproc -> sm++ : new
+    sm -> db++ : save
+    return result
+    return result
+
+    return result
+    return result
+
+    home <-- login --++ : redirect to homepage
+end
+
+
+
+@enduml
