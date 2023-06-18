@@ -1,0 +1,30 @@
+@startuml usecase diagram simple example
+
+left to right direction
+actor "User" as U
+actor "Bank" as B
+actor "Technician" as T
+rectangle ATM {
+    usecase "Check Balance" as CB
+    usecase "Deposit Funds" as DF
+    usecase "Transfer Funds" as TF
+    usecase "Withdraw Cash" as WC
+    usecase "Maintenance" as M
+    usecase "Repair" as R
+}
+
+U --> CB
+U --> DF
+U --> TF
+U --> WC
+CB <-- B
+DF <-- B
+TF <-- B
+WC <-- B
+M <-- B
+R <-- B
+T --> M
+T --> R
+
+
+@enduml
