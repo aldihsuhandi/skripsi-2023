@@ -1,0 +1,69 @@
+@startuml create item
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Merchant page" as merchant
+participant "Item Create page" as createpage
+participant "Item Detail page" as detail
+end box
+
+box "back end"
+participant ItemController as ic
+participant ImageController as imc
+
+participant ImageUploadProcessor as upproc
+participant ItemCreateProcessor as createproc
+
+participant Item as im
+participant Knowledge as km
+
+participant Image as img
+end box
+
+database shumishumi as db
+
+u -> merchant++ : click create item
+merchant -> createpage --++ : redirect to item create form
+
+autonumber inc a
+u -> createpage : fill out create form
+autonumber inc a
+u -> createpage : click create
+
+loop for every image need to be uploaded
+createpage -> imc++ : /image/upload
+imc -> upproc++ : process
+
+create img
+upproc -> img++ : new
+img -> db++ : create
+return result
+return result
+return result
+return JSON_RESPONSE
+end
+
+autonumber inc b
+createpage -> ic++ : /item/create
+ic -> createproc++ : process
+
+create im
+createproc -> im++ : new
+im -> db++ : save
+return result
+
+createproc -> km++ : update
+km -> db++ : update
+return result
+return result
+
+deactivate im
+
+return result
+return JSON_RESPONSE
+
+createpage -> detail++-- : redirect detail page
+
+@enduml

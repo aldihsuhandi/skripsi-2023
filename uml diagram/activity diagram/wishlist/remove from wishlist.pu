@@ -1,0 +1,13 @@
+@startuml add to wishlist
+
+|user|
+start
+:open 'wishlist';
+|system|
+:redirect to wishlist page;
+|user|
+:click remove to wishlist button;
+|system|
+:remove from wishlist;
+stop
+@enduml

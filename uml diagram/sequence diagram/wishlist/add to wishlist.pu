@@ -1,0 +1,31 @@
+@startuml add to wishlist
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Item Detail Page" as detail
+end box
+
+box "back end"
+participant "WishlistController" as wc
+participant "AddWishlishProcessor" as proc
+
+participant "Wishlist" as w
+end box
+
+database shumishumi as db
+
+u -> detail++ : clich add to wishlist
+detail -> wc++ : /item/wishlist/add
+wc -> proc++ : process
+
+create w
+proc -> w++ : new
+w -> db++ : create
+return result
+return result
+return result
+return JSON_RESULT
+
+@enduml

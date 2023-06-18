@@ -1,0 +1,44 @@
+@startuml delete item
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Item Detail page" as detail
+participant "Home page" as home
+end box
+
+box "back end"
+participant ItemController as ic
+
+participant ImageUploadProcessor as upproc
+participant ItemdeleteProcessor as deleteproc
+
+participant Item as im
+participant Knowledge as km
+end box
+
+database shumishumi as db
+
+u -> detail++ : click delete item
+
+detail -> ic++ : /item/delete
+ic -> deleteproc++ : process
+
+deleteproc -> im++ : delete
+im -> db++ : delete
+return result
+
+deleteproc -> km++ : delete
+km -> db++ : delete
+return result
+return result
+
+deactivate im
+
+return result
+return JSON_RESPONSE
+
+detail --> home ++-- : redirect to home page
+
+@enduml

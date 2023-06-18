@@ -1,68 +1,72 @@
-@startuml search item
+@startuml query wishlist
 autonumber 1.1.1
 
 actor User as u
 
 box "front end"
 participant "Home page" as home
-participant "Search page" as search
+participant "Wishlist page" as wishlist
 end box
 
 box "back end"
-participant ItemController as ic
+participant WishlistController as wc
 participant ImageController as imc
 
-participant ItemQueryProcessor as queryproc
-participant ImageDownloadProc as downproc
+participant WishlistQueryProcessor as wproc
+participant ImageDownloadProcessor as downproc
 
-participant Image as img
+participant User as um
+participant UserRole as urm
+
+participant Wishlist as wm
 participant Item as im
 participant ItemCategory as icm
 participant InterestLevel as ilm
 participant Hobby as hm
-participant User as um
+
+participant Image as img
 end box
 
 database shumishumi as db
 
-u -> home++ : search item
-home -> search --++ : redirect to search page
+u -> home++ : open wishlist page
+home -> wishlist --++ : redirect to wishlist page
 
-search -> ic++ : /item/query
-ic -> queryproc++: process
-
-queryproc -> im++ : query
-im -> db++ : query
+wishlist -> wc++ : /item/wishlist/query
+wc -> wproc++ : process
+wproc -> wm++ : query
+wm -> db++ : query
 return result
+return result
+
+wproc -> im++ : query
 loop for every item in result
-queryproc -> icm++ : query
+wproc -> icm++ : query
 icm -> db++: query
 return result
 
-queryproc -> ilm++ : query
+wproc -> ilm++ : query
 ilm -> db++: query
 return result
 
-queryproc -> hm++ : query
+wproc -> hm++ : query
 hm -> db++: query
 return result
-queryproc -> um++ : query
+wproc -> um++ : query
 um -> db++: query
 return result
-
-queryproc -> im : compose neccessary info
+wproc -> im : compose neccessary info
+wproc <-- im-- : result
 deactivate um
 deactivate icm
 deactivate ilm
 deactivate hm
-end
 
-return result
 return result
 return JSON_RESPONSE
 
 loop for every item in response
-    search -> imc++ : /image/download
+    wishlist -> imc++ : /image/download
     imc -> downproc++ : process
     downproc -> img++ : query
     img -> db++ : query

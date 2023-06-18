@@ -1,0 +1,32 @@
+@startuml create discussion
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Item Detail page" as detail
+end box
+
+box "back end"
+participant "DiscussionController" as dc
+
+participant "DiscussionAddProcessor" as proc
+participant "Discussion" as dm
+end box
+
+database shumishumi as db
+
+u -> detail++ : create new discussion
+detail -> dc++ : /discussion/create
+
+dc -> proc++ : process
+
+create dm
+proc -> dm++ : create
+dm -> db++ : save
+return result
+return result
+return result
+return JSON_RESPONSE
+
+@enduml
