@@ -80,7 +80,7 @@ manage_item -- m
 
 
 register .> activate : <<include>>
-search .> detail : <<extend>>
-user_info .> update_info :<<extend>>
+search <. detail : <<extend>>
+user_info <. update_info :<<extend>>
 
 @enduml

@@ -1,0 +1,50 @@
+@startuml template
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Review list page" as rlist
+participant "Create review page" as cpage
+end box
+
+box "back end"
+participant "ReviewController" as rc
+
+participant "ReviewCreateProcessor" as proc
+
+participant "Review" as rm
+participant "User" as um
+participant "Item" as im
+end box
+
+database shumishumi as db
+
+u -> rlist++ : click create review
+rlist -> cpage ++-- : redirect to review create page
+
+autonumber inc a
+u -> cpage : fill out review form
+autonumber inc a
+u -> cpage : click submit
+
+cpage -> rc++ : /review/create
+rc -> proc++ : process
+
+proc -> rm++ : update
+rm -> db++ : update
+return result
+return result
+
+proc -> um++ : calculate review
+deactivate um
+
+proc -> im++ : calculate review
+deactivate im
+
+return result
+return JSON_RESPONSE
+
+cpage --> rlist --++:  redirect to review list page
+
+@enduml

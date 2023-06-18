@@ -1,0 +1,57 @@
+@startuml template
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Merchant info page" as home
+participant "Merchant review page" as rlist
+end box
+
+box "back end"
+participant ReviewController as rc
+participant ImageController as imc
+
+participant ReviewQueryController as reproc
+participant ImageDownloadController as downproc
+
+participant Review as rm
+participant Item as im
+
+participant Image as img
+end box
+
+database shumishumi as db
+
+u -> home++ : open merchant review page
+home -> rlist ++-- : redirect merchant review page
+
+rlist -> rc++ : /review/query
+rc -> reproc++ : process
+
+reproc -> rm++ : query
+rm -> db++ : query
+return result
+
+loop for every review
+reproc -> im++ : query
+im -> im : compose neccessary info
+im -> rm : compose item into review
+deactivate im
+end
+return result
+return result
+return JSON_RESPONSE
+
+loop for every item in response
+    rlist -> imc++ : /image/download
+    imc -> downproc++ : process
+    downproc -> img++ : query
+    img -> db++ : query
+    return result
+    return result
+    return result
+    return BIT_IMAGE
+end
+
+@enduml
