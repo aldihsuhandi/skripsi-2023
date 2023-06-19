@@ -1,0 +1,27 @@
+@startuml multiplicity example
+
+'---> Exactly One
+    ' left to right direction
+    ' Departemen --- "1" Boss
+
+'---> Zero or One
+    ' left to right direction
+    ' Employee --- "0..1" Spouse
+
+'---> Many / Zero or More
+    ' left to right direction
+    ' Parent --- "0..*" Child
+
+'---> One or More
+    ' left to right direction
+    ' Teacher --- "1..*" Student
+
+'---> Exact Number / Specified Range
+    ' left to right direction
+    ' Personal_Vehicle --- "2..4" Wheel
+
+'---> Multiple, Disjoint Ranges
+    left to right direction
+    Student --- "1, 2..5" Extracurricular
+
+@enduml

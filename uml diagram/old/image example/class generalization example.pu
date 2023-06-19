@@ -1,0 +1,16 @@
+@startuml class generalization example
+    class Orang {
+
+    }
+
+    class Pelanggan {
+
+    }
+
+    class Karyawan {
+
+    }
+
+    Orang <|-- Pelanggan
+    Orang <|-- Karyawan
+@enduml
