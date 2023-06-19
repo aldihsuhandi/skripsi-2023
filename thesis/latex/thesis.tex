@@ -17,11 +17,15 @@
 \usepackage{array}
 \usepackage{setspace}
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage{chngcntr}
 
 \setlist{
   listparindent=\parindent,
   parsep=0pt,
 }
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\newcounter{counttable}
 
 % code block style
 % -- Defining colors:
@@ -64,24 +68,27 @@
 
 % bab command
 \newcommand{\bab}[1]{%
+    \addtocounter{section}{1}%
+    \setcounter{subsection}{0}
+    \setcounter{subsubsection}{0}
+    \setcounter{counttable}{0}
     \section*{#1}%
     \addcontentsline{toc}{section}{\protect\numberline{}#1}%
 }
 
 \newcommand{\subbab}[1]{%
-    \subsection*{#1}%
-    \addcontentsline{toc}{subsection}{\protect\numberline{}#1}%
+    \subsection{#1}%
+    % \addcontentsline{toc}{subsection}{\protect\numberline{}#1}%
 }
 
 \newcommand{\subsubbab}[1]{%
-    \subsubsection*{#1}%
-    \addcontentsline{toc}{subsubsection}{\protect\numberline{}#1}%
+    \subsubsection{#1}%
+    % \addcontentsline{toc}{subsubsection}{\protect\numberline{}#1}%
 }
 
 \begin{document}
 \setstretch{1.5}
-
-\pagenumbering{Roman}
+\pagenumbering{roman}
 \title{SKRIPSI NON KELAS\\Shumishumi - Online Marketplace For Hobby With Interest Level Filtering and Recommendation System Using Knowledge Graph Implementation\large\\\textbf{Topic: }\textit{E-Application}}
 \author{2301862632 - Aldih Suhandi - \textit{Computer Science} / 082122704561\\2301872596 - Chandra Wijaya - \textit{Computer Science} / 081287588816\\2301867324 - Ibrahim Seto Aditama - \textit{Computer Science} / 081213423549}
 \maketitle
@@ -117,7 +124,7 @@
 \pagenumbering{arabic}
 \bab{Bab 1. Pendahuluan}
 
-\subbab{1.1 Latar Belakang}
+\subbab{Latar Belakang}
 
 Hobi dapat diartikan sebagai suatu aktivitas yang dilakukan dalam waktu luang dengan tujuan untuk mendapatkan rasa kebahagiaan. Hobi ini juga dapat menjadi distraksi dari rasa gelisah yang dimiliki atau dialami oleh seseorang. Hobi juga dapat memberi rasa tujuan hidup kepada seseorang, terutama ketika hobi tersebut dapat dilakukan bersama-sama dengan sebuah kelompok yang memiliki minat hobi yang sejenis\autocite{zaidi2022passion}.
 
@@ -156,7 +163,7 @@ Tentunya aplikasi \textit{online marketplace} seperti yang dikerjakan pada penel
 Berdasarkan semua penjelasan diatas, dapat disimpulkan bahwa adanya peningkatan aktivitas jual beli barang melalui internet yang begitu besar (dari barang kebutuhan hobi maupun tidak) dalam beberapa tahun belakangan ini. Ditambah lagi dengan kesulitannya untuk memulai sebuah kegiatan hobi karena tidak yakin atas barang yang cocok sebagai titik awal untuk memulainya. Untuk itu, penelitian ini bermaksud untuk merancang dan membuat sebuah aplikasi berbasis web yang berfokus pada kegiatan jual beli barang kebutuhan hobi apa saja tanpa merujuk pada satu atau beberapa hobi yang spesifik. Aplikasi ini diberi nama \textbf{ShumiShumi}. Fokus utama aplikasi ini ialah untuk mengimplementasikan dua fitur yang berpotensi untuk membantu para penggunanya mencari barang-barang kebutuhan hobi yang mereka butuhkan. Kedua fitur tersebut adalah fitur penyaringan produk berdasarkan tingkat minat pengguna (\textit{Interest Level Filtering}) dan sistem rekomendasi.
 
 
-\subbab{1.2 Rumusan Masalah}
+\subbab{Rumusan Masalah}
 
 Sesuai dengan latar belakang yang telah dibahas di atas, rumusan masalah yang akan dikaji dalam proyek ini dapat dirangkum menjadi beberapa poin sebagai berikut:
 \begin{enumerate}
@@ -164,7 +171,7 @@ Sesuai dengan latar belakang yang telah dibahas di atas, rumusan masalah yang ak
     \item Bagaimana merancang sebuah aplikasi \textit{marketplace} hobi yang dapat membantu penjual atau \textit{seller} dalam memasarkan barang hobi yang mereka jual dengan fitur utama sistem rekomendasi ke \textit{user} yang tepat
 \end{enumerate}
 
-\subbab{1.3 Ruang Lingkup}
+\subbab{Ruang Lingkup}
 Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketplace} terfokus untuk hobi dengan fitur utama sebuah filter terhadap tingkat kemahiran sebuah hobi, untuk menghindari pembahasan dan implementasi yang meluas dan supaya lebih terfokus maka ditetapkan batasan-batasan atau ruang lingkup sebagai berikut:
 \begin{enumerate}
     \item Aplikasi hanya berbasis dan berada dalam bentuk aplikasi \textit{website}.
@@ -176,7 +183,7 @@ Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketp
     \item \textit{Database} yang dipakai adalah \textit{mysql} versi 8.2.4-2.
 \end{enumerate}
 
-\subbab{1.4 Tujuan dan Manfaat}
+\subbab{Tujuan dan Manfaat}
 
 Tujuan dari proyek ini adalah untuk merancang dan membuat sebuah aplikasi \textit{marketplace} yang berbasis web. Tujuan secara khusus dapat ditulis sebagai poin sebagai berikut:
 \begin{enumerate}
@@ -191,14 +198,14 @@ Manfaat yang diharapkan dari proyek ini adalah:
     \item Menyediakan tempat jual beli yang tepat untuk penjual barang hobi, dimana dengan sistem rekomendasi barang dibantu didorong atau disarankan ke pengguna yang tepat.
 \end{enumerate}
 
-\subbab{1.5 Metode Penelitian}
+\subbab{Metode Penelitian}
 
 Metode Penelitian yang digunakkan adalah metode penelitian kualitatif, yang bersifat deskriptif dengan melakukan analisis\autocite{pengajar-kualitatif}, dan akan melakukan analisis dari hasil pengumpulan data yang dilakukan.
 
 
 Pengumpulan data yang dilakukan adalah dengan membuat form survei menggunakan \textit{Google Form} untuk mendapatkan pendapat atas pertanyaan-pertanyaan yang terkait dengan alasan dari pembuatan aplikasi pada proyek ini. Dari hal mengenai pembelian barang hobi hingga tingkat kesulitan dalam menemukan barang yang cocok. Dari semua jawaban survei yang dikumpulkan tersebutlah, dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang proyek ini butuhkan.
 
-\subbab{1.6 Sistematika Penulisan}
+\subbab{Sistematika Penulisan}
 \textit{\textbf{Bab 1: Pendahuluan}} \newline
 Bab pertama ini akan menjelaskan tentang latar belakang, rumusan masalah, tujuan, manfaat, ruang lingkup, dan metode penelitian yang dilakukan di dalam proyek ini.
 
@@ -219,9 +226,9 @@ Bab kelima ini akan memaparkan beberapa kesimpulan yang dapat diambil dan saran 
 % OOP, Functional Programming, Design Pattern, Architecural Pattern
 
 
-\subbab{2.1 Teori - Teori Umum}
+\subbab{Teori - Teori Umum}
 
-\subsubbab{2.1.1 \textit{Object Oriented Programming}}
+\subsubbab{\textit{Object Oriented Programming}}
 \textit{Object Oriented Programming} adalah konsep programming yang berdasarkan \textit{objects}, sebuah \textit{object} adalah sesuatu entitas yang ada didunia nyata yang bisa diindetifikasi secara unik\autocite{liang_liang_2021}. Sebagai contoh, sebuah meja, seorang guru, dan bahkan hutang bisa dijadikan sebagai \textit{object}.
 
 Untuk membuat sebuah \textit{object} diperlukan sebuah \textit{template} atau \textit{blueprint}, \textit{template} atau \textit{blueprint} ini dalam \textbf{OOP} disebut sebagai \textit{class}, secara definisi \textit{class} adalah sebuah \textit{blueprint} yang dipakai untuk membuat sesuatu atau \textit{object} yang lebih spesifik atau konkrit\autocite{education-erin-oop-2020}, \textit{class} biasanya hanya menampung atribut - atribut yang secara general, seperti tinggi, berat badan, umur, dan sebagainya. Sedangkan sebuah \textit{object} akan menampung \textit{value} yang lebih spesifik, seperti \textit{object} tersebut bertinggi 2 meter dan \textit{object} sudah berumur 3 tahun.
@@ -272,7 +279,7 @@ public class Human {
 
 
 % \newpage
-\subsubbab{2.1.2 \textit{Functional Programming}}
+\subsubbab{\textit{Functional Programming}}
 \textit{Functional Programming} adalah sebuah konsep, paradigma atau sebuah macam \textit{software development} yang menekankan titik beratnya pada penggunaan \textit{functions}, \textit{Functional Programming} sendiri bukan merupakan sebuah alat yang dapat digunakan tetapi merupakan sesuatu pegangan untuk \textit{developers} sebagai sebuah cara menulis kode\autocite{atencio2016functional}.
 
 
@@ -286,7 +293,7 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
     \item \textit{Immutability} adalah dimana dalam \textit{Functional Programming} untuk melestarikan sebuah data supaya \textit{Immutable} tidak bisa diganti setelah di deklarasi. Dalam konsep ini yang perlu diperhatikan adalah object seperti \textit{array} yang dapat berubah konten atau valuenya dalam sebuah function \autocite{atencio2016functional}.
 \end{itemize}
 
-\subsubbab{2.1.3 \textit{Architectural Pattern}}
+\subsubbab{\textit{Architectural Pattern}}
 \textit{Architectural Pattern} merupakan seperangkat prinsip dan pola kasar yang menyediakan kerangka kerja abstrak dari sebuah sistem. \textit{Architectural Pattern} menggambarkan struktural fundamental dari suatu organisasi atau skema untuk sebuah sistem yang kompleks. \textit{Architectural Pattern} dapat digunakan sebagai solusi umum yang dapat digunakan kembali \textit{(reusable)} untuk memecahkan permasalahan yang biasa terjadi dalam sebuah \textit{software architecture} di dalam konteks tertentu\autocite{architectural-pattern}. Dalam artian, \textit{Architectural Pattern} mirip dengan \textit{Design Pattern}, tetapi memiliki cakupan yang lebih luas\autocite{archi-pattern}.
 \begin{itemize}
     \item \textit{Object-Oriented Architecture (OOA)}\\
@@ -299,7 +306,7 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
           \textit{Model-View-Controller Architecture} atau biasa juga disebut sebagai \textbf{MVC}, merupakan sebuah jenis \textit{architectural pattern} yang membagi sistem aplikasinya menjadi tiga bagian, yakni \textbf{\textit{Model}}, \textbf{\textit{View}} dan \textbf{\textit{Controller}}. \textbf{\textit{Model}} merupakan fungsi inti dari aplikasi dan menyimpan data, \textbf{\textit{View}} merupakan sebuah \textit{user interface} (\textbf{UI}) yang dapat dilihat atau berinteraksi dengan pengguna secara langsung dan \textbf{\textit{Controller}} sebagai penghubung antara \textit{model} dengan \textit{view} serta yang mengatur \textit{input} dari pengguna. Arsitektur jenis ini paling sering digunakan untuk membuat sebuah aplikasi berbasis web\autocite{archi-pattern}.
 \end{itemize}
 
-\subsubbab{2.1.4 \textit{Design Pattern}}
+\subsubbab{\textit{Design Pattern}}
 \textit{Design Pattern} secara definisi adalah sesuatu cara komunikasi tiap obyek dan \textit{class} yang dikostumisasi untuk memecahkan masalah desain general di dalam konteks tertentu, \textit{design pattern} membantu untuk membuat \textit{object oriented design} yang dapat digunakan secara berulang, dengan cara memberi nama, mengabstraksi, dna mengidentifikasi kunci aspek dari struktur desain tertentu\autocite{design-pattern-2588942}.
 \begin{itemize}
     \item \textit{Facade}\\
@@ -312,7 +319,7 @@ Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{functi
           \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
 \end{itemize}
 
-\subsubbab{2.1.5 \textit{Software Testing}}
+\subsubbab{\textit{Software Testing}}
 
 Secara general manusia pasti akan melakukan kesalahan, apa lagi di dalam \textit{software development} hal ini sangat kelihatan saat dengan pasti adanya \textit{bug} di dalam \textit{software} yang dikerjakan, ini adalah salah satu alasan kenapa \textit{software testing} itu dibutuhkan, untuk menemukan masalah dan memperbaikinya. Alasan satu lagi \textit{software testing} dilakukan adalah untuk membuat keputusan, apakah \textit{software} yang sedang dibuat ini sudah mempunyai kualitas yang dapat diterima \autocite{jorgensen2018software}.
 
@@ -343,7 +350,7 @@ Secara definisi dasar, \textit{software testing} adalah suatu metode untuk menge
         \end{itemize}
 \end{itemize}
 
-\subsubbab{2.1.6 Sistem Rekomendasi}
+\subsubbab{Sistem Rekomendasi}
 Sistem rekomendasi adalah sistem penyaringan informasi yang menyarankan sebuah produk kepada pengguna berdasarkan preferensi atau perilaku masa lalu. Sistem ini banyak digunakan di pasar \textit{online} untuk meningkatkan pengalaman, keterlibatan pengguna, dan mendorong penjualan. Dengan memberikan rekomendasi yang dipersonalisasi terhadap preferensi, pengguna dapat menemukan sebuah barang yang mungkin tidak bisa ditemukan sendiri dan meningkatkan kepuasan pengguna terhadap pasar \textit{online} yang sedang digunakan \autocite{adiwardana2019}.
 
 Kenapa sistem rekomendasi ini dibutuhkan telah dibuktikan oleh sebuah artikel yang diterbitkan pada tahun 2019 oleh Tian \textit{et al}. yang berjudul "\textit{Exploring the effects of personalized recommendation on users' satisfaction and loyalty in e-commerce}" yang menemukan bahwa pengguna \textit{platform e-commerce}  akan menghabiskan waktu 50\% lebih banyak di \textit{platform} tersebut ketika pengguna diberikan sebuah rekomendasi produk yang dipersonalisasi\autocite{tian2019exploring}. Sistem rekomendasi juga menguntungkan untuk mengurangi terjadinya \textit{information overload} yang akan dialami oleh pengguna, dengan cara hanya menampilkan produk yang ingin dilihat atau yang sesuai dengan preferensi - preferensi pengguna tersebut\autocite{karimi2018news}.
@@ -356,7 +363,7 @@ Sistem rekomendasi yang akan dipakai di dalam proyek ini akan berdasarkan pada t
     \caption{Contoh simpel dari sistem rekomendasi dengan basis \textit{Knowledge Graph}}
 \end{figure}
 
-\subsubbab{2.1.7 \textit{Caching}}
+\subsubbab{\textit{Caching}}
 Secara definisi \textit{caching} adalah sebuah \textit{data storage layer} yang bersifat sementara dan digunakan untuk mempercepat permintaan data dibanding mengakses lokasi penyimpanan utama data tersebut. Fungsi utama \textit{cache} adalah menurunkan proses permintaan data ke lokasi penyimpanan utama yang lambat dengan cara menaruh data tersebut ke \textit{storage layer} yang lebih cepat seperti RAM\autocite{AWS-caching}. Berikut adalah kelebihan dari sistem \textit{caching}:
 
 \begin{itemize}
@@ -369,10 +376,10 @@ Secara definisi \textit{caching} adalah sebuah \textit{data storage layer} yang 
 
 
 
-\subsubbab{2.1.8 \textit{Asynchronous Processing}}
+\subsubbab{\textit{Asynchronous Processing}}
 \textit{Asynchronous Processing} adalah kebalikan dari \textit{synchronous processing} yang akan mengeksekusi setiap proses secara linear sesuai dengan berjalannya waktu. Sebagai contoh, diberikan dua pemanggilan ke `\textit{request.get}` dalam \textit{synchronous processing} pemanggilan kedua tidak akan dijalankan sebelum pemanggilan pertama sudah selesai. Sedangkan dengan menggunakan model \textit{asynchronous processing} dua pemanggilan tersebut bisa dilakukan secara bersamaan\autocite{Williams_Benfield_Warner_Zadka_Mitchell_Samuel_Tardy_2019}.
 
-\subsubbab{2.1.9 \textit{Agile Scrum}}
+\subsubbab{\textit{Agile Scrum}}
 \textit{Agile} adalah kumpulan metodologi yang bisa membantu tim yang men-\textit{develop} suatu proyek untuk berfikir dan bekerja lebih efisien dan membantu untuk mengambil keputusan yang lebih baik\autocite{Stellman_Greene_2016}. Salah satu dari metodologi tersebut adalah \textit{scrum}, \textit{scrum} adalah \textit{project management framework} yang membantu tim untuk menyusun dan mengelola \textit{task - task} yang ada dengan serangkaian nilai, prinsi, dan praktik\autocite{atlassian-agile-scrum}.
 
 \begin{figure}[h]
@@ -847,10 +854,9 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
     \end{itemize}
 \end{enumerate}
 
-\subbab{2.2 Aplikasi Serupa}
+\subbab{Aplikasi Serupa}
 Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu dan dua aplikasi pasaran yang sebelumnya sudah sedikit dibahas pada bagian latar belakang. Disini, aplikasi-aplikasi tersebut dapat dikategorikan menjadi dua jenis, yaitu \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Berikut adalah perbandingan kelebihan dan kekurangannya.
 \textbf{Aplikasi-aplikasi berdasarkan penelitian terdahulu}:
-\addcontentsline{lot}{table}{Aplikasi-aplikasi berdasarkan penelitian terdahulu}
 \begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}
     \hline
     Aplikasi & Positif                                                                                                                 & Negatif \\
@@ -895,10 +901,11 @@ Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitia
     - Hanya tersedia di satu lokasi saja \newline
     - Bukan \textit{marketplace} khusus untuk keperluan hobi                                                                                     \\
     \hline
+    \caption{Aplikasi-aplikasi berdasarkan penelitian terdahulu}
 \end{longtable}
 
+\newpage
 \textbf{Aplikasi pasaran yang serupa dengan proyek ini}:
-\addcontentsline{lot}{table}{Aplikasi pasaran yang serupa dengan proyek ini}
 \begin{longtable}{|m{3cm}|p{5cm}|p{5cm}|}
     \hline
     Aplikasi & Positif                                                  & Negatif                \\
@@ -917,12 +924,14 @@ Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitia
     % - Tidak cocok untuk memberi rating konkrit kepada barang \newline
     % - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
     % \hline
+
+    \caption{Aplikasi pasaran yang serupa dengan proyek ini}
 \end{longtable}
 
 
 \newpage
 \bab{Bab 3. Metode Penelitian}
-\subbab{3.1 Metode Penelitian}
+\subbab{Metode Penelitian}
 
 Pengumpulan data yang lakukan adalah dengan membuat form survei menggunakan \textit{Google Form} untuk mendapatkan pendapat atas pertanyaan-pertanyaan yang terkait dengan alasan dari pembuatan aplikasi pada proyek ini. Dari hal mengenai pembelian barang hobi hingga tingkat kesulitan dalam menemukan barang yang cocok. Dari semua jawaban survei yang dikumpulkan tersebutlah, dapat memperoleh gambaran dan konfirmasi atas fitur-fitur yang proyek ini butuhkan.
 
@@ -935,12 +944,12 @@ Selanjutnya dengan “Apakah anda sering menggunakan \textit{e-commerce} untuk b
 
 Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ragu dan harus mencari tahu terlebih dahulu atas barang yang anda lihat apakah untuk pemula/menengah/ahli?” ini adalah untuk mengumpulkan data atas fitur utama yang dirancang yaitu fitur filtrasi level peminatan(\textit{interest level}) dari suatu hobi Dengan respons yang berjawab iya diatas 70\% maka fitur utama dari proyek ini layak untuk diimplementasikan.
 
-\subbab{3.2 Analisis}
-\subsubbab{3.2.1 Analisis sistem yang sudah berjalan atau perbandingan aplikasi sejenis}
+\subbab{Analisis}
+\subsubbab{Analisis sistem yang sudah berjalan atau perbandingan aplikasi sejenis}
 
-\subbab{3.3 Metode Pengembangan Sistem}
+\subbab{Metode Pengembangan Sistem}
 
-\subsubbab{3.3.1 \textit{Software Design Document}}
+\subsubbab{\textit{Software Design Document}}
 \begin{enumerate}[label=\alph*. ]
     \item Deskripsi \textit{software}
 
@@ -1142,7 +1151,7 @@ const [name, setName] = useState("initialValues");
 
 
 \newpage
-\subsubbab{3.3.2 Perancangan Sistem}
+\subsubbab{Perancangan Sistem}
 % \subsubsection*{3.2.2 \textit{Timeline}}
 % \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 \textit{Timeline}}
 
