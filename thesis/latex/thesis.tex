@@ -58,7 +58,7 @@
 \addbibresource{citation/citation.bib}
 \addbibresource{citation/aldih.bib}
 \addbibresource{citation/chandra.bib}
-\graphicspath{{./images/}}
+\graphicspath{{./images/}, {./diagram}}
 \geometry{a4paper, top=4.0cm, bottom=3.0cm,
           left=4.0cm, includehead, includefoot}
 \renewcommand\contentsname{Daftar Pustaka}
@@ -72,6 +72,7 @@
     \setcounter{subsection}{0}
     \setcounter{subsubsection}{0}
     \setcounter{counttable}{0}
+    \setcounter{figure}{0}
     \section*{#1}%
     \addcontentsline{toc}{section}{\protect\numberline{}#1}%
 }
@@ -403,25 +404,25 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
     \item \textit{Sprint Retro}, adalah \textit{meeting} dimana semua tim yang berpartisipasi berkumpul untuk mendiskusikan apa saja yang bekerja dengan lancar dan apa saja yang tidak bekerja sama sekali atau mengalami kendala. Idenya adalah \textit{meeting} ini akan membuat tim \textit{scrum} tempat untuk berdiskusi apa saja yang perlu diperbaiki di \textit{sprint} kedepannya.
 \end{enumerate}
 
-\subsubbab{2.1.10 \textit{Hobby}}
+\subsubbab{\textit{Hobby}}
 \textit{Hobby} atau hobi secara singkat adalah sebuah kegiatan yang dilakukan oleh seorang dalam waktu luang untuk mendapatkan kesenangan \autocite{Dict_hobi}. Seseorang dapat mengadopsi dan memulai hobi dapat karena untuk mengisi waktu luangnya dan mendapatkan kesenangan dan rasa kepenuhan dari itu \autocite{linkedin_hobi}.
 
-\subsubbab{2.1.11 \textit{Interest Level}}
+\subsubbab{\textit{Interest Level}}
 \textit{Interest Level} adalah suatu pengelompokkan yang dibuat untuk mempermudah memisahkan antara pemilik hobi yang digolongkan dari tingkat kemahiran mereka dalam sebuah hobi tertentu. Ada tiga level yang kami buat, yaitu \textit{BEGINNER}, \textit{INTERMEDIATE}, dan \textit{ENTHUSIAST}. Klasifikasi tersebut akan diberikan kepada barang oleh penjual dan pengguna yang sudah membeli barang bersangkutan. Klasifikasi atau pengelompokan tersebut pada barang bertujuan untuk memisahkan barang yang tepat bagi tingkat kemahiran tertentu dengan yang lain. Sehingga dengan tujuan agar barang yang tergolong \textit{BEGINNER} merupakan barang yang cocok untuk pemula, seseorang yang memulai suatu hobi.
 
-\subsubbab{2.1.12 \textit{E-commerce}}
+\subsubbab{\textit{E-commerce}}
 \textit{E-commerce} merupakan aktivitas jual beli barang atau jasa dan juga pengiriman dana yang dilakukan melewati sebuah jasa \textit{online} atau melalui internet. Cara kerja \textit{e-commerce} adalah dengan pelanggan mengakses sebuah aplikasi toko online dan membuat pesanan dan membayar untuk pesanan tersebut yang prosesnya akan diatasi atau diproses oleh  aplikasi tersebut. \autocite{techtarget_e-commerce}.
 
-\subsubbab{2.1.13 \textit{Online Marketplace}}
+\subsubbab{\textit{Online Marketplace}}
 \textit{Online Marketplace} adalah sebuah tipe dari \textit{e-commerce} yang dimana  produk atau jasa yang ada di aplikasi berasal dari pihak ketiga yang dapat mendaftarkan diri untuk menjual barang atau jasa di tempat aplikasi \textit{online marketplace}. \autocite{pediaa_marketplace}
 
-\subsubbab{2.1.14 \textit{Marketing}}
+\subsubbab{\textit{Marketing}}
 \textit{Marketing} adalah sebuah aktivitas yang dilakukan oleh sebuah pihak untuk membuat sebuah dorongan untuk menarik kegiatan membeli atau menjual barang atau jasa \autocite{Twin_2023}. Aktivitas untuk melakukan dorongan tersebut adalah aktivitas yang dapat mengidentifikasikan dan mengantisipasikan kebutuhan pengguna dan mencoba untuk memenuhi kebutuhan tersebut \autocite{openStax}.
 
-\subsubbab{2.1.15 \textit{Responsive Web Design} dan \textit{Mobile-First Design}}
+\subsubbab{\textit{Responsive Web Design} dan \textit{Mobile-First Design}}
 \textit{Responsive Web Design} adalah presentasi dan cara menampilkan isi konten dari sebuah website dengan format yang paling cocok dan relevan dengan perangkat yang mengakses \autocite{Frain_2022}. \textit{Mobile-First Design} adalah konsep yang mengajukan bahwa dalam mendesain dan implementasi aplikasi dimulai dari resolusi layar atau perangkat yang kecil terlebih dahulu dan menambahkan styling dan implementasi untuk resolusi layar yang lebih besar \autocite{Ward_2017}.
 
-\subsubbab{2.1.16 \textit{5 Measurable Human Factor}}
+\subsubbab{\textit{5 Measurable Human Factor}}
 \textit{5 Measurable human factor} adalah sebuah tes yang dapat dilakukan terhadap sebuah aplikasi dengan cara mencatat 5 kriteria bagaimana seorang manusia berinteraksi dengan sistem informasi aplikasi dan menafsirkan sebuah penilaian dari seberapa baik atau lancarnya seseorang dapat menggunakannya sesuai dengan 5 kriteria tersebut \autocite{Shneiderman_Plaisant_Cohen_Jacobs_Elmqvist_2018_5_factors}. Kelima faktor tersebut adalah:
 \begin{enumerate}
     \item \textit{Time for users to learn specific functions}\\
@@ -436,7 +437,7 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
     Pengukuran seberapa puas pengguna dari aspek manapun aplikasi.
 \end{enumerate}
 
-\subsubbab{2.1.17 \textit{The Eight Golden Rules of Interface Design}}
+\subsubbab{\textit{The Eight Golden Rules of Interface Design}}
 \textit{The Eight Golden Rules of Interface Design} adalah sebuah lis yang memiliki poin-poin yang dapat menjadi panduan bagi desainer dan murid atas apa yang dapat dites dari sebuah sistem interaktif \autocite{Shneiderman_Plaisant_Cohen_Jacobs_Elmqvist_2018_eight_golden_rules}. Berikut adalah kedelapan \textit{Golden Rules} yang ditulis:
 \begin{enumerate}
     \item \textit{Strive for consistency}\\
@@ -457,12 +458,12 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
     Pentingnya bagi aplikasi tidak meminta pengguna untuk mengingat suatu data dari halaman satu di halaman yang lain. Oleh karena itu data-data yang diperlukan yang dapat diakses oleh aplikasi seperti data pengguna yang sudah tersimpan tidak perlu pengguna yang menulis/mengisi-nya lagi kembali. Dan juga untuk mengisi formulir sebaiknya hanya 1 halaman saja dan tidak terpisah-pisah.
 \end{enumerate}
 
-\subsubbab{2.1.18 \textit{Document Object Model}}
+\subsubbab{\textit{Document Object Model}}
 \textit{Document Object Model} (\textbf{DOM}) adalah sebuah antarmuka untuk dokumen web yang memungkinkan akses dan manipulasi terhadap dokumen web tersebut. Dengan bahasa pemrograman \textit{scripting} seperti \textit{JavaScript} dapat mengakses melalui antarmuka dari DOM dan melakukan perubahan atau penambahan elemen atau konten pada halaman web \autocite{DOM_teori}.
 
 
 
-\subsubbab{2.1.19 Internet}
+\subsubbab{Internet}
 Internet merupakan sebuah bentuk dari infrastruktur jaringan komunikasi global yang menghubungkan miliaran komputer (ataupun perangkat lainnya) satu sama lain yang tersebar di seluruh dunia\autocite{javatpoint-internet}. Kata "Internet" sendiri berasal dari bahasa latin, yakni dari kata "\textit{inter}" dan "\textit{net}". Kata "\textit{inter}" memiliki arti sebagai "antara" dan kata "\textit{net}" yang berarti "jaringan". Kata "\textit{net}" ini jugalah yang merupakan singkatan dari kata \textit{network}\autocite{arti-kata-internet}. Internet dibangun/di-\textit{setup} dengan menggunakan bantuan transmisi data dari kabel-kabel \textit{fiber optic} atau kabel tembaga dan berbagai macam media jaringan lainnya\autocite{gfg-internet}. Ada beberapa istilah penting yang sangat berhubungan dengan jaringan internet, seperti:
 \begin{itemize}
     \item \textit{Client}\\
@@ -501,10 +502,10 @@ Internet merupakan sebuah bentuk dari infrastruktur jaringan komunikasi global y
     \end{itemize}
 \end{itemize}
 
-\subsubbab{2.1.20 \textit{API Call}}
+\subsubbab{\textit{API Call}}
 \textit{Application Programming Interface} atau biasa juga disebut sebagai API, merupakan sekumpulan definisi dan protokol yang dapat digunakan untuk membangun dan mengintegrasikan aplikasi perangkat lunak\autocite{whats-api}. Adanya API memungkinkan para \textit{developer} untuk menghindari pekerjaan berulang yang berlebihan, alih-alih membangun dan membangun kembali fungsi aplikasi yang sudah ada, \textit{developer} dapat memasukkan yang sudah ada ke dalam aplikasi baru mereka dengan memformat permintaan sesuai kebutuhan API\autocite{whats-api-2}. \textit{API Calls} merupakan media yang digunakan untuk berinteraksi. Sebuah \textit{API Call} atau juga disebut sebagai \textit{API Request} adalah pesan yang dikirim ke server yang meminta API untuk menyediakan sebuah layanan atau informasi tertentu. \textit{API Calls} berpindah dari \textit{client} menuju ke \textit{API Endpoint} (tempat yang dituju oleh \textit{API Call}). \textit{API Endpoint} biasa berupa sebuah aplikasi web da server. Server tersebut menerima \textit{API Call}, lalu memprosesnya, mengeksekusinya dan mengirimkan respons yang dimana respons ini biasa disebut dengan istilah \textit{API Response}\autocite{whats-api-call}. Salah satu contoh nyatanya kegunaan dari API adalah misal, seseorang sedang mencari tiket hotel pada sebuah situs \textit{travel}. Situs tersebut kemudian mengirimkan \textit{API Call} ke beberapa perusahaan hotel dan menerima balik sebuah respons (\textit{API Response}) berupa informasi mengenai hotel-hotel tersebut, seperti lokasi hotel, jumlah kamar yang tersedia hingga harga penginapan untuk masing-masing jenis kamarnya.
 
-\subsubbab{2.1.21 \textit{Unified Modeling Languages} (UML)}
+\subsubbab{\textit{Unified Modeling Languages} (UML)}
 \textit{Unified Modeling Languages} atau biasa juga disebut sebagai UML merupakan sebuah bahasa pemodelan standar yang terdiri dari satu set diagram. Bahasa pemodelan yang terdiri dari diagram-diagram ini dikembangkan dengan tujuan untuk membantu para \textit{software developers} dan \textit{system developers} untuk membangun dan memvisualisasikan serta mendokumentasikan struktur sistem pada sebuah perangkat lunak (\textit{software}). Bahasa pemodelan ini juga dapat digunakan untuk memodelkan sebuah alur bisnis ataupun sebuah sistem yang bukan merupakan perangkat lunak (\textit{non-software system})\autocite{what-is-UML}.
 
 Untuk sekarang, UML sudah berada di versi 2.5, yang dimana pada versi ini terdapat lima belas teknik diagram yang berbeda yang dapat digunakan untuk memodelkan suatu sistem. Diagram-diagram tersebut dibagi menjadi dua kelompok besar yakni, \textit{Structure Diagrams} yang digunakan untuk memodelkan struktur pada suatu sistem dan \textit{Behavioral Diagrams} yang digunakan untuk memodelkan alur kejadian/perilaku yang akan dijalankan pada sistem tersebut. \textit{Class Diagram} merupakan salah satu contoh diagram yang termasuk ke dalam kelompok \textit{Structure Diagrams}. Sedangkan, \textit{Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram} merupakan contoh diagram yang masuk ke dalam kelompok \textit{Behavioral Diagrams}\autocite{systemanalysisdesign-with-uml-5}.
@@ -947,8 +948,15 @@ Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ra
 \subbab{Analisis}
 \subsubbab{Analisis sistem yang sudah berjalan atau perbandingan aplikasi sejenis}
 
-\subbab{Metode Pengembangan Sistem}
+\subsubbab{Analisis Permasalahan/Kebutuhan}
 
+\subsubbab{Usulan Pemecahan Masalah}
+
+\textit{Shumishumi} adalah aplikasi \textit{website} yang dapat digunakan sebagai tempat berjual-belinya barang kebutuhan hobi, untuk memenuhi fungsi ini \textit{website Shumishumi} mempunya fitur utama seperti pengelompokkan bedasarkan \textit{Interest level} dan sistem rekomendasi yang menggunakan implenetasi dari \textit{Knowledge graph}, selain itu \textit{Shumishumi} juga mempunyai fitur lain untuk membantu fitur utama melaksanakan tugasnya seperti,
+
+
+\newpage
+\subbab{Metode Pengembangan Sistem}
 \subsubbab{\textit{Software Design Document}}
 \begin{enumerate}[label=\alph*. ]
     \item Deskripsi \textit{software}
@@ -1152,60 +1160,272 @@ const [name, setName] = useState("initialValues");
 
 \newpage
 \subsubbab{Perancangan Sistem}
-% \subsubsection*{3.2.2 \textit{Timeline}}
-% \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 \textit{Timeline}}
+Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD} (\textit{Object Oriented Analysis and Design}), yang dijelaskan lebih detil oleh diagram-diagram berikut:
+\begin{enumerate}
+    \item \textit{Usecase diagram}
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=14cm]{diagram/usecase diagram/usecase diagram.png}
+        \caption{\textit{Usecase diagram}}
+    \end{figure}
+    \newpage
+    \item \textit{Activity diagram}
 
-% Karena proyek ini menggunakan \textit{agile} sebagai \textbf{SDLC} yang digunakan, maka \textit{timeline} ini dipisah menjadi satu bulan pertama untuk \textit{planning} dan lima bulan yangd dipisah menjadi lima \textit{sprint} yang berbeda. Dalam satu \textit{sprint} akan dipisah lagi menjadi satu minggu pertama untuk melakukan \textit{spring planning}, dua minggu untuk masa \textit{development frontend} dan \textit{backend} secara bersamaan dan satu minggu akan dipakai untuk masa \textit{testing} untuk memastikan fitur yang di\textit{develop} tidak menggangu fitur yang sudah ada dan bisa digunakan.
+    \begin{enumerate}
+        \item \textit{Register}\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/activity diagram/1. register/register.png}
+            \caption{\textit{Activity diagram} untuk fitur \textit{register}}
+        \end{figure}
+        \item \textit{Activate}\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/activity diagram/2. activate/activate user.png}
+            \caption{\textit{Activity diagram} untuk fitur \textit{activate}}
+        \end{figure}
+        \newpage
 
-% \begin{figure}[h]
-%     \includegraphics[width=13cm]{sprint timeline.png}
-%     \centering
-%     \caption{\textit{Timeline} untuk bulan maret sampai mei.}
-% \end{figure}
+        \item \textit{Login}\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/activity diagram/3. login/login.png}
+            \caption{\textit{Activity diagram} untuk fitur \textit{login}}
+        \end{figure}
+        \item melihat data profil\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/activity diagram/4. see user info/see user info.png}
+            \caption{\textit{Activity diagram} untuk fitur melihat informasi pengguna}
+        \end{figure}
+        \newpage
+        
+        \item \textit{update} data profil\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/activity diagram/5. update user info/update user info.png}
+            \caption{\textit{Activity diagram} untuk fitur meng-\textit{update} informasi pengguna}
+        \end{figure}
+        \item \textit{Logout}\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/activity diagram/6. logout/logout.png}
+            \caption{\textit{Activity diagram} untuk fitur \textit{logout}}
+        \end{figure}
+        \newpage
 
-% \begin{figure}[h]
-%     \includegraphics[width=13cm]{sprint timeline 2.png}
-%     \centering
-%     \caption{\textit{Timeline} untuk bulan juni sampai agustus.}
-% \end{figure}
+        \item Lupa \textit{password}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/activity diagram/7. forgot password/forgot password.png}
+            \caption{\textit{Activity diagram} untuk fitur penggantian \textit{password}, ketika terjadi masalah}
+        \end{figure}
+        \item Pendaftaran menjadi \textit{merchant}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/activity diagram/8. become a merchant/become a merchant.png}
+            \caption{\textit{Activity diagram} untuk fitur pendaftaran menjadi \textit{merchant}}
+        \end{figure}
+        \newpage
 
-\newpage
+        \item Melihat dan mem-\textit{filter} semua \textit{product}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{./diagram/activity diagram/9. search item/search item.png}
+            \caption{\textit{Activity diagram} untuk fitur pencaharian \textit{product}}
+        \end{figure}
+        \item Melihat informasi detil sebuah \textit{product}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{./diagram/activity diagram/10. see item detail/see item detail.png}
+            \caption{\textit{Activity diagram} untuk melihat info detil sebuah \textit{product}}
+        \end{figure}
+        \newpage
 
+        \item Melihat informasi detil penjual
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{./diagram/activity diagram/11. view merchant page/view merchant page.png}
+            \caption{\textit{Activity diagram} untuk melihat info detil penjual}
+        \end{figure}
 
-% \subsubsection*{3.2.2 Perancangan Sistem}
-% \addcontentsline{toc}{subsubsection}{\protect\numberline{}3.2.2 Perancangan Sistem}
-% \begin{enumerate}
-%     \item Desain \textit{database}\\
-%     \begin{figure}[h]
-%         \includegraphics[height=12cm,keepaspectratio]{erd diagram.png}
-%         \centering
-%         \caption{\textit{Entity Relation Diagram}}
-%     \end{figure}
-%     \newpage
-%     \item \textit{Sequence Diagram}\\
-%     \begin{itemize}
-%         \item \textit{Buyer flow sequence diagram}\\
-%             \begin{figure}[h]
-%                 \includegraphics[height=12cm,keepaspectratio]{sequence diagram user perspective.png}
-%                 \centering
-%                 \caption{\textit{Sequence diagram} dari perspektif pembeli}
-%             \end{figure}
-%         \newpage
-%         \item \textit{Merchant flow sequence diagram}
-%             \begin{figure}[h]
-%                 \includegraphics[height=12cm,keepaspectratio]{sequence diagram merchant perspective.png}
-%                 \centering
-%                 \caption{\textit{Sequence diagram} dari perspektif penjual}
-%             \end{figure}
-%         \newpage
-%         \item \textit{Admin flow sequence diagram}
-%             \begin{figure}[h]
-%                 \includegraphics[height=12cm,keepaspectratio]{sequence diagram admin perspective.png}
-%                 \centering
-%                 \caption{\textit{Sequence diagram} dari perspektif \textit{admin}}
-%             \end{figure}
-%     \end{itemize}
-% \end{enumerate}
+        \item \textit{Manage wishlist}
+        \begin{itemize}
+            \item menambahkan barang ke \textit{wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/12. wishlist/add to wishlist/add to wishlist.png}
+                \caption{\textit{Activity diagram} untuk menambakan barang ke \textit{wishlist}}
+            \end{figure}
+            \newpage
+            \item melihat \textit{wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/12. wishlist/query wishlist/query wishlist.png}
+                \caption{\textit{Activity diagram} untuk melihat\textit{wishlist}}
+            \end{figure}
+            \item menghapus barang dari \textit{wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/12. wishlist/remove from wishlist/add to wishlist.png}
+                \caption{\textit{Activity diagram} untuk menghapus barang dari \textit{wishlist}}
+            \end{figure}
+        \end{itemize}
+
+        \newpage
+        \item \textit{Manage cart}
+        \begin{itemize}
+            \item menambahkan barang ke \textit{cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/13. cart/add to cart/add to cart.png}
+                \caption{\textit{Activity diagram} untuk menambahkan barang ke \textit{cart}}
+            \end{figure}
+            \item melihat \textit{cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/13. cart/query cart list/query cart list.png}
+                \caption{\textit{Activity diagram} untuk melihat \textit{cart}}
+            \end{figure}
+            \newpage
+            \item merubah jumlah barang yang ada didalam \textit{cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/13. cart/update cart/update cart.png}
+                \caption{\textit{Activity diagram} untuk merubah jumlah barang yang ada didalam \textit{cart}}
+            \end{figure}
+            \item memilih barang yang ingin dibeli
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/13. cart/unselect cart/select or unselect cart.png}
+                \caption{\textit{Activity diagram} untuk memilih barang yang ingin dibeli}
+            \end{figure}
+            \newpage
+            \item menghapus \textit{cart entry}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/13. cart/remove from cart/delete from cart.png}
+                \caption{\textit{Activity diagram} untuk menghapus \textit{cart entry}}
+            \end{figure}
+        \end{itemize}
+    
+        \item \textit{Manage discussion}
+        \begin{itemize}
+            \item membuat diskusi baru
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/14. discussion/create discussion/create discussion.png}
+                \caption{\textit{Activity diagram} untuk membuat diskusi baru}
+            \end{figure}
+            \newpage
+            \item merubah isi dari diskusi yang sudah ada
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/14. discussion/edit discussion/edit discussion.png}
+                \caption{\textit{Activity diagram} untuk merubah isi dari diskusi yang sudah ada}
+            \end{figure}
+            \item menghapus diskusi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/14. discussion/delete discussoin/delete discussion.png}
+                \caption{\textit{Activity diagram} untuk menghapus diskusi}
+            \end{figure}
+        \end{itemize}
+        \newpage
+
+        \item \textit{Do transaction}
+        \begin{itemize}
+            \item membaut transaksi baru
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/15. transaction/cancel transaction/cancel transaction.png}
+                \caption{\textit{Activity diagram} untuk membuat transaksi baru}
+            \end{figure}
+            \item membayar transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/15. transaction/pay transaction/pay trx.png}
+                \caption{\textit{Activity diagram} untuk membayar transaksi}
+            \end{figure}
+            \newpage
+            \item menyelesaikan transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/15. transaction/finish transaction/finish transaction.png}
+                \caption{\textit{Activity diagram} untuk menyelesaikan transaksi}
+            \end{figure}
+            \item membatalkan transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/15. transaction/cancel transaction/cancel transaction.png}
+                \caption{\textit{Activity diagram} untuk membatalkan transaksi}
+            \end{figure}
+            \newpage
+            \item melihat riwayat transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/15. transaction/view transaction history/view transaction history.png}
+                \caption{\textit{Activity diagram} untuk melihat riwayat transaksi}
+            \end{figure}
+            \item melihat detil transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/15. transaction/view transaction detail/view transaction detail.png}
+                \caption{\textit{Activity diagram} untuk melihat detil transaksi}
+            \end{figure}
+        \end{itemize}
+        \newpage
+        
+        \item \textit{Manage and view review}
+        \begin{itemize}
+            \item Membuat sebuah \textit{review}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/16. review/create review/create review.png}
+                \caption{\textit{Activity diagram} untuk membuat sebuah \textit{review}}
+            \end{figure}
+            \item melihat daftar \textit{review} yang dipunyai \textit{user}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/16. review/view user review/view user review list.png}
+                \caption{\textit{Activity diagram} untuk melihat daftar \textit{review} yang dipunyai \textit{user}}
+            \end{figure}
+            \newpage
+            \item melihat daftar \textit{review merchant} 
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/16. review/view merchant review/merchant review.png}
+                \caption{\textit{Activity diagram} untuk melihat daftar \textit{review merchant} }
+            \end{figure}
+        \end{itemize}
+
+        \item \textit{Manage item}
+        \begin{itemize}
+            \item membuat \textit{product} baru
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/17. item/create item/create item.png}
+                \caption{\textit{Activity diagram} untuk membuat \textit{product} baru}
+            \end{figure}
+            \newpage
+            \item memperbaharui informasi tentang \textit{product}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/17. item/update item/update item.png}
+                \caption{\textit{Activity diagram} untuk memperbaharui informasi tentang \textit{product}}
+            \end{figure}
+            \item menghapus \textit{product}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/activity diagram/17. item/delete item/delete item.png}
+                \caption{\textit{Activity diagram} untuk menghapus \textit{product}}
+            \end{figure}
+        \end{itemize}
+    \end{enumerate}
+
+    \newpage
+\end{enumerate}
+
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
