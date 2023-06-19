@@ -14,6 +14,7 @@
 \usepackage{times}
 \usepackage{listings}
 \usepackage{longtable}
+\usepackage{array}
 \usepackage{setspace}
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 
@@ -57,6 +58,8 @@
 \geometry{a4paper, top=4.0cm, bottom=3.0cm,
           left=4.0cm, includehead, includefoot}
 \renewcommand\contentsname{Daftar Pustaka}
+\renewcommand\listfigurename{Daftar Gambar}
+\renewcommand\listtablename{Daftar Tabel}
 \emergencystretch=2em
 
 % bab command
@@ -100,6 +103,14 @@
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Daftar Pustaka}
 \tableofcontents
+
+\newpage
+\addcontentsline{toc}{section}{\protect\numberline{}Daftar Tabel}
+\listoftables
+
+\newpage
+\addcontentsline{toc}{section}{\protect\numberline{}Daftar Gambar}
+\listoffigures
 
 \newpage
 \bab{Bab 1. Pendahuluan}
@@ -837,6 +848,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
 \subbab{2.2 Aplikasi Serupa}
 Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu dan dua aplikasi pasaran yang sebelumnya sudah sedikit dibahas pada bagian latar belakang. Disini, aplikasi-aplikasi tersebut dapat dikategorikan menjadi dua jenis, yaitu \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Berikut adalah perbandingan kelebihan dan kekurangannya.
 \textbf{Aplikasi-aplikasi berdasarkan penelitian terdahulu}:
+\addcontentsline{lot}{table}{Aplikasi-aplikasi berdasarkan penelitian terdahulu}
 \begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}
     \hline
     Aplikasi & Positif                                                                                                                 & Negatif \\
@@ -884,6 +896,7 @@ Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitia
 \end{longtable}
 
 \textbf{Aplikasi pasaran yang serupa dengan proyek ini}:
+\addcontentsline{lot}{table}{Aplikasi pasaran yang serupa dengan proyek ini}
 \begin{longtable}{|m{3cm}|p{5cm}|p{5cm}|}
     \hline
     Aplikasi & Positif                                                  & Negatif                \\
