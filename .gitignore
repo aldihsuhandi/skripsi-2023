@@ -11,6 +11,9 @@
 *.out
 *.toc
 *.out
+*.lof
+*.lot
 *(busy)
 
 out/
+.idea/
