@@ -1,0 +1,46 @@
+@startuml template
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Transaction Detail page" as detail
+end box
+
+box "back end"
+participant "TransactionController" as tc
+
+participant "TransactionCancelProcessor" as finishproc
+
+Participant "Transaction" as trx
+participant "Item" as rm
+end box
+
+database shumishumi as db
+
+participant Midtrans as mt
+
+u -> detail++ : press finish button
+detail -> tc++ : /transaction/cancel
+
+tc -> finishproc++ : process
+alt if transaction status is WAITING_PAYMENT
+    finishproc -> trx++ : change status to cancel
+    finishproc -> mt++ : cancel payment request
+    return result
+
+    loop for every item in transaction
+        finishproc -> rm++ : update quantity
+        rm -> db++ : update
+        return result
+        deactivate rm
+    end
+
+    deactivate trx
+end
+
+return result
+return JSON_RESPONSE
+detail -> detail : reload page
+
+@enduml

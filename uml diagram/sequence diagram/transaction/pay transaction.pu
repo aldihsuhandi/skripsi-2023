@@ -3,14 +3,36 @@ autonumber 1.1.1
 
 actor User as u
 
-box "front end"
-end box
-
 box "back end"
+participant "TransactionStatusScheduler" as scheduler
+participant Transaction as trx
 end box
 
 database shumishumi as db
 
 participant Midtrans as mt
+
+u -> mt++ : pay transaction
+mt -> mt : update payment status
+deactivate mt
+
+autonumber inc a
+loop for every 5 minute
+    activate scheduler
+    scheduler -> trx++ : query transaction with WAITING_PAYMENT status
+    trx -> db++ : query
+    return result
+    loop for every transaction in result
+        scheduler -> mt++ : check payment status
+        return result
+        alt if payment status is DONE
+            scheduler -> trx : change transaction status into ONGOING
+        end
+    end
+
+    deactivate trx
+end
+
+deactivate scheduler
 
 @enduml

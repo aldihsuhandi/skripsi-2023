@@ -1,0 +1,76 @@
+@startuml template
+autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Transaction History page" as history
+participant "Transaction Detail page" as detail
+end box
+
+box "back end"
+participant TransactionController as tc
+participant ImageController as imc
+
+participant "TransactionDetailProcessor" as proc
+participant ImageDownloadProcessor as downproc
+
+participant Transaction as trx
+participant TransactionDetail as trxd
+participant Item as im
+participant Image as img
+end box
+
+database shumishumi as db
+
+participant Midtrans as mt
+
+u -> history++ : open transaction detail page
+history -> detail++ : redirect to transaction detail page
+detail -> tc++ : /transaction/detail
+
+tc -> proc++ : process
+proc -> trx++ : query transaction
+trx -> db++ : query
+return result
+alt if transaction status is WAITING_PAYMENT
+    proc -> mt++ : check payment status
+    return result
+    alt if payment request status is DONE
+        proc -> trx : update status to ONGOING
+        trx -> db++ : update
+        return result
+    end
+end
+
+proc -> trxd++ : query all detail transaction
+trxd -> db++ : query
+return result
+
+loop for every item in transaction
+    proc -> im++ : query item
+    im -> db++ : query
+    return result
+    im -> im : compose necessary info
+    proc -> trxd : compose item into transaction detail
+    deactivate im
+end
+
+proc -> trx : compose detail to transaction
+deactivate trxd
+return result
+return result
+return JSON_RESPONSE
+
+loop for every item image in transaction detail
+    detail -> imc++ : /image/download
+    imc -> downproc++ : process
+    downproc -> img++ : query
+    img -> db++ : query
+    return result
+    return result
+    return result
+    return IMAGE_BIT
+end
+
+@enduml

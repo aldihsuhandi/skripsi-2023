@@ -18,6 +18,9 @@ participant "TransactionPaymentProcessor" as payproc
 participant "Cart" as cm
 participant "Transaction" as trxm
 participant "TransactionDetail" as trxdm
+
+participant "Item" as im
+participant "Activity" as am
 end box
 
 database shumishumi as db
@@ -70,6 +73,17 @@ loop for every item in transaction
     return result
     deactivate cm
     destroy cm
+
+    payproc -> im++ : decrease item quantity
+    im -> db++ : update
+    return result
+    deactivate im
+
+    create am
+    payproc -> am++ : new
+    am -> db++ : save
+    return result
+    deactivate am
 end
 
 return result

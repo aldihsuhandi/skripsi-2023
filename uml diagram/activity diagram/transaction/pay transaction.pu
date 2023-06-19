@@ -15,7 +15,6 @@ if() then(still waiting for payment)
 stop
 endif
 |system|
-:create activity record;
 :change transaction status\nto ONGOING;
 :update displayed status;
 stop
