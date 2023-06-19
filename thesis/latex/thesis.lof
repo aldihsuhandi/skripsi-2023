@@ -1,100 +1,101 @@
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Contoh dari \textit {encapsulation}}}{9}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Contoh dari \textit {inheritance}}}{10}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Contoh simpel dari sistem rekomendasi dengan basis \textit {Knowledge Graph}}}{16}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Contoh dari struktur \textit {scrum}\blx@tocontentsinit {0}\autocite {atlassian-agile-scrum}}}{17}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Contoh dari sebuah \textit {class}}}{27}{figure.2.5}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Contoh dari relasi \textit {Association}}}{29}{figure.2.6}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Contoh dari relasi \textit {Generalization}}}{30}{figure.2.7}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Contoh dari relasi \textit {Aggregation}}}{30}{figure.2.8}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Contoh dari relasi \textit {Composition}}}{31}{figure.2.9}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Contoh bentuk dari \textit {use-case diagram}}}{36}{figure.2.10}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Bentuk dari \textit {actor}}}{37}{figure.2.11}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Bentuk dari \textit {use case}}}{37}{figure.2.12}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Bentuk dari \textit {subject boundary}}}{38}{figure.2.13}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Bentuk dari \textit {Association Relationship}}}{38}{figure.2.14}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Bentuk dari \textit {Include Relationship}}}{39}{figure.2.15}%
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Bentuk dari \textit {Extend Relationship}}}{39}{figure.2.16}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Bentuk dari \textit {Generalization Relationship}}}{39}{figure.2.17}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Contoh sederhana dari \textit {Sequence Diagram} dalam kasus penarikan tunai di ATM}}{40}{figure.2.18}%
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Bentuk dari \textit {actor}}}{40}{figure.2.19}%
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Bentuk dari \textit {object}}}{40}{figure.2.20}%
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Bentuk dari \textit {lifeline}}}{41}{figure.2.21}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Bentuk dari \textit {execution occurrence}}}{41}{figure.2.22}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Bentuk dari \textit {message}}}{41}{figure.2.23}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Bentuk dari \textit {guard condition}}}{42}{figure.2.24}%
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Bentuk dari \textit {object destruction}}}{42}{figure.2.25}%
-\contentsline {figure}{\numberline {2.26}{\ignorespaces Bentuk dari \textit {frame}}}{42}{figure.2.26}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Contoh penggunaan \textit {useEffect}}}{52}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Contoh penggunaan \textit {useEffect} dengan \textit {dependency}}}{53}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Contoh deklarasi penggunaan \textit {useState}}}{53}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \textit {Usecase diagram}}}{58}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Activity diagram} untuk fitur \textit {register}}}{59}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Activity diagram} untuk fitur \textit {activate}}}{59}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces \textit {Activity diagram} untuk fitur \textit {login}}}{60}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces \textit {Activity diagram} untuk fitur melihat informasi pengguna}}{60}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces \textit {Activity diagram} untuk fitur meng-\textit {update} informasi pengguna}}{61}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces \textit {Activity diagram} untuk fitur \textit {logout}}}{61}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces \textit {Activity diagram} untuk fitur penggantian \textit {password}, ketika terjadi masalah}}{62}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces \textit {Activity diagram} untuk fitur pendaftaran menjadi \textit {merchant}}}{62}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces \textit {Activity diagram} untuk fitur pencaharian \textit {product}}}{63}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces \textit {Activity diagram} untuk melihat info detil sebuah \textit {product}}}{63}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces \textit {Activity diagram} untuk melihat info detil penjual}}{64}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces \textit {Activity diagram} untuk menambakan barang ke \textit {wishlist}}}{64}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces \textit {Activity diagram} untuk melihat\textit {wishlist}}}{65}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces \textit {Activity diagram} untuk menghapus barang dari \textit {wishlist}}}{65}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces \textit {Activity diagram} untuk menambahkan barang ke \textit {cart}}}{66}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces \textit {Activity diagram} untuk melihat \textit {cart}}}{66}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces \textit {Activity diagram} untuk merubah jumlah barang yang ada didalam \textit {cart}}}{67}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces \textit {Activity diagram} untuk memilih barang yang ingin dibeli}}{67}{figure.3.22}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces \textit {Activity diagram} untuk menghapus \textit {cart entry}}}{68}{figure.3.23}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces \textit {Activity diagram} untuk membuat diskusi baru}}{68}{figure.3.24}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces \textit {Activity diagram} untuk merubah isi dari diskusi yang sudah ada}}{69}{figure.3.25}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces \textit {Activity diagram} untuk menghapus diskusi}}{69}{figure.3.26}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces \textit {Activity diagram} untuk membuat transaksi baru}}{70}{figure.3.27}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces \textit {Activity diagram} untuk membayar transaksi}}{70}{figure.3.28}%
-\contentsline {figure}{\numberline {3.29}{\ignorespaces \textit {Activity diagram} untuk menyelesaikan transaksi}}{71}{figure.3.29}%
-\contentsline {figure}{\numberline {3.30}{\ignorespaces \textit {Activity diagram} untuk membatalkan transaksi}}{71}{figure.3.30}%
-\contentsline {figure}{\numberline {3.31}{\ignorespaces \textit {Activity diagram} untuk melihat riwayat transaksi}}{72}{figure.3.31}%
-\contentsline {figure}{\numberline {3.32}{\ignorespaces \textit {Activity diagram} untuk melihat detil transaksi}}{72}{figure.3.32}%
-\contentsline {figure}{\numberline {3.33}{\ignorespaces \textit {Activity diagram} untuk membuat sebuah \textit {review}}}{73}{figure.3.33}%
-\contentsline {figure}{\numberline {3.34}{\ignorespaces \textit {Activity diagram} untuk melihat daftar \textit {review} yang dipunyai \textit {user}}}{73}{figure.3.34}%
-\contentsline {figure}{\numberline {3.35}{\ignorespaces \textit {Activity diagram} untuk melihat daftar \textit {review merchant} }}{74}{figure.3.35}%
-\contentsline {figure}{\numberline {3.36}{\ignorespaces \textit {Activity diagram} untuk membuat \textit {product} baru}}{74}{figure.3.36}%
-\contentsline {figure}{\numberline {3.37}{\ignorespaces \textit {Activity diagram} untuk memperbaharui informasi tentang \textit {product}}}{75}{figure.3.37}%
-\contentsline {figure}{\numberline {3.38}{\ignorespaces \textit {Activity diagram} untuk menghapus \textit {product}}}{75}{figure.3.38}%
-\contentsline {figure}{\numberline {3.39}{\ignorespaces \textit {Sequence diagram} untuk fitur \textit {register}}}{76}{figure.3.39}%
-\contentsline {figure}{\numberline {3.40}{\ignorespaces \textit {Sequence diagram} untuk fitur \textit {activate}}}{76}{figure.3.40}%
-\contentsline {figure}{\numberline {3.41}{\ignorespaces \textit {Sequence diagram} untuk fitur \textit {login}}}{77}{figure.3.41}%
-\contentsline {figure}{\numberline {3.42}{\ignorespaces \textit {Sequence diagram} untuk fitur melihat informasi pengguna}}{77}{figure.3.42}%
-\contentsline {figure}{\numberline {3.43}{\ignorespaces \textit {Sequence diagram} untuk fitur meng-\textit {update} informasi pengguna}}{78}{figure.3.43}%
-\contentsline {figure}{\numberline {3.44}{\ignorespaces \textit {Sequence diagram} untuk fitur \textit {logout}}}{78}{figure.3.44}%
-\contentsline {figure}{\numberline {3.45}{\ignorespaces \textit {Sequence diagram} untuk fitur penggantian \textit {password}, ketika terjadi masalah}}{79}{figure.3.45}%
-\contentsline {figure}{\numberline {3.46}{\ignorespaces \textit {Sequence diagram} untuk fitur pendaftaran menjadi \textit {merchant}}}{79}{figure.3.46}%
-\contentsline {figure}{\numberline {3.47}{\ignorespaces \textit {Sequence diagram} untuk fitur pencaharian \textit {product}}}{80}{figure.3.47}%
-\contentsline {figure}{\numberline {3.48}{\ignorespaces \textit {Sequence diagram} untuk melihat info detil sebuah \textit {product}}}{80}{figure.3.48}%
-\contentsline {figure}{\numberline {3.49}{\ignorespaces \textit {Sequence diagram} untuk melihat info detil penjual}}{81}{figure.3.49}%
-\contentsline {figure}{\numberline {3.50}{\ignorespaces \textit {Sequence diagram} untuk menambakan barang ke \textit {wishlist}}}{81}{figure.3.50}%
-\contentsline {figure}{\numberline {3.51}{\ignorespaces \textit {Sequence diagram} untuk melihat\textit {wishlist}}}{82}{figure.3.51}%
-\contentsline {figure}{\numberline {3.52}{\ignorespaces \textit {Sequence diagram} untuk menghapus barang dari \textit {wishlist}}}{82}{figure.3.52}%
-\contentsline {figure}{\numberline {3.53}{\ignorespaces \textit {Sequence diagram} untuk menambahkan barang ke \textit {cart}}}{83}{figure.3.53}%
-\contentsline {figure}{\numberline {3.54}{\ignorespaces \textit {Sequence diagram} untuk melihat \textit {cart}}}{83}{figure.3.54}%
-\contentsline {figure}{\numberline {3.55}{\ignorespaces \textit {Sequence diagram} untuk merubah jumlah barang yang ada didalam \textit {cart}}}{84}{figure.3.55}%
-\contentsline {figure}{\numberline {3.56}{\ignorespaces \textit {Sequence diagram} untuk memilih barang yang ingin dibeli}}{84}{figure.3.56}%
-\contentsline {figure}{\numberline {3.57}{\ignorespaces \textit {Sequence diagram} untuk menghapus \textit {cart entry}}}{85}{figure.3.57}%
-\contentsline {figure}{\numberline {3.58}{\ignorespaces \textit {Sequence diagram} untuk membuat diskusi baru}}{85}{figure.3.58}%
-\contentsline {figure}{\numberline {3.59}{\ignorespaces \textit {Sequence diagram} untuk merubah isi dari diskusi yang sudah ada}}{86}{figure.3.59}%
-\contentsline {figure}{\numberline {3.60}{\ignorespaces \textit {Sequence diagram} untuk menghapus diskusi}}{86}{figure.3.60}%
-\contentsline {figure}{\numberline {3.61}{\ignorespaces \textit {Sequence diagram} untuk membuat transaksi baru}}{87}{figure.3.61}%
-\contentsline {figure}{\numberline {3.62}{\ignorespaces \textit {Sequence diagram} untuk membayar transaksi}}{87}{figure.3.62}%
-\contentsline {figure}{\numberline {3.63}{\ignorespaces \textit {Sequence diagram} untuk menyelesaikan transaksi}}{88}{figure.3.63}%
-\contentsline {figure}{\numberline {3.64}{\ignorespaces \textit {Sequence diagram} untuk membatalkan transaksi}}{88}{figure.3.64}%
-\contentsline {figure}{\numberline {3.65}{\ignorespaces \textit {Sequence diagram} untuk melihat riwayat transaksi}}{89}{figure.3.65}%
-\contentsline {figure}{\numberline {3.66}{\ignorespaces \textit {Sequence diagram} untuk melihat detil transaksi}}{89}{figure.3.66}%
-\contentsline {figure}{\numberline {3.67}{\ignorespaces \textit {Sequence diagram} untuk membuat sebuah \textit {review}}}{90}{figure.3.67}%
-\contentsline {figure}{\numberline {3.68}{\ignorespaces \textit {Sequence diagram} untuk melihat daftar \textit {review} yang dipunyai \textit {user}}}{90}{figure.3.68}%
-\contentsline {figure}{\numberline {3.69}{\ignorespaces \textit {Sequence diagram} untuk melihat daftar \textit {review merchant} }}{91}{figure.3.69}%
-\contentsline {figure}{\numberline {3.70}{\ignorespaces \textit {Sequence diagram} untuk membuat \textit {product} baru}}{91}{figure.3.70}%
-\contentsline {figure}{\numberline {3.71}{\ignorespaces \textit {Sequence diagram} untuk memperbaharui informasi tentang \textit {product}}}{92}{figure.3.71}%
-\contentsline {figure}{\numberline {3.72}{\ignorespaces \textit {Sequence diagram} untuk menghapus \textit {product}}}{92}{figure.3.72}%
-\contentsline {figure}{\numberline {3.73}{\ignorespaces \textit {Class diagram} untuk aplikasi \textit {Shumishumi}}}{93}{figure.3.73}%
-\contentsline {figure}{\numberline {3.74}{\ignorespaces \textit {Entity Relation Diagram} untuk \textit {database shumishumi}}}{95}{figure.3.74}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Contoh dari \textit {encapsulation}\relax }}{9}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Contoh dari \textit {inheritance}\relax }}{10}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Contoh simpel dari sistem rekomendasi dengan basis \textit {Knowledge Graph}\relax }}{16}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Contoh dari struktur \textit {scrum}\blx@tocontentsinit {0}\autocite {atlassian-agile-scrum}\relax }}{17}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Contoh dari sebuah \textit {class}\relax }}{28}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Contoh dari relasi \textit {Association}\relax }}{30}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Contoh dari relasi \textit {Generalization}\relax }}{30}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Contoh dari relasi \textit {Aggregation}\relax }}{31}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Contoh dari relasi \textit {Composition}\relax }}{31}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces contoh dari \textit {merge node}\relax }}{35}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Contoh bentuk dari \textit {use-case diagram}\relax }}{36}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Bentuk dari \textit {actor}\relax }}{37}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Bentuk dari \textit {use case}\relax }}{38}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Bentuk dari \textit {subject boundary}\relax }}{38}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Bentuk dari \textit {Association Relationship}\relax }}{38}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Bentuk dari \textit {Include Relationship}\relax }}{39}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Bentuk dari \textit {Extend Relationship}\relax }}{39}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Bentuk dari \textit {Generalization Relationship}\relax }}{39}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Contoh sederhana dari \textit {Sequence Diagram} dalam kasus penarikan tunai di ATM\relax }}{40}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Bentuk dari \textit {actor}\relax }}{40}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Bentuk dari \textit {object}\relax }}{40}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Bentuk dari \textit {lifeline}\relax }}{41}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Bentuk dari \textit {execution occurrence}\relax }}{41}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Bentuk dari \textit {message}\relax }}{41}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Bentuk dari \textit {guard condition}\relax }}{42}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Bentuk dari \textit {object destruction}\relax }}{42}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces Bentuk dari \textit {frame}\relax }}{42}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Contoh penggunaan \textit {useEffect}\relax }}{52}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Contoh penggunaan \textit {useEffect} dengan \textit {dependency}\relax }}{53}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Contoh deklarasi penggunaan \textit {useState}\relax }}{53}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \textit {Usecase diagram}\relax }}{58}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Activity diagram} untuk fitur \textit {register}\relax }}{59}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Activity diagram} untuk fitur \textit {activate}\relax }}{59}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces \textit {Activity diagram} untuk fitur \textit {login}\relax }}{60}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces \textit {Activity diagram} untuk fitur melihat informasi pengguna\relax }}{60}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces \textit {Activity diagram} untuk fitur meng-\textit {update} informasi pengguna\relax }}{61}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces \textit {Activity diagram} untuk fitur \textit {logout}\relax }}{61}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces \textit {Activity diagram} untuk fitur penggantian \textit {password}, ketika terjadi masalah\relax }}{62}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces \textit {Activity diagram} untuk fitur pendaftaran menjadi \textit {merchant}\relax }}{62}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces \textit {Activity diagram} untuk fitur pencaharian \textit {product}\relax }}{63}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces \textit {Activity diagram} untuk melihat info detil sebuah \textit {product}\relax }}{63}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces \textit {Activity diagram} untuk melihat info detil penjual\relax }}{64}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces \textit {Activity diagram} untuk menambakan barang ke \textit {wishlist}\relax }}{64}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces \textit {Activity diagram} untuk melihat\textit {wishlist}\relax }}{65}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces \textit {Activity diagram} untuk menghapus barang dari \textit {wishlist}\relax }}{65}{figure.caption.53}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces \textit {Activity diagram} untuk menambahkan barang ke \textit {cart}\relax }}{66}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces \textit {Activity diagram} untuk melihat \textit {cart}\relax }}{66}{figure.caption.55}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces \textit {Activity diagram} untuk merubah jumlah barang yang ada didalam \textit {cart}\relax }}{67}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces \textit {Activity diagram} untuk memilih barang yang ingin dibeli\relax }}{67}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces \textit {Activity diagram} untuk menghapus \textit {cart entry}\relax }}{68}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces \textit {Activity diagram} untuk membuat diskusi baru\relax }}{68}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces \textit {Activity diagram} untuk merubah isi dari diskusi yang sudah ada\relax }}{69}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces \textit {Activity diagram} untuk menghapus diskusi\relax }}{69}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces \textit {Activity diagram} untuk membuat transaksi baru\relax }}{70}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces \textit {Activity diagram} untuk membayar transaksi\relax }}{70}{figure.caption.63}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces \textit {Activity diagram} untuk menyelesaikan transaksi\relax }}{71}{figure.caption.64}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces \textit {Activity diagram} untuk membatalkan transaksi\relax }}{71}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces \textit {Activity diagram} untuk melihat riwayat transaksi\relax }}{72}{figure.caption.66}%
+\contentsline {figure}{\numberline {3.32}{\ignorespaces \textit {Activity diagram} untuk melihat detil transaksi\relax }}{72}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.33}{\ignorespaces \textit {Activity diagram} untuk membuat sebuah \textit {review}\relax }}{73}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.34}{\ignorespaces \textit {Activity diagram} untuk melihat daftar \textit {review} yang dipunyai \textit {user}\relax }}{73}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.35}{\ignorespaces \textit {Activity diagram} untuk melihat daftar \textit {review merchant} \relax }}{74}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.36}{\ignorespaces \textit {Activity diagram} untuk membuat \textit {product} baru\relax }}{74}{figure.caption.71}%
+\contentsline {figure}{\numberline {3.37}{\ignorespaces \textit {Activity diagram} untuk memperbaharui informasi tentang \textit {product}\relax }}{75}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.38}{\ignorespaces \textit {Activity diagram} untuk menghapus \textit {product}\relax }}{75}{figure.caption.73}%
+\contentsline {figure}{\numberline {3.39}{\ignorespaces \textit {Sequence diagram} untuk fitur \textit {register}\relax }}{76}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.40}{\ignorespaces \textit {Sequence diagram} untuk fitur \textit {activate}\relax }}{76}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.41}{\ignorespaces \textit {Sequence diagram} untuk fitur \textit {login}\relax }}{77}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.42}{\ignorespaces \textit {Sequence diagram} untuk fitur melihat informasi pengguna\relax }}{77}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.43}{\ignorespaces \textit {Sequence diagram} untuk fitur meng-\textit {update} informasi pengguna\relax }}{78}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.44}{\ignorespaces \textit {Sequence diagram} untuk fitur \textit {logout}\relax }}{78}{figure.caption.79}%
+\contentsline {figure}{\numberline {3.45}{\ignorespaces \textit {Sequence diagram} untuk fitur penggantian \textit {password}, ketika terjadi masalah\relax }}{79}{figure.caption.80}%
+\contentsline {figure}{\numberline {3.46}{\ignorespaces \textit {Sequence diagram} untuk fitur pendaftaran menjadi \textit {merchant}\relax }}{79}{figure.caption.81}%
+\contentsline {figure}{\numberline {3.47}{\ignorespaces \textit {Sequence diagram} untuk fitur pencaharian \textit {product}\relax }}{80}{figure.caption.82}%
+\contentsline {figure}{\numberline {3.48}{\ignorespaces \textit {Sequence diagram} untuk melihat info detil sebuah \textit {product}\relax }}{80}{figure.caption.83}%
+\contentsline {figure}{\numberline {3.49}{\ignorespaces \textit {Sequence diagram} untuk melihat info detil penjual\relax }}{81}{figure.caption.84}%
+\contentsline {figure}{\numberline {3.50}{\ignorespaces \textit {Sequence diagram} untuk menambakan barang ke \textit {wishlist}\relax }}{81}{figure.caption.85}%
+\contentsline {figure}{\numberline {3.51}{\ignorespaces \textit {Sequence diagram} untuk melihat\textit {wishlist}\relax }}{82}{figure.caption.86}%
+\contentsline {figure}{\numberline {3.52}{\ignorespaces \textit {Sequence diagram} untuk menghapus barang dari \textit {wishlist}\relax }}{82}{figure.caption.87}%
+\contentsline {figure}{\numberline {3.53}{\ignorespaces \textit {Sequence diagram} untuk menambahkan barang ke \textit {cart}\relax }}{83}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.54}{\ignorespaces \textit {Sequence diagram} untuk melihat \textit {cart}\relax }}{83}{figure.caption.89}%
+\contentsline {figure}{\numberline {3.55}{\ignorespaces \textit {Sequence diagram} untuk merubah jumlah barang yang ada didalam \textit {cart}\relax }}{84}{figure.caption.90}%
+\contentsline {figure}{\numberline {3.56}{\ignorespaces \textit {Sequence diagram} untuk memilih barang yang ingin dibeli\relax }}{84}{figure.caption.91}%
+\contentsline {figure}{\numberline {3.57}{\ignorespaces \textit {Sequence diagram} untuk menghapus \textit {cart entry}\relax }}{85}{figure.caption.92}%
+\contentsline {figure}{\numberline {3.58}{\ignorespaces \textit {Sequence diagram} untuk membuat diskusi baru\relax }}{85}{figure.caption.93}%
+\contentsline {figure}{\numberline {3.59}{\ignorespaces \textit {Sequence diagram} untuk merubah isi dari diskusi yang sudah ada\relax }}{86}{figure.caption.94}%
+\contentsline {figure}{\numberline {3.60}{\ignorespaces \textit {Sequence diagram} untuk menghapus diskusi\relax }}{86}{figure.caption.95}%
+\contentsline {figure}{\numberline {3.61}{\ignorespaces \textit {Sequence diagram} untuk membuat transaksi baru\relax }}{87}{figure.caption.96}%
+\contentsline {figure}{\numberline {3.62}{\ignorespaces \textit {Sequence diagram} untuk membayar transaksi\relax }}{87}{figure.caption.97}%
+\contentsline {figure}{\numberline {3.63}{\ignorespaces \textit {Sequence diagram} untuk menyelesaikan transaksi\relax }}{88}{figure.caption.98}%
+\contentsline {figure}{\numberline {3.64}{\ignorespaces \textit {Sequence diagram} untuk membatalkan transaksi\relax }}{88}{figure.caption.99}%
+\contentsline {figure}{\numberline {3.65}{\ignorespaces \textit {Sequence diagram} untuk melihat riwayat transaksi\relax }}{89}{figure.caption.100}%
+\contentsline {figure}{\numberline {3.66}{\ignorespaces \textit {Sequence diagram} untuk melihat detil transaksi\relax }}{89}{figure.caption.101}%
+\contentsline {figure}{\numberline {3.67}{\ignorespaces \textit {Sequence diagram} untuk membuat sebuah \textit {review}\relax }}{90}{figure.caption.102}%
+\contentsline {figure}{\numberline {3.68}{\ignorespaces \textit {Sequence diagram} untuk melihat daftar \textit {review} yang dipunyai \textit {user}\relax }}{90}{figure.caption.103}%
+\contentsline {figure}{\numberline {3.69}{\ignorespaces \textit {Sequence diagram} untuk melihat daftar \textit {review merchant} \relax }}{91}{figure.caption.104}%
+\contentsline {figure}{\numberline {3.70}{\ignorespaces \textit {Sequence diagram} untuk membuat \textit {product} baru\relax }}{91}{figure.caption.105}%
+\contentsline {figure}{\numberline {3.71}{\ignorespaces \textit {Sequence diagram} untuk memperbaharui informasi tentang \textit {product}\relax }}{92}{figure.caption.106}%
+\contentsline {figure}{\numberline {3.72}{\ignorespaces \textit {Sequence diagram} untuk menghapus \textit {product}\relax }}{92}{figure.caption.107}%
+\contentsline {figure}{\numberline {3.73}{\ignorespaces \textit {Class diagram} untuk aplikasi \textit {Shumishumi}\relax }}{93}{figure.caption.108}%
+\contentsline {figure}{\numberline {3.74}{\ignorespaces \textit {Entity Relation Diagram} untuk \textit {database shumishumi}\relax }}{95}{figure.caption.109}%
