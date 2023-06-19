@@ -71,14 +71,16 @@
     \addtocounter{section}{1}%
     \setcounter{subsection}{0}
     \setcounter{subsubsection}{0}
-    \setcounter{counttable}{0}
     \setcounter{figure}{0}
+    \setcounter{table}{0}
     \section*{#1}%
     \addcontentsline{toc}{section}{\protect\numberline{}#1}%
 }
 
 \newcommand{\subbab}[1]{%
     \subsection{#1}%
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
     % \addcontentsline{toc}{subsection}{\protect\numberline{}#1}%
 }
 
@@ -1422,8 +1424,280 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \end{figure}
         \end{itemize}
     \end{enumerate}
-
     \newpage
+
+    \item \textit{Sequence Diagram}
+    \begin{enumerate}
+        \item \textit{Register}\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/sequence diagram/1. register/register.png}
+            \caption{\textit{Sequence diagram} untuk fitur \textit{register}}
+        \end{figure}
+        \item \textit{Activate}\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/sequence diagram/2. activate/activate user.png}
+            \caption{\textit{Sequence diagram} untuk fitur \textit{activate}}
+        \end{figure}
+        \newpage
+
+        \item \textit{Login}\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/sequence diagram/3. login/login.png}
+            \caption{\textit{Sequence diagram} untuk fitur \textit{login}}
+        \end{figure}
+        \item melihat data profil\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/sequence diagram/4. see user info/see user info.png}
+            \caption{\textit{Sequence diagram} untuk fitur melihat informasi pengguna}
+        \end{figure}
+        \newpage
+        
+        \item \textit{update} data profil\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/sequence diagram/5. update user info/update user info.png}
+            \caption{\textit{Sequence diagram} untuk fitur meng-\textit{update} informasi pengguna}
+        \end{figure}
+        \item \textit{Logout}\\
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/sequence diagram/6. logout/logout.png}
+            \caption{\textit{Sequence diagram} untuk fitur \textit{logout}}
+        \end{figure}
+        \newpage
+
+        \item Lupa \textit{password}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/sequence diagram/7. forgot password/forgot password.png}
+            \caption{\textit{Sequence diagram} untuk fitur penggantian \textit{password}, ketika terjadi masalah}
+        \end{figure}
+        \item Pendaftaran menjadi \textit{merchant}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{diagram/sequence diagram/8. become a merchant/become a merchant.png}
+            \caption{\textit{Sequence diagram} untuk fitur pendaftaran menjadi \textit{merchant}}
+        \end{figure}
+        \newpage
+
+        \item Melihat dan mem-\textit{filter} semua \textit{product}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{./diagram/sequence diagram/9. search item/search item.png}
+            \caption{\textit{Sequence diagram} untuk fitur pencaharian \textit{product}}
+        \end{figure}
+        \item Melihat informasi detil sebuah \textit{product}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{./diagram/sequence diagram/10. see item detail/see item detail.png}
+            \caption{\textit{Sequence diagram} untuk melihat info detil sebuah \textit{product}}
+        \end{figure}
+        \newpage
+
+        \item Melihat informasi detil penjual
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{./diagram/sequence diagram/11.view merchant page/view merchant page.png}
+            \caption{\textit{Sequence diagram} untuk melihat info detil penjual}
+        \end{figure}
+
+        \item \textit{Manage wishlist}
+        \begin{itemize}
+            \item menambahkan barang ke \textit{wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/12. wishlist/add to wishlist/add to wishlist.png}
+                \caption{\textit{Sequence diagram} untuk menambakan barang ke \textit{wishlist}}
+            \end{figure}
+            \newpage
+            \item melihat \textit{wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/12. wishlist/query wishlist/query wishlist.png}
+                \caption{\textit{Sequence diagram} untuk melihat\textit{wishlist}}
+            \end{figure}
+            \item menghapus barang dari \textit{wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/12. wishlist/remove from wishlist/remove from wishlist.png}
+                \caption{\textit{Sequence diagram} untuk menghapus barang dari \textit{wishlist}}
+            \end{figure}
+        \end{itemize}
+
+        \newpage
+        \item \textit{Manage cart}
+        \begin{itemize}
+            \item menambahkan barang ke \textit{cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/add to cart/add to cart.png}
+                \caption{\textit{Sequence diagram} untuk menambahkan barang ke \textit{cart}}
+            \end{figure}
+            \item melihat \textit{cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/query cart list/query cart list.png}
+                \caption{\textit{Sequence diagram} untuk melihat \textit{cart}}
+            \end{figure}
+            \newpage
+            \item merubah jumlah barang yang ada didalam \textit{cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/update cart/update cart.png}
+                \caption{\textit{Sequence diagram} untuk merubah jumlah barang yang ada didalam \textit{cart}}
+            \end{figure}
+            \item memilih barang yang ingin dibeli
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/unselect cart/unselect cart.png}
+                \caption{\textit{Sequence diagram} untuk memilih barang yang ingin dibeli}
+            \end{figure}
+            \newpage
+            \item menghapus \textit{cart entry}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/remove from cart/remove from cart.png}
+                \caption{\textit{Sequence diagram} untuk menghapus \textit{cart entry}}
+            \end{figure}
+        \end{itemize}
+    
+        \item \textit{Manage discussion}
+        \begin{itemize}
+            \item membuat diskusi baru
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/14. discussion/create discussion/create discussion.png}
+                \caption{\textit{Sequence diagram} untuk membuat diskusi baru}
+            \end{figure}
+            \newpage
+            \item merubah isi dari diskusi yang sudah ada
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/14. discussion/edit discussion/edit discussion.png}
+                \caption{\textit{Sequence diagram} untuk merubah isi dari diskusi yang sudah ada}
+            \end{figure}
+            \item menghapus diskusi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/14. discussion/delete discussion/delete discussion.png}
+                \caption{\textit{Sequence diagram} untuk menghapus diskusi}
+            \end{figure}
+        \end{itemize}
+        \newpage
+
+        \item \textit{Do transaction}
+        \begin{itemize}
+            \item membaut transaksi baru
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/cancel transaction/cancel transaction.png}
+                \caption{\textit{Sequence diagram} untuk membuat transaksi baru}
+            \end{figure}
+            \item membayar transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/pay transaction/pay trx.png}
+                \caption{\textit{Sequence diagram} untuk membayar transaksi}
+            \end{figure}
+            \newpage
+            \item menyelesaikan transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/finish transaction/finish transaction.png}
+                \caption{\textit{Sequence diagram} untuk menyelesaikan transaksi}
+            \end{figure}
+            \item membatalkan transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/cancel transaction/cancel transaction.png}
+                \caption{\textit{Sequence diagram} untuk membatalkan transaksi}
+            \end{figure}
+            \newpage
+            \item melihat riwayat transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/view transaction history/view transaction history.png}
+                \caption{\textit{Sequence diagram} untuk melihat riwayat transaksi}
+            \end{figure}
+            \item melihat detil transaksi
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/view transaction detail/view transaction detail.png}
+                \caption{\textit{Sequence diagram} untuk melihat detil transaksi}
+            \end{figure}
+        \end{itemize}
+        \newpage
+        
+        \item \textit{Manage and view review}
+        \begin{itemize}
+            \item Membuat sebuah \textit{review}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/16. review/create review/create review.png}
+                \caption{\textit{Sequence diagram} untuk membuat sebuah \textit{review}}
+            \end{figure}
+            \item melihat daftar \textit{review} yang dipunyai \textit{user}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/16. review/view user review/view user review list.png}
+                \caption{\textit{Sequence diagram} untuk melihat daftar \textit{review} yang dipunyai \textit{user}}
+            \end{figure}
+            \newpage
+            \item melihat daftar \textit{review merchant} 
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/16. review/view merchant review/merchant review.png}
+                \caption{\textit{Sequence diagram} untuk melihat daftar \textit{review merchant} }
+            \end{figure}
+        \end{itemize}
+
+        \item \textit{Manage item}
+        \begin{itemize}
+            \item membuat \textit{product} baru
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/17. item/create item/create item.png}
+                \caption{\textit{Sequence diagram} untuk membuat \textit{product} baru}
+            \end{figure}
+            \newpage
+            \item memperbaharui informasi tentang \textit{product}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/17. item/update item/update item.png}
+                \caption{\textit{Sequence diagram} untuk memperbaharui informasi tentang \textit{product}}
+            \end{figure}
+            \item menghapus \textit{product}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/sequence diagram/17. item/delete item/delete item.png}
+                \caption{\textit{Sequence diagram} untuk menghapus \textit{product}}
+            \end{figure}
+        \end{itemize}
+        \newpage
+
+        \item \textit{Class Diagram}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=13cm]{./diagram/class diagram/class diagram.png}
+            \caption{\textit{Class diagram} untuk aplikasi \textit{Shumishumi}}
+        \end{figure}
+    \end{enumerate}
+    \newpage
+
+    \item Perancangan \textit{User Interface}
+    \newpage
+
+    \item Perancangan \textit{database}
+    berikut ini adalah perancangan dari \textit{database} yang dipakai oleh \textit{Shumishumi}:
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=13cm]{./diagram/erd/erd.png}
+        \caption{\textit{Entity Relation Diagram} untuk \textit{database shumishumi}}
+    \end{figure}
 \end{enumerate}
 
 
