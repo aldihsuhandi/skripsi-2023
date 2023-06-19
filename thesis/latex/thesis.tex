@@ -923,6 +923,59 @@ Pertanyaan “Dalam mencari dan menemukan barang apakah anda terkadang merasa ra
 \subbab{3.2 Analisis}
 \subsubbab{3.2.1 Analisis sistem yang sudah berjalan atau perbandingan aplikasi sejenis}
 
+Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini bukanlah yang pertama kali dibuat ataupun dikembangkan. Sebelumnya, sudah ada beberapa penelitian yang serupa yang telah mencoba untuk membuat dan mengembangkan sebuah aplikasi yang sejenis. Berikut adalah lima penelitian terdahulu yang telah mencoba untuk mengembangkan aplikasi \textit{online marketplace} mirip seperti ShumiShumi.
+
+\begin{enumerate}
+    \item Aplikasi \textit{marketplace} berbasis \textit{mobile} untuk produk-produk agrikultur
+    
+    Aplikasi pertama yang akan dibahas adalah sebuah aplikasi \textit{marketplace} berbasis \textit{mobile} untuk produk-produk agrikultur yang dikembangkan oleh Heru Nugroho, Robbi Hendriyanto dan Kautsar Tisamawi. Aplikasi ini merupakan sebuah aplikasi berbasis \textit{mobile} yang dipergunakan untuk menjual belikan produk-produk yang berhubungan dengan agrikultur seperti padi, jagung, singkong, kentang, buah-buahan, sayur-sayuran dan masih banyak lagi. Aplikasi ini dibuat dengan tujuan untuk membantu para petani di Indonesia untuk menjual belikan produk-produk agrikultur yang telah mereka panen ke masyarakat luas dengan harga yang sepadan atau sewajarnya. Dikarenakan sebelumnya, para petani harus melewati rantai perdagangan penjualan produk yang cukup panjang agar produk agrikultur mereka bisa sampai ke masyarakat\autocite{agriculture-marketplace}. 
+    
+    Rantai perdagangan tersebut dapat meliputi petani itu sendiri, pedagang grosir kecil, pedagang grosir besar, pasar induk, pasar tradisional, dan seterusnya hingga baru sampai ke tangan masyarakat. Hal ini juga menyebabkan harga produk-produk agrikultur yang terjual ke masyarakat menjadi cukup tinggi, sedangkan harga awal yang diberikan oleh petani kepada para pedagang tersebut jauh lebih rendah. Untuk itu, dibuatlah aplikasi \textit{marketplace} agrikultur ini supaya dapat membantu para petani menjual belikan produk mereka ke masyarakat dengan lebih mudah\autocite{agriculture-marketplace}. 
+
+    Aplikasi ini dikembangkan menggunakan \textit{Android Studio} versi 2.2.3 bersama dengan bahasa pemrograman Java dan XML serta menggunakan \textit{framework} bernama CodeIgniter untuk bisa menghubungkan antara \textit{Android} dengan database MySQL yang mereka gunakan\autocite{agriculture-marketplace}. 
+    
+    Berikut adalah beberapa screenshot untuk UI (\textit{user interface}) dari aplikasi ini:
+    \newpage
+    \begin{figure}
+        \includegraphics[width=0.27\textwidth]{ui app sejenis/Agrikultur Cart - USER.png}\hfill
+        \includegraphics[width=0.27\textwidth]{ui app sejenis/Agrikultur Home Page - USER.png}\hfill
+        \includegraphics[width=0.27\textwidth]{ui app sejenis/Agrikultur Transaksi - USER.png}
+        \caption{Beberapa tampilan UI dari sudut pandang pengguna pada aplikasi agrikultur}
+    \end{figure}
+
+    Ada beberapa perbedaan yang dapat diamati antara aplikasi ShumiShumi dengan aplikasi jual beli produk agrikultur tersebut, walaupun kedua-duanya sama berupaka sebuah aplikasi \textit{maeketplace}. Perbedaan-perbedaan tersebut antara lain sebagai berikut:
+
+    \begin{itemize}
+        \item \textit{Platform}
+        
+        Perbedaan pertama dapat dilihat dari \textit{platform} tempat aplikasi tersebut ditujukan. Aplikasi penjualan produk agrikultur ini merupakan aplikasi \textit{marketplace} berbasis \textit{mobile}. Yang berarti hanya dapat digunakan pada perangkat berupa \textit{smartphone}. Terlebih lagi aplikasi ini hanya dapat berjalan pada \textit{smartphone} yang memiliki sistem operasi berupa \textit{Android} dikarenakan proses pengembangannya yang menggunakan \textit{Android Studio}. 
+        
+        Sedangkan, aplikasi ShumiShumi merupakan aplikasi berbasis web, yang berarti perangkat apapun bisa menjalankan aplikasi ini, asalkan perangkat-perangkat tersebut mempunyai akses untuk internet dan memiliki aplikasi \textit{web browser}. 
+
+        \item Kegunaan
+        
+        Kegunaan dari aplikasi ShumiShumi adalah untuk menjual belikan berbagai macam produk yang berhubungan dengan hobi. Sedangkan aplikasi agrikultur ini, sesuai dengan namanya, yakni menjual berbagai macam barang-barang kebutuhan agrikultur seperti padi, jangung, kentang, dan lain sebagainya. 
+
+        \item Fitur-fitur implementasi
+        
+        Dari segi fitur implementasi, ternyata kedua aplikasi ini memiliki banyak persamaan. Mulai dari fitur untuk merubah peran/\textit{role} pengguna menjadi penjual apabila pengguna juga ingin menjual produk-produk yang mereka miliki hingga fitur pembayaran yang sudah terintegrasi dengan bank-bank lokal. 
+
+        Tetapi, banyak juga perbedaan yang dapat diamati dari kedua aplikasi ini antara lain: 
+        
+        \begin{itemize}
+            \item Adanya fitur rekomendasi yang dimiliki oleh aplikasi ShumiShumi
+            \item Fitur \textit{request} yang dimiliki oleh aplikasi agrikultur yang dapat membantu pengguna untuk meminta kepada penjual untuk menjual produk-produk yang diinginkan oleh pengguna yang belum ada di dalam aplikasi
+            \item Fitur \textit{offer} yang dimiliki aplikasi jual-beli produk agrikultur yang dapat membantu para penjual mempromosikan barang-barang dagangannya secara langsung kepada penggunanya masing-masing. Para pengguna dapat menerima penawaran yang ditawarkan oleh penjual tersebut ataupun menolak tawaran tersebut. 
+            \item Fitur percakapan diskusi yang dimiliki oleh aplikasi ShumiShumi yang dapat membantu penggunanya untuk berdiskusi dengan pengguna lain ataupun dengan penjualnya mengenai barang kebutuhan hobi yang diinginkannya. 
+        \end{itemize}
+    \end{itemize}
+
+    \item Aplikasi bernama \textbf{e-Nelayan} yang menjual produk-produk berupa ikan
+    \item Aplikasi perdagangan produk ikan menggunakan metode \textit{SMS Gateway}
+    \item Aplikasi bernama \textbf{LIDI} yang merupakan sebuah apliksi rental mobil berbasis web
+    \item Aplikasi \textit{e-marketplace} untuk usaha kecil, mikro dan menengah milik desa
+\end{enumerate}
+
 \subbab{3.3 Metode Pengembangan Sistem}
 
 \subsubbab{3.3.1 \textit{Software Design Document}}
