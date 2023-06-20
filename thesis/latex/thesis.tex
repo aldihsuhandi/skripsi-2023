@@ -833,77 +833,73 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \end{figure}
     \end{itemize}
 \end{enumerate}
-
+\newpage
 \subbab{2.2 Aplikasi Serupa}
-Berikut adalah perbandingan antara beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu dan dua aplikasi pasaran yang sebelumnya sudah sedikit dibahas pada bagian latar belakang. Disini, aplikasi-aplikasi tersebut dapat dikategorikan menjadi dua jenis, yaitu \textit{marketplace} atau \textit{e-commerce} dan sebuah forum untuk berdiskusi secara general. Berikut adalah perbandingan kelebihan dan kekurangannya.
-\textbf{Aplikasi-aplikasi berdasarkan penelitian terdahulu}:
-\begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}
+Berikut adalah perbandingan fitur-fitur yang dimiliki oleh aplikasi \textit{ShumiShumi} yang dikembangkan di dalam penelitian ini dengan beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu yang sebelumnya sudah dibahas sedikit pada bagian latar belakang.
+
+Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi bernama LIDI\autocite{lidi-car-rental}, e-Nelayan Kota Samarahan\autocite{fishes-marketplace} dan aplikasi BUM Desa Pakis\autocite{bum-mekarsari}. 
+
+\begin{longtable}{|p{3cm}|p{2cm}|p{2cm}|p{3cm}|p{2cm}|}
     \hline
-    Aplikasi & Kelebihan                                                                                                                 & Kekurangan \\
+    Fitur & ShumiShumi & LIDI & e-Nelayan Kota Samarahan & BUM Desa Pakis\\
     \hline
-    Application for Marketplace Agricultural Product
-             & + Mempermudah para petani/pekebun untuk menjual belikan produk agrikulturnya \newline
-    + User dapat me-\textit{request} produk yang belum ada agar bisa dijual di app tersebut \newline
-             & - Hanya terfokus terhadap satu sektor saja yaitu agrikultur \newline
-    - Tidak bisa berdiskusi langsung dengan penjual mengenai produk yg dijual \newline
-    - Bukan \textit{marketplace} untuk hobi \newline
-    - Hanya tersedia di satu kota saja \newline
-    - Hanya bisa berjalan di Android saja, tidak bisa di IOS                                                                                     \\
+    Register dan Login & Y & Y & Y & Y\\
     \hline
-    e-Nelayan the Fishery Marketplace App
-             & + Mempermudah para nelayan dan penjual ikan untuk menjual belikan ikan-ikannya \newline
-    + User dapat me-\textit{request} ikan yang belum tersedia dengan membuat post agar bisa dilihat langsung oleh nelayan atau penjual ikan \newline
-    + App ini dapat menghubungankan pihak user, penjual hingga nelayan melalui sistem comment pada postingan user \newline
-             & - Hanya terfokus pada sektor perikanan saja \newline
-    - Bukan \textit{marketplace} untuk hobi \newline
-    - Hanya bisa berjalan di Android saja, tidak bisa di IOS                                                                                     \\
+    Sistem Rekomendasi & Y & N & N & N\\
     \hline
-    LIDI: A Web-Based Car Rent Marketplace Application
-             & + Mempermudah user yang ingin menyewa mobil secara online \newline
-    + Menampilkan informasi lengkap mengenai mobil yang disewakan \newline
-             & - Hanya terfokus pada jasa sewa mobil \newline
-    - Proses \textit{order} masih menggunakan antrian \textit{via} nomor telepon user \newline
-    - User harus secara manual mengecek sendiri kondisi mobil yang ingin disewa \newline
-    - Hanya tersedia di satu kota saja \newline
-    - Bukan \textit{marketplace} khusus untuk hobi                                                                                               \\
+    Sistem Pencarian & Y & Y & Y & Y\\
     \hline
-    e-Marketplace for Village-owned Small, Micro and Medium Enterprise
-             & + Mempermudah user untuk mencari produk yang hanya dijual oleh bisnis-bisnis kecil \newline
-    + Memepersatukan bisnis-bisnis kecil kedalam satu \textit{platform} online jual beli yang sama \newline
-             & - \textit{User Interface} yang masih minim penjelasannya yang dapat membuat user kebingungan \newline
-    - Hanya tersedia di satu lokasi saja \newline
-    - Bukan \textit{marketplace} khusus untuk hobi                                                                                               \\
+    Filter Pencarian & Y & Y & Y & Y\\
     \hline
-    C2C marketplace model in fishery product trading application
-             & + User dan nelayan dapat dengan mudah berinteraksi walaupun berada di pedesaan dengan infrastruktur yang jelek \newline
-    + Sistem yang relatif simpel \newline
-             & - Hanya terfokus pada sektor perikanan saja \newline
-    - Hanya tersedia di satu lokasi saja \newline
-    - Bukan \textit{marketplace} khusus untuk keperluan hobi                                                                                     \\
+    \textit{Wishlist} & Y & N & N & N\\
+    \hline
+    Memperbarui Data Profil & Y & N & Y & Y\\
+    \hline
+    Sarana Berdiskusi & Berdiskusi di halaman produk & Melalui telepon & Berdiskusi via post & N\\
+    \hline
+    Merubah \textit{Role} Pengguna & Y & N & Y & N\\
+    \hline
+    Fitur Pembelian (\textit{Cart}) & Y & Y & Y & Y\\
+    \hline
+    Sistem Pembayaran & Terintegrasi dengan bank & Terintegrasi dengan bank & \textit{Cash on delivery} & Transfer melalui bank\\
+    \hline
+    Sarana Ulasan & Y & N & N & N\\
     \hline
 \end{longtable}
 
-\textbf{Aplikasi pasaran yang serupa dengan proyek ini}:
-\begin{longtable}{|m{3cm}|p{5cm}|p{5cm}|}
+\textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
+\newpage
+Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi \textit{marketplace} agrikultur\autocite{agriculture-marketplace} dan aplikasi C2C \textit{marketplace} produk perikanan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}.
+
+\begin{longtable}{|p{3cm}|p{2cm}|p{3cm}|p{4cm}|}
     \hline
-    Aplikasi & Positif                                                  & Negatif                \\
+    Fitur & ShumiShumi & \textit{Marketplace} Agrikultur & C2C \textit{Marketplace} Perikanan\\
     \hline
-    KyouId
-             & + Bisa membeli barang dari negara lain (Jepang) \newline
-    + Sudah integrasi langsung dengan banyak \textit{shipment service} yang ada di Indonesia \newline
-             & - Hanya terfokus kesatu jenis hobi \newline
-    - Tidak memiliki filter untuk \textit{interest level}                                        \\
+    Register dan Login & Y & Y & Y\\
     \hline
-    % Reddit
-    %          & + \textit{community} yang sudah besar \newline
-    % + System handling \textit{post} dan komen sudah \textit{robust} \newline
-    % + Interaksi antara user sudah bagus
-    %          & - Bukan marketplace \newline
-    % - Tidak cocok untuk memberi rating konkrit kepada barang \newline
-    % - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
-    % \hline
+    Sistem Rekomendasi & Y & N & N\\
+    \hline
+    Sistem Pencarian & Y & Y & Y\\
+    \hline
+    Filter Pencarian & Y & N & N\\
+    \hline
+    \textit{Wishlist} & Y & N & N\\
+    \hline
+    Memperbarui Data Profil & Y & N & Y\\
+    \hline
+    Sarana Berdiskusi & Berdiskusi di halaman produk & N & Melalui pesan teks/telepon\\
+    \hline
+    Merubah \textit{Role} Pengguna & Y & N & N\\
+    \hline
+    Fitur Pembelian (\textit{Cart}) & Y & Y & Y\\
+    \hline
+    Sistem Pembayaran & Terintegrasi dengan bank & Transfer & \textit{Cash on delivery}\\
+    \hline
+    Sarana Ulasan & Y & N & N\\
+    \hline
 \end{longtable}
 
+\textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
 
 \newpage
 \bab{Bab 3. Metode Penelitian}
@@ -1213,6 +1209,76 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
     \end{itemize}
 
 \end{enumerate}
+
+Berikut adalah tabel perbandingan antara kelima aplikasi pada penelitan terdahulu apaila dibandingkan satu sama lain:
+
+\begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}
+    \hline
+    Aplikasi & Kelebihan                                                                                                                 & Kekurangan \\
+    \hline
+    Application for Marketplace Agricultural Product
+             & + Mempermudah para petani/pekebun untuk menjual belikan produk agrikulturnya \newline
+    + User dapat me-\textit{request} produk yang belum ada agar bisa dijual di app tersebut \newline
+             & - Hanya terfokus terhadap satu sektor saja yaitu agrikultur \newline
+    - Tidak bisa berdiskusi langsung dengan penjual mengenai produk yg dijual \newline
+    - Bukan \textit{marketplace} untuk hobi \newline
+    - Hanya tersedia di satu kota saja \newline
+    - Hanya bisa berjalan di Android saja, tidak bisa di IOS                                                                                     \\
+    \hline
+    e-Nelayan the Fishery Marketplace App
+             & + Mempermudah para nelayan dan penjual ikan untuk menjual belikan ikan-ikannya \newline
+    + User dapat me-\textit{request} ikan yang belum tersedia dengan membuat post agar bisa dilihat langsung oleh nelayan atau penjual ikan \newline
+    + App ini dapat menghubungankan pihak user, penjual hingga nelayan melalui sistem comment pada postingan user \newline
+             & - Hanya terfokus pada sektor perikanan saja \newline
+    - Bukan \textit{marketplace} untuk hobi \newline
+    - Hanya bisa berjalan di Android saja, tidak bisa di IOS                                                                                     \\
+    \hline
+    LIDI: A Web-Based Car Rent Marketplace Application
+             & + Mempermudah user yang ingin menyewa mobil secara online \newline
+    + Menampilkan informasi lengkap mengenai mobil yang disewakan \newline
+             & - Hanya terfokus pada jasa sewa mobil \newline
+    - Proses \textit{order} masih menggunakan antrian \textit{via} nomor telepon user \newline
+    - User harus secara manual mengecek sendiri kondisi mobil yang ingin disewa \newline
+    - Hanya tersedia di satu kota saja \newline
+    - Bukan \textit{marketplace} khusus untuk hobi                                                                                               \\
+    \hline
+    e-Marketplace for Village-owned Small, Micro and Medium Enterprise
+             & + Mempermudah user untuk mencari produk yang hanya dijual oleh bisnis-bisnis kecil \newline
+    + Memepersatukan bisnis-bisnis kecil kedalam satu \textit{platform} online jual beli yang sama \newline
+             & - \textit{User Interface} yang masih minim penjelasannya yang dapat membuat user kebingungan \newline
+    - Hanya tersedia di satu lokasi saja \newline
+    - Bukan \textit{marketplace} khusus untuk hobi                                                                                               \\
+    \hline
+    C2C marketplace model in fishery product trading application
+             & + User dan nelayan dapat dengan mudah berinteraksi walaupun berada di pedesaan dengan infrastruktur yang jelek \newline
+    + Sistem yang relatif simpel \newline
+             & - Hanya terfokus pada sektor perikanan saja \newline
+    - Hanya tersedia di satu lokasi saja \newline
+    - Bukan \textit{marketplace} khusus untuk keperluan hobi                                                                                     \\
+    \hline
+\end{longtable}
+
+Berikut pula adalah salah satu aplikasi sejenis yang juga menjadi salah satu latar belakang dibuatnya aplikasi \textit{ShumiShumi} ini: 
+
+\begin{longtable}{|m{3cm}|p{5cm}|p{5cm}|}
+    \hline
+    Aplikasi & Kelebihan                                                  & Kekurangan                \\
+    \hline
+    KyouId
+             & + Bisa membeli barang dari negara lain (Jepang) \newline
+    + Sudah integrasi langsung dengan banyak \textit{shipment service} yang ada di Indonesia \newline
+             & - Hanya terfokus kesatu jenis hobi \newline
+    - Tidak memiliki filter untuk \textit{interest level}                                        \\
+    \hline
+    % Reddit
+    %          & + \textit{community} yang sudah besar \newline
+    % + System handling \textit{post} dan komen sudah \textit{robust} \newline
+    % + Interaksi antara user sudah bagus
+    %          & - Bukan marketplace \newline
+    % - Tidak cocok untuk memberi rating konkrit kepada barang \newline
+    % - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
+    % \hline
+\end{longtable}
 
 \subsubbab{3.2.2 Analisis Permasalahan/Kebutuhan}
 Berdasarkan rumusan masalah yang telah dikaji di bab pertama, pengembangan aplikasi \textit{marketplace hobby} \textit{ShumiShumi} ini membutuhkan berbagai macam data atau masukan dari para calon penggunanya demi menyelesaikan permasalahan yang dihadapi. Maka dari itu, penelitian ini telah mengadakan survei yang dilakukan menggunakan aplikasi \textit{Google Form}. 
