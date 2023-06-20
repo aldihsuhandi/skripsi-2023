@@ -1,5 +1,5 @@
 @startuml update item
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -26,34 +26,34 @@ database shumishumi as db
 u -> detail++ : click update item
 detail -> updatepage --++ : redirect to item update form
 
-autonumber inc a
+'autonumber inc a
 u -> updatepage : fill out update form
-autonumber inc a
+'autonumber inc a
 u -> updatepage : click update
 
 loop for every image need to be uploaded
 updatepage -> imc++ : /image/upload
-imc -> upproc++ : process
+imc -> upproc++ : process()
 
 create img
-upproc -> img++ : new
-img -> db++ : update
+upproc -> img++ : new()
+img -> db++ : update()
 return result
 return result
 return result
 return JSON_RESPONSE
 end
 
-autonumber inc b
+'autonumber inc b
 updatepage -> ic++ : /item/update
-ic -> updateproc++ : process
+ic -> updateproc++ : process()
 
-updateproc -> im++ : update
-im -> db++ : update
+updateproc -> im++ : update()
+im -> db++ : update()
 return result
 
-updateproc -> km++ : update
-km -> db++ : update
+updateproc -> km++ : update()
+km -> db++ : update()
 return result
 return result
 

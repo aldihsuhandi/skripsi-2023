@@ -1,5 +1,5 @@
 @startuml view merchant page
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -34,13 +34,13 @@ u -> detail++ : open merchant info page
 detail -> merchant --++ : redirect to merchant info page
 
 merchant -> uc++ : /user/info
-uc -> userproc++ : process
-userproc -> um++ : query
-um -> db++ : query
+uc -> userproc++ : process()
+userproc -> um++ : query()
+um -> db++ : query()
 return result
 
-userproc -> urm++ : query
-urm -> db++ : query
+userproc -> urm++ : query()
+urm -> db++ : query()
 return result
 return result
 return result
@@ -48,26 +48,26 @@ return result
 return JSON_RESPONSE
 
 merchant -> ic++ : /item/query
-ic -> itemproc++ : proc
+ic -> itemproc++ : process()
 
-itemproc -> im++ : query
+itemproc -> im++ : query()
 loop for every item in result
-itemproc -> icm++ : query
-icm -> db++: query
+itemproc -> icm++ : query()
+icm -> db++: query()
 return result
 
-itemproc -> ilm++ : query
-ilm -> db++: query
+itemproc -> ilm++ : query()
+ilm -> db++: query()
 return result
 
-itemproc -> hm++ : query
-hm -> db++: query
+itemproc -> hm++ : query()
+hm -> db++: query()
 return result
-itemproc -> um++ : query
-um -> db++: query
+itemproc -> um++ : query()
+um -> db++: query()
 return result
 
-itemproc -> im : compose neccessary info
+itemproc -> im : composeInfo()
 deactivate um
 deactivate icm
 deactivate ilm
@@ -80,9 +80,9 @@ return JSON_RESPONSE
 
 loop for every item in response
     merchant -> imc++ : /image/download
-    imc -> downproc++ : process
-    downproc -> img++ : query
-    img -> db++ : query
+    imc -> downproc++ : process()
+    downproc -> img++ : query()
+    img -> db++ : query()
     return result
     return result
     return result

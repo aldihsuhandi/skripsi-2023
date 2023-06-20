@@ -1,5 +1,5 @@
 @startuml delete item
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -23,14 +23,14 @@ database shumishumi as db
 u -> detail++ : click delete item
 
 detail -> ic++ : /item/delete
-ic -> deleteproc++ : process
+ic -> deleteproc++ : process()
 
-deleteproc -> im++ : delete
-im -> db++ : delete
+deleteproc -> im++ : delete()
+im -> db++ : delete()
 return result
 
-deleteproc -> km++ : delete
-km -> db++ : delete
+deleteproc -> km++ : delete()
+km -> db++ : delete()
 return result
 return result
 

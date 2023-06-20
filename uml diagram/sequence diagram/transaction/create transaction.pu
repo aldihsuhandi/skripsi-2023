@@ -1,5 +1,5 @@
 @startuml create transaction
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -29,23 +29,23 @@ participant Midtrans as mt
 
 u -> cart++ : click pay
 cart -> trxc++ : /transaction/create
-trxc -> trxcreate++ : process
+trxc -> trxcreate++ : process()
 
-trxcreate -> cm++ : query selected
-cm -> db++ : query
+trxcreate -> cm++ : querySelected()
+cm -> db++ : query()
 return result
 
 create trxm
-trxcreate -> trxm++ : new
-trxm -> db++ : create
+trxcreate -> trxm++ : new()
+trxm -> db++ : create()
 return result
 
 loop for every selected cart
     create trxdm
-    trxcreate -> trxdm++ : new
-    trxdm -> db++ : create
+    trxcreate -> trxdm++ : new()
+    trxdm -> db++ : create()
     return result
-    trxdm -> trxm --: compose detail
+    trxdm -> trxm --: composeDetail()
 end
 
 deactivate cm
@@ -54,34 +54,34 @@ trxm --> trxcreate --: result
 return result
 return JSON_RESPONSE
 
-autonumber inc b
+'autonumber inc b
 cart -> trxpay --++ : redirect to pick payment page
 trxpay -> trxc++ : /transaction/payment
-trxc -> payproc++ : process
+trxc -> payproc++ : process()
 
-payproc -> mt++ : create payment request
+payproc -> mt++ : createPaymentRequest()
 return result
 
-payproc -> trxm++ : change status to "WAITING_PAYMENT"
-trxm -> db++ : update
+payproc -> trxm++ : changeStatus()
+trxm -> db++ : update()
 return result
 return result
 
 loop for every item in transaction
-    payproc -> cm++ : delete
-    cm -> db++ : delete
+    payproc -> cm++ : delete()
+    cm -> db++ : delete()
     return result
     deactivate cm
     destroy cm
 
-    payproc -> im++ : decrease item quantity
-    im -> db++ : update
+    payproc -> im++ : decreaseQuantity()
+    im -> db++ : update()
     return result
     deactivate im
 
     create am
-    payproc -> am++ : new
-    am -> db++ : save
+    payproc -> am++ : new()
+    am -> db++ : save()
     return result
     deactivate am
 end

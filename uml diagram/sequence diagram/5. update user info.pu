@@ -1,5 +1,5 @@
 @startuml update user info
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -22,25 +22,25 @@ database shumishumi as db
 u -> uinfo : click update user info
 uinfo -> update --++ : redirect to update form
 
-autonumber inc a
+'autonumber inc a
 u -> update : fill out update form
 
-autonumber inc a
+'autonumber inc a
 u -> update : click submit button
 
 update -> uc++ : /user/update
-uc -> updproc++ : process
+uc -> updproc++ : process()
 
 alt if there is any update to image
 create im
-updproc -> im++ : new
-im -> db++ : save
+updproc -> im++ : new()
+im -> db++ : save()
 return result
 return result
 end
 
-updproc -> um++ : update
-um -> db++: update
+updproc -> um++ : update()
+um -> db++: update()
 return result
 return result
 return result

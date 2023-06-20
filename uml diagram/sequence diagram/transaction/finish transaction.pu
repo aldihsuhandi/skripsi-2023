@@ -1,5 +1,5 @@
 @startuml template
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -21,13 +21,15 @@ database shumishumi as db
 u -> detail++ : press finish button
 detail -> tc++ : /transaction/finish
 
-tc -> finishproc++ : process
-finishproc -> trx++ : change status to finish
+tc -> finishproc++ : process()
+finishproc -> trx++ : changeStatus()
+trx -> db++ :update()
+return result
 
 loop for every item in transaction
     create rm
-    finishproc -> rm++ : new
-    rm -> db++ : create
+    finishproc -> rm++ : new()
+    rm -> db++ : create()
     return result
     deactivate rm
 end

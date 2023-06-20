@@ -1,5 +1,5 @@
 @startuml login
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -22,18 +22,18 @@ database shumishumi as db
 u -> home++ : click login button
 home -> login --++ : redirect to login page
 
-autonumber inc a
+'autonumber inc a
 u -> login : fill out login form
-autonumber inc a
+'autonumber inc a
 u -> login : click login button
 
 login -> uc++ : /user/login
-uc -> loginproc++ : process
+uc -> loginproc++ : process()
 
-loginproc -> um++ : query
-um -> db++ : query
+loginproc -> um++ : query()
+um -> db++ : query()
 return result
-loginproc -> um : validate password
+loginproc -> um : validatePassword()
 alt if password validation failed
     loginproc <-- um : result
     uc <-- loginproc : result
@@ -41,12 +41,12 @@ alt if password validation failed
     login <-- uc : JSON_RESPONSE
     u <-- login : show error message
 else if password validation success
-    autonumber inc b
+    'autonumber inc b
     loginproc <-- um --: success result
 
     create sm
-    loginproc -> sm++ : new
-    sm -> db++ : save
+    loginproc -> sm++ : new()
+    sm -> db++ : save()
     return result
     return result
 

@@ -1,5 +1,5 @@
 @startuml template
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -19,10 +19,10 @@ database shumishumi as db
 
 u -> cart++ : remove from cart
 cart -> cc++ : /cart/remove
-cc -> removeproc++ : process
+cc -> removeproc++ : process()
 
-removeproc -> wm++ : delete
-wm -> db++ : delete
+removeproc -> wm++ : delete()
+wm -> db++ : delete()
 return result
 return result
 return result

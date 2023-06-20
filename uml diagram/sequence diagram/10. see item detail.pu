@@ -1,5 +1,5 @@
 @startuml see item detail
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -30,27 +30,27 @@ database shumishumi as db
 u -> home++ : click item card
 home -> detail --++ : redirect to item detail page
 detail -> ic++ : /item/query/detail
-ic -> detailproc++ : process
-detailproc -> im++ : query
-im -> db++ : query
+ic -> detailproc++ : process()
+detailproc -> im++ : query()
+im -> db++ : query()
 return result
 
-detailproc -> icm++ : query
-icm -> db++: query
+detailproc -> icm++ : query()
+icm -> db++: query()
 return result
 
-detailproc -> ilm++ : query
-ilm -> db++: query
+detailproc -> ilm++ : query()
+ilm -> db++: query()
 return result
 
-detailproc -> hm++ : query
-hm -> db++: query
+detailproc -> hm++ : query()
+hm -> db++: query()
 return result
-detailproc -> um++ : query
-um -> db++: query
+detailproc -> um++ : query()
+um -> db++: query()
 return result
 
-detailproc -> im : compose neccessary info
+detailproc -> im : composeInfo()
 deactivate um
 deactivate icm
 deactivate ilm
@@ -59,20 +59,20 @@ deactivate hm
 return result
 
 create am
-detailproc -> am++ : new
-am -> db++ : create
+detailproc -> am++ : new()
+am -> db++ : create()
 return result
 return result
 
 return result
 return JSON_RESPONSE
 
-autonumber inc b
+'autonumber inc b
 loop for every image in item
     detail -> imc++ : /image/download
-    imc -> downproc++ : process
-    downproc -> img++ : query
-    img -> db++ : query
+    imc -> downproc++ : process()
+    downproc -> img++ : query()
+    img -> db++ : query()
     return result
     return result
     return result

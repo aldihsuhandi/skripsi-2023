@@ -1,5 +1,5 @@
 @startuml become a merchant
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -18,13 +18,13 @@ database shumishumi as db
 
 u -> home++ : click 'become a merchant' button
 home -> uc++ : /user/merchant/apply
-uc -> applyproc++ : process
-applyproc -> um++ : query 
-um -> db++ : query
+uc -> applyproc++ : process()
+applyproc -> um++ : query()
+um -> db++ : query()
 return result
 
-applyproc -> um : update role
-um -> db++ : update
+applyproc -> um : updateRole()
+um -> db++ : update()
 return result
 return result
 

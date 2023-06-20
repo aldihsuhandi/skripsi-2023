@@ -1,5 +1,5 @@
 @startuml template
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -27,16 +27,16 @@ u -> home++ : open merchant review page
 home -> rlist ++-- : redirect merchant review page
 
 rlist -> rc++ : /review/query
-rc -> reproc++ : process
+rc -> reproc++ : process()
 
-reproc -> rm++ : query
-rm -> db++ : query
+reproc -> rm++ : query()
+rm -> db++ : query()
 return result
 
 loop for every review
-reproc -> im++ : query
-im -> im : compose neccessary info
-im -> rm : compose item into review
+reproc -> im++ : query()
+im -> im : composeInfo()
+im -> rm : composeReview()
 deactivate im
 end
 return result
@@ -45,9 +45,9 @@ return JSON_RESPONSE
 
 loop for every item in response
     rlist -> imc++ : /image/download
-    imc -> downproc++ : process
-    downproc -> img++ : query
-    img -> db++ : query
+    imc -> downproc++ : process()
+    downproc -> img++ : query()
+    img -> db++ : query()
     return result
     return result
     return result

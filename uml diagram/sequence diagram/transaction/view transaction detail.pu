@@ -1,5 +1,5 @@
 @startuml template
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -29,34 +29,34 @@ u -> history++ : open transaction detail page
 history -> detail++ : redirect to transaction detail page
 detail -> tc++ : /transaction/detail
 
-tc -> proc++ : process
-proc -> trx++ : query transaction
-trx -> db++ : query
+tc -> proc++ : process()
+proc -> trx++ : queryTransaction()
+trx -> db++ : query()
 return result
 alt if transaction status is WAITING_PAYMENT
-    proc -> mt++ : check payment status
+    proc -> mt++ : checkPaymentStatus()
     return result
     alt if payment request status is DONE
-        proc -> trx : update status to ONGOING
-        trx -> db++ : update
+        proc -> trx : updateStatus()
+        trx -> db++ : update()
         return result
     end
 end
 
-proc -> trxd++ : query all detail transaction
-trxd -> db++ : query
+proc -> trxd++ : queryAll()
+trxd -> db++ : query()
 return result
 
 loop for every item in transaction
-    proc -> im++ : query item
-    im -> db++ : query
+    proc -> im++ : queryItem()
+    im -> db++ : query()
     return result
-    im -> im : compose necessary info
-    proc -> trxd : compose item into transaction detail
+    im -> im : composeInfo()
+    proc -> trxd : composeItem()
     deactivate im
 end
 
-proc -> trx : compose detail to transaction
+proc -> trx : composeDetail()
 deactivate trxd
 return result
 return result
@@ -64,9 +64,9 @@ return JSON_RESPONSE
 
 loop for every item image in transaction detail
     detail -> imc++ : /image/download
-    imc -> downproc++ : process
-    downproc -> img++ : query
-    img -> db++ : query
+    imc -> downproc++ : process()
+    downproc -> img++ : query()
+    img -> db++ : query()
     return result
     return result
     return result

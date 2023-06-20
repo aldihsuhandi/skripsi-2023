@@ -1,5 +1,5 @@
 @startuml create item
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -27,35 +27,35 @@ database shumishumi as db
 u -> merchant++ : click create item
 merchant -> createpage --++ : redirect to item create form
 
-autonumber inc a
+'autonumber inc a
 u -> createpage : fill out create form
-autonumber inc a
+'autonumber inc a
 u -> createpage : click create
 
 loop for every image need to be uploaded
 createpage -> imc++ : /image/upload
-imc -> upproc++ : process
+imc -> upproc++ : process()
 
 create img
-upproc -> img++ : new
-img -> db++ : create
+upproc -> img++ : new()
+img -> db++ : create()
 return result
 return result
 return result
 return JSON_RESPONSE
 end
 
-autonumber inc b
+'autonumber inc b
 createpage -> ic++ : /item/create
-ic -> createproc++ : process
+ic -> createproc++ : process()
 
 create im
-createproc -> im++ : new
-im -> db++ : save
+createproc -> im++ : new()
+im -> db++ : save()
 return result
 
-createproc -> km++ : update
-km -> db++ : update
+createproc -> km++ : update()
+km -> db++ : update()
 return result
 return result
 

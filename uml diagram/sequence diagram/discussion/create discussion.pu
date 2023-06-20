@@ -1,5 +1,5 @@
 @startuml create discussion
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -19,11 +19,11 @@ database shumishumi as db
 u -> detail++ : create new discussion
 detail -> dc++ : /discussion/create
 
-dc -> proc++ : process
+dc -> proc++ : process()
 
 create dm
-proc -> dm++ : create
-dm -> db++ : save
+proc -> dm++ : create()
+dm -> db++ : save()
 return result
 return result
 return result

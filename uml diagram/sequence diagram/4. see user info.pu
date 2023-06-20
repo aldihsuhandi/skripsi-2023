@@ -1,5 +1,5 @@
 @startuml template
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -25,25 +25,25 @@ u -> home++ : click user info page
 home -> uinfo ++-- : redirect to user info page
 
 uinfo -> uc++ : /user/info
-uc -> queproc++ : process
-queproc -> um++ : query
-um -> db++ : query
+uc -> queproc++ : process()
+queproc -> um++ : query()
+um -> db++ : query()
 return result
-queproc -> urm++ : query
-urm -> db++ : query
+queproc -> urm++ : query()
+urm -> db++ : query()
 return result
 return result
-queproc -> um : compose role into user
-return result
-
-return result
+queproc -> um : composeRole()
 return result
 
-autonumber inc b
+return result
+return result
+
+'autonumber inc b
 uinfo -> ic++ : /image/download
-ic -> downproc++ : process
-downproc -> im++ : query
-im -> db++ : query
+ic -> downproc++ : process()
+downproc -> im++ : query()
+im -> db++ : query()
 return result
 return result
 return result

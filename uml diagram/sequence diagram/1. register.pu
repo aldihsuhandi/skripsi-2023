@@ -1,6 +1,6 @@
 @startuml register
 
-autonumber  1.1.1
+'autonumber  1.1.1
 
 actor User as u
 
@@ -34,44 +34,44 @@ u -> home++: click register button
 home -> register--++ : redirect to register page
 
 register -> dicc++ : /dictionary/query
-dicc -> dicproc++ : process
-dicproc -> dm++ : query by type
-dm -> db++ : query
+dicc -> dicproc++ : process()
+dicproc -> dm++ : queryByType()
+dm -> db++ : query()
 return result
 return result
 return result
 
 return JSON_RESPONSE
 
-autonumber inc a
+'autonumber inc a
 u -> register : fillout register form
-autonumber inc a
+'autonumber inc a
 u -> register : click submit button
 
 register -> userc++ : /user/register
-userc -> processor++ : process
-processor -> processor : validate
+userc -> processor++ : process()
+processor -> processor : validate()
 create um
-processor -> um++ : new
-um -> db++ : save
+processor -> um++ : new()
+um -> db++ : save()
 return result
 return result
 
-processor -> cm++ : query otp email template
-cm -> db++ : query otp email template
+processor -> cm++ : queryOtpEmailTemplate()
+cm -> db++ : queryOtpEmailTemplate()
 return template otp email
 return template otp email
 
 create om
-processor -> om++ : new
-om -> db++ : save
+processor -> om++ : new()
+om -> db++ : save()
 return result
 return result
 
-processor -> processor : compose otp email
-
+processor -> processor : composeOtpEmail()
 
 loop if send email process not success
+processor -> processor : sendOtpEmail()
 processor --> u : send otp email
 end
 
@@ -79,11 +79,11 @@ return result
 return JSON_RESPONSE
 
 register -> userc++ : /user/email/encrypt
-userc -> emailencrypt++ : process
+userc -> emailencrypt++ : process()
 
 create eem
-emailencrypt -> eem++ : new
-eem -> db : save
+emailencrypt -> eem++ : new()
+eem -> db : save()
 return result
 return result
 

@@ -1,5 +1,5 @@
 @startuml template
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -19,11 +19,11 @@ database shumishumi as db
 
 u -> detail++ : add to cart
 detail -> wc++ : /cart/add
-wc -> addproc++ : process
+wc -> addproc++ : process()
 
 create cm
-addproc -> cm++ : new
-cm -> db++ : save
+addproc -> cm++ : new()
+cm -> db++ : save()
 return result
 return result
 return result

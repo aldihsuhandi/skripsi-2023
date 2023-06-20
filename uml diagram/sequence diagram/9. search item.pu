@@ -1,5 +1,5 @@
 @startuml search item
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -29,28 +29,28 @@ u -> home++ : search item
 home -> search --++ : redirect to search page
 
 search -> ic++ : /item/query
-ic -> queryproc++: process
+ic -> queryproc++: process()
 
-queryproc -> im++ : query
-im -> db++ : query
+queryproc -> im++ : query()
+im -> db++ : query()
 return result
 loop for every item in result
-queryproc -> icm++ : query
-icm -> db++: query
+queryproc -> icm++ : query()
+icm -> db++: query()
 return result
 
-queryproc -> ilm++ : query
-ilm -> db++: query
+queryproc -> ilm++ : query()
+ilm -> db++: query()
 return result
 
-queryproc -> hm++ : query
-hm -> db++: query
+queryproc -> hm++ : query()
+hm -> db++: query()
 return result
-queryproc -> um++ : query
-um -> db++: query
+queryproc -> um++ : query()
+um -> db++: query()
 return result
 
-queryproc -> im : compose neccessary info
+queryproc -> im : composeInfo()
 deactivate um
 deactivate icm
 deactivate ilm
@@ -63,9 +63,9 @@ return JSON_RESPONSE
 
 loop for every item in response
     search -> imc++ : /image/download
-    imc -> downproc++ : process
-    downproc -> img++ : query
-    img -> db++ : query
+    imc -> downproc++ : process()
+    downproc -> img++ : query()
+    img -> db++ : query()
     return result
     return result
     return result

@@ -1,5 +1,5 @@
 @startuml add to wishlist
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -12,17 +12,24 @@ participant "WishlistController" as wc
 participant "AddWishlishProcessor" as proc
 
 participant "Wishlist" as w
+participant "Activity" as am
 end box
 
 database shumishumi as db
 
-u -> detail++ : clich add to wishlist
+u -> detail++ : click add to wishlist
 detail -> wc++ : /item/wishlist/add
-wc -> proc++ : process
+wc -> proc++ : process()
 
 create w
-proc -> w++ : new
-w -> db++ : create
+proc -> w++ : new()
+w -> db++ : create()
+return result
+
+create am
+proc -> am++ : new()
+am -> db++ : create()
+return result
 return result
 return result
 return result

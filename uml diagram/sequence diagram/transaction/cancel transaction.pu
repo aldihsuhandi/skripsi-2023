@@ -1,5 +1,5 @@
 @startuml template
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -23,15 +23,15 @@ participant Midtrans as mt
 u -> detail++ : press finish button
 detail -> tc++ : /transaction/cancel
 
-tc -> finishproc++ : process
+tc -> finishproc++ : process()
 alt if transaction status is WAITING_PAYMENT
-    finishproc -> trx++ : change status to cancel
-    finishproc -> mt++ : cancel payment request
+    finishproc -> trx++ : updateStatus()
+    finishproc -> mt++ : cancelPaymentRequest()
     return result
 
     loop for every item in transaction
-        finishproc -> rm++ : update quantity
-        rm -> db++ : update
+        finishproc -> rm++ : updateQuantity()
+        rm -> db++ : update()
         return result
         deactivate rm
     end

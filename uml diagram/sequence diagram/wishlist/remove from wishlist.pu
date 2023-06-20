@@ -1,5 +1,5 @@
 @startuml remove from wishlist
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 

@@ -1,5 +1,5 @@
 @startuml activate
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -28,32 +28,32 @@ register -> active--++ : redirect to activate page\nwith encrypted email
 
 
 active -> userc++ : /user/email/decrypt
-userc -> decproc++ : process
-decproc -> eem++ : query
-eem -> db++ : query
+userc -> decproc++ : process()
+decproc -> eem++ : query()
+eem -> db++ : query()
 return result
 return result
-decproc -> eem !! : disable
+decproc -> eem !! : disable()
 
 return result
 return JSON_RESPONSE
 
-autonumber inc a
+'autonumber inc a
 u -> active : fill out activate user form
-autonumber inc a
+'autonumber inc a
 u -> active : click submit
 
 active -> userc++ : /user/activate
-userc -> proc++ : process
+userc -> proc++ : process()
 
-proc -> um++ : query by email
-um -> db++ : query
+proc -> um++ : queryByEmail()
+um -> db++ : query()
 return result
-proc <-- um : result
+proc <-- um : result()
 
-proc -> um : set user status to active
-proc -> um : update
-um -> db++ : update
+proc -> um : setStatus()
+proc -> um : update()
+um -> db++ : update()
 return result
 return result
 return result

@@ -1,5 +1,5 @@
 @startuml create discussion
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -19,10 +19,10 @@ database shumishumi as db
 u -> detail++ : delete new discussion
 detail -> dc++ : /discussion/delete
 
-dc -> proc++ : process
+dc -> proc++ : process()
 
-proc -> dm++ : delete
-dm -> db++ : delete
+proc -> dm++ : delete()
+dm -> db++ : delete()
 return result
 destroy dm
 deactivate dm

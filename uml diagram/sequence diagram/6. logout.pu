@@ -1,5 +1,5 @@
 @startuml logout
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -20,14 +20,14 @@ database shumishumi as db
 u -> home++ : click logout button
 home -> sc++ : /session/logout
 
-sc -> proc++ : process
+sc -> proc++ : process()
 
-proc -> sm++ : query by id
-sm -> db++ : query
+proc -> sm++ : queryById()
+sm -> db++ : query()
 return result
 
-proc -> sm : soft delete
-sm -> db++ : update
+proc -> sm : softDelete()
+sm -> db++ : update()
 return result
 return result
 

@@ -1,5 +1,5 @@
 @startuml query wishlist
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -33,29 +33,29 @@ u -> home++ : open wishlist page
 home -> wishlist --++ : redirect to wishlist page
 
 wishlist -> wc++ : /item/wishlist/query
-wc -> wproc++ : process
-wproc -> wm++ : query
-wm -> db++ : query
+wc -> wproc++ : process()
+wproc -> wm++ : query()
+wm -> db++ : query()
 return result
 return result
 
-wproc -> im++ : query
+wproc -> im++ : query()
 loop for every item in result
-wproc -> icm++ : query
-icm -> db++: query
+wproc -> icm++ : query()
+icm -> db++: query()
 return result
 
-wproc -> ilm++ : query
-ilm -> db++: query
+wproc -> ilm++ : query()
+ilm -> db++: query()
 return result
 
-wproc -> hm++ : query
-hm -> db++: query
+wproc -> hm++ : query()
+hm -> db++: query()
 return result
-wproc -> um++ : query
-um -> db++: query
+wproc -> um++ : query()
+um -> db++: query()
 return result
-wproc -> im : compose neccessary info
+wproc -> im : composeInfo()
 wproc <-- im-- : result
 deactivate um
 deactivate icm
@@ -67,9 +67,9 @@ return JSON_RESPONSE
 
 loop for every item in response
     wishlist -> imc++ : /image/download
-    imc -> downproc++ : process
-    downproc -> img++ : query
-    img -> db++ : query
+    imc -> downproc++ : process()
+    downproc -> img++ : query()
+    img -> db++ : query()
     return result
     return result
     return result

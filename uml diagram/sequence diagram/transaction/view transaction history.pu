@@ -1,5 +1,5 @@
 @startuml template
-autonumber 1.1.1
+'autonumber 1.1.1
 
 actor User as u
 
@@ -21,9 +21,9 @@ u -> home++ : open shopping history page
 home -> history --++ : redirect to history page
 
 history -> tc++ : /transaction/query
-tc -> proc++ : process
-proc -> trx++ : query
-trx -> db++ : query
+tc -> proc++ : process()
+proc -> trx++ : query()
+trx -> db++ : query()
 return result
 return result
 return result
