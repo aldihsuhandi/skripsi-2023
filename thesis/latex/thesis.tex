@@ -19,6 +19,7 @@
 \usepackage{setspace}
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \usepackage{chngcntr}
+\usepackage{makecell}
 
 \setlist{
   listparindent=\parindent,
@@ -1174,6 +1175,366 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \includegraphics*[height=14cm]{diagram/usecase diagram/usecase diagram.png}
         \caption{\textit{Usecase diagram}}
     \end{figure}
+    \newpage
+    \textit{Usecase Description}
+    \begin{enumerate}
+        \item \textit{Register}\\
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{|lll}
+            \hline
+            \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Register}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+            \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User} dan \textit{merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+            \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+            \multicolumn{1}{|l|}{\textit{User, merchant}: untuk membuat akun \textit{shumishumi} baru. }                                                     &                               &                               \\ \hline
+            \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{Usecase} untuk membuat akun baru.}                                                                         \\ \hline
+            \multicolumn{3}{|l|}{\textit{Trigger}: Membuka\textit{ register page}}                                                                                   \\ \hline
+            \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+            \multicolumn{3}{|l|}{- \textit{Include}: \textit{Activate}}                                                                                                                     \\ \hline
+            \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
+            \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
+            \end{tabular}
+            \caption{\textit{Usecase} untuk \textit{register}}
+        \end{table}
+
+        \item \textit{Activate}
+            \begin{table}[h]
+                \centering
+                \begin{tabular}{|lll}
+                \hline
+                \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Activate}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+                \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User} dan \textit{Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}:} \\ \hline
+                \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+                \multicolumn{1}{|l|}{\textit{User, merchant}  untuk mengaktivasi akun.}                                                     &                               &                               \\ \hline
+                \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{Usecase} untuk mengaktivasi akun yang baru dibuat.}                                                                         \\ \hline
+                \multicolumn{3}{|l|}{\textit{Trigger}: Setelah \textit{register}}                                                                                   \\ \hline
+                \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+                \multicolumn{3}{|l|}{- \textit{include}: \textit{Register}}                                                                                                                     \\ \hline
+                \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
+                \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
+                \end{tabular}
+                \caption{\textit{usecase} untuk \textit{activate}}
+            \end{table}
+
+        \newpage
+        \item \textit{Search item}
+            \begin{table}[h]
+            \centering
+            \begin{tabular}{|lll}
+            \hline
+            \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Seach item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+            \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User} dan \textit{Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+            \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+            \multicolumn{1}{|l|}{\textit{User, merchant} untuk mencari dan men-\textit{filter} produk}                                                     &                               &                               \\ \hline
+            \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{usecase} untuk mencari dan men-\textit{filter} produk.}                                                                         \\ \hline
+            \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click searchbar}}                                                                                   \\ \hline
+            \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+            \multicolumn{3}{|l|}{- \textit{Extends}: \textit{Open item detail}}                                                                                                                     \\ \hline
+            \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
+            \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
+            \end{tabular}
+            \caption{\textit{usecase search item} }
+            \end{table}
+
+        \item \textit{Open Detail Item}
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{|lll}
+            \hline
+            \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Open Detail Item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
+            \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{Merchant, User}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+            \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+            \multicolumn{1}{|l|}{\textit{User, Merchant} untuk melihat detil dari item}                                                     &                               &                               \\ \hline
+            \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{usecase} untuk melihat detil dari sebuah produk}                                                                         \\ \hline
+            \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click product widget} }                                                                                   \\ \hline
+            \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+            \multicolumn{3}{|l|}{- \textit{Extend}: \textit{search item}}                                                                                                                     \\ \hline
+            \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
+            \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
+            \end{tabular}
+            \caption{\textit{usecase open detail item}}
+        \end{table}
+
+        \newpage
+        \item \textit{See user info}
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{|lll}
+            \hline
+            \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{See user info}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
+            \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+            \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+            \multicolumn{1}{|l|}{\textit{User, Merchant}: melihat informasi detil tentang \textit{user}}                                                     &                               &                               \\ \hline
+            \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{Usecase} untuk melihat informasi detil tentang \textit{user}}                                                                         \\ \hline
+            \multicolumn{3}{|l|}{\textit{Trigger}: \textit{Open profile page}}                                                                                   \\ \hline
+            \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+            \multicolumn{3}{|l|}{- \textit{Extends}: \textit{Update user info}}                                                                                                                     \\ \hline
+            \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
+            \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
+            \end{tabular}
+            \caption{\textit{usecase see user info} }
+        \end{table}
+
+
+        \item \textit{Update user info}
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{|lll}
+            \hline
+            \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Update user info}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
+            \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+            \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+            \multicolumn{1}{|l|}{\textit{User, Merchant}: untuk merubah informasi detil \textit{user}.}                                                     &                               &                               \\ \hline
+            \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{usecase} untuk merubah informasi detil \textit{user}.}                                                                         \\ \hline
+            \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click update button}}                                                                                   \\ \hline
+            \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+            \multicolumn{3}{|l|}{- \textit{Extend}: \textit{see user info}}                                                                                                                     \\ \hline
+            \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
+            \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
+            \end{tabular}
+            \caption{\textit{usecase update user info} }
+        \end{table}
+
+        \newpage
+        \item \textit{Manage Item}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage Item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{Merchant}: untuk mengelola produk}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: \makecell[l]{Untuk mengelola produk\\- membuat produk baru\\- merubah informasi produk\\- menghapus sebuah produk}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click button} untuk membuat, \textit{update}, \textit{delete} produk}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase manage item}}
+\end{table}
+
+        \item \textit{Login}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Login}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: \textit{login} ke akun \textit{shumishumi}.}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{usecase} untuk \textit{login} ke akun \textit{textit}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click login button}}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{-}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase login} }
+\end{table}
+
+        \newpage
+        \item \textit{Logout}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Logout}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Medium}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: \textit{logout} dari user \textit{shumishumi}}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: untuk \textit{logout} dari akun yang sudah di\textit{login}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{logout button}}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase logout} }
+\end{table}
+
+        \item \textit{Forgot Password}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Fortgot password}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Medium}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: untuk proses \textit{reset password}}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: untuk proses \textit{reset password}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{button reset password}}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase forgot password} }
+\end{table}
+
+        \newpage
+
+        \item \textit{View merchant page}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{View merchant page}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{Merchant, User}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: melihat halaman \textit{merchant}}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: melihat halaman \textit{merchant}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click merchant widget}}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase view merchant page} }
+\end{table}
+
+        \item \textit{Become a merchant}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Become a merchant}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User}: untuk daftar sebagai \textit{merchant}}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: untuk daftar sebagai \textit{merchant}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click apply merchant button}}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase become a merchant} }
+\end{table}
+
+        \newpage
+
+        \item \textit{Manage wishlist}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage wishlist}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: untuk mengelola \textit{wishlist}}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: \makecell[l]{Untuk mengelola \textit{wishlist}\\- menambahkan produk ke \textit{wishlist}\\- menghapus produk dari \textit{wishlist}\\- menglihat semua \textit{wishlist}}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \makecell[l]{\textit{button} untuk menambahkan \textit{wishlist} dan menghapus dari \textit{wishlist},\\\textit{button} untuk membuka \textit{wishlist} page}}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase manage wishlist} }
+\end{table}
+
+        \item \textit{Manage cart}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage cart}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: untuk mengelola \textit{cart}}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: \makecell[l]{Untuk mengelola \textit{cart}\\- menambahkan produk ke \textit{cart}\\- mengubah \textit{cart quantity}\\- menghapus produk dari \textit{cart}\\- melihat semua \textit{cart}}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{button} tambahkan ke-\textit{cart}, menghapus dari \textit{cart}, membuka halaman \textit{cart}}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase manage cart} }
+\end{table}
+
+        \newpage
+
+        \item \textit{Manage discussion}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage discussion}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: untuk membuat, menghapus dan merubah diskusi}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: untuk membuat, menghapus dan merubah disksui}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{create discussion form}, \textit{button} untuk menghapus dan \textit{update discussion form}}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase manage discussion} }
+\end{table}
+
+        \item \textit{Manage and view review}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage and view review}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: mengelola \textit{review}}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: \makecell[l]{%
+        mengelola \textit{review}: \\%
+        - membuat \textit{review} untuk sebuah produk\\%
+        - melihat riwayat \textit{review}\\%
+        - melihat daftar \textit{review} untuk \textit{merchant}\\%
+    }}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \makecell[l]{%
+        - mengisi \textit{form} untuk \textit{review}\\%
+        - membuka riwayat \textit{review}\\%
+        - membuka daftar \textit{review} untuk \textit{merchant}\\%
+    }}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase manage and view review}}
+\end{table}
+
+
+        \newpage
+        \item \textit{Do transaction}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Do transaction}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: melakukan proses transaksi}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: \makecell[l]{melakukan proses transaksi\\- membuat transaksi\\- membayar transaksi\\- mengecek status pembayaran\\- melihat riwayat transaksi\\- menyelesaikan transaksi}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \makecell[l]{%
+        melakukan proses transaksi\\%
+        - meng-\textit{click} bayar di-\textit{cart}\\%
+        - membayar transaksi dari Midtrans\\%
+        - meng-\textit{click} tombol untuk mengecek status transaksi\\%
+        - meng-\textit{click} tombol untuk membatalkan transaksi\\%
+        - meng-\textit{click} tombol untuk menyelesaikan transaksi\\%
+    }}                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+    \caption{\textit{usecase do transaction} }
+\end{table}
+
+        \newpage
+
+
+
+    \end{enumerate}
     \newpage
     \item \textit{Activity diagram}
 
