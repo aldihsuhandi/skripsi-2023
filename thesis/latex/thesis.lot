@@ -1,20 +1,22 @@
-\contentsline {table}{\numberline {3.1}{\ignorespaces Backlog table\relax }}{48}{table.3.1}%
-\contentsline {table}{\numberline {3.1}{\ignorespaces Aplikasi-aplikasi berdasarkan penelitian terdahulu\relax }}{65}{table.3.1}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Aplikasi pasaran yang serupa dengan proyek ini\relax }}{65}{table.3.2}%
-\contentsline {table}{\numberline {3.1}{\ignorespaces \textit {Usecase} untuk \textit {register}\relax }}{83}{table.caption.66}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces \textit {usecase} untuk \textit {activate}\relax }}{83}{table.caption.67}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces \textit {usecase search item} \relax }}{84}{table.caption.68}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces \textit {usecase open detail item}\relax }}{84}{table.caption.69}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces \textit {usecase see user info} \relax }}{85}{table.caption.70}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces \textit {usecase update user info} \relax }}{85}{table.caption.71}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces \textit {usecase manage item}\relax }}{86}{table.caption.72}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces \textit {usecase login} \relax }}{86}{table.caption.73}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces \textit {usecase logout} \relax }}{87}{table.caption.74}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces \textit {usecase forgot password} \relax }}{87}{table.caption.75}%
-\contentsline {table}{\numberline {3.11}{\ignorespaces \textit {usecase view merchant page} \relax }}{88}{table.caption.76}%
-\contentsline {table}{\numberline {3.12}{\ignorespaces \textit {usecase become a merchant} \relax }}{88}{table.caption.77}%
-\contentsline {table}{\numberline {3.13}{\ignorespaces \textit {usecase manage wishlist} \relax }}{89}{table.caption.78}%
-\contentsline {table}{\numberline {3.14}{\ignorespaces \textit {usecase manage cart} \relax }}{89}{table.caption.79}%
-\contentsline {table}{\numberline {3.15}{\ignorespaces \textit {usecase manage discussion} \relax }}{90}{table.caption.80}%
-\contentsline {table}{\numberline {3.16}{\ignorespaces \textit {usecase manage and view review}\relax }}{90}{table.caption.81}%
-\contentsline {table}{\numberline {3.17}{\ignorespaces \textit {usecase do transaction} \relax }}{91}{table.caption.82}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Tabel perbandingan fitur antara \textit {ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)\relax }}{46}{table.2.1}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Tabel perbandingan fitur antara \textit {ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)\relax }}{47}{table.2.2}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Backlog table\relax }}{51}{table.3.1}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Aplikasi-aplikasi berdasarkan penelitian terdahulu\relax }}{68}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Aplikasi pasaran yang serupa dengan proyek ini\relax }}{68}{table.3.2}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces \textit {Usecase} untuk \textit {register}\relax }}{86}{table.caption.84}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces \textit {usecase} untuk \textit {activate}\relax }}{86}{table.caption.85}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces \textit {usecase search item} \relax }}{87}{table.caption.86}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces \textit {usecase open detail item}\relax }}{87}{table.caption.87}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces \textit {usecase see user info} \relax }}{88}{table.caption.88}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces \textit {usecase update user info} \relax }}{88}{table.caption.89}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces \textit {usecase manage item}\relax }}{89}{table.caption.90}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces \textit {usecase login} \relax }}{89}{table.caption.91}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces \textit {usecase logout} \relax }}{90}{table.caption.92}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces \textit {usecase forgot password} \relax }}{90}{table.caption.93}%
+\contentsline {table}{\numberline {3.11}{\ignorespaces \textit {usecase view merchant page} \relax }}{91}{table.caption.94}%
+\contentsline {table}{\numberline {3.12}{\ignorespaces \textit {usecase become a merchant} \relax }}{91}{table.caption.95}%
+\contentsline {table}{\numberline {3.13}{\ignorespaces \textit {usecase manage wishlist} \relax }}{92}{table.caption.96}%
+\contentsline {table}{\numberline {3.14}{\ignorespaces \textit {usecase manage cart} \relax }}{92}{table.caption.97}%
+\contentsline {table}{\numberline {3.15}{\ignorespaces \textit {usecase manage discussion} \relax }}{93}{table.caption.98}%
+\contentsline {table}{\numberline {3.16}{\ignorespaces \textit {usecase manage and view review}\relax }}{93}{table.caption.99}%
+\contentsline {table}{\numberline {3.17}{\ignorespaces \textit {usecase do transaction} \relax }}{94}{table.caption.100}%

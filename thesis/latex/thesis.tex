@@ -636,49 +636,50 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
     \textit{Relationship} juga dapat memiliki \textit{multiplicity}. \textit{Multiplicity} inilah yang mendokumentasikan bagaimana sebuah \textit{instance} dari sebuah objek dapat diasosiasikan dengan \textit{instance} lainnya. \textit{Multiplicity} biasanya dituliskan sebagai angka dalam bentuk format "angka minimum.. angka maksimum"\autocite{systemanalysisdesign-class-diagram}. Berapa banyak objek dari setiap \textit{class} yang mengambil bagian dalam \textit{relationship} dan \textit{multiplicity} dapat dinyatakan sebagai berikut:
     \begin{itemize}
         \item \textit{Exactly One} (1)\\
-        % \begin{figure}[h]
-        %     \centering
+        \begin{figure}[h]
+            \centering
             \includegraphics[scale=0.475]{multiplicity exactly one.png}\\
-            Departemen hanya memiliki satu dan hanya satu bos saja.
-            % \caption{Departemen hanya memiliki satu dan hanya satu bos saja.}
-        % \end{figure}
+            % Departemen hanya memiliki satu dan hanya satu bos saja.
+            \caption{Departemen hanya memiliki satu dan hanya satu bos saja.}
+        \end{figure}
         \item \textit{Zero or One} (0.. 1)\\
-        % \begin{figure}[h]
-        %     \centering
+        \begin{figure}[h]
+            \centering
             \includegraphics[scale=0.475]{multiplicity zero to one example.png}\\
-            Seorang karyawan dapat menikahi dengan nol atau satu pasangan.
-            % \caption{Seorang karyawan dapat menikahi dengan nol atau satu pasangan.}
-        % \end{figure}
+            % Seorang karyawan dapat menikahi dengan nol atau satu pasangan.
+            \caption{Seorang karyawan dapat menikahi dengan nol atau satu pasangan.}
+        \end{figure}
         \item \textit{Many} atau \textit{Zero or More} (* atau 0.. *)\\
-        % \begin{figure}[h]
-        %     \centering
+        \begin{figure}[h]
+            \centering
             \includegraphics[scale=0.475]{multiplicity many example.png}\\
-            Orang tua dapat memiliki nol hingga banyak anak.
-            % \caption{Orang tua dapat memiliki nol hingga banyak anak.}
-        % \end{figure}
+            % Orang tua dapat memiliki nol hingga banyak anak.
+            \caption{Orang tua dapat memiliki nol hingga banyak anak.}
+        \end{figure}
         \item \textit{One or More} (1.. *)\\
-        % \begin{figure}[h]
-        %     \centering
+        \begin{figure}[h]
+            \centering
             \includegraphics[scale=0.475]{multiplicity one or more example.png}\\
-            Seorang guru dapat memiliki satu atau lebih murid.
-            % \caption{Seorang guru dapat memiliki satu atau lebih murid.}
-        % \end{figure}
+            % Seorang guru dapat memiliki satu atau lebih murid.
+            \caption{Seorang guru dapat memiliki satu atau lebih murid.}
+        \end{figure}
+        \newpage
         \item \textit{Exact Number} atau \textit{Specified Range} (8 atau 2.. 5)\\
-        % \begin{figure}[h]
-        %     \centering
+        \begin{figure}[h]
+            \centering
             \includegraphics[scale=0.475]{multiplicity specified range example.png}\\
-            Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).
-            % \caption{Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).}
-        % \end{figure}
+            % Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).
+            \caption{Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).}
+        \end{figure}
         \item \textit{Multiple, Disjoint Ranges} (1.. 4, 7)\\
-        % \begin{figure}[h]
-        %     \centering
+        \begin{figure}[h]
+            \centering
             \includegraphics[scale=0.475]{multiplicity multiple disjoint ranges example.png}\\
-            Seorang murid dapat mengikuti satu atau dua hingga lima kegiatan ekstrakulikuler.
-            % \caption{Seorang murid dapat mengikuti satu atau dua hingga lima kegiatan ekstrakulikuler.}
-        % \end{figure}
+            % Seorang murid dapat mengikuti satu atau dua hingga lima kegiatan ekstrakulikuler.
+            \caption{Seorang murid dapat mengikuti satu atau dua hingga lima kegiatan ekstrakulikuler.}
+        \end{figure}
     \end{itemize}
-
+    
     \item \textit{Activity Diagram}\\
     \textit{Acticity Diagram} merupakan salah satu jenis diagram UML yang termasuk ke dalam kelompok \textit{Behavioral Diagrams}. Diagram ini digunakan untuk memodelkan perilaku (\textit{behavior}) di dalam suatu proses bisnis yang tidak tergantung oleh objek. \textit{Activity Diagram} dapat digunakan untuk memodelkan semua jenis proses, dimulai dari alur kerja pada sebuah proses \textit{high-level business} yang melibatkan banyak kasus (\textit{use case}) yang berbeda-beda hingga ke detail dari tiap individual kasus yang ada dan detail yang lebih spesifik pada masing-masing metode yang digunakan\autocite{systemanalysisdesign-activity-diagram}. Berikut adalah notasi-notasi yang digunakan di dalam \textit{activity diagram}:
     \begin{itemize}
@@ -688,88 +689,138 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \item Dilabelkan sesuai dengan namanya
             \item Digambarkan sebagai sebuah persegi panjang bersudut tumpul\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.5]{Activity_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{Activity_transparent.png}
+                    \caption{Notasi \textit{Activity}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Action}
         \begin{itemize}
             \item Merupakan sebuah \textit{behavior} yang sederhana dan tidak dapat diuraikan lagi
             \item Menggambarkan sebuah \textit{task}/tugas yang harus dilakukan\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.35]{Action_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.35]{Action_transparent.png}
+                    \caption{Notasi \textit{Action}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Object Node}
         \begin{itemize}
             \item Digunakan untuk merepresentasikan objek yang terhubung ke sekumpulan aliran objek\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.45]{ObjectNode_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.45]{ObjectNode_transparent.png}
+                    \caption{Notasi \textit{Object Node}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Control Flow}
         \begin{itemize}
             \item Menunjukkan urutan eksekusi di dalam \textit{activity diagram}
             \item Biasanya digambarkan sebagai arah panah\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.5]{Control Flow_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{Control Flow_transparent.png}
+                    \caption{Notasi \textit{Control Flow}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Object Flow}
         \begin{itemize}
             \item Menunjukkan aliran objek dari satu \textit{activity} (atau \textit{action}) ke \textit{activity} (atau \textit{action}) lainnya
             \item Biasanya digambarkan sebagai arah panah dengan garis yang putus-putus\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.5]{Object Flow_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{Object Flow_transparent.png}
+                    \caption{Notasi \textit{Object Flow}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Initial Node}
         \begin{itemize}
             \item Menggambarkan awal dari serangkain \textit{activity} atau \textit{action} pada \textit{activity diagram}\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.45]{Initial Node_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.45]{Initial Node_transparent.png}
+                    \caption{Notasi \textit{Initial Node}}
+                  \end{figure}
         \end{itemize}
+        \newpage
         \item \textit{Final Activity Node}
         \begin{itemize}
             \item Digunakan sebagai tanda untuk memberhentikan semua aliran kontrol dan aliran objek dalam suatu \textit{activity} atau \textit{action}\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.45]{Final Activity Node_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.45]{Final Activity Node_transparent.png}
+                    \caption{Notasi \textit{Final Activity Node}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Final Flow Node}
         \begin{itemize}
             \item Digunakan untuk menghentikan aliran kontrol atau aliran objek tertentu\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.45]{Final flow node_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.45]{Final flow node_transparent.png}
+                    \caption{Notasi \textit{Final Flow Node}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Decision Node}
         \begin{itemize}
             \item Digunakan untuk menggambarkan sebuah \textit{test condition} untuk memastikan aliran kontrol atau objek tersebut hanya berjalan pada satu jalur saja
             \item Biasanya diberikan label sesuai dengan kriteria dari keputusan yang dibutuhkan untuk lanjut melewati jalur tertentu\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.5]{Decision Node_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{Decision Node_transparent.png}
+                    \caption{Notasi \textit{Decision Node}}
+                  \end{figure}
         \end{itemize}
+        \newpage
         \item \textit{Merge Node}
         \begin{itemize}
             \item Digunakan untuk menyatukan kembali jalur \textit{decision} berbeda yang sebelumnya sudah dibuat menggunakan \textit{Decision Node}\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
                   \begin{figure}[h]
-                  \centering
-                  \includegraphics*[width=4cm]{Merge Node_transparent.png}
-                  \caption{Contoh dari \textit{merge node}}
+                    \centering
+                    \includegraphics*[width=4cm]{Merge Node_transparent.png}
+                    \caption{Notasi \textit{Merge Node}}
                   \end{figure}
         \end{itemize}
         \item \textit{Fork Node}
         \begin{itemize}
             \item Digunakan untuk membagi \textit{behavior} menjadi sebuah serangkaian \textit{activity} atau \textit{action} yang berjalan secara bersamaan/paralel\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.5]{Fork Node_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{Fork Node_transparent.png}
+                    \caption{Notasi \textit{Fork Node}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Join Node}
         \begin{itemize}
             \item Digunakan untuk menggabungkan kembali serangkaian \textit{activity} atau \textit{action} yang paralel tersebut\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.5]{Join Node_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{Join Node_transparent.png}
+                    \caption{Notasi \textit{Join Node}}
+                  \end{figure}
         \end{itemize}
         \item \textit{Swimlane}
         \begin{itemize}
             \item Digunakan untuk memecah \textit{activity diagram} menjadi beberapa baris dan kolom dengan tujuan untuk menentukan masing-masing \textit{activity} atau \textit{action} ke individu atau objek yang bertanggung jawab untuk menjalankan \textit{activity} atau \textit{action}
             \item Biasanya diberikan label yang berisikan nama dari individu atau objek yang bertanggung jawab\autocite{systemanalysisdesign-activity-diagram}\\
                   Contoh gambar:\\
-                  \includegraphics[scale=0.5]{Swimlane_transparent.png}
+                  \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{Swimlane_transparent.png}
+                    \caption{Notasi \textit{Swimlane}}
+                  \end{figure}
         \end{itemize}
     \end{itemize}
     \item \textit{Use-Case Diagram}\\
@@ -788,6 +839,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \includegraphics[scale=0.5]{use case - actor.png}
             \caption{Bentuk dari \textit{actor}}
         \end{figure}
+        \newpage
         \item \textit{Use Case}\\
         Merupakan sebuah komponen yang menggambarkan bagian utama dari fungsionalitas sistem. \textit{Use Case} ini dapat \textit{extend} ke \textit{use case} lain dan juga dapat \textit{include} \textit{use case} lain. Komponen ini berada di dalam \textit{subject boundary} dan biasanya diberi label sesuai dengan fungsi/\textit{use case} yang ingin di tampilkan\autocite{systemanalysisdesign-use-case-diagram}.
         \begin{figure}[h]
@@ -802,6 +854,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \includegraphics[scale=0.5]{use case - subject boundary.png}
             \caption{Bentuk dari \textit{subject boundary}}
         \end{figure}
+        \newpage
         \item \textit{Association Relationship}\\
         Komponen inilah yang menghubungkan \textit{actor} dengan \textit{use case} yang berinteraksi dengannya\autocite{systemanalysisdesign-use-case-diagram}.
         \begin{figure}[h]
@@ -834,13 +887,15 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
     \end{itemize}
     \item \textit{Sequence Diagram}\\
     \textit{Sequence Diagram} merupakan sebuah jenis \textit{interaction diagram} yang menjelaskan detail bagaimana sebuah operasi dilakukan. Diagram ini menangkap interaksi antar objek dalam konteks kolaborasi. \textit{Sequence Diagram} berfokus pada waktu dan menunjukkan urutan interaksi secara visual dengan menggunakan sumbu vertikal diagram untuk merepresentasikan waktu, pesan apa yang dikirim dan kapan\autocite{what-is-sequence-diagram}.
+    
     \begin{figure}[h]
         \centering
         \includegraphics[width=6cm,height=4cm]{sequence diagram simple example.png}
         \caption{Contoh sederhana dari \textit{Sequence Diagram} dalam kasus penarikan tunai di ATM}
     \end{figure}
+    \newpage
     Berikut adalah komponen-komponen yang ada pada \textit{Sequence Diagram}:
-        \newpage
+    
     \begin{itemize}
         \item \textit{Actor}\\
         Merupakan komponen yang menggambarkan 'seseorang' atau 'sistem' memperoleh \textit{benefit} dari dan berada di luar sistem tersebut. \textit{Actor} ini ikut berpartisipasi dalam \textit{sequence} dengan mengirim dan/atau menerima \textit{message} dan biasanya \textit{actor} tersebut diletakkan di bagian teratas pada diagram\autocite{systemanalysisdesign-sequence-diagram}.
@@ -932,6 +987,7 @@ Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi
     \hline
     Sarana Ulasan & Y & N & N & N\\
     \hline
+    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)}
 \end{longtable}
 
 \textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
@@ -964,6 +1020,7 @@ Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi
     \hline
     Sarana Ulasan & Y & N & N\\
     \hline
+    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)}
 \end{longtable}
 
 \textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
@@ -2646,8 +2703,151 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \newpage
 
     \item Perancangan \textit{User Interface}
-    \newpage
+    
+    Berikut adalah rancangan dari \textit{User Interface} (UI) pada aplikasi \textit{ShumiShumi} yang telah digambarkan dalam bentuk \textit{wireframe}:
 
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.25]{rancangan wireframe/Register Page.png}
+        \caption{Rancangan Halaman \textit{Register}}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.25]{rancangan wireframe/Login Page.png}
+        \caption{Rancangan Halaman \textit{Login}}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Home Page (Not Logged In).png}
+        \caption{Rancangan Halaman utama sebelum \textit{Login}}
+    \end{figure}
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Home Page (Logged In).png}
+        \caption{Rancangan Halaman utama setelah \textit{Login}}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Search Page.png}
+        \caption{Rancangan Halaman Pencarian Produk}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Products Page.png}
+        \caption{Rancangan Halaman Detail Suatu Produk}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Profile Page [USER - MERCHANT].png}
+        \caption{Rancangan Halaman Profil Pengguna}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Edit Profile Page [USER - MERCHANT].png}
+        \caption{Rancangan Halaman Pengeditan Profil Pengguna}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[width=0.475\textwidth]{rancangan wireframe/User Menu [USER].png}\hfill
+        \includegraphics*[width=0.475\textwidth]{rancangan wireframe/User Menu [MERCHANT].png}
+        \caption{(Kiri) Menu Pilihan Pengguna Biasa - (Kanan) Menu Pilihan Pengguna yang Sudah Merubah \textit{Role} Menjadi Penjual}
+    \end{figure}
+
+    \textbf{Keterangan}: Kedua menu diatas dapat diakses setelah \textit{login} pada bagian pojok atas kanan dari aplikasi (bagian tempat gambar profil pengguna berada)
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Wishlist Page (Logged In).png}
+        \caption{Rancangan Halaman \textit{Wishlist}}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Cart Page.png}
+        \caption{Rancangan Halaman \textit{Cart} Pengguna}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Payment Option Page.png}
+        \caption{Rancangan Halaman Pemilihan Metode Pembayaran}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Transaction Page.png}
+        \caption{Rancangan Halaman Transaksi/Detail Transaksi}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Shopping History Page.png}
+        \caption{Rancangan Halaman Riwayat Pembelanjaan}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Review Page - Waiting to be Reviewed.png}
+        \caption{Rancangan Halaman Ulasan untuk Produk-Produk yang Belum Diulas}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Review Page - Review Forms.png}
+        \caption{Rancangan Halaman Pembuatan Ulasan}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Review Page - Reviewed Products.png}
+        \caption{Rancangan Halaman Ulasan untuk Produk-Produk yang Sudah Diulas}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Merchants Home Page [USER].png}
+        \caption{Rancangan Halaman Utama Toko Penjual dari Sudut Pandang Pembeli}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Merchants Products Page [USER].png}
+        \caption{Rancangan Halaman Produk pada Toko Penjual dari Sudut Pandang Pembeli}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Merchants Reviews Page [USER].png}
+        \caption{Rancangan Halaman Daftar Ulasan Produk pada Toko Penjual dari Sudut Pandang Pembeli}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[height=6cm]{rancangan wireframe/Merchants Create Item Page [MERCHANT].png}
+        \caption{Rancangan Halaman Pembuatan Produk yang Akan Dijual (Hanya dapat Diakses oleh Penjual)}
+    \end{figure}
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.25]{rancangan wireframe/Forgot Password Page.png}
+        \caption{Rancangan Halaman bagi Pengguna yang Melupakan Kata Sandi Mereka}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.25]{rancangan wireframe/Reset Password Page.png}
+        \caption{Rancangan Halaman bagi Pengguna yang Ingin Mengatur Ulang Kata Sandi Mereka}
+    \end{figure}
+    
+    \newpage
     \item Perancangan \textit{database}
     berikut ini adalah perancangan dari \textit{database} yang dipakai oleh \textit{Shumishumi}:
     \begin{figure}[h]
