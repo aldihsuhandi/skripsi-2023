@@ -1795,6 +1795,23 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
                         \textit{JUnit} adalah \textit{open-source testing framework} yang banyak digunakan dengan proyek \textit{spring}. \textit{JUnit} menyediakan anotasi, pernyataan, dan \textit{unit testing} secara efektif. \textit{JUnit} memungkinkan \textit{developer} untuk melakukan \textit{whitebox testing} secara otomatis dan dapat diulang\autocite{junit-documentation}.
                     \end{enumerate}
 
+                    Untuk \textit{deployment} sendiri, proyek ini menggunakan \textit{Google cloud platform} (\textbf{GCP}) sebagai jasa \textit{hosting}, GCP sendiri terdiri dari aset fisik yang berada didalam \textit{data center google} yang tersebar diseluruh dunia, diproyek ini GCP digunakan untuk meng-\textit{host} \textit{instance database} dan \textit{instance backend} dengan spesifikasi:
+                    \begin{enumerate}
+                        \item \textit{instance backend}
+                        \begin{itemize}
+                            \item CPU: \textit{dual core}
+                            \item RAM: 6 GB
+                            \item \textit{instance location}: SEA-Jakarta
+                        \end{itemize}
+                        \item \textit{instance database}
+                        \begin{itemize}
+                            \item CPU: \textit{dual core}
+                            \item RAM: 7.5 GB
+                            \item \textit{instance location}: SEA-Jakarta
+                        \end{itemize}
+
+                    \end{enumerate}
+
               \item \textit{Front end}
 
                     \textit{Front End} adalah sebuah bagian dari halaman web yang dimana merupakan tempat interaksi pengguna, \textit{Front End} sebagai tempat interaksi pengguna maka merupakan bagian dari sebuah halaman yang sangat sering dilihat oleh pengguna kebalikan dari \textit{Back End}\autocite{codecademy-frontend}.
