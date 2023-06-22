@@ -1,0 +1,23 @@
+@startuml register
+
+|user|
+start
+:press register button;
+|system|
+:redirect to register page;
+|user|
+repeat
+:fill out register form;
+:submit register form;
+|system|
+:validate register form;
+:check if register validation success;
+backward:show error message;
+repeat while () is (no)
+-> yes;
+:create user;
+:send otp email to user;
+:redirect to activate page;
+stop
+ 
+@enduml

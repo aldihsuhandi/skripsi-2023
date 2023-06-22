@@ -1,0 +1,12 @@
+@startuml  merchant review
+
+|user|
+start
+:open merchant page;
+:click review nav button;
+|system|
+:query merchant review;
+:display merchant review;
+stop
+
+@enduml

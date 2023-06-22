@@ -1,0 +1,22 @@
+@startuml update item 
+ 
+|user|
+:open item detail page;
+:click update button;
+|system|
+:redirect to update item form;
+|user|
+:fill out item update form;
+:click submit button;
+|system|
+:validate if this item from this merchant;
+if () then (no)
+    :show error message;
+    stop
+endif
+
+:update item;
+:update knowledge graph;
+:redirect to item page;
+
+@enduml

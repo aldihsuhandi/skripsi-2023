@@ -1,0 +1,26 @@
+@startuml create item 
+ 
+|user|
+:open profile dropdown;
+:click 'my merchant page' button;
+|system|
+:redirect to user merchant page;
+|user|
+:click create item menu;
+|system|
+:redirect to create item form;
+|user|
+:fill out item create form;
+:click submit button;
+|system|
+:validate if this user is a merchant;
+if () then (no)
+    :show error message;
+    stop
+endif
+
+:create item;
+:update knowledge graph;
+:rediret to newly created item page;
+
+@enduml

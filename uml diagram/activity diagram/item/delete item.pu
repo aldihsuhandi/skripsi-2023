@@ -1,0 +1,16 @@
+@startuml delete item 
+ 
+|user|
+:open item detail page;
+:click delete button;
+|system|
+:validate if this item from this merchant;
+if () then (no)
+    :show error message;
+    stop
+endif
+:delete item;
+:update knowledge graph;
+:redirect to home page;
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml search item
+|user|
+start
+:open homepage;
+:click on the search bar;
+:search item by name;
+|system|
+repeat
+:query item filter;
+:redirect to search item page;
+:show item;
+|user|
+:did the user \nwant to search again?;
+backward:re-adjust filter;
+repeat while () is (yes)
+-> no;
+stop
+
+@enduml

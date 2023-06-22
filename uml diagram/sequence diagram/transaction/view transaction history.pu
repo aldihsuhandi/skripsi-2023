@@ -1,0 +1,32 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Home page" as home
+participant "Tranasction History page" as history
+end box
+
+box "back end"
+participant "TransactionController" as tc
+participant "TransactionQueryProcessor" as proc
+
+participant Transaction as trx
+end box
+
+database shumishumi as db
+
+u -> home++ : open shopping history page
+home -> history --++ : redirect to history page
+
+history -> tc++ : /transaction/query
+tc -> proc++ : process()
+proc -> trx++ : query()
+trx -> db++ : query()
+return result
+return result
+return result
+return JSON_RESPONSE
+
+@enduml

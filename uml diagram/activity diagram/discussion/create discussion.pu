@@ -1,0 +1,20 @@
+@startuml create discussion
+
+|user|
+start
+:open item detail page;
+:what discussion user want to create;
+if() then (item discussion)
+:fillout discussoin form;
+else (reply discussion)
+:click reply to dicussion;
+:fillout discussion form;
+endif
+:click submit discussion;
+|system|
+:create discussion;
+:query discussions;
+:update displayed discussions;
+stop
+
+@enduml

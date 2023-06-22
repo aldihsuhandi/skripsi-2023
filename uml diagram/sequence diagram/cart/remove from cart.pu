@@ -1,0 +1,31 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Cart page" as cart
+end box
+
+box "back end"
+participant "CartController" as cc
+
+participant "CartRemoveProcessor" as removeproc
+
+participant "Cart" as wm
+end box
+
+database shumishumi as db
+
+u -> cart++ : remove from cart
+cart -> cc++ : /cart/remove
+cc -> removeproc++ : process()
+
+removeproc -> wm++ : delete()
+wm -> db++ : delete()
+return result
+return result
+return result
+return result
+
+@enduml

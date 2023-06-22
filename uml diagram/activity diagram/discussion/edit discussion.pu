@@ -1,0 +1,22 @@
+@startuml edit discussion
+
+|user|
+:open item detail page;
+:click edit discussion button;
+|system|
+:show edit discussion form;
+|user|
+:fill update discussoin form;
+:click submit button;
+|system|
+:validate if this dicussion is from this user;
+if () then (no)
+    :show error message;
+    stop
+endif
+|system|
+:update discussion;
+:update displayed discussion;
+stop
+
+@enduml

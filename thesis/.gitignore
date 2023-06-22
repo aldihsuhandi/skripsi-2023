@@ -1,1 +1,4 @@
-*.pdf
+!latex/pdf/*
+
+thesis.pdf
+title.pdf

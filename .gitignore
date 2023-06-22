@@ -11,6 +11,11 @@
 *.out
 *.toc
 *.out
+*.lof
+*.lot
+*.dvi
+*.pytxcode
 *(busy)
 
 out/
+.idea/

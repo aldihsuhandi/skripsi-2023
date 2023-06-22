@@ -1,0 +1,40 @@
+@startuml logout
+'autonumber 1.1.1
+
+actor User as u
+
+box "front end"
+participant "Home Page" as home
+end box
+
+box "back end"
+participant "SessionController" as sc
+
+participant "SessionLogoutProcessor" as proc
+
+participant "Session" as sm
+end box
+
+database shumishumi as db
+
+u -> home++ : click logout button
+home -> sc++ : /session/logout
+
+sc -> proc++ : process()
+
+proc -> sm++ : queryById()
+sm -> db++ : query()
+return result
+
+proc -> sm : softDelete()
+sm -> db++ : update()
+return result
+return result
+
+return result
+
+return JSON_RESPONSE
+
+home -> home : reload page
+
+@enduml

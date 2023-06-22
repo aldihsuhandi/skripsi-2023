@@ -1,0 +1,17 @@
+@startuml query wishlist
+
+|user|
+start
+:open wishlist page;
+|system|
+:redirect to wishlist page;
+repeat
+:query wishlist;
+|user|
+:if user want \nto query with filter;
+backward:readjust filter;
+repeat while () is (yes)
+-> no;
+stop
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml become a merchant
+
+|user|
+start
+:open profile dropdown;
+:click 'become a merchant'\nbutton;
+|system|
+:validate if is user legible;
+if() then (no)
+    :show warning why \nuser is not eligble;
+    stop;
+endif
+-> yes;
+:convert user to merchant;
+stop
+
+@enduml

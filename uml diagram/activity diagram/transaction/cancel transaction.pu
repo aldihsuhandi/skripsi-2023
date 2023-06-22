@@ -1,0 +1,24 @@
+@startuml cancel transaction
+
+|user|
+:open transaction detail page;
+:click cancel transaction;
+|system|
+:check transaction status;
+if() then(status NOT WAITING_PAYMENT)
+    |system|
+    :show warning;
+    stop
+endif
+
+|system|
+:cancel payment request;
+|midtrans|
+:cancel payment request;
+|system|
+:change transaction status to canceled;
+:update item quantity;
+:change displayed status;
+stop
+
+@enduml

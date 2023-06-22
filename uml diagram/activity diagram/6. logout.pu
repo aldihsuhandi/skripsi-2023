@@ -1,0 +1,13 @@
+@startuml logout
+
+|User|
+start
+:open profile dropdown;
+:click logout;
+|System|
+:remove session from \nbrowser local storage;
+:deactivate session;
+:redirect user to homepage;
+stop
+
+@enduml
