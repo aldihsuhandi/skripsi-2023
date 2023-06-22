@@ -22,6 +22,7 @@
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \usepackage{chngcntr}
 \usepackage{makecell}
+\usepackage{pdfpages}
 
 \setlist{
   listparindent=\parindent,
@@ -33,15 +34,13 @@
 
 % code block style
 % -- Defining colors:
-\usepackage[dvipsnames]{xcolor}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}% Definig a custom style:
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codepurple},
-    keywordstyle=\color{NavyBlue},
+    keywordstyle=\color{codegreen},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\footnotesize\bfseries,
@@ -96,24 +95,31 @@
 \begin{document}
 \setstretch{1.5}
 \pagenumbering{roman}
-\title{SKRIPSI NON KELAS\\Shumishumi - Online Marketplace For Hobby With Interest Level Filtering and Recommendation System Using Knowledge Graph Implementation\large\\\textbf{Topic: }\textit{E-Application}}
-\author{2301862632 - Aldih Suhandi - \textit{Computer Science} / 082122704561\\2301872596 - Chandra Wijaya - \textit{Computer Science} / 081287588816\\2301867324 - Ibrahim Seto Aditama - \textit{Computer Science} / 081213423549}
-\maketitle
+\date{}
+\title{Shumishumi - Pasar Daring untuk Hobi dengan Penyaringan Tingkat Minat dan Sistem Rekomendasi Menggunakan Implementasi Knowledge Graph}
+\clearpage\maketitle
+\setstretch{1.5}
+\vspace{4em}%
+\begin{center}
+    \textbf{Oleh}\\%
+    \vspace{0.10cm}%
+    2301862632 - Aldih Suhandi\\%
+    2301872596 - Chandra Wijaya\\%
+    2301867324 - Ibrahim Seto Aditama\\%
+    Kelas/Kelompok : LB01/016
+\end{center}
+\thispagestyle{empty}
 \begin{figure}[h]
     \centering
     \includegraphics[width=8cm,height=4cm]{logo_binus.png}\\
-    Binus University Alam Sutera\\
-    2023
+    \textbf{School of Computer Science\\
+    Universitas Bina Nusantara\\
+    Jakarta\\
+    2023}
 \end{figure}
-\begin{figure}[h]
-    \centering
-    Diperiksa Oleh**\\
-    \begin{tabular}{@{}p{2in}@{}}
-        \centering
-        \includegraphics[width=3cm]{ttd.png} \\
-        D5186 - Pualam Dipa Nusantara
-    \end{tabular}
-\end{figure}
+
+\newpage
+\includepdf[pages=1]{pdf/thesis-title.pdf}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Daftar Pustaka}
