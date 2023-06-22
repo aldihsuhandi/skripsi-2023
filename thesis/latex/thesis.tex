@@ -2972,6 +2972,323 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \end{figure}
 \end{enumerate}
 
+\newpage
+\bab{Bab 4. Hasis dan Pembahasan}
+
+\subbab{Spesifikasi \textit{System}}
+
+Berikut adalah spesifikasi perangkat yang diperlukan untuk menjalankan aplikasi web \textit{ShumiShumi} baik untuk pengguna.
+	
+Spesifikasi minimum yang dibutuhkan oleh pengguna aplikasi web \textit{ShumiShumi} adalah minimum spesifikasi yang dibutuhkan untuk menjalankan sebuah \textit{browser} untuk membuka aplikasi web kami, adalah sebagai berikut:
+
+\begin{longtable}{|p{2cm}|p{5cm}|}
+    \hline
+    Spesifikaasi & Minimum\\ 
+    \hline
+    \textit{Processor} & Pentium 4 atau lebih baru (yang mendukung SSE2)\\
+    \hline
+    \textit{RAM} & 2 GB\\ 
+    \hline
+    \textit{Hard Disk} & 350 MB\\ 
+    \hline
+    Monitor & 800 x 600\\ 
+    \hline
+\caption{Tabel spisifikasi}
+\end{longtable}
+
+\newpage
+\subbab{Prosedur Penggunaan Aplikasi}
+
+Prosedur penggunaan aplikasi akan dipaparkan untuk kedua sisi dari pengguna aplikasi \textit{ShumiShumi}, pengguna untuk membeli dan juga penjual barang. Dimana pembeli memiliki aksi-aksi dan fitur yang sama dengan pembeli dengan fitur tambahan yang bersangkutan dengan manajemen barang yang mereka jual. Oleh karena itu prosedur untuk pengguna berlaku juga untuk penjual.
+
+\subsubbab{Prosedur Pengguna \textit{Login} Aplikasi}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/login.png}
+    \caption{Halaman \textit{Login} Pengguna}
+\end{figure}
+
+Pengguna, baik pembeli maupun penjual menggunakkan halaman untuk masuk ke dalam aplikasi \textit{ShumiShumi}. Pengguna akan memasukan email dan kata sandi mereka sesuai dengan akun yang sudah mereka daftar atau register sebelumnya. Kalau mereka lupa atas kata sandi dari akun mereka, terdapat tombol \textit{Forgot Password} untuk mulai tahapan merubah kata sandi. Jika calon pengguna ingin membuat sebuah akun juga terdapat tombol untuk daftar.
+
+\subsubbab{Prosedur Pengguna \textit{Register} Aplikasi}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Register.png}
+    \caption{Halaman Register Pengguna}
+\end{figure}
+
+Calon pengguna dapat mengisi data diri mereka dalam halaman register ini untuk membuat sebuah akun, dalam proses ini pengguna harus melakukan satu konfirmasi lagi dengan proses aktivasi akun dengan cara memasukan kode yang dikirim lewat email di halaman aktivasi yang akan muncul setelah registrasi dan jika mencoba login dengan akun yang belum aktif. Dibawah formulir daftar/register juga terdapat tombol untuk kembali ke halaman \textit{login}.
+
+\subsubbab{Prosedur Pengunna Aktivasi Akun Aplikasi}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Activate.png}
+    \caption{Halaman Aktivasi Akun}
+\end{figure}
+
+Di halaman aktivasi ini, pengguna mengisi kode yang diterima dari email lalu tekan tombol \textit{Activate} untuk aktivasi akun supaya dapat masuk ke aplikasi \textit{ShumiShumi}. Jika pengguna membutuhkan dikirim email dan kode baru maka ada tombol \textit{Resend} untuk melakukan email dengan kode lagi ke email yang terdaftar dari halaman \textit{register}.
+
+\newpage
+\subsubbab{Prosedur Pengguna \textit{Logout} Aplikasi}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/logout Bener.png}
+    \caption{Tombol \textit{Logout} Aplikasi}
+\end{figure}
+
+Untuk keluar dari akun yang sudah digunakan untuk masuk di aplikasi pengguna dapat membuka menu pengguna dimana saja dengan klik foto profil akun, dan melakukan klik di tombol paling bawah menu yang muncul untuk keluar.
+
+\subsubbab{Prosedur Pengguna \textit{Forgot Password} Akun Aplikasi}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Forgot.png}
+    \caption{Halaman \textit{Forgot Password}}
+\end{figure}
+
+Halaman \textit{Forgot Password} adalah tahap pertama dari mengganti kata sandi. Pada halaman ini pengguna akan diminta mengisi email yang ingin diubah kata sandinya, setelah itu akan dikirim email untuk membuka halaman \textit{Reset Password} untuk merubah kata sandi akun mereka.
+
+\subsubbab{Prosedur Pengguna \textit{Reset Password} Akun Aplikasi}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Reset Password.png}
+    \caption{Halaman \textit{Reset Password}}
+\end{figure}
+
+Pengguna akan membuka link yang dikirim dalam email, lalu membuka halaman untuk ubah kata sandi.
+
+\subsubbab{Prosedur \textit{Recommend} barang}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Recommend.png}
+    \caption{Halaman menunjukkan \textit{Recommend}}
+\end{figure}
+
+Di halaman utama atau \textit{Home Page}, diatas halaman tapi dibawah \textit{Naviagtion Bar} terdapat bagian dimana rekomendasi barang untuk pengguna berada berdasarkan kegiatan pengguna. Bagian ini hanya muncul jika pengguna sudah melakukan sesuatu dalam aplikasi kami seperti melihat detail barang.
+
+\subsubbab{Prosedur Pengguna Mencari Barang}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Search.png}
+    \caption{Halaman Mencari Barang}
+\end{figure}
+
+Pengguna dapat mencari barang-barang yang mereka tertarik di halaman \textit{Search} ini. Pengguna dapat mencari hanya dengan nama barang atau juga bisa menggunakkan \textit{filter-filter} yang ada di kiri halaman, atau diatas halaman (jika dibuka di ponsel, atau perangkat lain dengan layar kecil). Dari \textit{filter} yang ada, pengguna dapat mencari berdasarkan harga, tipe hobi, kategori hobi, dan tingkat kemahiran dari komunitas (pengguna lain yang sudah membeli) atau tingkat kemahiran dari penjual.
+
+\subsubbab{Prosedur Pengguna Melihat Detail Barang}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Item Detail.png}
+    \caption{Halaman detail barang}
+\end{figure}
+
+Halaman detail barang adalah halaman yang muncul ketika suatu barang di klik oleh pengguna, di halaman inilah pengguna dapat membaca detail dan deskripsi dari barang dan melihat foto-foto lain dari sebuah barang. Di halaman detail barang inilah dimana pengguna dapat menambahkan barang kedalam \textit{cart} mereka untuk mereka beli sesuai dengan jumlah yang mereka inginkan. Di bagian bawah ada tempat untuk fitur diskusi. Dari halaman ini juga pengguna dapat membuka halaman pembeli.
+
+\subsubbab{Prosedur Pengguna Diskusi Barang}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width=14cm,height=6cm]{images/prosedur pengunaan aplikasi/Diskusi.png}
+    \caption{Bagian fitur diskusi}
+\end{figure}
+
+Bagian diskusi ini terdapat di setiap halaman detail barang dengan fungsi dimana tempat pengguna dapat membuat pertanyaan atau membantu menjawab pertanyaan yang lain.
+
+\newpage
+\subsubbab{Prosedur Halaman Toko Penjual Barang}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Halaman Penjual Toko.png}
+    \caption{Halaman Penjual}
+\end{figure}
+
+Halaman ini dibuka dengan cara klik nama atau profil foto penjual di halaman detail item atau untuk penjual itu sendiri terdapat tombol khusus untuk ke halaman toko mereka. Di setiap halaman toko penjual terdapat informasi toko diatas dengan informasi seperti bintang toko dan juga informasi kontak. Di bagian halaman utama \textit{Home} di daftarkan barang terbaru dari penjual tersebut.
+
+\subsubbab{Prosedur Halaman Produk Penjual}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Halaman Penjual Produk.png}
+    \caption{Halaman Produk Penjual}
+\end{figure}
+
+Pada halaman ini terdaftarkan seluruh barang yang dijual oleh penjual di halaman ini, pengguna juga bisa menggunakan fitur \textit{filter} seperti pada mencari barang disini.
+
+\subsubbab{Prosedur \textit{Review} Penjual}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Halaman Review Penjual.png}
+    \caption{Halaman \textit{Review} Terhadap Penjual}
+\end{figure}
+
+Pada halaman ini pengguna dapat melihat transaksi yang sudah terjadi dari barang oleh penjual dan melihat tinjauan yang diberikan terhadap barang dan penjual.
+
+\subsubbab{Prosedur \textit{Wishlist} Pengguna}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Wishlist.png}
+    \caption{Halaman \textit{Wishlist}}
+\end{figure}
+
+Pengguna dapat memasukan barang kedalam \textit{wishlist} mereka untuk menyimpan barang yang mereka tertarik kedalam suatu tampungan dan memiliki halaman sendiri. Cara pengguna dapat memasukan adalah melalui klik tombol bersimbol hati yang ada di barang-barang ketika mencari barang atau tombol bersimbol hati yang ada di detail barang. Di halaman \textit{wishlist} sendiri akan ditampilkan barang-barang yang sudah dimasukkan oleh pengguna dan disini dapat mencari barang khusus yang pengguna sudah masukan saja. Terdapat fitur \textit{filter} yang identikal dengan di halaman mencari barang. Barang yang sudah dimasukan dapat dihapus dengan klik tombol simbol tong sampah atau barang dapat dimasukan kedalam \textit{cart} dengan klik tombol troli.
+
+\subsubbab{Prosedur Menghapus Barang \textit{Wishlist} Pengguna}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Delete Wishlist.png}
+    \caption{Tampilan menghapus barang dari \textit{Wishlist}}
+\end{figure}
+
+Pengguna dapat menghapus barang dari \textit{Wishlist} dengan klik tombol bersimbol tong sampah, dimana akan dimunculkan \textit{dialog} untuk konfirmasi penghapusan.
+
+\subsubbab{Prosedur Profil Pengguna}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/User Profile.png}
+    \caption{Halaman Profil Pengguna}
+\end{figure}
+
+Dalam halaman ini pengguna dapat melihat data mereka secara lengkap, dengan tombol \textit{Edit Profile} pengguna juga dapat merubah data mereka yang salah, kurang atau perlu diperbaharui.
+
+\newpage
+\subsubbab{Prosedur \textit{Edit} Profil}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Edit Profile.png}
+    \caption{Halaman \textit{Edit} Profil Pengguna}
+\end{figure}
+
+Halaman \textit{edit profile} ini untuk merubah data mereka yang salah, kurang atau perlu diperbaharui. Pengguna akan diminta password mereka yang lama jika ingin mengubah apapun dari profil mereka. 
+
+\newpage
+\subsubbab{Prosedur \textit{Cart} Pengguna}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Cart.png}
+    \caption{Halaman \textit{Cart} Pengguna}
+\end{figure}
+
+\textit{Cart} adalah fitur penampungan barang-barang yang pengguna berencana untuk beli, dan di \textit{Cart} ini pengguna dalam memilih barang yang ingin dibeli, dan juga masih dapat mengubah jumlah barang yang ingin dibeli. Setelah pengguna sudah yakin atas pilihan dan jumlah barang, pengguna dapat klik tombol \textit{Buy}.
+
+\subsubbab{Prosedur Menghapus barang dalam \textit{Cart} Pengguna}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Delete Cart Item.png}
+    \caption{Bagian berisi tombol hapus barang \textit{Cart}}
+\end{figure}
+
+Barang di dalam \textit{Cart} dapat dihapus dengan tombol bersimbol tong sampang yang berada di samping tempat merubah kuantitas barang.
+
+\subsubbab{Prosedur Pilih Tipe Pembayaran}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Pick Payment Type.png}
+    \caption{Halaman Memilih Bank untuk Transaksi}
+\end{figure}
+
+Di halaman ini adalah yang pengguna lihat setelah klik tombol \textit{Buy} dimana pengguna dibutuhkan untuk memilih tipe bank yang mereka ingin gunakkan dalam transaksi pembelian barang. Yang dimana setelah itu transaksi akan dibuat, dan pengguna dapat membayar melalui nomor \textit{virtual account} yang sudah diberi.
+
+\subsubbab{Prosedur Riwayat Transaksi}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/History Transaction.png}
+    \caption{Halaman Riwayat Transaksi}
+\end{figure}
+
+Di halaman ini pengguna dapat melihat transaksi-transaksi mereka dalam tiap status transaksi. Pengguna dapat memilih ingin melihat transaksi yang perlu dibayar, sedang diproses \textit{Ongoing}, sudah selesai atau dibatalkan. Dengan klik tombol \textit{See Detail} sebuah transaksi pengguna akan dibawa ke halaman berisi detail dari transaksi tersebut. Setelah transaksi sudah berhasil, pengguna dapat menyelesaikan transaksi setelah barang sudah datang dengan tombol \textit{Finish Transaction}.
+
+\newpage
+\subsubbab{Prosedur Detail Transaksi}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Detail Transaksi.png}
+    \caption{Halaman Detail Transaksi}
+\end{figure}
+
+Pada bagian ini pengguna akan mendapatkan informasi detail terhadap suatu transaksi, seperti barang-barang yang ada di transaksi ini.
+
+\subsubbab{Prosedur Halaman Menunggu \textit{Review}}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Waiting Review.png}
+    \caption{Halaman Menunggu \textit{Review}}
+\end{figure}
+
+Disini adalah barang-barang yang sudah selesai transaksi oleh pengguna dan mengunngu untuk di tinjau oleh pengguna.
+
+\subsubbab{Prosedur Membuat \textit{Review}}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Create Review.png}
+    \caption{Halaman Membuat \textit{Review}}
+\end{figure}
+
+Disini pengguna dapat membuat tinjauan bagi barang yang mereka beli dari transaksi yang sudah selesai.
+
+\subsubbab{Prosedur Melihat \textit{Review} Pengguna}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/See Review.png}
+    \caption{Halaman Melihat \textit{Review}}
+\end{figure}
+
+Pada halaman ini bisa melihat tinjauan-tinjauan yang pengguna sudah buat.
+
+\subsubbab{Prosedur Menjadi \textit{Merchant}}
+
+Sebuah pengguna biasa dapat menjadi penjual dengan menekan tombol \textit{Be a Merchant} yang ada di menu setelah klik profil foto pengguna di \textit{navbar} atau di halaman profil pengguna dengan tombol \textit{Apply to Merchant}. Sebuah pengguna harus memiliki lokasi jika ingin menjadi \textit{Merchant}.
+
+\subsubbab{Prosedur Penjual Membuat Barang}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Merchant/Create Item.png}
+    \caption{Halaman Membuat Barang Jual}
+\end{figure}
+
+Halaman berguna untuk membuat barang jual, dimana halaman ini dapat diakses di halaman toko penjual pribadi di bagian \textit{Create}. Penjual akan diminta untuk mengisi data barang dengan lengkap sesuai kebutuhan minimal sebuah barang.
+
+\subsubbab{Prosedur \textit{Update} Barang Jual}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Merchant/Update Item.png}
+    \caption{Halaman \textit{Update} Barang Jual}
+\end{figure}
+
+Penjual dapat ke halaman \textit{Update Item} yang diakses dari halaman detail barang untuk merubah info, harga dan jumlah dari barang yang dijual. Penjual akan diminta mengisi formulir data yang ingin mereka rubah.
+
+\subsubbab{Prosedur Menghapus Barang jual}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Merchant/Delete Item.png}
+    \caption{Tombol Menghapus Barang di Halaman Detail Barang}
+\end{figure}
+
+Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Item} yang berada di halaman detail barang yang mereka ingin hapus.
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
