@@ -13,6 +13,8 @@
 *.out
 *.lof
 *.lot
+*.dvi
+*.pytxcode
 *(busy)
 
 out/
