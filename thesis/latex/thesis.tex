@@ -1612,34 +1612,127 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
 \end{enumerate}
 
 
-\newpage
 \subbab{Metode Pengembangan Sistem}
 \subsubbab{\textit{Software Design Document}}
 \begin{enumerate}[label=\alph*. ]
     \item Deskripsi \textit{software}
 
-          \textit{Shumishumi} adalah sebuah marketplace dimana user bisa membeli suatu barang sesuai dengan hobi dan setinggi apa \textit{interest level} mereka. Tujuan dari aplikasi ini adalah mempermudah pengguna pembeli untuk mencari barang hobi yang cocok, mempermudah penjual dalam mempromosikan barang-nya kepada pelanggan dengan fitur filter \textit{Interest Level}.
-
-
-          \textit{Shumishumi} juga bisa menjadi sarana untuk berdiskusi mengenai topik dan hobi yang diminati, dengan fitur ini \textit{user} diharapkan dapat mencari hobi baru dengan mudah.
+        \textit{Shumishumi} adalah sebuah marketplace dimana user bisa membeli suatu barang sesuai dengan hobi dan setinggi apa \textit{interest level} mereka. Tujuan dari aplikasi ini adalah mempermudah pengguna pembeli untuk mencari barang hobi yang cocok, mempermudah penjual dalam mempromosikan barang-nya kepada pelanggan dengan fitur filter \textit{Interest Level}. \textit{Shumishumi} juga bisa menjadi sarana untuk berdiskusi mengenai topik dan hobi yang diminati, dengan fitur ini \textit{user} diharapkan dapat mencari hobi baru dengan mudah.
 
     \item Fungsi-fungsi \textit{software}
+        \textit{Shumishumi} merupakan sebuah aplikasi \textit{website} yang fungsi utamanya sebagai \textit{marketplace} yang digunakan untuk berjual-beli barang, berikut adalah daftar fitur yang ada di\textit{website shumishumi}:
+        \begin{itemize}
+            \item \textit{Account management}, fitur ini terdiri dari beberapa fungsi, yaitu:
+            \begin{itemize}
+                \item \textit{Register}
 
+                Dimana \textit{user} bisa mengisi form untuk membuat akun \textit{shumishumi} baru.
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics*[height=4cm]{./diagram/flowchart/chart/register.png}
+                    \caption{\textit{Flowchart} untuk proses \textit{register}}
+                \end{figure}
+                \newpage
 
-          Fungsi dari proyek ini dibagi menjadi dua perspektif, perspektif dari pembeli dan perspektif dari penjual.
-          \begin{itemize}
-              \item Perspektif dari pembeli
+                \item \textit{Update user info}
 
-                    Pembeli bisa mencari sebuah barang secara spesifik menggunakan nama atau siapa yang menjual barang tersebut, tapi bagi penjual yang baru ingin memasuki suatu hobi, mereka bisa mengutilisasikan fitur filter berdasarkan hobi apa yang ingin mereka masuki dan \textit{interest level} mereka. Selain itu juga pembeli juga bisa membuat review tentang barang yang mereka jual, bagaimana kualitas dari barang tersebut dan apakah barang tersebut memenuhi kriteria \textit{interest level} yang ditujukkan.
+                Fitur ini memungkinkan \textit{user} untuk merubah informasi yang mereka masukkan saat pembuatan akun pertama.
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics*[height=6cm]{./diagram/flowchart/chart/update user info.png}
+                    \caption{\textit{Flowchart} untuk proses \textit{update user info}}
+                \end{figure}
 
-                    Selain itu juga pembeli bisa membuat suatu \textit{post} atau \textit{comment} tentang hobi mereka, atau membaca \textit{post} yang sudah dibuat oleh pembeli lain untuk membantu mereka mendalami hobi yang mereka punya.
+                \item \textit{Forgot password}
+                
+                Fitur ini dibuat untuk membantu \textit{user} jika terjadi kelupaan \textit{password} atau kata sandi akun \textit{shumishumi}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics*[height=6cm]{./diagram/flowchart/chart/forgot password.png}
+                    \caption{\textit{Flowchart} untuk proses \textit{update user info}}
+                \end{figure}
 
-              \item Perspektif dari penjual
+                \newpage
+                \item \textit{Merchant apply}
 
-                    Penjual bisa menjual barang, saat memasukan barang yang ingin dijual penjual harus memasukan barang itu terkait dengan hobi apa dan ditujukkan ke \textit{interest level} mana, selain itu penjual juga bisa melihat sebuah \textit{dashboard} yang berisikan \textit{review} dari pembeli dan berapa banyak barang yang sudah mereka jual.
-          \end{itemize}
+                Fitur ini digunakkan untuk \textit{user} bisa mendaftar menjadi \textit{merchant}, fitur ini akan berhasil dengan syarat \textit{user} sudah melakukan \textit{update user info} dan mengisi \textit{location}.
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics*[height=6cm]{./diagram/flowchart/chart/become a merchant.png}
+                    \caption{\textit{Flowchart} untuk proses \textit{update user info}}
+                \end{figure}
+            \end{itemize}
 
-          % sequence diagram
+            \item \textit{Session management}, fitur ini terdiri dari beberapa fungsi, yaitu:
+            \begin{itemize}
+                \item \textit{Login}
+
+                Fitur ini dipakai untuk \textit{user} masuk ke \textit{website shumishumi} dengan akun yang dibuat sebelumnya.
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics*[height=6cm]{./diagram/flowchart/chart/login.png}
+                    \caption{\textit{Flowchart} untuk fitur \textit{login}}
+                \end{figure}
+                \newpage
+
+                \item \textit{logout}
+                
+                Fitur ini memungkinkan user untuk keluar dari \textit{website shumishumi} saat sudah \textit{logged-in}.
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics*[height=6cm]{./diagram/flowchart/chart/logout.png}
+                    \caption{\textit{Flowchart} untuk fitur \textit{logout}}
+                \end{figure}
+
+            \end{itemize}
+
+            \item \textit{search item}, fitur ini bisa diakses \textit{user} saat meng-\textit{click} \textit{search bar} yang ada di\textit{navbar}, dengan fitur ini \textit{user} bisa mencari produk yang diinginkan.
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=7cm]{./diagram/flowchart/chart/search item.png}
+                \caption{\textit{Flowchart} untuk fitur \textit{search item}}
+            \end{figure}
+            \newpage
+
+            \item Lihat detil produk, fitur ini digunakan untuk melihat detil produk, seperti deskripsi, info \textit{merchant}, dll.
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/flowchart/chart/open detail item.png}
+                \caption{\textit{Flowchart} untuk fitur \textit{search item}}
+            \end{figure}
+
+            \item Lihat \textit{merchant page}, fitur ini digunakan untuk melihat halaman \textit{merchant} agar \textit{user} memiliki kemampuan untuk melihat apa saja barang yang dijual \textit{merchant} tertentu.
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=7cm]{./diagram/flowchart/chart/view merchant page.png}
+                \caption{\textit{Flowchart} untuk fitur \textit{view merchant page}}
+            \end{figure}
+            
+            \newpage
+            \item \textit{Wishlist management}, fitur ini memungkinkan user menghapus dan memasukkan produk ke \textit{wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=7cm]{./diagram/flowchart/chart/Wishlist management.png}
+                \caption{\textit{Flowchart} untuk fitur \textit{wishlist management}}
+            \end{figure}
+
+            \item \textit{Discussion management}, fitur ini memungkinkan \textit{user} untuk berdiskusi dengan \textit{user} lain atau \textit{merchant} mengenai sesuatu produk.
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/flowchart/chart/manage discussion.png}
+                \caption{\textit{Flowchart} untuk fitur \textit{discussion management}}
+            \end{figure}
+            \newpage
+
+            \item \textit{Cart management}, fitur ini memungkinkan \textit{user} untuk memasukkan produk ke \textit{shopping cart}, mengatur berapa banyak yang ingin dibeli, ataupun menghapus produk tertentu dari \textit{shopping cart}, fitur ini diakses saat \textit{user} telah \textit{logged-in} dan menekan tombol \textit{cart} di\textit{navbar}.
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{./diagram/flowchart/chart/Cart management.png}
+                \caption{\textit{Flowchart} untuk fitur \textit{cart management}}
+            \end{figure}
+
+        \end{itemize}
+
 
     \item Kebutuhan teknologi
 
@@ -1817,6 +1910,7 @@ const [name, setName] = useState("initialValues");
 
 \subsubbab{Perancangan Sistem}
 Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD} (\textit{Object Oriented Analysis and Design}), yang dijelaskan lebih detil oleh diagram-diagram berikut:
+\newpage
 \begin{enumerate}
     \item \textit{Usecase diagram}
     \begin{figure}[h]
