@@ -1780,6 +1780,38 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
                         \item dan yang terakhir \textit{springboot} memiliki fitur \textit{Inversion of Control} dan \textit{Dependency Injection}.
                     \end{itemize}
 
+                    Didalam \textit{springboot} sendiri ada beberapa \textit{extension} yang dipakai, seperti:
+                    \begin{enumerate}
+                        \item \textit{Spring JPA}
+
+                        \textit{Spring jpa} adalah \textit{library} untuk \textit{database management}, \textit{library} ini memudahkan dan memperbaiki \textit{spring} untuk membuat implementasi dari lapisan data dan \textit{spring jpa} ini juga bertujuan untuk mengurangi \textit{boilerplate code} yang diperlukan untuk membuat \textit{class data access}\autocite{spring-jpa}.
+
+                        \item \textit{Logback}
+
+                        \textit{Logback} adalah \textit{project successor} ke \textit{logging project log4j}, \textit{logback} adalah \textit{logging framework} yang cepat, simpel dan kapabel sebagai \textit{logging framework} untuk aplikasi \textit{enterprise}\autocite{logback}.
+
+                        \item \textit{JUnit}
+
+                        \textit{JUnit} adalah \textit{open-source testing framework} yang banyak digunakan dengan proyek \textit{spring}. \textit{JUnit} menyediakan anotasi, pernyataan, dan \textit{unit testing} secara efektif. \textit{JUnit} memungkinkan \textit{developer} untuk melakukan \textit{whitebox testing} secara otomatis dan dapat diulang\autocite{junit-documentation}.
+                    \end{enumerate}
+
+                    Untuk \textit{deployment} sendiri, proyek ini menggunakan \textit{Google cloud platform} (\textbf{GCP}) sebagai jasa \textit{hosting}, GCP sendiri terdiri dari aset fisik yang berada didalam \textit{data center google} yang tersebar diseluruh dunia, diproyek ini GCP digunakan untuk meng-\textit{host} \textit{instance database} dan \textit{instance backend} dengan spesifikasi:
+                    \begin{enumerate}
+                        \item \textit{instance backend}
+                        \begin{itemize}
+                            \item CPU: \textit{dual core}
+                            \item RAM: 6 GB
+                            \item \textit{instance location}: SEA-Jakarta
+                        \end{itemize}
+                        \item \textit{instance database}
+                        \begin{itemize}
+                            \item CPU: \textit{dual core}
+                            \item RAM: 7.5 GB
+                            \item \textit{instance location}: SEA-Jakarta
+                        \end{itemize}
+
+                    \end{enumerate}
+
               \item \textit{Front end}
 
                     \textit{Front End} adalah sebuah bagian dari halaman web yang dimana merupakan tempat interaksi pengguna, \textit{Front End} sebagai tempat interaksi pengguna maka merupakan bagian dari sebuah halaman yang sangat sering dilihat oleh pengguna kebalikan dari \textit{Back End}\autocite{codecademy-frontend}.
