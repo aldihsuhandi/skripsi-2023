@@ -3014,7 +3014,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
 \end{enumerate}
 
 \newpage
-\bab{Bab 4. Hasis dan Pembahasan}
+\bab{Bab 4. Hasil dan Pembahasan}
 
 \subbab{Spesifikasi \textit{System}}
 
@@ -3330,6 +3330,86 @@ Penjual dapat ke halaman \textit{Update Item} yang diakses dari halaman detail b
 \end{figure}
 
 Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Item} yang berada di halaman detail barang yang mereka ingin hapus.
+
+\newpage
+\subbab{Evaluasi}
+\subsubbab{Evaluasi \textit{User Interface}}
+
+\begin{enumerate}
+    \item Evaluasi \textit{User Interface} berdasarkan delapan aturan emas perancangan antarmuka aplikasi
+    
+    Berikut adalah hasil evaluasi berdasarkan delapan aturan emas perancangan antarmuka menurut pandangan dari para peneliti yang membuat aplikasi ini:
+    
+    \begin{enumerate}
+        \item \textit{Strive for Consistency}
+        
+        Aplikasi \textit{ShumiShumi} ini sudah memiliki desain yang konsisten di seluruh aplikasi. Mulai dari tema warna dan penggunaan bahasa serta \textit{font} kata yang dipakai hingga urutan aksi yang diperlukan untuk melakukan sesuatu. Salah satu contohnya dapat dilihat dari pilihan tema warna yang konsisten yakni biru dan putih serta penggunaan bahasa yang digunakan di seluruh bagian aplikasi ini. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Search.png}
+            \caption{Penggunaan Tema Warna Biru dan Putih yang Konsisten}
+        \end{figure}
+
+        \item \textit{Seek Universal Usability}
+        
+        Untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} ini belum mengimplementasikan fitur-fitur aksesibilitas yang dapat membantu para pengguna dengan sebuah kekurangan/\textit{disability} ataupun untuk para pengguna lansia yang cukup kesulitan untuk menavigasikan aplikasi. untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh. 
+
+        \item \textit{Offer Information Feedback}
+        
+        Aplikasi \textit{ShumiShumi} dianggap sudah memenuhi aturan emas yang ketiga ini. Aplikasi \textit{ShumiShumi} akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna telah menyelesaikan proses transaksinya dan memencet tombol \textit{finish} pada halaman transaksi, maka status transaksi pengguna yang sebelumnya masih berstatus \textit{ongoing} akan berubah menjadi \textit{done}.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Detail Transaksi.png}
+            \caption{Contoh tampilan status pada halaman detail transaksi}
+        \end{figure}
+
+        \item \textit{Design Dialogs to Yield Closure}
+        
+        Aplikasi \textit{ShumiShumi} juga telah dilengkapi dengan fitur pemberitahuan informasi seperti memberitahu apakah profil pengguna telah berhasil diperbarui atau belum, apakah produk yang dimasukan ke dalam \textit{wishlist} sudah berhasil dimasukkan atau belum, dan lain sebagainya. 
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/bukti evaluasi ui/profil berhasil di update.png}
+            \caption{Contoh tampilan pesan saat profil pengguna telah berhasil diperbarui}
+        \end{figure}
+        
+        \item \textit{Prevent Erros}
+        
+        Aplikasi \textit{ShumiShumi} juga telah mengimplementasikan fitur pencegahan agar pengguna tidak melakukan kesalahan pada aplikasi yang dapat berujung untuk menghasilkan sebuah \textit{error}/kerusakan. Seperti contoh, pesan warna merah yang diberikan oleh aplikasi apabila pengguna kelupaan untuk memasukkan informasi kredensialnya dan langsung menekan tombol \textit{login} saat ingin masuk ke dalam aplikasi.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/login.png}
+            \caption{Contoh tampilan pesan pada halaman \textit{login}}
+        \end{figure}
+        \newpage
+        \item \textit{Permit Easy Reversal of Actions}
+        
+        Aplikasi  \textit{ShumiShumi} ini telah dilengkapi dengan fitur untuk mengembalikan suatu aksi yang telah dilakukan oleh user. Seperti tombol hapus yang ada pada halaman \textit{cart} apabila pengguna tidak jadi untuk membeli produk tersebut. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Cart.png}
+            \caption{Halaman \textit{cart} yang memiliki fitur untuk menghapus produk yang tidak jadi dibeli}
+        \end{figure}
+
+        \item \textit{Keep Users in Control}
+        
+        Aplikasi \textit{ShumiShumi} ini masih memiliki kekurangan untuk membantu penggunanya mengubah tampilan \textit{user interface} web sesuai preferensi mereka masing-masing, salah satunya seperti kurangnya dukungan untuk merubah tema warna aplikasi menjadi warna yang gelap \textit{dark mode}. Jadi, untuk aturan emas ketujuh ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh.
+
+        \item \textit{Reduce Short-Term Memory Load}
+        
+        Untuk aturan emas yang terakhir ini, aplikasi \textit{ShumiShumi} dianggap telah menguasainya. Seperti peletakan tombol-tombol pada aplikasi yang mudah untuk diingat hingga fitur-fitur yang dapat mengingat data apa saja yang pengguna telah masukkan ke dalam aplikasi, sehingga pengguna tidak perlu lagi memasukkannya kembali satu per satu. Salah satu contohnya adalah fitur \textit{remember me} pada halaman login yang dapat mengingat \textit{session} pengguna sehingga mereka tidak perlu login kembali apabila secara sengaja/tidak sengaja menutup aplikasi web \textit{ShumiShumi} pada \textit{web browser} mereka.
+
+    \end{enumerate}
+
+    \item Evaluasi \textit{User Interface} berdasarkan lima faktor manusia terukur
+    
+    :D 
+
+\end{enumerate}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
