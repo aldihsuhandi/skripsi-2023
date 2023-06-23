@@ -3014,7 +3014,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
 \end{enumerate}
 
 \newpage
-\bab{Bab 4. Hasis dan Pembahasan}
+\bab{Bab 4. Hasil dan Pembahasan}
 
 \subbab{Spesifikasi \textit{System}}
 
@@ -3336,6 +3336,156 @@ Penjual dapat ke halaman \textit{Update Item} yang diakses dari halaman detail b
 Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Item} yang berada di halaman detail barang yang mereka ingin hapus.
 
 \end{enumerate}
+
+\newpage
+\subbab{Evaluasi}
+\subsubbab{Evaluasi \textit{User Interface}}
+
+\begin{enumerate}
+    \item Evaluasi \textit{User Interface} berdasarkan delapan aturan emas perancangan antarmuka aplikasi
+    
+    Berikut adalah hasil evaluasi berdasarkan delapan aturan emas perancangan antarmuka menurut pandangan dari para peneliti yang membuat aplikasi ini:
+    
+    \begin{enumerate}
+        \item \textit{Strive for Consistency}
+        
+        Aplikasi \textit{ShumiShumi} ini sudah memiliki desain yang konsisten di seluruh aplikasi. Mulai dari tema warna dan penggunaan bahasa serta \textit{font} kata yang dipakai hingga urutan aksi yang diperlukan untuk melakukan sesuatu. Salah satu contohnya dapat dilihat dari pilihan tema warna yang konsisten yakni biru dan putih serta penggunaan bahasa yang digunakan di seluruh bagian aplikasi ini. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Search.png}
+            \caption{Penggunaan Tema Warna Biru dan Putih yang Konsisten}
+        \end{figure}
+
+        \item \textit{Seek Universal Usability}
+        
+        Untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} ini belum mengimplementasikan fitur-fitur aksesibilitas yang dapat membantu para pengguna dengan sebuah kekurangan/\textit{disability} ataupun untuk para pengguna lansia yang cukup kesulitan untuk menavigasikan aplikasi. untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh. 
+
+        \item \textit{Offer Information Feedback}
+        
+        Aplikasi \textit{ShumiShumi} dianggap sudah memenuhi aturan emas yang ketiga ini. Aplikasi \textit{ShumiShumi} akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna telah menyelesaikan proses transaksinya dan memencet tombol \textit{finish} pada halaman transaksi, maka status transaksi pengguna yang sebelumnya masih berstatus \textit{ongoing} akan berubah menjadi \textit{done}.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Detail Transaksi.png}
+            \caption{Contoh tampilan status pada halaman detail transaksi}
+        \end{figure}
+
+        \item \textit{Design Dialogs to Yield Closure}
+        
+        Aplikasi \textit{ShumiShumi} juga telah dilengkapi dengan fitur pemberitahuan informasi seperti memberitahu apakah profil pengguna telah berhasil diperbarui atau belum, apakah produk yang dimasukan ke dalam \textit{wishlist} sudah berhasil dimasukkan atau belum, dan lain sebagainya. 
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/bukti evaluasi ui/profil berhasil di update.png}
+            \caption{Contoh tampilan pesan saat profil pengguna telah berhasil diperbarui}
+        \end{figure}
+        
+        \item \textit{Prevent Errors}
+        
+        Aplikasi \textit{ShumiShumi} juga telah mengimplementasikan fitur pencegahan agar pengguna tidak melakukan kesalahan pada aplikasi yang dapat berujung untuk menghasilkan sebuah \textit{error}/kerusakan. Seperti contoh, pesan warna merah yang diberikan oleh aplikasi apabila pengguna kelupaan untuk memasukkan informasi kredensialnya dan langsung menekan tombol \textit{login} saat ingin masuk ke dalam aplikasi.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/login.png}
+            \caption{Contoh tampilan pesan pada halaman \textit{login}}
+        \end{figure}
+        \newpage
+        \item \textit{Permit Easy Reversal of Actions}
+        
+        Aplikasi  \textit{ShumiShumi} ini telah dilengkapi dengan fitur untuk mengembalikan suatu aksi yang telah dilakukan oleh user. Seperti tombol hapus yang ada pada halaman \textit{cart} apabila pengguna tidak jadi untuk membeli produk tersebut. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Cart.png}
+            \caption{Halaman \textit{cart} yang memiliki fitur untuk menghapus produk yang tidak jadi dibeli}
+        \end{figure}
+
+        \item \textit{Keep Users in Control}
+        
+        Aplikasi \textit{ShumiShumi} ini masih memiliki kekurangan untuk membantu penggunanya mengubah tampilan \textit{user interface} web sesuai preferensi mereka masing-masing, salah satunya seperti kurangnya dukungan untuk merubah tema warna aplikasi menjadi warna yang gelap \textit{dark mode}. Jadi, untuk aturan emas ketujuh ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh.
+
+        \item \textit{Reduce Short-Term Memory Load}
+        
+        Untuk aturan emas yang terakhir ini, aplikasi \textit{ShumiShumi} dianggap telah menguasainya. Seperti peletakan tombol-tombol pada aplikasi yang mudah untuk diingat hingga fitur-fitur yang dapat mengingat data apa saja yang pengguna telah masukkan ke dalam aplikasi, sehingga pengguna tidak perlu lagi memasukkannya kembali satu per satu. Salah satu contohnya adalah fitur \textit{remember me} pada halaman login yang dapat mengingat \textit{session} pengguna sehingga mereka tidak perlu login kembali apabila secara sengaja/tidak sengaja menutup aplikasi web \textit{ShumiShumi} pada \textit{web browser} mereka.
+
+    \end{enumerate}
+    \newpage
+    \item Evaluasi \textit{User Interface} berdasarkan lima faktor manusia terukur
+    
+    Untuk mengevaluasi lebih lanjut desain \textit{user interface} pada aplikasi \textit{ShumiShumi} ini, maka dilakukan sebuah pengujian langsung terhadap para penggunanya dengan menggunakan suatu pengukuran tertentu yakni, berdasarkan atas lima faktor manusia terukur (\textit{five measurable human factor}). Cara yang digunakan pada penelitian ini adalah dengan menyebarkan survei kepada para calon pengguna untuk menguji langsung aplikasi tersebut. Para calon pengguna yang telah mengisi survei ada sebanyak 38 responden yang berperan sebagai pembeli biasa dan tujuh sebagai penjual (pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Di dalam survei diberikan tautan yang menuju ke alamat \textit{website} yang sudah di \textit{deploy} dan sebuah video demonstrasi dari aplikasi \textit{ShumiShumi} ini. Melalui tautan yang telah diberikan, para pengguna dapat langsung menguji dan menilai desain dari aplikasi web \textit{ShumiShumi}. Ada empat pertanyaan yang diberikan (dua untuk pembeli dan dua untuk penjual) dan tujuh pernyataan yang perlu dinilai kesetujuannya atau tidak oleh para pengguna. Skala penilaian dari pernyataan-pernyataan tersebut berkisar antara \textbf{satu} hingga \textbf{lima}, satu untuk 'sangat tidak setuju' dan lima untuk 'sangat setuju'. Berikut adalah hasil dari survei yang telah diberikan berdasarkan lima faktor manusia terukur yang telah diuji: 
+
+    \begin{itemize}
+        \item \textit{Time for users to learn specific functions}
+        
+        Ada dua pernyataan yang mengaju pada faktor pertama ini, kedua pernyataan yang diajukan adalah, \textit{"User interface dari website shumishumi mudah dipelajari"} dan \textit{"User interface dari website shumishumi enak untuk dilihat"}. Untuk pernyataan pertama sebanyak 73.7\% dari 38 pengguna memberikan nilai sebesar 'lima' dan sebanyak 26.3\% sebesar 'empat'. Sedangkan untuk pernyataan kedua, sebanyak 55.3\% memberikan nilai sebesar 'empat' dan sebanyak 44.7\% memberikan nilai 'lima'. Ini menandakan bahwa sebagian besar pengguna setuju bahwa aplikasi web \textit{ShumiShumi} cukup mudah untuk dipelajari dan dilihat agar tidak memakan waktu yang lama untuk mempelajarinya. 
+
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 4.png}
+            \caption{Hasil survei untuk pernyataan pertama mengenai faktor pertama}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 6.png}
+            \caption{Hasil survei untuk pernyataan kedua mengenai faktor pertama}
+        \end{figure}
+
+        \item \textit{Speed of task performance}
+        
+        Untuk faktor manusia yang kedua ini, terdapat dua pernyataan juga yang mengajukannya. Pernyataan pertama adalah \textit{"User interface dari website shumishumi mudah untuk dinavigasi"} dan \textit{"Tidak ada proses yang berbelit - belit diwebsite shumishumi"}. Maksud dari kedua pernyataan tersebut adalah untuk menanyakan para penggunanya apakah aplikasi web \textit{ShumiShumi} ini memiliki desain yang susah untuk di navigasi dan berbelit-belit sehingga para pengguna kesulitan untuk menyelesaikan suatu aksi yang dapat memperlambat alur kerja mereka. Untuk hasilnya sendiri, pada pernyataan pertama untuk faktor terukur kedua ini, sebanyak 76.3\% pengguna menilainya sebesar 'lima' dan sebanyak 23.7\% menilai 'empat'. Sedangkan untuk pernyataan kedua, sebanyak 71.1\% memberikan nilai 'lima' dan 28.9\% memberi nilai 'empat'. Itu artinya, masih banyak dari antara pengguna yang setuju bahwa desain aplikasi web \textit{ShumiShumi} tidak memperlambat waktu mereka untuk melakukan berbagai jenis aksi di dalam aplikasi ini. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 7.png}
+            \caption{Hasil survei untuk pernyataan pertama mengenai faktor kedua}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 9.png}
+            \caption{Hasil survei untuk pernyataan kedua mengenai faktor kedua}
+        \end{figure}
+
+        \item \textit{Rate of errors by users}
+        
+        Untuk faktor ketiga ini, hanya ada satu pernyataan yang membahasnya. Pernyataan tersebut adalah \textit{"Saat menggunakan website shumishumi jarang ketemu error"}. Untuk hasilnya sendiri, sebanyak 68.4\% pengguna menilainya sebesar 'empat' dan sebanyak 31.6\% pengguna menilai sebesar 'lima'. Ini menunjukkan bahwa para pengguna jarang mendapatkan \textit{error} pada sistem di aplikasi web \textit{ShumiShumi} ini. 
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 8.png}
+            \caption{Hasil survei untuk faktor terukur yang ketiga}
+        \end{figure}
+
+        \item \textit{User retention of commands over time}
+        
+        Faktor keempat ini yang menguji seberapa lamakah pengguna dapat mengingat informasi mengenai aplikasi \textit{ShumShumi} ini setelah rentan waktu yang cukup lama. Ada dua pernyataan yang diajukan pada survei, yakni \textit{"User interface dari website shumishumi mudah diingat"} dan \textit{"User interface dari website shumishumi memberikan semua informasi dengan cukup dan ringkas"}. Kedua pernyataan tersebut bermaksud untuk menanyakan kepada pengguna apakah desain aplikasi \textit{ShumiShumi} mudah untuk diingat dalam jangka waktu yang cukup panjang. Dan hasil yang didapatkan adalah sebanyak 68.4\% memberi nilai 'empat' dan 31.6\% memberi nilai 'lima'. Ini menunjukkan para pengguna setuju bahwa desain dari aplikasi \textit{ShumiShumi} mudah untuk diingat untuk jangka waktu yang cukup lama. 
+
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 3.png}
+            \caption{Hasil survei untuk faktor terukur yang keempat dari pernyataan pertama}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 5.png}
+            \caption{Hasil survei untuk faktor terukur yang keempat dari pernyataan kedua}
+        \end{figure}
+
+        \item \textit{Subjective user satisfaction}
+        
+
+
+    \end{itemize}
+
+\end{enumerate}
+
+\newpage
+\subsubbab{Evaluasi Sistem}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
