@@ -239,6 +239,8 @@ Bab keempat ini menjelaskan hasil penelitian dan pembahasan. Hasil penelitian ya
 Bab kelima ini akan memaparkan beberapa kesimpulan yang dapat diambil dan saran - saran yang didasarkan pada hasil yang didapatkan, dibab ini juga akan menyimpulkan apakahh ide aplikasi ini mempunyai potensi tinggi jika diimplementasikan didunia nyata.
 
 \newpage
+\stepcounter{page}
+\newpage
 \bab{Bab 2. Tinjauan Pustaka}
 \subbab{Teori - Teori Umum}
 
@@ -3547,7 +3549,96 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 \label{tab:blackboxTestingScenario}\\
 \end{longtable}
 
+    \item \textit{Whitebox testing} disini dilakukan disisi \textit{backend} dan menggunakan \textit{library JUnit}, \textit{whitebox testing} ini dilakukan akan dilakukan setiap kali ada \textit{pull request} ke \textit{branch main}, berikut adalah semua \textit{testcase} yang dijalankan di\textit{pull request} terakhir.
+\begin{longtable}[c]{|l|l|}
+\hline
+\textit{Test class} & \textit{Test case} \\ \hline
+\endfirsthead
+\endhead
+\multirow{4}{*}{\textit{CartFacadeTest}} & \textit{updateCartTest\_SUCCESS} \\ \cline{2-2} 
+ & \textit{addCartTest\_SUCCESS} \\ \cline{2-2} 
+ & queryCartTest\_SUCCESS \\ \cline{2-2} 
+ & calculateCartTest\_SUCCESS \\ \hline
+\multirow{3}{*}{clientFacadeTest} & authenticateTest\_SUCCESS \\ \cline{2-2} 
+ & authenticateTest\_FAILED\_client\_secret\_failed \\ \cline{2-2} 
+ & authenticateTest\_FAILED\_client\_not\_exist \\ \hline
+\multirow{4}{*}{CommentFacadeTest} & queryDiscussionTest\_SUCCESS \\ \cline{2-2} 
+ & deleteDiscussionTest\_SUCCESS \\ \cline{2-2} 
+ & createDiscussionTest\_SUCCESS \\ \cline{2-2} 
+ & updateDiscussionTest\_SUCCESS \\ \hline
+\multirow{2}{*}{ForgotPasswordFacadeTest} & forgotPasswordQueryTest\_SUCCESS \\ \cline{2-2} 
+ & forgotPasswordSendTest\_SUCCESS \\ \hline
+\multirow{2}{*}{ImageFacadeTest} & imageUploadTest\_SUCCESS \\ \cline{2-2} 
+ & imageDownloadTest\_SUCCESS \\ \hline
+\multirow{15}{*}{ItemFacadeTest} & updateItemTest\_FAILED\_itemNotFound \\ \cline{2-2} 
+ & deleteItemTest\_SUCCESS\_withKnowledge \\ \cline{2-2} 
+ & queryItemTest\_SUCCESS\_withWishlist \\ \cline{2-2} 
+ & queryItemTest\_SUCCESS\_byIdWithSession \\ \cline{2-2} 
+ & createItemTest\_SUCCESS\_withKnowledge \\ \cline{2-2} 
+ & createItemTest\_SUCCESS \\ \cline{2-2} 
+ & approvalItemTest\_FAILED\_itemAlreadyApproved \\ \cline{2-2} 
+ & autocompleteTest\_SUCCESS \\ \cline{2-2} 
+ & queryItemTest\_SUCCESS\_queryListWithSession \\ \cline{2-2} 
+ & updateItemTest\_SUCCESS\_withKnowledge \\ \cline{2-2} 
+ & createItemTest\_FAILED\_userNotMerchant \\ \cline{2-2} 
+ & recommendTest\_SUCCESS \\ \cline{2-2} 
+ & approvalItemTest\_SUCCESS \\ \cline{2-2} 
+ & deleteItemTest\_SUCCESS \\ \cline{2-2} 
+ & updateItemTest\_SUCCESS \\ \hline
+\multirow{4}{*}{ItemWishlistFacadeTest} & addWishlist\_SUCCESS \\ \cline{2-2} 
+ & queryWishlist\_SUCCESS \\ \cline{2-2} 
+ & addWishlist\_FAILED\_paramIllegal \\ \cline{2-2} 
+ & removeWishlist\_SUCCESS \\ \hline
+\multirow{3}{*}{OtpFacadeTest} & sendOTPTest\_SUCCESS \\ \cline{2-2} 
+ & sendOTPTest\_FAILED\_userAlreadyActivated \\ \cline{2-2} 
+ & validateOTPTest\_SUCCESS \\ \hline
+\multirow{3}{*}{ReviewFacadeTest} & createReviewsTest\_SUCCESS \\ \cline{2-2} 
+ & reviewQueryByUser\_SUCCESS \\ \cline{2-2} 
+ & reviewQueryByMerchant\_SUCCESS \\ \hline
+\multirow{3}{*}{SessionFacadeTest} & sessionQueryTest\_SUCCESS \\ \cline{2-2} 
+ & sessionLogoutTest\_FAILED\_expired \\ \cline{2-2} 
+ & sessionLogoutTest\_SUCCESS \\ \hline
+\multirow{5}{*}{TransactionFacadeTest} & payTransactionTest\_SUCCESS \\ \cline{2-2} 
+ & cancelTransactionTest\_SUCCESS \\ \cline{2-2} 
+ & queryTransactionTest\_SUCCESS \\ \cline{2-2} 
+ & finishTransactionTest\_SUCCESS \\ \cline{2-2} 
+ & createTransactionTest\_SUCCESS \\ \hline
+\multirow{25}{*}{UserFacadeTest} & userActivate\_FAILED\_otpValidationError \\ \cline{2-2} 
+ & userRegisterTest\_FAILED\_userAlreadyExist \\ \cline{2-2} 
+ & emailDecryptTest\_SUCCESS \\ \cline{2-2} 
+ & userRegisterTest\_SUCCESS \\ \cline{2-2} 
+ & userRegisterTest\_FAILED\_confirmPasswordEmpty \\ \cline{2-2} 
+ & userUpdateTest\_SUCCESS \\ \cline{2-2} 
+ & userUpdateTest\_FAILED\_authentication\_failed \\ \cline{2-2} 
+ & userLoginTest\_FAILED\_user\_not\_exist \\ \cline{2-2} 
+ & userQueryTest\_FAILED\_user\_not\_found \\ \cline{2-2} 
+ & userForgotPassword\_SUCCESS \\ \cline{2-2} 
+ & merchantApplyTest\_FAILED\_merchantRole \\ \cline{2-2} 
+ & userUpdateTest\_FAILED\_user\_exist \\ \cline{2-2} 
+ & userLoginTest\_SUCCESS \\ \cline{2-2} 
+ & merchantApplyTest\_SUCCESS \\ \cline{2-2} 
+ & userLoginTest\_FAILED\_wrong\_password \\ \cline{2-2} 
+ & userRegisterTest\_FAILED\_birthDateNotValid \\ \cline{2-2} 
+ & userForgotPassword\_FAILED\_paramIllegal \\ \cline{2-2} 
+ & emailEncryptTest\_SUCCESS \\ \cline{2-2} 
+ & userRegisterTest\_FAILED\_usernameAlreadyExist \\ \cline{2-2} 
+ & userQueryTest\_SUCCESS \\ \cline{2-2} 
+ & userActivate\_SUCCESS \\ \cline{2-2} 
+ & userQueryTest\_SUCCESS\_username \\ \cline{2-2} 
+ & userUpdateTest\_FAILED\_session\_expired \\ \cline{2-2} 
+ & usrUpdateTest\_SUCCESS\_withExtendInfo \\ \cline{2-2} 
+ & userUpdateTest\_SUCCESS\_withLocation \\ \hline
+\caption{Whitebox testing scenario}
+\label{tab:whiteboxTestingScenario}\\
+\end{longtable}
+
 \end{enumerate}
+
+\newpage
+\stepcounter{page}
+\newpage
+
+\bab{Bab 5. Simpulan dan Saran}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
