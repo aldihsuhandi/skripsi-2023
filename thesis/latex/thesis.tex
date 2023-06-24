@@ -38,6 +38,7 @@
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}% Definig a custom style:
+\definecolor{Black}{rgb}{1,1,1}
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
     keywordstyle=\color{codegreen},
@@ -98,6 +99,7 @@
 \date{}
 \title{Shumishumi - Pasar Daring untuk Hobi dengan Penyaringan Tingkat Minat dan Sistem Rekomendasi Menggunakan Implementasi Knowledge Graph}
 \clearpage\maketitle
+\addcontentsline{toc}{section}{\protect\numberline{} Halaman Sampul}
 \setstretch{1.5}
 \vspace{4em}%
 \begin{center}
@@ -119,9 +121,11 @@
 \end{figure}
 
 \newpage
+\addcontentsline{toc}{section}{\protect\numberline{} Halaman Judul}
 \includepdf[pages=1]{pdf/thesis-title.pdf}
 
 \newpage
+\addcontentsline{toc}{section}{\protect\numberline{}Peryataan Originalitas}
 \includepdf[pages=1]{pdf/Halaman_Originalitas.pdf}
 
 \newpage
@@ -235,10 +239,9 @@ Bab keempat ini menjelaskan hasil penelitian dan pembahasan. Hasil penelitian ya
 Bab kelima ini akan memaparkan beberapa kesimpulan yang dapat diambil dan saran - saran yang didasarkan pada hasil yang didapatkan, dibab ini juga akan menyimpulkan apakahh ide aplikasi ini mempunyai potensi tinggi jika diimplementasikan didunia nyata.
 
 \newpage
+\stepcounter{page}
+\newpage
 \bab{Bab 2. Tinjauan Pustaka}
-% OOP, Functional Programming, Design Pattern, Architecural Pattern
-
-
 \subbab{Teori - Teori Umum}
 
 \subsubbab{\textit{Object Oriented Programming}}
@@ -1123,7 +1126,7 @@ Pengembangan \textit{website shumishumi} ini menggunakan metode \textit{agile sc
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for create \\ item in merchant page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \cmidrule(l){2-4}
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for edit item \\ in item detail page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \cmidrule(l){2-4}
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for delete item \\ in item detail page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \bottomrule
-\caption{Backlog table}
+\caption{\textit{Table backlog}}
 \label{tab:my-table}\\
 \end{longtable}
 
@@ -3014,7 +3017,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
 \end{enumerate}
 
 \newpage
-\bab{Bab 4. Hasis dan Pembahasan}
+\bab{Bab 4. Hasil dan Pembahasan}
 
 \subbab{Spesifikasi \textit{System}}
 
@@ -3336,6 +3339,334 @@ Penjual dapat ke halaman \textit{Update Item} yang diakses dari halaman detail b
 Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Item} yang berada di halaman detail barang yang mereka ingin hapus.
 
 \end{enumerate}
+
+\newpage
+\subbab{Evaluasi}
+\subsubbab{Evaluasi \textit{User Interface}}
+
+\begin{enumerate}
+    \item Evaluasi \textit{User Interface} berdasarkan delapan aturan emas perancangan antarmuka aplikasi
+    
+    Berikut adalah hasil evaluasi berdasarkan delapan aturan emas perancangan antarmuka menurut pandangan dari para peneliti yang membuat aplikasi ini:
+    
+    \begin{enumerate}
+        \item \textit{Strive for Consistency}
+        
+        Aplikasi \textit{ShumiShumi} ini sudah memiliki desain yang konsisten di seluruh aplikasi. Mulai dari tema warna dan penggunaan bahasa serta \textit{font} kata yang dipakai hingga urutan aksi yang diperlukan untuk melakukan sesuatu. Salah satu contohnya dapat dilihat dari pilihan tema warna yang konsisten yakni biru dan putih serta penggunaan bahasa yang digunakan di seluruh bagian aplikasi ini. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Search.png}
+            \caption{Penggunaan Tema Warna Biru dan Putih yang Konsisten}
+        \end{figure}
+
+        \item \textit{Seek Universal Usability}
+        
+        Untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} ini belum mengimplementasikan fitur-fitur aksesibilitas yang dapat membantu para pengguna dengan sebuah kekurangan/\textit{disability} ataupun untuk para pengguna lansia yang cukup kesulitan untuk menavigasikan aplikasi. untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh. 
+
+        \item \textit{Offer Information Feedback}
+        
+        Aplikasi \textit{ShumiShumi} dianggap sudah memenuhi aturan emas yang ketiga ini. Aplikasi \textit{ShumiShumi} akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna telah menyelesaikan proses transaksinya dan memencet tombol \textit{finish} pada halaman transaksi, maka status transaksi pengguna yang sebelumnya masih berstatus \textit{ongoing} akan berubah menjadi \textit{done}.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Detail Transaksi.png}
+            \caption{Contoh tampilan status pada halaman detail transaksi}
+        \end{figure}
+
+        \item \textit{Design Dialogs to Yield Closure}
+        
+        Aplikasi \textit{ShumiShumi} juga telah dilengkapi dengan fitur pemberitahuan informasi seperti memberitahu apakah profil pengguna telah berhasil diperbarui atau belum, apakah produk yang dimasukan ke dalam \textit{wishlist} sudah berhasil dimasukkan atau belum, dan lain sebagainya. 
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/bukti evaluasi ui/profil berhasil di update.png}
+            \caption{Contoh tampilan pesan saat profil pengguna telah berhasil diperbarui}
+        \end{figure}
+        
+        \item \textit{Prevent Errors}
+        
+        Aplikasi \textit{ShumiShumi} juga telah mengimplementasikan fitur pencegahan agar pengguna tidak melakukan kesalahan pada aplikasi yang dapat berujung untuk menghasilkan sebuah \textit{error}/kerusakan. Seperti contoh, pesan warna merah yang diberikan oleh aplikasi apabila pengguna kelupaan untuk memasukkan informasi kredensialnya dan langsung menekan tombol \textit{login} saat ingin masuk ke dalam aplikasi.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/login.png}
+            \caption{Contoh tampilan pesan pada halaman \textit{login}}
+        \end{figure}
+        \newpage
+        \item \textit{Permit Easy Reversal of Actions}
+        
+        Aplikasi  \textit{ShumiShumi} ini telah dilengkapi dengan fitur untuk mengembalikan suatu aksi yang telah dilakukan oleh user. Seperti tombol hapus yang ada pada halaman \textit{cart} apabila pengguna tidak jadi untuk membeli produk tersebut. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Cart.png}
+            \caption{Halaman \textit{cart} yang memiliki fitur untuk menghapus produk yang tidak jadi dibeli}
+        \end{figure}
+
+        \item \textit{Keep Users in Control}
+        
+        Aplikasi \textit{ShumiShumi} ini masih memiliki kekurangan untuk membantu penggunanya mengubah tampilan \textit{user interface} web sesuai preferensi mereka masing-masing, salah satunya seperti kurangnya dukungan untuk merubah tema warna aplikasi menjadi warna yang gelap \textit{dark mode}. Jadi, untuk aturan emas ketujuh ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh.
+
+        \item \textit{Reduce Short-Term Memory Load}
+        
+        Untuk aturan emas yang terakhir ini, aplikasi \textit{ShumiShumi} dianggap telah menguasainya. Seperti peletakan tombol-tombol pada aplikasi yang mudah untuk diingat hingga fitur-fitur yang dapat mengingat data apa saja yang pengguna telah masukkan ke dalam aplikasi, sehingga pengguna tidak perlu lagi memasukkannya kembali satu per satu. Salah satu contohnya adalah fitur \textit{remember me} pada halaman login yang dapat mengingat \textit{session} pengguna sehingga mereka tidak perlu login kembali apabila secara sengaja/tidak sengaja menutup aplikasi web \textit{ShumiShumi} pada \textit{web browser} mereka.
+
+    \end{enumerate}
+    \newpage
+    \item Evaluasi \textit{User Interface} berdasarkan lima faktor manusia terukur
+    
+    Untuk mengevaluasi lebih lanjut desain \textit{user interface} pada aplikasi \textit{ShumiShumi} ini, maka dilakukan sebuah pengujian langsung terhadap para penggunanya dengan menggunakan suatu pengukuran tertentu yakni, berdasarkan atas lima faktor manusia terukur (\textit{five measurable human factor}). Cara yang digunakan pada penelitian ini adalah dengan menyebarkan survei kepada para calon pengguna untuk menguji langsung aplikasi tersebut. Para calon pengguna yang telah mengisi survei ada sebanyak 38 responden yang berperan sebagai pembeli biasa dan tujuh sebagai penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Di dalam survei diberikan tautan yang menuju ke alamat \textit{website} yang sudah di \textit{deploy} dan sebuah video demonstrasi dari aplikasi \textit{ShumiShumi} ini. Melalui tautan yang telah diberikan, para pengguna dapat langsung menguji dan menilai desain dari aplikasi web \textit{ShumiShumi}. Ada empat pertanyaan yang diberikan (dua untuk pembeli dan dua untuk penjual) dan tujuh pernyataan yang perlu dinilai kesetujuannya atau tidak oleh para pengguna. Skala penilaian dari pernyataan-pernyataan tersebut berkisar antara angka \textbf{satu} hingga \textbf{lima}, satu untuk 'sangat tidak setuju' dan lima untuk 'sangat setuju'. Berikut adalah hasil dari survei yang telah diberikan berdasarkan lima faktor manusia terukur yang telah diuji: 
+
+    \begin{itemize}
+        \item \textit{Time for users to learn specific functions}
+        
+        Ada dua pernyataan yang mengaju pada faktor pertama ini, kedua pernyataan yang diajukan adalah, \textit{"User interface dari website shumishumi mudah dipelajari"} dan \textit{"User interface dari website shumishumi enak untuk dilihat"}. Untuk pernyataan pertama sebanyak 73.7\% dari 38 pengguna memberikan nilai sebesar 'lima' dan sebanyak 26.3\% sebesar 'empat'. Sedangkan untuk pernyataan kedua, sebanyak 55.3\% memberikan nilai sebesar 'empat' dan sebanyak 44.7\% memberikan nilai 'lima'. Ini menandakan bahwa sebagian besar pengguna setuju bahwa aplikasi web \textit{ShumiShumi} cukup mudah untuk dipelajari dan dilihat agar tidak memakan waktu yang lama untuk mempelajarinya. 
+
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 4.png}
+            \caption{Hasil survei untuk pernyataan pertama mengenai faktor pertama}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 6.png}
+            \caption{Hasil survei untuk pernyataan kedua mengenai faktor pertama}
+        \end{figure}
+
+        \item \textit{Speed of task performance}
+        
+        Untuk faktor manusia yang kedua ini, terdapat dua pernyataan juga yang mengajukannya. Pernyataan pertama adalah \textit{"User interface dari website shumishumi mudah untuk dinavigasi"} dan \textit{"Tidak ada proses yang berbelit - belit diwebsite shumishumi"}. Maksud dari kedua pernyataan tersebut adalah untuk menanyakan para penggunanya apakah aplikasi web \textit{ShumiShumi} ini memiliki desain yang susah untuk di navigasi dan berbelit-belit sehingga para pengguna kesulitan untuk menyelesaikan suatu aksi yang dapat memperlambat alur kerja mereka. Untuk hasilnya sendiri, pada pernyataan pertama untuk faktor terukur kedua ini, sebanyak 76.3\% pengguna menilainya sebesar 'lima' dan sebanyak 23.7\% menilai 'empat'. Sedangkan untuk pernyataan kedua, sebanyak 71.1\% memberikan nilai 'lima' dan 28.9\% memberi nilai 'empat'. Itu artinya, masih banyak dari antara pengguna yang setuju bahwa desain aplikasi web \textit{ShumiShumi} tidak memperlambat waktu mereka untuk melakukan berbagai jenis aksi di dalam aplikasi ini. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 7.png}
+            \caption{Hasil survei untuk pernyataan pertama mengenai faktor kedua}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 9.png}
+            \caption{Hasil survei untuk pernyataan kedua mengenai faktor kedua}
+        \end{figure}
+
+        \item \textit{Rate of errors by users}
+        
+        Untuk faktor ketiga ini, hanya ada satu pernyataan yang membahasnya. Pernyataan tersebut adalah \textit{"Saat menggunakan website shumishumi jarang ketemu error"}. Untuk hasilnya sendiri, sebanyak 68.4\% pengguna menilainya sebesar 'empat' dan sebanyak 31.6\% pengguna menilai sebesar 'lima'. Ini menunjukkan bahwa para pengguna jarang mendapatkan \textit{error} pada sistem di aplikasi web \textit{ShumiShumi} ini. 
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 8.png}
+            \caption{Hasil survei untuk faktor terukur yang ketiga}
+        \end{figure}
+
+        \item \textit{User retention of commands over time}
+        
+        Faktor keempat ini yang menguji seberapa lama pengguna dapat mengingat informasi mengenai aplikasi \textit{ShumShumi} ini setelah rentan waktu yang cukup lama. Ada dua pernyataan yang diajukan pada survei, yakni \textit{"User interface dari website shumishumi mudah diingat"} dan \textit{"User interface dari website shumishumi memberikan semua informasi dengan cukup dan ringkas"}. Kedua pernyataan tersebut bermaksud untuk menanyakan kepada pengguna apakah desain aplikasi \textit{ShumiShumi} mudah untuk diingat dalam jangka waktu yang cukup panjang. Dan hasil yang didapatkan adalah sebanyak 68.4\% memberi nilai 'empat' dan 31.6\% memberi nilai 'lima'. Ini menunjukkan para pengguna setuju bahwa desain dari aplikasi \textit{ShumiShumi} mudah untuk diingat untuk jangka waktu yang cukup lama. 
+
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 3.png}
+            \caption{Hasil survei untuk faktor terukur yang keempat dari pernyataan pertama}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 5.png}
+            \caption{Hasil survei untuk faktor terukur yang keempat dari pernyataan kedua}
+        \end{figure}
+
+        \item \textit{Subjective user satisfaction}
+        
+        Faktor terakhir merupakan kepuasaan dari para pengguna yang telah mencoba untuk menggunakan aplikasi \textit{ShumiShumi}. Disini, nilai kepuasaan dari para pengguna dibagi menjadi dua sudut pandang yang berbeda yakni, dari sudut pandang pengguna yang merupakan pembeli biasa dan dari sudut pandang penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Akan ada dua pertanyaan yang diajukan untuk masing-masing pembeli biasa dan penjual dengan bentuk jawaban dari kedua pertanyaan tersebut yang berupa sebuah skala penilaian yang dimulai dari angka \textbf{satu} hingga \textbf{lima}. Satu untuk menggambarkan jawaban 'tidak membantu' sedangkan lima untuk 'sangat membantu'.
+
+        Berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{pembeli}, \textit{"Apakah anda sebagai pengguna yang bertujuan untuk membeli barang, dapat menggunakkan fitur filter Interest Level kami untuk mencari barang yang tepat?"} dan \textit{"Apakah anda tertarik atas rekomendasi yang berada di Home Page kami?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasaan para pembeli setelah menggunakan kedua fitur utama yang aplikasi ini berikan, yaitu fitur penyaringan tingkat minat penggguna (\textit{interest level filtering}) dan sistem rekomendasinya. Hasil yang didapat untuk pertanyaan pertama adalah sebanyak 57.9\% memberi nilai 'lima' dan 42.1\% untuk nilai 'empat'. Sedangkan untuk pertanyaan kedua, hasil yang didapat adalah sebanyak 63.2\% dan 36.8\% yang masing-masing memberi nilai 'lima' dan 'empat'. Dengan demikian, dapat disimpulkan bahwa semua pembeli yang telah mencoba aplikasi \textit{ShumiShumi} merasa \textbf{puas} dengan fitur yang diberikan dan desain yang ditampilkan. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 1.png}
+            \caption{Bukti survei untuk tingkat kepuasan para pembeli mengenai fitur \textit{interest level filtering}}
+        \end{figure}
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 2.png}
+            \caption{Bukti survei untuk tingkat kepuasan para pembeli mengenai sistem rekomendasinya}
+        \end{figure}
+
+        Sedangkan, berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{penjual}, \textit{"Apakah adanya fitur interest level ini membantu anda untuk menjual produk anda ke pembeli yang tepat?"} dan \textit{"Apakah keberadaan sistem rekomendasi membantu produk yang anda jual untuk ditemukan oleh banyak calon pembeli?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasaan para penjual mengenai keberadaan dan kegunaan fitur penyaringan tingkat minat penggguna (\textit{interest level filtering}) dan sistem rekomendasi terhadap tingkat penjualan toko mereka. Hasil yang didapat dari pertanyaan pertama adalah sebanyak 14.3\% memberi nilai 'lima', 42.9\% memberi nilai 'empat' dan 42.9\% memberi nilai 'tiga'. Sedangkan untuk pertanyaan kedua, sebanyak 57.1\% memberi nilai 'lima', 28.6\% memberi nilai 'empat' dan sebanyak 14.3\% memberi nilai 'tiga'. Dari variasi penilaian tersebut dapat disimpulkan bahwa para penjual merasa \textbf{cukup puas} dengan adanya fitur yang diberikan dan desain yang ditampilkan. 
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui merchant/Survei 3 - Pertanyaan 1.png}
+            \caption{Bukti survei untuk tingkat kepuasan para penjual mengenai mengenai fitur \textit{interest level filtering}}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.65]{images/evaluasi ui merchant/Survei 3 - Pertanyaan 2.png}
+            \caption{Bukti survei untuk tingkat kepuasan para penjual mengenai mengenai sistem rekomendasi}
+        \end{figure}
+
+    \end{itemize}
+
+\end{enumerate}
+
+\newpage
+\subsubbab{Evaluasi Sistem}
+
+\begin{enumerate}
+    \item \textit{Blackbox testing}
+
+    \textit{Blackbox testing} ini dilakukan oleh tiga orang \textit{tester} selama tiga hari setelah masa \textit{development} selesai, tabel berikut berisi semua skenario \textit{test} yang dijalankan di\textit{sprint} terakhir.
+\begin{longtable}[c]{|l|l|l|l|}
+\hline
+\textit{Testcase} & \textit{Scenario} & \textit{Step} & \textit{Expected outcome} \\ \hline
+\endfirsthead
+\endhead
+\multirow{4}{*}{\textit{Register page}} & \textit{User can register} & \textit{\begin{tabular}[c]{@{}l@{}}- click register button\\ - fill out register form\\ - click register\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Redirect \\ To activate page\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}Register failed when\\ date of birth\\ is invalid\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- click register button\\ - fill out form with invalid\\   date of birth\\ - click register\end{tabular}} & \textit{Show error message} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}Register failed when identifier \\ Is already taken\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- click register button\\ - fill out form with invalid\\   email, phonenumber \\   or username\\ - click register\end{tabular}} & \textit{Show error message} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}Register failed when \\ password doesn’t \\ Meets the minimum criteria\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- click register button\\ - fill out form invalid password\\ - click register\end{tabular}} & \textit{Get error message} \\ \hline
+\multirow{4}{*}{\textit{Login page}} & \textit{User can login} & \textit{\begin{tabular}[c]{@{}l@{}}- click login button\\ - fill out login form\\ - click login\end{tabular}} & \textit{Redirect to homepage} \\ \cline{2-4} 
+ & \textit{User not exist} & \textit{\begin{tabular}[c]{@{}l@{}}- click login button\\ - fill out with invalid user email\\ - click login\end{tabular}} & \textit{Get error message} \\ \cline{2-4} 
+ & \textit{User is not active} & \textit{\begin{tabular}[c]{@{}l@{}}- click login button\\ - fill out with inactive user\\   email\\ - click login\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Redirect to\\ activate page\end{tabular}} \\ \cline{2-4} 
+ & \textit{Wrong password} & \textit{\begin{tabular}[c]{@{}l@{}}- click login\\ - fill out form with \\   invalid password\\ - click login\end{tabular}} & \textit{Get error message} \\ \hline
+\multirow{3}{*}{\textit{Activate page}} & \textit{User can be activated} & \textit{\begin{tabular}[c]{@{}l@{}}- fillout the correct otp\\ - click activate\end{tabular}} & \textit{Redirect to login page} \\ \cline{2-4} 
+ & \textit{Invalid otp} & \textit{\begin{tabular}[c]{@{}l@{}}- fillout form with invalid otp\\ - click activate\end{tabular}} & \textit{Get error message} \\ \cline{2-4} 
+ & \textit{Resend otp} & \textit{- click resend otp} & \textit{Got new OTP Email} \\ \hline
+\multirow{2}{*}{\textit{Home page}} & \textit{\begin{tabular}[c]{@{}l@{}}Check navbar \\ when not logged in\end{tabular}} & \textit{homepage when not logged in} & \textit{\begin{tabular}[c]{@{}l@{}}Register and login\\ button appear in\\ navbar\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}Check navbar \\ when logged in\end{tabular}} & \textit{homepage when logged in} & \textit{\begin{tabular}[c]{@{}l@{}}Profile appear in \\ Navbar\end{tabular}} \\ \hline
+\multirow{2}{*}{\textit{Search page}} & \textit{User can search item} & \textit{\begin{tabular}[c]{@{}l@{}}- fillout search bar\\ - adjust filter \\ - click filter\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Show item with the\\ correct criteria\end{tabular}} \\ \cline{2-4} 
+ & \textit{Searching not found any item} & \textit{\begin{tabular}[c]{@{}l@{}}- search invalid itemname\\ - click search\end{tabular}} & \textit{show not found widget} \\ \hline
+\multirow{9}{*}{\textit{\begin{tabular}[c]{@{}l@{}}Item detail\\ Page\end{tabular}}} & \textit{\begin{tabular}[c]{@{}l@{}}User can open \\ item detail page\end{tabular}} & \textit{- click item widget} & \textit{show item detail page} \\ \cline{2-4} 
+ & \textit{User can wishlist item} & \textit{- click wishlist button} & \textit{\begin{tabular}[c]{@{}l@{}}wishlist button will \\ change to show item\\ is in wishlist\end{tabular}} \\ \cline{2-4} 
+ & \textit{User can unwishlist item} & \textit{- click wishlist button} & \textit{\begin{tabular}[c]{@{}l@{}}wishlist button will \\ change to show\\ item is not in wishlist\end{tabular}} \\ \cline{2-4} 
+ & \textit{User can add item to cart} & \textit{\begin{tabular}[c]{@{}l@{}}- change cart quantity\\ - click add to cart button\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}item will be in cart with\\ appropriate quantity\end{tabular}} \\ \cline{2-4} 
+ & \textit{User can create discussion} & \textit{\begin{tabular}[c]{@{}l@{}}- fillout discussion form\\ - click post\end{tabular}} & \textit{show discussion} \\ \cline{2-4} 
+ & \textit{User can edit discussion} & \textit{\begin{tabular}[c]{@{}l@{}}- click edit discussion\\ - fill out form\\ - click submit\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}show edited \\ discussion\end{tabular}} \\ \cline{2-4} 
+ & \textit{User can delete discussion} & \textit{- click delete discussion} & \textit{\begin{tabular}[c]{@{}l@{}}remove discussion \\ from page\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}Merchant can update \\ item information\end{tabular}} & \textit{- click update button} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirect to\\ update item form\end{tabular}} \\ \cline{2-4} 
+ & \textit{Merchant can delete item} & \textit{- click delete button} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirect to \\ homepage and item is\\ removed\end{tabular}} \\ \hline
+\multirow{2}{*}{\textit{Wishlist page}} & \textit{user can search wishlist} & \textit{\begin{tabular}[c]{@{}l@{}}- fillout search bar\\ - adjust filter \\ - click filter\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Show wishlisted\\ item with the\\ correct criteria\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}user can remove item \\ from wishlist\end{tabular}} & \textit{- click remove item} & \textit{\begin{tabular}[c]{@{}l@{}}remove item from \\ wishlist\end{tabular}} \\ \hline
+\multirow{6}{*}{\textit{Cart page}} & \textit{user can select item} & \textit{\begin{tabular}[c]{@{}l@{}}- click checkmark field when\\   unselected\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}item will be selected\\ and total cart price\\ will be updated\end{tabular}} \\ \cline{2-4} 
+ & \textit{user can unselect item} & \textit{\begin{tabular}[c]{@{}l@{}}- click checkmark field when\\   selected\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}item will be unselected\\ and total cart price\\ will be updated\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}user can adjust \\ selected item quantity\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- select item in cart\\ - update item quantity\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}item quantity\\ will change and cart\\ total price will be\\ updated\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}user can adjust \\ unselected item quantity\end{tabular}} & \textit{- update item quantity} & \textit{\begin{tabular}[c]{@{}l@{}}item quantity \\ will change\end{tabular}} \\ \cline{2-4} 
+ & \textit{user can buy selected item} & \textit{\begin{tabular}[c]{@{}l@{}}- select some item\\ - click buy\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirected to\\ transaction payment\\ page\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}click buy item \\ when there are \\ no selected item\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- unselect all item\\ - click buy\end{tabular}} & \textit{Show error message} \\ \hline
+\textit{Payment page} & \textit{\begin{tabular}[c]{@{}l@{}}user can pick \\ payment method\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- select payment \\   method\\ - click pay\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirected into\\ transaction detail page\end{tabular}} \\ \hline
+\multirow{3}{*}{\textit{\begin{tabular}[c]{@{}l@{}}Transaction\\ page\end{tabular}}} & \textit{User can view all transaction} & \textit{- open transaction page} & \textit{show all transaction} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}User can filter transaction\\ by status\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- open transaction page\\ - change status filter\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}show transaction\\ with appropriate\\ status\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}User can view transaction\\ detail\end{tabular}} & \textit{- click see detail button} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirect to\\ transaction detail\\ page\end{tabular}} \\ \hline
+\multirow{2}{*}{\textit{Review page}} & \textit{user can create review} & \textit{\begin{tabular}[c]{@{}l@{}}- open review page\\ - click see \\   ‘waiting to be reviewed’\\ - click review\\ - fill out review form\\ - click submit review\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirected to\\ past review list page\end{tabular}} \\ \cline{2-4} 
+ & \textit{user can see past review} & \textit{\begin{tabular}[c]{@{}l@{}}- open review page\\ - click ‘see reviews’\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirected to\\ past review list page\end{tabular}} \\ \hline
+\multirow{3}{*}{\textit{Merchant page}} & \textit{\begin{tabular}[c]{@{}l@{}}user can see \\ merchant reviews\end{tabular}} & \textit{- click 'merchant review'} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirected to\\ merchant review page\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}user can search \\ merchant items\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- fillout search bar\\ - click search\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Show item with the\\ correct criteria\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}merchant can \\ create new item\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- click create item \\ - fill out create item form\\ - click submit\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}will be redirected to\\ item detail page\end{tabular}} \\ \hline
+\multirow{3}{*}{\textit{profile page}} & \textit{\begin{tabular}[c]{@{}l@{}}user can update\\ user information\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- click update profile\\ - fill out update form\\ - click submit\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}redirect to profile page\\ with updated \\ information\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}user can become\\ a merchant\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- fill out location\\ - click 'become a merchant'\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}user become a\\ merchant\end{tabular}} \\ \cline{2-4} 
+ & \textit{\begin{tabular}[c]{@{}l@{}}user failed to become\\ a merchant\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- dont fill out locatiaon\\ - click 'become a merchant'\end{tabular}} & \textit{Show error message} \\ \hline
+\textit{Logout} & \textit{user can logout} & \textit{- click logout button} & \textit{\begin{tabular}[c]{@{}l@{}}redirect to homepage\\ without any login\\ information\end{tabular}} \\ \hline
+\textit{Recommend} & \textit{\begin{tabular}[c]{@{}l@{}}user can get \\ item recommendation\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}- login\\ - open item detial\\ - go to homepage\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}user should be \\ getting \\ recommendation\\ base on their\\ activity\end{tabular}} \\ \hline
+\caption{Blackbox testing scenario}
+\label{tab:blackboxTestingScenario}\\
+\end{longtable}
+
+    \item \textit{Whitebox testing} disini dilakukan disisi \textit{backend} dan menggunakan \textit{library JUnit}, \textit{whitebox testing} ini dilakukan akan dilakukan setiap kali ada \textit{pull request} ke \textit{branch main}, berikut adalah semua \textit{testcase} yang dijalankan di\textit{pull request} terakhir.
+\begin{longtable}[c]{|l|l|}
+\hline
+\textit{Test class} & \textit{Test case} \\ \hline
+\endfirsthead
+\endhead
+\multirow{4}{*}{\textit{CartFacadeTest}} & \textit{updateCartTest\_SUCCESS} \\ \cline{2-2} 
+ & \textit{addCartTest\_SUCCESS} \\ \cline{2-2} 
+ & queryCartTest\_SUCCESS \\ \cline{2-2} 
+ & calculateCartTest\_SUCCESS \\ \hline
+\multirow{3}{*}{clientFacadeTest} & authenticateTest\_SUCCESS \\ \cline{2-2} 
+ & authenticateTest\_FAILED\_client\_secret\_failed \\ \cline{2-2} 
+ & authenticateTest\_FAILED\_client\_not\_exist \\ \hline
+\multirow{4}{*}{CommentFacadeTest} & queryDiscussionTest\_SUCCESS \\ \cline{2-2} 
+ & deleteDiscussionTest\_SUCCESS \\ \cline{2-2} 
+ & createDiscussionTest\_SUCCESS \\ \cline{2-2} 
+ & updateDiscussionTest\_SUCCESS \\ \hline
+\multirow{2}{*}{ForgotPasswordFacadeTest} & forgotPasswordQueryTest\_SUCCESS \\ \cline{2-2} 
+ & forgotPasswordSendTest\_SUCCESS \\ \hline
+\multirow{2}{*}{ImageFacadeTest} & imageUploadTest\_SUCCESS \\ \cline{2-2} 
+ & imageDownloadTest\_SUCCESS \\ \hline
+\multirow{15}{*}{ItemFacadeTest} & updateItemTest\_FAILED\_itemNotFound \\ \cline{2-2} 
+ & deleteItemTest\_SUCCESS\_withKnowledge \\ \cline{2-2} 
+ & queryItemTest\_SUCCESS\_withWishlist \\ \cline{2-2} 
+ & queryItemTest\_SUCCESS\_byIdWithSession \\ \cline{2-2} 
+ & createItemTest\_SUCCESS\_withKnowledge \\ \cline{2-2} 
+ & createItemTest\_SUCCESS \\ \cline{2-2} 
+ & approvalItemTest\_FAILED\_itemAlreadyApproved \\ \cline{2-2} 
+ & autocompleteTest\_SUCCESS \\ \cline{2-2} 
+ & queryItemTest\_SUCCESS\_queryListWithSession \\ \cline{2-2} 
+ & updateItemTest\_SUCCESS\_withKnowledge \\ \cline{2-2} 
+ & createItemTest\_FAILED\_userNotMerchant \\ \cline{2-2} 
+ & recommendTest\_SUCCESS \\ \cline{2-2} 
+ & approvalItemTest\_SUCCESS \\ \cline{2-2} 
+ & deleteItemTest\_SUCCESS \\ \cline{2-2} 
+ & updateItemTest\_SUCCESS \\ \hline
+\multirow{4}{*}{ItemWishlistFacadeTest} & addWishlist\_SUCCESS \\ \cline{2-2} 
+ & queryWishlist\_SUCCESS \\ \cline{2-2} 
+ & addWishlist\_FAILED\_paramIllegal \\ \cline{2-2} 
+ & removeWishlist\_SUCCESS \\ \hline
+\multirow{3}{*}{OtpFacadeTest} & sendOTPTest\_SUCCESS \\ \cline{2-2} 
+ & sendOTPTest\_FAILED\_userAlreadyActivated \\ \cline{2-2} 
+ & validateOTPTest\_SUCCESS \\ \hline
+\multirow{3}{*}{ReviewFacadeTest} & createReviewsTest\_SUCCESS \\ \cline{2-2} 
+ & reviewQueryByUser\_SUCCESS \\ \cline{2-2} 
+ & reviewQueryByMerchant\_SUCCESS \\ \hline
+\multirow{3}{*}{SessionFacadeTest} & sessionQueryTest\_SUCCESS \\ \cline{2-2} 
+ & sessionLogoutTest\_FAILED\_expired \\ \cline{2-2} 
+ & sessionLogoutTest\_SUCCESS \\ \hline
+\multirow{5}{*}{TransactionFacadeTest} & payTransactionTest\_SUCCESS \\ \cline{2-2} 
+ & cancelTransactionTest\_SUCCESS \\ \cline{2-2} 
+ & queryTransactionTest\_SUCCESS \\ \cline{2-2} 
+ & finishTransactionTest\_SUCCESS \\ \cline{2-2} 
+ & createTransactionTest\_SUCCESS \\ \hline
+\multirow{25}{*}{UserFacadeTest} & userActivate\_FAILED\_otpValidationError \\ \cline{2-2} 
+ & userRegisterTest\_FAILED\_userAlreadyExist \\ \cline{2-2} 
+ & emailDecryptTest\_SUCCESS \\ \cline{2-2} 
+ & userRegisterTest\_SUCCESS \\ \cline{2-2} 
+ & userRegisterTest\_FAILED\_confirmPasswordEmpty \\ \cline{2-2} 
+ & userUpdateTest\_SUCCESS \\ \cline{2-2} 
+ & userUpdateTest\_FAILED\_authentication\_failed \\ \cline{2-2} 
+ & userLoginTest\_FAILED\_user\_not\_exist \\ \cline{2-2} 
+ & userQueryTest\_FAILED\_user\_not\_found \\ \cline{2-2} 
+ & userForgotPassword\_SUCCESS \\ \cline{2-2} 
+ & merchantApplyTest\_FAILED\_merchantRole \\ \cline{2-2} 
+ & userUpdateTest\_FAILED\_user\_exist \\ \cline{2-2} 
+ & userLoginTest\_SUCCESS \\ \cline{2-2} 
+ & merchantApplyTest\_SUCCESS \\ \cline{2-2} 
+ & userLoginTest\_FAILED\_wrong\_password \\ \cline{2-2} 
+ & userRegisterTest\_FAILED\_birthDateNotValid \\ \cline{2-2} 
+ & userForgotPassword\_FAILED\_paramIllegal \\ \cline{2-2} 
+ & emailEncryptTest\_SUCCESS \\ \cline{2-2} 
+ & userRegisterTest\_FAILED\_usernameAlreadyExist \\ \cline{2-2} 
+ & userQueryTest\_SUCCESS \\ \cline{2-2} 
+ & userActivate\_SUCCESS \\ \cline{2-2} 
+ & userQueryTest\_SUCCESS\_username \\ \cline{2-2} 
+ & userUpdateTest\_FAILED\_session\_expired \\ \cline{2-2} 
+ & usrUpdateTest\_SUCCESS\_withExtendInfo \\ \cline{2-2} 
+ & userUpdateTest\_SUCCESS\_withLocation \\ \hline
+\caption{Whitebox testing scenario}
+\label{tab:whiteboxTestingScenario}\\
+\end{longtable}
+
+\end{enumerate}
+
+\newpage
+\stepcounter{page}
+\newpage
+
+\bab{Bab 5. Simpulan dan Saran}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Referensi}
