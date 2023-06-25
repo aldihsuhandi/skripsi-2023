@@ -66,7 +66,7 @@
 \graphicspath{{./images/}, {./diagram}}
 \geometry{a4paper, top=4.0cm, bottom=3.0cm,
           left=4.0cm, includehead, includefoot}
-\renewcommand\contentsname{Daftar Pustaka}
+\renewcommand\contentsname{Daftar Isi}
 \renewcommand\listfigurename{Daftar Gambar}
 \renewcommand\listtablename{Daftar Tabel}
 \emergencystretch=2em
@@ -132,7 +132,7 @@
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Halaman Pernyataan Orisinalitas}
-\includepdf[pages=1]{pdf/Halaman_Originalitas.pdf}
+\includepdf[pages=1]{pdf/Halaman Originalitas.pdf}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Abstrak}
@@ -143,7 +143,7 @@
 \includepdf[pages=1]{pdf/Kata_Pengantar_Doang.pdf}
 
 \newpage
-\addcontentsline{toc}{section}{\protect\numberline{}Daftar Pustaka}
+\addcontentsline{toc}{section}{\protect\numberline{}Daftar Isi}
 \tableofcontents
 
 \newpage
@@ -987,73 +987,30 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
     \end{itemize}
 \end{enumerate}
 \subbab{Aplikasi Serupa}
-Berikut adalah perbandingan fitur-fitur yang dimiliki oleh aplikasi \textit{ShumiShumi} yang dikembangkan di dalam penelitian ini dengan beberapa aplikasi serupa dari hasil penelitian-penelitian terdahulu yang sebelumnya sudah dibahas sedikit pada bagian latar belakang.
+Berikut adalah beberapa aplikasi sejenis yang sudah pernah dikembangkan atau dibuat oleh beberapa penelitian terdahulu:
 
-Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi bernama LIDI\autocite{lidi-car-rental}, e-Nelayan Kota Samarahan\autocite{fishes-marketplace} dan aplikasi BUM Desa Pakis\autocite{bum-mekarsari}.
+\begin{itemize}
+    \item Aplikasi \textit{marketplace} untuk produk agrikultural
+    
+    Sebuah aplikasi berbasis \textit{mobile} yang dikembangkan oleh Heru Nugroho, Robbi Hendriyanto dan Kautsar Tisamawi. Aplikasi ini dibuat dengan tujuan untuk membantu para petani di Indonesia memperdagangkan produk-produk agrikultur yang telah mereka panen ke masyarakat dengan harga yang sewajarnya\autocite{agriculture-marketplace}. 
 
-\begin{longtable}{|p{3cm}|p{2cm}|p{2cm}|p{3cm}|p{2cm}|}
-    \hline
-    Fitur & ShumiShumi & LIDI & e-Nelayan Kota Samarahan & BUM Desa Pakis\\
-    \hline
-    Register dan Login & Y & Y & Y & Y\\
-    \hline
-    Sistem Rekomendasi & Y & N & N & N\\
-    \hline
-    Sistem Pencarian & Y & Y & Y & Y\\
-    \hline
-    Filter Pencarian & Y & Y & Y & Y\\
-    \hline
-    \textit{Wishlist} & Y & N & N & N\\
-    \hline
-    Memperbarui Data Profil & Y & N & Y & Y\\
-    \hline
-    Sarana Berdiskusi & Berdiskusi di halaman produk & Melalui telepon & Berdiskusi via post & N\\
-    \hline
-    Merubah \textit{Role} Pengguna & Y & N & Y & N\\
-    \hline
-    Fitur Pembelian (\textit{Cart}) & Y & Y & Y & Y\\
-    \hline
-    Sistem Pembayaran & Terintegrasi dengan bank & Terintegrasi dengan bank & \textit{Cash on delivery} & Transfer melalui bank\\
-    \hline
-    Sarana Ulasan & Y & N & N & N\\
-    \hline
-    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)}
-\end{longtable}
+    \item Aplikasi bernama e-Nelayan yang menjual ikan
+    
+    Aplikasi berbasis \textit{mobile} yang dikembangkan untuk membantu para nelayan di Kota Samarahan, Malaysia untuk memperdagangkan hasil tangkapan ikan mereka ke para pedagang/pasar dan/atau kepada warga secara langsung. Aplikasi ini dikembangkan oleh Mohammad Nazrul Mornie, Nurfauza Jali, Kartinah Zen dan Suriati Khartini Jali\autocite{fishes-marketplace}.
 
-\textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
-\newpage
-Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi \textit{marketplace} agrikultur\autocite{agriculture-marketplace} dan aplikasi C2C \textit{marketplace} produk perikanan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}.
+    \item Aplikasi perdagangan ikan C2C menggunakan metode \textit{SMS Gateway}
+    
+    Sebuah aplikasi berbasis \textit{mobile} dan web yang dikembangkan untuk membantu para nelayan di wilayah pedalaman Pulau Batam untuk mendagangkan ikan-ikan mereka kepada masyarakat dengan menggunakan metode \textit{SMS Gateway}. Aplikasi ini dikembangkan oleh Dwi Ely Kurniawan, Nur Zahrati Janah, Ari Wibowo, Mir'atul Khusna Mufida dan Purwono Prasetyawan\autocite{c2c-fish-marketplace}.
 
-\begin{longtable}{|p{3cm}|p{2cm}|p{3cm}|p{4cm}|}
-    \hline
-    Fitur & ShumiShumi & \textit{Marketplace} Agrikultur & C2C \textit{Marketplace} Perikanan\\
-    \hline
-    Register dan Login & Y & Y & Y\\
-    \hline
-    Sistem Rekomendasi & Y & N & N\\
-    \hline
-    Sistem Pencarian & Y & Y & Y\\
-    \hline
-    Filter Pencarian & Y & N & N\\
-    \hline
-    \textit{Wishlist} & Y & N & N\\
-    \hline
-    Memperbarui Data Profil & Y & N & Y\\
-    \hline
-    Sarana Berdiskusi & Berdiskusi di halaman produk & N & Melalui pesan teks/telepon\\
-    \hline
-    Merubah \textit{Role} Pengguna & Y & N & N\\
-    \hline
-    Fitur Pembelian (\textit{Cart}) & Y & Y & Y\\
-    \hline
-    Sistem Pembayaran & Terintegrasi dengan bank & Transfer & \textit{Cash on delivery}\\
-    \hline
-    Sarana Ulasan & Y & N & N\\
-    \hline
-    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)}
-\end{longtable}
+    \item Aplikasi rental mobil bernama LIDI
+    
+    Aplikasi berbasis web yang dikembangkan dengan tujuan untuk membantu para usaha penyewa mobil untuk menyewakan mobil-mobil mereka kepada warga di wilayah Sidoarjo secara \textit{online}. Aplikasi ini dikembangkan oleh N F Rozi, M Ruswiansari, A Rachman, S R Wardhana dan L Istiyanto\autocite{lidi-car-rental}. 
 
-\textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
+    \item Aplikasi \textit{e-marketplace} untuk badan usaha kecil, mikro dan menengah milik desa
+    
+    Aplikasi berbasis web yang ditujukan kepada Badan Usaha Milik (BUM) Desa Pakis Sabilulungan di wilayah Mekarsari, Bandung, Indonesia. Aplikasi ini dikembangkan oleh Rachmadita Andreswari bersama dengan Nia Ambarsari, Alvi Syahrina, Warih Puspitasari, Atik Novianti dan Irfan Darmawan\autocite{bum-mekarsari}.
+
+\end{itemize}
 
 \newpage
 \bab{Bab 3. Metode Penelitian}
@@ -1180,7 +1137,7 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
 \begin{enumerate}
     \item Aplikasi \textit{marketplace} berbasis \textit{mobile} untuk produk-produk agrikultur
 
-    Penelitian pertama yang akan dibahas adalah sebuah penelitian yang mengembangkan aplikasi \textit{marketplace} berbasis \textit{mobile} untuk produk-produk agrikultur yang dikembangkan oleh Heru Nugroho, Robbi Hendriyanto dan Kautsar Tisamawi. Aplikasi ini merupakan sebuah aplikasi berbasis \textit{mobile} yang dipergunakan untuk menjualbelikan produk-produk yang berhubungan dengan agrikultur seperti padi, jagung, singkong, kentang, buah-buahan, sayur-sayuran dan masih banyak lagi. Aplikasi ini dibuat dengan tujuan untuk membantu para petani di Indonesia untuk menjualbelikan produk-produk agrikultur yang telah mereka panen ke masyarakat luas dengan harga yang sepadan atau sewajarnya. Dikarenakan sebelumnya, para petani harus melewati rantai perdagangan penjualan produk yang cukup panjang agar produk agrikultur mereka bisa sampai ke masyarakat\autocite{agriculture-marketplace}.
+    Penelitian pertama yang akan dibahas adalah sebuah penelitian yang mengembangkan aplikasi \textit{marketplace} berbasis \textit{mobile} untuk produk-produk agrikultur yang dikembangkan oleh Heru Nugroho, Robbi Hendriyanto dan Kautsar Tisamawi. Aplikasi ini merupakan sebuah aplikasi berbasis \textit{mobile} yang dipergunakan untuk menjualbelikan produk-produk yang berhubungan dengan agrikultur seperti padi, jagung, singkong, kentang, buah-buahan, sayur-sayuran dan masih banyak lagi. Aplikasi ini dibuat dengan tujuan untuk membantu para petani di Indonesia untuk menjualbelikan produk-produk agrikultur yang telah mereka panen ke masyarakat dengan harga yang sepadan atau sewajarnya. Dikarenakan sebelumnya, para petani harus melewati rantai perdagangan penjualan produk yang cukup panjang agar produk agrikultur mereka bisa sampai ke masyarakat\autocite{agriculture-marketplace}.
 
     Rantai perdagangan tersebut dapat meliputi petani itu sendiri, pedagang grosir kecil, pedagang grosir besar, pasar induk, pasar tradisional, dan seterusnya hingga baru sampai ke tangan masyarakat. Hal ini juga menyebabkan harga produk-produk agrikultur yang terjual ke masyarakat menjadi cukup tinggi, sedangkan harga awal yang diberikan oleh petani kepada para pedagang tersebut jauh lebih rendah. Untuk itu, dibuatlah aplikasi \textit{marketplace} agrikultur ini supaya dapat membantu para petani menjualbelikan produk mereka ke masyarakat dengan lebih mudah\autocite{agriculture-marketplace}.
 
@@ -1537,6 +1494,72 @@ Berikut pula adalah salah satu aplikasi sejenis yang juga menjadi salah satu lat
 
     \caption{Aplikasi pasaran yang serupa dengan proyek ini}
 \end{longtable}
+\newpage
+Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi bernama LIDI\autocite{lidi-car-rental}, e-Nelayan Kota Samarahan\autocite{fishes-marketplace} dan aplikasi BUM Desa Pakis\autocite{bum-mekarsari}.
+
+\begin{longtable}{|p{3cm}|p{2cm}|p{2cm}|p{3cm}|p{2cm}|}
+    \hline
+    Fitur & ShumiShumi & LIDI & e-Nelayan Kota Samarahan & BUM Desa Pakis\\
+    \hline
+    Register dan Login & Y & Y & Y & Y\\
+    \hline
+    Sistem Rekomendasi & Y & N & N & N\\
+    \hline
+    Sistem Pencarian & Y & Y & Y & Y\\
+    \hline
+    Filter Pencarian & Y & Y & Y & Y\\
+    \hline
+    \textit{Wishlist} & Y & N & N & N\\
+    \hline
+    Memperbarui Data Profil & Y & N & Y & Y\\
+    \hline
+    Sarana Berdiskusi & Berdiskusi di halaman produk & Melalui telepon & Berdiskusi via post & N\\
+    \hline
+    Merubah \textit{Role} Pengguna & Y & N & Y & N\\
+    \hline
+    Fitur Pembelian (\textit{Cart}) & Y & Y & Y & Y\\
+    \hline
+    Sistem Pembayaran & Terintegrasi dengan bank & Terintegrasi dengan bank & \textit{Cash on delivery} & Transfer melalui bank\\
+    \hline
+    Sarana Ulasan & Y & N & N & N\\
+    \hline
+    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)}
+\end{longtable}
+
+\textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
+\newpage
+Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi \textit{marketplace} agrikultur\autocite{agriculture-marketplace} dan aplikasi C2C \textit{marketplace} produk perikanan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}.
+
+\begin{longtable}{|p{3cm}|p{2cm}|p{3cm}|p{4cm}|}
+    \hline
+    Fitur & ShumiShumi & \textit{Marketplace} Agrikultur & C2C \textit{Marketplace} Perikanan\\
+    \hline
+    Register dan Login & Y & Y & Y\\
+    \hline
+    Sistem Rekomendasi & Y & N & N\\
+    \hline
+    Sistem Pencarian & Y & Y & Y\\
+    \hline
+    Filter Pencarian & Y & N & N\\
+    \hline
+    \textit{Wishlist} & Y & N & N\\
+    \hline
+    Memperbarui Data Profil & Y & N & Y\\
+    \hline
+    Sarana Berdiskusi & Berdiskusi di halaman produk & N & Melalui pesan teks/telepon\\
+    \hline
+    Merubah \textit{Role} Pengguna & Y & N & N\\
+    \hline
+    Fitur Pembelian (\textit{Cart}) & Y & Y & Y\\
+    \hline
+    Sistem Pembayaran & Terintegrasi dengan bank & Transfer & \textit{Cash on delivery}\\
+    \hline
+    Sarana Ulasan & Y & N & N\\
+    \hline
+    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)}
+\end{longtable}
+
+\textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
 
 \subsubbab{Analisis Permasalahan/Kebutuhan}
 Berdasarkan rumusan masalah yang telah dikaji di bab pertama, pengembangan aplikasi \textit{marketplace hobby} \textit{ShumiShumi} ini membutuhkan berbagai macam data atau masukan dari para calon penggunanya demi menyelesaikan permasalahan yang dihadapi. Maka dari itu, penelitian ini telah mengadakan survei yang dilakukan menggunakan aplikasi \textit{Google Form}.
@@ -1728,7 +1751,7 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
             \begin{figure}[h]
                 \centering
                 \includegraphics*[height=6cm]{./diagram/flowchart/chart/open detail item.png}
-                \caption{\textit{Flowchart} untuk fitur \textit{search item}}
+                \caption{\textit{Flowchart} untuk melihat detail suatu produk}
             \end{figure}
 
             \item Lihat \textit{merchant page}, fitur ini digunakan untuk melihat halaman \textit{merchant} agar \textit{user} memiliki kemampuan untuk melihat apa saja barang yang dijual \textit{merchant} tertentu.
@@ -2709,7 +2732,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \begin{figure}[h]
                 \centering
                 \includegraphics*[height=6cm]{./diagram/sequence diagram/12. wishlist/query wishlist/query wishlist.png}
-                \caption{\textit{Sequence diagram} untuk melihat\textit{wishlist}}
+                \caption{\textit{Sequence diagram} untuk melihat \textit{wishlist}}
             \end{figure}
             \item menghapus barang dari \textit{wishlist}
             \begin{figure}[h]
@@ -3715,8 +3738,8 @@ Berdasarkan dari pengkajian hasil penelitian dan pembuatan proyek, adapun bebera
 \end{enumerate}
 
 \newpage
-\addcontentsline{toc}{section}{\protect\numberline{}Referensi}
-\printbibliography[title=Referensi]
+\addcontentsline{toc}{section}{\protect\numberline{}Daftar Pustaka}
+\printbibliography[title=Daftar Pustaka]
 
 \newpage
 \begin{figure}[h]
