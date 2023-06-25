@@ -23,6 +23,7 @@
 \usepackage{chngcntr}
 \usepackage{makecell}
 \usepackage{pdfpages}
+\usepackage{tocloft}
 
 \setlist{
   listparindent=\parindent,
@@ -69,6 +70,11 @@
 \renewcommand\listfigurename{Daftar Gambar}
 \renewcommand\listtablename{Daftar Tabel}
 \emergencystretch=2em
+
+% table lampiran
+\newcommand{\listappendicesname}{Daftar Lampiran}
+\newlistof{appendices}{apc}{\listappendicesname}
+\newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
 
 % bab command
 \newcommand{\bab}[1]{%
@@ -147,6 +153,10 @@
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Daftar Gambar}
 \listoffigures
+
+\newpage
+\addcontentsline{toc}{section}{\protect\numberline{}Daftar Lampiran}
+\listofappendices
 
 \newpage
 \pagenumbering{arabic}
@@ -3709,6 +3719,170 @@ Berdasarkan dari pengkajian hasil penelitian dan pembuatan proyek, adapun bebera
 \printbibliography[title=Referensi]
 
 \newpage
+\begin{figure}[h]
+    \includegraphics*[height=4cm]{./images/foto/aldih.jpg}
+    \centering
+\end{figure}
+
+\noindent\textbf{PERSONAL INFO}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+    \textbf{Binusian ID} & BN001768316\\
+    \textbf{Full name} & Aldih Suhandi\\
+    \textbf{E-mail} & aldih.suhandi@binus.ac.id\\
+    \textbf{Address} & Jl. Gerendeng ilir no.21 RT02/RW06, Karawaci, Tangerang 15113\\
+     & Jl. Gerendeng ilir no.21 RT02/RW06, Karawaci, Tangerang 15113\\
+    \textbf{Phone Numbers} & Home   : 082122704561\\
+                           & Mobile : 082122704561\\
+    \textbf{Gender} & Male\\
+    \textbf{Birth Place / Date} & Tangerang / 03 September 2001\\
+    \textbf{Nationality} & Indonesia\\
+    \textbf{Marital Status} & Single\\
+    \textbf{Religion} & Buddhist\\
+\end{longtable}
+\end{center}
+\newpage
+\noindent\textbf{FORMAL EDUCATION}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+   Jul 2016 - Jun 2019 & Dharmaputra Highschool\\
+                         & Highschool diploma\\
+                         & GPA: 3.04\\
+   Sep 2019 - Present & Bina Nusantara University\\
+                              & Undergraduate - Computer Science\\
+                              & GPA: 3.65\\
+\end{longtable}
+\end{center}
+\noindent\textbf{PERSONAL CERTIFICATION}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+   May 2020 & Open finals of Moscow Training\\
+   Nov 2020 & Asia Indonesia National Contest\\
+   Feb 2021 & Arkavidia Competitive Programming Olimpiads\\
+   Oct 2021 & Hackerrank SQL (BASIC)\\
+   Oct 2021 & Hackerrank Problem Solving (BASIC)\\
+   Feb 2022 & Part time assisstant at Bina Nusantara University\\
+\end{longtable}
+\end{center}
+\textbf{ORGANIZATION EXPERIENCE}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+   Feb 2020 - Mar 2021 & Jollybee Competitive Programming Team\\
+   Sep 2021 - Feb 2022 & Assisstant Laboratory\\
+\end{longtable}
+\end{center}
+\textbf{WORKING EXPERIENCE}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+   Sep 2021 - Feb 2022 & Assisstant Laboratory \newline teaching 5 classes for 3 different subjects\\
+   Feb 2022 - Present & Backend Engineer at DANA Indonesia\\
+\end{longtable}
+\end{center}
+
+\newpage
+\begin{figure}[h]
+    \includegraphics*[height=4cm]{./images/foto/chandra.jpg}
+    \centering
+\end{figure}
+
+\noindent\textbf{PERSONAL INFO}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+    \textbf{Binusian ID} & BN001778891\\
+    \textbf{Full name} & Chandra Wijaya\\
+    \textbf{E-mail} & chandra.wijaya006@binus.ac.id\\
+    \textbf{Address} & PERUMAHAN DUTA GARDEN BLOK.F16 NO.9\\
+     & PERUMAHAN DUTA GARDEN BLOK.F16 NO.9\\
+    \textbf{Phone Numbers} & Home   : -\\
+                           & Mobile : 081287588816\\
+    \textbf{Gender} & Male\\
+    \textbf{Birth Place / Date} & Jakarta / 7 Maret 2001\\
+    \textbf{Nationality} & Indonesia\\
+    \textbf{Marital Status} & Single\\
+    \textbf{Religion} & Catholic\\
+\end{longtable}
+\end{center}
+\newpage
+\noindent\textbf{FORMAL EDUCATION}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+   Jul 2016 - May 2019 & SMAK Penabur Kota Tangerang\\
+                         & Highschool diploma\\
+   Sep 2019 - Present & Bina Nusantara University\\
+                              & Undergraduate - Computer Science\\
+                              & GPA: 3.76\\
+\end{longtable}
+\end{center}
+\textbf{WORKING EXPERIENCE}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+Mar 2022 - Feb 2023 & Front End Developer at PT Datasaur Software Indonesia\\
+\end{longtable}
+\end{center}
+
+\newpage
+\begin{figure}[h]
+    \includegraphics*[height=4cm]{./images/foto/seto.jpg}
+    \centering
+\end{figure}
+
+\noindent\textbf{PERSONAL INFO}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+    \textbf{Binusian ID} & BN001773341\\
+    \textbf{Full name} & Ibrahim Seto Aditama\\
+    \textbf{E-mail} & ibrahim.aditama@binus.ac.id\\
+    \textbf{Address} & Regensi Melati Mas Blok A3 No. 21, Pondok Jagung, Serpong Utara, Kota Tangerang Selatan, 15326\\
+     & Regensi Melati Mas Blok A3 No. 21, Pondok Jagung, Serpong Utara, Kota Tangerang Selatan, 15326\\
+    \textbf{Phone Numbers} & Home   : 081213423549\\
+                           & Mobile : 081213423549\\
+    \textbf{Gender} & Male\\
+    \textbf{Birth Place / Date} & Jakarta / 11 February 2002\\
+    \textbf{Nationality} & Indonesia\\
+    \textbf{Marital Status} & Single\\
+    \textbf{Religion} & Islamic\\
+\end{longtable}
+\end{center}
+\newpage
+\noindent\textbf{FORMAL EDUCATION}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+   Jul 2016 - Jun 2019 & SMAN 7 Kota Tangerang Selatan\\
+                         & Highschool diploma\\
+   Sep 2019 - Present & Bina Nusantara University\\
+                              & Undergraduate - Computer Science\\
+                              & GPA: 3.12\\
+\end{longtable}
+\end{center}
+\noindent\textbf{PERSONAL CERTIFICATION}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+    Dec 2020 & Certificate Basic Network Coaching \newline Course Net Indonesia\\
+    Jul 2022 & Sertifikat Pelatihan Estimasi Cadangan Karbon dengan Google Earth Engine dan RStudio \newline PT. Askbeard Berkah Konsultan\\
+\end{longtable}
+\end{center}
+\textbf{WORKING EXPERIENCE}
+
+\begin{center}
+\begin{longtable}[c]{p{5cm}p{7cm}}
+Mar 2022 - Sep 2022 & Binus Socs \newline App Developer\\
+Sep 2022 - Feb 2023 & Binus Socs - Kedaireka GeoAI \newline GeoAI Researcher\\
+\end{longtable}
+\end{center}
+
+\newpage
+\appendices{Surat Survei}
 \includepdf[page=1]{pdf/251 CS Alsut Surat Survei.pdf}
 
 \end{document}
