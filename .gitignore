@@ -15,6 +15,7 @@
 *.lot
 *.dvi
 *.pytxcode
+*.apc
 *(busy)
 
 out/
