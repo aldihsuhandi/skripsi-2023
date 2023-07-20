@@ -1879,15 +1879,15 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
 
                         \item \textit{Virtual DOM}
 
-                        \textit{Virtual DOM} (\textbf{VDOM}) disebut juga sebagai \textit{React} \textit{DOM} adalah konsep yang dibuat untuk memudahkan \textit{developer} dengan menghilangkan kebutuhan untuk manipulasi \textit{DOM} secara manual. \textit{VDOM} adalah sebuah representasi UI dari browser yang disinkronkan dengan \textit{DOM} yang asli, \textit{developer} ketika melakukan perubahan UI dalam \textit{React} pertama yang dilakukan adalah merubah \textit{VDOM} lalu dilakukan perubahan di \textit{DOM} yang asli \autocite{React_VDOM_DOM}. Dengan \textit{Virtual DOM} \textit{React} dapat melakukan perubahan dengan efisien dengan melakukan komparasi element yang baru dengan yang sebelumnya dan hanya melakukan \textit{update} yang diperlukan \autocite{React_rendering_needed}.
+                        \textit{Virtual DOM} (\textbf{VDOM}) disebut juga sebagai \textit{React} \textit{DOM} adalah konsep yang dibuat untuk memudahkan \textit{developer} dengan menghilangkan kebutuhan untuk manipulasi \textit{DOM} secara manual. \textit{VDOM} adalah sebuah representasi UI dari browser yang disinkronkan dengan \textit{DOM} yang asli, \textit{developer} ketika melakukan perubahan UI dalam \textit{React} pertama yang dilakukan adalah merubah \textit{VDOM} lalu dilakukan perubahan di \textit{DOM} yang asli \autocite{React_VDOM_DOM}. Dengan \textit{Virtual DOM} \textit{React} dapat melakukan perubahan dengan efisien dengan melakukan komparasi element yang baru dengan yang sebelumnya dan hanya melakukan \textit{update} di komponent yang ada perubahan \autocite{React_rendering_needed}.
 
                         \item Arkitektur berbasis komponen
 
                         Dalam \textit{React} mendukung membuat dan juga membangun komponen/\textit{component}, dimana komponen tersebut bisa dibilang sebagai \textit{function} yang terpisah yang dapat menerima data, melakukan manipulasi data dan menggunakannya untuk membuat UI dan sama seperti \textit{Function} komponen ini dapat digunakan berulang kali dan dengan data-data yang berbeda sesuai dengan kebutuhan dari yang memanggil komponen tersebut \autocite{React_official}.
 
-                        \item Bersifat Deklaratif dalam Membangun UI
+                        \item Bersifat deklaratif dalam membangun UI
 
-                        Deklaratif dimana di \textit{React} untuk melakukan perubahan pada \textit{UI} yang kita hanya perlu lakukan adalah memberi bagaimana keadaan dan tampilan \textit{UI} yang baru dan maka \textit{React} akan melakukan \textit{update} untuk menampilkan yang baru, pengguna tidak perlu secara \textit{Imperative} menangani transisi dari keadaan \textit{UI} yang lama ke yang baru \autocite{React_official}.
+                        Deklaratif dimana di \textit{React} untuk melakukan perubahan pada UI, hal yang perlu dilakukan adalah memberi bagaimana keadaan dan tampilan UI yang baru dan \textit{React} akan melakukan \textit{update} untuk menampilkan UI yang baru, pengguna tidak perlu secara \textit{Imperative} menangani transisi dari keadaan UI yang lama ke yang baru \autocite{React_official}.
 
                         \item \textit{State} Dan \textit{Props} Sebuah Komponen
 
@@ -1901,11 +1901,11 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
 
                         Banyak alasan terhadap cara membuat komponen baru dengan \textit{Function} sehingga membuat Functional Component, yaitu bagaimana komponen dengan \textit{class} memiliki masalah dimana \textit{logic} susah digunakan ulang diantara komponen, menggunakan komponen fungsional untuk mencapai implementasi yang kompleks tergolong lebih simpel dibanding implementasi menggunakan class dan juga dengan menggunakan komponen fungsional, dalam menulis kode untuk membangun di \textit{React} bisa terlepas dari kata kunci \textit{this} milik \textit{JavaScript} yang tertulis di blog \textit{update} \textit{React} 16.8 memiliki cara kerja yang berbeda dengan kata kunci this di bahasa pemrograman yang berbeda \autocite{React_functional_components_hooks}.
 
-                        \textit{React} \textit{Hooks} sendiri adalah fitur yang disediakan supaya dapat menggunakan fitur lain dari \textit{React} dalam komponen. \textit{Hooks} dapat memiliki macam dan dapat di gabungkan berbagai tipe untuk membuat Hook baru \autocite{React_general_hooks} \textit{Hooks} yang dipakai dalam proyek ini adalah Hook \textit{useEffect} dan useState.
+                        \textit{React} \textit{Hooks} sendiri adalah fitur yang disediakan supaya dapat menggunakan fitur lain dari \textit{React} dalam komponen. \textit{Hooks} dapat memiliki macam dan dapat di gabungkan berbagai tipe untuk membuat Hook baru \autocite{React_general_hooks} \textit{Hooks} yang dipakai dalam proyek ini adalah \textit{Hook useEffect} dan useState.
 
                         \item \textit{useEffect}
 
-                        Hook \textit{useEffect} digunakkan untuk melakukan sinkronisasi dengan sistem eksternal, \textit{useEffect} ini berjalan setelah dalam 2 situasi, pertama ketika sebuah komponen selesai \textit{render} dan kedua setiap kali dibutuhkan dijalankan lagi yang dimana dapat diatur di dependency dari sebuah \textit{useEffect}. Contoh yang diberikan oleh dokumentasi di web resmi \textit{React} adalah membuat koneksi server, melakukan \textit{logging} ketika sebuah komponen muncul di layar. Dalam proyek ini contoh penggunaan \textit{Hook} \textit{useEffect} adalah untuk melakukan pengambilan data dari \textit{database} setelah sebuah page atau komponen sudah selesai ditampilkan atau di \textit{render} oleh \textit{React} \autocite{React_useEffect}.
+                        \textit{Hook useEffect} digunakkan untuk melakukan sinkronisasi dengan sistem eksternal, \textit{useEffect} ini akan dijalankan dalam dua situasi, pertama ketika sebuah komponen selesai \textit{render} dan kedua setiap kali ada perubahan \textit{dependency} \textit{useEffect} tersebut. Contoh yang diberikan oleh dokumentasi di web resmi \textit{React} adalah membuat koneksi server, melakukan \textit{logging} ketika sebuah komponen muncul di layar. Dalam proyek ini contoh penggunaan \textit{Hook} \textit{useEffect} adalah untuk melakukan pengambilan data dari \textit{database} setelah sebuah page atau komponen sudah selesai ditampilkan atau di \textit{render} oleh \textit{React} \autocite{React_useEffect}.
 
                         \begin{figure}[h]
                             \centering
@@ -1933,9 +1933,9 @@ useEffect(() => {
 
                         \item \textit{useState}
 
-                        Hook \textit{useState} tergolong dalam \textit{State} \textit{Hooks} yang dideskripsikan sebagai fitur yang memberi fungsionalitas kepada komponen sehingga dapat mengingat informasi seperti input user \autocite{Banks_Porcello_2020}. Hook \textit{useState} memiliki dua fungsionalitas yang penting, yaitu mengingat data diantara \textit{render} dan juga dapat melakukan perubahan pada data tersebut. Dalam \textit{React} ketika ada perubahan maka komponen yang bersangkutan di \textit{VDOM} akan diubah dan perubahan itu direfleksikan di \textit{DOM} yang sesungguhnya dengan melakukan rerender, dengan menggunakkan \textit{useState} maka data sebelum terjadinya \textit{render} lagi akan tersimpan atau “diingat”, dan dengan \textit{useState} data tersebut dapat diubah sesuai dengan kebutuhan sehingga melakukan perubahan \textit{VDOM} dan DOM, rerender dilaksanakan \autocite{React_useState}.
+                        \textit{Hook useState} tergolong dalam \textit{State} \textit{Hooks} yang dideskripsikan sebagai fitur yang memberi fungsionalitas kepada komponen sehingga dapat mengingat informasi seperti input user \autocite{Banks_Porcello_2020}. \textit{Hook useState} memiliki dua fungsionalitas yang penting, yaitu menyimpan data untuk komponent yang akan di\textit{render} dan menjadi \textit{trigger} untuk me-\textit{render} ulang jika terjadi perubahan dalam data tersebut. Dalam \textit{React} ketika ada perubahan maka komponen yang bersangkutan di \textit{VDOM} akan diubah dan perubahan itu direfleksikan di \textit{DOM} yang sesungguhnya dengan melakukan \textit{rerender}, dengan menggunakkan \textit{useState} maka data sebelum terjadinya \textit{render} lagi akan tersimpan atau “diingat”, dan dengan \textit{useState} data tersebut dapat diubah sesuai dengan kebutuhan sehingga melakukan perubahan \textit{VDOM} dan DOM, \textit{rerender} dilaksanakan \autocite{React_useState}.
 
-                        Cara deklarasi Hook \textit{useState} adalah sebagai berikut:
+                        Cara deklarasi \textit{Hook useState} adalah sebagai berikut:
 
                         \begin{figure}[h]
                             \centering
@@ -1963,19 +1963,19 @@ const [name, setName] = useState("initialValues");
 
 	                    Salah satu konfigurasi yang ditangani oleh \textit{NextJs} dalam \textit{code transformation}, yaitu \textit{compilation}, \textit{minification}, \textit{bundling} dan \textit{code splitting}, yang sudah ditangani oleh \textit{compiler} yang dibuat oleh \textit{NextJs} untuk menangani hal tersebut \autocite{Nextjs_compiler}.
 
-                        \item \textit{code transformation} \textit{Compiling}
+                        \item \textit{code transformation} - \textit{compiling}
 
                         \textit{Nextjs} sudah dikonfigurasikan untuk menangani proses translasi kode menjadi versi kode yang dapat dibaca oleh \textit{browser} \autocite{Nextjs_compiling}. Dari kecepatan kompilasi sendiri, \textit{compiler} yang default oleh \textit{NextJs} itu 17 kali lebih cepat dari \textit{Babel} (\textit{compiler} lain yang biasa digunakkan di \textit{Create-React-App}), dan sudah menjadi \textit{compiler} bawaan/\textit{default} ketika menggunakkan \textit{NextJs} diatas versi 12 \autocite{Nextjs_depth_compiler}.
 
-                        \item \textit{code transformation} \textit{Minifying}
+                        \item \textit{code transformation} - \textit{minifying}
 
                         \textit{Minifying} adalah proses dimana terjadi proses penghapusan \textit{formatting}, \textit{comments} dari kode, sehingga hasil akhir ukuran \textit{file} menjadi lebih kecil \autocite{Nextjs_minifiying}.
 
-                        \item \textit{code transformation} \textit{Bundling}
+                        \item \textit{code transformation} - \textit{bundling}
 
-                        \textit{Bundling} adalah proses dimana dilakukan penggabungan \textit{Merging} \textit{file-file} dan yang ada menjadi \textit{bundles} yang teroptimisasi untuk digunakkan oleh \textit{browser} \autocite{Nextjs_bundling}.
+                        \textit{Bundling} adalah proses dimana dilakukan penggabungan \textit{file} untuk menjadi beberapa \textit{bundles} yang teroptimisasi untuk digunakkan oleh \textit{browser} \autocite{Nextjs_bundling}.
 
-                        \item \textit{code transformation} \textit{Code splitting}
+                        \item \textit{code transformation} - \textit{code splitting}
 
                         Dalam sebuah aplikasi yang memiliki beberapa halaman, halaman-halaman tersebut memiliki \textit{entry point} yang berbeda, berarti tiap halaman membutuhkan kode-kode yang berbeda yang dibutuhkan untuk menjalankan halaman tersebut. \textit{code splitting} adalah proses dimana \textit{bundle} yang sudah dibuat di pisah-pisah tergantung dengan kebutuhan tiap \textit{entry point} dari halaman-halaman \autocite{Nextjs_code_splitting}.
 
