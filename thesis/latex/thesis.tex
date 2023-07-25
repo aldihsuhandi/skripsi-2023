@@ -413,6 +413,29 @@ Secara definisi \textit{caching} adalah sebuah \textit{data storage layer} yang 
 \subsubbab{\textit{Asynchronous Processing}}
 \textit{Asynchronous Processing} adalah kebalikan dari \textit{synchronous processing} yang akan mengeksekusi setiap proses secara linear sesuai dengan berjalannya waktu. Sebagai contoh, diberikan dua pemanggilan ke '\textit{request.get}' dalam \textit{synchronous processing} pemanggilan kedua tidak akan dijalankan sebelum pemanggilan pertama sudah selesai. Sedangkan dengan menggunakan model \textit{asynchronous processing} dua pemanggilan tersebut bisa dilakukan secara bersamaan\autocite{Williams_Benfield_Warner_Zadka_Mitchell_Samuel_Tardy_2019}.
 
+\subsubbab{\textit{Code Transformation}}
+\textit{Code Transformation} yang dimaksud adalah perubahan kode yang perlu dilakukan untuk merubah kode sebuah aplikasi dari \textit{development} untuk lebih cocok dan mudah untuk ke tahap \textit{production}\autocite{Nextjs_compiler}. Perubahan yang dilakukan adalah:
+
+\begin{itemize}
+    \item \textit{Compiling}
+
+    \textit{Nextjs} sudah dikonfigurasikan untuk menangani proses translasi kode menjadi versi kode yang dapat dibaca oleh \textit{browser} \autocite{Nextjs_compiling}. Dari kecepatan kompilasi sendiri, \textit{compiler} yang default oleh \textit{NextJs} itu 17 kali lebih cepat dari \textit{Babel} (\textit{compiler} lain yang biasa digunakkan di \textit{Create-React-App}), dan sudah menjadi \textit{compiler} bawaan/\textit{default} ketika menggunakkan \textit{NextJs} diatas versi 12 \autocite{Nextjs_depth_compiler}.
+
+    \item \textit{Minifying}
+
+    \textit{Minifying} adalah proses dimana terjadi proses penghapusan \textit{formatting}, \textit{comments} dari kode, sehingga hasil akhir ukuran \textit{file} menjadi lebih kecil \autocite{Nextjs_minifiying}.
+
+    \item \textit{Bundling}
+
+    \textit{Bundling} adalah proses dimana dilakukan penggabungan \textit{Merging} \textit{file-file} dan yang ada menjadi \textit{bundles} yang teroptimisasi untuk digunakkan oleh \textit{browser} \autocite{Nextjs_bundling}.
+
+    \item \textit{Code splitting}
+
+    Dalam sebuah aplikasi yang memiliki beberapa halaman, halaman-halaman tersebut memiliki \textit{entry point} yang berbeda, berarti tiap halaman membutuhkan kode-kode yang berbeda yang dibutuhkan untuk menjalankan halaman tersebut. \textit{code splitting} adalah proses dimana \textit{bundle} yang sudah dibuat di pisah-pisah tergantung dengan kebutuhan tiap \textit{entry point} dari halaman-halaman \autocite{Nextjs_code_splitting}.
+
+    Dengan tiap halaman dan \textit{entry point} memiliki bagian dari kode yang sudah di \textit{bundling}, maka tiap halaman akan hanya memuat dan memproses kode yang diperlukan halaman yang bersangkutan sehingga terjadi peningkatan waktu untuk membuka halaman \autocite{Nextjs_code_splitting}.
+\end{itemize}
+
 \subsubbab{\textit{Agile Scrum}}
 \textit{Agile} adalah kumpulan metodologi yang bisa membantu tim yang men-\textit{develop} suatu proyek untuk berfikir dan bekerja lebih efisien dan membantu untuk mengambil keputusan yang lebih baik\autocite{Stellman_Greene_2016}. Salah satu dari metodologi tersebut adalah \textit{scrum}, \textit{scrum} adalah \textit{project management framework} yang membantu tim untuk menyusun dan mengelola \textit{task - task} yang ada dengan serangkaian nilai, prinsi, dan praktik\autocite{atlassian-agile-scrum}.
 
@@ -444,14 +467,8 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
 \subsubbab{\textit{Interest Level}}
 \textit{Interest Level} adalah suatu pengelompokkan yang dibuat untuk mempermudah memisahkan antara pemilik hobi yang digolongkan dari tingkat kemahiran mereka dalam sebuah hobi tertentu. Ada tiga level yang kami buat, yaitu \textit{BEGINNER}, \textit{INTERMEDIATE}, dan \textit{ENTHUSIAST}. Klasifikasi tersebut akan diberikan kepada barang oleh penjual dan pengguna yang sudah membeli barang bersangkutan. Klasifikasi atau pengelompokan tersebut pada barang bertujuan untuk memisahkan barang yang tepat bagi tingkat kemahiran tertentu dengan yang lain. Sehingga dengan tujuan agar barang yang tergolong \textit{BEGINNER} merupakan barang yang cocok untuk pemula, seseorang yang memulai suatu hobi.
 
-\subsubbab{\textit{E-commerce}}
-\textit{E-commerce} merupakan aktivitas jual beli barang atau jasa dan juga pengiriman dana yang dilakukan melewati sebuah jasa \textit{online} atau melalui internet. Cara kerja \textit{e-commerce} adalah dengan pelanggan mengakses sebuah aplikasi toko online dan membuat pesanan dan membayar untuk pesanan tersebut yang prosesnya akan diatasi atau diproses oleh  aplikasi tersebut. \autocite{techtarget_e-commerce}.
-
 \subsubbab{\textit{Online Marketplace}}
 \textit{Online Marketplace} adalah sebuah tipe dari \textit{e-commerce} yang dimana  produk atau jasa yang ada di aplikasi berasal dari pihak ketiga yang dapat mendaftarkan diri untuk menjual barang atau jasa di tempat aplikasi \textit{online marketplace}. \autocite{pediaa_marketplace}
-
-\subsubbab{\textit{Marketing}}
-\textit{Marketing} adalah sebuah aktivitas yang dilakukan oleh sebuah pihak untuk membuat sebuah dorongan untuk menarik kegiatan membeli atau menjual barang atau jasa \autocite{Twin_2023}. Aktivitas untuk melakukan dorongan tersebut adalah aktivitas yang dapat mengidentifikasikan dan mengantisipasikan kebutuhan pengguna dan mencoba untuk memenuhi kebutuhan tersebut \autocite{openStax}.
 
 \subsubbab{\textit{Responsive Web Design} dan \textit{Mobile-First Design}}
 \textit{Responsive Web Design} adalah presentasi dan cara menampilkan isi konten dari sebuah website dengan format yang paling cocok dan relevan dengan perangkat yang mengakses \autocite{Frain_2022}. \textit{Mobile-First Design} adalah konsep yang mengajukan bahwa dalam mendesain dan implementasi aplikasi dimulai dari resolusi layar atau perangkat yang kecil terlebih dahulu dan menambahkan styling dan implementasi untuk resolusi layar yang lebih besar \autocite{Ward_2017}.
@@ -495,47 +512,6 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
 \subsubbab{\textit{Document Object Model}}
 \textit{Document Object Model} (\textbf{DOM}) adalah sebuah antarmuka untuk dokumen web yang memungkinkan akses dan manipulasi terhadap dokumen web tersebut. Dengan bahasa pemrograman \textit{scripting} seperti \textit{JavaScript} dapat mengakses melalui antarmuka dari DOM dan melakukan perubahan atau penambahan elemen atau konten pada halaman web \autocite{DOM_teori}.
 
-
-
-\subsubbab{Internet}
-Internet merupakan sebuah bentuk dari infrastruktur jaringan komunikasi global yang menghubungkan miliaran komputer (ataupun perangkat lainnya) satu sama lain yang tersebar di seluruh dunia\autocite{javatpoint-internet}. Kata "Internet" sendiri berasal dari bahasa latin, yakni dari kata "\textit{inter}" dan "\textit{net}". Kata "\textit{inter}" memiliki arti sebagai "antara" dan kata "\textit{net}" yang berarti "jaringan". Kata "\textit{net}" ini jugalah yang merupakan singkatan dari kata \textit{network}\autocite{arti-kata-internet}. Internet dibangun/di-\textit{setup} dengan menggunakan bantuan transmisi data dari kabel-kabel \textit{fiber optic} atau kabel tembaga dan berbagai macam media jaringan lainnya\autocite{gfg-internet}. Ada beberapa istilah penting yang sangat berhubungan dengan jaringan internet, seperti:
-\begin{itemize}
-    \item \textit{Client}\\
-    \textit{Client} merupakan sebuah istilah yang digunakan untuk mendefinisikan perangkat-perangkat pengguna (\textit{end-user devices}) yang tersambung langsung ke internet dan meminta/me-\textit{request} layanan kepada server. Contoh, sebuah laptop atau \textit{smartphone} yang tersambung ke wifi dan meminta \textit{request} kepada server untuk mengunduh sebuah aplikasi\autocite{arti-client-server}.
-    \item \textit{Server}\\
-    \textit{Server} merupakan sebuah istilah yang digunakan untuk mendefinisikan perangkat komputer besar yang bertugas untuk memberikan layanan kepada perangkat lain yang tersambung dengan jaringan internet. Contoh, sebuah server yang memberikan layanan kepada \textit{end-user devices} untuk mengunduh suatu aplikasi\autocite{arti-client-server}.
-    \item \textit{Internet Service Provider} (ISP)\\
-    \textit{Internet Service Provider} atau yang biasa disebut sebagai ISP, merupakan sebuah organisasi yang menyediakan layanan untuk mengakses, menggunakan, mengelola atau ikut berpartisipasi di dalam jaringan internet. ISP dapat berbentuk sebagai organisasi komersial, organisasi milik komunitas, \textit{non-profit} atau bahkan milik pribadi\autocite{what-is-isp}.
-    \item \textit{IP Address}\\
-    \textit{IP Address} merupakan sebuah alamat unik yang mengidentifikasi sebuah perangkat di dalam jaringan internet, layaknya sebuah alamat rumah yang mengidentifikasi lokasi/tempat rumah tersebut berada. Dalam kata lain, \textit{IP Address} adalah sebuah alat pengidentifikasi yang memungkinkan pengiriman informasi antarperangkat dan berisikan informasi lokasi yang memungkinkan sebuah perangkat dapat diakses untuk komunikasi di dalam jaringan internet\autocite{what-is-ip-address}. \textit{IP Address} terdiri dari sederetan angka yang dipisahkan oleh tanda titik (.). Deretan angka pada \textit{IP Address} itu adalah unik, sehingga bentuk deretannya dapat berbeda-beda dari satu perangkat dengan perangkat lainnya\autocite{javatpoint-internet}. Contoh bentuk dari \textit{IP Address}: 192.168.10.69
-    \item \textit{Domain Name System} (DNS)\\
-    \textit{Domain Name System} atau biasa disebut sebagai DNS, merupakan sebuah alat yang bertugas untuk menerjemahkan \textit{IP Address} menjadi suatu nama domain (\textit{domain name})\autocite{what-is-dns}. Sedangkan (\textit{Domain name}) atau nama domain itu sendiri adalah sebuah rangkaian teks yang didapat dari pemetaan deretan angka pada \textit{IP Address} yang digunakan untuk mengakses sebuah situs web (\textit{website}). Contoh beberapa nama domain antara lain, 'google.com', 'twitter.com' dan 'binusmaya.binus.ac.id'\autocite{what-is-domain-name}. Pada dasarnya, DNS itu bagaikan sebuah buku telepon untuk internet. Pengguna dapat mengakses segala macam informasi secara \textit{online} melalui \textit{domain name} seperti 'yahoo.com' atau 'youtube.com', yang kemudian diketik melalui sebuah \textit{web browsers} seperti Google Chrome atau Firefox. Lalu \textit{web browser} tersebut berinteraksi melalui \textit{IP Address} yang kemudian \textit{domain name} yang di \textit{request} sebelumnya dapat diterjemahkan oleh DNS menjadi \textit{IP Address} yang sesuai sehingga \textit{web browser} dapat memuat informasi yang diinginkan oleh penggunanya\autocite{what-is-dns}.
-    \item \textit{Web Browser, Web Page, Website} dan \textit{Web Server}
-    \begin{itemize}
-        \item \textit{Web Browser}\\
-        \textit{Web Browser} merupakan sebuah aplikasi perangkat lunak yang digunakan untuk menelusuri, mengakses dan memuat berbagai macam \textit{web page} yang tersedia di internet\autocite{web-browsers}.
-        \item \textit{Web Page}\\
-        \textit{Web Page} merupakan sebuah dokumen/halaman yang dapat ditampilkan pada \textit{web browser}. \textit{Web Page} ini biasa juga disebut sebagai "\textit{pages}"\autocite{webpage-website-webserver}.
-        \item \textit{Website}\\
-        \textit{Website} adalah sebuah koleksi dari \textit{web page} yang dikelompokkan dalam suatu kelompok bersamaan dan biasanya saling terhubung satu sama lain. \textit{Website} biasanya juga disebut sebagai "\textit{site}"\autocite{webpage-website-webserver}.
-        \item \textit{Web Server}\\
-        \textit{Web Server} merupakan sebuah aplikasi perangkat lunak yang dihosting pada komputer khusus yang berguna untuk memberikan/menampilkan \textit{website} ketika di-\textit{request} oleh \textit{web browser}\autocite{web-browsers}.
-    \end{itemize}
-    \item \textit{Internet Connection Protocols}\\
-    Saat melintasi di dalam jaringan internet, data yang dikirim tersebut terlebih dahulu dipecah menjadi bagian-bagian yang lebih kecil yang dinamakan sebagai "\textit{packet}". Informasi IP terlampir pada tiap paket yang ada, dan informasi IP inilah yang membantu merutekan jalan agar pengiriman paket tersebut tiba di tempat tujuan yang tepat. Tempat tujuan dari paket-paket ini adalah alamat IP (\textit{IP Address}) dari masing-masing perangkat/domain yang terhubung dengan internet\autocite{what-is-internet-protocol}. Maka dari itu, agar pengiriman paket-paket ini berjalan dengan lancar, maka dibutuhkannya sebuah sistem protokol yang dapat membantu dan menjaga pengiriman paket-paket saat dikirimkan melewati internet.
-    \textit{Internet Connection Protocols} (IP) merupakan sebuah protokol atau seperangkat aturan yang digunakan untuk \textit{routing}/perutean dan menangani pengiriman paket data agar dapat berjalan melintasi jaringan internet dan tiba di tempat tujuan yang tepat\autocite{what-is-internet-protocol}. Berikut adalah beberapa macam jenis \textit{Internet Protocols} yang sering digunakan:
-    \begin{itemize}
-        \item TCP/IP (\textit{Transmission Control Protocol/Internet Protocol})\\
-        TCP/IP merupakan salah satu bentuk dari protokol transport, yang berarti protokol ini menentukan cara datanya dikirim dan diterima\autocite{what-is-internet-protocol}. Pada sistem protokol ini, protokol IP memastikan bahwa setiap perangkat yang terhubung dengan internet memiliki nomor seri yang khusus (\textit{IP Address}). Lalu, protokol TCP lah yang menentukan bagaimana data tersebut akan dipertukarkan melalui internet. TCP ini juga yang menentukan bagaimana data tersebut akan dipecah menjadi paket IP dan memastikan bahwa paket tersebut memiliki informasi mengenai sumber pengiriman data, tempat tujuan data yang dikirimkan, urutan pengiriman dari data tersebut serta memeriksa apakah data yang telah dikirim tiba di tempat tujuan yang benar\autocite{types-of-internet-protocols}.
-        \item UDP/IP (\textit{User Datagram Protocol/Internet Protocol})\\
-        Mirip seperti TCP/IP, UDP/IP juga merupakan sebuah protokol transport. Namun, UDP/IP ini bekerja lebih cepat dibandingkan TCP/IP, tetapi juga kurang dapat diandalkan. Karena, pada proses pengiriman paket datanya, protokol ini tidak memastikan bahwa paket yang terkirim tersebut berurutan/teratur sesuai dengan urutannya dan tidak membuat koneksi sebelum memulai atau menerima transmisi dalam proses pengiriman data\autocite{what-is-internet-protocol}.
-        \item FTP (\textit{File Transfer Protocol})\\
-        \textit{File Transfer Protocol} (FTP) adalah sebuah sistem protokol internet yang memungkinkan pengguna untuk mentransfer/memindahkan data berupa \textit{file} seperti dokumen, text, \textit{file} multimedia (gambar, video atau audio), sebuah \textit{program file}, dan lain sebagainya\autocite{javatpoint-internet}.
-        \item HTTP (\textit{Hyper Text Transfer Protocol})\\
-        Protokol jenis ini digunakan untuk mentransfer \textit{hypertext} (format text yang dapat berisi tautan ke text lain) melalui internet dan didefinisikan dengan "www" (\textit{World Wide Web}) untuk mentransfer informasi didalamnya. Protokol ini juga yang menentukan berbagai tindakan/\textit{action} yang harus dilakukan oleh \textit{web browser} sebagai \textit{response} atas panggilan yang dilakukan untuk mengakses \textit{web page} tertentu. HTTP inilah yang digunakan untuk berbagi berbagai macam \textit{file} multimedia di \textit{World Wide Web}\autocite{types-of-internet-protocols}.
-    \end{itemize}
-\end{itemize}
-
 \subsubbab{\textit{API Call}}
 \textit{Application Programming Interface} atau biasa juga disebut sebagai API, merupakan sekumpulan definisi dan protokol yang dapat digunakan untuk membangun dan mengintegrasikan aplikasi perangkat lunak\autocite{whats-api}. Adanya API memungkinkan para \textit{developer} untuk menghindari pekerjaan berulang yang berlebihan, alih-alih membangun dan membangun kembali fungsi aplikasi yang sudah ada, \textit{developer} dapat memasukkan yang sudah ada ke dalam aplikasi baru mereka dengan memformat permintaan sesuai kebutuhan API\autocite{whats-api-2}. \textit{API Calls} merupakan media yang digunakan untuk berinteraksi. Sebuah \textit{API Call} atau juga disebut sebagai \textit{API Request} adalah pesan yang dikirim ke server yang meminta API untuk menyediakan sebuah layanan atau informasi tertentu. \textit{API Calls} berpindah dari \textit{client} menuju ke \textit{API Endpoint} (tempat yang dituju oleh \textit{API Call}). \textit{API Endpoint} biasa berupa sebuah aplikasi web da server. Server tersebut menerima \textit{API Call}, lalu memprosesnya, mengeksekusinya dan mengirimkan respons yang dimana respons ini biasa disebut dengan istilah \textit{API Response}\autocite{whats-api-call}. Salah satu contoh nyatanya kegunaan dari API adalah misal, seseorang sedang mencari tiket hotel pada sebuah situs \textit{travel}. Situs tersebut kemudian mengirimkan \textit{API Call} ke beberapa perusahaan hotel dan menerima balik sebuah respons (\textit{API Response}) berupa informasi mengenai hotel-hotel tersebut, seperti lokasi hotel, jumlah kamar yang tersedia hingga harga penginapan untuk masing-masing jenis kamarnya.
 
@@ -551,6 +527,7 @@ Berikut ini adalah komponen-komponen dasar \textit{flowchart}
         \includegraphics*[width=2cm]{./diagram/flowchart/component/oval.png}
         \caption{Contoh bentuk oval dari komponen \textit{flowchart}}
     \end{figure}
+    \newpage
     \item Persegi empat\\
     Bentuk ini menggambarkan sebuah proses.\\
     \begin{figure}[h]
@@ -558,7 +535,6 @@ Berikut ini adalah komponen-komponen dasar \textit{flowchart}
         \includegraphics*[width=2cm]{./diagram/flowchart/component/rectangle.png}
         \caption{Contoh bentuk segi empat dari komponen \textit{flowchart}}
     \end{figure}
-    \newpage
     \item Jajar genjang\\
     Bentuk ini menggambar informasi yang memasuki atau dikeluarkan oleh sistem.\\
     \begin{figure}[h]
@@ -566,6 +542,7 @@ Berikut ini adalah komponen-komponen dasar \textit{flowchart}
         \includegraphics*[width=2cm]{./diagram/flowchart/component/jajar genjang.png}
         \caption{Contoh bentuk jajar genjang dari komponen \textit{flowchart}}
     \end{figure}
+    \newpage
     \item Belah ketupat\\
         Bentuk ini melambangkan suatu pilihat atau keputusan yang harus diambil.\\
     \begin{figure}[h]
@@ -581,8 +558,6 @@ Berikut ini adalah komponen-komponen dasar \textit{flowchart}
         \caption{Contoh panah dari komponen \textit{flowchart}}
     \end{figure}
 \end{enumerate}
-
-\newpage
 
 \subsubbab{\textit{Unified Modeling Languages} (\textbf{UML})}
 \textit{Unified Modeling Languages} atau biasa juga disebut sebagai UML merupakan sebuah bahasa pemodelan standar yang terdiri dari satu set diagram. Bahasa pemodelan yang terdiri dari diagram-diagram ini dikembangkan dengan tujuan untuk membantu para \textit{software developers} dan \textit{system developers} untuk membangun dan memvisualisasikan serta mendokumentasikan struktur sistem pada sebuah perangkat lunak (\textit{software}). Bahasa pemodelan ini juga dapat digunakan untuk memodelkan sebuah alur bisnis ataupun sebuah sistem yang bukan merupakan perangkat lunak (\textit{non-software system})\autocite{what-is-UML}.
@@ -601,6 +576,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \includegraphics[scale=0.75]{class example from class diagram.png}
             \caption{Contoh dari sebuah \textit{class}}
         \end{figure}
+        \newpage
         \item \textit{Attributes}\\
         \textit{Attributes} adalah sebuah properti dari \textit{class} yang berisikan informasi-informasi yang ingin ditangkap. Seperti contoh, nama seseorang beserta dengan umurnya dan alamatnya. \textit{Attributes} ini juga dapat dihitung (\textit{calculated}) ataupun diturunkan (\textit{derived}) ke \textit{attribute} lainnya\autocite{systemanalysisdesign-class-diagram}.
         \textit{Attributes} juga dapat dibagi menjadi tiga jenis berdasarkan visibilitasnya dalam \textit{class diagram}, ketiga jenis tersebut antara lain:
@@ -672,6 +648,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             % Departemen hanya memiliki satu dan hanya satu bos saja.
             \caption{Departemen hanya memiliki satu dan hanya satu bos saja.}
         \end{figure}
+        \newpage
         \item \textit{Zero or One} (0.. 1)\\
         \begin{figure}[h]
             \centering
@@ -693,7 +670,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             % Seorang guru dapat memiliki satu atau lebih murid.
             \caption{Seorang guru dapat memiliki satu atau lebih murid.}
         \end{figure}
-        \newpage
+        
         \item \textit{Exact Number} atau \textit{Specified Range} (8 atau 2.. 5)\\
         \begin{figure}[h]
             \centering
@@ -701,6 +678,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             % Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).
             \caption{Sebuah kendaraan pribadi biasanya hanya memiliki sebanyak dua roda (motor) hingga empat roda (mobil).}
         \end{figure}
+        \newpage
         \item \textit{Multiple, Disjoint Ranges} (1.. 4, 7)\\
         \begin{figure}[h]
             \centering
@@ -1962,24 +1940,6 @@ const [name, setName] = useState("initialValues");
 	                    Aspek dari \textit{React} diatas menjadi hal yang bagus bagi \textit{developer} yang ingin mengendalikan banyak hal dalam aplikasinya, tetapi oleh karena aspek tersebut upaya yang diperlukan untuk membuat aplikasi \textit{React} sangatlah besar untuk konfigurasi banyak hal. Oleh karena itu dalam proyek ini melakukan adopsi \textit{Framework} yang berbasis \textit{React} yaitu Next.js yang dapat mengatasi upaya besar yang dibutuhkan dalam konfigurasi dan memulai sebuah aplikasi dan juga memiliki fitur-fitur optimisasi yang sudah \textit{built-in} disediakan dan aktif ketika menggunakkan \textit{NextJs} \autocite{Nextjs_general}.
 
 	                    Salah satu konfigurasi yang ditangani oleh \textit{NextJs} dalam \textit{code transformation}, yaitu \textit{compilation}, \textit{minification}, \textit{bundling} dan \textit{code splitting}, yang sudah ditangani oleh \textit{compiler} yang dibuat oleh \textit{NextJs} untuk menangani hal tersebut \autocite{Nextjs_compiler}.
-
-                        \item \textit{code transformation} \textit{Compiling}
-
-                        \textit{Nextjs} sudah dikonfigurasikan untuk menangani proses translasi kode menjadi versi kode yang dapat dibaca oleh \textit{browser} \autocite{Nextjs_compiling}. Dari kecepatan kompilasi sendiri, \textit{compiler} yang default oleh \textit{NextJs} itu 17 kali lebih cepat dari \textit{Babel} (\textit{compiler} lain yang biasa digunakkan di \textit{Create-React-App}), dan sudah menjadi \textit{compiler} bawaan/\textit{default} ketika menggunakkan \textit{NextJs} diatas versi 12 \autocite{Nextjs_depth_compiler}.
-
-                        \item \textit{code transformation} \textit{Minifying}
-
-                        \textit{Minifying} adalah proses dimana terjadi proses penghapusan \textit{formatting}, \textit{comments} dari kode, sehingga hasil akhir ukuran \textit{file} menjadi lebih kecil \autocite{Nextjs_minifiying}.
-
-                        \item \textit{code transformation} \textit{Bundling}
-
-                        \textit{Bundling} adalah proses dimana dilakukan penggabungan \textit{Merging} \textit{file-file} dan yang ada menjadi \textit{bundles} yang teroptimisasi untuk digunakkan oleh \textit{browser} \autocite{Nextjs_bundling}.
-
-                        \item \textit{code transformation} \textit{Code splitting}
-
-                        Dalam sebuah aplikasi yang memiliki beberapa halaman, halaman-halaman tersebut memiliki \textit{entry point} yang berbeda, berarti tiap halaman membutuhkan kode-kode yang berbeda yang dibutuhkan untuk menjalankan halaman tersebut. \textit{code splitting} adalah proses dimana \textit{bundle} yang sudah dibuat di pisah-pisah tergantung dengan kebutuhan tiap \textit{entry point} dari halaman-halaman \autocite{Nextjs_code_splitting}.
-
-                        Dengan tiap halaman dan \textit{entry point} memiliki bagian dari kode yang sudah di \textit{bundling}, maka tiap halaman akan hanya memuat dan memproses kode yang diperlukan halaman yang bersangkutan sehingga terjadi peningkatan waktu untuk membuka halaman \autocite{Nextjs_code_splitting}.
 
                         \item \textit{Vercel}
 
