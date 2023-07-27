@@ -475,13 +475,13 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
 \textit{The Eight Golden Rules of Interface Design} adalah sebuah lis yang memiliki poin-poin yang dapat menjadi panduan bagi desainer dan murid atas apa yang dapat dites dari sebuah sistem interaktif \autocite{Shneiderman_Plaisant_Cohen_Jacobs_Elmqvist_2018_eight_golden_rules}. Berikut adalah kedelapan \textit{Golden Rules} yang ditulis:
 \begin{enumerate}
     \item \textit{Strive for consistency}\\
-    Dalam suatu konsistensi adalah hal yang baik di dalam segala hal pada suatu sistem interaksi. Seperti urutan aksi untuk mencapai suatu diusahakan konsisten dan mirip dengan aksi untuk mencapai suatu yang mirip. Contoh lainnya adalah penggunaan kata atau istilah seharusnya konsisten di keseluruhan, sama halnya dengan penggunaan warna, tata letak, bahkan font kata. Dan jika harus ada yang tidak konsisten karena diperlukan, diusahakan sesedikit mungkin.
+    Konsistensi adalah sebuah hal yang baik diperlukan pada suatu sistem interaksi. Seperti urutan aksi untuk mencapai suatu diusahakan konsisten dan mirip dengan aksi untuk mencapai suatu yang mirip. Contoh lainnya adalah penggunaan kata atau istilah seharusnya konsisten di keseluruhan, sama halnya dengan penggunaan warna, tata letak, bahkan font kata. Dan jika harus ada yang tidak konsisten karena diperlukan, diusahakan sesedikit mungkin.
     \item \textit{Seek universal usability}\\
-    Penambahan fitur untuk segala macam pengguna, seperti fitur untuk membantu pemula dalam teknologi seperti penjelasan atau fitur untuk yang ahli supaya mendapatkan \textit{shortcuts} untuk mempercepat penggunaan akan mendorong rasa kualitas.
+    Penambahan fitur untuk segala macam pengguna, seperti tingkat pemahaman pengguna terhadap aplikasi, jenis teknologi yang dipakai, budaya dan umur.
     \item \textit{Offer informative feedback}\\
     Tiap kali pengguna melakukan suatu hal, ada baiknya dan seharusnya ada respons yang sesuai dari aplikasi.
     \item \textit{Design dialogs to yield closure}\\
-    Dalam suatu proses aksi pada aplikasi, informasi status proses aksi seharusnya dikomunikasikan jika sudah selesai atau hasil akhir dari aksi yang dilakukan, seperti jika pengguna ingin memasukan barang ke sebuah \textit{wishlist}, dikomunikasikan jika berhasil atau gagal.
+    Dalam suatu proses aksi pada aplikasi, harus ada respons informatif yang berada pada akhir suatu proses untuk mengkomunikasian kepada pengguna bahwa proses tersebut sudah selesai, sehingga adanya rasa puas dan bahwa tidak ada yang perlu dilakukan lagi dalam proses tersebut.
     \item \textit{Prevent errors}\\
     Poin ini berfokus untuk menjaga pengguna dari melakukan sesuatu hal yang dapat menimbulkan sebuah \textit{error}/kerusakan yang serius, dan jika terjadi \textit{error} pada tinggi tingkat manapun harus ada panduan dari aplikasi yang mudah dimengerti, konstruktif dan spesifik untuk membetulkannya.
     \item \textit{Permit easy reversal of actions}\\
@@ -3403,26 +3403,33 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Seek Universal Usability}
         
-        Untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} ini belum mengimplementasikan fitur-fitur aksesibilitas yang dapat membantu para pengguna dengan sebuah kekurangan/\textit{disability} ataupun untuk para pengguna lansia yang cukup kesulitan untuk menavigasikan aplikasi. untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh. 
+        Untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} ini memiliki fitur yang cocok yaitu dengan \textit{font} yang mudah dibaca, tampilan warna pada aplikasi yang tidak tabrakan dan \textit{responsive} sehingga bisa diakses dan digunakkan di perangkat yang kecil.
 
         \item \textit{Offer Information Feedback}
         
-        Aplikasi \textit{ShumiShumi} dianggap sudah memenuhi aturan emas yang ketiga ini. Aplikasi \textit{ShumiShumi} akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna telah menyelesaikan proses transaksinya dan memencet tombol \textit{finish} pada halaman transaksi, maka status transaksi pengguna yang sebelumnya masih berstatus \textit{ongoing} akan berubah menjadi \textit{done}.
+        Aplikasi \textit{ShumiShumi} dianggap sudah memenuhi aturan emas yang ketiga ini, aplikasi \textit{ShumiShumi} akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna memasukan barang kedalam \textit{wishlist} akan memunculkan notifikasi diatas yang mengabarkan status proses tersebut apakah berhasil atau gagal.
 
         \begin{figure}[h]
             \centering
-            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Detail Transaksi.png}
-            \caption{Contoh tampilan status pada halaman detail transaksi}
+            \includegraphics*[scale=0.5]{images/bukti evaluasi ui/Notifikasi Wishlist.png}
+            \caption{Contoh notifikasi respons sistem terhadap aksi masukan barang ke wishlist}
         \end{figure}
 
         \item \textit{Design Dialogs to Yield Closure}
         
-        Aplikasi \textit{ShumiShumi} juga telah dilengkapi dengan fitur pemberitahuan informasi seperti memberitahu apakah profil pengguna telah berhasil diperbarui atau belum, apakah produk yang dimasukan ke dalam \textit{wishlist} sudah berhasil dimasukkan atau belum, dan lain sebagainya. 
+        Aplikasi \textit{ShumiShumi} memenuhi aturan emas yang keempat ini, dimana dalam proses aksi ketika sudah selesai ada sebuah respons dari aplikasi yang menandakan dan memberitahu kepada pengguna bahwa proses tersebut sudah selesai. Dapat dicontohkan dengan proses memperbaharui profil yang memiliki respons bahwa profil selesai dan berhasil diperbarui dan juga proses transaksi yang di halaman transaksi akan ada informasi dimana transaksi tersebut telah selesai yang ditandakan dengan status \textit{"Done"}.
+
         \newpage
         \begin{figure}[h]
             \centering
             \includegraphics*[height=6cm]{images/bukti evaluasi ui/profil berhasil di update.png}
             \caption{Contoh tampilan pesan saat profil pengguna telah berhasil diperbarui}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Detail Transaksi.png}
+            \caption{Contoh tampilan status pada halaman detail transaksi}
         \end{figure}
         
         \item \textit{Prevent Errors}
@@ -3447,7 +3454,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Keep Users in Control}
         
-        Aplikasi \textit{ShumiShumi} ini masih memiliki kekurangan untuk membantu penggunanya mengubah tampilan \textit{user interface} web sesuai preferensi mereka masing-masing, salah satunya seperti kurangnya dukungan untuk merubah tema warna aplikasi menjadi warna yang gelap \textit{dark mode}. Jadi, untuk aturan emas ketujuh ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh.
+        Aplikasi \textit{ShumiShumi} ini memenuhi aturan ini dengan fiturnya dimana pengguna dengan mudah dapat melakukan perbahuan informasi personal, mengatur \textit{cart} dan \textit{wishlist} sendiri dan juga mencari dan filter barang.
 
         \item \textit{Reduce Short-Term Memory Load}
         
