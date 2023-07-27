@@ -492,13 +492,13 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
 \textit{The Eight Golden Rules of Interface Design} adalah sebuah lis yang memiliki poin-poin yang dapat menjadi panduan bagi desainer dan murid atas apa yang dapat dites dari sebuah sistem interaktif \autocite{Shneiderman_Plaisant_Cohen_Jacobs_Elmqvist_2018_eight_golden_rules}. Berikut adalah kedelapan \textit{Golden Rules} yang ditulis:
 \begin{enumerate}
     \item \textit{Strive for consistency}\\
-    Dalam suatu konsistensi adalah hal yang baik di dalam segala hal pada suatu sistem interaksi. Seperti urutan aksi untuk mencapai suatu diusahakan konsisten dan mirip dengan aksi untuk mencapai suatu yang mirip. Contoh lainnya adalah penggunaan kata atau istilah seharusnya konsisten di keseluruhan, sama halnya dengan penggunaan warna, tata letak, bahkan font kata. Dan jika harus ada yang tidak konsisten karena diperlukan, diusahakan sesedikit mungkin.
+    Konsistensi adalah sebuah hal yang baik diperlukan pada suatu sistem interaksi. Seperti urutan aksi untuk mencapai suatu diusahakan konsisten dan mirip dengan aksi untuk mencapai suatu yang mirip. Contoh lainnya adalah penggunaan kata atau istilah seharusnya konsisten di keseluruhan, sama halnya dengan penggunaan warna, tata letak, bahkan font kata. Dan jika harus ada yang tidak konsisten karena diperlukan, diusahakan sesedikit mungkin.
     \item \textit{Seek universal usability}\\
-    Penambahan fitur untuk segala macam pengguna, seperti fitur untuk membantu pemula dalam teknologi seperti penjelasan atau fitur untuk yang ahli supaya mendapatkan \textit{shortcuts} untuk mempercepat penggunaan akan mendorong rasa kualitas.
+    Penambahan fitur untuk segala macam pengguna, seperti tingkat pemahaman pengguna terhadap aplikasi, jenis teknologi yang dipakai, budaya dan umur.
     \item \textit{Offer informative feedback}\\
     Tiap kali pengguna melakukan suatu hal, ada baiknya dan seharusnya ada respons yang sesuai dari aplikasi.
     \item \textit{Design dialogs to yield closure}\\
-    Dalam suatu proses aksi pada aplikasi, informasi status proses aksi seharusnya dikomunikasikan jika sudah selesai atau hasil akhir dari aksi yang dilakukan, seperti jika pengguna ingin memasukan barang ke sebuah \textit{wishlist}, dikomunikasikan jika berhasil atau gagal.
+    Dalam suatu proses aksi pada aplikasi, harus ada respons informatif yang berada pada akhir suatu proses untuk mengkomunikasian kepada pengguna bahwa proses tersebut sudah selesai, sehingga adanya rasa puas dan bahwa tidak ada yang perlu dilakukan lagi dalam proses tersebut.
     \item \textit{Prevent errors}\\
     Poin ini berfokus untuk menjaga pengguna dari melakukan sesuatu hal yang dapat menimbulkan sebuah \textit{error}/kerusakan yang serius, dan jika terjadi \textit{error} pada tinggi tingkat manapun harus ada panduan dari aplikasi yang mudah dimengerti, konstruktif dan spesifik untuk membetulkannya.
     \item \textit{Permit easy reversal of actions}\\
@@ -3363,26 +3363,33 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Seek Universal Usability}
         
-        Untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} ini belum mengimplementasikan fitur-fitur aksesibilitas yang dapat membantu para pengguna dengan sebuah kekurangan/\textit{disability} ataupun untuk para pengguna lansia yang cukup kesulitan untuk menavigasikan aplikasi. untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh. 
+        Untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} ini memiliki fitur yang cocok yaitu dengan \textit{font} yang mudah dibaca, tampilan warna pada aplikasi yang tidak tabrakan dan \textit{responsive} sehingga bisa diakses dan digunakkan di perangkat yang kecil.
 
         \item \textit{Offer Information Feedback}
         
-        Aplikasi \textit{ShumiShumi} dianggap sudah memenuhi aturan emas yang ketiga ini. Aplikasi \textit{ShumiShumi} akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna telah menyelesaikan proses transaksinya dan memencet tombol \textit{finish} pada halaman transaksi, maka status transaksi pengguna yang sebelumnya masih berstatus \textit{ongoing} akan berubah menjadi \textit{done}.
+        Aplikasi \textit{ShumiShumi} dianggap sudah memenuhi aturan emas yang ketiga ini, aplikasi \textit{ShumiShumi} akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna memasukan barang kedalam \textit{wishlist} akan memunculkan notifikasi diatas yang mengabarkan status proses tersebut apakah berhasil atau gagal.
 
         \begin{figure}[h]
             \centering
-            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Detail Transaksi.png}
-            \caption{Contoh tampilan status pada halaman detail transaksi}
+            \includegraphics*[scale=0.5]{images/bukti evaluasi ui/Notifikasi Wishlist.png}
+            \caption{Contoh notifikasi respons sistem terhadap aksi masukan barang ke wishlist}
         \end{figure}
 
         \item \textit{Design Dialogs to Yield Closure}
         
-        Aplikasi \textit{ShumiShumi} juga telah dilengkapi dengan fitur pemberitahuan informasi seperti memberitahu apakah profil pengguna telah berhasil diperbarui atau belum, apakah produk yang dimasukan ke dalam \textit{wishlist} sudah berhasil dimasukkan atau belum, dan lain sebagainya. 
+        Aplikasi \textit{ShumiShumi} memenuhi aturan emas yang keempat ini, dimana dalam proses aksi ketika sudah selesai ada sebuah respons dari aplikasi yang menandakan dan memberitahu kepada pengguna bahwa proses tersebut sudah selesai. Dapat dicontohkan dengan proses memperbaharui profil yang memiliki respons bahwa profil selesai dan berhasil diperbarui dan juga proses transaksi yang di halaman transaksi akan ada informasi dimana transaksi tersebut telah selesai yang ditandakan dengan status \textit{"Done"}.
+
         \newpage
         \begin{figure}[h]
             \centering
             \includegraphics*[height=6cm]{images/bukti evaluasi ui/profil berhasil di update.png}
             \caption{Contoh tampilan pesan saat profil pengguna telah berhasil diperbarui}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{images/prosedur pengunaan aplikasi/Detail Transaksi.png}
+            \caption{Contoh tampilan status pada halaman detail transaksi}
         \end{figure}
         
         \item \textit{Prevent Errors}
@@ -3407,7 +3414,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Keep Users in Control}
         
-        Aplikasi \textit{ShumiShumi} ini masih memiliki kekurangan untuk membantu penggunanya mengubah tampilan \textit{user interface} web sesuai preferensi mereka masing-masing, salah satunya seperti kurangnya dukungan untuk merubah tema warna aplikasi menjadi warna yang gelap \textit{dark mode}. Jadi, untuk aturan emas ketujuh ini, aplikasi \textit{ShumiShumi} masih belum menguasainya secara penuh.
+        Aplikasi \textit{ShumiShumi} ini memenuhi aturan ini dengan fiturnya dimana pengguna dengan mudah dapat melakukan perbahuan informasi personal, mengatur \textit{cart} dan \textit{wishlist} sendiri dan juga mencari dan filter barang.
 
         \item \textit{Reduce Short-Term Memory Load}
         
@@ -3417,66 +3424,66 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
     \newpage
     \item Evaluasi \textit{User Interface} berdasarkan lima faktor manusia terukur
     
-    Untuk mengevaluasi lebih lanjut desain \textit{user interface} pada aplikasi \textit{ShumiShumi} ini, maka dilakukan sebuah pengujian langsung terhadap para penggunanya dengan menggunakan suatu pengukuran tertentu yakni, berdasarkan atas lima faktor manusia terukur (\textit{five measurable human factor}). Cara yang digunakan pada penelitian ini adalah dengan menyebarkan survei kepada para calon pengguna untuk menguji langsung aplikasi tersebut. Para calon pengguna yang telah mengisi survei ada sebanyak 38 responden yang berperan sebagai pembeli biasa dan tujuh sebagai penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Di dalam survei diberikan tautan yang menuju ke alamat \textit{website} yang sudah di \textit{deploy} dan sebuah video demonstrasi dari aplikasi \textit{ShumiShumi} ini. Melalui tautan yang telah diberikan, para pengguna dapat langsung menguji dan menilai desain dari aplikasi web \textit{ShumiShumi}. Ada empat pertanyaan yang diberikan (dua untuk pembeli dan dua untuk penjual) dan tujuh pernyataan yang perlu dinilai kesetujuannya atau tidak oleh para pengguna. Skala penilaian dari pernyataan-pernyataan tersebut berkisar antara angka \textbf{satu} hingga \textbf{lima}, satu untuk 'sangat tidak setuju' dan lima untuk 'sangat setuju'. Berikut adalah hasil dari survei yang telah diberikan berdasarkan lima faktor manusia terukur yang telah diuji: 
+    Untuk mengevaluasi lebih lanjut desain \textit{user interface} pada aplikasi \textit{ShumiShumi} ini, maka dilakukan sebuah pengujian langsung terhadap para penggunanya dengan menggunakan suatu pengukuran tertentu yakni, berdasarkan atas lima faktor manusia terukur (\textit{five measurable human factor}). Cara yang digunakan pada penelitian ini adalah dengan menyebarkan survei kepada para calon pengguna untuk menguji langsung aplikasi tersebut. Para calon pengguna yang telah mengisi survei ada sebanyak 141 responden yang berperan sebagai pembeli biasa dan 35 sebagai penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Di dalam survei diberikan tautan yang menuju ke alamat \textit{website} yang sudah di \textit{deploy} dan sebuah video demonstrasi dari aplikasi \textit{ShumiShumi} ini. Melalui tautan yang telah diberikan, para pengguna dapat langsung menguji dan menilai desain dari aplikasi web \textit{ShumiShumi}. Ada empat pertanyaan yang diberikan (dua untuk pembeli dan dua untuk penjual) dan tujuh pernyataan yang perlu dinilai kesetujuannya atau tidak oleh para pengguna. Skala penilaian dari pernyataan-pernyataan tersebut berkisar antara angka \textbf{satu} hingga \textbf{lima}, satu untuk 'sangat tidak setuju' dan lima untuk 'sangat setuju'. Berikut adalah hasil dari survei yang telah diberikan berdasarkan lima faktor manusia terukur yang telah diuji: 
 
     \begin{itemize}
         \item \textit{Time for users to learn specific functions}
         
-        Ada dua pernyataan yang mengaju pada faktor pertama ini, kedua pernyataan yang diajukan adalah, \textit{"User interface dari website shumishumi mudah dipelajari"} dan \textit{"User interface dari website shumishumi enak untuk dilihat"}. Untuk pernyataan pertama sebanyak 73.7\% dari 38 pengguna memberikan nilai sebesar 'lima' dan sebanyak 26.3\% sebesar 'empat'. Sedangkan untuk pernyataan kedua, sebanyak 55.3\% memberikan nilai sebesar 'empat' dan sebanyak 44.7\% memberikan nilai 'lima'. Ini menandakan bahwa sebagian besar pengguna setuju bahwa aplikasi web \textit{ShumiShumi} cukup mudah untuk dipelajari dan dilihat agar tidak memakan waktu yang lama untuk mempelajarinya. 
+        Ada dua pernyataan yang mengaju pada faktor pertama ini, kedua pernyataan yang diajukan adalah, \textit{"User interface dari website shumishumi mudah dipelajari"} dan \textit{"User interface dari website shumishumi enak untuk dilihat"}. Untuk pernyataan pertama sebanyak 70.9\% dari 141 pengguna menjawab sangat setuju ('5'). Sedangkan untuk pernyataan kedua, sebanyak 66.7\% menjawab sangat setuju ('5'). Hal ini menandakan bahwa sebagian besar pengguna setuju bahwa aplikasi web \textit{ShumiShumi} cukup mudah untuk dipelajari dan dilihat.
 
         \newpage
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 4.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 4.png}
             \caption{Hasil survei untuk pernyataan pertama mengenai faktor pertama}
         \end{figure}
 
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 6.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 6.png}
             \caption{Hasil survei untuk pernyataan kedua mengenai faktor pertama}
         \end{figure}
 
         \item \textit{Speed of task performance}
         
-        Untuk faktor manusia yang kedua ini, terdapat dua pernyataan juga yang mengajukannya. Pernyataan pertama adalah \textit{"User interface dari website shumishumi mudah untuk dinavigasi"} dan \textit{"Tidak ada proses yang berbelit - belit diwebsite shumishumi"}. Maksud dari kedua pernyataan tersebut adalah untuk menanyakan para penggunanya apakah aplikasi web \textit{ShumiShumi} ini memiliki desain yang susah untuk di navigasi dan berbelit-belit sehingga para pengguna kesulitan untuk menyelesaikan suatu aksi yang dapat memperlambat alur kerja mereka. Untuk hasilnya sendiri, pada pernyataan pertama untuk faktor terukur kedua ini, sebanyak 76.3\% pengguna menilainya sebesar 'lima' dan sebanyak 23.7\% menilai 'empat'. Sedangkan untuk pernyataan kedua, sebanyak 71.1\% memberikan nilai 'lima' dan 28.9\% memberi nilai 'empat'. Itu artinya, masih banyak dari antara pengguna yang setuju bahwa desain aplikasi web \textit{ShumiShumi} tidak memperlambat waktu mereka untuk melakukan berbagai jenis aksi di dalam aplikasi ini. 
+        Untuk faktor manusia yang kedua ini, terdapat dua pernyataan juga yang mengajukannya. Pernyataan pertama adalah \textit{"User interface dari website shumishumi mudah untuk dinavigasi"} dan \textit{"Tidak ada proses yang berbelit - belit diwebsite shumishumi"}. Maksud dari kedua pernyataan tersebut adalah untuk menanyakan para penggunanya apakah aplikasi web \textit{ShumiShumi} ini memiliki desain yang susah untuk dinavigasi dan berbelit-belit sehingga para pengguna kesulitan untuk menyelesaikan suatu aksi yang dapat memperlambat alur kerja mereka. Untuk hasilnya sendiri, pada pernyataan pertama untuk faktor terukur kedua ini, sebanyak 63.1\% pengguna menjawab sangat setuju ('5'). Sedangkan untuk pernyataan kedua, sebanyak 63.1\% menjawab sangat setuju ('5'). Itu artinya, masih banyak dari antara pengguna yang setuju bahwa desain aplikasi web \textit{ShumiShumi} tidak memperlambat waktu mereka untuk melakukan berbagai jenis aksi di dalam aplikasi ini. 
 
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 7.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 7.png}
             \caption{Hasil survei untuk pernyataan pertama mengenai faktor kedua}
         \end{figure}
 
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 9.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 9.png}
             \caption{Hasil survei untuk pernyataan kedua mengenai faktor kedua}
         \end{figure}
 
         \item \textit{Rate of errors by users}
         
-        Untuk faktor ketiga ini, hanya ada satu pernyataan yang membahasnya. Pernyataan tersebut adalah \textit{"Saat menggunakan website shumishumi jarang ketemu error"}. Untuk hasilnya sendiri, sebanyak 68.4\% pengguna menilainya sebesar 'empat' dan sebanyak 31.6\% pengguna menilai sebesar 'lima'. Ini menunjukkan bahwa para pengguna jarang mendapatkan \textit{error} pada sistem di aplikasi web \textit{ShumiShumi} ini. 
+        Untuk faktor ketiga ini, hanya ada satu pernyataan yang membahasnya. Pernyataan tersebut adalah \textit{"Saat menggunakan website shumishumi jarang ketemu error"}. Untuk hasilnya sendiri, sebanyak 69.5\% pengguna menjawab setuju ('4'). Ini menunjukkan bahwa para pengguna jarang mendapatkan \textit{error} pada sistem di aplikasi web \textit{ShumiShumi} ini. 
         \newpage
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 8.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 8.png}
             \caption{Hasil survei untuk faktor terukur yang ketiga}
         \end{figure}
 
         \item \textit{User retention of commands over time}
         
-        Faktor keempat ini yang menguji seberapa lama pengguna dapat mengingat informasi mengenai aplikasi \textit{ShumShumi} ini setelah rentan waktu yang cukup lama. Ada dua pernyataan yang diajukan pada survei, yakni \textit{"User interface dari website shumishumi mudah diingat"} dan \textit{"User interface dari website shumishumi memberikan semua informasi dengan cukup dan ringkas"}. Kedua pernyataan tersebut bermaksud untuk menanyakan kepada pengguna apakah desain aplikasi \textit{ShumiShumi} mudah untuk diingat dalam jangka waktu yang cukup panjang. Dan hasil yang didapatkan adalah sebanyak 68.4\% memberi nilai 'empat' dan 31.6\% memberi nilai 'lima'. Ini menunjukkan para pengguna setuju bahwa desain dari aplikasi \textit{ShumiShumi} mudah untuk diingat untuk jangka waktu yang cukup lama. 
+        Faktor keempat ini yang menguji seberapa lama pengguna dapat mengingat informasi mengenai aplikasi \textit{ShumShumi} ini setelah rentan waktu yang cukup lama. Ada dua pernyataan yang diajukan pada survei, yakni \textit{"User interface dari website shumishumi mudah diingat"} dan \textit{"User interface dari website shumishumi memberikan semua informasi dengan cukup dan ringkas"}. Kedua pernyataan tersebut bermaksud untuk menanyakan kepada pengguna apakah desain aplikasi \textit{ShumiShumi} mudah untuk diingat dalam jangka waktu yang cukup panjang. Dan hasil yang didapatkan adalah sebanyak 70.9\% menjawab setuju ('4'). Ini menunjukkan para pengguna setuju bahwa desain dari aplikasi \textit{ShumiShumi} mudah untuk diingat untuk jangka waktu yang cukup lama. 
 
         \newpage
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 3.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 3.png}
             \caption{Hasil survei untuk faktor terukur yang keempat dari pernyataan pertama}
         \end{figure}
 
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 5.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 5.png}
             \caption{Hasil survei untuk faktor terukur yang keempat dari pernyataan kedua}
         \end{figure}
 
@@ -3484,34 +3491,34 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
         
         Faktor terakhir merupakan kepuasan dari para pengguna yang telah mencoba untuk menggunakan aplikasi \textit{ShumiShumi}. Disini, nilai kepuasan dari para pengguna dibagi menjadi dua sudut pandang yang berbeda yakni, dari sudut pandang pengguna yang merupakan pembeli biasa dan dari sudut pandang penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Akan ada dua pertanyaan yang diajukan untuk masing-masing pembeli biasa dan penjual dengan bentuk jawaban dari kedua pertanyaan tersebut yang berupa sebuah skala penilaian yang dimulai dari angka \textbf{satu} hingga \textbf{lima}. Satu untuk menggambarkan jawaban 'tidak membantu' sedangkan lima untuk 'sangat membantu'.
 
-        Berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{pembeli}, \textit{"Apakah anda sebagai pengguna yang bertujuan untuk membeli barang, dapat menggunakkan fitur filter Interest Level kami untuk mencari barang yang tepat?"} dan \textit{"Apakah anda tertarik atas rekomendasi yang berada di Home Page kami?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasan para pembeli setelah menggunakan kedua fitur utama yang aplikasi ini berikan, yaitu fitur penyaringan tingkat minat pengguna (\textit{interest level filtering}) dan sistem rekomendasinya. Hasil yang didapat untuk pertanyaan pertama adalah sebanyak 57.9\% memberi nilai 'lima' dan 42.1\% untuk nilai 'empat'. Sedangkan untuk pertanyaan kedua, hasil yang didapat adalah sebanyak 63.2\% dan 36.8\% yang masing-masing memberi nilai 'lima' dan 'empat'. Dengan demikian, dapat disimpulkan bahwa semua pembeli yang telah mencoba aplikasi \textit{ShumiShumi} merasa \textbf{puas} dengan fitur yang diberikan dan desain yang ditampilkan. 
+        Berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{pembeli}, \textit{"Apakah anda sebagai pengguna yang bertujuan untuk membeli barang, dapat menggunakkan fitur filter Interest Level kami untuk mencari barang yang tepat?"} dan \textit{"Apakah anda tertarik atas rekomendasi yang berada di Home Page kami?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasan para pembeli setelah menggunakan kedua fitur utama yang aplikasi ini berikan, yaitu fitur penyaringan tingkat minat pengguna (\textit{interest level filtering}) dan sistem rekomendasinya. Hasil yang didapat untuk pertanyaan pertama adalah sebanyak 51.8\% menjawab sangat setuju ('5'). Sedangkan untuk pertanyaan kedua, hasil yang didapat adalah sebanyak 56.7\% menjawab sangat setuju ('5'). Dengan demikian, dapat disimpulkan bahwa semua pembeli yang telah mencoba aplikasi \textit{ShumiShumi} merasa \textbf{puas} dengan fitur yang diberikan dan desain yang ditampilkan. 
 
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 1.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 1.png}
             \caption{Bukti survei untuk tingkat kepuasan para pembeli mengenai fitur \textit{interest level filtering}}
             \label{fig:userInterestLevel}
         \end{figure}
         
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui user/Survei 2 - Pertanyaan 2.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui user 2/Survei 2 - Pertanyaan 2.png}
             \caption{Bukti survei untuk tingkat kepuasan para pembeli mengenai sistem rekomendasinya}
             \label{fig:userSistemRekomendasi}
         \end{figure}
 
-        Sedangkan, berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{penjual}, \textit{"Apakah adanya fitur interest level ini membantu anda untuk menjual produk anda ke pembeli yang tepat?"} dan \textit{"Apakah keberadaan sistem rekomendasi membantu produk yang anda jual untuk ditemukan oleh banyak calon pembeli?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasan para penjual mengenai keberadaan dan kegunaan fitur penyaringan tingkat minat pengguna (\textit{interest level filtering}) dan sistem rekomendasi terhadap tingkat penjualan toko mereka. Hasil yang didapat dari pertanyaan pertama adalah sebanyak 14.3\% memberi nilai 'lima', 42.9\% memberi nilai 'empat' dan 42.9\% memberi nilai 'tiga'. Sedangkan untuk pertanyaan kedua, sebanyak 57.1\% memberi nilai 'lima', 28.6\% memberi nilai 'empat' dan sebanyak 14.3\% memberi nilai 'tiga'. Dari variasi penilaian tersebut dapat disimpulkan bahwa para penjual merasa \textbf{cukup puas} dengan adanya fitur yang diberikan dan desain yang ditampilkan. 
-        \newpage
+        Sedangkan, berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{penjual}, \textit{"Apakah adanya fitur interest level ini membantu anda untuk menjual produk anda ke pembeli yang tepat?"} dan \textit{"Apakah keberadaan sistem rekomendasi membantu produk yang anda jual untuk ditemukan oleh banyak calon pembeli?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasan para penjual mengenai keberadaan dan kegunaan fitur penyaringan tingkat minat pengguna (\textit{interest level filtering}) dan sistem rekomendasi terhadap tingkat penjualan toko mereka. Hasil yang didapat dari pertanyaan pertama adalah sebanyak 45.7\% menjawab  setuju ('4'). Sedangkan, untuk pertanyaan kedua sebanyak 48.6\% menjawab sangat setuju ('5'). Dari penilaian tersebut dapat disimpulkan bahwa para penjual merasa \textbf{cukup puas} dengan adanya fitur yang diberikan dan desain yang ditampilkan. 
+
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui merchant/Survei 3 - Pertanyaan 1.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui merchant 2/Survei 3 - Pertanyaan 1.png}
             \caption{Bukti survei untuk tingkat kepuasan para penjual mengenai mengenai fitur \textit{interest level filtering}}
             \label{fig:merchantInterestLevel}
         \end{figure}
 
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.65]{images/evaluasi ui merchant/Survei 3 - Pertanyaan 2.png}
+            \includegraphics[scale=0.50]{images/evaluasi ui merchant 2/Survei 3 - Pertanyaan 2.png}
             \caption{Bukti survei untuk tingkat kepuasan para penjual mengenai mengenai sistem rekomendasi}
             \label{fig:merchantRecommendation}
         \end{figure}
@@ -3677,8 +3684,8 @@ Recommend & \begin{tabular}[c]{@{}l@{}}user can get \\ item recommendation\end{t
 \subbab{Kesimpulan}
 Pada bagian akhir skripsi ini, ada beberapa kesimpulan yang dapat diambil yang didasarkan dari pembuatan projek dan hasil penelitian ini, secara umum kesimpulan yang bisa ditarik adalah sistem rekomendasi dan filtrasi menggunakan \textit{interest level} itu membantu pengguna untuk mencari barang yang diinginkan menjadi lebih mudah dan penjual untuk memasarkan produknya ke pengguna yang lebih tepat. Secara lebih khusus kesimpulan yang bisa ditarik sebagai berikut:
 \begin{enumerate}
-    \item penelitian ini berhasil membuat aplikasi yang membantu pengguna untuk mencari produk yang lebih cocok dengan cara mencari produk dengan menggunakan filtrasi \textit{interest level} untuk mendapatkan produk yang lebih spesifik dibanding dengan seberapa dalam mereka dihobi tertentu dan fitur sistem rekomendasi dari website \textit{shumishumi} membantu pengguna untuk menemukan barang dengan kriteria sama dengan apa yang sedang pengguna minati, hal dapat dilihat dari hasil  survei 57.9\% responden sangat setuju dan 42.1\% responden setuju bahwa fitur filtrasi \textit{interest level} memudahkan mereka untuk mencari produk untuk sistem rekomendasi bisa lihat dari hasil survei bahwa 63.2\% responden sangat tertarik dengan fitur tersebut.
-    \item penelitian ini berhasil membuat aplikasi yang membantu penjual untuk memasarkan produk mereka ke pengguna yang lebih tepat dengan cara memberikan kriteria \textit{interest level} yang tepat dan fitur rekomendasi di \textit{website shumishumi} membantu penjual dengan cara membuat produk penjual dapat dilihat oleh pengguna-pengguna yang sedang meminati kriteria yang sama dengan produk penjual, hal ini bisa dilihat dari survei yang telaha dilakukan bahwa 54.2\% responden \textit{merchant} menjawab puas dan sangat puas saat ditanyakan mengenai fitur \textit{interest level} dan untuk sistem rekomendasi 85.7\% responden \textit{merchant} menjawab puas dan cukup puas terhadap fitur tersebut.
+    \item Penelitian ini berhasil membuat aplikasi yang membantu pengguna untuk mencari produk yang lebih cocok dengan cara mencari produk dengan menggunakan filtrasi \textit{interest level} untuk mendapatkan produk yang lebih spesifik dibanding dengan seberapa dalam mereka dihobi tertentu dan fitur sistem rekomendasi dari website \textit{shumishumi} membantu pengguna untuk menemukan barang dengan kriteria sama dengan apa yang sedang pengguna minati, hal dapat dilihat dari hasil  survei 51.8\% responden sangat setuju dan 48.2\% responden setuju bahwa fitur filtrasi \textit{interest level} memudahkan mereka untuk mencari produk untuk sistem rekomendasi bisa lihat dari hasil survei bahwa 56.7\% responden sangat tertarik dengan fitur tersebut.
+    \item Penelitian ini berhasil membuat aplikasi yang membantu penjual untuk memasarkan produk mereka ke pengguna yang lebih tepat dengan cara memberikan kriteria \textit{interest level} yang tepat dan fitur rekomendasi di \textit{website shumishumi} membantu penjual dengan cara membuat produk penjual dapat dilihat oleh pengguna-pengguna yang sedang meminati kriteria yang sama dengan produk penjual, hal ini bisa dilihat dari survei yang telah dilakukan bahwa 62.8\% responden \textit{merchant} menjawab puas dan sangat puas saat ditanyakan mengenai fitur \textit{interest level} dan untuk sistem rekomendasi 77.2\% responden \textit{merchant} menjawab puas dan cukup puas terhadap fitur tersebut.
 \end{enumerate}
 
 
