@@ -3,17 +3,17 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Cart page" as cart
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "CartController" as cc
 
 participant "CartRemoveProcessor" as removeproc
 
 participant "Cart" as wm
-end box
+' end box
 
 database shumishumi as db
 

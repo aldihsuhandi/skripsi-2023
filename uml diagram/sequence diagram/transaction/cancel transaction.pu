@@ -3,18 +3,18 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Transaction Detail page" as detail
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "TransactionController" as tc
 
 participant "TransactionCancelProcessor" as finishproc
 
 Participant "Transaction" as trx
 participant "Item" as rm
-end box
+' end box
 
 database shumishumi as db
 

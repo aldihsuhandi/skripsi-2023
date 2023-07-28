@@ -3,17 +3,17 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Item Detail Page" as detail
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "WishlistController" as wc
 participant "AddWishlishProcessor" as proc
 
 participant "Wishlist" as w
 participant "Activity" as am
-end box
+' end box
 
 database shumishumi as db
 

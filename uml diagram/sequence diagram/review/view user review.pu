@@ -3,12 +3,12 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Home page" as home
 participant "Review list page" as rlist
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant ReviewController as rc
 participant ImageController as imc
 
@@ -19,7 +19,7 @@ participant Review as rm
 participant Item as im
 
 participant Image as img
-end box
+' end box
 
 database shumishumi as db
 

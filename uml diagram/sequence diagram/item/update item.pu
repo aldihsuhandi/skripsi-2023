@@ -3,12 +3,12 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Item Detail page" as detail
 participant "Item Update page" as updatepage
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant ItemController as ic
 participant ImageController as imc
 
@@ -19,7 +19,7 @@ participant Item as im
 participant Knowledge as km
 
 participant Image as img
-end box
+' end box
 
 database shumishumi as db
 

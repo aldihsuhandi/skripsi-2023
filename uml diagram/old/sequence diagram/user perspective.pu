@@ -2,7 +2,7 @@
 
 Actor User as u
 
-Box "Front End" #LightBlue
+' Box "Front End" #LightBlue
 Participant "Home page" as hp
 
 ' account management
@@ -25,7 +25,7 @@ Participant "Create review page" as crp
 Participant "Forum page" as fp
 Participant "Create post page" as cpp
 Participant "View post page" as vpp
-end Box
+' end box
 
 ' backend
 Participant "Back End" as be

@@ -3,15 +3,15 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Wishlist page" as wishlist
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "WishlistController" as wc
 participant "WishlistRemoveProcessor" as rmproc
 participant Wishlist as wm
-end box
+' end box
 
 database shumishumi as db
 

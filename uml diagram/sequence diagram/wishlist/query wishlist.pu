@@ -3,12 +3,12 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Home page" as home
 participant "Wishlist page" as wishlist
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant WishlistController as wc
 participant ImageController as imc
 
@@ -25,7 +25,7 @@ participant InterestLevel as ilm
 participant Hobby as hm
 
 participant Image as img
-end box
+' end box
 
 database shumishumi as db
 

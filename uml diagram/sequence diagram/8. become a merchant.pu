@@ -3,16 +3,16 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Home page" as home
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "UserController" as uc
 participant "MerchantApplyProcessor" as applyproc
 
 participant "User" as um
-end box
+' end box
 
 database shumishumi as db
 

@@ -4,13 +4,13 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Home page" as home
 participant "Register page" as register
 participant "Activate page" as active
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant UserController as userc
 participant DictionaryController as dicc
 
@@ -26,7 +26,7 @@ participant Otp as om
 participant Dictionary as dm
 
 participant EmailEncrypt as eem
-end box
+' end box
 
 database shumishumi as db
 

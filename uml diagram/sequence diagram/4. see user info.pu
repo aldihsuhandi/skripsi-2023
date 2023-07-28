@@ -3,12 +3,12 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Home page" as home
 participant "User info page" as uinfo
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "ImageController" as ic
 participant "UserController" as uc
 participant "ImageDownloadProcessor" as downproc
@@ -17,7 +17,7 @@ participant "UserQueryProcessor" as queproc
 participant "User" as um
 participant "Image" as im
 participant "UserRole" as urm
-end box
+' end box
 
 database shumishumi as db
 

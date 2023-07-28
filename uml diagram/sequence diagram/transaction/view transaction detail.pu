@@ -3,12 +3,12 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Transaction History page" as history
 participant "Transaction Detail page" as detail
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant TransactionController as tc
 participant ImageController as imc
 
@@ -19,7 +19,7 @@ participant Transaction as trx
 participant TransactionDetail as trxd
 participant Item as im
 participant Image as img
-end box
+' end box
 
 database shumishumi as db
 

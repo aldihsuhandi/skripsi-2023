@@ -3,17 +3,17 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Home Page" as home
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "SessionController" as sc
 
 participant "SessionLogoutProcessor" as proc
 
 participant "Session" as sm
-end box
+' end box
 
 database shumishumi as db
 

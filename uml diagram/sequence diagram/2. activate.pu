@@ -3,12 +3,12 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Register page" as register
 participant "Activate Page" as active
 participant "Login Page" as login
-end box
-box "back end"
+' end box
+' Box "back end"
 participant "UserController" as userc
 
 participant "EmailDecryptProcessor" as decproc
@@ -18,7 +18,7 @@ participant "UserActivateProcessor" as proc
 participant "EmailEncrypt" as eem
 participant "User" as um
 participant "Otp" as om
-end box
+' end box
 
 database shumishumi as db
 

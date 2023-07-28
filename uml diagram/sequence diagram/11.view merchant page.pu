@@ -3,12 +3,12 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Item detail page" as detail
 participant "Merchant page" as merchant
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant UserController as uc
 participant ItemController as ic
 participant ImageController as imc
@@ -26,7 +26,7 @@ participant InterestLevel as ilm
 participant Hobby as hm
 
 participant Image as img
-end box
+' end box
 
 database shumishumi as db
 

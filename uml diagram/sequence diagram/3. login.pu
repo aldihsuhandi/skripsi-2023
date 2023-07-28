@@ -3,19 +3,19 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Home page" as home
 participant "Login page" as login
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "UserController" as uc
 
 participant "UserLoginProcessor" as loginproc
 
 participant "User" as um
 participant "Session" as sm
-end box
+' end box
 
 database shumishumi as db
 

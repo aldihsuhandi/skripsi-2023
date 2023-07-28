@@ -3,12 +3,12 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Review list page" as rlist
 participant "Create review page" as cpage
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "ReviewController" as rc
 
 participant "ReviewCreateProcessor" as proc
@@ -16,7 +16,7 @@ participant "ReviewCreateProcessor" as proc
 participant "Review" as rm
 participant "User" as um
 participant "Item" as im
-end box
+' end box
 
 database shumishumi as db
 

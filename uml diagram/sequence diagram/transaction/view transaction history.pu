@@ -3,17 +3,17 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Home page" as home
 participant "Tranasction History page" as history
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "TransactionController" as tc
 participant "TransactionQueryProcessor" as proc
 
 participant Transaction as trx
-end box
+' end box
 
 database shumishumi as db
 

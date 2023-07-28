@@ -3,13 +3,13 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Cart page" as cart
 participant "Transaction pick payment page" as trxpay
 participant "Transaction detail page" as trxdetail
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "TransactionController" as trxc
 
 participant "TransactionCreateProcessor" as trxcreate
@@ -21,7 +21,7 @@ participant "TransactionDetail" as trxdm
 
 participant "Item" as im
 participant "Activity" as am
-end box
+' end box
 
 database shumishumi as db
 

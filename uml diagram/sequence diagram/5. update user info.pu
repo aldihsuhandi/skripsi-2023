@@ -3,19 +3,19 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "User info page" as uinfo
 participant "Update user info page" as update
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "ImageController" as ic
 participant "UserController" as uc
 participant "UserUpdateProcessor" as updproc
 
 participant "User" as um
 participant "Image" as im
-end box
+' end box
 
 database shumishumi as db
 

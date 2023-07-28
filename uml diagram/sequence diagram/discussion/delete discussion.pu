@@ -3,16 +3,16 @@
 
 actor User as u
 
-box "front end"
+' Box "front end"
 participant "Item Detail page" as detail
-end box
+' end box
 
-box "back end"
+' Box "back end"
 participant "DiscussionController" as dc
 
 participant "DiscussionDeleteProcessor" as proc
 participant "Discussion" as dm
-end box
+' end box
 
 database shumishumi as db
 

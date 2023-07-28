@@ -3,7 +3,7 @@
 Actor Admin as a
 Actor Merchant as m
 
-Box "Front End" #LightBlue
+' Box "Front End" #LightBlue
 Participant "Home page" as hp
 
 ' account management
@@ -26,7 +26,7 @@ Participant "Comment report detail page" as crdp
 Participant "Forum page" as fp
 Participant "Create post page" as cpp
 Participant "View post page" as vpp
-end Box
+' end box
 
 ' backend
 Participant "Back End" as be
