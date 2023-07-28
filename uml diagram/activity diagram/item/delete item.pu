@@ -8,9 +8,11 @@
 if () then (no)
     :show error message;
     stop
+else (yes)
 endif
 :delete item;
 :update knowledge graph;
 :redirect to home page;
+stop
 
 @enduml

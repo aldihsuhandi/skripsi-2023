@@ -13,10 +13,12 @@
 if () then (no)
     :show error message;
     stop
+else (yes)
 endif
 
 :update item;
 :update knowledge graph;
 :redirect to item page;
+stop
 
 @enduml

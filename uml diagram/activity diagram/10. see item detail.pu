@@ -6,7 +6,8 @@
 :check if user login;
 if () then (yes)
 :create activity record;
+else (no)
+    :redirect to item detail page;
 endif
-:redirect to item detail page;
 stop
 @enduml

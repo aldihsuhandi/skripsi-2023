@@ -10,12 +10,13 @@ start
 if() then (no)
 :show error, user not logged in;
 stop
+else (yes)
 endif
 
 :check if item in cart;
 if() then (yes)
 :add quantity to cart;
-else
+else (no)
 :add new item to cart;
 endif
 stop

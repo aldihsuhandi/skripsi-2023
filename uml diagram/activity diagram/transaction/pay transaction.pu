@@ -3,6 +3,7 @@
 |user|
 start
 :pay transaction using midtrans;
+|system|
 |midtrans|
 :proses payment request;
 |user|
@@ -11,8 +12,12 @@ start
 :consult to midtrans;
 |midtrans|
 :check payment status;
-if() then(still waiting for payment)
-stop
+|system|
+:if payment status 
+still WAITING_PAYMENT;
+if() then(yes)
+    stop
+else (no)
 endif
 |system|
 :change transaction status\nto ONGOING;

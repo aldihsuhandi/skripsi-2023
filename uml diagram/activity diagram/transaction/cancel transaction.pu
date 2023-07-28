@@ -4,15 +4,16 @@
 :open transaction detail page;
 :click cancel transaction;
 |system|
-:check transaction status;
-if() then(status NOT WAITING_PAYMENT)
+:check if transaction status
+is WAITING_PAYMENT;
+if() then(yes)
     |system|
     :show warning;
     stop
+else (no)
+    |system|
+    :cancel payment request;
 endif
-
-|system|
-:cancel payment request;
 |midtrans|
 :cancel payment request;
 |system|

@@ -12,6 +12,7 @@ start
 :check if cart is selected;
 if() then (yes)
 :recalculate cart price;
+else (no)
 endif
 stop
 

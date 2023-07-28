@@ -11,7 +11,7 @@ repeat
 :did user want to\nquery with another filter;
 backward:adjust transaction filter;
 repeat while () is (yes)
--> (no);
+-> no;
 stop
 
 @enduml

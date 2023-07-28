@@ -4,14 +4,16 @@
 :open transaction detail;
 :click finish transaction;
 |system|
-:validate transaction status;
-if () then (status is not ONGOING)
+:check if transaction status
+is ONGOING;
+if () then (yes)
     |system|
     :show error message;
     stop
+else (no)
+    :change transaction status to DONE;
 endif
 
-:change transaction status to DONE;
 :create unreviewed review;
 stop
 

@@ -8,6 +8,7 @@
 if () then (no)
     :show error message;
     stop
+else (yes)
 endif
 |system|
 :delete discussion;

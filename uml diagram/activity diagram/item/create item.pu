@@ -17,10 +17,12 @@
 if () then (no)
     :show error message;
     stop
+else (yes)
 endif
 
 :create item;
 :update knowledge graph;
 :rediret to newly created item page;
+stop
 
 @enduml

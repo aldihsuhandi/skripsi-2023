@@ -11,13 +11,19 @@ start
 :query transaction detail;
 :if transaction status is WAITING_PAYMENT;
 if () then (yes)
-|midtrans|
-:check payment status;
-|system|
-:if payment status is updated;
-if () then (yes)
-    :update transaction stautas;
+    |midtrans|
+    :check payment status;
+    |system|
+    :if payment status is updated;
+    if () then (yes)
+        :update transaction status;
+    else (no)
+    endif
+else (no)
 endif
-endif
+
+:redirect to 
+transaction detail page;
+stop
 
 @enduml

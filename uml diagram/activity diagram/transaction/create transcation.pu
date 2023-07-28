@@ -7,11 +7,11 @@ start
 |system|
 :validate if there are selected cart;
 if () then (no)
-:show error message;
-stop
+    :show error message;
+    stop
+else (yes)
+    :query selected cart;
 endif
--> yes;
-:query selected cart;
 :create transaction\nwith INIT status;
 :redirect to payment page;
 |user|
@@ -21,14 +21,14 @@ endif
 :create midtrans payment request;
 |midtrans|
 :create payment request;
+|system|
 :check if payment request is successful;
 if () then (no)
-|system|
-:show error message;
-stop
+    :show error message;
+    stop
+else (yes)
+    :delete selected cart;
 endif
-|system|
-:delete selected cart;
 :update item quantity;
 :create activity record;
 :update transaction status to\nWAITING_PAYMENT;
