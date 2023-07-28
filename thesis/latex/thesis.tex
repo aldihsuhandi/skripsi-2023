@@ -77,14 +77,14 @@
 \newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
 
 % bab command
-\newcommand{\bab}[1]{%
+\newcommand{\bab}[2]{%
     \addtocounter{section}{1}%
     \setcounter{subsection}{0}
     \setcounter{subsubsection}{0}
     \setcounter{figure}{0}
     \setcounter{table}{0}
-    \section*{#1}%
-    \addcontentsline{toc}{section}{\protect\numberline{}#1}%
+    \section*{#1\\#2}%
+    \addcontentsline{toc}{section}{\protect\numberline{}#1 #2}%
 }
 
 \newcommand{\subbab}[1]{%
@@ -160,7 +160,8 @@
 
 \newpage
 \pagenumbering{arabic}
-\bab{Bab 1. Pendahuluan}
+% \bab{Bab 1\\Pendahuluan}
+\bab{Bab 1}{Pendahuluan}
 
 \subbab{Latar Belakang}
 
@@ -259,7 +260,8 @@ Bab kelima ini akan memaparkan beberapa kesimpulan yang dapat diambil dan saran 
 \newpage
 \stepcounter{page}
 \newpage
-\bab{Bab 2. Tinjauan Pustaka}
+% \bab{Bab 2. Tinjauan Pustaka}
+\bab{Bab 2}{Tinjauan Pustaka}
 \subbab{Teori - Teori Umum}
 
 \subsubbab{\textit{Object Oriented Programming}}
@@ -991,7 +993,8 @@ Berikut adalah beberapa aplikasi sejenis yang sudah pernah dikembangkan atau dib
 \end{itemize}
 
 \newpage
-\bab{Bab 3. Metode Penelitian}
+% \bab{Bab 3. Metode Penelitian}
+\bab{Bab 3}{Metode Penelitian}
 \subbab{Metode Penelitian}
 Metode penelitian yang digunakan dalam penulisan penelitian ini terfokus pada pengumpulan data yang diperlukan. Data tersebut dikumpulkan dengan cara melakukan survei yang dibuka ke publik yang diisi oleh 122 orang, selain itu juga dilakukan studi pustaka menggunakan \textit{paper} yang berusia dibawah lima tahun, buku yang dibawah 10 tahun dan dokumen-dokumen yang ditemukan di internet. Adapula tahapan kerangka berfikir yang dilakukan dalam penelitian ini yang dapat dilihat pada gambar \ref{fig:KerangkaBerfikir}.
 
@@ -3018,7 +3021,8 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
 \end{enumerate}
 
 \newpage
-\bab{Bab 4. Hasil dan Pembahasan}
+% \bab{Bab 4. Hasil dan Pembahasan}
+\bab{Bab 4}{Hasil dan Pembahasan}
 
 \subbab{Spesifikasi \textit{System}}
 
@@ -3680,7 +3684,8 @@ Recommend & \begin{tabular}[c]{@{}l@{}}user can get \\ item recommendation\end{t
 
 \newpage
 
-\bab{Bab 5. Kesimpulan dan Saran}
+% \bab{Bab 5. Kesimpulan dan Saran}
+\bab{Bab 5}{Kesimpulan dan saran}
 \subbab{Kesimpulan}
 Pada bagian akhir skripsi ini, ada beberapa kesimpulan yang dapat diambil yang didasarkan dari pembuatan projek dan hasil penelitian ini, secara umum kesimpulan yang bisa ditarik adalah sistem rekomendasi dan filtrasi menggunakan \textit{interest level} itu membantu pengguna untuk mencari barang yang diinginkan menjadi lebih mudah dan penjual untuk memasarkan produknya ke pengguna yang lebih tepat. Secara lebih khusus kesimpulan yang bisa ditarik sebagai berikut:
 \begin{enumerate}
