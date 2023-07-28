@@ -64,8 +64,8 @@
 \addbibresource{citation/aldih.bib}
 \addbibresource{citation/chandra.bib}
 \graphicspath{{./images/}, {./diagram}}
-\geometry{a4paper, top=4.0cm, bottom=3.0cm,
-          left=4.0cm, includehead, includefoot}
+\geometry{a4paper, top=2.5cm, bottom=2.5cm,
+          left=4.0cm, right=2.5cm, includehead, includefoot}
 \renewcommand\contentsname{Daftar Isi}
 \renewcommand\listfigurename{Daftar Gambar}
 \renewcommand\listtablename{Daftar Tabel}
@@ -1011,6 +1011,8 @@ Pengembangan \textit{website shumishumi} ini menggunakan metode \textit{agile sc
     Tahapan \textit{backlog grooming} atau \textit{Backlog refinement} dilakukan untuk memastikan semua \textit{stories} yang ada didalam \textit{backlog} sesuai dengan \textit{requirement} yang didapat dan dalam tahapan ini juga \textit{user stories} akan dipecah menjadi \textit{task-task} yang lebih kecil dan diberi \textit{story points}(satu \textit{story point} sama dengan tiga jam) berdasarkan \textit{effort} yang dibutuhkan untuk mengerjakan \textit{task} tersebut.
 
 \begin{longtable}{@{}|l|l|l|l|@{}}
+\caption{\textit{Table backlog}}
+\label{tab:my-table}\\
 \toprule
 \textit{User Stories} & \textit{Task} & \textit{Priority} & \textit{Story Point} \\* \midrule
 \endfirsthead
@@ -1082,8 +1084,6 @@ Pengembangan \textit{website shumishumi} ini menggunakan metode \textit{agile sc
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for create \\ item in merchant page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \cmidrule(l){2-4}
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for edit item \\ in item detail page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \cmidrule(l){2-4}
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for delete item \\ in item detail page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \bottomrule
-\caption{\textit{Table backlog}}
-\label{tab:my-table}\\
 \end{longtable}
 
     \newpage
@@ -1405,6 +1405,8 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
 
 Berikut adalah tabel perbandingan antara kelima aplikasi pada penelitan terdahulu apaila dibandingkan satu sama lain:
 
+\begin{centering}
+\captionof{table}{Aplikasi-aplikasi berdasarkan penelitian terdahulu}
 \begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}
     \hline
     Aplikasi & Kelebihan                                                                                                                 & Kekurangan \\
@@ -1449,11 +1451,13 @@ Berikut adalah tabel perbandingan antara kelima aplikasi pada penelitan terdahul
     - Hanya tersedia di satu lokasi saja \newline
     - Bukan \textit{marketplace} khusus untuk keperluan hobi                                                                                     \\
     \hline
-    \caption{Aplikasi-aplikasi berdasarkan penelitian terdahulu}
 \end{longtable}
+\end{centering}
 
 Berikut pula adalah salah satu aplikasi sejenis yang juga menjadi salah satu latar belakang dibuatnya aplikasi \textit{ShumiShumi} ini:
 
+\begin{centering}
+\captionof{table}{Aplikasi pasaran yang serupa dengan proyek ini}
 \begin{longtable}{|m{3cm}|p{5cm}|p{5cm}|}
     \hline
     Aplikasi & Kelebihan                                                  & Kekurangan                \\
@@ -1473,11 +1477,13 @@ Berikut pula adalah salah satu aplikasi sejenis yang juga menjadi salah satu lat
     % - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
     % \hline
 
-    \caption{Aplikasi pasaran yang serupa dengan proyek ini}
 \end{longtable}
+\end{centering}
 \newpage
 Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi bernama LIDI\autocite{lidi-car-rental}, e-Nelayan Kota Samarahan\autocite{fishes-marketplace} dan aplikasi BUM Desa Pakis\autocite{bum-mekarsari}.
 
+\begin{centering}
+\captionof{table}{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)}
 \begin{longtable}{|p{3cm}|p{2cm}|p{2cm}|p{3cm}|p{2cm}|}
     \hline
     Fitur & ShumiShumi & LIDI & e-Nelayan Kota Samarahan & BUM Desa Pakis\\
@@ -1504,13 +1510,15 @@ Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi
     \hline
     Sarana Ulasan & Y & N & N & N\\
     \hline
-    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)}
 \end{longtable}
+\end{centering}
 
 \textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
 \newpage
 Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi \textit{marketplace} agrikultur\autocite{agriculture-marketplace} dan aplikasi C2C \textit{marketplace} produk perikanan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}.
 
+\begin{centering}
+\captionof{table}{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)}
 \begin{longtable}{|p{3cm}|p{2cm}|p{3cm}|p{4cm}|}
     \hline
     Fitur & ShumiShumi & \textit{Marketplace} Agrikultur & C2C \textit{Marketplace} Perikanan\\
@@ -1537,8 +1545,8 @@ Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi
     \hline
     Sarana Ulasan & Y & N & N\\
     \hline
-    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)}
 \end{longtable}
+\end{centering}
 
 \textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
 
@@ -1993,6 +2001,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{Register}\\
         \begin{table}[h]
             \centering
+            \caption{\textit{Usecase} untuk \textit{register}}
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Register}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2006,12 +2015,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{Usecase} untuk \textit{register}}
         \end{table}
 
         \item \textit{Activate}
             \begin{table}[h]
                 \centering
+                \caption{\textit{usecase} untuk \textit{activate}}
                 \begin{tabular}{|lll}
                 \hline
                 \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Activate}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2025,13 +2034,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
                 \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
                 \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
                 \end{tabular}
-                \caption{\textit{usecase} untuk \textit{activate}}
             \end{table}
 
         \newpage
         \item \textit{Search item}
             \begin{table}[h]
             \centering
+            \caption{\textit{usecase search item} }
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Seach item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2045,12 +2054,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{usecase search item} }
             \end{table}
 
         \item \textit{Open Detail Item}
         \begin{table}[h]
             \centering
+            \caption{\textit{usecase open detail item}}
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Open Detail Item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2064,13 +2073,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{usecase open detail item}}
         \end{table}
 
         \newpage
         \item \textit{See user info}
         \begin{table}[h]
             \centering
+            \caption{\textit{usecase see user info} }
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{See user info}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2084,13 +2093,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{usecase see user info} }
         \end{table}
 
 
         \item \textit{Update user info}
         \begin{table}[h]
             \centering
+            \caption{\textit{usecase update user info} }
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Update user info}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2104,13 +2113,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{usecase update user info} }
         \end{table}
 
         \newpage
         \item \textit{Manage Item}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage item}}
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage Item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2124,12 +2133,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage item}}
 \end{table}
 
         \item \textit{Login}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase login} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Login}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2143,13 +2152,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase login} }
 \end{table}
 
         \newpage
         \item \textit{Logout}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase logout} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Logout}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Medium}}   \\ \hline
@@ -2163,12 +2172,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase logout} }
 \end{table}
 
         \item \textit{Forgot Password}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase forgot password} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Fortgot password}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Medium}}   \\ \hline
@@ -2182,7 +2191,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase forgot password} }
 \end{table}
 
         \newpage
@@ -2190,6 +2198,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{View merchant page}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase view merchant page} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{View merchant page}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2203,12 +2212,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase view merchant page} }
 \end{table}
 
         \item \textit{Become a merchant}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase become a merchant} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Become a merchant}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2222,7 +2231,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase become a merchant} }
 \end{table}
 
         \newpage
@@ -2230,6 +2238,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{Manage wishlist}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage wishlist} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage wishlist}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2243,12 +2252,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage wishlist} }
 \end{table}
 
         \item \textit{Manage cart}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage cart} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage cart}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2262,7 +2271,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage cart} }
 \end{table}
 
         \newpage
@@ -2270,6 +2278,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{Manage discussion}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage discussion} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage discussion}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2283,12 +2292,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage discussion} }
 \end{table}
 
         \item \textit{Manage and view review}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage and view review}}
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage and view review}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2311,7 +2320,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage and view review}}
 \end{table}
 
 
@@ -2319,6 +2327,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{Do transaction}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase do transaction} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Do transaction}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2339,7 +2348,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase do transaction} }
 \end{table}
 
         \newpage
@@ -3030,6 +3038,8 @@ Berikut adalah spesifikasi perangkat yang diperlukan untuk menjalankan aplikasi 
 	
 Spesifikasi minimum yang dibutuhkan oleh pengguna aplikasi web \textit{ShumiShumi} adalah minimum spesifikasi yang dibutuhkan untuk menjalankan sebuah \textit{browser} untuk membuka aplikasi web kami, adalah sebagai berikut:
 
+\begin{centering}
+\captionof{table}{Tabel spesifikasi}
 \begin{longtable}{|p{2cm}|p{5cm}|}
     \hline
     Spesifikaasi & Minimum\\ 
@@ -3042,8 +3052,8 @@ Spesifikasi minimum yang dibutuhkan oleh pengguna aplikasi web \textit{ShumiShum
     \hline
     Monitor & 800 x 600\\ 
     \hline
-\caption{Tabel spesifikasi}
 \end{longtable}
+\end{centering}
 
 \newpage
 \subbab{Prosedur Penggunaan Aplikasi}
@@ -3540,6 +3550,8 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
     \textit{Blackbox testing} ini dilakukan oleh tiga orang \textit{tester} selama tiga hari setelah masa \textit{development} selesai, tabel berikut berisi semua skenario \textit{test} yang dijalankan di\textit{sprint} terakhir.
 
 \begin{longtable}[c]{|l|l|l|l|l|}
+\caption{Blackbox testing scenario}
+\label{tab:blackboxTestingScenario}\\
 \hline
 Testcase & Scenario & Step & Expected outcome & Outcome \\ \hline
 \endfirsthead
@@ -3592,13 +3604,13 @@ Payment page & \begin{tabular}[c]{@{}l@{}}user can pick \\ payment method\end{ta
  & \begin{tabular}[c]{@{}l@{}}user failed to become\\ a merchant\end{tabular} & \begin{tabular}[c]{@{}l@{}}- dont fill out location\\ - click 'become a merchant'\end{tabular} & Show error message & Success \\ \hline
 Logout & user can logout & - click logout button & \begin{tabular}[c]{@{}l@{}}redirect to homepage\\ without any login\\ information\end{tabular} & Success \\ \hline
 Recommend & \begin{tabular}[c]{@{}l@{}}user can get \\ item recommendation\end{tabular} & \begin{tabular}[c]{@{}l@{}}- login\\ - open item detial\\ - go to homepage\end{tabular} & \begin{tabular}[c]{@{}l@{}}user should be \\ getting \\ recommendation\\ base on their\\ activity\end{tabular} & Success \\ \hline
-\caption{Blackbox testing scenario}
-\label{tab:blackboxTestingScenario}\\
 \end{longtable}
 
 
     \item \textit{Whitebox testing} disini dilakukan disisi \textit{backend} dan menggunakan \textit{library JUnit}, \textit{whitebox testing} ini dilakukan akan dilakukan setiap kali ada \textit{pull request} ke \textit{branch main}, berikut adalah semua \textit{testcase} yang dijalankan di\textit{pull request} terakhir.
 \begin{longtable}[c]{|l|l|}
+\caption{Whitebox testing scenario}
+\label{tab:whiteboxTestingScenario}\\
 \hline
 \textit{Test class} & \textit{Test case} \\ \hline
 \endfirsthead
@@ -3676,8 +3688,6 @@ Recommend & \begin{tabular}[c]{@{}l@{}}user can get \\ item recommendation\end{t
  & userUpdateTest\_FAILED\_session\_expired \\ \cline{2-2} 
  & usrUpdateTest\_SUCCESS\_withExtendInfo \\ \cline{2-2} 
  & userUpdateTest\_SUCCESS\_withLocation \\ \hline
-\caption{Whitebox testing scenario}
-\label{tab:whiteboxTestingScenario}\\
 \end{longtable}
 
 \end{enumerate}
