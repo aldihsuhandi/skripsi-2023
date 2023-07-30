@@ -3357,6 +3357,161 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             4 & client\_name & varchar(255) & nama dari \textit{client} \\ \hline
             5 & client\_secret & varchar(255) & \textit{secret} dari \textit{client} \\ \hline
         \end{longtable}
+
+        \item \textit{Table otp}\\
+        \textit{Primary key}: otp\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 8 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{otp}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & otp\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{otp} \\ \hline
+            4 & otp\_dt & timestamp & sebagai waktu kapan otp akan \textit{expire} \\ \hline
+            5 & otp\_type & varchar(255) & \textit{field} untuk menyimpan tipe otp \\ \hline
+            6 & email & varchar(255) & email yang dikirimkan otp \\ \hline
+            7 & is\_active & boolean & apakah otp ini masih aktif atau tidak \\ \hline
+        \end{longtable}
+
+        \item \textit{Table contents}\\
+        \textit{Primary key}: content\_name \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{contents}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & content\_name & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{contents} \\ \hline
+            4 & content & varchar(255) & isi dari \textit{contents} \\ \hline
+        \end{longtable}
+
+        \item \textit{Table activities}\\
+        \textit{Primary key}: activity\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 6 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{activities}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & activity\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{activities} \\ \hline
+            4 & user\_id & varchar(255) & sebagai \textit{foreign key} untuk tabel \textit{users} \\ \hline
+            5 & activity\_value & int & berat dari \textit{activities} tersebut \\ \hline
+            6 & activity & varchar(255) & aktifitas \textit{user} dalam bentuk json\\ \hline
+        \end{longtable}
+
+        \item \textit{Table knowledge}\\
+        \textit{Primary key}: knowledge\_key \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 5 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{knowledge}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & knowledge\_key & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{knowledge} \\ \hline
+            4 & knowledge & varchar(255) & sebagai \textit{value knowledge} ini \\ \hline
+        \end{longtable}
+
+        \item \textit{Table dictionaries}\\
+        \textit{Primary key}: dictionary\_name \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 5 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{dictionaries}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & dictioanry\_name & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{dictionaries} \\ \hline
+            4 & dictionary\_type & varchar(255) & tipe dari \textit{dictionary} \\ \hline
+            5 & display\_name & varchar(255) & bagaimana \textit{dictionary} ini akan ditampilkan di FE \\ \hline
+        \end{longtable}
+
+        \newpage
+        \item \textit{Table images}\\
+        \textit{Primary key}: image\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 6 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{images}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & image\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{images} \\ \hline
+            4 & image\_name & nama dari gambar tersebut \\ \hline
+            5 & image\_ext & \textit{extension} dari gambar tersebut \\ \hline
+            6 & image & longblob & gambar \\ \hline
+        \end{longtable}
+
+        \item \textit{Table reset\_password}\\
+        \textit{Primary key}: uuid \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 6 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{reset\_password}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & uuid & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{reset\_password} \\ \hline
+            4 & email & varchar(255) & email yang me-\textit{request reset password} \\ \hline
+            5 & expired\_time & timestamp & \textit{expired time} untuk \textit{request reset password} \\ \hline
+            6 & is\_active & boolean & apakah \textit{request} ini masih aktif atau tidak \\ \hline
+        \end{longtable}
+
+        \item \textit{Table email\_encrypt}\\
+        \textit{Primary key}: uuid \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{email\_encrypt}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & uuid & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{email\_encrypt} \\ \hline
+            4 & email & varchar(255) & email yang me-\textit{request encrypt email} \\ \hline
+        \end{longtable}
     \end{itemize}
 \end{enumerate}
 
