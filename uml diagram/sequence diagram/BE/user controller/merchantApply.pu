@@ -1,0 +1,7 @@
+@startuml merchantApply
+participant "Frontend" as fe
+participant "UserController" as uc
+
+database "shumishumi-db" as db
+
+@enduml

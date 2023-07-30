@@ -1,0 +1,11 @@
+@startuml activate
+participant "Frontend" as fe
+participant "UserController" as uc
+
+participant "UserActivateProcessor" as proc
+
+participant "User" as um
+
+database "shumishumi-db" as db
+
+@enduml

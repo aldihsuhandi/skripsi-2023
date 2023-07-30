@@ -1,0 +1,33 @@
+@startuml register
+participant "Frontend" as fe
+
+participant "UserController" as uc
+participant "UserRegisterProcessor" as proc
+
+participant "User" as um
+participant "Image" as im
+
+database "shumishumi-db" as db
+
+fe -> uc++ : /user/register
+
+uc -> proc++ : process()
+create um
+proc -> um++ : new()
+um -> um : save()
+um -> db : INSERT
+deactivate um
+
+alt if user has profile picture
+    create im
+    proc -> im++ : new()
+    im -> im : save()
+    im -> db : INSERT
+    deactivate im
+end
+
+return result
+return response
+
+
+@enduml
