@@ -8,4 +8,20 @@ participant "User" as um
 
 database "shumishumi-db" as db
 
+fe -> uc++ : /user/activate
+uc -> proc++ : process()
+
+proc -> um++ : queryByEmail()
+um -> db : SELECT
+proc <-- um : user model
+
+proc -> um : activate()
+um -> um : save
+um -> db : UPDATE
+
+deactivate um
+
+return result
+return response
+
 @enduml
