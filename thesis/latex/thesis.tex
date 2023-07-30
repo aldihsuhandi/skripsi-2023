@@ -64,8 +64,8 @@
 \addbibresource{citation/aldih.bib}
 \addbibresource{citation/chandra.bib}
 \graphicspath{{./images/}, {./diagram}}
-\geometry{a4paper, top=4.0cm, bottom=3.0cm,
-          left=4.0cm, includehead, includefoot}
+\geometry{a4paper, top=2.5cm, bottom=2.5cm,
+          left=4.0cm, right=2.5cm, includehead, includefoot}
 \renewcommand\contentsname{Daftar Isi}
 \renewcommand\listfigurename{Daftar Gambar}
 \renewcommand\listtablename{Daftar Tabel}
@@ -77,14 +77,14 @@
 \newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
 
 % bab command
-\newcommand{\bab}[1]{%
+\newcommand{\bab}[2]{%
     \addtocounter{section}{1}%
     \setcounter{subsection}{0}
     \setcounter{subsubsection}{0}
     \setcounter{figure}{0}
     \setcounter{table}{0}
-    \section*{#1}%
-    \addcontentsline{toc}{section}{\protect\numberline{}#1}%
+    \section*{#1\\#2}%
+    \addcontentsline{toc}{section}{\protect\numberline{}#1 #2}%
 }
 
 \newcommand{\subbab}[1]{%
@@ -160,7 +160,8 @@
 
 \newpage
 \pagenumbering{arabic}
-\bab{Bab 1. Pendahuluan}
+% \bab{Bab 1\\Pendahuluan}
+\bab{Bab 1}{Pendahuluan}
 
 \subbab{Latar Belakang}
 
@@ -196,7 +197,7 @@ Fitur lain yang akan dikembangkan pada penelitian ini selain dari fitur \textit{
 
 Selain dari kedua fitur yang telah dipaparkan diatas, aplikasi berbasis web ini juga mempunyai beberapa fitur pendukung tambahan layaknya sebuah pasar daring (\textit{online marketplace}) pada umumnya. Seperti, tempat untuk berdiskusi/berkomentar mengenai produk tersebut, fitur pembayaran dan fitur ulasan produk.
 
-Tentunya aplikasi \textit{online marketplace} seperti yang dikerjakan pada penelitian ini bukanlah yang pertama kali dibuat atau dikembangkan. Ada beberapa penelitian terdahulu yang juga telah mencoba dan/atau berhasil membuat aplikasi berjenis \textit{marketplace} dengan fitur dan tujuannya yang berbeda antara satu dengan yang lain. Beberapa aplikasi \textit{marketplace} sejenis tersebut dapat dibandingkan dengan aplikasi yang akan dikerjakan pada penelitian ini. Seperti aplikasi pada penelitian yang dilakukan oleh Heru Nugroho dengan rekan-rekannya yaitu sebuah aplikasi \textit{marketplace} berbasis \textit{mobile} yang menjual belikan produk-produk agrikultur. Aplikasi tersebut bertujuan untuk mempermudah para petani atau pekebun untuk menjual belikan produk agrikultur mereka ke masyarakat umum\autocite{agriculture-marketplace}. Selain dari sektor agrikultur, terdapat juga penelitian yang membuat aplikasi sejenis, namun pada sektor perikanan. Yaitu, penelitian yang dilakukan oleh Mohammad Nazrul bersama dengan rekan-rekannya yang membuat aplikasi \textit{marketplace} berbasis \textit{mobile} yang menjual belikan ikan\autocite{fishes-marketplace}. Lalu, pada ruang lingkup yang sama, ada sebuah penelitian yang dilakukan oleh Dwi bersama dengan rekan-rekannya yang membuat aplikasi jual beli ikan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}. Selanjutnya, penelitian yang dilakukan oleh N F Rozi dan rekan-rekannya dengan membuat aplikasi berbasis web bernama \textbf{LIDI} yang ditujukkan sebagai tempat rental mobil secara \textit{online}\autocite{lidi-car-rental}. Terakhir, penelitian yang dilakukan oleh Rachmadita dan rekan-rekannya yang membuat sebuah aplikasi \textit{marketplace} yang menggabungkan usaha mikro, kecil dan menengah ke dalam satu \textit{platform} yang sama secara \textit{online} menggunakan metode \textit{Rapid Application Development}. Penelitian ini ditujukkan kepada Badan Usaha Milik Desa (BUM) di wilayah Desa Mekarsari, Bandung, Jawa Barat\autocite{bum-mekarsari}. Terakhir, ada dua aplikasi terkenal berbasis web yang juga dapat dibandingkan dengan aplikasi yang akan dibuat pada proyek ini, yaitu satu aplikasi \textit{marketplace hobby shop} bernama KyouID.
+Tentunya aplikasi \textit{online marketplace} seperti yang dikerjakan pada penelitian ini bukanlah yang pertama kali dibuat atau dikembangkan. Ada beberapa penelitian terdahulu yang juga telah mencoba dan/atau berhasil membuat aplikasi berjenis \textit{marketplace} dengan fitur dan tujuannya yang berbeda antara satu dengan yang lain. Beberapa aplikasi \textit{marketplace} sejenis tersebut dapat dibandingkan dengan aplikasi yang akan dikerjakan pada penelitian ini. Seperti aplikasi pada penelitian yang dilakukan oleh Heru Nugroho dengan rekan-rekannya yaitu sebuah aplikasi \textit{marketplace} berbasis \textit{mobile} yang menjual belikan produk-produk agrikultur. Aplikasi tersebut bertujuan untuk mempermudah para petani atau pekebun untuk menjual belikan produk agrikultur mereka ke masyarakat umum\autocite{agriculture-marketplace}. Selain dari sektor agrikultur, terdapat juga penelitian yang membuat aplikasi sejenis, namun pada sektor perikanan. Yaitu, penelitian yang dilakukan oleh Mohammad Nazrul bersama dengan rekan-rekannya yang membuat aplikasi \textit{marketplace} berbasis \textit{mobile} yang menjual belikan ikan\autocite[1-10]{fishes-marketplace}. Lalu, pada ruang lingkup yang sama, ada sebuah penelitian yang dilakukan oleh Dwi bersama dengan rekan-rekannya yang membuat aplikasi jual beli ikan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}. Selanjutnya, penelitian yang dilakukan oleh N F Rozi dan rekan-rekannya dengan membuat aplikasi berbasis web bernama \textbf{LIDI} yang ditujukkan sebagai tempat rental mobil secara \textit{online}\autocite{lidi-car-rental}. Terakhir, penelitian yang dilakukan oleh Rachmadita dan rekan-rekannya yang membuat sebuah aplikasi \textit{marketplace} yang menggabungkan usaha mikro, kecil dan menengah ke dalam satu \textit{platform} yang sama secara \textit{online} menggunakan metode \textit{Rapid Application Development}. Penelitian ini ditujukkan kepada Badan Usaha Milik Desa (BUM) di wilayah Desa Mekarsari, Bandung, Jawa Barat\autocite{bum-mekarsari}. Terakhir, ada dua aplikasi terkenal berbasis web yang juga dapat dibandingkan dengan aplikasi yang akan dibuat pada proyek ini, yaitu satu aplikasi \textit{marketplace hobby shop} bernama KyouID.
 
 Berdasarkan semua penjelasan diatas, dapat disimpulkan bahwa adanya peningkatan aktivitas jual beli barang melalui internet yang begitu besar (dari barang kebutuhan hobi maupun tidak) dalam beberapa tahun belakangan ini. Ditambah lagi dengan kesulitannya untuk memulai sebuah kegiatan hobi karena tidak yakin atas barang yang cocok sebagai titik awal untuk memulainya. Untuk itu, penelitian ini bermaksud untuk merancang dan membuat sebuah aplikasi berbasis web yang berfokus pada kegiatan jual beli barang kebutuhan hobi apa saja tanpa merujuk pada satu atau beberapa hobi yang spesifik. Aplikasi ini diberi nama \textit{ShumiShumi}. Fokus utama aplikasi ini ialah untuk mengimplementasikan dua fitur yang berpotensi untuk membantu para penggunanya mencari barang-barang kebutuhan hobi yang mereka butuhkan. Kedua fitur tersebut adalah fitur penyaringan produk berdasarkan tingkat minat pengguna (\textit{Interest Level Filtering}) dan sistem rekomendasi.
 
@@ -259,7 +260,8 @@ Bab kelima ini akan memaparkan beberapa kesimpulan yang dapat diambil dan saran 
 \newpage
 \stepcounter{page}
 \newpage
-\bab{Bab 2. Tinjauan Pustaka}
+% \bab{Bab 2. Tinjauan Pustaka}
+\bab{Bab 2}{Tinjauan Pustaka}
 \subbab{Teori - Teori Umum}
 
 \subsubbab{\textit{Object Oriented Programming}}
@@ -314,43 +316,43 @@ public class Human {
 
 % \newpage
 \subsubbab{\textit{Functional Programming}}
-\textit{Functional Programming} adalah sebuah konsep, paradigma atau sebuah macam \textit{software development} yang menekankan titik beratnya pada penggunaan \textit{functions}, \textit{Functional Programming} sendiri bukan merupakan sebuah alat yang dapat digunakan tetapi merupakan sesuatu pegangan untuk \textit{developers} sebagai sebuah cara menulis kode\autocite{atencio2016functional}.
+\textit{Functional Programming} adalah sebuah konsep, paradigma atau sebuah macam \textit{software development} yang menekankan titik beratnya pada penggunaan \textit{functions}, \textit{Functional Programming} sendiri bukan merupakan sebuah alat yang dapat digunakan tetapi merupakan sesuatu pegangan untuk \textit{developers} sebagai sebuah cara menulis kode\autocite[5-15]{atencio2016functional}.
 
 
-Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{function} yang lebih kecil yang memiliki sifat dapat digunakkan kembali, lebih dapat diandalkan dan mudah dimengerti, lalu \textit{functions} tersebut maka akan dapat membuat sebuah program yang lebih dapat dimengerti \autocite{atencio2016functional}. \textit{Function} yang dibuat mengikuti \textit{Functional Programming} biasa dibuat dengan melakukan parameterisasi pada \textit{function} supaya dalam menggunakannya dengan menggunakkan parameter kode tersebut dapat digunakkan kembali untuk melakukan hal yang lain. \textit{Functional Programming} memiliki empat konsep dasar, yaitu \textit{Declarative programming}, \textit{Pure functions}, \textit{Referential transparency}, dan \textit{Immutability}\autocite{atencio2016functional}.
+Tujuan dari \textit{Functional Programming} adalah membuat sebuah \textit{function} yang lebih kecil yang memiliki sifat dapat digunakkan kembali, lebih dapat diandalkan dan mudah dimengerti, lalu \textit{functions} tersebut maka akan dapat membuat sebuah program yang lebih dapat dimengerti \autocite[5-15]{atencio2016functional}. \textit{Function} yang dibuat mengikuti \textit{Functional Programming} biasa dibuat dengan melakukan parameterisasi pada \textit{function} supaya dalam menggunakannya dengan menggunakkan parameter kode tersebut dapat digunakkan kembali untuk melakukan hal yang lain. \textit{Functional Programming} memiliki empat konsep dasar, yaitu \textit{Declarative programming}, \textit{Pure functions}, \textit{Referential transparency}, dan \textit{Immutability}\autocite[5-15]{atencio2016functional}.
 
 
 \begin{itemize}
-    \item \textit{Declarative programming} adalah sebuah pendekatan \textit{programming} dimana sebuah kode untuk melakukan sesuatu akan ditulis menggunakan \textit{expressions} yang mendeskripsikan logika dari suatu program. Berbeda dengan Imperatif atau \textit{Procedural Programming} dimana akan ditulis secara detail bagaimana untuk melakukan sesuatu untuk mencapai hasil yang diinginkan\autocite{atencio2016functional}.
-    \item \textit{Pure functions} adalah \textit{function} yang memiliki dua sifat, yaitu pertama, sebuah pure function hanya dan hanya bergantung pada input yang diberikan dan tidak dengan \textit{state} yang tersembunyi dan/atau external (diluar function tersebut) dan kedua, tidak merubah apapun yang diluar dari \textit{function} tersebut seperti obyek global atau parameter yang di \textit{pass} ke \textit{function} tersebut \autocite{atencio2016functional}.
-    \item \textit{Referential transparency} adalah ketika sebuah \textit{function} menghasilkan hasil yang sama juga diberikan input yang sama \autocite{atencio2016functional}.
-    \item \textit{Immutability} adalah dimana dalam \textit{Functional Programming} untuk melestarikan sebuah data supaya \textit{Immutable} tidak bisa diganti setelah di deklarasi. Dalam konsep ini yang perlu diperhatikan adalah object seperti \textit{array} yang dapat berubah konten atau valuenya dalam sebuah function \autocite{atencio2016functional}.
+    \item \textit{Declarative programming} adalah sebuah pendekatan \textit{programming} dimana sebuah kode untuk melakukan sesuatu akan ditulis menggunakan \textit{expressions} yang mendeskripsikan logika dari suatu program. Berbeda dengan Imperatif atau \textit{Procedural Programming} dimana akan ditulis secara detail bagaimana untuk melakukan sesuatu untuk mencapai hasil yang diinginkan\autocite[5-15]{atencio2016functional}.
+    \item \textit{Pure functions} adalah \textit{function} yang memiliki dua sifat, yaitu pertama, sebuah pure function hanya dan hanya bergantung pada input yang diberikan dan tidak dengan \textit{state} yang tersembunyi dan/atau external (diluar function tersebut) dan kedua, tidak merubah apapun yang diluar dari \textit{function} tersebut seperti obyek global atau parameter yang di \textit{pass} ke \textit{function} tersebut \autocite[5-15]{atencio2016functional}.
+    \item \textit{Referential transparency} adalah ketika sebuah \textit{function} menghasilkan hasil yang sama juga diberikan input yang sama \autocite[5-15]{atencio2016functional}.
+    \item \textit{Immutability} adalah dimana dalam \textit{Functional Programming} untuk melestarikan sebuah data supaya \textit{Immutable} tidak bisa diganti setelah di deklarasi. Dalam konsep ini yang perlu diperhatikan adalah object seperti \textit{array} yang dapat berubah konten atau valuenya dalam sebuah function \autocite[5-15]{atencio2016functional}.
 \end{itemize}
 
 \subsubbab{\textit{Architectural Pattern}}
-\textit{Architectural Pattern} merupakan seperangkat prinsip dan pola kasar yang menyediakan kerangka kerja abstrak dari sebuah sistem. \textit{Architectural Pattern} menggambarkan struktural fundamental dari suatu organisasi atau skema untuk sebuah sistem yang kompleks. \textit{Architectural Pattern} dapat digunakan sebagai solusi umum yang dapat digunakan kembali \textit{(reusable)} untuk memecahkan permasalahan yang biasa terjadi dalam sebuah \textit{software architecture} di dalam konteks tertentu\autocite{architectural-pattern}. Dalam artian, \textit{Architectural Pattern} mirip dengan \textit{Design Pattern}, tetapi memiliki cakupan yang lebih luas\autocite{archi-pattern}.
+\textit{Architectural Pattern} merupakan seperangkat prinsip dan pola kasar yang menyediakan kerangka kerja abstrak dari sebuah sistem. \textit{Architectural Pattern} menggambarkan struktural fundamental dari suatu organisasi atau skema untuk sebuah sistem yang kompleks. \textit{Architectural Pattern} dapat digunakan sebagai solusi umum yang dapat digunakan kembali \textit{(reusable)} untuk memecahkan permasalahan yang biasa terjadi dalam sebuah \textit{software architecture} di dalam konteks tertentu\autocite[13]{architectural-pattern}. Dalam artian, \textit{Architectural Pattern} mirip dengan \textit{Design Pattern}, tetapi memiliki cakupan yang lebih luas\autocite{archi-pattern}.
 \begin{itemize}
     \item \textit{Object-Oriented Architecture (OOA)}\\
-          \textit{Object-Oriented Architecture} dapat digunakan jika ingin mengenkapsulasi logika dan data bersama-sama dalam komponen yang dapat digunakan kembali. \textit{Business Logic} yang kompleks yang membutuhkan abstraksi dan \textit{dynamic behaviour} dapat secara efektif menggunakan arsitektur jenis ini juga\autocite{architectural-pattern}.
+          \textit{Object-Oriented Architecture} dapat digunakan jika ingin mengenkapsulasi logika dan data bersama-sama dalam komponen yang dapat digunakan kembali. \textit{Business Logic} yang kompleks yang membutuhkan abstraksi dan \textit{dynamic behaviour} dapat secara efektif menggunakan arsitektur jenis ini juga\autocite[14]{architectural-pattern}.
     \item \textit{Layered/Tiered Architecture}\\
-          \textit{Layered/Tiered Architecture} merupakan salah satu jenis \textit{architectural pattern} yang sangat sering digunakan\autocite{architectural-pattern}. Arsitektur jenis ini dapat digunakan untuk menyusun program yang dapat didekomposisikan menjadi beberapa kelompok \textit{subtasks}, yang masing-masing berada pada tingkat abstraksi tertentu. Setiap \textit{layer} menyediakan layanan \textit{(services)} ke \textit{layer} berikutnya yang lebih tinggi. Terdapat empat \textit{layer} utama di dalam arsitektur jenis ini, yakni \textbf{\textit{Presentation Layer}}, \textbf{\textit{Application Layer}}, \textbf{\textit{Business Logic Layer}} dan \textbf{\textit{Data Access Layer}}. Arsitektur jenis ini biasanya digunakan pada aplikasi desktop dan \textit{web e-commerce} pada umumnya\autocite{archi-pattern}.
+          \textit{Layered/Tiered Architecture} merupakan salah satu jenis \textit{architectural pattern} yang sangat sering digunakan\autocite[19-20]{architectural-pattern}. Arsitektur jenis ini dapat digunakan untuk menyusun program yang dapat didekomposisikan menjadi beberapa kelompok \textit{subtasks}, yang masing-masing berada pada tingkat abstraksi tertentu. Setiap \textit{layer} menyediakan layanan \textit{(services)} ke \textit{layer} berikutnya yang lebih tinggi. Terdapat empat \textit{layer} utama di dalam arsitektur jenis ini, yakni \textbf{\textit{Presentation Layer}}, \textbf{\textit{Application Layer}}, \textbf{\textit{Business Logic Layer}} dan \textbf{\textit{Data Access Layer}}. Arsitektur jenis ini biasanya digunakan pada aplikasi desktop dan \textit{web e-commerce} pada umumnya\autocite{archi-pattern}.
     \item \textit{Event-Driven Architecture (EDA)}\\
-          \textit{Event-Driven Architecture (EDA)} biasanya didasarkan pada \textit{communication model} yang digerakkan oleh pesan asinkron untuk menyebarkan informasi ke seluruh organisasi/perusahaan. \textit{EDA} mendukung \textit{allignment} yang lebih alami dengan model operasional organisasi dengan menggambarkan \textit{business activity} nya sebagai suatu rangkaian \textit{event}/peristiwa\autocite{architectural-pattern}.
+          \textit{Event-Driven Architecture (EDA)} biasanya didasarkan pada \textit{communication model} yang digerakkan oleh pesan asinkron untuk menyebarkan informasi ke seluruh organisasi/perusahaan. \textit{EDA} mendukung \textit{allignment} yang lebih alami dengan model operasional organisasi dengan menggambarkan \textit{business activity} nya sebagai suatu rangkaian \textit{event}/peristiwa\autocite[20-24]{architectural-pattern}.
     \item \textit{Model-View-Controller Architecture (MVC)}\\
           \textit{Model-View-Controller Architecture} atau biasa juga disebut sebagai \textbf{MVC}, merupakan sebuah jenis \textit{architectural pattern} yang membagi sistem aplikasinya menjadi tiga bagian, yakni \textbf{\textit{Model}}, \textbf{\textit{View}} dan \textbf{\textit{Controller}}. \textbf{\textit{Model}} merupakan fungsi inti dari aplikasi dan menyimpan data, \textbf{\textit{View}} merupakan sebuah \textit{user interface} (\textbf{UI}) yang dapat dilihat atau berinteraksi dengan pengguna secara langsung dan \textbf{\textit{Controller}} sebagai penghubung antara \textit{model} dengan \textit{view} serta yang mengatur \textit{input} dari pengguna. Arsitektur jenis ini paling sering digunakan untuk membuat sebuah aplikasi berbasis web\autocite{archi-pattern}.
 \end{itemize}
 
 \subsubbab{\textit{Design Pattern}}
-\textit{Design Pattern} secara definisi adalah sesuatu cara komunikasi tiap obyek dan \textit{class} yang dikostumisasi untuk memecahkan masalah desain general di dalam konteks tertentu, \textit{design pattern} membantu untuk membuat \textit{object oriented design} yang dapat digunakan secara berulang, dengan cara memberi nama, mengabstraksi, dna mengidentifikasi kunci aspek dari struktur desain tertentu\autocite{design-pattern-2588942}.
+\textit{Design Pattern} secara definisi adalah sesuatu cara komunikasi tiap obyek dan \textit{class} yang dikostumisasi untuk memecahkan masalah desain general di dalam konteks tertentu, \textit{design pattern} membantu untuk membuat \textit{object oriented design} yang dapat digunakan secara berulang, dengan cara memberi nama, mengabstraksi, dna mengidentifikasi kunci aspek dari struktur desain tertentu\autocite[13]{design-pattern-2588942}.
 \begin{itemize}
     \item \textit{Facade}\\
-          \textit{Facade} adalah sesuatu \textit{class} yang memberikan \textit{interface} yang simpel ke sub-sistem yang kompleks, \textit{design pattern} ini dapat digunakan ketika butuh mengintegrasikan sesuatu \textit{library} dengan fitur yang sangat banyak tapi hanya butuh menggunakan beberapa fiturnya saja\autocite{refactoring-guru}. \textit{Singleton} juga memberikan global \textit{access point} ke instansi \textit{class} tersebut, jadi semua \textit{class} dan \textit{object} dapat membaca \textit{value} yang sama dan merubah \textit{value} tersebut secara keseluruhan\autocite{refactoring-guru}.
+          \textit{Facade} adalah sesuatu \textit{class} yang memberikan \textit{interface} yang simpel ke sub-sistem yang kompleks, \textit{design pattern} ini dapat digunakan ketika butuh mengintegrasikan sesuatu \textit{library} dengan fitur yang sangat banyak tapi hanya butuh menggunakan beberapa fiturnya saja\autocite[210]{refactoring-guru}. \textit{Singleton} juga memberikan global \textit{access point} ke instansi \textit{class} tersebut, jadi semua \textit{class} dan \textit{object} dapat membaca \textit{value} yang sama dan merubah \textit{value} tersebut secara keseluruhan\autocite[210]{refactoring-guru}.
     \item \textit{Singleton}\\
-          \textit{Singleton} digunakan untuk menjamin bahwa suatu \textit{class} hanya memiliki satu \textit{instance}, \textit{design pattern} ini berguna saat ingin mengontrol sebuah \textit{shared resources} seperti \textit{database}\autocite{refactoring-guru}.
+          \textit{Singleton} digunakan untuk menjamin bahwa suatu \textit{class} hanya memiliki satu \textit{instance}, \textit{design pattern} ini berguna saat ingin mengontrol sebuah \textit{shared resources} seperti \textit{database}\autocite[137-138]{refactoring-guru}.
     \item \textit{Builder}\\
-          \textit{Design pattern} ini dibuat untuk memecahkan masalah ketika ada sebuah \textit{class} yang saat dibuat menjadi sebuah \textit{object} tidak semua atributnya diisi, tanpa harus membuat \textit{contructor} atau \textit{child class} banyak. \textit{Builder} mengekstrasi \textit{building steps} saat membuat suatu \textit{object} dari sebuah \textit{class} dan memindahkannya ke \textit{class} terpisah\autocite{refactoring-guru}.
+          \textit{Design pattern} ini dibuat untuk memecahkan masalah ketika ada sebuah \textit{class} yang saat dibuat menjadi sebuah \textit{object} tidak semua atributnya diisi, tanpa harus membuat \textit{contructor} atau \textit{child class} banyak. \textit{Builder} mengekstrasi \textit{building steps} saat membuat suatu \textit{object} dari sebuah \textit{class} dan memindahkannya ke \textit{class} terpisah\autocite[103-105]{refactoring-guru}.
     \item \textit{Template Method}\\
-          \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite{refactoring-guru}.
+          \textit{Template method} digunakan untuk mengurangi redudansi ketika ada beberapa fitur dengan langkah penyelesaian sama tapi dengan cara yang berbeda, \textit{template method} dibuat dengan cara memisahkan logika suatu fitur menjadi beberapa langkah dan saat ingin menambahkan fitur baru, bisa langsung membuat \textit{child class} dari \textit{template method} tersebut dan meng-\textit{override} step yang ingin diganti logikanya\autocite[382-384]{refactoring-guru}.
 \end{itemize}
 
 \subsubbab{\textit{Software Testing}}
@@ -385,9 +387,9 @@ Secara definisi dasar, \textit{software testing} adalah suatu metode untuk menge
 \end{itemize}
 
 \subsubbab{Sistem Rekomendasi}
-Sistem rekomendasi adalah sistem penyaringan informasi yang menyarankan sebuah produk kepada pengguna berdasarkan preferensi atau perilaku masa lalu. Sistem ini banyak digunakan di pasar \textit{online} untuk meningkatkan pengalaman, keterlibatan pengguna, dan mendorong penjualan. Dengan memberikan rekomendasi yang dipersonalisasi terhadap preferensi, pengguna dapat menemukan sebuah barang yang mungkin tidak bisa ditemukan sendiri dan meningkatkan kepuasan pengguna terhadap pasar \textit{online} yang sedang digunakan \autocite{adiwardana2019}.
+Sistem rekomendasi adalah sistem penyaringan informasi yang menyarankan sebuah produk kepada pengguna berdasarkan preferensi atau perilaku masa lalu. Sistem ini banyak digunakan di pasar \textit{online} untuk meningkatkan pengalaman, keterlibatan pengguna, dan mendorong penjualan. Dengan memberikan rekomendasi yang dipersonalisasi terhadap preferensi, pengguna dapat menemukan sebuah barang yang mungkin tidak bisa ditemukan sendiri dan meningkatkan kepuasan pengguna terhadap pasar \textit{online} yang sedang digunakan \autocite[163-168]{adiwardana2019}.
 
-Kenapa sistem rekomendasi ini dibutuhkan telah dibuktikan oleh sebuah artikel yang diterbitkan pada tahun 2019 oleh Tian \textit{et al}. yang berjudul "\textit{Exploring the effects of personalized recommendation on users' satisfaction and loyalty in e-commerce}" yang menemukan bahwa pengguna \textit{platform e-commerce}  akan menghabiskan waktu 50\% lebih banyak di \textit{platform} tersebut ketika pengguna diberikan sebuah rekomendasi produk yang dipersonalisasi\autocite{tian2019exploring}. Sistem rekomendasi juga menguntungkan untuk mengurangi terjadinya \textit{information overload} yang akan dialami oleh pengguna, dengan cara hanya menampilkan produk yang ingin dilihat atau yang sesuai dengan preferensi - preferensi pengguna tersebut\autocite{karimi2018news}.
+Kenapa sistem rekomendasi ini dibutuhkan telah dibuktikan oleh sebuah artikel yang diterbitkan pada tahun 2019 oleh Tian \textit{et al}. yang berjudul "\textit{Exploring the effects of personalized recommendation on users' satisfaction and loyalty in e-commerce}" yang menemukan bahwa pengguna \textit{platform e-commerce}  akan menghabiskan waktu 50\% lebih banyak di \textit{platform} tersebut ketika pengguna diberikan sebuah rekomendasi produk yang dipersonalisasi\autocite[101-102]{tian2019exploring}. Sistem rekomendasi juga menguntungkan untuk mengurangi terjadinya \textit{information overload} yang akan dialami oleh pengguna, dengan cara hanya menampilkan produk yang ingin dilihat atau yang sesuai dengan preferensi - preferensi pengguna tersebut\autocite[123-127]{karimi2018news}.
 
 Sistem rekomendasi yang akan dipakai di dalam proyek ini akan berdasarkan pada teori \textit{Knowledge Graph}. \textit{Knowledge Graph} adalah sebuah \textit{graph} heterogen, dimana \textit{nodes} akan merepresentasikan sebuah hubungan antara entitas\autocite{guo2020survey}. Dengan menggunakan teori ini, semua produk dan atribut - atributnya dapat dibuat menjadi sebuah \textit{graph} untuk mempermudah memahami hubungan antara tiap produk, selain itu informasi pengguna dan preferensi mereka-pun bisa diintegrasikan ke-\textit{graph} tersebut untuk membantu prediksi rekomendasi menjadi seakurat mungkin.
 
@@ -471,10 +473,10 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
 \textit{Online Marketplace} adalah sebuah tipe dari \textit{e-commerce} yang dimana  produk atau jasa yang ada di aplikasi berasal dari pihak ketiga yang dapat mendaftarkan diri untuk menjual barang atau jasa di tempat aplikasi \textit{online marketplace}. \autocite{pediaa_marketplace}
 
 \subsubbab{\textit{Responsive Web Design} dan \textit{Mobile-First Design}}
-\textit{Responsive Web Design} adalah presentasi dan cara menampilkan isi konten dari sebuah website dengan format yang paling cocok dan relevan dengan perangkat yang mengakses \autocite{Frain_2022}. \textit{Mobile-First Design} adalah konsep yang mengajukan bahwa dalam mendesain dan implementasi aplikasi dimulai dari resolusi layar atau perangkat yang kecil terlebih dahulu dan menambahkan styling dan implementasi untuk resolusi layar yang lebih besar \autocite{Ward_2017}.
+\textit{Responsive Web Design} adalah presentasi dan cara menampilkan isi konten dari sebuah website dengan format yang paling cocok dan relevan dengan perangkat yang mengakses \autocite[5]{Frain_2022}. \textit{Mobile-First Design} adalah konsep yang mengajukan bahwa dalam mendesain dan implementasi aplikasi dimulai dari resolusi layar atau perangkat yang kecil terlebih dahulu dan menambahkan styling dan implementasi untuk resolusi layar yang lebih besar \autocite[5]{Ward_2017}.
 
 \subsubbab{\textit{Five Measurable Human Factor}}
-\textit{Five Measurable human factor} adalah sebuah tes yang dapat dilakukan terhadap sebuah aplikasi dengan cara mencatat 5 kriteria bagaimana seorang manusia berinteraksi dengan sistem informasi aplikasi dan menafsirkan sebuah penilaian dari seberapa baik atau lancarnya seseorang dapat menggunakannya sesuai dengan 5 kriteria tersebut \autocite{Shneiderman_Plaisant_Cohen_Jacobs_Elmqvist_2018_5_factors}. Kelima faktor tersebut adalah:
+\textit{Five Measurable human factor} adalah sebuah tes yang dapat dilakukan terhadap sebuah aplikasi dengan cara mencatat 5 kriteria bagaimana seorang manusia berinteraksi dengan sistem informasi aplikasi dan menafsirkan sebuah penilaian dari seberapa baik atau lancarnya seseorang dapat menggunakannya sesuai dengan 5 kriteria tersebut \autocite[192-193]{Shneiderman_Plaisant_Cohen_Jacobs_Elmqvist_2018_5_factors}. Kelima faktor tersebut adalah:
 \begin{enumerate}
     \item \textit{Time for users to learn specific functions}\\
     Waktu yang diperlukan oleh pengguna untuk mempelajari cara menggunakan dan menavigasikan sebuah aplikasi.
@@ -489,7 +491,7 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
 \end{enumerate}
 
 \subsubbab{\textit{The Eight Golden Rules of Interface Design}}
-\textit{The Eight Golden Rules of Interface Design} adalah sebuah lis yang memiliki poin-poin yang dapat menjadi panduan bagi desainer dan murid atas apa yang dapat dites dari sebuah sistem interaktif \autocite{Shneiderman_Plaisant_Cohen_Jacobs_Elmqvist_2018_eight_golden_rules}. Berikut adalah kedelapan \textit{Golden Rules} yang ditulis:
+\textit{The Eight Golden Rules of Interface Design} adalah sebuah lis yang memiliki poin-poin yang dapat menjadi panduan bagi desainer dan murid atas apa yang dapat dites dari sebuah sistem interaktif \autocite[95-97]{Shneiderman_Plaisant_Cohen_Jacobs_Elmqvist_2018_5_factors}. Berikut adalah kedelapan \textit{Golden Rules} yang ditulis:
 \begin{enumerate}
     \item \textit{Strive for consistency}\\
     Konsistensi adalah sebuah hal yang baik diperlukan pada suatu sistem interaksi. Seperti urutan aksi untuk mencapai suatu diusahakan konsisten dan mirip dengan aksi untuk mencapai suatu yang mirip. Contoh lainnya adalah penggunaan kata atau istilah seharusnya konsisten di keseluruhan, sama halnya dengan penggunaan warna, tata letak, bahkan font kata. Dan jika harus ada yang tidak konsisten karena diperlukan, diusahakan sesedikit mungkin.
@@ -562,7 +564,7 @@ Berikut ini adalah komponen-komponen dasar \textit{flowchart}
 \subsubbab{\textit{Unified Modeling Languages} (\textbf{UML})}
 \textit{Unified Modeling Languages} atau biasa juga disebut sebagai UML merupakan sebuah bahasa pemodelan standar yang terdiri dari satu set diagram. Bahasa pemodelan yang terdiri dari diagram-diagram ini dikembangkan dengan tujuan untuk membantu para \textit{software developers} dan \textit{system developers} untuk membangun dan memvisualisasikan serta mendokumentasikan struktur sistem pada sebuah perangkat lunak (\textit{software}). Bahasa pemodelan ini juga dapat digunakan untuk memodelkan sebuah alur bisnis ataupun sebuah sistem yang bukan merupakan perangkat lunak (\textit{non-software system})\autocite{what-is-UML}.
 
-Untuk sekarang, UML sudah berada di versi 2.5, yang dimana pada versi ini terdapat lima belas teknik diagram yang berbeda yang dapat digunakan untuk memodelkan suatu sistem. Diagram-diagram tersebut dibagi menjadi dua kelompok besar yakni, \textit{Structure Diagrams} yang digunakan untuk memodelkan struktur pada suatu sistem dan \textit{Behavioral Diagrams} yang digunakan untuk memodelkan alur kejadian/perilaku yang akan dijalankan pada sistem tersebut. \textit{Class Diagram} merupakan salah satu contoh diagram yang termasuk ke dalam kelompok \textit{Structure Diagrams}. Sedangkan, \textit{Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram} merupakan contoh diagram yang masuk ke dalam kelompok \textit{Behavioral Diagrams}\autocite{systemanalysisdesign-with-uml-5}.
+Untuk sekarang, UML sudah berada di versi 2.5, yang dimana pada versi ini terdapat lima belas teknik diagram yang berbeda yang dapat digunakan untuk memodelkan suatu sistem. Diagram-diagram tersebut dibagi menjadi dua kelompok besar yakni, \textit{Structure Diagrams} yang digunakan untuk memodelkan struktur pada suatu sistem dan \textit{Behavioral Diagrams} yang digunakan untuk memodelkan alur kejadian/perilaku yang akan dijalankan pada sistem tersebut. \textit{Class Diagram} merupakan salah satu contoh diagram yang termasuk ke dalam kelompok \textit{Structure Diagrams}. Sedangkan, \textit{Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram} merupakan contoh diagram yang masuk ke dalam kelompok \textit{Behavioral Diagrams}\autocite[34-36]{systemanalysisdesign-with-uml-5}.
 
 Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML yang akan digunakan untuk menggambarkan sistem yang dibuat, diagram-diagram tersebut antara lain, \textit{Class Diagram, Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram}. Berikut adalah penjelasan lebih detailnya mengenai empat jenis diagram UML tersebut:
 \begin{enumerate}
@@ -974,7 +976,7 @@ Berikut adalah beberapa aplikasi sejenis yang sudah pernah dikembangkan atau dib
 
     \item Aplikasi bernama e-Nelayan yang menjual ikan
     
-    Aplikasi berbasis \textit{mobile} yang dikembangkan untuk membantu para nelayan di Kota Samarahan, Malaysia untuk memperdagangkan hasil tangkapan ikan mereka ke para pedagang/pasar dan/atau kepada warga secara langsung. Aplikasi ini dikembangkan oleh Mohammad Nazrul Mornie, Nurfauza Jali, Kartinah Zen dan Suriati Khartini Jali\autocite{fishes-marketplace}.
+    Aplikasi berbasis \textit{mobile} yang dikembangkan untuk membantu para nelayan di Kota Samarahan, Malaysia untuk memperdagangkan hasil tangkapan ikan mereka ke para pedagang/pasar dan/atau kepada warga secara langsung. Aplikasi ini dikembangkan oleh Mohammad Nazrul Mornie, Nurfauza Jali, Kartinah Zen dan Suriati Khartini Jali\autocite[1-10]{fishes-marketplace}.
 
     \item Aplikasi perdagangan ikan C2C menggunakan metode \textit{SMS Gateway}
     
@@ -991,7 +993,8 @@ Berikut adalah beberapa aplikasi sejenis yang sudah pernah dikembangkan atau dib
 \end{itemize}
 
 \newpage
-\bab{Bab 3. Metode Penelitian}
+% \bab{Bab 3. Metode Penelitian}
+\bab{Bab 3}{Metode Penelitian}
 \subbab{Metode Penelitian}
 Metode penelitian yang digunakan dalam penulisan penelitian ini terfokus pada pengumpulan data yang diperlukan. Data tersebut dikumpulkan dengan cara melakukan survei yang dibuka ke publik yang diisi oleh 122 orang, selain itu juga dilakukan studi pustaka menggunakan \textit{paper} yang berusia dibawah lima tahun, buku yang dibawah 10 tahun dan dokumen-dokumen yang ditemukan di internet. Adapula tahapan kerangka berfikir yang dilakukan dalam penelitian ini yang dapat dilihat pada gambar \ref{fig:KerangkaBerfikir}.
 
@@ -1008,6 +1011,8 @@ Pengembangan \textit{website shumishumi} ini menggunakan metode \textit{agile sc
     Tahapan \textit{backlog grooming} atau \textit{Backlog refinement} dilakukan untuk memastikan semua \textit{stories} yang ada didalam \textit{backlog} sesuai dengan \textit{requirement} yang didapat dan dalam tahapan ini juga \textit{user stories} akan dipecah menjadi \textit{task-task} yang lebih kecil dan diberi \textit{story points}(satu \textit{story point} sama dengan tiga jam) berdasarkan \textit{effort} yang dibutuhkan untuk mengerjakan \textit{task} tersebut.
 
 \begin{longtable}{@{}|l|l|l|l|@{}}
+\caption{\textit{Table backlog}}
+\label{tab:my-table}\\
 \toprule
 \textit{User Stories} & \textit{Task} & \textit{Priority} & \textit{Story Point} \\* \midrule
 \endfirsthead
@@ -1079,8 +1084,6 @@ Pengembangan \textit{website shumishumi} ini menggunakan metode \textit{agile sc
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for create \\ item in merchant page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \cmidrule(l){2-4}
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for edit item \\ in item detail page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \cmidrule(l){2-4}
  & \textit{\begin{tabular}[c]{@{}l@{}}{[}FE{]} Create button for delete item \\ in item detail page\end{tabular}} & \textit{P2} & \textit{1 SP} \\* \bottomrule
-\caption{\textit{Table backlog}}
-\label{tab:my-table}\\
 \end{longtable}
 
     \newpage
@@ -1160,11 +1163,11 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
 
     \item Aplikasi bernama \textbf{e-Nelayan} yang menjual produk-produk berupa ikan
 
-    Penelitian kedua merupakan penelitian yang mengembangkan sebuah aplikasi \textit{marketplace} berbasis \textit{mobile} yang menjual belikan produk-produk berupa ikan. Aplikasi ini dikembangkan oleh Mohammad Nazrul Mornie, Nurfauza Jali, Kartinah Zen dan Suriati Khartini Jali. Aplikasi ini berfokus untuk membantu para nelayan terutama di Kota Samarahan, Malaysia untuk menjual ikan-ikan mereka kepada masyarakat dan kepada para pedagang pasar atau penjual ikan\autocite{fishes-marketplace}.
+    Penelitian kedua merupakan penelitian yang mengembangkan sebuah aplikasi \textit{marketplace} berbasis \textit{mobile} yang menjual belikan produk-produk berupa ikan. Aplikasi ini dikembangkan oleh Mohammad Nazrul Mornie, Nurfauza Jali, Kartinah Zen dan Suriati Khartini Jali. Aplikasi ini berfokus untuk membantu para nelayan terutama di Kota Samarahan, Malaysia untuk menjual ikan-ikan mereka kepada masyarakat dan kepada para pedagang pasar atau penjual ikan\autocite[1-10]{fishes-marketplace}.
 
-    Aplikasi ini berperan sebagai sebuah \textit{marketplace} bagi komunitas pengguna nelayan, pedagang dan konsumen. Di aplikasi e-Nelayan ini, para nelayan dapat menampilkan hasil tangkapan mereka dan menetapkan harga ikan yang berbeda-beda sesuai dengan hasil tangkapannya. Untuk para pedagang atau penjual ikan yang telah membeli ikan tersebut dari nelayan, mereka dapat memberikan dua opsi pembelian untuk para konsumennya, yakni \textit{self pick-up} (ambil sendiri) atau \textit{cash on delivery} (pembayaran langsung setelah produk dikirim ke konsumen). Terakhir, para konsumen juga dapat meminta \textit{request} kepada pedagang atau nelayan untuk membeli jenis ikan tertentu, yang kemudian dapat dikomentari oleh penjual atau nelayan itu sendiri\autocite{fishes-marketplace}.
+    Aplikasi ini berperan sebagai sebuah \textit{marketplace} bagi komunitas pengguna nelayan, pedagang dan konsumen. Di aplikasi e-Nelayan ini, para nelayan dapat menampilkan hasil tangkapan mereka dan menetapkan harga ikan yang berbeda-beda sesuai dengan hasil tangkapannya. Untuk para pedagang atau penjual ikan yang telah membeli ikan tersebut dari nelayan, mereka dapat memberikan dua opsi pembelian untuk para konsumennya, yakni \textit{self pick-up} (ambil sendiri) atau \textit{cash on delivery} (pembayaran langsung setelah produk dikirim ke konsumen). Terakhir, para konsumen juga dapat meminta \textit{request} kepada pedagang atau nelayan untuk membeli jenis ikan tertentu, yang kemudian dapat dikomentari oleh penjual atau nelayan itu sendiri\autocite[1-10]{fishes-marketplace}.
 
-    Aplikasi ini dikembangkan menggunakan \textit{Android Studio} dan untuk sistem \textit{database} yang digunakan adalah \textit{Firebase}. Lebih tepatnya adalah \textit{Firebase Realtime Database}, \textit{Firebase Storage}, dan \textit{Firebase Authentication}. \textit{Firebase Realtime Database} digunakan untuk menyimpan semua jenis data yang aplikasi tersebut butuhkan, \textit{Firebase Storage} digunakan untuk menyimpan data yang berupa gambar (terutama gambar profil dan gambar produk), sedangkan \textit{Firebase Authentication} digunakan untuk menyimpan kredensial pengguna bergantung pada jenis autentikasi yang dipilih. Pada aplikasi ini, mereka menggunakan sistem autentikasi berupa \textit{email} dan \textit{password}\autocite{fishes-marketplace}.
+    Aplikasi ini dikembangkan menggunakan \textit{Android Studio} dan untuk sistem \textit{database} yang digunakan adalah \textit{Firebase}. Lebih tepatnya adalah \textit{Firebase Realtime Database}, \textit{Firebase Storage}, dan \textit{Firebase Authentication}. \textit{Firebase Realtime Database} digunakan untuk menyimpan semua jenis data yang aplikasi tersebut butuhkan, \textit{Firebase Storage} digunakan untuk menyimpan data yang berupa gambar (terutama gambar profil dan gambar produk), sedangkan \textit{Firebase Authentication} digunakan untuk menyimpan kredensial pengguna bergantung pada jenis autentikasi yang dipilih. Pada aplikasi ini, mereka menggunakan sistem autentikasi berupa \textit{email} dan \textit{password}\autocite[1-10]{fishes-marketplace}.
 
     Berikut adalah beberapa \textit{screenshot} untuk tampilan UI (\textit{user interface}) dari aplikasi ini:
     \begin{figure}[h]
@@ -1179,13 +1182,13 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
     \begin{itemize}
         \item \textit{Platform}
 
-        Perbedaan pertama dapat dlihat dari \textit{platform} tempat aplikasi ini akan berjalan. Aplikasi e-Nelayahn tersebut merupakan aplikasi berbasis \textit{mobile}, yang berarti hanya dapat berjalan pada perangkat seluler seperti \textit{smartphone}. Terlebih lagi, hanya \textit{smartphone} yang memiliki sistem operasi \textit{Android} saja yang bisa menjalankannya. Dikarenakan pengembangan sistem ini yang hanya menggunakan \textit{Android Studio}\autocite{fishes-marketplace}.
+        Perbedaan pertama dapat dlihat dari \textit{platform} tempat aplikasi ini akan berjalan. Aplikasi e-Nelayahn tersebut merupakan aplikasi berbasis \textit{mobile}, yang berarti hanya dapat berjalan pada perangkat seluler seperti \textit{smartphone}. Terlebih lagi, hanya \textit{smartphone} yang memiliki sistem operasi \textit{Android} saja yang bisa menjalankannya. Dikarenakan pengembangan sistem ini yang hanya menggunakan \textit{Android Studio}\autocite[1-10]{fishes-marketplace}.
 
         Sedangkan aplikasi \textit{ShumiShumi} merupakan sebuah aplikasi berbasis web. Yang artinya, dapat digunakan pada perangkat apa saja denagn jenis sistem operasi apa saja selama perangkat-perangkat tersebut memiliki konekasi internet dan \textit{web browser}.
 
         \item Kegunaan dan Ruang Lingkup Aplikasi
 
-        Perbedaan kedua adalah pada kegunaan dan ruan lingkup aplikasinya. Aplikasi e-Nelayan hanya digunakan untuk membantu proses jual-beli produk-produk berupa ikan dari nelayan ke masyarakat dan hanya diperuntukkan kepada para nelayan, pedagang atau penjual ikan dan para konsumen di wilayah Kota Samarahan, Malaysia\autocite{fishes-marketplace}.
+        Perbedaan kedua adalah pada kegunaan dan ruan lingkup aplikasinya. Aplikasi e-Nelayan hanya digunakan untuk membantu proses jual-beli produk-produk berupa ikan dari nelayan ke masyarakat dan hanya diperuntukkan kepada para nelayan, pedagang atau penjual ikan dan para konsumen di wilayah Kota Samarahan, Malaysia\autocite[1-10]{fishes-marketplace}.
 
         Sedangkan aplikasi \textit{ShumiShumi} dipergunakan untuk membantu proses jual-beli barang-barang kebutuhan hobi. Mulai dari hobi berolahraga, bermain \textit{game}, bermain musik, dan lain sebagainya. Untuk jangkauan wilayah aplikasi ShumiShumi sendiri, dapat digunakan untuk semua pengguna yang berada di Indonesia.
 
@@ -1194,7 +1197,7 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
         \begin{itemize}
             \item Diskusi atau komentar
 
-            Kedua aplikasi e-Nelayan dan \textit{ShumiShumi} sama-sama memiliki sistem diskusi. Yang membedakannya adalah pada aplikasi e-Nelayan, para pengguna termasuk konsumen, pedagang dan nelayan dapat membuat sebuah postingan atau sebuah komentar mengenai produk ikan apa yang ingin mereka tampilkan di aplikasi tersebut. Seperti halnya seorang konsumen dapat membuat postingan mengenai produk ikan yang diingikan agar dapat dikomentari langsung oleh pedagang ataupun nelayannya\autocite{fishes-marketplace}.
+            Kedua aplikasi e-Nelayan dan \textit{ShumiShumi} sama-sama memiliki sistem diskusi. Yang membedakannya adalah pada aplikasi e-Nelayan, para pengguna termasuk konsumen, pedagang dan nelayan dapat membuat sebuah postingan atau sebuah komentar mengenai produk ikan apa yang ingin mereka tampilkan di aplikasi tersebut. Seperti halnya seorang konsumen dapat membuat postingan mengenai produk ikan yang diingikan agar dapat dikomentari langsung oleh pedagang ataupun nelayannya\autocite[1-10]{fishes-marketplace}.
 
             Sedangkan untuk aplikasi \textit{ShumiShumi}, para pengguna termasuk penjual maupun pembeli, hanya bisa bersikusi dalam bentuk komentar pada masing-masing halaman produk yang sedang dijual.
 
@@ -1202,13 +1205,13 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
 
             Perbedaan ketiga adalah sistem rekomendasi, aplikasi \textit{ShumiShumi} memiliki mengimplementasikan sistem rekomendasi pada halaman utama aplikasinya. Sistem rekomendasi ini bekerja bersasarkan jenis-jenis barang kebutuhan hobi tertentu yang telah pengguna tersebut cari atau lihat selama menggunakan aplikasi web ini.
 
-            Sedangkan aplikasi e-Nelayan tidak memiliki sistem rekomendasi sama sekali pada halaman utama aplikasinya\autocite{fishes-marketplace}.
+            Sedangkan aplikasi e-Nelayan tidak memiliki sistem rekomendasi sama sekali pada halaman utama aplikasinya\autocite[1-10]{fishes-marketplace}.
 
             \item Pergantian \textit{role}/peran untuk penggunanya
 
-            Kedua aplikasi ini sama-sama memiliki fitur untuk merubah peran penggunanya sebagai konsumen menjadi yang lain. Pada aplikasi e-Nelayan, pengguna dapat berperan sebagai konsumen biasa yang ingin membeli ikan atau dapat juga membuat \textit{request} untuk menjadi pedagang ataupun nelayan apabila telah disetujui oleh pihak \textit{Admin} dari aplikasi tersebut\autocite{fishes-marketplace}. Lalu, pada aplikasi \textit{ShumiShumi}, para pengguna yang awalnya hanya berperan sebagai pembeli biasa juga dapat merubah \textit{role}/peran mereka menjadi seorang penjual/\textit{merchant}.
+            Kedua aplikasi ini sama-sama memiliki fitur untuk merubah peran penggunanya sebagai konsumen menjadi yang lain. Pada aplikasi e-Nelayan, pengguna dapat berperan sebagai konsumen biasa yang ingin membeli ikan atau dapat juga membuat \textit{request} untuk menjadi pedagang ataupun nelayan apabila telah disetujui oleh pihak \textit{Admin} dari aplikasi tersebut\autocite[1-10]{fishes-marketplace}. Lalu, pada aplikasi \textit{ShumiShumi}, para pengguna yang awalnya hanya berperan sebagai pembeli biasa juga dapat merubah \textit{role}/peran mereka menjadi seorang penjual/\textit{merchant}.
 
-            Yang membedakannya kedua aplikasi ini adalah dari jumlah peran yang dapat diambil, pada aplikasi e-Nelayan, dapat berpedan sebagai konsumen biasa, pedagang/penjual ikan ataupun sebagai nelayan\autocite{fishes-marketplace}. Sedangkan untuk aplikasi \textit{ShumiShumi}, para pengguna hanya dapat beperan sebagai pembeli atau penjual/\textit{merchant}.
+            Yang membedakannya kedua aplikasi ini adalah dari jumlah peran yang dapat diambil, pada aplikasi e-Nelayan, dapat berpedan sebagai konsumen biasa, pedagang/penjual ikan ataupun sebagai nelayan\autocite[1-10]{fishes-marketplace}. Sedangkan untuk aplikasi \textit{ShumiShumi}, para pengguna hanya dapat beperan sebagai pembeli atau penjual/\textit{merchant}.
 
         \end{itemize}
 
@@ -1402,6 +1405,8 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
 
 Berikut adalah tabel perbandingan antara kelima aplikasi pada penelitan terdahulu apaila dibandingkan satu sama lain:
 
+\begin{centering}
+\captionof{table}{Aplikasi-aplikasi berdasarkan penelitian terdahulu}
 \begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}
     \hline
     Aplikasi & Kelebihan                                                                                                                 & Kekurangan \\
@@ -1446,11 +1451,13 @@ Berikut adalah tabel perbandingan antara kelima aplikasi pada penelitan terdahul
     - Hanya tersedia di satu lokasi saja \newline
     - Bukan \textit{marketplace} khusus untuk keperluan hobi                                                                                     \\
     \hline
-    \caption{Aplikasi-aplikasi berdasarkan penelitian terdahulu}
 \end{longtable}
+\end{centering}
 
 Berikut pula adalah salah satu aplikasi sejenis yang juga menjadi salah satu latar belakang dibuatnya aplikasi \textit{ShumiShumi} ini:
 
+\begin{centering}
+\captionof{table}{Aplikasi pasaran yang serupa dengan proyek ini}
 \begin{longtable}{|m{3cm}|p{5cm}|p{5cm}|}
     \hline
     Aplikasi & Kelebihan                                                  & Kekurangan                \\
@@ -1470,11 +1477,13 @@ Berikut pula adalah salah satu aplikasi sejenis yang juga menjadi salah satu lat
     % - Tidak ada gambar atau suatu panel untuk menampilkan informasi item tersebut secara singkat \\
     % \hline
 
-    \caption{Aplikasi pasaran yang serupa dengan proyek ini}
 \end{longtable}
+\end{centering}
 \newpage
-Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi bernama LIDI\autocite{lidi-car-rental}, e-Nelayan Kota Samarahan\autocite{fishes-marketplace} dan aplikasi BUM Desa Pakis\autocite{bum-mekarsari}.
+Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi bernama LIDI\autocite{lidi-car-rental}, e-Nelayan Kota Samarahan\autocite[1-10]{fishes-marketplace} dan aplikasi BUM Desa Pakis\autocite{bum-mekarsari}.
 
+\begin{centering}
+\captionof{table}{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)}
 \begin{longtable}{|p{3cm}|p{2cm}|p{2cm}|p{3cm}|p{2cm}|}
     \hline
     Fitur & ShumiShumi & LIDI & e-Nelayan Kota Samarahan & BUM Desa Pakis\\
@@ -1501,13 +1510,15 @@ Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi
     \hline
     Sarana Ulasan & Y & N & N & N\\
     \hline
-    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)}
 \end{longtable}
+\end{centering}
 
 \textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
 \newpage
 Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi \textit{marketplace} agrikultur\autocite{agriculture-marketplace} dan aplikasi C2C \textit{marketplace} produk perikanan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}.
 
+\begin{centering}
+\captionof{table}{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)}
 \begin{longtable}{|p{3cm}|p{2cm}|p{3cm}|p{4cm}|}
     \hline
     Fitur & ShumiShumi & \textit{Marketplace} Agrikultur & C2C \textit{Marketplace} Perikanan\\
@@ -1534,8 +1545,8 @@ Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi
     \hline
     Sarana Ulasan & Y & N & N\\
     \hline
-    \caption{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)}
 \end{longtable}
+\end{centering}
 
 \textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
 
@@ -1843,7 +1854,7 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
 
                         \textit{Programming Language} yang digunakkan adalah bahasa yang sesuai dengan framework untuk FrontEnd yang dipilih, dimana yang digunakkan dalam proyek ini adalah \textit{NextJs} yaitu \textit{framework} yang berbasis dari \textit{React Library} sehingga bahasa pemogramman yang digunakkan adalah \textit{JavaScript}.
 
-                        Dimana \textit{JavaScript} sendiri adalah bahasa pemrograman yang banyak digunakkan dan dapat berkerja di kebanyakan \textit{web browser} dan juga \textit{browser} pada perangkat-perangkat lain seperti tablet, ponsel. \textit{JavaScript} sendiri memiliki karakteristik atau ciri-ciri sebagai sebuah bahasa pemrograman yang \textit{high-level}, \textit{dynamic}, dan \textit{interpreted} yang dalam implementasi dan penggunaanya cocok untuk gaya pemrograman \textit{object-oriented} dan juga \textit{functional programming} . Selain itu karakteristik yang signifikan adalah bahwa \textit{variable} dari JavaScript ini bersifat tidak memiliki tipe (\textit{untyped}). Dengan penggunaan \textit{NodeJs} kode \textit{JavaScript} sekarang juga dapat digunakkan diluar dari \textit{web browsers} \autocite{Js_book_Flanagan_2020}.
+                        Dimana \textit{JavaScript} sendiri adalah bahasa pemrograman yang banyak digunakkan dan dapat berkerja di kebanyakan \textit{web browser} dan juga \textit{browser} pada perangkat-perangkat lain seperti tablet, ponsel. \textit{JavaScript} sendiri memiliki karakteristik atau ciri-ciri sebagai sebuah bahasa pemrograman yang \textit{high-level}, \textit{dynamic}, dan \textit{interpreted} yang dalam implementasi dan penggunaanya cocok untuk gaya pemrograman \textit{object-oriented} dan juga \textit{functional programming} . Selain itu karakteristik yang signifikan adalah bahwa \textit{variable} dari JavaScript ini bersifat tidak memiliki tipe (\textit{untyped}). Dengan penggunaan \textit{NodeJs} kode \textit{JavaScript} sekarang juga dapat digunakkan diluar dari \textit{web browsers} \autocite[38-39]{Js_book_Flanagan_2020}.
 
                         \item \textit{Typescript}
 
@@ -1911,7 +1922,7 @@ useEffect(() => {
 
                         \item \textit{useState}
 
-                        Hook \textit{useState} tergolong dalam \textit{State} \textit{Hooks} yang dideskripsikan sebagai fitur yang memberi fungsionalitas kepada komponen sehingga dapat mengingat informasi seperti input user \autocite{Banks_Porcello_2020}. Hook \textit{useState} memiliki dua fungsionalitas yang penting, yaitu mengingat data diantara \textit{render} dan juga dapat melakukan perubahan pada data tersebut. Dalam \textit{React} ketika ada perubahan maka komponen yang bersangkutan di \textit{VDOM} akan diubah dan perubahan itu direfleksikan di \textit{DOM} yang sesungguhnya dengan melakukan rerender, dengan menggunakkan \textit{useState} maka data sebelum terjadinya \textit{render} lagi akan tersimpan atau “diingat”, dan dengan \textit{useState} data tersebut dapat diubah sesuai dengan kebutuhan sehingga melakukan perubahan \textit{VDOM} dan DOM, rerender dilaksanakan \autocite{React_useState}.
+                        Hook \textit{useState} tergolong dalam \textit{State} \textit{Hooks} yang dideskripsikan sebagai fitur yang memberi fungsionalitas kepada komponen sehingga dapat mengingat informasi seperti input user \autocite[190-196]{Banks_Porcello_2020}. Hook \textit{useState} memiliki dua fungsionalitas yang penting, yaitu mengingat data diantara \textit{render} dan juga dapat melakukan perubahan pada data tersebut. Dalam \textit{React} ketika ada perubahan maka komponen yang bersangkutan di \textit{VDOM} akan diubah dan perubahan itu direfleksikan di \textit{DOM} yang sesungguhnya dengan melakukan rerender, dengan menggunakkan \textit{useState} maka data sebelum terjadinya \textit{render} lagi akan tersimpan atau “diingat”, dan dengan \textit{useState} data tersebut dapat diubah sesuai dengan kebutuhan sehingga melakukan perubahan \textit{VDOM} dan DOM, rerender dilaksanakan \autocite{React_useState}.
 
                         Cara deklarasi Hook \textit{useState} adalah sebagai berikut:
 
@@ -1931,7 +1942,7 @@ const [name, setName] = useState("initialValues");
 
                         \textit{Node.js} adalah sebuah \textit{JavaScript} runtime environment yang memungkinkan menjalankan diluar browser web dan biasa digunakkan untuk membangun sebuah BackEnd menggunakkan \textit{JavaScript}. Dikarenakan \textit{backend} dalam proyek ini menggunakkan teknologi yang berbeda, \textit{Node.js} disini digunakan oleh \textit{NextJs} \autocite{Nextjs_use_webpack}.
 
-	                    Selain dari \textit{Node.js} untuk \textit{NextJs}, \textit{Node.js} digunakkan untuk mengutilisasikan \textit{Node Package Manager} (\textbf{NPM}). NPM adalah sebuah sebuah \textit{Command-Line Tool} yang diinstal bersamaan dengan \textit{Node.js} dan membawa fungsionalitas untuk melakukan instalasi kode yang sudah di-\textit{publish} oleh \textit{developer} lain yang dapat membantu dalam membangun sebuah aplikasi tanpa harus membuat ulang seluruh hal yang dibutuhkan \autocite{Banks_Porcello_2020_npm}.
+	                    Selain dari \textit{Node.js} untuk \textit{NextJs}, \textit{Node.js} digunakkan untuk mengutilisasikan \textit{Node Package Manager} (\textbf{NPM}). NPM adalah sebuah sebuah \textit{Command-Line Tool} yang diinstal bersamaan dengan \textit{Node.js} dan membawa fungsionalitas untuk melakukan instalasi kode yang sudah di-\textit{publish} oleh \textit{developer} lain yang dapat membantu dalam membangun sebuah aplikasi tanpa harus membuat ulang seluruh hal yang dibutuhkan \autocite[27-29]{Banks_Porcello_2020}.
 
                         \item \textit{NextJs}
 
@@ -1990,6 +2001,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{Register}\\
         \begin{table}[h]
             \centering
+            \caption{\textit{Usecase} untuk \textit{register}}
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Register}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2003,12 +2015,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{Usecase} untuk \textit{register}}
         \end{table}
 
         \item \textit{Activate}
             \begin{table}[h]
                 \centering
+                \caption{\textit{usecase} untuk \textit{activate}}
                 \begin{tabular}{|lll}
                 \hline
                 \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Activate}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2022,13 +2034,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
                 \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
                 \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
                 \end{tabular}
-                \caption{\textit{usecase} untuk \textit{activate}}
             \end{table}
 
         \newpage
         \item \textit{Search item}
             \begin{table}[h]
             \centering
+            \caption{\textit{usecase search item} }
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Seach item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2042,12 +2054,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{usecase search item} }
             \end{table}
 
         \item \textit{Open Detail Item}
         \begin{table}[h]
             \centering
+            \caption{\textit{usecase open detail item}}
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Open Detail Item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2061,13 +2073,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{usecase open detail item}}
         \end{table}
 
         \newpage
         \item \textit{See user info}
         \begin{table}[h]
             \centering
+            \caption{\textit{usecase see user info} }
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{See user info}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2081,13 +2093,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{usecase see user info} }
         \end{table}
 
 
         \item \textit{Update user info}
         \begin{table}[h]
             \centering
+            \caption{\textit{usecase update user info} }
             \begin{tabular}{|lll}
             \hline
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Update user info}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2101,13 +2113,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
-            \caption{\textit{usecase update user info} }
         \end{table}
 
         \newpage
         \item \textit{Manage Item}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage item}}
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage Item}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2121,12 +2133,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage item}}
 \end{table}
 
         \item \textit{Login}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase login} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Login}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2140,13 +2152,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase login} }
 \end{table}
 
         \newpage
         \item \textit{Logout}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase logout} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Logout}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Medium}}   \\ \hline
@@ -2160,12 +2172,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase logout} }
 \end{table}
 
         \item \textit{Forgot Password}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase forgot password} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Fortgot password}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Medium}}   \\ \hline
@@ -2179,7 +2191,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase forgot password} }
 \end{table}
 
         \newpage
@@ -2187,6 +2198,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{View merchant page}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase view merchant page} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{View merchant page}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2200,12 +2212,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase view merchant page} }
 \end{table}
 
         \item \textit{Become a merchant}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase become a merchant} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Become a merchant}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2219,7 +2231,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase become a merchant} }
 \end{table}
 
         \newpage
@@ -2227,6 +2238,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{Manage wishlist}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage wishlist} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage wishlist}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2240,12 +2252,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage wishlist} }
 \end{table}
 
         \item \textit{Manage cart}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage cart} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage cart}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2259,7 +2271,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage cart} }
 \end{table}
 
         \newpage
@@ -2267,6 +2278,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{Manage discussion}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage discussion} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage discussion}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Low}}   \\ \hline
@@ -2280,12 +2292,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage discussion} }
 \end{table}
 
         \item \textit{Manage and view review}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase manage and view review}}
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Manage and view review}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2308,7 +2320,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase manage and view review}}
 \end{table}
 
 
@@ -2316,6 +2327,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \item \textit{Do transaction}
 \begin{table}[h]
     \centering
+    \caption{\textit{usecase do transaction} }
     \begin{tabular}{|lll}
     \hline
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Do transaction}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
@@ -2336,7 +2348,6 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
     \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
     \end{tabular}
-    \caption{\textit{usecase do transaction} }
 \end{table}
 
         \newpage
@@ -3018,7 +3029,8 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
 \end{enumerate}
 
 \newpage
-\bab{Bab 4. Hasil dan Pembahasan}
+% \bab{Bab 4. Hasil dan Pembahasan}
+\bab{Bab 4}{Hasil dan Pembahasan}
 
 \subbab{Spesifikasi \textit{System}}
 
@@ -3026,6 +3038,8 @@ Berikut adalah spesifikasi perangkat yang diperlukan untuk menjalankan aplikasi 
 	
 Spesifikasi minimum yang dibutuhkan oleh pengguna aplikasi web \textit{ShumiShumi} adalah minimum spesifikasi yang dibutuhkan untuk menjalankan sebuah \textit{browser} untuk membuka aplikasi web kami, adalah sebagai berikut:
 
+\begin{centering}
+\captionof{table}{Tabel spesifikasi}
 \begin{longtable}{|p{2cm}|p{5cm}|}
     \hline
     Spesifikaasi & Minimum\\ 
@@ -3038,8 +3052,8 @@ Spesifikasi minimum yang dibutuhkan oleh pengguna aplikasi web \textit{ShumiShum
     \hline
     Monitor & 800 x 600\\ 
     \hline
-\caption{Tabel spesifikasi}
 \end{longtable}
+\end{centering}
 
 \newpage
 \subbab{Prosedur Penggunaan Aplikasi}
@@ -3536,6 +3550,8 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
     \textit{Blackbox testing} ini dilakukan oleh tiga orang \textit{tester} selama tiga hari setelah masa \textit{development} selesai, tabel berikut berisi semua skenario \textit{test} yang dijalankan di\textit{sprint} terakhir.
 
 \begin{longtable}[c]{|l|l|l|l|l|}
+\caption{Blackbox testing scenario}
+\label{tab:blackboxTestingScenario}\\
 \hline
 Testcase & Scenario & Step & Expected outcome & Outcome \\ \hline
 \endfirsthead
@@ -3588,13 +3604,13 @@ Payment page & \begin{tabular}[c]{@{}l@{}}user can pick \\ payment method\end{ta
  & \begin{tabular}[c]{@{}l@{}}user failed to become\\ a merchant\end{tabular} & \begin{tabular}[c]{@{}l@{}}- dont fill out location\\ - click 'become a merchant'\end{tabular} & Show error message & Success \\ \hline
 Logout & user can logout & - click logout button & \begin{tabular}[c]{@{}l@{}}redirect to homepage\\ without any login\\ information\end{tabular} & Success \\ \hline
 Recommend & \begin{tabular}[c]{@{}l@{}}user can get \\ item recommendation\end{tabular} & \begin{tabular}[c]{@{}l@{}}- login\\ - open item detial\\ - go to homepage\end{tabular} & \begin{tabular}[c]{@{}l@{}}user should be \\ getting \\ recommendation\\ base on their\\ activity\end{tabular} & Success \\ \hline
-\caption{Blackbox testing scenario}
-\label{tab:blackboxTestingScenario}\\
 \end{longtable}
 
 
     \item \textit{Whitebox testing} disini dilakukan disisi \textit{backend} dan menggunakan \textit{library JUnit}, \textit{whitebox testing} ini dilakukan akan dilakukan setiap kali ada \textit{pull request} ke \textit{branch main}, berikut adalah semua \textit{testcase} yang dijalankan di\textit{pull request} terakhir.
 \begin{longtable}[c]{|l|l|}
+\caption{Whitebox testing scenario}
+\label{tab:whiteboxTestingScenario}\\
 \hline
 \textit{Test class} & \textit{Test case} \\ \hline
 \endfirsthead
@@ -3672,15 +3688,14 @@ Recommend & \begin{tabular}[c]{@{}l@{}}user can get \\ item recommendation\end{t
  & userUpdateTest\_FAILED\_session\_expired \\ \cline{2-2} 
  & usrUpdateTest\_SUCCESS\_withExtendInfo \\ \cline{2-2} 
  & userUpdateTest\_SUCCESS\_withLocation \\ \hline
-\caption{Whitebox testing scenario}
-\label{tab:whiteboxTestingScenario}\\
 \end{longtable}
 
 \end{enumerate}
 
 \newpage
 
-\bab{Bab 5. Kesimpulan dan Saran}
+% \bab{Bab 5. Kesimpulan dan Saran}
+\bab{Bab 5}{Kesimpulan dan saran}
 \subbab{Kesimpulan}
 Pada bagian akhir skripsi ini, ada beberapa kesimpulan yang dapat diambil yang didasarkan dari pembuatan projek dan hasil penelitian ini, secara umum kesimpulan yang bisa ditarik adalah sistem rekomendasi dan filtrasi menggunakan \textit{interest level} itu membantu pengguna untuk mencari barang yang diinginkan menjadi lebih mudah dan penjual untuk memasarkan produknya ke pengguna yang lebih tepat. Secara lebih khusus kesimpulan yang bisa ditarik sebagai berikut:
 \begin{enumerate}
