@@ -1,0 +1,16 @@
+@startuml remove from wishlist
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Wishlist page" as wishlist
+' end box
+
+participant "Backend" as be
+
+u -> wishlist++ : delete wishlist
+wishlist -> be++ : /item/wishlist/remove
+return response
+
+@enduml

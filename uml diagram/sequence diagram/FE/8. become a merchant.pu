@@ -1,0 +1,18 @@
+@startuml become a merchant
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+' end box
+
+participant "Backend" as be
+
+u -> home++ : click 'become a merchant' button
+home -> be++ : /user/merchant/apply
+return response
+
+home -> home : reload page
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml add to wishlist
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Item Detail Page" as detail
+' end box
+
+participant "Backend" as be
+
+u -> detail++ : click add to wishlist
+detail -> be++ : /item/wishlist/add
+return response
+
+@enduml

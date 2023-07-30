@@ -1,0 +1,32 @@
+@startuml register
+
+'autonumber  1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "Register page" as register
+participant "Activate page" as active
+' end box
+
+participant "Backend" as be
+
+u -> home++: click register button
+home -> register--++ : redirect to register page
+
+register -> be++ : /dictionary/query
+register <-- be--: JSON_RESPONSE
+
+u -> register : fillout register form
+u -> register : click submit button
+
+register -> be++ : /user/register
+register <-- be-- : JSON_RESPONSE
+
+register -> be++ : /user/email/encrypt
+register <-- be-- : JSON_RESPONSE
+
+register -> active--++ : redirect to activate page\nwith encrypted email
+
+@enduml
