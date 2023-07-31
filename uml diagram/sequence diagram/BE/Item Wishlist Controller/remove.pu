@@ -1,0 +1,24 @@
+@startuml remove
+participant "Frontend" as fe
+participant "ItemWishlistController" as iwc
+
+participant "WishlistRemoveProcessor" as proc
+
+participant "ItemWishlist" as iwm
+
+participant "Activity" as am
+
+database "shumishumi-db" as db
+
+fe -> iwc++ : /item/wishlist/remove
+iwc -> proc++ : process()
+
+proc -> iwm++ : queryByItemIdAndUserId()
+iwm -> db : SELECT
+proc <-- iwm : item wishlist model
+
+proc -> iwm : remove
+iwm -> db : DELETE
+destroy iwm
+
+@enduml
