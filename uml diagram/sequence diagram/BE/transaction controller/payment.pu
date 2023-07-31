@@ -4,7 +4,13 @@ participant "TransactionController" as tc
 
 participant "TransactionPaymentProcessor" as proc
 
+participant "ItemCacheService" as icache
+
 participant "Transaction" as tm
+participant "TransactionDetail" as tdm
+
+participant "Item" as im
+participant "Activity" as am
 
 database "shumishumi-db" as db
 
@@ -24,6 +30,25 @@ proc -> tm : updateStatus()
 tm -> tm : save()
 tm -> db : UPDATE
 deactivate tm
+
+proc -> tdm++ : queryByTrxId()
+tdm -> db : SELECT
+return list of transaction detail
+
+loop for every item in transaction
+    proc -> im++ : queryByItemId()
+    im -> db : SELECT
+    proc <-- im : item model
+
+    proc -> im : updateQuantity()
+    im -> im : save()
+    im -> db : UPDATE
+    deactivate im
+
+end
+
+proc -> icache++ : refreshCache()
+deactivate icache
 
 return result
 return response
