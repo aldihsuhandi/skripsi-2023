@@ -2,7 +2,7 @@
     Actor user as u
     Participant "Front End" as fe
  
-    box "Back End" #LightBlue
+    ' Box "Back End" #LightBlue
         Participant Controller as co
         Participant Facade as f
         Participant FacadeImpl as fImpl
@@ -11,7 +11,7 @@
         Participant Service as s
         Participant ServiceImpl as sImpl
         Participant Dalgen as dg
-    end box
+    ' end box
     Database Database as db
 
     fe -> co : controller api call <color:red>localhost:8080/some/url.json

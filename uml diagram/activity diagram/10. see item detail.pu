@@ -5,7 +5,8 @@
 :query item detail;
 :check if user login;
 if () then (yes)
-:create activity record;
+    :create activity record;
+else (no)
 endif
 :redirect to item detail page;
 stop

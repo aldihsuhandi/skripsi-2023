@@ -1,0 +1,35 @@
+@startuml activate
+participant "Frontend" as fe
+participant "UserController" as uc
+
+participant "UserActivateProcessor" as proc
+
+participant "User" as um
+participant "Otp" as om
+
+database "shumishumi-db" as db
+
+fe -> uc++ : /user/activate
+uc -> proc++ : process()
+
+proc -> om++ : queryByOtpAndUserId()
+om -> db : SELECT
+return otp model
+
+alt otp is not null
+    proc -> um++ : queryByEmail()
+    um -> db : SELECT
+    proc <-- um : user model
+
+    proc -> um : activate()
+    um -> um : save
+    um -> db : UPDATE
+
+    deactivate um
+end
+
+
+return result
+return response
+
+@enduml

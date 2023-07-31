@@ -1,0 +1,16 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Item detail page" as detail
+' end box
+
+participant "Backend" as be
+
+u -> detail++ : add to cart
+detail -> be++ : /cart/add
+return response
+
+@enduml

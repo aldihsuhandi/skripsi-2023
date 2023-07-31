@@ -1,0 +1,43 @@
+@startuml delete
+participant "Frontend" as fe
+participant "ItemController" as ic
+
+participant "DeleteItemProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Item" as im
+
+participant "Knowledge" as km
+
+database "shumishumi-db" as db
+
+fe -> ic++ : /item/delete
+ic -> proc++ : process()
+
+proc -> im++ : queryById()
+im -> db : SELECT
+proc <-- im : item model
+
+proc -> im : softDelete()
+im -> im : save()
+im -> db : UPDATE
+deactivate im
+
+proc -> icache++ : updateCache()
+deactivate icache
+
+proc -> km++ : queryByKey()
+km -> db : SELECT
+proc <-- km : knowledge model
+
+proc -> km : updateValue()
+km -> km : save()
+km -> db : UPDATE
+
+deactivate km
+
+return result
+return response
+
+@enduml

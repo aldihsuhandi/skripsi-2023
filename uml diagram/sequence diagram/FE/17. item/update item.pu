@@ -1,0 +1,32 @@
+@startuml update item
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Item Detail page" as detail
+participant "Item Update page" as updatepage
+' end box
+
+participant "Backend" as be
+
+u -> detail++ : click update item
+detail -> updatepage --++ : redirect to item update form
+
+'autonumber inc a
+u -> updatepage : fill out update form
+'autonumber inc a
+u -> updatepage : click update
+
+loop for every image need to be uploaded
+updatepage -> be++ : /image/upload
+return response
+end
+
+'autonumber inc b
+updatepage -> be++ : /item/update
+return response
+
+updatepage -> detail++-- : redirect detail page
+
+@enduml

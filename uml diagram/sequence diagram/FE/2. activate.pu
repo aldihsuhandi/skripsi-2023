@@ -1,0 +1,28 @@
+@startuml activate
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Register page" as register
+participant "Activate Page" as active
+participant "Login Page" as login
+' end box
+
+participant "Backend" as be
+
+u -> register++ : register processor
+register -> register : finish register
+register -> active--++ : redirect to activate page\nwith encrypted email
+active -> be++ : /user/email/decrypt
+active <-- be-- : JSON_RESPONSE
+
+u -> active : fill out activate user form
+u -> active : click submit
+
+active -> be++ : /user/activate
+active <-- be-- : JSON_RESPONSE
+
+active -> login--++ : redirect to login page
+
+@enduml

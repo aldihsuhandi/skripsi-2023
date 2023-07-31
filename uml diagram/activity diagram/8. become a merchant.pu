@@ -8,10 +8,8 @@ start
 :validate if is user legible;
 if() then (no)
     :show warning why \nuser is not eligble;
-    stop;
-endif
--> yes;
+else (yes)
 :convert user to merchant;
+endif
 stop
-
 @enduml

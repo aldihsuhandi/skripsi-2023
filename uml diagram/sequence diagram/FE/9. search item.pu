@@ -1,0 +1,24 @@
+@startuml search item
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "Search page" as search
+' end box
+
+participant "Backend" as be
+
+u -> home++ : search item
+home -> search --++ : redirect to search page
+
+search -> be++ : /item/query
+return resposne
+
+loop for every item in response
+    search -> be++ : /image/download
+    return image
+end
+
+@enduml

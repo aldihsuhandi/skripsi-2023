@@ -1,0 +1,24 @@
+@startuml see item detail
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "Item detail page" as detail
+' end box
+
+participant "Backend" as be
+
+u -> home++ : click item card
+home -> detail --++ : redirect to item detail page
+detail -> be++ : /item/query/detail
+return response
+
+'autonumber inc b
+loop for every image in item
+    detail -> be++ : /image/download
+    return image
+end
+
+@enduml

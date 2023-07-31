@@ -1,0 +1,18 @@
+@startuml update cart
+|user|
+start
+:click cart button;
+|system|
+:redirect to cart page;
+|user|
+:update cart quantity;
+|system|
+:update item quantity;
+:check if cart is selected;
+if() then (yes)
+:recalculate cart price;
+else (no)
+endif
+stop
+
+@enduml

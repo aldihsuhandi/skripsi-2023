@@ -1,0 +1,66 @@
+@startuml queryDetail
+participant "Frontend" as fe
+participant "ItemController" as ic
+
+participant "QueryItemDetailProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Item" as im
+participant "Category" as cm
+participant "Hobby" as hm
+participant "InterestLevel" as ilm
+
+participant "Session" as sm
+participant "Activity" as am
+
+database "shumishumi-db" as db
+
+fe -> ic++ : /item/query/detail
+ic -> proc++ : process()
+
+proc -> icache++ : fetchFromCache()
+return item model
+
+alt if item not found in cache
+    proc -> im++ : queryById()
+    proc <-- im : item model
+
+    proc -> cm++ : queryByName()
+    cm -> db : SELECT
+    return category model
+
+    proc -> hm++ : queryByName()
+    hm -> db : SELECT
+    return hobby model
+
+    proc -> ilm++ : queryByName()
+    ilm -> db : SELECT
+    return interest level model
+
+    proc -> im : composeInfo()
+
+    proc -> icache++ : refreshCache()
+
+    proc -> proc : composeItemToResult
+
+    deactivate icache
+    deactivate im
+end
+
+alt if isLogin()
+    proc -> sm++ : queryById()
+    sm -> db : SELECT
+    return session model
+
+    create am
+    proc -> am++ : new()
+    am -> am : save()
+    am -> db : INSERT
+    deactivate am
+end
+
+return result
+return response
+
+@enduml

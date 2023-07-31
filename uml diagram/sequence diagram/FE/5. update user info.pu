@@ -1,0 +1,22 @@
+@startuml update user info
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "User info page" as uinfo
+participant "Update user info page" as update
+' end box
+
+participant "Backend" as be
+
+u -> uinfo++ : click update user info
+uinfo -> update --++ : redirect to update form
+u -> update : fill out update form
+u -> update : click submit button
+
+update -> be++ : /user/update
+update <-- be-- : response
+update --> uinfo ++-- : redirect to user info page
+
+@enduml

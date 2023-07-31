@@ -1,0 +1,20 @@
+@startuml finish transaction
+
+|user|
+:open transaction detail;
+:click finish transaction;
+|system|
+:check if transaction status
+is ONGOING;
+if () then (yes)
+    |system|
+    :show error message;
+    stop
+else (no)
+    :change transaction status to DONE;
+endif
+
+:create unreviewed review;
+stop
+
+@enduml

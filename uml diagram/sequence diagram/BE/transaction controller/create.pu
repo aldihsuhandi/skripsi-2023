@@ -1,0 +1,53 @@
+@startuml create
+participant "Frontend" as fe
+participant "TransactionController" as tc
+
+participant "TransactionCreateProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Cart" as cm
+
+participant "Transaction" as tm
+participant "TransactionDetail" as tdm
+
+participant "HistoryItem" as him
+
+database "shumishumi-db" as db
+
+fe -> tc++ : /transaction/create
+tc -> proc++ : process()
+
+proc -> cm++ : querySelectedByUserId()
+cm -> db : SELECT
+return list of cart model
+
+loop for every cart in list
+    proc -> icache++ : fetchFromService()
+    return item model
+
+    create him
+    proc -> him++: new()
+    him -> him : save()
+    him -> db : INSERT
+    deactivate him
+
+    create tdm
+    proc -> tdm++ : new()
+    tdm -> tdm: save()
+    tdm -> db : INSERT
+    deactivate tdm
+end
+
+create tm
+proc -> tm++ : new()
+tm -> tm: save()
+tm -> db : INSERT
+deactivate tm
+
+return result
+return response
+
+
+
+@enduml

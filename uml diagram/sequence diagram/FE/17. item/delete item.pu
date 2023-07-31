@@ -1,0 +1,20 @@
+@startuml delete item
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Item Detail page" as detail
+participant "Home page" as home
+' end box
+
+participant "Backend" as be 
+
+u -> detail++ : click delete item
+
+detail -> be++ : /item/delete
+return response
+
+detail --> home ++-- : redirect to home page
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Merchant info page" as home
+participant "Merchant review page" as rlist
+' end box
+
+participant "Backend" as be
+
+u -> home++ : open merchant review page
+home -> rlist ++-- : redirect merchant review page
+
+rlist -> be++ : /review/query
+return response
+
+loop for every item in response
+    rlist -> be++ : /image/download
+    return image
+end
+
+@enduml

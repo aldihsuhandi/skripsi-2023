@@ -1,0 +1,24 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "Review list page" as rlist
+' end box
+
+participant "Backend" as be
+
+u -> home++ : open review list page
+home -> rlist ++-- : redirect to review list page
+
+rlist -> be++ : /review/query
+return response
+
+loop for every item in response
+    rlist -> be++ : /image/download
+    return image
+end
+
+@enduml

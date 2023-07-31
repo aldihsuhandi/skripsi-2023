@@ -3,11 +3,11 @@
 
 actor User as u
 
-box "front end"
-end box
+' Box "front end"
+' end box
 
-box "back end"
-end box
+' Box "back end"
+' end box
 
 database shumishumi as db
 

@@ -19,7 +19,9 @@ rectangle shumishumi {
     usecase "logout" as logout
     usecase "forgot password" as forgotpassword
 
-    usecase "view merchant page" as merchant_page
+    usecase "view other merchant page" as merchant_page
+
+    usecase "view my merchant page" as my_page
 
     usecase "see user info" as user_info
     usecase "update user info" as update_info
@@ -58,12 +60,20 @@ u -- trx
 
 u -- review
 
+u -- detail
+detail -- m
+
+u -- update_info
+update_info -- m
+
 ' merchant
 login -- m
 user_info -- m
 logout -- m
 register -- m
 forgotpassword -- m
+
+my_page -- m
 
 search -- m
 merchant_page -- m
@@ -80,7 +90,5 @@ manage_item -- m
 
 
 register .> activate : <<include>>
-search <. detail : <<extend>>
-user_info <. update_info :<<extend>>
 
 @enduml

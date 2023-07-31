@@ -1,0 +1,24 @@
+@startuml add to cart
+
+|user|
+start
+:open item detail page;
+:adjust item quantity;
+:click add to cart;
+|system|
+:check if user is login;
+if() then (no)
+:show error, user not logged in;
+stop
+else (yes)
+endif
+
+:check if item in cart;
+if() then (yes)
+:add quantity to cart;
+else (no)
+:add new item to cart;
+endif
+stop
+
+@enduml

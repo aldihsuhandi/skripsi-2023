@@ -1,0 +1,58 @@
+@startuml create
+participant "Frontend" as fe
+participant "ItemController" as ic
+
+participant "CreateItemProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Item" as im
+participant "Category" as cm
+participant "Hobby" as hm
+participant "InterestLevel" as ilm
+
+participant "Knowledge" as km
+
+database "shumishumi-db" as db
+
+fe -> ic++ : /item/create
+ic -> proc++ : process()
+
+create im
+proc -> im++ : new()
+proc <-- im : item model
+
+proc -> cm++ : queryByName()
+cm -> db : SELECT
+return category model
+
+proc -> hm++ : queryByName()
+hm -> db : SELECT
+return hobby model
+
+proc -> ilm++ : queryByName()
+ilm -> db : SELECT
+return interest level model
+
+proc -> im : composeInfo()
+im -> im : save()
+im -> db : INSERT
+deactivate im
+
+proc -> icache++ : updateCache()
+deactivate icache
+
+proc -> km++ : queryByKey()
+km -> db : SELECT
+proc <-- km : knowledge model
+
+proc -> km : updateValue()
+km -> km : save()
+km -> db : UPDATE
+
+deactivate km
+
+return result
+return response
+
+@enduml

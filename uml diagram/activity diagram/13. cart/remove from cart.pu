@@ -1,0 +1,20 @@
+@startuml delete from cart
+
+|user|
+start
+:click cart button;
+|system|
+:redirect to cart page;
+|user|
+:delete item from cart;
+|system|
+:delete item from cart;
+:check if cart is selected;
+if() then (yes)
+:recalculate cart price;
+else (no)
+endif
+stop
+
+
+@enduml

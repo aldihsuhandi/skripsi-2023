@@ -1,0 +1,20 @@
+@startuml info
+participant "Frontend" as fe
+participant "SessionController" as sc
+
+participant "SessionInfoProcessor" as proc
+
+participant "Session" as sm
+
+database "shumishumi-db" as db
+
+fe -> sc++ : /session/info
+sc -> proc++ : process()
+proc -> sm++ : queryById()
+sm -> db : SELECT
+return session model
+
+return result
+return response
+
+@enduml

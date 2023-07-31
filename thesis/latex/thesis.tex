@@ -1472,7 +1472,7 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
 \begin{enumerate}
     \item \textit{Account management} (\textit{register, update profile, apply to merchant})
     \item \textit{Session management} (\textit{login, logout})
-    \item Pencaharian produk dan melihat detail produk
+    \item pencarian produk dan melihat detail produk
     \item Diskusi antara \textit{user} dan \textit{merchant}
     \item \textit{Wishlist}
     \item \textit{Shopping Cart}
@@ -1878,7 +1878,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{usecase} untuk mencari dan men-\textit{filter} produk.}                                                                         \\ \hline
             \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click searchbar}}                                                                                   \\ \hline
             \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
-            \multicolumn{3}{|l|}{- \textit{Extends}: \textit{Open item detail}}                                                                                                                     \\ \hline
+            \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
@@ -1917,7 +1917,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{Usecase} untuk melihat informasi detail tentang \textit{user}}                                                                         \\ \hline
             \multicolumn{3}{|l|}{\textit{Trigger}: \textit{Open profile page}}                                                                                   \\ \hline
             \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
-            \multicolumn{3}{|l|}{- \textit{Extends}: \textit{Update user info}}                                                                                                                     \\ \hline
+            \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
             \multicolumn{3}{|l|}{\textit{Sub Flows}: -}                                                                                 \\ \hline
             \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}: -}                                                                \\ \hline
             \end{tabular}
@@ -2178,6 +2178,25 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \end{tabular}
 \end{table}
 
+        \item \textit{View my merchant page}
+\begin{table}[h]
+    \centering
+    \caption{\textit{usecase view my merchant page}}
+    \begin{tabular}{|lll}
+    \hline
+    \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{View my merchant page}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
+    \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
+    \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
+    \multicolumn{1}{|l|}{\textit{Merchant}: untuk melihat \textit{merchant page user} sekarang}                                                     &                               &                               \\ \hline
+    \multicolumn{3}{|l|}{\textit{Brief Description}: \makecell[l]{\textit{entry point} untuk \textit{manage item}}}                                                                         \\ \hline
+    \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click button view merchant page} }                                                                                   \\ \hline
+    \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
+    \multicolumn{3}{|l|}{}                                                                                                                     \\ \hline
+    \multicolumn{3}{|l|}{\textit{Sub Flows}:}                                                                                 \\ \hline
+    \multicolumn{3}{|l|}{\textit{Alternate/Exceptional Flow}:}                                                                \\ \hline
+    \end{tabular}
+\end{table}
+
         \newpage
 
 
@@ -2247,7 +2266,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
         \begin{figure}[h]
             \centering
             \includegraphics*[height=6cm]{./diagram/activity diagram/9. search item/search item.png}
-            \caption{\textit{Activity diagram} untuk fitur pencaharian \textit{product}}
+            \caption{\textit{Activity diagram} untuk fitur pencarian \textit{product}}
         \end{figure}
         \item Melihat informasi detail sebuah \textit{product}
         \begin{figure}[h]
@@ -2350,10 +2369,10 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
 
         \item \textit{Do transaction}
         \begin{itemize}
-            \item membaut transaksi baru
+            \item membuat transaksi baru
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/activity diagram/15. transaction/cancel transaction/cancel transaction.png}
+                \includegraphics*[height=6cm]{./diagram/activity diagram/15. transaction/create transcation/create transcation.png}
                 \caption{\textit{Activity diagram} untuk membuat transaksi baru}
             \end{figure}
             \item membayar transaksi
@@ -2436,261 +2455,603 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
                 \caption{\textit{Activity diagram} untuk menghapus \textit{product}}
             \end{figure}
         \end{itemize}
+        \newpage
+        \item \textit{View my merchant page}
+        \begin{figure}[h]
+            \centering
+            \includegraphics*[height=6cm]{./diagram/activity diagram/11-5. view my merchant page/view my merchant page.png}
+            \caption{\textit{Activity diagram} untuk melihat \textit{merchant page user} sekarang}
+        \end{figure}
     \end{enumerate}
     \newpage
 
+
     \item \textit{Sequence Diagram}
+
     \begin{enumerate}
-        \item \textit{Register}\\
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{diagram/sequence diagram/1. register/register.png}
-            \caption{\textit{Sequence diagram} untuk fitur \textit{register}}
-        \end{figure}
-        \item \textit{Activate}\\
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{diagram/sequence diagram/2. activate/activate user.png}
-            \caption{\textit{Sequence diagram} untuk fitur \textit{activate}}
-        \end{figure}
-        \newpage
-
-        \item \textit{Login}\\
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{diagram/sequence diagram/3. login/login.png}
-            \caption{\textit{Sequence diagram} untuk fitur \textit{login}}
-        \end{figure}
-        \item melihat data profil\\
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{diagram/sequence diagram/4. see user info/see user info.png}
-            \caption{\textit{Sequence diagram} untuk fitur melihat informasi pengguna}
-        \end{figure}
-        \newpage
-
-        \item \textit{update} data profil\\
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{diagram/sequence diagram/5. update user info/update user info.png}
-            \caption{\textit{Sequence diagram} untuk fitur meng-\textit{update} informasi pengguna}
-        \end{figure}
-        \item \textit{Logout}\\
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{diagram/sequence diagram/6. logout/logout.png}
-            \caption{\textit{Sequence diagram} untuk fitur \textit{logout}}
-        \end{figure}
-        \newpage
-
-        \item Lupa \textit{password}
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{diagram/sequence diagram/7. forgot password/forgot password.png}
-            \caption{\textit{Sequence diagram} untuk fitur penggantian \textit{password}, ketika terjadi masalah}
-        \end{figure}
-        \item Pendaftaran menjadi \textit{merchant}
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{diagram/sequence diagram/8. become a merchant/become a merchant.png}
-            \caption{\textit{Sequence diagram} untuk fitur pendaftaran menjadi \textit{merchant}}
-        \end{figure}
-        \newpage
-
-        \item Melihat dan mem-\textit{filter} semua \textit{product}
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{./diagram/sequence diagram/9. search item/search item.png}
-            \caption{\textit{Sequence diagram} untuk fitur pencaharian \textit{product}}
-        \end{figure}
-        \item Melihat informasi detail sebuah \textit{product}
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{./diagram/sequence diagram/10. see item detail/see item detail.png}
-            \caption{\textit{Sequence diagram} untuk melihat info detail sebuah \textit{product}}
-        \end{figure}
-        \newpage
-
-        \item Melihat informasi detail penjual
-        \begin{figure}[h]
-            \centering
-            \includegraphics*[height=6cm]{./diagram/sequence diagram/11.view merchant page/view merchant page.png}
-            \caption{\textit{Sequence diagram} untuk melihat info detail penjual}
-        \end{figure}
-
-        \item \textit{Manage wishlist}
+        \item \textit{Sequence diagram frontend}
         \begin{itemize}
-            \item menambahkan barang ke \textit{wishlist}
+            \item \textit{Sequence diagram} untuk \textit{register}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/12. wishlist/add to wishlist/add to wishlist.png}
-                \caption{\textit{Sequence diagram} untuk menambakan barang ke \textit{wishlist}}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/1. register/register.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{register}}
             \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{activate}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/2. activate/activate.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{activate}}
+            \end{figure}
+
             \newpage
-            \item melihat \textit{wishlist}
+            \item \textit{Sequence diagram} untuk \textit{login}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/12. wishlist/query wishlist/query wishlist.png}
-                \caption{\textit{Sequence diagram} untuk melihat \textit{wishlist}}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/3. login/login.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{login}}
             \end{figure}
-            \item menghapus barang dari \textit{wishlist}
+
+            \item \textit{Sequence diagram} untuk \textit{see user info}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/12. wishlist/remove from wishlist/remove from wishlist.png}
-                \caption{\textit{Sequence diagram} untuk menghapus barang dari \textit{wishlist}}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/4. see user info/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{see user info}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{update user info}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/5. update user info/update user info.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{update user info}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{logout}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/6. logout/logout.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{logout}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{forgot password}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/7. forgot password/forgot password.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{forgot password}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{become a merchant}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/8. become a merchant/become a merchant.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{become a merchant}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{search item}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/9. search item/search item.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{search item}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{see item detail}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/10. see item detail/see item detail.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{see item detail}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{view merchant page}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/11.view merchant page/view merchant page.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{view merchant page}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{add to wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/12. wishlist/add to wishlist/add to wishlist.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{add to wishlist}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{query wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/12. wishlist/query wishlist/query wishlist.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{query wishlist}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{remove from wishlist}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/12. wishlist/remove from wishlist/remove from wishlist.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{remove from wishlist}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{add to cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/13. cart/add to cart/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{add to cart}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{query cart list}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/13. cart/query cart list/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{query cart list}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{remove from cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/13. cart/remove from cart/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{remove from cart}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{select cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/13. cart/select cart/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{select cart}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{update cart}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/13. cart/update cart/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{update cart}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{create discussion}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/14. discussion/create discussion/create discussion.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{create discussion}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{delete discussion}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/14. discussion/delete discussion/create discussion.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{delete discussion}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{update discussion}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/14. discussion/update discussion/update discussion.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{update discussion}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{create transaction}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/15. transaction/create transaction/create transaction.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{create transaction}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{view transaction detail}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/15. transaction/view transaction detail/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{view transaction detail}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{view transcation history}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/15. transaction/view transaction history/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{view transaction history}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{cancel transaction}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/15. transaction/cancel transaction/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{cancel transaction}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{finish transaction}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/15. transaction/finish transaction/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{view transaction history}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{create review}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/16. review/create review/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{create review}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{view merchant review}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/16. review/view merchant review/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{view merchant review}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{view user review}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/16. review/view user review/template.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{view user review}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{create new item}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/17. item/create item/create item.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{create new item}}
+            \end{figure}
+
+            \item \textit{Sequence diagram} untuk \textit{delete item}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/17. item/delete item/delete item.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{delete item}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram} untuk \textit{update item information}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/FE/17. item/update item/update item.png}
+                \caption{\textit{Sequence diagram} untuk fitur \textit{update item information}}
             \end{figure}
         \end{itemize}
-
-        \newpage
-        \item \textit{Manage cart}
+        \item \textit{Sequence diagram backend}
         \begin{itemize}
-            \item menambahkan barang ke \textit{cart}
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.register}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/add to cart/add to cart.png}
-                \caption{\textit{Sequence diagram} untuk menambahkan barang ke \textit{cart}}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/register/register.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.register}}
             \end{figure}
-            \item melihat \textit{cart}
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/query cart list/query cart list.png}
-                \caption{\textit{Sequence diagram} untuk melihat \textit{cart}}
-            \end{figure}
-            \newpage
-            \item merubah jumlah barang yang ada didalam \textit{cart}
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/update cart/update cart.png}
-                \caption{\textit{Sequence diagram} untuk merubah jumlah barang yang ada didalam \textit{cart}}
-            \end{figure}
-            \item memilih barang yang ingin dibeli
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/unselect cart/unselect cart.png}
-                \caption{\textit{Sequence diagram} untuk memilih barang yang ingin dibeli}
-            \end{figure}
-            \newpage
-            \item menghapus \textit{cart entry}
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/13. cart/remove from cart/remove from cart.png}
-                \caption{\textit{Sequence diagram} untuk menghapus \textit{cart entry}}
-            \end{figure}
-        \end{itemize}
 
-        \item \textit{Manage discussion}
-        \begin{itemize}
-            \item membuat diskusi baru
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/14. discussion/create discussion/create discussion.png}
-                \caption{\textit{Sequence diagram} untuk membuat diskusi baru}
-            \end{figure}
             \newpage
-            \item merubah isi dari diskusi yang sudah ada
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.activate}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/14. discussion/edit discussion/edit discussion.png}
-                \caption{\textit{Sequence diagram} untuk merubah isi dari diskusi yang sudah ada}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/activate/activate.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.activate}}
             \end{figure}
-            \item menghapus diskusi
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/14. discussion/delete discussion/delete discussion.png}
-                \caption{\textit{Sequence diagram} untuk menghapus diskusi}
-            \end{figure}
-        \end{itemize}
-        \newpage
 
-        \item \textit{Do transaction}
-        \begin{itemize}
-            \item membaut transaksi baru
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.login}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/cancel transaction/cancel transaction.png}
-                \caption{\textit{Sequence diagram} untuk membuat transaksi baru}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/login/login.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.login}}
             \end{figure}
-            \item membayar transaksi
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/pay transaction/pay trx.png}
-                \caption{\textit{Sequence diagram} untuk membayar transaksi}
-            \end{figure}
-            \newpage
-            \item menyelesaikan transaksi
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/finish transaction/finish transaction.png}
-                \caption{\textit{Sequence diagram} untuk menyelesaikan transaksi}
-            \end{figure}
-            \item membatalkan transaksi
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/cancel transaction/cancel transaction.png}
-                \caption{\textit{Sequence diagram} untuk membatalkan transaksi}
-            \end{figure}
-            \newpage
-            \item melihat riwayat transaksi
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/view transaction history/view transaction history.png}
-                \caption{\textit{Sequence diagram} untuk melihat riwayat transaksi}
-            \end{figure}
-            \item melihat detail transaksi
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/15. transaction/view transaction detail/view transaction detail.png}
-                \caption{\textit{Sequence diagram} untuk melihat detail transaksi}
-            \end{figure}
-        \end{itemize}
-        \newpage
 
-        \item \textit{Manage and view review}
-        \begin{itemize}
-            \item Membuat sebuah \textit{review}
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/16. review/create review/create review.png}
-                \caption{\textit{Sequence diagram} untuk membuat sebuah \textit{review}}
-            \end{figure}
-            \item melihat daftar \textit{review} yang dipunyai \textit{user}
-            \begin{figure}[h]
-                \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/16. review/view user review/view user review list.png}
-                \caption{\textit{Sequence diagram} untuk melihat daftar \textit{review} yang dipunyai \textit{user}}
-            \end{figure}
             \newpage
-            \item melihat daftar \textit{review merchant}
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.query}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/16. review/view merchant review/merchant review.png}
-                \caption{\textit{Sequence diagram} untuk melihat daftar \textit{review merchant} }
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/query/query.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.query}}
             \end{figure}
-        \end{itemize}
 
-        \item \textit{Manage item}
-        \begin{itemize}
-            \item membuat \textit{product} baru
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.merchantApply}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/17. item/create item/create item.png}
-                \caption{\textit{Sequence diagram} untuk membuat \textit{product} baru}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/merchantApply/merchantApply.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.merchantApply}}
             \end{figure}
+
             \newpage
-            \item memperbaharui informasi tentang \textit{product}
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.update}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/17. item/update item/update item.png}
-                \caption{\textit{Sequence diagram} untuk memperbaharui informasi tentang \textit{product}}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/update/update.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.update}}
             \end{figure}
-            \item menghapus \textit{product}
+
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.forgotPassword}
             \begin{figure}[h]
                 \centering
-                \includegraphics*[height=6cm]{./diagram/sequence diagram/17. item/delete item/delete item.png}
-                \caption{\textit{Sequence diagram} untuk menghapus \textit{product}}
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/forgotPassword/forgotPassword.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.forgotPassword}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.forgotPasswordQuery}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/forgotPasswordQuery/forgotPasswordQuery.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.forgotPasswordQuery}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.resetPassword}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/resetPassword/resetPassword.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.resetPassword}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.emailEncrypt}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/emailEncrypt/emailEncrypt.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.emailEncrypt}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{UserController.emailDecrypt}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/user controller/emailDecrypt/emailDecrypt.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{UserController.emailDecrypt}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{ItemController.create}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/item controller/create/create.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemController.create}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{ItemController.query}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/item controller/query/query.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemController.query}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{ItemController.queryDetail}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/item controller/queryDetail/queryDetail.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemController.queryDetail}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{ItemController.update}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/item controller/update/update.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemController.update}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{ItemController.delete}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/item controller/delete/delete.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemController.delete}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{ItemController.autocomplete}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/item controller/autocomplete/autocomplete.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemController.autocomplete}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{ItemController.recommend}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/item controller/recommend/recommend.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemController.recommend}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{ItemWishlistController.add}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/Item Wishlist Controller/add/add.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemWishlistController.add}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{ItemWishlistController.query}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/Item Wishlist Controller/query/query.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemWishlistController.query}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{ItemWishlistController.remove}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/Item Wishlist Controller/remove/remove.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ItemWishlistController.remove}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{ImageController.download}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/image controller/download/download.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ImageController.download}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{ImageController.upload}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/image controller/upload/upload.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ImageController.upload}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{DictionaryController.query}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/dictionary controller/query/query.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{DictionaryController.query}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{OtpController.send}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/otp controller/send/send.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{OtpController.send}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{SessionController.info}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/session controller/info/info.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{SessionController.info}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{SessionController.logout}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/session controller/logout/logout.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{SessionController.logout}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{CommentController.create}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/comment controller/create/create.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{CommentController.create}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{CommentController.delete}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/comment controller/delete/delete.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{CommentController.delete}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{CommentController.edit}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/comment controller/edit/edit.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{CommentController.edit}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{CartController.add}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/cart controller/add/add.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{CartController.add}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{CartController.query}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/cart controller/query/query.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{CartController.query}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{CartController.select}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/cart controller/select/select.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{CartController.select}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{CartController.price}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/cart controller/price/price.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{CartController.price}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{CartController.update}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/cart controller/update/update.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{CartController.update}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{TransactionController.create}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/transaction controller/create/create.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{TransactionController.create}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{TransactionController.payment}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/transaction controller/payment/payment.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{TransactionController.payment}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{TransactionController.cancel}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/transaction controller/cancel/cancel.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{TransactionController.cancel}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{TransactionController.query}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/transaction controller/query/query.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{TransactionController.query}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{TransactionController.detail}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/transaction controller/detail/detail.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{TransactionController.detail}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{TransactionController.finish}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/transaction controller/finish/finish.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{TransactionController.finish}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{ReviewController.create}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/review controller/create/create.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ReviewController.create}}
+            \end{figure}
+
+            \item \textit{Sequence diagram backend} untuk \textit{ReviewController.detail}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/review controller/detail/detail.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ReviewController.detail}}
+            \end{figure}
+
+            \newpage
+            \item \textit{Sequence diagram backend} untuk \textit{ReviewController.query}
+            \begin{figure}[h]
+                \centering
+                \includegraphics*[height=6cm]{diagram/sequence diagram/BE/review controller/query/detail.png}
+                \caption{\textit{Sequence diagram backend} untuk \textit{ReviewController.query}}
             \end{figure}
         \end{itemize}
     \end{enumerate}
+
     \newpage
 
     \item \textit{Class Diagram}
@@ -2848,499 +3209,12 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     
     \newpage
     \item Perancangan \textit{database}
-    Berikut ini adalah perancangan dari \textit{database} yang dipakai oleh \textit{Shumishumi}:
+    berikut ini adalah perancangan dari \textit{database} yang dipakai oleh \textit{Shumishumi}:
     \begin{figure}[h]
         \centering
         \includegraphics*[height=13cm]{./diagram/erd/erd.png}
         \caption{\textit{Entity Relation Diagram} untuk \textit{database shumishumi}}
     \end{figure}
-    \newpage
-    Berikut ini adalah kamus data untuk \textit{entity relation diagram}:
-    \begin{itemize}
-        \item \textit{Table item\_categories}\\
-        \textit{Primary key}: category\_id \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 4 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{item\_categories}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & category\_id & varchar(255) & \textit{primary key} untuk \textit{table item\_categories} \\ \hline
-            4 & category\_name & varchar(255) & nama kategori \\ \hline
-        \end{longtable}
-
-        \item \textit{Table hobbies}\\
-        \textit{Primary key}: hobby\_id \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 4 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{hobbies}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & hobby\_id & varchar(255) & \textit{primary key} untuk \textit{table hobbies} \\ \hline
-            4 & hobby\_name & varchar(255) & nama hobi \\ \hline
-        \end{longtable}
-
-        \item \textit{Table interest\_levels}\\
-        \textit{Primary key}: interest\_level\_id \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 4 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{interest\_levels}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & interest\_level\_id & varchar(255) & \textit{primary key} untuk \textit{tableeinterest\_levels} \\ \hline
-            4 & level\_name & varchar(255) & nama \textit{interest level} \\ \hline
-        \end{longtable}
-
-        \item \textit{Table user\_roles}\\
-        \textit{Primary key}: role\_id \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 4 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{user\_roles}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & role\_id & varchar(255) & \textit{primary key} untuk \textit{table user\_roles} \\ \hline
-            4 & role\_name & varchar(255) & nama \textit{user roles} \\ \hline
-        \end{longtable}
-
-        \item \textit{Table users}\\
-        \textit{Primary key}: user\_id \\
-        \textit{Foreign key}: \textit{role\_id} \\
-        Jumlah \textit{field}: 15 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{users}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & user\_id & varchar(255) & \textit{primary key} untuk tabel \textit{users} \\ \hline
-            4 & role\_id & varchar(255) & \textit{foreign key} untuk ke tabel \textit{user\_roles} \\ \hline
-            5 & email & varchar(255) & \textit{field} untuk menampung \textit{email user} \\ \hline
-            6 & phone\_number & varchar(255) & \textit{field} untuk menampung nomor hp \textit{user} \\ \hline
-            7 & username & varchar(255) & \textit{field} untuk menampung \textit{username} \\ \hline
-            8 & password & varchar(255) & \textit{field} untuk menampung \textit{password} \\ \hline
-            9 & gender & varchar(255) & \textit{field} untuk menampung gender \textit{user} \\ \hline
-            10 & date\_of\_birth & timestamp & \textit{field} untuk menampung tanggal lahir \textit{user} \\ \hline
-            11 & location & varchar(255) & \textit{field} untuk menampung lokasi tempat tinggal \textit{user} dalam bentuk json\\ \hline
-            12 & profile\_picture & varchar(255) & \textit{field} untuk menampung gambar profil \textit{user}\\ \hline
-            13 & review & double & \textit{field} untuk menampung \textit{review} yang diberikan kepada \textit{user}\\ \hline
-            14 & is\_active & boolean & \textit{field} yang menandakan apakah \textit{user} sudah aktif atau belum\\ \hline
-            15 & is\_deleted & boolean & \textit{field} yang menandakan apakah \textit{user} sudah di\textit{delete} atau belum\\ \hline
-        \end{longtable}
-
-        \item \textit{Table items}\\
-        \textit{Primary key}: item\_id \\
-        \textit{Foreign key}: merchant\_id;category\_id;hobby\_id;merchant\_level\_id;user\_level\_id \\
-        Jumlah \textit{field}: 15 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{items}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & item\_id & varchar(255) & \textit{primary key} untuk tabel \textit{items} \\ \hline
-            4 & item\_name & varchar(255) & \textit{field} untuk menyimpan nama produk \\ \hline
-            5 & item\_price & number(10) & \textit{field} untuk menyimpan harga produk \\ \hline
-            6 & item\_images & varchar(255) & \textit{field} untuk menyimpan gambar-gambar produk \\ \hline
-            7 & item\_description & longtext & \textit{field} untuk menyimpan deskripsi produk \\ \hline
-            8 & item\_quantity & number(10) & \textit{field} untuk menyimpan quantitas produk \\ \hline
-            9 & merchant\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            10 & category\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{item\_categories} \\ \hline
-            11 & hobby\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{hobbies} \\ \hline
-            12 & merchant\_level\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
-            13 & user\_level\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
-            14 & review & double & \textit{field} untuk menampung \textit{review} yang diberikan kepana \textit{item} \\ \hline
-            15 & is\_deleted & boolean & \textit{field} yang menandakan apakah \textit{item} sudah di\textit{delete} atau belum\\ \hline
-        \end{longtable}
-
-        \newpage
-        \item \textit{Table history\_items}\\
-        \textit{Primary key}: history\_item\_id \\
-        \textit{Foreign key}: item\_id;merchant\_id;category\_id;hobby\_id;merchant\_level\_id;user\_level\_id \\
-        Jumlah \textit{field}: 16 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{history\_items}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & history\_items & varchar(255) & \textit{primary key} untuk tabel \textit{history\_items} \\ \hline
-            4 & item\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
-            5 & item\_name & varchar(255) & \textit{field} untuk menyimpan nama produk \\ \hline
-            6 & item\_price & number(10) & \textit{field} untuk menyimpan harga produk \\ \hline
-            7 & item\_images & varchar(255) & \textit{field} untuk menyimpan gambar-gambar produk \\ \hline
-            8 & item\_description & longtext & \textit{field} untuk menyimpan deskripsi produk \\ \hline
-            9 & item\_quantity & number(10) & \textit{field} untuk menyimpan quantitas produk \\ \hline
-            10 & merchant\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            11 & category\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{item\_categories} \\ \hline
-            12 & hobby\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{hobbies} \\ \hline
-            13 & merchant\_level\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
-            14 & user\_level\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
-            15 & review & double & \textit{field} untuk menampung \textit{review} yang diberikan kepana \textit{item} \\ \hline
-            16 & is\_deleted & boolean & \textit{field} yang menandakan apakah \textit{item} sudah di\textit{delete} atau belum\\ \hline
-        \end{longtable}
-        
-        \newpage
-        \item \textit{Table sessions}\\
-        \textit{Primary key}: sessions \\
-        \textit{Foreign key}: user\_id \\
-        Jumlah \textit{field}: 7 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{sessions}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & session\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{sessions} \\ \hline
-            4 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            5 & session\_dt & timestamp & \textit{field} untuk menandakan waktu \textit{session expired} \\ \hline
-            6 & is\_active & boolean & \textit{field} untuk menandakan apakah \textit{session} masih aktif atau tidak \\ \hline
-            7 & is\_remembered & boolean & \textit{field} untuk menandakan apakah \textit{session} akan diingat atau tidak \\ \hline
-        \end{longtable}
-
-        \item \textit{Table cart}\\
-        \textit{Primary key}: item\_id;user\_id \\
-        \textit{Foreign key}: item\_id;user\_id \\
-        Jumlah \textit{field}: 6 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{sessions}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            4 & item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
-            5 & quantity & number(10) & \textit{field} untuk menampung kuantitas item didalam keranjang \\ \hline
-            6 & selected & number(10) & \textit{field} untuk menjadi \textit{flag} apakah \textit{entry} ini sedang di-\textit{select} atau tidak \\ \hline
-        \end{longtable}
-
-        \newpage
-        \item \textit{Table transactions}\\
-        \textit{Primary key}: trx\_id \\
-        \textit{Foreign key}: user\_id \\
-        Jumlah \textit{field}: 8 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{transactions}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & trx\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{transactions} \\ \hline
-            4 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            5 & payment\_type & varchar(255) & tipe pembayaran yang dipakai untuk transaksi ini \\ \hline
-            6 & midtrans\_id & varchar(255) & \textit{field} untuk menyimpan \textit{payment id} midtrans \\ \hline
-            7 & midtrans\_link & varchar(255) & \textit{field} untuk menyimpan link pembayaran midtrans \\ \hline
-            8 & status & varchar(255) & \textit{field} untuk menyimpan status transaksi \\ \hline
-        \end{longtable}
-
-        \item \textit{Table transaction\_detail}\\
-        \textit{Primary key}: trx\_detail\_id \\
-        \textit{Foreign key}: trx\_id;history\_item\_id \\
-        Jumlah \textit{field}: 6 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{transaction\_detail}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & trx\_detail\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{transaction\_detail} \\ \hline
-            4 & trx\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{transactions} \\ \hline
-            5 & history\_item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{history\_items} \\ \hline
-            6 & quantity & int & \textit{field} untuk menyimpan kuantitas barang dalam transaksi \\ \hline
-        \end{longtable}
-
-        \item \textit{Table wishlist}\\
-        \textit{Primary key}: item\_id;user\_id \\
-        \textit{Foreign key}: item\_id;user\_id \\
-        Jumlah \textit{field}: 4 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{wishlist}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            4 & item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
-        \end{longtable}
-
-        \item \textit{Table reviews}\\
-        \textit{Primary key}: review\_id \\
-        \textit{Foreign key}: item\_id;user\_id;merchant\_id;interest\_level \\
-        Jumlah \textit{field}: 10 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{reviews}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & review\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{reviews} \\ \hline
-            4 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            5 & item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
-            6 & merchant\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            7 & interest\_level & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
-            8 & description & longtext & \textit{field} untuk menyimpan deskripsi \textit{review} \\ \hline
-            9 & review\_images & varchar(255) & \textit{field} untuk menyimpan gambar-gambar \textit{review} \\ \hline
-            10 & need\_review & boolean & \textit{field} untuk menjadi \textit{flag} apakah \textit{review} ini sudah dibuat atau belum \\ \hline
-        \end{longtable}
-
-        \item \textit{Table comment}\\
-        \textit{Primary key}: comment\_id \\
-        \textit{Foreign key}: user\_id;reply\_comment\_id;reply\_item\_id \\
-        Jumlah \textit{field}: 8 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{comment}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & comment\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{comments} \\ \hline
-            4 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
-            5 & reply\_comment\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{comments} \\ \hline
-            6 & reply\_item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
-            7 & content & varchar(255) & \textit{field} untuk menampung \textit{comment} \\ \hline
-            8 & is\_deleted & varchar(255) & \textit{flag} untuk menandakan apakah \textit{comment} dihapus atau tidak \\ \hline
-        \end{longtable}
-
-        \item \textit{Table clients}\\
-        \textit{Primary key}: client\_id \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 5 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{clients}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & client\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{comments} \\ \hline
-            4 & client\_name & varchar(255) & nama dari \textit{client} \\ \hline
-            5 & client\_secret & varchar(255) & \textit{secret} dari \textit{client} \\ \hline
-        \end{longtable}
-
-        \item \textit{Table otp}\\
-        \textit{Primary key}: otp\_id \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 8 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{otp}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & otp\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{otp} \\ \hline
-            4 & otp\_dt & timestamp & sebagai waktu kapan otp akan \textit{expire} \\ \hline
-            5 & otp\_type & varchar(255) & \textit{field} untuk menyimpan tipe otp \\ \hline
-            6 & email & varchar(255) & email yang dikirimkan otp \\ \hline
-            7 & is\_active & boolean & apakah otp ini masih aktif atau tidak \\ \hline
-        \end{longtable}
-
-        \item \textit{Table contents}\\
-        \textit{Primary key}: content\_name \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 4 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{contents}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & content\_name & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{contents} \\ \hline
-            4 & content & varchar(255) & isi dari \textit{contents} \\ \hline
-        \end{longtable}
-
-        \item \textit{Table activities}\\
-        \textit{Primary key}: activity\_id \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 6 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{activities}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & activity\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{activities} \\ \hline
-            4 & user\_id & varchar(255) & sebagai \textit{foreign key} untuk tabel \textit{users} \\ \hline
-            5 & activity\_value & int & berat dari \textit{activities} tersebut \\ \hline
-            6 & activity & varchar(255) & aktifitas \textit{user} dalam bentuk json\\ \hline
-        \end{longtable}
-
-        \item \textit{Table knowledge}\\
-        \textit{Primary key}: knowledge\_key \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 5 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{knowledge}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & knowledge\_key & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{knowledge} \\ \hline
-            4 & knowledge & varchar(255) & sebagai \textit{value knowledge} ini \\ \hline
-        \end{longtable}
-
-        \item \textit{Table dictionaries}\\
-        \textit{Primary key}: dictionary\_name \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 5 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{dictionaries}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & dictioanry\_name & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{dictionaries} \\ \hline
-            4 & dictionary\_type & varchar(255) & tipe dari \textit{dictionary} \\ \hline
-            5 & display\_name & varchar(255) & bagaimana \textit{dictionary} ini akan ditampilkan di FE \\ \hline
-        \end{longtable}
-
-        \newpage
-        \item \textit{Table images}\\
-        \textit{Primary key}: image\_id \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 6 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{images}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & image\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{images} \\ \hline
-            4 & image\_name & nama dari gambar tersebut \\ \hline
-            5 & image\_ext & \textit{extension} dari gambar tersebut \\ \hline
-            6 & image & longblob & gambar \\ \hline
-        \end{longtable}
-
-        \item \textit{Table reset\_password}\\
-        \textit{Primary key}: uuid \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 6 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{reset\_password}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & uuid & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{reset\_password} \\ \hline
-            4 & email & varchar(255) & email yang me-\textit{request reset password} \\ \hline
-            5 & expired\_time & timestamp & \textit{expired time} untuk \textit{request reset password} \\ \hline
-            6 & is\_active & boolean & apakah \textit{request} ini masih aktif atau tidak \\ \hline
-        \end{longtable}
-
-        \item \textit{Table email\_encrypt}\\
-        \textit{Primary key}: uuid \\
-        \textit{Foreign key}: - \\
-        Jumlah \textit{field}: 4 \\
-        \begin{longtable}{|l|l|l|l|}
-            \caption{kamus data untuk tabel \textit{email\_encrypt}}\\
-            \hline
-            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
-            \endfirsthead
-            %
-            \endhead
-            %
-            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
-            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
-            3 & uuid & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{email\_encrypt} \\ \hline
-            4 & email & varchar(255) & email yang me-\textit{request encrypt email} \\ \hline
-        \end{longtable}
-    \end{itemize}
 \end{enumerate}
 
 \newpage

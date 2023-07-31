@@ -1,0 +1,39 @@
+@startuml recommend
+participant "Frontend" as fe
+participant "ItemController" as ic
+
+participant "RecommendProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Activity" as am
+participant "Knowledge" as km
+
+database "shumishumi-db" as db
+
+fe -> ic++ : /item/recommend
+ic -> proc++ : process()
+
+proc -> am++ : queryByUserIdAndOrderByWeightSumDesc()
+am -> db : SELECT
+return list of activity model
+
+loop for every activity in list and item in result less than 10
+    proc -> km++ : queryKnowledgeByFuzzyKey
+    km -> db : SELECT
+    return list of knowledge model
+
+    proc -> proc : composeItemIdFromKnowledge()
+    proc -> proc : sortItemIdBaseOnSuitability()
+ 
+    loop for every unique itemId in knowledge and item in result less than 10
+        proc -> icache++ : fetchFromCache()
+        return item model
+        proc -> proc : composeItemToResult()
+    end
+end
+
+return result
+return response
+
+@enduml

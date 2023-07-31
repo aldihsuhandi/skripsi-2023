@@ -1,0 +1,27 @@
+@startuml login
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "Login page" as login
+' end box
+
+participant "Backend" as be
+
+u -> home++ : click login button
+home -> login --++ : redirect to login page
+u -> login : fill out login form
+u -> login : click login button
+login -> be++ : /user/login
+login <-- be-- : JSON_RESPONSE
+alt if login failed
+    u <-- login : show error message
+else if password validation success
+    home <-- login --++ : redirect to homepage
+end
+
+
+
+@enduml

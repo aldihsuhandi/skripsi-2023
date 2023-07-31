@@ -1,0 +1,21 @@
+@startuml query
+participant "Frontend" as fe
+participant "TransactionController" as tc
+
+participant "TransactionQueryProcessor" as proc
+
+participant "Transaction" as tm
+
+database "shumishumi-db" as db
+
+fe -> tc++ : /transaction/query
+tc -> proc++: process()
+
+proc -> tm++ : queryByUserIdAndStatusPagination()
+tm -> db : SELECT
+return list of transaction model
+
+return result
+return response
+
+@enduml

@@ -2,7 +2,7 @@
 
 Actor Merchant as m
 
-Box "Front End" #LightBlue
+' Box "Front End" #LightBlue
 Participant "Home page" as hp
 
 ' store management
@@ -22,7 +22,7 @@ Participant "Product discussion page" as pdp
 Participant “All chat page” as acp
 Participant “Personal chat page” as pcp
 
-end Box
+' end box
 
 ' backend
 Participant "Back End" as be

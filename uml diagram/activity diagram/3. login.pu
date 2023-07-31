@@ -17,10 +17,10 @@ if () then (no)
     :show warning message user is not active;
     :redirect to activate page;
     stop
+else (yes)
+    :create session;
+    :check if login process success;
 endif
--> yes;
-:create session;
-:check if login process success;
 backward:show error message;
 repeat while() is (false)
 -> true;

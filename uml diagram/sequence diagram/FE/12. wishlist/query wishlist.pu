@@ -1,0 +1,24 @@
+@startuml query wishlist
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "Wishlist page" as wishlist
+' end box
+
+participant "Backend" as be
+
+u -> home++ : open wishlist page
+home -> wishlist --++ : redirect to wishlist page
+
+wishlist -> be++ : /item/wishlist/query
+return response
+
+loop for every item in response
+    wishlist -> be++ : /image/download
+    return image
+end
+
+@enduml

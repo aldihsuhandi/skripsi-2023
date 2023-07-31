@@ -1,0 +1,18 @@
+@startuml delete discussion
+
+|user|
+:open item detail page;
+:click delete discussion button;
+|system|
+:validate if this dicussion is from this user;
+if () then (no)
+    :show error message;
+    stop
+else (yes)
+endif
+|system|
+:delete discussion;
+:update displayed discussion;
+stop
+
+@enduml

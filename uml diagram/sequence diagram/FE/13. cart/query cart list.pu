@@ -1,0 +1,23 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "Cart page" as cart
+' end box
+
+participant "Backend" as be
+
+u -> home++ : open cart page
+home -> cart --++ : redirect to cart page
+cart -> be++ : /cart/query
+return response
+
+loop for every item in response
+    cart -> be++ : /image/download
+    return image
+end
+
+@enduml

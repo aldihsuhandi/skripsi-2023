@@ -1,0 +1,21 @@
+@startuml download
+participant "Frontend" as fe
+participant "ImageController" as ic
+
+participant "ImageDownloadProcessor" as proc
+
+participant "Image" as im
+
+database "shumishumi-db" as db
+
+fe -> ic++ : /image/download
+ic -> proc++ : process()
+
+proc -> im++ : queryByUUid()
+im -> db : SELECT
+return image model
+
+return result
+return response
+
+@enduml

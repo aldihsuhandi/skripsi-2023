@@ -1,0 +1,26 @@
+@startuml edit
+participant "Frontend" as fe
+participant "CommentController" as cc
+
+participant "CommentUpdateProcessor" as proc
+
+participant "Comment" as cm
+
+database "shumishumi-db" as db
+
+fe -> cc++ : /comment/edit
+cc -> proc++ : process()
+
+proc -> cm++ : queryById()
+cm -> db : SELECT
+proc <-- cm : comment model
+
+proc -> cm : update()
+cm -> cm : save()
+cm -> db : UPDATE
+deactivate cm
+
+return result
+return response
+
+@enduml

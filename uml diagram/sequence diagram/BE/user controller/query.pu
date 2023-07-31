@@ -1,0 +1,28 @@
+@startuml query
+participant "Frontend" as fe
+participant "UserController" as uc
+
+participant "UserQueryProcessor" as proc
+
+participant "User" as um
+participant "Role" as rm
+
+database "shumishumi-db" as db
+
+fe -> uc++ : /user/info
+uc -> proc++ : process()
+
+proc -> um++ : queryByKey()
+um -> db : SELECT
+return user model
+
+proc -> rm++ : queryById()
+rm -> db : SELECT
+return role model
+
+proc -> proc : composeResult()
+
+return result
+return response
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml upload
+participant "Frontend" as fe
+participant "ImageController" as ic
+
+participant "ImageUploadProcessor" as proc
+
+participant "Image" as im
+
+database "shumishumi-db" as db
+
+fe -> ic++ : /image/upload
+ic -> proc++ : process()
+
+create im
+proc -> im++ : new()
+im -> im : save
+im -> db : INSERT
+deactivate im
+
+return result
+return response
+
+@enduml

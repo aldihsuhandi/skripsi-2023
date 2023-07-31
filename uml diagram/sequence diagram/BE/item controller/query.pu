@@ -1,0 +1,16 @@
+@startuml query
+participant "Frontend" as fe
+participant "ItemController" as ic
+
+participant "QueryItemProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+fe -> ic++ : /item/query
+ic -> proc++ : process()
+proc -> icache++ : fetchFromCache()
+return list of item model
+return result
+return response
+
+@enduml

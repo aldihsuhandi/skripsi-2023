@@ -1,0 +1,30 @@
+@startuml create item
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Merchant page" as merchant
+participant "Item Create page" as createpage
+participant "Item Detail page" as detail
+' end box
+
+participant "Backend" as be
+
+u -> merchant++ : click create item
+merchant -> createpage --++ : redirect to item create form
+
+u -> createpage : fill out create form
+u -> createpage : click create
+
+loop for every image need to be uploaded
+createpage -> be++ : /image/upload
+return response
+end
+
+createpage -> be++ : /item/create
+return response
+
+createpage -> detail++-- : redirect detail page
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml logout
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home Page" as home
+' end box
+
+participant "Backend" as be
+
+u -> home++ : click logout button
+home -> be++ : /session/logout
+return response
+
+home -> home : reload page
+
+@enduml

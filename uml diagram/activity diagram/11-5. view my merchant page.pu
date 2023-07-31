@@ -1,0 +1,11 @@
+@startuml view my merchant page
+
+|user|
+start
+:open user profile dropdown;
+:click 'my merchant page';
+|system|
+:redirect to current user\n merchant page;
+stop
+
+@enduml
