@@ -19,6 +19,19 @@ proc <-- iwm : item wishlist model
 
 proc -> iwm : remove
 iwm -> db : DELETE
+deactivate iwm
 destroy iwm
+
+proc -> am++ : queryByKeyAndActivity()
+am -> db : SELECT
+proc <-- am : activity model
+
+proc -> am : delete()
+am -> db : DELETE
+deactivate am
+destroy am
+
+return result
+return response
 
 @enduml
