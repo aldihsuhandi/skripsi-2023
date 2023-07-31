@@ -1,0 +1,23 @@
+@startuml add
+participant "Frontend" as fe
+participant "CartController" as cc
+
+participant "AddCartProcessor" as proc
+
+participant "Cart" as cm
+
+database "shumishumi-db" as db
+
+fe -> cc++ : /cart/add
+cc -> proc++ : process()
+
+create cm 
+proc -> cm++ : new()
+cm -> cm : save()
+cm -> db : INSERT
+deactivate cm
+
+return result
+return response
+
+@enduml

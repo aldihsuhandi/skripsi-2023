@@ -1,0 +1,28 @@
+@startuml query
+participant "Frontend" as fe
+participant "CartController" as cc
+
+participant "CartQueryProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Cart" as cm
+
+database "shumishumi-db" as db
+
+fe -> cc++ : /cart/query
+cc -> proc++ : process()
+
+proc -> cm++ : queryByUserId()
+cm -> db : SELECT
+return list of cart model
+
+loop for every cart in list
+    proc -> icache++ : fetchFromCache()
+    return item model
+end
+
+return result
+return response
+
+@enduml

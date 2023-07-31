@@ -12,15 +12,22 @@ database "shumishumi-db" as db
 fe -> uc++ : /user/activate
 uc -> proc++ : process()
 
-proc -> um++ : queryByEmail()
-um -> db : SELECT
-proc <-- um : user model
+proc -> om++ : queryByOtpAndUserId()
+om -> db : SELECT
+return otp model
 
-proc -> um : activate()
-um -> um : save
-um -> db : UPDATE
+alt otp is not null
+    proc -> um++ : queryByEmail()
+    um -> db : SELECT
+    proc <-- um : user model
 
-deactivate um
+    proc -> um : activate()
+    um -> um : save
+    um -> db : UPDATE
+
+    deactivate um
+end
+
 
 return result
 return response
