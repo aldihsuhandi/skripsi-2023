@@ -103,7 +103,7 @@
 \setstretch{1.5}
 \pagenumbering{roman}
 \date{}
-\title{Shumishumi - Pasar Daring untuk Hobi dengan Penyaringan Tingkat Minat dan Sistem Rekomendasi Menggunakan Implementasi Knowledge Graph}
+\title{Shumishumi - Pasar Daring untuk Hobi dengan Penyaringan Tingkat Minat}
 \clearpage\maketitle
 \addcontentsline{toc}{section}{\protect\numberline{}Halaman Sampul}
 \setstretch{1.5}
@@ -128,15 +128,15 @@
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Halaman Judul}
-\includepdf[pages=1]{pdf/thesis-title.pdf}
+\includepdf[pages=1]{pdf/title-fixed.pdf}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Halaman Pernyataan Orisinalitas}
-\includepdf[pages=1]{pdf/Halaman Originalitas.pdf}
+\includepdf[pages=1]{pdf/Halaman Originalitas Fix.pdf}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Abstrak}
-\includepdf[pages=1]{pdf/Abstrak.pdf}
+\includepdf[pages=1]{pdf/Abstrak-fix.pdf}
 
 \newpage
 \addcontentsline{toc}{section}{\protect\numberline{}Kata Pengantar}
@@ -308,6 +308,7 @@ public class Human {
               \caption{Contoh dari \textit{inheritance}}
           \end{figure}
 
+
     \item \textit{Polymorphism}
 
           \textit{Child class} adalah sebuah \textit{class} yang akan menuruni semua atribut dan fitur dari \textit{parent class}, tapi apabila dari satu \textit{parent class} memiliki 2 \textit{child class} yang memiliki fitur yang sama tapi cara melakukannya yang berbeda? contoh pisang goreng adalah sebuah makanan, tapi tidak semua makanan adalah pisang goreng, ada perubahan dari cara memasak dan cara penyajian ditiap - tiap makanan, disini konsep \textit{polymorphism} dapat dipakai. Secara definisi \textit{polymorphism} adalah kelakuan dimana \textit{child class} bisa melakukan suatu \textit{task} atau fitur yang sama seperti \textit{parent class} dengan cara yang berbeda\autocite{education-erin-oop-2020}.
@@ -467,7 +468,13 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
 \textit{Hobby} atau hobi secara singkat adalah sebuah kegiatan yang dilakukan oleh seorang dalam waktu luang untuk mendapatkan kesenangan \autocite{Dict_hobi}. Seseorang dapat mengadopsi dan memulai hobi dapat karena untuk mengisi waktu luangnya dan mendapatkan kesenangan dan rasa kepenuhan dari itu \autocite{linkedin_hobi}.
 
 \subsubbab{\textit{Interest Level}}
-\textit{Interest Level} adalah suatu pengelompokkan yang dibuat untuk mempermudah memisahkan antara pemilik hobi yang digolongkan dari tingkat kemahiran mereka dalam sebuah hobi tertentu. Ada tiga level yang kami buat, yaitu \textit{BEGINNER}, \textit{INTERMEDIATE}, dan \textit{ENTHUSIAST}. Klasifikasi tersebut akan diberikan kepada barang oleh penjual dan pengguna yang sudah membeli barang bersangkutan. Klasifikasi atau pengelompokan tersebut pada barang bertujuan untuk memisahkan barang yang tepat bagi tingkat kemahiran tertentu dengan yang lain. Sehingga dengan tujuan agar barang yang tergolong \textit{BEGINNER} merupakan barang yang cocok untuk pemula, seseorang yang memulai suatu hobi.
+Berdasarkan kamus, arti kata \textit{interest} adalah suatu keadaan ingin tahu atau belajar mengenai sesuatu atau seseorang\autocite{dictionary-interest}. Arti lainnya adalah kecenderungan hati atau gairah/keinginan yang tinggi terhadap sesuatu\autocite{arti-kata-minat}. Sedangkan \textit{level} berarti sebuah posisi dalam skala jumlah, kuantitas, luas, atau kualitas yang nyata atau imajiner\autocite{dictionary-level}. 
+
+\textit{Interest Level} atau tingkat minat itu sendiri merupakan sebuah bentuk penilaian yang dapat diberikan untuk menilai minat pada sesuatu berdasarkan keinginannya terhadap objek minat tersebut. Pada dasarnya, kriteria penilaian suatu minat tergolong ke dalam tiga jenis, yakni minat rendah, sedang dan tinggi. Minat seseorang dapat dikatakan rendah apabila orang tersebut tidak menginginkan objek minatnya, dikatakan sedang apabila orang tersebut menginginkan objek minatnya tetapi tidak dilakukan dengan segara, sedangkan tingkat minat seseorang dikatakan tinggi apabila orang tersebut sangat menginginkan objek minatnya dan dilakukannya dengan segera\autocite{kriteria-minat}.
+
+Didalam konteks peminatan hobi, orang-orang yang melakukan hobi tersebut (\textit{hobbyist}/penghobi) dapat dikategorikan menjadi tiga subkategori yakni, \textit{casual, serious} dan \textit{project-based leisure}. Subkategori minat hobi yang santai, yang secara intrinsik bermanfaat, memiliki kurun waktu yang pendek dan menyenangkan yang hanya membutuhkan sedikit atau tanpa persiapan disebut dengan \textit{casual leisure}. Lalu, minat hobi yang lebih serius, dapat berupa amatiran/penghobi atau sukarelawan yang substansial, bermanfaat dan menghasilkan rasa pencapaian disebut dengan \textit{serious leisure}. Sedangkan yang minat yang berupa sebuah proyek jangka pendek yang biasanya dilakukan hanya sekali dan bermanfaat disebut dengan \textit{project-based leisure}\autocite[1-5;17-21;33-34]{hobbyist-types}.
+
+Berdasarkan teori diatas, jenis penilaian \textit{interest level} yang digunakan didalam aplikasi ShumiShumi ini diklasifikasikan menjadi tiga macam, yaitu \textit{Beginner, Intermediate} dan \textit{Enthusiast}. Masing-masing menyerupai tingkat penilain minat yang sudah ada. Disini, \textit{Beginner} (pemula/kasual) setara dengan penghobi yang masih baru atau \textit{casual} atau yang memiliki tingkat minat rendah, sedangkan \textit{Intermediate} (kelas menengah) ditujukan pada orang-orang yang sudah lebih serius menjalankan hobinya atau yang memiliki tingkat minat sedang dan \textit{Enthusiast} (penggemar berat) diperuntukkan untuk orang-orang yang sudah sangat serius mendalami suatu hobi atau yang memiliki tingkat minat tinggi. Tujuannya adanya penilaian ini adalah untuk mempermudah mengelompokkan para pengguna berdasarkan minat hobi mereka masing-masing.
 
 \subsubbab{\textit{Online Marketplace}}
 \textit{Online Marketplace} adalah sebuah tipe dari \textit{e-commerce} yang dimana  produk atau jasa yang ada di aplikasi berasal dari pihak ketiga yang dapat mendaftarkan diri untuk menjual barang atau jasa di tempat aplikasi \textit{online marketplace}. \autocite{pediaa_marketplace}
@@ -794,6 +801,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
     \end{figure}
     
 \end{enumerate}
+
 \subbab{Aplikasi Serupa}
 Berikut adalah beberapa aplikasi sejenis yang sudah pernah dikembangkan atau dibuat oleh beberapa penelitian terdahulu:
 
