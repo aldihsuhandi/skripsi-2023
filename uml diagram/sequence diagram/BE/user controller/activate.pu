@@ -5,6 +5,7 @@ participant "UserController" as uc
 participant "UserActivateProcessor" as proc
 
 participant "User" as um
+participant "Otp" as om
 
 database "shumishumi-db" as db
 

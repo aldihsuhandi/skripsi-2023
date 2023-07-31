@@ -7,6 +7,8 @@ participant "UserRegisterProcessor" as proc
 participant "User" as um
 participant "Image" as im
 
+participant "Otp" as om
+
 database "shumishumi-db" as db
 
 fe -> uc++ : /user/register
@@ -25,6 +27,15 @@ alt if user has profile picture
     im -> db : INSERT
     deactivate im
 end
+
+
+create om
+proc -> om++ : new()
+om -> om : save()
+om -> db : INSERT
+deactivate om
+
+proc -> proc : sendEmail()
 
 return result
 return response

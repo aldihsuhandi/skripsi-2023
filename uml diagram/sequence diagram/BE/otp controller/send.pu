@@ -1,0 +1,25 @@
+@startuml send
+participant "Frontend" as fe
+participant "OtpController" as dc
+
+participant "OtpSendProcessor" as proc
+
+participant "Otp" as om
+
+database "shumishumi-db" as db
+
+fe -> dc++ : /otp/send
+dc -> proc++ : process()
+
+create om
+proc -> om++ : new()
+om -> om : save()
+om -> db : INSERT
+deactivate om
+
+proc -> proc : sendEmail()
+
+return result
+return response
+
+@enduml

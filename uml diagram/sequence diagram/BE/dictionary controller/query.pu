@@ -1,0 +1,20 @@
+@startuml query
+participant "Frontend" as fe
+participant "DictionaryController" as dc
+
+participant "DictionaryQueryProcessor" as proc
+
+participant "Dictionary" as dm
+
+database "shumishumi-db" as db
+
+fe -> dc++ : /dictionary/query
+dc -> proc++ : process()
+proc -> dm++ : queryByType()
+dm -> db : SELECT
+return list of dictionary model
+
+return result
+return response
+
+@enduml
