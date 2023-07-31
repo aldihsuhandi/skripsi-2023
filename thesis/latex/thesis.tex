@@ -567,7 +567,7 @@ Berikut ini adalah komponen-komponen dasar \textit{flowchart}
 Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML yang akan digunakan untuk menggambarkan sistem yang dibuat, diagram-diagram tersebut antara lain, \textit{Class Diagram, Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram}. Berikut adalah penjelasan lebih detailnya mengenai empat jenis diagram UML tersebut:
 \begin{enumerate}
     \item \textit{Class Diagram}\\
-    UML \textit{Class Diagram} digunakan untuk menampikan kelas-kelas objek yang dipakai pada sebuah sistem. Salah satu jenis \textit{class diagram} yang dipakai untuk menunjukkan hal-hal yang berhubungan dengan domain masalah pengguna disebut dengan \textit{domain model class diagram}, sedangkan jenis UML \textit{class diagram} yang digunakan untuk merancang suatu \textit{software class} pada sistem disebut sebagai \textit{design class diagram}\autocite[103-114]{uml-satzinger}. Berikut adalah penjelasan lebih detail dari kedua jenis \textit{class diagram} tersebut:
+    UML \textit{Class Diagram} digunakan untuk menampilkan kelas-kelas objek yang dipakai pada sebuah sistem. Salah satu jenis \textit{class diagram} yang dipakai untuk menunjukkan hal-hal yang berhubungan dengan domain masalah pengguna disebut dengan \textit{domain model class diagram}, sedangkan jenis UML \textit{class diagram} yang digunakan untuk merancang suatu \textit{software class} pada sistem disebut sebagai \textit{design class diagram}\autocite[103-114]{uml-satzinger}. Berikut adalah penjelasan lebih detail dari kedua jenis \textit{class diagram} tersebut:
 
     \begin{enumerate}
         \item \textit{Domain Model Class Diagram}
@@ -578,9 +578,10 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \centering
             \includegraphics[scale=0.5]{images/uml satzinger/domain class diagram/class - domain class diagram.png}
             \caption{Contoh dari sebuah \textit{class} pada \textit{domain model class diagram}}
+            \label{fig:domainclass}
         \end{figure}
 
-        Dapat dilihat dari gambar diatas (\textit{figure 2.10}) bahwa nama \textit{class} tersebut adalah \textit{Customer}, sedangkan \textit{custNumber, name, phoneNumber, email} dan \textit{billAddress} adalah bentuk dari atribut yang dimiliki oleh \textit{class} tersebut.
+        Dapat dilihat dari gambar \ref{fig:domainclass} bahwa nama \textit{class} tersebut adalah \textit{Customer}, sedangkan \textit{custNumber, name, phoneNumber, email} dan \textit{billAddress} adalah bentuk dari atribut yang dimiliki oleh \textit{class} tersebut.
 
         \begin{itemize}
             \item Notasi dari \textit{Domain Model Class Diagram}
@@ -591,15 +592,17 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
                 \centering
                 \includegraphics[scale=0.35]{images/uml satzinger/domain class diagram/multiplicity summary.png}
                 \caption{Rangkuman dari jenis-jenis \textit{multiplicity} yang ada pada \textit{class diagram}}
+                \label{fig:multiplicity}
             \end{figure}
 
             \begin{figure}[h]
                 \centering
                 \includegraphics[scale=0.5]{images/uml satzinger/domain class diagram/contoh multiplicity classes.png}
                 \caption{Contoh dari \textit{class diagram} dengan hubungan \textit{multiplicity}}
+                \label{fig:contohmultiplicity}
             \end{figure}
 
-            Gambar diatas (\textit{figure 2.12}) merupakan salah satu contoh bentuk dari \textit{domain model class diagram} dengan \textit{multiplicity}-nya. Disini, setiap \textit{class customer} dapat mempunyai 0 (nol) hingga banyak pesanan (\textit{order}) dan setiap pesanan (\textit{order}) dapat memiliki 1 (satu) atau banyak barang yang dipesan (\textit{OrderItem}).  
+            Gambar \ref{fig:contohmultiplicity} diatas merupakan salah satu contoh bentuk dari \textit{domain model class diagram} dengan \textit{multiplicity}-nya. Disitu, setiap \textit{class customer} dapat mempunyai 0 (nol) hingga banyak pesanan (\textit{order}) dan setiap pesanan (\textit{order}) dapat memiliki 1 (satu) atau banyak barang yang dipesan (\textit{OrderItem}).  
 
             \item \textit{Relationship}
             
@@ -616,9 +619,10 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
                     \centering
                     \includegraphics[scale=0.25]{images/uml satzinger/domain class diagram/general-special relationships.png}
                     \caption{Contoh dari hubungan \textit{Generalization/Specialization}}
+                    \label{fig:generalspecial}
                 \end{figure}
 
-                Pada gambar diatas (\textit{figure 2.13}), dapat dilihat bahwa \textit{Car, Bus} dan \textit{Truck} merupakan tipe-tipe spesial dari \textit{MotorVehicle}, sedangkan \textit{SportsCar, Sedan} dan \textit{BigCar} adalah tipe-tipe spesial dari \textit{Car}. 
+                Pada gambar \ref{fig:generalspecial}, dapat dilihat bahwa \textit{Car, Bus} dan \textit{Truck} merupakan tipe-tipe spesial dari \textit{MotorVehicle}, sedangkan \textit{SportsCar, Sedan} dan \textit{BigCar} adalah tipe-tipe spesial dari \textit{Car}. 
 
                 Di dalam relasi ini juga, \textit{subclass} yang ada dapat "mewarisi" suatu karakteristik dari \textit{superclass}-nya. Hal ini dinamakan sebagai \textit{Inheritance}. \textit{Inheritance} memungkinkan \textit{subclasses} untuk berbagi karakteristik \textit{superclass} mereka. Di dalam pendekatan \textit{object oriented}, \textit{inheritance} merupakan sebuah konsep kunci yang dimungkinkan dikarenakan adanya hierarki \textit{generalization/specialization}. Seperti contoh yang ada pada \textit{figure 2.13}, dapat dilihat bahwa \textit{Sedan} adalah jenis \textit{Car} yang khusus dan \textit{Car} adalah jenis \textit{MotorVehicle} yang khusus. Istilah lain dari relasi ini adalah \textit{"Is A" Relationship}\autocite[103-114]{uml-satzinger}.
 
@@ -665,9 +669,9 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
                 \caption{Jenis-jenis \textit{design class stereotypes}}
             \end{figure}
 
-            \textit{Entity Class} adalah sebuah desain dari \textit{stereotype} untuk masalah \textit{domain class}. \textit{Class} ini biasanya menggambarkan sesuatu yang ditangani oleh pengguna ketika melakukan pekerjaan mereka pada aplikasi. Objek dari \textit{entity class} biasanya perlu diingat dan juga disebut juga dengan \textit{persistant class}. \textit{Persistant Class} merupakan sebuah \textit{entity class} yang memiliki objek yang ada setelah aplikasi berhenti. Namun, \textit{persistant class} biasanya tidak diindikasikan sebagai sebuah \textit{stereotype}. Cara untuk membuat data menjadi persisten adalah dengan menulisnya ke \textit{file} atau database sehingga sehingga disimpan dan dapat diambil pada eksekusi \textit{software} selanjutnya\autocite[376-382]{uml-satzinger}.
+            \textit{Entity Class} adalah sebuah desain dari \textit{stereotype} untuk masalah \textit{domain class}. \textit{Class} ini biasanya menggambarkan sesuatu yang ditangani oleh pengguna ketika melakukan pekerjaan mereka pada aplikasi. Objek dari \textit{entity class} biasanya perlu diingat dan juga disebut juga dengan \textit{persistent class}. \textit{Persistent Class} merupakan sebuah \textit{entity class} yang memiliki objek yang ada setelah aplikasi berhenti. Namun, \textit{persistent class} biasanya tidak diindikasikan sebagai sebuah \textit{stereotype}. Cara untuk membuat data menjadi persisten adalah dengan menulisnya ke \textit{file} atau database sehingga sehingga disimpan dan dapat diambil pada eksekusi \textit{software} selanjutnya\autocite[376-382]{uml-satzinger}.
             
-            \textit{Boundary} atau \textit{view class} dirancang khusus untuk berada pada \textit{automation boundary} sistem. Di dalam sebuah sistem dekstop, \textit{class} jenis ini adalah \textit{windows class} atau halaman web dan semua \textit{class} lainnya yang terkait dengan \textit{user interface} sistem tersebut. \textit{Boundary Class} juga bisa menjadi sebuah \textit{interface} sistem antarperusahaan dan sistem eksternal. Jadi, dapat disimpulkan bahwa \textit{boundary stereotype} dapat berupa \textit{user interface} atau \textit{system interface}\autocite[376-382]{uml-satzinger}. 
+            \textit{Boundary} atau \textit{view class} dirancang khusus untuk berada pada \textit{automation boundary} sistem. Di dalam sebuah sistem desktop, \textit{class} jenis ini adalah \textit{windows class} atau halaman web dan semua \textit{class} lainnya yang terkait dengan \textit{user interface} sistem tersebut. \textit{Boundary Class} juga bisa menjadi sebuah \textit{interface} sistem antarperusahaan dan sistem eksternal. Jadi, dapat disimpulkan bahwa \textit{boundary stereotype} dapat berupa \textit{user interface} atau \textit{system interface}\autocite[376-382]{uml-satzinger}. 
 
             \textit{Controller Class} merupakan sebuah perantara antara \textit{boundary class} denagn \textit{entity class}. Tugas dari \textit{controller class} adalah untuk menangkap pesan dari objek yang ada pada \textit{boundary class} dan mengirimnya ke \textit{entity class} yang tepat. \textit{Class} ini bertindak layaknya sebuah \textit{switchboard} antara \textit{boundary layer} atau \textit{view layer} dengan \textit{domain layer}\autocite[376-382]{uml-satzinger}.
 
@@ -707,15 +711,16 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
     \newpage
     \item \textit{Activity Diagram}
     
-    \textit{Activity Diagram} merupakan sebuah diagram UML yang digunakan untuk menggambarkan berbagai aktivitas pengguna (atau sistem), seseorang atau komponen yang menyelesaikan setiap aktivitas dan aliran berurutan dari aktivitas-aktiviats tersebut\autocite[60-63]{uml-satzinger}. Berikut adalah rangkuman dari simbol-simbol yang digunakan dalam \textit{activity diagram}:
+    \textit{Activity Diagram} merupakan sebuah diagram UML yang digunakan untuk menggambarkan berbagai aktivitas pengguna (atau sistem), seseorang atau komponen yang menyelesaikan setiap aktivitas dan aliran berurutan dari aktivitas-aktivitas tersebut\autocite[60-63]{uml-satzinger}. Berikut adalah rangkuman dari simbol-simbol yang digunakan dalam \textit{activity diagram}:
 
     \begin{figure}[h]
         \centering
         \includegraphics[scale=0.5]{images/uml satzinger/activity diagram/rangkuman komponen activity diagram.png}
         \caption{Komponen-komponen yang ada pada \textit{activity diagram}}
+        \label{fig:activitynotation}
     \end{figure}
 
-    Dapat dilihat pada \textit{figure 2.19} diatas, \textit{activity} masing-masing digambarkan dengan sebuah oval pipih. Panah penghubung menunjukkan urutan dari \textit{activity}. Lingkaran hitam menggambarkan titik mulai dari \textit{activity diagram} dan lingkaran hitam didalam lingkaran putih menggambarkan akhir dari \textit{activity diagram} tersebut. Simbol berlian menggambarkan \textit{decision point} yang dimana aliran proses akan mengikuti satu jalur atau jalur yang lain. Garis horizontal yang tebal merupakan sebuah \textit{synchronization bar} yang membagi beberapa jalur bersamaan atau menggabungkan kembali jalur yang jalan bersamaan tersebut. \textit{Swimlane} mewakili sebuah agen yang melakukan aktivitas. Disebut \textit{swimlane} karena setiap agen mengikuti jalur yang sejajar dengan agen lain dalam alur kerja, seperti halnya perenang di kolam renang\autocite[60-63]{uml-satzinger}.
+    Dapat dilihat pada gambar \ref{fig:activitynotation} diatas, \textit{activity} masing-masing digambarkan dengan sebuah oval pipih. Panah penghubung menunjukkan urutan dari \textit{activity}. Lingkaran hitam menggambarkan titik mulai dari \textit{activity diagram} dan lingkaran hitam didalam lingkaran putih menggambarkan akhir dari \textit{activity diagram} tersebut. Simbol berlian menggambarkan \textit{decision point} yang dimana aliran proses akan mengikuti satu jalur atau jalur yang lain. Garis horizontal yang tebal merupakan sebuah \textit{synchronization bar} yang membagi beberapa jalur bersamaan atau menggabungkan kembali jalur yang jalan bersamaan tersebut. \textit{Swimlane} mewakili sebuah agen yang melakukan aktivitas. Disebut \textit{swimlane} karena setiap agen mengikuti jalur yang sejajar dengan agen lain dalam alur kerja, seperti halnya perenang di kolam renang\autocite[60-63]{uml-satzinger}.
     \newpage
     \begin{figure}[h]
         \centering
@@ -731,9 +736,10 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \centering
         \includegraphics[scale=0.5]{images/uml satzinger/use case diagram/Komponen use case diagram.png}
         \caption{Komponen-komponen yang ada pada \textit{use case diagram}}
+        \label{fig:usecasenotation}
     \end{figure}
 
-    Dapat dilihat pada \textit{figure 2.21} diatas, komponen \textit{actor} biasanya divisualisasikan seperti sebuah \textit{stick figure}, ini biasanya menggambarkan bahwa ada pengguna yang menggunakan sistem tersebut. \textit{Association Line} merupakan sebuah garis yang menyambungkan \textit{actor} dengan \textit{use case} yang dilakukan. Sedangkan \textit{use case} itu sendiri digambarkan dengan bentuk oval. Terakhir adalah sebuah \textit{automation boundary} yang merupakan pembatas antara bagian yang terkomputerisasi (\textit{use case} dalam sistem aplikasi) dengan orang-orang yang mengoperasikan aplikasi tersebut\autocite[81-87]{uml-satzinger}.
+    Dapat dilihat pada gambar \ref{fig:usecasenotation} diatas, komponen \textit{actor} biasanya divisualisasikan seperti sebuah \textit{stick figure}, ini biasanya menggambarkan bahwa ada pengguna yang menggunakan sistem tersebut. \textit{Association Line} merupakan sebuah garis yang menyambungkan \textit{actor} dengan \textit{use case} yang dilakukan. Sedangkan \textit{use case} itu sendiri digambarkan dengan bentuk oval. Terakhir adalah sebuah \textit{automation boundary} yang merupakan pembatas antara bagian yang terkomputerisasi (\textit{use case} dalam sistem aplikasi) dengan orang-orang yang mengoperasikan aplikasi tersebut\autocite[81-87]{uml-satzinger}.
 
     \textit{Use Case Diagram} juga memiliki sebuah relasi yang dapat menghubungkan satu \textit{use case} dengan yang lain. Relasi ini disebut dengan \textit{includes relationship}. Berikut adalah salah satu contoh sederhana dari \textit{use case diagram} dengan \textit{includes relationship} diikuti dengan penjelasan singkat dari contoh tersebut\autocite[81-87]{uml-satzinger}.
 
@@ -741,9 +747,10 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \centering
         \includegraphics[scale=0.5]{images/uml satzinger/use case diagram/contoh use case diagram dgn includes.png}
         \caption{Contoh sederhana \textit{use case diagram} dengan relasi \textit{includes}-nya}
+        \label{fig:contohusecase}
     \end{figure}
 
-    Dari \textit{figure 2.22} diatas dapat dilihat bahwa \textit{fill shopping cart} juga memiliki \textit{search for item, view product comments and ratings} dan \textit{view accessory combinations}. Dengan demikian, pengguna dapat melihat komentar sekaligus menjalankan \textit{use case 'fill shopping cart'}. Hubungan-hubungan antara \textit{use case} seperti ini digambarkan dengan garis putus-putus dengan panah penghubung yang menunjuk ke arah \textit{use case} yang dimaksud. Hubungan ini dapat dibaca sebagai "\textit{fill shopping cart} termasuk (\textit{includes}) \textit{search for item}". Ini yang dinamakan dengan \textit{include relationship} atau \textit{uses relationship}\autocite[81-87]{uml-satzinger}.
+    Dari gambar \ref{fig:contohusecase} diatas dapat dilihat bahwa \textit{fill shopping cart} juga memiliki \textit{search for item, view product comments and ratings} dan \textit{view accessory combinations}. Dengan demikian, pengguna dapat melihat komentar sekaligus menjalankan \textit{use case 'fill shopping cart'}. Hubungan-hubungan antara \textit{use case} seperti ini digambarkan dengan garis putus-putus dengan panah penghubung yang menunjuk ke arah \textit{use case} yang dimaksud. Hubungan ini dapat dibaca sebagai "\textit{fill shopping cart} termasuk (\textit{includes}) \textit{search for item}". Ini yang dinamakan dengan \textit{include relationship} atau \textit{uses relationship}\autocite[81-87]{uml-satzinger}.
     
     \item \textit{Sequence Diagram}
     
@@ -755,15 +762,16 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \centering
         \includegraphics[scale=0.5]{images/uml satzinger/sequence diagram/notasi sequence diagram.png}
         \caption{Notasi-notasi yang ada pada \textit{sequence diagram} secara umum}
+        \label{fig:notasisequence}
     \end{figure}
 
-    Pada \textit{use case diagram}, \textit{actor} digambarkan sebagai seseorang yang "menggunakan" sistem tersebut, sedangkan di dalam \textit{sequence diagram} lebih menekankan pada bagaimana \textit{actor} tersebut "berinteraksi" dengan sistem tersebut. Dapat dilihat pada \textit{figure 2.23} diatas, kotak berlabel \textit{:System} adalah objek yang mewakili seluruh sistem otomatis. Didalam \textit{sequence diagram} dan diagram-diagram interaksi lainnya, analisis menggunakan notasi object (\textit{object notation}), bukan notasi kelas \textit{class notation}. Dalam \textit{object notation}, sebuah kotak mengacu pada objek individual, bukan \textit{class} dari semua objek yang serupa. Notasi ini hanyalah sebuah persegi panjang dengan nama objek yang digarisbawahi. Tanda titik dua sebelum nama kelas yang digarisbawahi adalah bagian yang sering digunakan tetapi opsional dari notasi objek untuk menunjukkan bahwa objek tersebut adalah objek yang tidak disebutkan namanya dari \textit{class}\autocite[139-146]{uml-satzinger}.
+    Pada \textit{use case diagram}, \textit{actor} digambarkan sebagai seseorang yang "menggunakan" sistem tersebut, sedangkan di dalam \textit{sequence diagram} lebih menekankan pada bagaimana \textit{actor} tersebut "berinteraksi" dengan sistem tersebut. Dapat dilihat pada gambar \ref{fig:notasisequence} diatas, kotak berlabel \textit{:System} adalah objek yang mewakili seluruh sistem otomatis. Didalam \textit{sequence diagram} dan diagram-diagram interaksi lainnya, analisis menggunakan notasi object (\textit{object notation}), bukan notasi kelas \textit{class notation}. Dalam \textit{object notation}, sebuah kotak mengacu pada objek individual, bukan \textit{class} dari semua objek yang serupa. Notasi ini hanyalah sebuah persegi panjang dengan nama objek yang digarisbawahi. Tanda titik dua sebelum nama kelas yang digarisbawahi adalah bagian yang sering digunakan tetapi opsional dari notasi objek untuk menunjukkan bahwa objek tersebut adalah objek yang tidak disebutkan namanya dari \textit{class}\autocite[139-146]{uml-satzinger}.
 
-    Dibawah \textit{actor} dan \textit{:System} terdapat sebuah garis vertikal putus-putus yang disebut dengan \textit{lifeline}. \textit{Lifeline} atau \textit{object lifeline} merupakan sebuah \textit{extension} dari objet tersebut baik \textit{actor} atau objek di dalam \textit{use case} tersebut. Panah-panah di antara \textit{lifelines} mewakili pesan-pesan yang dikirim oleh \textit{actor}. Setiap anak panah memiliki asal dan tujuan. Asal pesan adalah \textit{actor} atau objek yang mengirimkannya, seperti yang ditunjukkan oleh \textit{lifeline} di ekor panahnya\textit{class}\autocite[139-146]{uml-satzinger}. 
+    Dibawah \textit{actor} dan \textit{:System} terdapat sebuah garis vertikal putus-putus yang disebut dengan \textit{lifeline}. \textit{Lifeline} atau \textit{object lifeline} merupakan sebuah \textit{extension} dari objek tersebut baik \textit{actor} atau objek di dalam \textit{use case} tersebut. Panah-panah di antara \textit{lifelines} mewakili pesan-pesan yang dikirim oleh \textit{actor}. Setiap anak panah memiliki asal dan tujuan. Asal pesan adalah \textit{actor} atau objek yang mengirimkannya, seperti yang ditunjukkan oleh \textit{lifeline} di ekor panahnya\autocite[139-146]{uml-satzinger}. 
     
     Demikian pula, \textit{actor} atau objek tujuan dari sebuah pesan ditunjukkan oleh \textit{lifeline} yang disentuh oleh kepala panah. Tujuan dari \textit{lifeline} adalah untuk menunjukkan urutan pesan yang dikirim dan diterima oleh \textit{actor} dan objek. Urutan pesan dibaca dari atas ke bawah didalam diagram. Sebuah pesan (\textit{message}) diberi label untuk menjelaskan tujuannya dan setiap \textit{input} data yang dikirim. Dan pesan (\textit{message}) itu sendiri adalah tindakan yang dipanggil pada objek tujuan, seperti halnya suatu perintah/\textit{command}\autocite[139-146]{uml-satzinger}.
 
-    Terkadang juga , \textit{message} yang sama dapat dikirim berulang kali di dalam suatu \textit{loop}. Maka dari itu, digunakannya sebuah komponen yang bernama \textit{loop frame}. \textit{Loop Frame} itu sendiri berbentuk sebuah kotak/persegi panjang yang membungkus \textit{input message} dan \textit{returned value} didalamnya\autocite[139-146]{uml-satzinger}.
+    Terkadang juga, \textit{message} yang sama dapat dikirim berulang kali di dalam suatu \textit{loop}. Maka dari itu, digunakannya sebuah komponen yang bernama \textit{loop frame}. \textit{Loop Frame} itu sendiri berbentuk sebuah kotak/persegi panjang yang membungkus \textit{input message} dan \textit{returned value} didalamnya\autocite[139-146]{uml-satzinger}.
 
     \begin{figure}[h]
         \centering
