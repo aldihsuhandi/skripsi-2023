@@ -1,0 +1,24 @@
+@startuml detail
+participant "Frontend" as fe
+participant "ReviewController" as rc
+
+participant "ReviewDetailProcessor" as proc
+
+participant "ItemCacheService" as icache
+participant "Review" as rm
+
+database "shumishumi-db" as db
+
+fe -> rc++ : /review/detail
+rc -> proc++ : process()
+proc -> rm++ : queryById()
+rm -> db : SELECT
+return review model
+
+proc -> icache++ : fetchFromCache()
+return item model
+
+return result
+return response
+
+@enduml

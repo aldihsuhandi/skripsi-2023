@@ -1,0 +1,26 @@
+@startuml detail
+participant "Frontend" as fe
+participant "ReviewController" as rc
+
+participant "ReviewQueryProcessor" as proc
+
+participant "ItemCacheService" as icache
+participant "Review" as rm
+
+database "shumishumi-db" as db
+
+fe -> rc++ : /review/query
+rc -> proc++ : process()
+proc -> rm++ : queryByUserIdAndType()
+rm -> db : SELECT
+return list of review model
+
+loop for every review in list
+    proc -> icache++ : fetchFromCache()
+    return item model
+end
+
+return result
+return response
+
+@enduml

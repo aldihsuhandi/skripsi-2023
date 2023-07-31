@@ -1,0 +1,46 @@
+@startuml create
+participant "Frontend" as fe
+participant "ReviewController" as rc
+
+participant "ReviewCreateProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Review" as rm
+participant "User" as um
+participant "Item" as im
+
+database "shumishumi-db" as db
+
+fe -> rc++ : /review/create
+rc -> proc++ : process()
+
+proc -> rm++ : queryById()
+rm -> db : SELECT
+proc <-- rm : review model
+
+proc -> rm : update()
+rm -> rm : save()
+rm -> db : UPDATE
+deactivate rm
+
+proc -> um++ : queryByUserId()
+um -> db : SELECT
+proc <-- um : user model
+proc -> um : updateReview()
+um -> um : save()
+um -> db : UPDATE
+deactivate um
+
+proc -> im++ : queryByItemId()
+im -> db : SELECT
+proc <-- im : user model
+proc -> im : updateReview()
+im -> im : save()
+im -> db : UPDATE
+deactivate im
+
+return result
+return response
+
+@enduml
