@@ -567,11 +567,11 @@ Berikut ini adalah komponen-komponen dasar \textit{flowchart}
 Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML yang akan digunakan untuk menggambarkan sistem yang dibuat, diagram-diagram tersebut antara lain, \textit{Class Diagram, Activity Diagram, Use-Case Diagram} dan \textit{Sequence Diagram}. Berikut adalah penjelasan lebih detailnya mengenai empat jenis diagram UML tersebut:
 \begin{enumerate}
     \item \textit{Class Diagram}\\
-    UML \textit{Class Diagram} digunakan untuk menampikan kelas-kelas objek yang dipakai pada sebuah sistem. Salah satu jenis \textit{class diagram} yang dipakai untuk menunjukkan hal-hal yang berhubungan dengan domain masalah pengguna disebut dengan \textit{domain model class diagram}, sedangkan jenis UML \textit{class diagram} yang digunakan untuk merancang suatu \textit{software class} pada sistem disebut sebagai \textit{design class diagram}\autocite{uml-satzinger-class-diagram}. Berikut adalah penjelasan lebih detail dari kedua jenis \textit{class diagram} tersebut:
+    UML \textit{Class Diagram} digunakan untuk menampikan kelas-kelas objek yang dipakai pada sebuah sistem. Salah satu jenis \textit{class diagram} yang dipakai untuk menunjukkan hal-hal yang berhubungan dengan domain masalah pengguna disebut dengan \textit{domain model class diagram}, sedangkan jenis UML \textit{class diagram} yang digunakan untuk merancang suatu \textit{software class} pada sistem disebut sebagai \textit{design class diagram}\autocite[103-114]{uml-satzinger}. Berikut adalah penjelasan lebih detail dari kedua jenis \textit{class diagram} tersebut:
 
     \begin{enumerate}
         \item \textit{Domain Model Class Diagram}
-        Pada \textit{class diagram}, sebuah persegi panjang mewakili suatu \textit{class}, dan garis yang menghubungkan antara persegi panjang tersebut menunjukkan asosiasi (\textit{association}) atau hubungan di antara \textit{class} tersebut. Di dalam \textit{Domain Model Class Diagram}, sebuah persegi panjang (\textit{class}) dibagi menjadi dua bagian. Bagian atas merupakan tempat dari nama \textit{class} tersebut dan bagian bawah berisi dari daftar \textit{attributes} yang ada pada \textit{class} tersebut\autocite{uml-satzinger-class-diagram}. 
+        Pada \textit{class diagram}, sebuah persegi panjang mewakili suatu \textit{class}, dan garis yang menghubungkan antara persegi panjang tersebut menunjukkan asosiasi (\textit{association}) atau hubungan di antara \textit{class} tersebut. Di dalam \textit{Domain Model Class Diagram}, sebuah persegi panjang (\textit{class}) dibagi menjadi dua bagian. Bagian atas merupakan tempat dari nama \textit{class} tersebut dan bagian bawah berisi dari daftar \textit{attributes} yang ada pada \textit{class} tersebut\autocite[103-114]{uml-satzinger}. 
 
         \begin{figure}[h]
             \centering
@@ -584,7 +584,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \begin{itemize}
             \item Notasi dari \textit{Domain Model Class Diagram}
             
-            \textit{Multiplicity} merupakan sebuah bentuk untuk mendokumentasikan bagaimana sebuah \textit{instance} dari sebuah objek/\textit{class} dapat diasosiasikan dengan \textit{instance} lainnya. Biasanya dituliskan sebagai angka dalam bentuk format "angka minimum... angka maksimum"\autocite{uml-satzinger-class-diagram}. 
+            \textit{Multiplicity} merupakan sebuah bentuk untuk mendokumentasikan bagaimana sebuah \textit{instance} dari sebuah objek/\textit{class} dapat diasosiasikan dengan \textit{instance} lainnya. Biasanya dituliskan sebagai angka dalam bentuk format "angka minimum... angka maksimum"\autocite[103-114]{uml-satzinger}. 
             \newpage
             \begin{figure}[h]
                 \centering
@@ -605,9 +605,9 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
             \begin{itemize}
                 \item \textit{Generalization/Specialization Relationships}
                 
-                Hubungan \textit{Generalization/Specialization} didasarkan pada gagasan bahwa orang-orang mengklasifikasikan berbagai hal ke dalam sebuah kesamaan dan perbedaan. \textit{Generalization} adalah sebuah penilaian yang mengelompokkan hal-hal yang sejenis. Contohnya seperti jenis-jenis kendaraan bermotor, yakni mobil, bis, truk, dan sebagainya. Semua kendaraan bermotor sama-sama memiliki karakteristik umum tertentu, sehingga kendaraan bermotor termasuk ke dalam kelas yang lebih umum\autocite{uml-satzinger-class-diagram}. 
+                Hubungan \textit{Generalization/Specialization} didasarkan pada gagasan bahwa orang-orang mengklasifikasikan berbagai hal ke dalam sebuah kesamaan dan perbedaan. \textit{Generalization} adalah sebuah penilaian yang mengelompokkan hal-hal yang sejenis. Contohnya seperti jenis-jenis kendaraan bermotor, yakni mobil, bis, truk, dan sebagainya. Semua kendaraan bermotor sama-sama memiliki karakteristik umum tertentu, sehingga kendaraan bermotor termasuk ke dalam kelas yang lebih umum\autocite[103-114]{uml-satzinger}. 
 
-                Sedangkan, \textit{Specialization} adalah penilaian yang mengelompokkan berbagai jenis hal yang berbeda. Sebagai contoh, jenis mobil khusus meliputi mobil \textit{sport}, sedan, dan kendaraan besar. Jenis-jenis mobil ini serupa dalam beberapa hal, namun berbeda dalam beberapa hal lainnya. Oleh karena itu, mobil \textit{sport} termasuk ke dalam jenis mobil yang khusus\autocite{uml-satzinger-class-diagram}.
+                Sedangkan, \textit{Specialization} adalah penilaian yang mengelompokkan berbagai jenis hal yang berbeda. Sebagai contoh, jenis mobil khusus meliputi mobil \textit{sport}, sedan, dan kendaraan besar. Jenis-jenis mobil ini serupa dalam beberapa hal, namun berbeda dalam beberapa hal lainnya. Oleh karena itu, mobil \textit{sport} termasuk ke dalam jenis mobil yang khusus\autocite[103-114]{uml-satzinger}.
 
                 Hubungan \textit{Generalization/Specialization} digunakan untuk menyusun atau mengurutkan hal-hal yang dikelompokkan dari yang lebih umum ke yang lebih khusus. Hubungan \textit{Generalization/Specialization} terdiri dari \textit{superclass} dan \textit{subclass}. Contoh dari bentuk hubungan ini dapat dilihat pada gambar dibawah ini:
 
@@ -617,14 +617,90 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
                     \caption{Contoh dari hubungan \textit{Generalization/Specialization}}
                 \end{figure}
 
-                Pada gambar diatas (\textit{figure 2.13}, dapat dilihat bahwa \textit{Car, Bus}) dan \textit{Truck} merupakan tipe-tipe spesial dari \textit{MotorVehicle}, sedangkan \textit{SportsCar, Sedan} dan \textit{BigCar} adalah tipe-tipe spesial dari \textit{Car}. 
+                Pada gambar diatas (\textit{figure 2.13}), dapat dilihat bahwa \textit{Car, Bus} dan \textit{Truck} merupakan tipe-tipe spesial dari \textit{MotorVehicle}, sedangkan \textit{SportsCar, Sedan} dan \textit{BigCar} adalah tipe-tipe spesial dari \textit{Car}. 
+
+                Di dalam relasi ini juga, \textit{subclass} yang ada dapat "mewarisi" suatu karakteristik dari \textit{superclass}-nya. Hal ini dinamakan sebagai \textit{Inheritance}. \textit{Inheritance} memungkinkan \textit{subclasses} untuk berbagi karakteristik \textit{superclass} mereka. Di dalam pendekatan \textit{object oriented}, \textit{inheritance} merupakan sebuah konsep kunci yang dimungkinkan dikarenakan adanya hierarki \textit{generalization/specialization}. Seperti contoh yang ada pada \textit{figure 2.13}, dapat dilihat bahwa \textit{Sedan} adalah jenis \textit{Car} yang khusus dan \textit{Car} adalah jenis \textit{MotorVehicle} yang khusus. Istilah lain dari relasi ini adalah \textit{"Is A" Relationship}\autocite[103-114]{uml-satzinger}.
 
                 \item \textit{Whole-Part Relationships}
+                
+                Cara lain bagi orang-orang untuk menyusun informasi tentang berbagai hal adalah dengan mendefinisikannya berdasarkan bagian-bagiannya. Seperti contoh, sebuah komputer biasanya terdiri atas \textit{processor, main memory, keyboard, disk storage} dan monitor. Sebuah \textit{keyboard} bukanlah jenis khusus dari komputer, tetapi suatu bagian dari sebuah komputer, tetapi juga sesuatu yang terpisah. Hal ini dinamakan sebagai \textit{whole-part relationships}\autocite[103-114]{uml-satzinger}.
+
+                \textit{Whole-Part Relationships} digunakan untuk menunjukkan hubungan antara satu \textit{class} dengan \textit{class} lainnya yang merupakan bagian dari \textit{class} tersebut. Hubungan ini terdiri dari dua jenis, yaitu \textit{aggregation} dan \textit{composition}. \textit{Aggregation} mengacu pada jenis \textit{whole-part relationship} antara \textit{aggregate} (keseluruhan) dengan komponennya (\textit{part}/bagian), dimana komponen-komponennya dapat berdiri sendiri. Sedangkan, \textit{composition} lebih mengacu pada \textit{whole-part relationship} yang lebih kuat, yang dimana komponen atau bagian-bagiannya yang sudah terhubung, tidak bisa berdiri sendiri\autocite[103-114]{uml-satzinger}.
+
+                Contoh relasi dari \textit{aggregation} adalah pada sebuah sistem komputer yang sudah dijelaskan sebelumnya. \textit{Aggregation} disimbolkan dengan sebuah berlian yang kopong\autocite[103-114]{uml-satzinger}.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{images/uml satzinger/domain class diagram/aggregation.png}
+                    \caption{Bentuk dari simbol \textit{aggregation}}
+                \end{figure}
+
+                Sedangkan, contoh dari relasi \textit{composition} sendiri adalah sebuah rumah dengan ruangannya. Ada kamar tidur, kamar mandi, dapur dan lain-lain. Kamar tidur atau kamar mandi tidak pernah ada terpisah dari rumah, maka dari itu, relasi ini disebut sebagai relasi \textit{composition}. Relasi ini disimbolkan dengan sebuah berlian yang padat\autocite[103-114]{uml-satzinger}.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.5]{images/uml satzinger/domain class diagram/composition.png}
+                    \caption{Bentuk dari simbol \textit{composition}}
+                \end{figure}
+
             \end{itemize}
 
         \end{itemize}
 
         \item \textit{Design Class Diagram}
+        
+        \textit{Design Class Diagram} berisikan definisi akhir dari setiap \textit{class} yang ada dalam sebuah sistem \textit{software} yang bersifat \textit{object-oriented}. \textit{Domain Model Class Diagram} menunjukkan sekumpulan masalah \textit{domain classes} dan asosiasinya. Sedangkan, \textit{design class diagram} menampilkan hal-hal yang lebih detail dari itu, seperti atribut yang dideklarasi secara \textit{public} atau \textit{private}, tipe-tipe dari atributnya hingga mendefinisikan metode dan parameter yang digunakan pada \textit{class} tersebut. Singkatnya, \textit{design class diagram} adalah bentuk lebih rinci dan teknikal dari \textit{domain model class diagram}\autocite[376-382]{uml-satzinger}.
+
+        \begin{itemize}
+            \item \textit{Design Class Stereotypes}
+            
+            \textit{Stereotype} pada \textit{design class} merupakan sebuah cara sederhana untuk mengkategorikan elemen model sebagai tipe-tipe tertentu. \textit{Stereotype} memperluas definisi dasar elemen model dengan mengindikasikan bahwa elemen tersebut memiliki karakteristik khusus yang ingin ditonjolkan\autocite[376-382]{uml-satzinger}.
+
+            Terdapat empat jenis \textit{design class} yang dapat dibilang sebagai \textit{stereotypes} yang standar, antara lain \textit{entity class, boundary} atau \textit{view class, controller class} dan \textit{data access class}\autocite[376-382]{uml-satzinger}.
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.5]{images/uml satzinger/design class diagram/design class stereotypes.png}
+                \caption{Jenis-jenis \textit{design class stereotypes}}
+            \end{figure}
+
+            \textit{Entity Class} adalah sebuah desain dari \textit{stereotype} untuk masalah \textit{domain class}. \textit{Class} ini biasanya menggambarkan sesuatu yang ditangani oleh pengguna ketika melakukan pekerjaan mereka pada aplikasi. Objek dari \textit{entity class} biasanya perlu diingat dan juga disebut juga dengan \textit{persistant class}. \textit{Persistant Class} merupakan sebuah \textit{entity class} yang memiliki objek yang ada setelah aplikasi berhenti. Namun, \textit{persistant class} biasanya tidak diindikasikan sebagai sebuah \textit{stereotype}. Cara untuk membuat data menjadi persisten adalah dengan menulisnya ke \textit{file} atau database sehingga sehingga disimpan dan dapat diambil pada eksekusi \textit{software} selanjutnya\autocite[376-382]{uml-satzinger}.
+            
+            \textit{Boundary} atau \textit{view class} dirancang khusus untuk berada pada \textit{automation boundary} sistem. Di dalam sebuah sistem dekstop, \textit{class} jenis ini adalah \textit{windows class} atau halaman web dan semua \textit{class} lainnya yang terkait dengan \textit{user interface} sistem tersebut. \textit{Boundary Class} juga bisa menjadi sebuah \textit{interface} sistem antarperusahaan dan sistem eksternal. Jadi, dapat disimpulkan bahwa \textit{boundary stereotype} dapat berupa \textit{user interface} atau \textit{system interface}\autocite[376-382]{uml-satzinger}. 
+
+            \textit{Controller Class} merupakan sebuah perantara antara \textit{boundary class} denagn \textit{entity class}. Tugas dari \textit{controller class} adalah untuk menangkap pesan dari objek yang ada pada \textit{boundary class} dan mengirimnya ke \textit{entity class} yang tepat. \textit{Class} ini bertindak layaknya sebuah \textit{switchboard} antara \textit{boundary layer} atau \textit{view layer} dengan \textit{domain layer}\autocite[376-382]{uml-satzinger}.
+
+            \textit{Data Access Class} digunakan untuk mengambil data dari dan mengirimnya ke database. Terkadang juga disebut sebagai \textit{database access class}. Daripada menyisipkan logika akses database (termasuk SQL \textit{statements}) ke dalam metode pada \textit{entity class}, sebuah \textit{layer} terpisah untuk mengakses database seringkali disertakan dalam desain pada suatu sistem\autocite[376-382]{uml-satzinger}.
+
+            \item Notasi dari \textit{Design Class}
+            
+            Terdapat lima properti yang dimiliki oleh sebuah \textit{design class}\autocite[376-382]{uml-satzinger}, antara lain:
+
+            \begin{itemize}
+                \item \textit{Visibility}, yang menunjukkan apakah objek lain dapat secara langsung mengakses atribut pada \textit{class} tersebut, seperti \textit{private} atau \textit{public}.
+                \item Nama atribut
+                \item \textit{Data-type Expression} (seperti \textit{character, string, integer, number, currency} atau \textit{date}).
+                \item \textit{Initial value} (jika ada)
+                \item \textit{Property} (di dalam tanda kurung kurawal, seperti \{key\}, jika ada)
+                \item \textit{Method Signature}, yang menunjukkan semua informasi yang diperlukan untuk memanggil/\textit{call} sebuah metode dan format pesan yang harus dikirim (terdiri atas \textit{method visibility}, nama \textit{method}, \textit{method parameter list/incoming arguments} dan \textit{return-type expression}, contoh: \textbf{findAboveHours (int hours): studentArray})
+            \end{itemize}
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.5]{images/uml satzinger/design class diagram/design class diagram notation.png}
+                \caption{Notasi \textit{class} pada \textit{design class diagram}}
+            \end{figure}
+
+        \end{itemize}
+
+        Berikut adalah salah satu contoh sederhana dari bentuk \textit{design class diagram} bersama dengan relasi dan \textit{multiplicity}-nya. 
+        \newpage
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{images/uml satzinger/design class diagram/contoh design class diagram.png}
+            \caption{Contoh sederhana dari \textit{design class diagram}}
+        \end{figure}
+
     \end{enumerate}
     
     
