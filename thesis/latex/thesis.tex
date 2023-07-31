@@ -571,6 +571,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
 
     \begin{enumerate}
         \item \textit{Domain Model Class Diagram}
+        
         Pada \textit{class diagram}, sebuah persegi panjang mewakili suatu \textit{class}, dan garis yang menghubungkan antara persegi panjang tersebut menunjukkan asosiasi (\textit{association}) atau hubungan di antara \textit{class} tersebut. Di dalam \textit{Domain Model Class Diagram}, sebuah persegi panjang (\textit{class}) dibagi menjadi dua bagian. Bagian atas merupakan tempat dari nama \textit{class} tersebut dan bagian bawah berisi dari daftar \textit{attributes} yang ada pada \textit{class} tersebut\autocite[103-114]{uml-satzinger}. 
 
         \begin{figure}[h]
@@ -703,282 +704,87 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
 
     \end{enumerate}
     
-    
-    \item \textit{Activity Diagram}\\
-    \textit{Acticity Diagram} merupakan salah satu jenis diagram UML yang termasuk ke dalam kelompok \textit{Behavioral Diagrams}. Diagram ini digunakan untuk memodelkan perilaku (\textit{behavior}) di dalam suatu proses bisnis yang tidak tergantung oleh objek. \textit{Activity Diagram} dapat digunakan untuk memodelkan semua jenis proses, dimulai dari alur kerja pada sebuah proses \textit{high-level business} yang melibatkan banyak kasus (\textit{use case}) yang berbeda-beda hingga ke detail dari tiap individual kasus yang ada dan detail yang lebih spesifik pada masing-masing metode yang digunakan\autocite{systemanalysisdesign-activity-diagram}. Berikut adalah notasi-notasi yang digunakan di dalam \textit{activity diagram}:
-    \begin{itemize}
-        \item \textit{Activity}
-        \begin{itemize}
-            \item Digunakan sebagai representasi dari serangkian \textit{action}
-            \item Dilabelkan sesuai dengan namanya
-            \item Digambarkan sebagai sebuah persegi panjang bersudut tumpul\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.5]{Activity_transparent.png}
-                    \caption{Notasi \textit{Activity}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Action}
-        \begin{itemize}
-            \item Merupakan sebuah \textit{behavior} yang sederhana dan tidak dapat diuraikan lagi
-            \item Menggambarkan sebuah \textit{task}/tugas yang harus dilakukan\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.35]{Action_transparent.png}
-                    \caption{Notasi \textit{Action}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Object Node}
-        \begin{itemize}
-            \item Digunakan untuk merepresentasikan objek yang terhubung ke sekumpulan aliran objek\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.45]{ObjectNode_transparent.png}
-                    \caption{Notasi \textit{Object Node}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Control Flow}
-        \begin{itemize}
-            \item Menunjukkan urutan eksekusi di dalam \textit{activity diagram}
-            \item Biasanya digambarkan sebagai arah panah\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.5]{Control Flow_transparent.png}
-                    \caption{Notasi \textit{Control Flow}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Object Flow}
-        \begin{itemize}
-            \item Menunjukkan aliran objek dari satu \textit{activity} (atau \textit{action}) ke \textit{activity} (atau \textit{action}) lainnya
-            \item Biasanya digambarkan sebagai arah panah dengan garis yang putus-putus\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.5]{Object Flow_transparent.png}
-                    \caption{Notasi \textit{Object Flow}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Initial Node}
-        \begin{itemize}
-            \item Menggambarkan awal dari serangkain \textit{activity} atau \textit{action} pada \textit{activity diagram}\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.45]{Initial Node_transparent.png}
-                    \caption{Notasi \textit{Initial Node}}
-                  \end{figure}
-        \end{itemize}
-        \newpage
-        \item \textit{Final Activity Node}
-        \begin{itemize}
-            \item Digunakan sebagai tanda untuk memberhentikan semua aliran kontrol dan aliran objek dalam suatu \textit{activity} atau \textit{action}\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.45]{Final Activity Node_transparent.png}
-                    \caption{Notasi \textit{Final Activity Node}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Final Flow Node}
-        \begin{itemize}
-            \item Digunakan untuk menghentikan aliran kontrol atau aliran objek tertentu\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.45]{Final flow node_transparent.png}
-                    \caption{Notasi \textit{Final Flow Node}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Decision Node}
-        \begin{itemize}
-            \item Digunakan untuk menggambarkan sebuah \textit{test condition} untuk memastikan aliran kontrol atau objek tersebut hanya berjalan pada satu jalur saja
-            \item Biasanya diberikan label sesuai dengan kriteria dari keputusan yang dibutuhkan untuk lanjut melewati jalur tertentu\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.5]{Decision Node_transparent.png}
-                    \caption{Notasi \textit{Decision Node}}
-                  \end{figure}
-        \end{itemize}
-        \newpage
-        \item \textit{Merge Node}
-        \begin{itemize}
-            \item Digunakan untuk menyatukan kembali jalur \textit{decision} berbeda yang sebelumnya sudah dibuat menggunakan \textit{Decision Node}\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics*[width=4cm]{Merge Node_transparent.png}
-                    \caption{Notasi \textit{Merge Node}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Fork Node}
-        \begin{itemize}
-            \item Digunakan untuk membagi \textit{behavior} menjadi sebuah serangkaian \textit{activity} atau \textit{action} yang berjalan secara bersamaan/paralel\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.5]{Fork Node_transparent.png}
-                    \caption{Notasi \textit{Fork Node}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Join Node}
-        \begin{itemize}
-            \item Digunakan untuk menggabungkan kembali serangkaian \textit{activity} atau \textit{action} yang paralel tersebut\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.5]{Join Node_transparent.png}
-                    \caption{Notasi \textit{Join Node}}
-                  \end{figure}
-        \end{itemize}
-        \item \textit{Swimlane}
-        \begin{itemize}
-            \item Digunakan untuk memecah \textit{activity diagram} menjadi beberapa baris dan kolom dengan tujuan untuk menentukan masing-masing \textit{activity} atau \textit{action} ke individu atau objek yang bertanggung jawab untuk menjalankan \textit{activity} atau \textit{action}
-            \item Biasanya diberikan label yang berisikan nama dari individu atau objek yang bertanggung jawab\autocite{systemanalysisdesign-activity-diagram}\\
-                  Contoh gambar:\\
-                  \begin{figure}[h]
-                    \centering
-                    \includegraphics[scale=0.5]{Swimlane_transparent.png}
-                    \caption{Notasi \textit{Swimlane}}
-                  \end{figure}
-        \end{itemize}
-    \end{itemize}
-    \item \textit{Use-Case Diagram}\\
-    \textit{Use-Case Diagram} merupakan salah satu jenis diagram UML yang digunakan untuk menentukan konteks dan \textit{requirements} dari sebuah sistem serta memvalidasi bentuk arsitektur dari sebuah sistem yang digambarkan dengan mengimplementasikan satu atau beberapa \textit{test case}/\textit{use case}\autocite{systemanalysisdesign-use-case-diagram}.
-    \begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.5]{use case diagram simple example.png}
-        \caption{Contoh bentuk dari \textit{use-case diagram}}
-    \end{figure}\\
-    \textit{Use-Case Diagram} biasanya dibuat dan digunakan pada tahap awal \textit{development} suatu aplikasi. Tujuan dari dibuatnya \textit{use-case diagram} antara lain, menentukan konteks pada sebuah sistem, memvalidasi arsitektur dari suatu sistem, menetapkan \textit{requirements} yang dibutuhkan oleh sebuah sistem dan mendorong adanya implementasi dan menghasilkan \textit{test case}/\textit{use case} pada sistem tersebut. Berikut adalah komponen-komponen yang ada pada \textit{Use-Case Diagram}:
-    \begin{itemize}
-        \item \textit{Actor}\\
-        Merupakan sebuah komponen yang menggambarkan 'seseorang' atau sebuah 'sistem' yang memperoleh \textit{benefit} dari \textit{subject} dan berada di luar \textit{subject boundary}. Biasanya digambarkan sebagai sebuah \textit{stick figure} atau sebuah figur bukan manusia lainnya dan diberi label sesuai dengan \textit{role}-nya. \textit{Actor} ini juga dapat di asosiasikan dengan \textit{actor} lainnya melalui asosiasi \textit{specialization/superclass} yang ditandai dengan arah panah dengan mata panah yang berongga (\textit{hollow})\autocite{systemanalysisdesign-use-case-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{use case - actor.png}
-            \caption{Bentuk dari \textit{actor}}
-        \end{figure}
-        \newpage
-        \item \textit{Use Case}\\
-        Merupakan sebuah komponen yang menggambarkan bagian utama dari fungsionalitas sistem. \textit{Use Case} ini dapat \textit{extend} ke \textit{use case} lain dan juga dapat \textit{include} \textit{use case} lain. Komponen ini berada di dalam \textit{subject boundary} dan biasanya diberi label sesuai dengan fungsi/\textit{use case} yang ingin di tampilkan\autocite{systemanalysisdesign-use-case-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{use case - use case.png}
-            \caption{Bentuk dari \textit{use case}}
-        \end{figure}
-        \item \textit{Subject Boundary}\\
-        Komponen inilah yang merepresentasikan ruang lingkup \textit{subject} yang ingin ditampilkan (sebuah sistem atau proses bisnis individu)\autocite{systemanalysisdesign-use-case-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{use case - subject boundary.png}
-            \caption{Bentuk dari \textit{subject boundary}}
-        \end{figure}
-        \newpage
-        \item \textit{Association Relationship}\\
-        Komponen inilah yang menghubungkan \textit{actor} dengan \textit{use case} yang berinteraksi dengannya\autocite{systemanalysisdesign-use-case-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{use case - association.png}
-            \caption{Bentuk dari \textit{Association Relationship}}
-        \end{figure}
-        \item \textit{'Include' Relationship}\\
-        Merupakan penyertaan fungsionalitas dari satu \textit{use case} di dalam \textit{use case} lainnya\autocite{systemanalysisdesign-use-case-diagram}. Ini menandakan bahwa \textit{use case} yang di-\textit{include}  tersebut bersifat wajib dan merupakan bagian dari \textit{use case} dasarnya. Salah satu contoh kasusnya adalah apabila seseorang ingin membaca buku, maka orang tersebut harus membuka bukunya terlebih dahulu. Ini menandakan bahwa \textit{use case} 'Membaca Buku' meng-\textit{include} \textit{use case} 'Membuka Buku', karena, apabila seseorang ingin membaca buku, maka sudah pasti buku tersebut harus dibuka terlebih dahulu\autocite{educativeio-include-extend-usecase}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{use case - include.png}
-            \caption{Bentuk dari \textit{Include Relationship}}
-        \end{figure}
-        \newpage
-        \item \textit{'Extends' Relationship}\\
-        Merupakan sebuah ekstensi dari use case untuk menyertakan suatu \textit{behavior} yang opsional\autocite{systemanalysisdesign-use-case-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{use case - extend.png}
-            \caption{Bentuk dari \textit{Extend Relationship}}
-        \end{figure}
-        \item \textit{Generalization Relationship}\\
-        Mewakili sebuah penggunaan \textit{use case} khusus ke \textit{use case} yang lebih umum\autocite{systemanalysisdesign-use-case-diagram}. Relasi \textit{generalization} adalah hubungan \textit{parent-child} antar-\textit{use case}\autocite{what-is-usecase-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{use case - generalization.png}
-            \caption{Bentuk dari \textit{Generalization Relationship}}
-        \end{figure}
-    \end{itemize}
-    \item \textit{Sequence Diagram}\\
-    \textit{Sequence Diagram} merupakan sebuah jenis \textit{interaction diagram} yang menjelaskan detail bagaimana sebuah operasi dilakukan. Diagram ini menangkap interaksi antar objek dalam konteks kolaborasi. \textit{Sequence Diagram} berfokus pada waktu dan menunjukkan urutan interaksi secara visual dengan menggunakan sumbu vertikal diagram untuk merepresentasikan waktu, pesan apa yang dikirim dan kapan\autocite{what-is-sequence-diagram}.
-    
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=6cm,height=4cm]{sequence diagram simple example.png}
-        \caption{Contoh sederhana dari \textit{Sequence Diagram} dalam kasus penarikan tunai di ATM}
-    \end{figure}
     \newpage
-    Berikut adalah komponen-komponen yang ada pada \textit{Sequence Diagram}:
+    \item \textit{Activity Diagram}
     
-    \begin{itemize}
-        \item \textit{Actor}\\
-        Merupakan komponen yang menggambarkan 'seseorang' atau 'sistem' memperoleh \textit{benefit} dari dan berada di luar sistem tersebut. \textit{Actor} ini ikut berpartisipasi dalam \textit{sequence} dengan mengirim dan/atau menerima \textit{message} dan biasanya \textit{actor} tersebut diletakkan di bagian teratas pada diagram\autocite{systemanalysisdesign-sequence-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{use case - actor.png}
-            \caption{Bentuk dari \textit{actor}}
-        \end{figure}
-        \item \textit{Object}\\
-        Merupakan sebuah objek yang ikut berpartisipasi di dalam \textit{sequence} dengan mengirim dan/atau menerima \textit{message}. Biasanya juga diletakkan di bagian teratas diagram seperti layaknya \textit{actor}\autocite{systemanalysisdesign-sequence-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{sequence - object.png}
-            \caption{Bentuk dari \textit{object}}
-        \end{figure}
-        \item \textit{Lifeline}\\
-        Komponen yang menunjukkan masa waktu hidup suatu objek di dalam \textit{sequence}\autocite{systemanalysisdesign-sequence-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{sequence - lifeline.png}
-            \caption{Bentuk dari \textit{lifeline}}
-        \end{figure}
-        \item \textit{Execution Occurrence}\\
-        Merupakan sebuah persegi panjang yang ditempatkan di atas sejajar dengan \textit{lifeline} yang menandakan kapan suatu objek mengirim atau menerima \textit{message}\autocite{systemanalysisdesign-sequence-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{sequence - execution occurrence.png}
-            \caption{Bentuk dari \textit{execution occurrence}}
-        \end{figure}
-        \item \textit{Message}\\
-        Berguna untuk menyampaikan informasi dari satu objek ke objek lainnya\autocite{systemanalysisdesign-sequence-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{sequence - message.png}
-            \caption{Bentuk dari \textit{message}}
-        \end{figure}
-        \item \textit{Guard Condition}\\
-        Komponen ini yang mewakili pengujian yang harus dipenuhi agar pesan dapat dikirim\autocite{systemanalysisdesign-sequence-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=6cm,height=1cm]{sequence - guard condition.png}
-            \caption{Bentuk dari \textit{guard condition}}
-        \end{figure}
-        \newpage
-        \item \textit{Object Destruction}\\
-        Sebuah tanda "X" ditempatkan di akhir \textit{lifeline} suatu objek untuk menunjukkan bahwa objek tersebut akan hilang\autocite{systemanalysisdesign-sequence-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=1cm,height=1cm]{sequence - object destruction.png}
-            \caption{Bentuk dari \textit{object destruction}}
-        \end{figure}
-        \item \textit{Frame}\\
-        Menunjukkan konteks \textit{sequence diagram}\autocite{systemanalysisdesign-sequence-diagram}.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.45]{sequence - frame.png}
-            \caption{Bentuk dari \textit{frame}}
-        \end{figure}
-    \end{itemize}
+    \textit{Activity Diagram} merupakan sebuah diagram UML yang digunakan untuk menggambarkan berbagai aktivitas pengguna (atau sistem), seseorang atau komponen yang menyelesaikan setiap aktivitas dan aliran berurutan dari aktivitas-aktiviats tersebut\autocite[60-63]{uml-satzinger}. Berikut adalah rangkuman dari simbol-simbol yang digunakan dalam \textit{activity diagram}:
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{images/uml satzinger/activity diagram/rangkuman komponen activity diagram.png}
+        \caption{Komponen-komponen yang ada pada \textit{activity diagram}}
+    \end{figure}
+
+    Dapat dilihat pada \textit{figure 2.19} diatas, \textit{activity} masing-masing digambarkan dengan sebuah oval pipih. Panah penghubung menunjukkan urutan dari \textit{activity}. Lingkaran hitam menggambarkan titik mulai dari \textit{activity diagram} dan lingkaran hitam didalam lingkaran putih menggambarkan akhir dari \textit{activity diagram} tersebut. Simbol berlian menggambarkan \textit{decision point} yang dimana aliran proses akan mengikuti satu jalur atau jalur yang lain. Garis horizontal yang tebal merupakan sebuah \textit{synchronization bar} yang membagi beberapa jalur bersamaan atau menggabungkan kembali jalur yang jalan bersamaan tersebut. \textit{Swimlane} mewakili sebuah agen yang melakukan aktivitas. Disebut \textit{swimlane} karena setiap agen mengikuti jalur yang sejajar dengan agen lain dalam alur kerja, seperti halnya perenang di kolam renang\autocite[60-63]{uml-satzinger}.
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.35]{images/uml satzinger/activity diagram/contoh sederhana activity diagram.png}
+        \caption{Contoh sederhana dari \textit{activity diagram} dalam kasus pembelian suatu tiket}
+    \end{figure}
+    
+    \item \textit{Use-Case Diagram}
+    
+    \textit{Use Case Diagram} merupakan salah satu jenis diagram UML yang digunakan untuk menggambarkan secara visual kasus penggunaan dan bagaimana kasus-kasus tersebut diatur. Diagram ini digunakan untuk mengilustrasikan kasus penggunaan dan hubungannya dengan penggunanya. Komponen-komponen \textit{use case diagram} terdiri atas, \textit{actor, use case, automation boundary} dan garis asosiasi yang menghubungkan \textit{actor} dengan \textit{use case}-nya\autocite[81-87]{uml-satzinger}.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{images/uml satzinger/use case diagram/Komponen use case diagram.png}
+        \caption{Komponen-komponen yang ada pada \textit{use case diagram}}
+    \end{figure}
+
+    Dapat dilihat pada \textit{figure 2.21} diatas, komponen \textit{actor} biasanya divisualisasikan seperti sebuah \textit{stick figure}, ini biasanya menggambarkan bahwa ada pengguna yang menggunakan sistem tersebut. \textit{Association Line} merupakan sebuah garis yang menyambungkan \textit{actor} dengan \textit{use case} yang dilakukan. Sedangkan \textit{use case} itu sendiri digambarkan dengan bentuk oval. Terakhir adalah sebuah \textit{automation boundary} yang merupakan pembatas antara bagian yang terkomputerisasi (\textit{use case} dalam sistem aplikasi) dengan orang-orang yang mengoperasikan aplikasi tersebut\autocite[81-87]{uml-satzinger}.
+
+    \textit{Use Case Diagram} juga memiliki sebuah relasi yang dapat menghubungkan satu \textit{use case} dengan yang lain. Relasi ini disebut dengan \textit{includes relationship}. Berikut adalah salah satu contoh sederhana dari \textit{use case diagram} dengan \textit{includes relationship} diikuti dengan penjelasan singkat dari contoh tersebut\autocite[81-87]{uml-satzinger}.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{images/uml satzinger/use case diagram/contoh use case diagram dgn includes.png}
+        \caption{Contoh sederhana \textit{use case diagram} dengan relasi \textit{includes}-nya}
+    \end{figure}
+
+    Dari \textit{figure 2.22} diatas dapat dilihat bahwa \textit{fill shopping cart} juga memiliki \textit{search for item, view product comments and ratings} dan \textit{view accessory combinations}. Dengan demikian, pengguna dapat melihat komentar sekaligus menjalankan \textit{use case 'fill shopping cart'}. Hubungan-hubungan antara \textit{use case} seperti ini digambarkan dengan garis putus-putus dengan panah penghubung yang menunjuk ke arah \textit{use case} yang dimaksud. Hubungan ini dapat dibaca sebagai "\textit{fill shopping cart} termasuk (\textit{includes}) \textit{search for item}". Ini yang dinamakan dengan \textit{include relationship} atau \textit{uses relationship}\autocite[81-87]{uml-satzinger}.
+    
+    \item \textit{Sequence Diagram}
+    
+    \textit{Sequence Diagram} atau \textit{System Sequence Diagram} (SSD) digunakan untuk menggambarkan aliran informasi ke dalam dan ke luar dari bagian sistem yang terotomatisasi. Dengan demikian, \textit{sequence diagram} mendokumentasikan \textit{input} dan \textit{output} serta mengidentifikasi interaksi antara \textit{actor} dengan sistem. Diagram ini adalah alat yang efektif untuk membantu dalam desain awal dari \textit{user interface} dengan mengidentifikasi informasi spesifik yang mengalir dari pengguna ke dalam sistem dan informasi yang mengalis ke luar dari sistem kembali ke pengguna\autocite[139-146]{uml-satzinger}.
+
+    Berikut adalah gambaran dari notasi-notasi yang ada pada \textit{sequence diagram} beserta dengan penjelasan singkatnya: 
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{images/uml satzinger/sequence diagram/notasi sequence diagram.png}
+        \caption{Notasi-notasi yang ada pada \textit{sequence diagram} secara umum}
+    \end{figure}
+
+    Pada \textit{use case diagram}, \textit{actor} digambarkan sebagai seseorang yang "menggunakan" sistem tersebut, sedangkan di dalam \textit{sequence diagram} lebih menekankan pada bagaimana \textit{actor} tersebut "berinteraksi" dengan sistem tersebut. Dapat dilihat pada \textit{figure 2.23} diatas, kotak berlabel \textit{:System} adalah objek yang mewakili seluruh sistem otomatis. Didalam \textit{sequence diagram} dan diagram-diagram interaksi lainnya, analisis menggunakan notasi object (\textit{object notation}), bukan notasi kelas \textit{class notation}. Dalam \textit{object notation}, sebuah kotak mengacu pada objek individual, bukan \textit{class} dari semua objek yang serupa. Notasi ini hanyalah sebuah persegi panjang dengan nama objek yang digarisbawahi. Tanda titik dua sebelum nama kelas yang digarisbawahi adalah bagian yang sering digunakan tetapi opsional dari notasi objek untuk menunjukkan bahwa objek tersebut adalah objek yang tidak disebutkan namanya dari \textit{class}\autocite[139-146]{uml-satzinger}.
+
+    Dibawah \textit{actor} dan \textit{:System} terdapat sebuah garis vertikal putus-putus yang disebut dengan \textit{lifeline}. \textit{Lifeline} atau \textit{object lifeline} merupakan sebuah \textit{extension} dari objet tersebut baik \textit{actor} atau objek di dalam \textit{use case} tersebut. Panah-panah di antara \textit{lifelines} mewakili pesan-pesan yang dikirim oleh \textit{actor}. Setiap anak panah memiliki asal dan tujuan. Asal pesan adalah \textit{actor} atau objek yang mengirimkannya, seperti yang ditunjukkan oleh \textit{lifeline} di ekor panahnya\textit{class}\autocite[139-146]{uml-satzinger}. 
+    
+    Demikian pula, \textit{actor} atau objek tujuan dari sebuah pesan ditunjukkan oleh \textit{lifeline} yang disentuh oleh kepala panah. Tujuan dari \textit{lifeline} adalah untuk menunjukkan urutan pesan yang dikirim dan diterima oleh \textit{actor} dan objek. Urutan pesan dibaca dari atas ke bawah didalam diagram. Sebuah pesan (\textit{message}) diberi label untuk menjelaskan tujuannya dan setiap \textit{input} data yang dikirim. Dan pesan (\textit{message}) itu sendiri adalah tindakan yang dipanggil pada objek tujuan, seperti halnya suatu perintah/\textit{command}\autocite[139-146]{uml-satzinger}.
+
+    Terkadang juga , \textit{message} yang sama dapat dikirim berulang kali di dalam suatu \textit{loop}. Maka dari itu, digunakannya sebuah komponen yang bernama \textit{loop frame}. \textit{Loop Frame} itu sendiri berbentuk sebuah kotak/persegi panjang yang membungkus \textit{input message} dan \textit{returned value} didalamnya\autocite[139-146]{uml-satzinger}.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{images/uml satzinger/sequence diagram/sequence diagram dgn loop.png}
+        \caption{Contoh penggunaan \textit{loop} pada \textit{Sequence Diagram}}
+    \end{figure}
+
+    Selain dari \textit{loop}, \textit{sequence diagram} juga mempunyai notasi yang dapat menggambarkan \textit{true/false condition}, notasi-notasi ini terdiri dari \textit{opt frame} dan \textit{alt frame}. \textit{Opt frame} digunakan apabila \textit{message} atau serangkaian \textit{message} bersifat opsional atau berdasarkan \textit{true/false condition}, sedangkan \textit{alt frame} digunakan untuk menggambarkan logika \textit{if-then-else}\autocite[139-146]{uml-satzinger}.
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{images/uml satzinger/sequence diagram/opt frame example.png}
+        \caption{Contoh penggunaan \textit{opt frame} pada \textit{Sequence Diagram}}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{images/uml satzinger/sequence diagram/alt frame example.png}
+        \caption{Contoh penggunaan \textit{alt frame} pada \textit{Sequence Diagram}}
+    \end{figure}
+    
 \end{enumerate}
 \subbab{Aplikasi Serupa}
 Berikut adalah beberapa aplikasi sejenis yang sudah pernah dikembangkan atau dibuat oleh beberapa penelitian terdahulu:
