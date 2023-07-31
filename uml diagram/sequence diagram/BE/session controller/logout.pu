@@ -1,0 +1,25 @@
+@startuml logout
+participant "Frontend" as fe
+participant "SessionController" as sc
+
+participant "SessionLogoutProcessor" as proc
+
+participant "Session" as sm
+
+database "shumishumi-db" as db
+
+fe -> sc++ : /session/logout
+sc -> proc++ : process()
+proc -> sm++ : queryById()
+sm -> db : SELECT
+proc <-- sm : session model
+
+proc -> sm : deactivate()
+sm -> sm : save()
+sm -> db : UPDATE
+deactivate sm
+
+return result
+return response
+
+@enduml
