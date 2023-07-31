@@ -2,6 +2,23 @@
 participant "Frontend" as fe
 participant "UserController" as uc
 
+participant "EmailEncryptProcessor" as proc
+
+participant "EmailEncrypt" as em
+
 database "shumishumi-db" as db
+
+
+fe -> uc++ : /user/email/encrypt
+uc -> proc++ : process()
+
+create em
+proc -> em++ : new()
+em -> em : save()
+em -> db : INSERT
+deactivate em
+
+return result
+return response
 
 @enduml

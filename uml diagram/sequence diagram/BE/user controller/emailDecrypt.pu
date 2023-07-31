@@ -2,6 +2,20 @@
 participant "Frontend" as fe
 participant "UserController" as uc
 
+participant "EmailDecryptProcessor" as proc
+
+participant "EmailEncrypt" as em
+
 database "shumishumi-db" as db
+
+fe -> uc++ : /user/email/decrypt
+uc -> proc++ : process()
+
+proc -> em++ : queryByUUid()
+em -> db : SELECT
+return email encrypt model
+
+return result
+return response
 
 @enduml
