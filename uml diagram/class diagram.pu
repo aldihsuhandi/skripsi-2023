@@ -88,6 +88,7 @@ rectangle {
             - email : string
             - phoneNumber : string
             - username : string
+            - password : string
             - gender : string
             - dob : date
             - location : map<string, string>

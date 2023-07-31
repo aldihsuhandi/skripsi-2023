@@ -3020,12 +3020,499 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     
     \newpage
     \item Perancangan \textit{database}
-    berikut ini adalah perancangan dari \textit{database} yang dipakai oleh \textit{Shumishumi}:
+    Berikut ini adalah perancangan dari \textit{database} yang dipakai oleh \textit{Shumishumi}:
     \begin{figure}[h]
         \centering
         \includegraphics*[height=13cm]{./diagram/erd/erd.png}
         \caption{\textit{Entity Relation Diagram} untuk \textit{database shumishumi}}
     \end{figure}
+    \newpage
+    Berikut ini adalah kamus data untuk \textit{entity relation diagram}:
+    \begin{itemize}
+        \item \textit{Table item\_categories}\\
+        \textit{Primary key}: category\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{item\_categories}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & category\_id & varchar(255) & \textit{primary key} untuk \textit{table item\_categories} \\ \hline
+            4 & category\_name & varchar(255) & nama kategori \\ \hline
+        \end{longtable}
+
+        \item \textit{Table hobbies}\\
+        \textit{Primary key}: hobby\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{hobbies}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & hobby\_id & varchar(255) & \textit{primary key} untuk \textit{table hobbies} \\ \hline
+            4 & hobby\_name & varchar(255) & nama hobi \\ \hline
+        \end{longtable}
+
+        \item \textit{Table interest\_levels}\\
+        \textit{Primary key}: interest\_level\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{interest\_levels}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & interest\_level\_id & varchar(255) & \textit{primary key} untuk \textit{tableeinterest\_levels} \\ \hline
+            4 & level\_name & varchar(255) & nama \textit{interest level} \\ \hline
+        \end{longtable}
+
+        \item \textit{Table user\_roles}\\
+        \textit{Primary key}: role\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{user\_roles}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & role\_id & varchar(255) & \textit{primary key} untuk \textit{table user\_roles} \\ \hline
+            4 & role\_name & varchar(255) & nama \textit{user roles} \\ \hline
+        \end{longtable}
+
+        \item \textit{Table users}\\
+        \textit{Primary key}: user\_id \\
+        \textit{Foreign key}: \textit{role\_id} \\
+        Jumlah \textit{field}: 15 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{users}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & user\_id & varchar(255) & \textit{primary key} untuk tabel \textit{users} \\ \hline
+            4 & role\_id & varchar(255) & \textit{foreign key} untuk ke tabel \textit{user\_roles} \\ \hline
+            5 & email & varchar(255) & \textit{field} untuk menampung \textit{email user} \\ \hline
+            6 & phone\_number & varchar(255) & \textit{field} untuk menampung nomor hp \textit{user} \\ \hline
+            7 & username & varchar(255) & \textit{field} untuk menampung \textit{username} \\ \hline
+            8 & password & varchar(255) & \textit{field} untuk menampung \textit{password} \\ \hline
+            9 & gender & varchar(255) & \textit{field} untuk menampung gender \textit{user} \\ \hline
+            10 & date\_of\_birth & timestamp & \textit{field} untuk menampung tanggal lahir \textit{user} \\ \hline
+            11 & location & varchar(255) & \textit{field} untuk menampung lokasi tempat tinggal \textit{user} dalam bentuk json\\ \hline
+            12 & profile\_picture & varchar(255) & \textit{field} untuk menampung gambar profil \textit{user}\\ \hline
+            13 & review & double & \textit{field} untuk menampung \textit{review} yang diberikan kepada \textit{user}\\ \hline
+            14 & is\_active & boolean & \textit{field} yang menandakan apakah \textit{user} sudah aktif atau belum\\ \hline
+            15 & is\_deleted & boolean & \textit{field} yang menandakan apakah \textit{user} sudah di\textit{delete} atau belum\\ \hline
+        \end{longtable}
+
+        \item \textit{Table items}\\
+        \textit{Primary key}: item\_id \\
+        \textit{Foreign key}: merchant\_id;category\_id;hobby\_id;merchant\_level\_id;user\_level\_id \\
+        Jumlah \textit{field}: 15 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{items}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & item\_id & varchar(255) & \textit{primary key} untuk tabel \textit{items} \\ \hline
+            4 & item\_name & varchar(255) & \textit{field} untuk menyimpan nama produk \\ \hline
+            5 & item\_price & number(10) & \textit{field} untuk menyimpan harga produk \\ \hline
+            6 & item\_images & varchar(255) & \textit{field} untuk menyimpan gambar-gambar produk \\ \hline
+            7 & item\_description & longtext & \textit{field} untuk menyimpan deskripsi produk \\ \hline
+            8 & item\_quantity & number(10) & \textit{field} untuk menyimpan quantitas produk \\ \hline
+            9 & merchant\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            10 & category\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{item\_categories} \\ \hline
+            11 & hobby\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{hobbies} \\ \hline
+            12 & merchant\_level\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
+            13 & user\_level\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
+            14 & review & double & \textit{field} untuk menampung \textit{review} yang diberikan kepana \textit{item} \\ \hline
+            15 & is\_deleted & boolean & \textit{field} yang menandakan apakah \textit{item} sudah di\textit{delete} atau belum\\ \hline
+        \end{longtable}
+
+        \newpage
+        \item \textit{Table history\_items}\\
+        \textit{Primary key}: history\_item\_id \\
+        \textit{Foreign key}: item\_id;merchant\_id;category\_id;hobby\_id;merchant\_level\_id;user\_level\_id \\
+        Jumlah \textit{field}: 16 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{history\_items}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & history\_items & varchar(255) & \textit{primary key} untuk tabel \textit{history\_items} \\ \hline
+            4 & item\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
+            5 & item\_name & varchar(255) & \textit{field} untuk menyimpan nama produk \\ \hline
+            6 & item\_price & number(10) & \textit{field} untuk menyimpan harga produk \\ \hline
+            7 & item\_images & varchar(255) & \textit{field} untuk menyimpan gambar-gambar produk \\ \hline
+            8 & item\_description & longtext & \textit{field} untuk menyimpan deskripsi produk \\ \hline
+            9 & item\_quantity & number(10) & \textit{field} untuk menyimpan quantitas produk \\ \hline
+            10 & merchant\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            11 & category\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{item\_categories} \\ \hline
+            12 & hobby\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{hobbies} \\ \hline
+            13 & merchant\_level\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
+            14 & user\_level\_id & varchar(255) & \textit{field} yang menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
+            15 & review & double & \textit{field} untuk menampung \textit{review} yang diberikan kepana \textit{item} \\ \hline
+            16 & is\_deleted & boolean & \textit{field} yang menandakan apakah \textit{item} sudah di\textit{delete} atau belum\\ \hline
+        \end{longtable}
+        
+        \newpage
+        \item \textit{Table sessions}\\
+        \textit{Primary key}: sessions \\
+        \textit{Foreign key}: user\_id \\
+        Jumlah \textit{field}: 7 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{sessions}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & session\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{sessions} \\ \hline
+            4 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            5 & session\_dt & timestamp & \textit{field} untuk menandakan waktu \textit{session expired} \\ \hline
+            6 & is\_active & boolean & \textit{field} untuk menandakan apakah \textit{session} masih aktif atau tidak \\ \hline
+            7 & is\_remembered & boolean & \textit{field} untuk menandakan apakah \textit{session} akan diingat atau tidak \\ \hline
+        \end{longtable}
+
+        \item \textit{Table cart}\\
+        \textit{Primary key}: item\_id;user\_id \\
+        \textit{Foreign key}: item\_id;user\_id \\
+        Jumlah \textit{field}: 6 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{sessions}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            4 & item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
+            5 & quantity & number(10) & \textit{field} untuk menampung kuantitas item didalam keranjang \\ \hline
+            6 & selected & number(10) & \textit{field} untuk menjadi \textit{flag} apakah \textit{entry} ini sedang di-\textit{select} atau tidak \\ \hline
+        \end{longtable}
+
+        \newpage
+        \item \textit{Table transactions}\\
+        \textit{Primary key}: trx\_id \\
+        \textit{Foreign key}: user\_id \\
+        Jumlah \textit{field}: 8 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{transactions}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & trx\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{transactions} \\ \hline
+            4 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            5 & payment\_type & varchar(255) & tipe pembayaran yang dipakai untuk transaksi ini \\ \hline
+            6 & midtrans\_id & varchar(255) & \textit{field} untuk menyimpan \textit{payment id} midtrans \\ \hline
+            7 & midtrans\_link & varchar(255) & \textit{field} untuk menyimpan link pembayaran midtrans \\ \hline
+            8 & status & varchar(255) & \textit{field} untuk menyimpan status transaksi \\ \hline
+        \end{longtable}
+
+        \item \textit{Table transaction\_detail}\\
+        \textit{Primary key}: trx\_detail\_id \\
+        \textit{Foreign key}: trx\_id;history\_item\_id \\
+        Jumlah \textit{field}: 6 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{transaction\_detail}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & trx\_detail\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{transaction\_detail} \\ \hline
+            4 & trx\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{transactions} \\ \hline
+            5 & history\_item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{history\_items} \\ \hline
+            6 & quantity & int & \textit{field} untuk menyimpan kuantitas barang dalam transaksi \\ \hline
+        \end{longtable}
+
+        \item \textit{Table wishlist}\\
+        \textit{Primary key}: item\_id;user\_id \\
+        \textit{Foreign key}: item\_id;user\_id \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{wishlist}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            4 & item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
+        \end{longtable}
+
+        \item \textit{Table reviews}\\
+        \textit{Primary key}: review\_id \\
+        \textit{Foreign key}: item\_id;user\_id;merchant\_id;interest\_level \\
+        Jumlah \textit{field}: 10 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{reviews}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & review\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{reviews} \\ \hline
+            4 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            5 & item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
+            6 & merchant\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            7 & interest\_level & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{interest\_levels} \\ \hline
+            8 & description & longtext & \textit{field} untuk menyimpan deskripsi \textit{review} \\ \hline
+            9 & review\_images & varchar(255) & \textit{field} untuk menyimpan gambar-gambar \textit{review} \\ \hline
+            10 & need\_review & boolean & \textit{field} untuk menjadi \textit{flag} apakah \textit{review} ini sudah dibuat atau belum \\ \hline
+        \end{longtable}
+
+        \item \textit{Table comment}\\
+        \textit{Primary key}: comment\_id \\
+        \textit{Foreign key}: user\_id;reply\_comment\_id;reply\_item\_id \\
+        Jumlah \textit{field}: 8 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{comment}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & comment\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{comments} \\ \hline
+            4 & user\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{users} \\ \hline
+            5 & reply\_comment\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{comments} \\ \hline
+            6 & reply\_item\_id & varchar(255) & \textit{field} untuk menjadi \textit{foreign key} ke tabel \textit{items} \\ \hline
+            7 & content & varchar(255) & \textit{field} untuk menampung \textit{comment} \\ \hline
+            8 & is\_deleted & varchar(255) & \textit{flag} untuk menandakan apakah \textit{comment} dihapus atau tidak \\ \hline
+        \end{longtable}
+
+        \item \textit{Table clients}\\
+        \textit{Primary key}: client\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 5 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{clients}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & client\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{comments} \\ \hline
+            4 & client\_name & varchar(255) & nama dari \textit{client} \\ \hline
+            5 & client\_secret & varchar(255) & \textit{secret} dari \textit{client} \\ \hline
+        \end{longtable}
+
+        \item \textit{Table otp}\\
+        \textit{Primary key}: otp\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 8 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{otp}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & otp\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{otp} \\ \hline
+            4 & otp\_dt & timestamp & sebagai waktu kapan otp akan \textit{expire} \\ \hline
+            5 & otp\_type & varchar(255) & \textit{field} untuk menyimpan tipe otp \\ \hline
+            6 & email & varchar(255) & email yang dikirimkan otp \\ \hline
+            7 & is\_active & boolean & apakah otp ini masih aktif atau tidak \\ \hline
+        \end{longtable}
+
+        \item \textit{Table contents}\\
+        \textit{Primary key}: content\_name \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{contents}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & content\_name & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{contents} \\ \hline
+            4 & content & varchar(255) & isi dari \textit{contents} \\ \hline
+        \end{longtable}
+
+        \item \textit{Table activities}\\
+        \textit{Primary key}: activity\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 6 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{activities}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & activity\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{activities} \\ \hline
+            4 & user\_id & varchar(255) & sebagai \textit{foreign key} untuk tabel \textit{users} \\ \hline
+            5 & activity\_value & int & berat dari \textit{activities} tersebut \\ \hline
+            6 & activity & varchar(255) & aktifitas \textit{user} dalam bentuk json\\ \hline
+        \end{longtable}
+
+        \item \textit{Table knowledge}\\
+        \textit{Primary key}: knowledge\_key \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 5 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{knowledge}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & knowledge\_key & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{knowledge} \\ \hline
+            4 & knowledge & varchar(255) & sebagai \textit{value knowledge} ini \\ \hline
+        \end{longtable}
+
+        \item \textit{Table dictionaries}\\
+        \textit{Primary key}: dictionary\_name \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 5 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{dictionaries}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & dictioanry\_name & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{dictionaries} \\ \hline
+            4 & dictionary\_type & varchar(255) & tipe dari \textit{dictionary} \\ \hline
+            5 & display\_name & varchar(255) & bagaimana \textit{dictionary} ini akan ditampilkan di FE \\ \hline
+        \end{longtable}
+
+        \newpage
+        \item \textit{Table images}\\
+        \textit{Primary key}: image\_id \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 6 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{images}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & image\_id & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{images} \\ \hline
+            4 & image\_name & nama dari gambar tersebut \\ \hline
+            5 & image\_ext & \textit{extension} dari gambar tersebut \\ \hline
+            6 & image & longblob & gambar \\ \hline
+        \end{longtable}
+
+        \item \textit{Table reset\_password}\\
+        \textit{Primary key}: uuid \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 6 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{reset\_password}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & uuid & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{reset\_password} \\ \hline
+            4 & email & varchar(255) & email yang me-\textit{request reset password} \\ \hline
+            5 & expired\_time & timestamp & \textit{expired time} untuk \textit{request reset password} \\ \hline
+            6 & is\_active & boolean & apakah \textit{request} ini masih aktif atau tidak \\ \hline
+        \end{longtable}
+
+        \item \textit{Table email\_encrypt}\\
+        \textit{Primary key}: uuid \\
+        \textit{Foreign key}: - \\
+        Jumlah \textit{field}: 4 \\
+        \begin{longtable}{|l|l|l|l|}
+            \caption{kamus data untuk tabel \textit{email\_encrypt}}\\
+            \hline
+            \textbf{No} & \textbf{Nama field} & \textbf{Type} & \textbf{Keterangan} \\ \hline
+            \endfirsthead
+            %
+            \endhead
+            %
+            1 & gmt\_create & timestamp & untuk menyimpan waktu create data \\ \hline
+            2 & gmt\_modified & timestamp & untuk menyimpan waktu terakhir data diubah \\ \hline
+            3 & uuid & varchar(255) & sebagai \textit{primary key} untuk tabel \textit{email\_encrypt} \\ \hline
+            4 & email & varchar(255) & email yang me-\textit{request encrypt email} \\ \hline
+        \end{longtable}
+    \end{itemize}
 \end{enumerate}
 
 \newpage

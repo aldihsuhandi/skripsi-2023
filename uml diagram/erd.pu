@@ -44,6 +44,7 @@ entity users {
     * username : varchar(255) <<UNIQUE>>
     * gender : varchar(255)
     * date_of_birth : timestamp
+    * password : varchar(255)
       location : varchar(255)
       profile_picture : varchar(255)
     * review : double
