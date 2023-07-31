@@ -45,6 +45,12 @@ loop for every item in transaction
     im -> db : UPDATE
     deactivate im
 
+    create am
+    proc -> am++ : new()
+    am -> am : save()
+    am -> db : INSERT
+    deactivate am
+
 end
 
 proc -> icache++ : refreshCache()
