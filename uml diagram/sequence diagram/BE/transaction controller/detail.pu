@@ -1,0 +1,39 @@
+@startuml detail
+participant "Frontend" as fe
+participant "TransactionController" as tc
+
+participant "TransactionDetailProcessor" as proc
+
+participant "Transaction" as tm
+participant "TransactionDetail" as tdm
+
+database "shumishumi-db" as db
+
+participant "Midtrans" as mt
+
+fe -> tc++ : /transaction/detail
+tc -> proc++ : process()
+
+proc -> tm++ : queryByTrxId()
+tm -> db : SELECT
+proc <-- tm : transaction model
+
+alt if transaction status is waiting payment
+    proc -> mt++ : checkPaymentStatus()
+    return payment status
+    alt if payment status is DONE
+        proc -> tm : setStatus()
+        tm -> tm : save()
+        tm -> db : UPDATE
+        deactivate tm
+    end
+end
+
+proc -> tdm++ : queryByTrxId()
+tdm -> db : SELECT
+return list of transaction detail
+
+return result
+return resposne
+
+@enduml

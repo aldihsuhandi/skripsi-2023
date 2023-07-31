@@ -1,0 +1,31 @@
+@startuml payment
+participant "Frontend" as fe
+participant "TransactionController" as tc
+
+participant "TransactionPaymentProcessor" as proc
+
+participant "Transaction" as tm
+
+database "shumishumi-db" as db
+
+participant "Midtrans" as mt
+
+fe -> tc++ : /transaction/payment
+tc -> proc++ : process()
+
+proc -> tm++ : queryByTrxId()
+tm -> db : SELECT
+proc <-- tm : transaction model
+
+proc -> mt++ : createPayment()
+return paymentResult
+
+proc -> tm : updateStatus()
+tm -> tm : save()
+tm -> db : UPDATE
+deactivate tm
+
+return result
+return response
+
+@enduml
