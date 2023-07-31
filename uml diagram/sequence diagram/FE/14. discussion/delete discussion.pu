@@ -1,0 +1,16 @@
+@startuml create discussion
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Item Detail page" as detail
+' end box
+
+participant "Backend" as be 
+
+u -> detail++ : delete new discussion
+detail -> be++ : /discussion/delete
+return response
+
+@enduml

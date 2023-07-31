@@ -1,0 +1,24 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Review list page" as rlist
+participant "Create review page" as cpage
+' end box
+
+participant "Backend" as be
+
+u -> rlist++ : click create review
+rlist -> cpage ++-- : redirect to review create page
+
+u -> cpage : fill out review form
+u -> cpage : click submit
+
+cpage -> be++ : /review/create
+return response
+
+cpage --> rlist --++:  redirect to review list page
+
+@enduml

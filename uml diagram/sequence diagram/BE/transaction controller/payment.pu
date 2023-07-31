@@ -1,0 +1,62 @@
+@startuml payment
+participant "Frontend" as fe
+participant "TransactionController" as tc
+
+participant "TransactionPaymentProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Transaction" as tm
+participant "TransactionDetail" as tdm
+
+participant "Item" as im
+participant "Activity" as am
+
+database "shumishumi-db" as db
+
+participant "Midtrans" as mt
+
+fe -> tc++ : /transaction/payment
+tc -> proc++ : process()
+
+proc -> tm++ : queryByTrxId()
+tm -> db : SELECT
+proc <-- tm : transaction model
+
+proc -> mt++ : createPayment()
+return paymentResult
+
+proc -> tm : updateStatus()
+tm -> tm : save()
+tm -> db : UPDATE
+deactivate tm
+
+proc -> tdm++ : queryByTrxId()
+tdm -> db : SELECT
+return list of transaction detail
+
+loop for every item in transaction
+    proc -> im++ : queryByItemId()
+    im -> db : SELECT
+    proc <-- im : item model
+
+    proc -> im : updateQuantity()
+    im -> im : save()
+    im -> db : UPDATE
+    deactivate im
+
+    create am
+    proc -> am++ : new()
+    am -> am : save()
+    am -> db : INSERT
+    deactivate am
+
+end
+
+proc -> icache++ : refreshCache()
+deactivate icache
+
+return result
+return response
+
+@enduml

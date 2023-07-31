@@ -1,0 +1,39 @@
+@startuml update
+participant "Frontend" as fe
+participant "UserController" as uc
+
+participant "UserUpdateProcessor" as proc
+
+participant "User" as um
+participant "Image" as im
+
+database "shumishumi-db" as db
+
+fe -> uc++ : /user/update
+
+uc -> proc++ : process()
+proc -> um++ : queryByEmail()
+um -> db : select()
+
+proc <-- um : user model
+
+proc -> um : update()
+
+alt if update profile image
+    create im
+    proc -> im++ : new()
+    im -> im : save()
+    im -> db : INSERT
+    deactivate im
+
+    proc -> um : setProfileImage()
+end
+
+um -> um : save()
+um -> db : UPDATE
+
+deactivate um
+
+return response
+
+@enduml

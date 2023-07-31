@@ -1,0 +1,25 @@
+@startuml select
+participant "Frontend" as fe
+participant "CartController" as cc
+
+participant "CartSelectProcessor" as proc
+
+participant "Cart" as cm
+
+database "shumishumi-db" as db
+
+fe -> cc++ : /cart/select
+cc -> proc++ : process()
+proc -> cm++ : queryByUserIdAndItemId()
+cm -> db : SELECT
+proc <-- cm : cart model
+
+proc -> cm : updateSelect()
+cm -> cm : save()
+cm -> db : UPDATE
+deactivate cm
+
+return result
+return response
+
+@enduml

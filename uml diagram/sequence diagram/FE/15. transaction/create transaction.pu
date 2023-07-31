@@ -1,0 +1,25 @@
+@startuml create transaction
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Cart page" as cart
+participant "Transaction pick payment page" as trxpay
+participant "Transaction detail page" as trxdetail
+' end box
+
+participant "Backend" as be
+
+u -> cart++ : click pay
+cart -> be++ : /transaction/create
+return response
+
+cart -> trxpay --++ : redirect to pick payment page
+trxpay -> be++ : /transaction/payment
+return response
+
+trxpay -> trxdetail --++ : redirect to transaction detail
+
+
+@enduml

@@ -1,0 +1,47 @@
+@startuml cancel
+participant "Frontend" as fe
+participant "TransactionController" as tc
+
+participant "TransactionCancelProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Item" as im
+participant "Transaction" as tm
+participant "TransactionDetail" as tdm
+
+database "shumishumi-db" as db
+
+fe -> tc++ : /transaction/cancel
+tc -> proc++ : process()
+
+proc -> tm++ : queryByTrxId()
+tm -> db : SELECT
+proc <-- tm : transaction model
+proc -> tm : setStatus()
+tm -> tm : save()
+tm -> db : UPDATE
+deactivate tm
+
+proc -> tdm++ : queryByTrxId()
+tdm -> db : SELECT
+return list of transaction detail model
+
+loop for every item in transaction
+    proc -> im++ : queryById()
+    im -> db : SELECT
+    proc <-- im : item model
+
+    proc -> im : updateQuantity()
+    im -> im : save()
+    im -> db : UPDATE
+    deactivate im
+
+    proc -> icache++ : updateCache()
+    deactivate icache
+end
+
+return result
+return response
+
+@enduml

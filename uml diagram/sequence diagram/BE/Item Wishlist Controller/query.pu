@@ -1,0 +1,26 @@
+@startuml query
+participant "Frontend" as fe
+participant "ItemWishlistController" as iwc
+
+participant "WishlistQueryProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "ItemWishlist" as iwm
+
+database "shumishumi-db" as db
+
+fe -> iwc++ : /item/wishlist/query
+iwc -> proc++ : process()
+
+proc -> iwm++ : queryByUserIdPagination()
+iwm -> db : SELECT
+return list of item wishlist model
+
+proc -> icache++ : fetchFromCache
+return list of item model
+
+return result
+return response
+
+@enduml

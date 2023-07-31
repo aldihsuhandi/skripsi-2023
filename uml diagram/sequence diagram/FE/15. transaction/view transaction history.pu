@@ -1,0 +1,19 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "Tranasction History page" as history
+' end box
+
+participant "Backend" as be 
+
+u -> home++ : open shopping history page
+home -> history --++ : redirect to history page
+
+history -> be++ : /transaction/query
+return response
+
+@enduml

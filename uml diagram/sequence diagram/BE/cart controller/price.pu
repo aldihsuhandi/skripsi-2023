@@ -1,0 +1,30 @@
+@startuml price
+participant "Frontend" as fe
+participant "CartController" as cc
+
+participant "CartCalculatePriceProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+participant "Cart" as cm
+
+database "shumishumi-db" as db
+
+fe -> cc++ : /cart/price
+cc -> proc++ : process()
+
+proc -> cm++ : queryByUserId()
+cm -> db : SELECT
+return list of cart model
+
+loop for every cart model in list
+    proc -> icache++ : fetchFromCache()
+    return item model
+
+    proc -> proc : addPriceToSum()
+end
+
+return result
+return response
+
+@enduml

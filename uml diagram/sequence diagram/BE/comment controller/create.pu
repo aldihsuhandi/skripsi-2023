@@ -1,0 +1,23 @@
+@startuml create
+participant "Frontend" as fe
+participant "CommentController" as cc
+
+participant "CommentCreateProcessor" as proc
+
+participant "Comment" as cm
+
+database "shumishumi-db" as db
+
+fe -> cc++ : /comment/create
+cc -> proc++ : process()
+
+create cm
+proc -> cm++ : new()
+cm -> cm : save()
+cm -> db : INSERT
+deactivate cm
+
+return result
+return response
+
+@enduml

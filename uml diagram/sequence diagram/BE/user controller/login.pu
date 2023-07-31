@@ -1,0 +1,34 @@
+@startuml login
+participant "Frontend" as fe
+participant "UserController" as uc
+
+participant "UserLoginProcessor" as proc
+
+participant "User" as um
+participant "Session" as sm
+
+database "shumishumi-db" as db
+
+fe -> uc++ : /user/login
+uc -> proc++ : process()
+
+proc -> um++ : queryByEmail()
+um -> db : SELECT
+return user model
+
+proc -> proc : validatePassword()
+alt if password not match
+    uc <-- proc : result
+    fe <-- uc : response
+else
+    create sm
+    proc -> sm++ : new()
+    sm -> sm : save()
+    sm -> db : INSERT
+    deactivate sm
+
+    return result
+    return response
+end
+
+@enduml

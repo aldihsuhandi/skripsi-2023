@@ -1,0 +1,40 @@
+@startuml finish
+participant "Frontend" as fe
+participant "TransactionController" as tc
+
+participant "TransactionFinishProcessor" as proc
+
+participant "Transaction" as tm
+participant "TransactionDetail" as tdm
+participant "Review" as rm
+
+database "shumishumi-db" as db
+
+fe -> tc++ : /transaction/finish
+tc -> proc++ : process()
+
+proc -> tm++ : queryByTrxId()
+tm -> db : SELECT
+proc <-- tm : transaction model
+
+proc -> tm : setStatus()
+tm -> tm : save()
+tm -> db : UPDATE
+deactivate tm
+
+proc -> tdm++ : queryByTrxId()
+tdm -> db : SELECT
+return list of transaction detail model
+
+loop for every transaction detail in list
+    create rm
+    proc -> rm++ : new()
+    rm -> rm : save()
+    rm -> db : INSERT
+    deactivate rm
+end
+
+return result
+return response
+
+@enduml

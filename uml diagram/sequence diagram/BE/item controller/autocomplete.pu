@@ -1,0 +1,18 @@
+@startuml autocomplete
+participant "Frontend" as fe
+participant "ItemController" as ic
+
+participant "AutocompleteProcessor" as proc
+
+participant "ItemCacheService" as icache
+
+fe -> ic++ : /item/autocomplete
+ic -> proc++ : process()
+
+proc -> icache++ : fetchLikeFromCache()
+return list of item name
+
+return result
+return response
+
+@enduml

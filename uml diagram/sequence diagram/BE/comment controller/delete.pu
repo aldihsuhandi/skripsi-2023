@@ -1,0 +1,26 @@
+@startuml delete
+participant "Frontend" as fe
+participant "CommentController" as cc
+
+participant "CommentDeleteProcessor" as proc
+
+participant "Comment" as cm
+
+database "shumishumi-db" as db
+
+fe -> cc++ : /comment/delete
+cc -> proc++ : process()
+
+proc -> cm++ : queryById()
+cm -> db : SELECT
+proc <-- cm : comment model
+
+proc -> cm : delete()
+cm -> db : DELETE
+deactivate cm
+destroy cm
+
+return result
+return response
+
+@enduml

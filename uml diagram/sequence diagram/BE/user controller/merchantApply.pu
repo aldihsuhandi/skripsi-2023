@@ -1,0 +1,31 @@
+@startuml merchantApply
+participant "Frontend" as fe
+participant "UserController" as uc
+
+participant "MerchantApplyProcessor" as proc
+
+participant "User" as um
+participant "Role" as rm
+
+database "shumishumi-db" as db
+
+fe -> uc++ : /user/merchant/apply
+uc -> proc++ : process()
+
+proc -> um++ : queryByUserId()
+um -> db : SELECT
+proc <-- um : user model
+
+proc -> rm++ : queryByRoleName()
+rm -> db : SELECT
+return role model
+
+proc -> um : updateUserRole()
+um -> um : save
+um -> db : UPDATE
+deactivate um
+
+return result
+return response
+
+@enduml

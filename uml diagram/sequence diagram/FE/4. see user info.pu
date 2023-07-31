@@ -1,0 +1,21 @@
+@startuml template
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Home page" as home
+participant "User info page" as uinfo
+' end box
+
+participant "Backend" as be
+
+u -> home++ : click user info page
+home -> uinfo ++-- : redirect to user info page
+
+uinfo -> be++ : /user/info
+uinfo <-- be-- : result
+
+uinfo -> be++ : /image/download
+uinfo <-- be-- : result
+@enduml

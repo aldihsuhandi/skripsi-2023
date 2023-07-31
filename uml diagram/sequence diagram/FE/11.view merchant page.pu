@@ -1,0 +1,27 @@
+@startuml view merchant page
+'autonumber 1.1.1
+
+actor User as u
+
+' Box "front end"
+participant "Item detail page" as detail
+participant "Merchant page" as merchant
+' end box
+
+participant "Backend" as be
+
+u -> detail++ : open merchant info page
+detail -> merchant --++ : redirect to merchant info page
+
+merchant -> be++ : /user/info
+return response
+
+merchant -> be++ : /item/query
+return response
+
+loop for every item in response
+    merchant -> be++ : /image/download
+    return image
+end
+
+@enduml
