@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, twoside]{article}
 
 \usepackage{array}
 \usepackage[
@@ -24,6 +24,8 @@
 \usepackage{makecell}
 \usepackage{pdfpages}
 \usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
 
 \setlist{
   listparindent=\parindent,
@@ -59,13 +61,30 @@
 }% -- Setting up the custom style:
 \lstset{style=mystyle}
 
+
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\pagestyle{fancy}
+\fancypagestyle{pageStyleA} {
+    \fancyhf{}
+    \fancyhead[LE,RO]{\thepage}
+}
+
+\fancypagestyle{sectionStyle} {
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+}
+
 \sectionfont{\centering}
 \addbibresource{citation/citation.bib}
 \addbibresource{citation/aldih.bib}
 \addbibresource{citation/chandra.bib}
 \graphicspath{{./images/}, {./diagram}}
 \geometry{a4paper, top=2.5cm, bottom=2.5cm,
-          left=4.0cm, right=2.5cm, includehead, includefoot}
+          left=4.0cm, right=2.5cm, includehead, includefoot, asymmetric}
 \renewcommand\contentsname{Daftar Isi}
 \renewcommand\listfigurename{Daftar Gambar}
 \renewcommand\listtablename{Daftar Tabel}
@@ -84,6 +103,7 @@
     \setcounter{figure}{0}
     \setcounter{table}{0}
     \section*{#1\\#2}%
+    \thispagestyle{sectionStyle}
     \addcontentsline{toc}{section}{\protect\numberline{}#1 #2}%
 }
 
@@ -159,6 +179,7 @@
 \listofappendices
 
 \newpage
+\pagestyle{pageStyleA}
 \pagenumbering{arabic}
 % \bab{Bab 1\\Pendahuluan}
 \bab{Bab 1}{Pendahuluan}
@@ -189,7 +210,7 @@ Terkadang muncul suatu permasalahan saat ingin memulai hobi baru, yakni kebingun
 
 % Dari sembilan pertanyaan, ada empat pertanyaan di dalam survei yang menanyakan tingkat kesulitan untuk mencari barang kebutuhan hobi (dimulai dari yang ingin menjalankan hobi baru ataupun yang sudah mendalaminya sejak lama). Empat pertanyaan tersebut adalah sebagai berikut, \textit{"Apakah mencari hobi baru itu sangat sulit?"}. Dari total 123 responden yang menjawab survei tersebut, sebanyak 90 responden atau kurang lebih sebanyak 73.2\% nya menjawab \textit{"Iya"}. Begitu juga untuk pertanyaan selanjutnya, yakni \textit{"Pernahkah anda takut mengambil hobi baru karena tidak tau mulai dari mana?"}, sebanyak 72.4\% dari total responden menjawab \textit{"Iya}. Lalu, pada pertanyaan selanjutnya, \textit{"Pernahkah anda saat memasuki suatu hobi baru bingung, apa saja barang yang perlu dibeli?"}, ada sebanyak 77 responden (62.6\%) menjawab \textit{"Iya"}. Terakhir, \textit{"Apakah anda pernah mengalami kesulitan saat mencari barang yang mau dibeli untuk hobi yang anda sudah dalami?"}, sebanyak 63 responden (51.2\%) menjawab \textit{"Iya"}. Dapat dilihat bahwa perbandingan antara responden yang merasa kesulitan lebih tinggi dibandingkan dengan yang tidak. Untuk itu, aplikasi ini akan mengimplementasikan dua fitur yang dapat digunakan untuk membantu para pengguna mencari barang-barang kebutuhan hobi mereka.
 
-Salah satu fitur tersebut adalah sebuah dua penilaian tingkat peminatan pada suatu barang kebutuhan hobi sebagai sebuah sistem saring tambahan untuk mencari barang tersebut yang diberi nama \textit{Interest Level Filtering}. Penilaian tersebut diberikan oleh penjual barang tersebut dan nantinya juga dapat diberi oleh pembeli sebagai validasi apakah penilaian yang diberikan oleh penjual tersebut sesuai dengan tingkat minat hobinya atau tidak. Fitur ini dibuat dengan tujuan untuk membantu meningkatkan keyakinan pengguna untuk memilih barang kebutuhan hobi yang sesuai dengan hobi yang dilakukannya, dari yang ingin memulai suatu hobi baru maupun yang ingin mencari barang-barang kebutuhan hobi yang sudah bertingkat antusias atau yang sudah berpengalaman.
+Salah satu fitur tersebut adalah sebuah dua penilaian tingkat peminatan pada suatu barang kebutuhan hobi sebagai sebuah sistem saring tambahan untuk mencari barang tersebut yang diberi nama \textit{Interest Level Filtering}. Penilaian tersebut diberikan oleh penjual barang tersebut dan nantinya juga dapat diberi oleh pembeli sebagai validasi apakah penilaian yang diberikan oleh penjual tersebut sesuai dengan interest level hobinya atau tidak. Fitur ini dibuat dengan tujuan untuk membantu meningkatkan keyakinan pengguna untuk memilih barang kebutuhan hobi yang sesuai dengan hobi yang dilakukannya, dari yang ingin memulai suatu hobi baru maupun yang ingin mencari barang-barang kebutuhan hobi yang sudah bertingkat antusias atau yang sudah berpengalaman.
 
 % Contoh kasus penggunaan fitur \textit{Interest Level} tersebut adalah seperti berikut, misal untuk hobi bermain gitar. Apabila seorang pengguna baru saja menjalani hobi tersebut atau baru saja belajar bermain gitar, tentunya gitar yang cocok untuk memulai belajar adalah sebuah gitar akustik biasa. Maka dari itu, untuk sebuah produk berupa gitar akustik biasa ('biasa' disini berarti yang berstandar rata-rata atau bukan yang bermerek terkenal dan mahal) akan diberikan penilaian setara dengan "\textit{Beginner}" atau "Pemula" oleh penjual dari barang tersebut. Dan penilaian dari penjual tersebut dapat di nilai kembali oleh pembeli setelah membeli produk tersebut. Penilaian dari pembeli itu dapat digunakan sebagai validasi apakah penilaian tersebut cocok dengan barang yang dijualnya, dan begitu seterusnya untuk produk-produk kebutuhan hobi lainnya.
 
@@ -199,7 +220,7 @@ Selain dari kedua fitur yang telah dipaparkan diatas, aplikasi berbasis web ini 
 
 Tentunya aplikasi \textit{online marketplace} seperti yang dikerjakan pada penelitian ini bukanlah yang pertama kali dibuat atau dikembangkan. Ada beberapa penelitian terdahulu yang juga telah mencoba dan/atau berhasil membuat aplikasi berjenis \textit{marketplace} dengan fitur dan tujuannya yang berbeda-beda. Beberapa aplikasi \textit{marketplace} sejenis tersebut dapat dibandingkan dengan aplikasi yang akan dikerjakan pada penelitian ini. Seperti aplikasi pada penelitian yang dilakukan oleh Heru Nugroho dengan rekan-rekannya yaitu sebuah aplikasi \textit{marketplace} berbasis \textit{mobile} yang menjual belikan produk-produk agrikultur. Aplikasi tersebut bertujuan untuk mempermudah para petani atau pekebun untuk menjual belikan produk agrikultur mereka ke masyarakat umum\autocite{agriculture-marketplace}. Selain dari sektor agrikultur, terdapat juga penelitian yang membuat aplikasi sejenis, namun pada sektor perikanan. Yaitu, penelitian yang dilakukan oleh Mohammad Nazrul bersama dengan rekan-rekannya yang membuat aplikasi \textit{marketplace} berbasis \textit{mobile} yang menjual belikan ikan\autocite[1-10]{fishes-marketplace}. Lalu, pada ruang lingkup yang sama, ada sebuah penelitian yang dilakukan oleh Dwi bersama dengan rekan-rekannya yang membuat aplikasi jual beli ikan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}. Selanjutnya, penelitian yang dilakukan oleh N F Rozi dan rekan-rekannya dengan membuat aplikasi berbasis web bernama \textbf{LIDI} yang ditujukan sebagai tempat rental mobil secara \textit{online}\autocite{lidi-car-rental}. Terakhir, penelitian yang dilakukan oleh Rachmadita dan rekan-rekannya yang membuat sebuah aplikasi \textit{marketplace} yang menggabungkan usaha mikro, kecil dan menengah ke dalam satu \textit{platform} yang sama secara \textit{online} menggunakan metode \textit{Rapid Application Development}. Penelitian ini ditujukan kepada Badan Usaha Milik Desa (BUM) di wilayah Desa Mekarsari, Bandung, Jawa Barat\autocite{bum-mekarsari}. Terakhir, ada tiga aplikasi terkenal berbasis web yang juga dapat dibandingkan dengan aplikasi yang akan dibuat pada proyek ini, yaitu satu aplikasi \textit{online hobby shop} bernama KyouID, sebuah \textit{e-commerce} besar bernama Tokopedia dan ritel \textit{superstore} di bidang hobi dari Inggris yang bernama Hobbycraft.
 
-Berdasarkan semua penjelasan diatas, dapat disimpulkan bahwa adanya peningkatan aktivitas jual beli barang melalui internet yang begitu besar (dari barang kebutuhan hobi maupun tidak) dalam beberapa tahun belakangan ini. Ditambah lagi dengan kesulitannya untuk memulai sebuah kegiatan hobi karena tidak yakin atas barang yang cocok sebagai titik awal untuk memulainya. Untuk itu, penelitian ini bermaksud untuk merancang dan membuat sebuah aplikasi berbasis web yang berfokus pada kegiatan jual beli barang kebutuhan hobi apa saja tanpa merujuk pada satu atau beberapa hobi yang spesifik. Aplikasi ini diberi nama \textit{ShumiShumi}. Fokus utama aplikasi ini ialah untuk mengimplementasikan dua fitur yang berpotensi untuk membantu para penggunanya mencari barang-barang kebutuhan hobi yang mereka butuhkan. Kedua fitur tersebut adalah fitur penyaringan produk berdasarkan tingkat minat pengguna (\textit{Interest Level Filtering}) dan sistem rekomendasi.
+Berdasarkan semua penjelasan diatas, dapat disimpulkan bahwa adanya peningkatan aktivitas jual beli barang melalui internet yang begitu besar (dari barang kebutuhan hobi maupun tidak) dalam beberapa tahun belakangan ini. Ditambah lagi dengan kesulitannya untuk memulai sebuah kegiatan hobi karena tidak yakin atas barang yang cocok sebagai titik awal untuk memulainya. Untuk itu, penelitian ini bermaksud untuk merancang dan membuat sebuah aplikasi berbasis web yang berfokus pada kegiatan jual beli barang kebutuhan hobi apa saja tanpa merujuk pada satu atau beberapa hobi yang spesifik. Aplikasi ini diberi nama Shumishumi. Fokus utama aplikasi ini ialah untuk mengimplementasikan dua fitur yang berpotensi untuk membantu para penggunanya mencari barang-barang kebutuhan hobi yang mereka butuhkan. Kedua fitur tersebut adalah fitur penyaringan produk berdasarkan interest level pengguna (\textit{Interest Level Filtering}) dan sistem rekomendasi.
 
 
 \subbab{Rumusan Masalah}
@@ -211,10 +232,10 @@ Sesuai dengan latar belakang yang telah dibahas di atas, rumusan masalah yang ak
 \end{enumerate}
 
 \subbab{Ruang Lingkup}
-Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketplace} terfokus untuk hobi dengan fitur utama sebuah filter terhadap tingkat kemahiran sebuah hobi, untuk menghindari pembahasan dan implementasi yang meluas dan supaya lebih terfokus maka ditetapkan batasan-batasan atau ruang lingkup sebagai berikut:
+Ruang lingkup dari proyek ini adalah perancangan sebuah aplikasi \textit{marketplace} terfokus untuk hobi dengan fitur utama sebuah filter terhadap \textit{interest level} sebuah hobi, untuk menghindari pembahasan dan implementasi yang meluas dan supaya lebih terfokus maka ditetapkan batasan-batasan atau ruang lingkup sebagai berikut:
 \begin{enumerate}
     \item Aplikasi hanya berbasis dan berada dalam bentuk aplikasi \textit{website}.
-    \item Fitur utama untuk aplikasi ini adalah filter tingkat kemahiran dan  sistem rekomendasi.
+    \item Fitur utama untuk aplikasi ini adalah filter \textit{interest level} dan sistem rekomendasi sebagai fitur pendukung.
     \item Integrasi dengan \textit{Midtrans} dan \textit{Xendit} sebagai \textit{payment gateway} yang akan digunakan.
     \item Dalam membangun \textit{Front-End} bahasa yang digunakan adalah \textit{Javascript} dan \textit{Framework} yang digunakkan adalah \textit{NextJs} versi 13.
     \item Dalam membuat tampilan aplikasi menggunakan \textit{html}, \textit{css} dan dengan dibantu sebuah \textit{CSS framework}, \textit{Tailwind} versi 3.2.7.
@@ -255,7 +276,7 @@ Bab ketiga ini menjelaskan konsep metode penelitian yang dipakai dan alasan kena
 Bab keempat ini menjelaskan hasil penelitian dan pembahasan. Hasil penelitian yang telah dilakukan meliputi gambaran umum bagaimana \textit{software} yang dibuat digunakan dan didemonstrasikan, karakteristik partisipan dan \textit{target market} yang ditujukkan dan analisa deskriptif dari semua respon pengguna.
 
 \textit{\textbf{Bab 5: Simpulan dan Saran}}\newline
-Bab kelima ini akan memaparkan beberapa kesimpulan yang dapat diambil dan saran - saran yang didasarkan pada hasil yang didapatkan, dibab ini juga akan menyimpulkan apakahh ide aplikasi ini mempunyai potensi tinggi jika diimplementasikan didunia nyata.
+Bab kelima ini akan memaparkan beberapa kesimpulan yang dapat diambil dan saran - saran yang didasarkan pada hasil yang didapatkan, di bab ini juga akan menyimpulkan apakahh ide aplikasi ini mempunyai potensi tinggi jika diimplementasikan didunia nyata.
 
 \newpage
 \stepcounter{page}
@@ -470,11 +491,11 @@ Walaupun \textit{scrum} itu memiliki struktur, namum implementasi dari \textit{s
 \subsubbab{\textit{Interest Level}}
 Berdasarkan kamus, arti kata \textit{interest} adalah suatu keadaan ingin tahu atau belajar mengenai sesuatu atau seseorang\autocite{dictionary-interest}. Arti lainnya adalah kecenderungan hati atau gairah/keinginan yang tinggi terhadap sesuatu\autocite{arti-kata-minat}. Sedangkan \textit{level} berarti sebuah posisi dalam skala jumlah, kuantitas, luas, atau kualitas yang nyata atau imajiner\autocite{dictionary-level}. 
 
-\textit{Interest Level} atau tingkat minat itu sendiri merupakan sebuah bentuk penilaian yang dapat diberikan untuk menilai minat pada sesuatu berdasarkan keinginannya terhadap objek minat tersebut. Pada dasarnya, kriteria penilaian suatu minat tergolong ke dalam tiga jenis, yakni minat rendah, sedang dan tinggi. Minat seseorang dapat dikatakan rendah apabila orang tersebut tidak menginginkan objek minatnya, dikatakan sedang apabila orang tersebut menginginkan objek minatnya tetapi tidak dilakukan dengan segara, sedangkan tingkat minat seseorang dikatakan tinggi apabila orang tersebut sangat menginginkan objek minatnya dan dilakukannya dengan segera\autocite{kriteria-minat}.
+\textit{Interest Level} atau tingkat minat itu sendiri merupakan sebuah bentuk penilaian yang dapat diberikan untuk menilai minat pada sesuatu berdasarkan keinginannya terhadap objek minat tersebut. Pada dasarnya, kriteria penilaian suatu minat tergolong ke dalam tiga jenis, yakni minat rendah, sedang dan tinggi. Minat seseorang dapat dikatakan rendah apabila orang tersebut tidak menginginkan objek minatnya, dikatakan sedang apabila orang tersebut menginginkan objek minatnya tetapi tidak dilakukan dengan segara, sedangkan interest level seseorang dikatakan tinggi apabila orang tersebut sangat menginginkan objek minatnya dan dilakukannya dengan segera\autocite{kriteria-minat}.
 
-Didalam konteks peminatan hobi, orang-orang yang melakukan hobi tersebut (\textit{hobbyist}/penghobi) dapat dikategorikan menjadi tiga subkategori yakni, \textit{casual, serious} dan \textit{project-based leisure}. Subkategori minat hobi yang santai, yang secara intrinsik bermanfaat, memiliki kurun waktu yang pendek dan menyenangkan yang hanya membutuhkan sedikit atau tanpa persiapan disebut dengan \textit{casual leisure}. Lalu, minat hobi yang lebih serius, dapat berupa amatiran/penghobi atau sukarelawan yang substansial, bermanfaat dan menghasilkan rasa pencapaian disebut dengan \textit{serious leisure}. Sedangkan yang minat yang berupa sebuah proyek jangka pendek yang biasanya dilakukan hanya sekali dan bermanfaat disebut dengan \textit{project-based leisure}\autocite[1-5;17-21;33-34]{hobbyist-types}.
+Di dalam konteks peminatan hobi, orang-orang yang melakukan hobi tersebut (\textit{hobbyist}/penghobi) dapat dikategorikan menjadi tiga subkategori yakni, \textit{casual, serious} dan \textit{project-based leisure}. Subkategori minat hobi yang santai, yang secara intrinsik bermanfaat, memiliki kurun waktu yang pendek dan menyenangkan yang hanya membutuhkan sedikit atau tanpa persiapan disebut dengan \textit{casual leisure}. Lalu, minat hobi yang lebih serius, dapat berupa amatiran/penghobi atau sukarelawan yang substansial, bermanfaat dan menghasilkan rasa pencapaian disebut dengan \textit{serious leisure}. Sedangkan yang minat yang berupa sebuah proyek jangka pendek yang biasanya dilakukan hanya sekali dan bermanfaat disebut dengan \textit{project-based leisure}\autocite[1-5;17-21;33-34]{hobbyist-types}.
 
-Berdasarkan teori diatas, jenis penilaian \textit{interest level} yang digunakan didalam aplikasi ShumiShumi ini diklasifikasikan menjadi tiga macam, yaitu \textit{Beginner, Intermediate} dan \textit{Enthusiast}. Masing-masing menyerupai tingkat penilain minat yang sudah ada. Disini, \textit{Beginner} (pemula/kasual) setara dengan penghobi yang masih baru atau \textit{casual} atau yang memiliki tingkat minat rendah, sedangkan \textit{Intermediate} (kelas menengah) ditujukan pada orang-orang yang sudah lebih serius menjalankan hobinya atau yang memiliki tingkat minat sedang dan \textit{Enthusiast} (penggemar berat) diperuntukkan untuk orang-orang yang sudah sangat serius mendalami suatu hobi atau yang memiliki tingkat minat tinggi. Tujuannya adanya penilaian ini adalah untuk mempermudah mengelompokkan para pengguna berdasarkan minat hobi mereka masing-masing.
+Berdasarkan teori diatas, jenis penilaian \textit{interest level} yang digunakan di dalam aplikasi ShumiShumi ini diklasifikasikan menjadi tiga macam, yaitu \textit{Beginner, Intermediate} dan \textit{Enthusiast}. Masing-masing menyerupai tingkat penilain minat yang sudah ada. Disini, \textit{Beginner} (pemula/kasual) setara dengan penghobi yang masih baru atau \textit{casual} atau yang memiliki interest level rendah, sedangkan \textit{Intermediate} (kelas menengah) ditujukan pada orang-orang yang sudah lebih serius menjalankan hobinya atau yang memiliki interest level sedang dan \textit{Enthusiast} (penggemar berat) diperuntukkan untuk orang-orang yang sudah sangat serius mendalami suatu hobi atau yang memiliki interest level tinggi. Tujuannya adanya penilaian ini adalah untuk mempermudah mengelompokkan para pengguna berdasarkan minat hobi mereka masing-masing.
 
 \subsubbab{\textit{Online Marketplace}}
 \textit{Online Marketplace} adalah sebuah tipe dari \textit{e-commerce} yang dimana  produk atau jasa yang ada di aplikasi berasal dari pihak ketiga yang dapat mendaftarkan diri untuk menjual barang atau jasa di tempat aplikasi \textit{online marketplace}. \autocite{pediaa_marketplace}
@@ -727,7 +748,7 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \label{fig:activitynotation}
     \end{figure}
 
-    Dapat dilihat pada gambar \ref{fig:activitynotation} diatas, \textit{activity} masing-masing digambarkan dengan sebuah oval pipih. Panah penghubung menunjukkan urutan dari \textit{activity}. Lingkaran hitam menggambarkan titik mulai dari \textit{activity diagram} dan lingkaran hitam didalam lingkaran putih menggambarkan akhir dari \textit{activity diagram} tersebut. Simbol berlian menggambarkan \textit{decision point} yang dimana aliran proses akan mengikuti satu jalur atau jalur yang lain. Garis horizontal yang tebal merupakan sebuah \textit{synchronization bar} yang membagi beberapa jalur bersamaan atau menggabungkan kembali jalur yang jalan bersamaan tersebut. \textit{Swimlane} mewakili sebuah agen yang melakukan aktivitas. Disebut \textit{swimlane} karena setiap agen mengikuti jalur yang sejajar dengan agen lain dalam alur kerja, seperti halnya perenang di kolam renang\autocite[60-63]{uml-satzinger}.
+    Dapat dilihat pada gambar \ref{fig:activitynotation} diatas, \textit{activity} masing-masing digambarkan dengan sebuah oval pipih. Panah penghubung menunjukkan urutan dari \textit{activity}. Lingkaran hitam menggambarkan titik mulai dari \textit{activity diagram} dan lingkaran hitam di dalam lingkaran putih menggambarkan akhir dari \textit{activity diagram} tersebut. Simbol berlian menggambarkan \textit{decision point} yang dimana aliran proses akan mengikuti satu jalur atau jalur yang lain. Garis horizontal yang tebal merupakan sebuah \textit{synchronization bar} yang membagi beberapa jalur bersamaan atau menggabungkan kembali jalur yang jalan bersamaan tersebut. \textit{Swimlane} mewakili sebuah agen yang melakukan aktivitas. Disebut \textit{swimlane} karena setiap agen mengikuti jalur yang sejajar dengan agen lain dalam alur kerja, seperti halnya perenang di kolam renang\autocite[60-63]{uml-satzinger}.
     \newpage
     \begin{figure}[h]
         \centering
@@ -772,13 +793,13 @@ Pada proyek pembuatan aplikasi ShumiShumi ini, terdapat empat jenis diagram UML 
         \label{fig:notasisequence}
     \end{figure}
 
-    Pada \textit{use case diagram}, \textit{actor} digambarkan sebagai seseorang yang "menggunakan" sistem tersebut, sedangkan di dalam \textit{sequence diagram} lebih menekankan pada bagaimana \textit{actor} tersebut "berinteraksi" dengan sistem tersebut. Dapat dilihat pada gambar \ref{fig:notasisequence} diatas, kotak berlabel \textit{:System} adalah objek yang mewakili seluruh sistem otomatis. Didalam \textit{sequence diagram} dan diagram-diagram interaksi lainnya, analisis menggunakan notasi object (\textit{object notation}), bukan notasi kelas \textit{class notation}. Dalam \textit{object notation}, sebuah kotak mengacu pada objek individual, bukan \textit{class} dari semua objek yang serupa. Notasi ini hanyalah sebuah persegi panjang dengan nama objek yang digarisbawahi. Tanda titik dua sebelum nama kelas yang digarisbawahi adalah bagian yang sering digunakan tetapi opsional dari notasi objek untuk menunjukkan bahwa objek tersebut adalah objek yang tidak disebutkan namanya dari \textit{class}\autocite[139-146]{uml-satzinger}.
+    Pada \textit{use case diagram}, \textit{actor} digambarkan sebagai seseorang yang "menggunakan" sistem tersebut, sedangkan di dalam \textit{sequence diagram} lebih menekankan pada bagaimana \textit{actor} tersebut "berinteraksi" dengan sistem tersebut. Dapat dilihat pada gambar \ref{fig:notasisequence} diatas, kotak berlabel \textit{:System} adalah objek yang mewakili seluruh sistem otomatis. Di dalam \textit{sequence diagram} dan diagram-diagram interaksi lainnya, analisis menggunakan notasi object (\textit{object notation}), bukan notasi kelas \textit{class notation}. Dalam \textit{object notation}, sebuah kotak mengacu pada objek individual, bukan \textit{class} dari semua objek yang serupa. Notasi ini hanyalah sebuah persegi panjang dengan nama objek yang digarisbawahi. Tanda titik dua sebelum nama kelas yang digarisbawahi adalah bagian yang sering digunakan tetapi opsional dari notasi objek untuk menunjukkan bahwa objek tersebut adalah objek yang tidak disebutkan namanya dari \textit{class}\autocite[139-146]{uml-satzinger}.
 
     Dibawah \textit{actor} dan \textit{:System} terdapat sebuah garis vertikal putus-putus yang disebut dengan \textit{lifeline}. \textit{Lifeline} atau \textit{object lifeline} merupakan sebuah \textit{extension} dari objek tersebut baik \textit{actor} atau objek di dalam \textit{use case} tersebut. Panah-panah di antara \textit{lifelines} mewakili pesan-pesan yang dikirim oleh \textit{actor}. Setiap anak panah memiliki asal dan tujuan. Asal pesan adalah \textit{actor} atau objek yang mengirimkannya, seperti yang ditunjukkan oleh \textit{lifeline} di ekor panahnya\autocite[139-146]{uml-satzinger}. 
     
-    Demikian pula, \textit{actor} atau objek tujuan dari sebuah pesan ditunjukkan oleh \textit{lifeline} yang disentuh oleh kepala panah. Tujuan dari \textit{lifeline} adalah untuk menunjukkan urutan pesan yang dikirim dan diterima oleh \textit{actor} dan objek. Urutan pesan dibaca dari atas ke bawah didalam diagram. Sebuah pesan (\textit{message}) diberi label untuk menjelaskan tujuannya dan setiap \textit{input} data yang dikirim. Dan pesan (\textit{message}) itu sendiri adalah tindakan yang dipanggil pada objek tujuan, seperti halnya suatu perintah/\textit{command}\autocite[139-146]{uml-satzinger}.
+    Demikian pula, \textit{actor} atau objek tujuan dari sebuah pesan ditunjukkan oleh \textit{lifeline} yang disentuh oleh kepala panah. Tujuan dari \textit{lifeline} adalah untuk menunjukkan urutan pesan yang dikirim dan diterima oleh \textit{actor} dan objek. Urutan pesan dibaca dari atas ke bawah di dalam diagram. Sebuah pesan (\textit{message}) diberi label untuk menjelaskan tujuannya dan setiap \textit{input} data yang dikirim. Dan pesan (\textit{message}) itu sendiri adalah tindakan yang dipanggil pada objek tujuan, seperti halnya suatu perintah/\textit{command}\autocite[139-146]{uml-satzinger}.
 
-    Terkadang juga, \textit{message} yang sama dapat dikirim berulang kali di dalam suatu \textit{loop}. Maka dari itu, digunakannya sebuah komponen yang bernama \textit{loop frame}. \textit{Loop Frame} itu sendiri berbentuk sebuah kotak/persegi panjang yang membungkus \textit{input message} dan \textit{returned value} didalamnya\autocite[139-146]{uml-satzinger}.
+    Terkadang juga, \textit{message} yang sama dapat dikirim berulang kali di dalam suatu \textit{loop}. Maka dari itu, digunakannya sebuah komponen yang bernama \textit{loop frame}. \textit{Loop Frame} itu sendiri berbentuk sebuah kotak/persegi panjang yang membungkus \textit{input message} dan \textit{returned value} di dalamnya\autocite[139-146]{uml-satzinger}.
 
     \begin{figure}[h]
         \centering
@@ -852,6 +873,7 @@ Berikut adalah penjabaran singkat dari lima aplikasi sejenis yang sudah pernah d
 
 
 \newpage
+\addtocounter{page}{1}
 % \bab{Bab 3. Metode Penelitian}
 \bab{Bab 3}{Metode Penelitian}
 \subbab{Metode Penelitian}
@@ -867,7 +889,7 @@ Metode penelitian yang digunakan dalam penulisan penelitian ini terfokus pada pe
 Pengembangan \textit{website shumishumi} ini menggunakan metode \textit{agile scrum}, metode pengembangan \textit{software} ini sudah diejlaskan dengan detail di Bab 2. Sedangkan struktur \textit{scrum} yang dilakukan saat mengembangkan \textit{website} ini adalah
 \begin{enumerate}
     \item \textit{Backlog Grooming}
-    Tahapan \textit{backlog grooming} atau \textit{Backlog refinement} dilakukan untuk memastikan semua \textit{stories} yang ada didalam \textit{backlog} sesuai dengan \textit{requirement} yang didapat dan dalam tahapan ini juga \textit{user stories} akan dipecah menjadi \textit{task-task} yang lebih kecil dan diberi \textit{story points}(satu \textit{story point} sama dengan tiga jam) berdasarkan \textit{effort} yang dibutuhkan untuk mengerjakan \textit{task} tersebut.
+    Tahapan \textit{backlog grooming} atau \textit{Backlog refinement} dilakukan untuk memastikan semua \textit{stories} yang ada di dalam \textit{backlog} sesuai dengan \textit{requirement} yang didapat dan dalam tahapan ini juga \textit{user stories} akan dipecah menjadi \textit{task-task} yang lebih kecil dan diberi \textit{story points}(satu \textit{story point} sama dengan tiga jam) berdasarkan \textit{effort} yang dibutuhkan untuk mengerjakan \textit{task} tersebut.
 
 \begin{longtable}{@{}|l|l|l|l|@{}}
 \caption{\textit{Table backlog}}
@@ -996,18 +1018,18 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
             \caption{Beberapa tampilan UI dari sudut pandang pengguna pada aplikasi agrikultur}
         \end{figure}
     
-        Ada beberapa perbedaan yang dapat diamati antara aplikasi \textit{ShumiShumi} dengan aplikasi jual beli produk agrikultur tersebut, walaupun kedua-duanya sama berupaka sebuah aplikasi \textit{maeketplace}. Perbedaan-perbedaan tersebut antara lain sebagai berikut:
+        Ada beberapa perbedaan yang dapat diamati antara aplikasi Shumishumi dengan aplikasi jual beli produk agrikultur tersebut, walaupun kedua-duanya sama berupaka sebuah aplikasi \textit{maeketplace}. Perbedaan-perbedaan tersebut antara lain sebagai berikut:
     
         \begin{itemize}
             \item \textit{Platform}
     
             Perbedaan pertama dapat dilihat dari \textit{platform} tempat aplikasi tersebut ditujukan. Aplikasi penjualan produk agrikultur ini merupakan aplikasi \textit{marketplace} berbasis \textit{mobile}. Yang berarti hanya dapat digunakan pada perangkat berupa \textit{smartphone}. Terlebih lagi aplikasi ini hanya dapat berjalan pada \textit{smartphone} yang memiliki sistem operasi berupa \textit{Android} dikarenakan proses pengembangan sistemnya yang menggunakan \textit{Android Studio}\autocite{agriculture-marketplace}.
     
-            Sedangkan, aplikasi \textit{ShumiShumi} merupakan aplikasi berbasis web, yang berarti perangkat apapun bisa menjalankan aplikasi ini, selama perangkat-perangkat tersebut mempunyai akses untuk internet dan memiliki \textit{web browser}.
+            Sedangkan, aplikasi Shumishumi merupakan aplikasi berbasis web, yang berarti perangkat apapun bisa menjalankan aplikasi ini, selama perangkat-perangkat tersebut mempunyai akses untuk internet dan memiliki \textit{web browser}.
     
             \item Kegunaan dan Ruang Lingkup Aplikasi
     
-            Kegunaan dari aplikasi \textit{ShumiShumi} adalah untuk menjual belikan berbagai macam produk yang berhubungan dengan hobi. Sedangkan aplikasi agrikultur ini, sesuai dengan namanya, yakni menjual berbagai macam barang-barang kebutuhan agrikultur seperti padi, jangung, kentang, dan produk-produk sejenis lainnya\autocite{agriculture-marketplace}.
+            Kegunaan dari aplikasi Shumishumi adalah untuk menjual belikan berbagai macam produk yang berhubungan dengan hobi. Sedangkan aplikasi agrikultur ini, sesuai dengan namanya, yakni menjual berbagai macam barang-barang kebutuhan agrikultur seperti padi, jangung, kentang, dan produk-produk sejenis lainnya\autocite{agriculture-marketplace}.
     
             \item Fitur-fitur implementasi
     
@@ -1016,10 +1038,10 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
             Tetapi, banyak juga perbedaan yang dapat diamati dari kedua aplikasi ini antara lain:
     
             \begin{itemize}
-                \item Adanya fitur rekomendasi yang hanya dimiliki oleh aplikasi \textit{ShumiShumi} yang tidak dimiliki oleh aplikasi jual-beli agrikultur tersebut
+                \item Adanya fitur rekomendasi yang hanya dimiliki oleh aplikasi Shumishumi yang tidak dimiliki oleh aplikasi jual-beli agrikultur tersebut
                 \item Fitur \textit{request} yang hanya imiliki oleh aplikasi agrikultur yang dapat membantu pengguna untuk meminta kepada penjual untuk menjual produk-produk yang diinginkan oleh pengguna yang belum ada di dalam aplikasi\autocite{agriculture-marketplace}
                 \item Fitur \textit{offer} yang hanya dimiliki aplikasi jual-beli produk agrikultur yang dapat membantu para penjual mempromosikan barang-barang dagangannya secara langsung kepada penggunanya masing-masing. Para pengguna dapat menerima penawaran yang ditawarkan oleh penjual tersebut ataupun menolak tawaran tersebut\autocite{agriculture-marketplace}.
-                \item Fitur percakapan diskusi yang hanya dimiliki oleh aplikasi \textit{ShumiShumi} yang dapat membantu penggunanya untuk berdiskusi dengan pengguna lain ataupun dengan penjualnya mengenai barang kebutuhan hobi yang diinginkannya.
+                \item Fitur percakapan diskusi yang hanya dimiliki oleh aplikasi Shumishumi yang dapat membantu penggunanya untuk berdiskusi dengan pengguna lain ataupun dengan penjualnya mengenai barang kebutuhan hobi yang diinginkannya.
             \end{itemize}
         \end{itemize}
     
@@ -1039,41 +1061,41 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
             \caption{Beberapa tampilan UI pada aplikasi e-Nelayan}
         \end{figure}
     
-        Berikut adalah perbedaan-perbedaan yang dimiliki antara aplikasi e-Nelayan dengan aplikasi \textit{ShumiShumi}:
+        Berikut adalah perbedaan-perbedaan yang dimiliki antara aplikasi e-Nelayan dengan aplikasi Shumishumi:
     
         \begin{itemize}
             \item \textit{Platform}
     
             Perbedaan pertama dapat dlihat dari \textit{platform} tempat aplikasi ini akan berjalan. Aplikasi e-Nelayahn tersebut merupakan aplikasi berbasis \textit{mobile}, yang berarti hanya dapat berjalan pada perangkat seluler seperti \textit{smartphone}. Terlebih lagi, hanya \textit{smartphone} yang memiliki sistem operasi \textit{Android} saja yang bisa menjalankannya. Dikarenakan pengembangan sistem ini yang hanya menggunakan \textit{Android Studio}\autocite[1-10]{fishes-marketplace}.
     
-            Sedangkan aplikasi \textit{ShumiShumi} merupakan sebuah aplikasi berbasis web. Yang artinya, dapat digunakan pada perangkat apa saja denagn jenis sistem operasi apa saja selama perangkat-perangkat tersebut memiliki konekasi internet dan \textit{web browser}.
+            Sedangkan aplikasi Shumishumi merupakan sebuah aplikasi berbasis web. Yang artinya, dapat digunakan pada perangkat apa saja denagn jenis sistem operasi apa saja selama perangkat-perangkat tersebut memiliki konekasi internet dan \textit{web browser}.
     
             \item Kegunaan dan Ruang Lingkup Aplikasi
     
             Perbedaan kedua adalah pada kegunaan dan ruan lingkup aplikasinya. Aplikasi e-Nelayan hanya digunakan untuk membantu proses jual-beli produk-produk berupa ikan dari nelayan ke masyarakat dan hanya diperuntukkan kepada para nelayan, pedagang atau penjual ikan dan para konsumen di wilayah Kota Samarahan, Malaysia\autocite[1-10]{fishes-marketplace}.
     
-            Sedangkan aplikasi \textit{ShumiShumi} dipergunakan untuk membantu proses jual-beli barang-barang kebutuhan hobi. Mulai dari hobi berolahraga, bermain \textit{game}, bermain musik, dan lain sebagainya. Untuk jangkauan wilayah aplikasi ShumiShumi sendiri, dapat digunakan untuk semua pengguna yang berada di Indonesia.
+            Sedangkan aplikasi Shumishumi dipergunakan untuk membantu proses jual-beli barang-barang kebutuhan hobi. Mulai dari hobi berolahraga, bermain \textit{game}, bermain musik, dan lain sebagainya. Untuk jangkauan wilayah aplikasi ShumiShumi sendiri, dapat digunakan untuk semua pengguna yang berada di Indonesia.
     
             \item Fitur-fitur Implementasi
     
             \begin{itemize}
                 \item Diskusi atau komentar
     
-                Kedua aplikasi e-Nelayan dan \textit{ShumiShumi} sama-sama memiliki sistem diskusi. Yang membedakannya adalah pada aplikasi e-Nelayan, para pengguna termasuk konsumen, pedagang dan nelayan dapat membuat sebuah postingan atau sebuah komentar mengenai produk ikan apa yang ingin mereka tampilkan di aplikasi tersebut. Seperti halnya seorang konsumen dapat membuat postingan mengenai produk ikan yang diingikan agar dapat dikomentari langsung oleh pedagang ataupun nelayannya\autocite[1-10]{fishes-marketplace}.
+                Kedua aplikasi e-Nelayan dan Shumishumi sama-sama memiliki sistem diskusi. Yang membedakannya adalah pada aplikasi e-Nelayan, para pengguna termasuk konsumen, pedagang dan nelayan dapat membuat sebuah postingan atau sebuah komentar mengenai produk ikan apa yang ingin mereka tampilkan di aplikasi tersebut. Seperti halnya seorang konsumen dapat membuat postingan mengenai produk ikan yang diingikan agar dapat dikomentari langsung oleh pedagang ataupun nelayannya\autocite[1-10]{fishes-marketplace}.
     
-                Sedangkan untuk aplikasi \textit{ShumiShumi}, para pengguna termasuk penjual maupun pembeli, hanya bisa bersikusi dalam bentuk komentar pada masing-masing halaman produk yang sedang dijual.
+                Sedangkan untuk aplikasi Shumishumi, para pengguna termasuk penjual maupun pembeli, hanya bisa bersikusi dalam bentuk komentar pada masing-masing halaman produk yang sedang dijual.
     
                 \item Rekomendasi
     
-                Perbedaan ketiga adalah sistem rekomendasi, aplikasi \textit{ShumiShumi} memiliki mengimplementasikan sistem rekomendasi pada halaman utama aplikasinya. Sistem rekomendasi ini bekerja bersasarkan jenis-jenis barang kebutuhan hobi tertentu yang telah pengguna tersebut cari atau lihat selama menggunakan aplikasi web ini.
+                Perbedaan ketiga adalah sistem rekomendasi, aplikasi Shumishumi memiliki mengimplementasikan sistem rekomendasi pada halaman utama aplikasinya. Sistem rekomendasi ini bekerja bersasarkan jenis-jenis barang kebutuhan hobi tertentu yang telah pengguna tersebut cari atau lihat selama menggunakan aplikasi web ini.
     
                 Sedangkan aplikasi e-Nelayan tidak memiliki sistem rekomendasi sama sekali pada halaman utama aplikasinya\autocite[1-10]{fishes-marketplace}.
     
                 \item Pergantian \textit{role}/peran untuk penggunanya
     
-                Kedua aplikasi ini sama-sama memiliki fitur untuk merubah peran penggunanya sebagai konsumen menjadi yang lain. Pada aplikasi e-Nelayan, pengguna dapat berperan sebagai konsumen biasa yang ingin membeli ikan atau dapat juga membuat \textit{request} untuk menjadi pedagang ataupun nelayan apabila telah disetujui oleh pihak \textit{Admin} dari aplikasi tersebut\autocite[1-10]{fishes-marketplace}. Lalu, pada aplikasi \textit{ShumiShumi}, para pengguna yang awalnya hanya berperan sebagai pembeli biasa juga dapat merubah \textit{role}/peran mereka menjadi seorang penjual/\textit{merchant}.
+                Kedua aplikasi ini sama-sama memiliki fitur untuk merubah peran penggunanya sebagai konsumen menjadi yang lain. Pada aplikasi e-Nelayan, pengguna dapat berperan sebagai konsumen biasa yang ingin membeli ikan atau dapat juga membuat \textit{request} untuk menjadi pedagang ataupun nelayan apabila telah disetujui oleh pihak \textit{Admin} dari aplikasi tersebut\autocite[1-10]{fishes-marketplace}. Lalu, pada aplikasi Shumishumi, para pengguna yang awalnya hanya berperan sebagai pembeli biasa juga dapat merubah \textit{role}/peran mereka menjadi seorang penjual/\textit{merchant}.
     
-                Yang membedakannya kedua aplikasi ini adalah dari jumlah peran yang dapat diambil, pada aplikasi e-Nelayan, dapat berpedan sebagai konsumen biasa, pedagang/penjual ikan ataupun sebagai nelayan\autocite[1-10]{fishes-marketplace}. Sedangkan untuk aplikasi \textit{ShumiShumi}, para pengguna hanya dapat beperan sebagai pembeli atau penjual/\textit{merchant}.
+                Yang membedakannya kedua aplikasi ini adalah dari jumlah peran yang dapat diambil, pada aplikasi e-Nelayan, dapat berpedan sebagai konsumen biasa, pedagang/penjual ikan ataupun sebagai nelayan\autocite[1-10]{fishes-marketplace}. Sedangkan untuk aplikasi Shumishumi, para pengguna hanya dapat beperan sebagai pembeli atau penjual/\textit{merchant}.
     
             \end{itemize}
     
@@ -1129,25 +1151,25 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
             \caption{Contoh proses perbaruan data ikan yang dijual melalui pesan teks}
         \end{figure}
     
-        Berikut adalah perbedaan-perbedaan yang dimiliki antara aplikasi C2C \textit{Marketplace} perikanan tersebut dengan aplikasi \textit{ShumiShumi} pada penelitian ini:
+        Berikut adalah perbedaan-perbedaan yang dimiliki antara aplikasi C2C \textit{Marketplace} perikanan tersebut dengan aplikasi Shumishumi pada penelitian ini:
     
         \begin{itemize}
             \item \textit{Platform}
     
-            Aplikasi C2C \textit{marketplace} perikanan ini merupakan mengkombinasikan dua jenis basis aplikasi yang berbeda yakni, \textit{mobile} dan web aplikasi. Aplikasi \textit{mobile} digunakan oleh nelayan untuk bisa menjual produk-produknya melalui pesan teks, sedangkan aplikasi web digunakan untuk membantu para pembeli melihat produk-produk ikan yang dijual oleh para nelayan serta membantu para pembeli mengontak para nelayan terkait dengan ikan yang ingin dibeli\autocite{c2c-fish-marketplace}. Sedangkan, untuk aplikasi \textit{ShumiShumi} sendiri, hanya berbasis pada aplikasi web saja.
+            Aplikasi C2C \textit{marketplace} perikanan ini merupakan mengkombinasikan dua jenis basis aplikasi yang berbeda yakni, \textit{mobile} dan web aplikasi. Aplikasi \textit{mobile} digunakan oleh nelayan untuk bisa menjual produk-produknya melalui pesan teks, sedangkan aplikasi web digunakan untuk membantu para pembeli melihat produk-produk ikan yang dijual oleh para nelayan serta membantu para pembeli mengontak para nelayan terkait dengan ikan yang ingin dibeli\autocite{c2c-fish-marketplace}. Sedangkan, untuk aplikasi Shumishumi sendiri, hanya berbasis pada aplikasi web saja.
     
             \item Kegunaan dan ruang lingkup aplikasi
     
             Kegunaan dari aplikasi perdagangan ikan menggunakan \textit{SMS Gateway} ini adalah sebagai sarana untuk menjual-belikan produk-produk berupa ikan dari nelayan langsung kepada pembelinya tanpa harus melewati perantara orang ketiga seperti pedagang ataupun pasar. Ruang lingkup aplikasi tersebut juga hanya berlaku untuk wilayah Pulau Batam saja\autocite{c2c-fish-marketplace}.
     
-            Sedangkan aplikasi \textit{ShumiShumi} dipergunakan untuk membantu proses jual-beli barang-barang kebutuhan hobi. Mulai dari hobi berolahraga, bermain game, bermain musik, dan lain sebagainya. Untuk jangkauan wilayahnya sendiri, aplikasi \textit{ShumiShumi} dapat digunakan untuk semua pengguna yang berada di Indonesia.
+            Sedangkan aplikasi Shumishumi dipergunakan untuk membantu proses jual-beli barang-barang kebutuhan hobi. Mulai dari hobi berolahraga, bermain game, bermain musik, dan lain sebagainya. Untuk jangkauan wilayahnya sendiri, aplikasi Shumishumi dapat digunakan untuk semua pengguna yang berada di Indonesia.
     
             \item Fitur-fitur implementasi
     
             \begin{itemize}
                 \item Sistem diskusi
     
-                Para nelayan dan pembeli berdiskusi langsung melalui telepon ataupun aplikasi pesan teks pada \textit{handphone} masing-masing\autocite{c2c-fish-marketplace}. Sedangkan proses diskusi pada aplikasi \textit{ShumiShumi} dilakukan melalui fitur komentar pada masing-masing produk kebutuhan hobi yang dijual.
+                Para nelayan dan pembeli berdiskusi langsung melalui telepon ataupun aplikasi pesan teks pada \textit{handphone} masing-masing\autocite{c2c-fish-marketplace}. Sedangkan proses diskusi pada aplikasi Shumishumi dilakukan melalui fitur komentar pada masing-masing produk kebutuhan hobi yang dijual.
     
                 \item Sistem pembayaran
     
@@ -1196,20 +1218,20 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
     
             Perbedaan pertama ada pada kegunaan dari masing-masing aplikasi. Aplikasi LIDI dipergunakan sebagai sarana antara perusahaan penyewa mobil dengan konsumennya yang dapat membantu perusahaan-perusahaan tersebut memasarkan mobil-mobil yang akan mereka sewa.
     
-            Sedangkan, aplikasi \textit{ShumiShumi} adalah sebuah \textit{online marketplace} yang menjual-belikan barang-barang khusus kebutuhan hobi. Mulai dari hobi bermain bola, bermain musik, memasak dan lain-lain.
+            Sedangkan, aplikasi Shumishumi adalah sebuah \textit{online marketplace} yang menjual-belikan barang-barang khusus kebutuhan hobi. Mulai dari hobi bermain bola, bermain musik, memasak dan lain-lain.
     
-            Untuk ruang lingkup dari kedua aplikasi ini, aplikasi LIDI hanya diperuntukkan untuk perusahaan jasa sewa mobil dan masyarakat di wilayah Sidoarjo. Sedangkan, aplikasi \textit{ShumiShumi} dapat digunakan oleh semua pengguna yang ada di Indonesia.
+            Untuk ruang lingkup dari kedua aplikasi ini, aplikasi LIDI hanya diperuntukkan untuk perusahaan jasa sewa mobil dan masyarakat di wilayah Sidoarjo. Sedangkan, aplikasi Shumishumi dapat digunakan oleh semua pengguna yang ada di Indonesia.
     
             \item Fitur-fitur implementasi
     
             \begin{itemize}
                 \item Fitur Rekomendasi
     
-                Aplikasi LIDI ini tidak memiliki fitur rekomendasi sama sekali, sedangkan aplikasi \textit{ShumiShumi} memiliki fitur tersebut pada halaman utamanya.
+                Aplikasi LIDI ini tidak memiliki fitur rekomendasi sama sekali, sedangkan aplikasi Shumishumi memiliki fitur tersebut pada halaman utamanya.
     
                 \item Fitur Diskusi
     
-                Proses diskusi antara konsumen dengan penyewa mobil adalah melalui telepon atau datang langsung ke tempat dimana perusahaan jasa sewa mobil tersebut berada. Sedangkan proses diskusi pada aplikasi \textit{ShumiShumi} dapat dilakukan penuh secara \textit{online}.
+                Proses diskusi antara konsumen dengan penyewa mobil adalah melalui telepon atau datang langsung ke tempat dimana perusahaan jasa sewa mobil tersebut berada. Sedangkan proses diskusi pada aplikasi Shumishumi dapat dilakukan penuh secara \textit{online}.
     
             \end{itemize}
     
@@ -1239,25 +1261,25 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
             \caption{Tampilan untuk halaman transaksi aplikasi BUM Desa Pakis}
         \end{figure}
     
-        Prototipe aplikasi BUM Desa Pakis ini memiliki beberapa kemiripan dengan aplikasi \textit{ShumiShumi}, yakni sama-sama merupakan aplikasi berbasis web, sama-sama memiliki sistem pembayaran yang terintegrasi dengan bank-bank lokal dan sama-sama memiliki sistem pencarian dan penyaringan produk berdasarkan kateogori dari produk tersebut. Kedua aplikasi ini juga memiliki beberapa perbedaan yang cukup signifikan. Perbedaan-perbedaan tersebut antara lain:
+        Prototipe aplikasi BUM Desa Pakis ini memiliki beberapa kemiripan dengan aplikasi Shumishumi, yakni sama-sama merupakan aplikasi berbasis web, sama-sama memiliki sistem pembayaran yang terintegrasi dengan bank-bank lokal dan sama-sama memiliki sistem pencarian dan penyaringan produk berdasarkan kateogori dari produk tersebut. Kedua aplikasi ini juga memiliki beberapa perbedaan yang cukup signifikan. Perbedaan-perbedaan tersebut antara lain:
     
         \begin{itemize}
             \item Kegunaan dan ruang lingkup aplikasi
     
             Prototipe aplikasi BUM Desa Pakis hanya diperuntukkan untuk badan-badan usaha kecil, mikro dan menengah yang berada di wilayah Mekarsari, Bandung, Indonesia. Produk-produk yang akan diperjual belikan cukup beragam, mulai dari cemilan, makanan dan minuman, hasil kerajinan tangan dan lain sebagainya\autocite{bum-mekarsari}.
     
-            Sedangkan aplikasi \textit{ShumiShumi} hanya menual belikan produk-produk kebutuhan hobi. Dimulai dari yang hobi bermain olahraga, bermain musik hingga bermain \textit{video game}.
+            Sedangkan aplikasi Shumishumi hanya menual belikan produk-produk kebutuhan hobi. Dimulai dari yang hobi bermain olahraga, bermain musik hingga bermain \textit{video game}.
     
             \item Fitur-fitur implementasi
     
             \begin{itemize}
                 \item Fitur Rekomendasi
     
-                Prototipe aplikasi BUM Desa Pakis ini tidak memiliki sistem rekomendasi sama sekali seperti yang ada pada aplikasi \textit{ShumiShumi}\autocite{bum-mekarsari}.
+                Prototipe aplikasi BUM Desa Pakis ini tidak memiliki sistem rekomendasi sama sekali seperti yang ada pada aplikasi Shumishumi\autocite{bum-mekarsari}.
     
                 \item Fitur Diskusi
     
-                Prototipe aplikasi BUM Desa Pakis ini juga tidak memiliki sebuah fitur untuk bersikusi secara \textit{online} seperti yang ada pada aplikasi \textit{ShumiShumi}\autocite{bum-mekarsari}.
+                Prototipe aplikasi BUM Desa Pakis ini juga tidak memiliki sebuah fitur untuk bersikusi secara \textit{online} seperti yang ada pada aplikasi Shumishumi\autocite{bum-mekarsari}.
     
             \end{itemize}
     
@@ -1301,7 +1323,7 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
         \hline
         e-Marketplace for Village-owned Small, Micro and Medium Enterprise
                 & + Mempermudah user untuk mencari produk yang hanya dijual oleh bisnis-bisnis kecil \newline
-        + Memepersatukan bisnis-bisnis kecil kedalam satu \textit{platform} online jual beli yang sama \newline
+        + Memepersatukan bisnis-bisnis kecil ke dalam satu \textit{platform} online jual beli yang sama \newline
                 & - \textit{User Interface} yang masih minim penjelasannya yang dapat membuat user kebingungan \newline
         - Hanya tersedia di satu lokasi saja \newline
         - Bukan \textit{marketplace} khusus untuk hobi                                                                                               \\
@@ -1320,7 +1342,7 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
     Berikut dibawah ini adalah tabel perbandingan antara aplikasi ShumiShumi dengan aplikasi bernama LIDI\autocite{lidi-car-rental}, e-Nelayan Kota Samarahan\autocite[1-10]{fishes-marketplace} dan aplikasi BUM Desa Pakis\autocite{bum-mekarsari}.
 
     \begin{centering}
-    \captionof{table}{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (1)}
+    \captionof{table}{Tabel perbandingan fitur antara Shumishumi dengan aplikasi pada penelitian terdahulu (1)}
     \begin{longtable}{|p{3cm}|p{2cm}|p{2cm}|p{3cm}|p{2cm}|}
         \hline
         Fitur & ShumiShumi & LIDI & e-Nelayan Kota Samarahan & BUM Desa Pakis\\
@@ -1352,10 +1374,10 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
 
     \textbf{Keterangan}: Y = \textit{YES} (Iya) dan N = \textit{NO} (Tidak).
     \newpage
-    Berikut dibawah ini adalah tabel perbandingan antara aplikasi \textit{ShumiShumi} dengan aplikasi \textit{marketplace} agrikultur\autocite{agriculture-marketplace} dan aplikasi C2C \textit{marketplace} produk perikanan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}.
+    Berikut dibawah ini adalah tabel perbandingan antara aplikasi Shumishumi dengan aplikasi \textit{marketplace} agrikultur\autocite{agriculture-marketplace} dan aplikasi C2C \textit{marketplace} produk perikanan menggunakan metode \textit{SMS Gateway}\autocite{c2c-fish-marketplace}.
 
     \begin{centering}
-    \captionof{table}{Tabel perbandingan fitur antara \textit{ShumiShumi} dengan aplikasi pada penelitian terdahulu (2)}
+    \captionof{table}{Tabel perbandingan fitur antara Shumishumi dengan aplikasi pada penelitian terdahulu (2)}
     \begin{longtable}{|p{3cm}|p{2cm}|p{3cm}|p{4cm}|}
         \hline
         Fitur & ShumiShumi & \textit{Marketplace} Agrikultur & C2C \textit{Marketplace} Perikanan\\
@@ -1453,7 +1475,7 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
 
             \item Sistem berdiskusi
             
-            Kedua aplikasi ini juga sama-sama memiliki sistem untuk saling berdiskusi. Yang membedakannya adalah pada aplikasi ShumiShumi, para pengguna hanya bisa berdiskusi didalam kolom komentar pada halaman masing-masing produk dan tidak bisa berdiskusi atau bercakapan langsung dengan penjualnya secara pribadi. Sedangkan, aplikasi Tokopedia mempunyai fitur \textit{live chatting} yang memungkinkan para pembelinya berdiskusi langsung satu sama lain dengan penjualnya secara prifat.
+            Kedua aplikasi ini juga sama-sama memiliki sistem untuk saling berdiskusi. Yang membedakannya adalah pada aplikasi ShumiShumi, para pengguna hanya bisa berdiskusi di dalam kolom komentar pada halaman masing-masing produk dan tidak bisa berdiskusi atau bercakapan langsung dengan penjualnya secara pribadi. Sedangkan, aplikasi Tokopedia mempunyai fitur \textit{live chatting} yang memungkinkan para pembelinya berdiskusi langsung satu sama lain dengan penjualnya secara prifat.
 
             \item Fitur Transaksi
             
@@ -1668,16 +1690,16 @@ Konsep pengembangan aplikasi \textit{online marketplace} seperti ShumiShumi ini 
 % \end{centering}
 
 \subsubbab{Analisis Permasalahan/Kebutuhan}
-Berdasarkan rumusan masalah yang telah dikaji di bab pertama, pengembangan aplikasi \textit{marketplace hobby} \textit{ShumiShumi} ini membutuhkan berbagai macam data atau masukan dari para calon penggunanya demi menyelesaikan permasalahan yang dihadapi. Maka dari itu, penelitian ini telah mengadakan survei yang dilakukan menggunakan aplikasi \textit{Google Form}.
+Berdasarkan rumusan masalah yang telah dikaji di bab pertama, pengembangan aplikasi \textit{marketplace hobby} Shumishumi ini membutuhkan berbagai macam data atau masukan dari para calon penggunanya demi menyelesaikan permasalahan yang dihadapi. Maka dari itu, penelitian ini telah mengadakan survei yang dilakukan menggunakan aplikasi \textit{Google Form}.
 
-Survei ini bertujuan untuk membantu penelitian ini mendapatkan informasi yang dibutuhkan sebagai fondasi dasar untuk membuat dan mengembangkan aplikasi \textit{ShumiShumi} ini. Informasi-informasi yang ingin dicari tahu terlebih dahulu melalui survei ini antara lain sebagai berikut:
+Survei ini bertujuan untuk membantu penelitian ini mendapatkan informasi yang dibutuhkan sebagai fondasi dasar untuk membuat dan mengembangkan aplikasi Shumishumi ini. Informasi-informasi yang ingin dicari tahu terlebih dahulu melalui survei ini antara lain sebagai berikut:
 
 \begin{itemize}
     \item Sebarapa tingginya tingkat kesulitan untuk memulai hobi baru
     \item Mencari tahu tingkat kesulitan untuk mencari barang-barang kebutuhan hobi untuk yang baru menjalankan hobi tersebut
     \item Apakah sama-sama sulit untuk mencari barang-barang kebutuhan hobi bagi orang-orang yang sudah lama menjalani/mendalamai suatu hobi
     \item Mencari tahu apakah sistem rekomendasi akan membantu para pengguna mencari barang-barang kebutuhan hobi yang diinginkan
-    \item Mencari tahu apakah melabelkan atau menandakan produk-produk kebutuhan hobi sesuai dengan tingkat minat atau tingkat kemampuan penggunanya dapat membantu para pengguna untuk mencari barang-barang hobi yang diinginkan
+    \item Mencari tahu apakah melabelkan atau menandakan produk-produk kebutuhan hobi sesuai dengan interest level atau tingkat kemampuan penggunanya dapat membantu para pengguna untuk mencari barang-barang hobi yang diinginkan
 \end{itemize}
 
 Survei ini berisikan sembilan pertanyaan. Delapan dari sembilan pertanyaan tersebut adalah pertanyaan dengan tipe jawaban 'iya' atau 'tidak'. Untuk jumlah total responden yang telah menjawab survei ini adalah sebanyak 123 orang.
@@ -1722,7 +1744,7 @@ Pertanyaan survei yang kelima adalah \textit{"Apakah anda merasa terbantu oleh r
     \caption{Visualisasi dari hasil jawaban untuk pertanyaan survei yang kelima}
 \end{figure}
 
-Pertanyaan survei keenam yang diajukan adalah \textit{"Menurut anda, apakah dengan menandakan sebuah produk itu 'beginner friendly' atau tidak akan membantu anda untuk memasuki hobi baru?"}. Dari pertanyaan keenam ini, sebanyak 67.5\% atau sebanyak 83 responden menjawab \textit{"Iya"}. Ini menandakan bahwa dengan melabelkan atau menandai produk-produk kebutuhan hobi tersebut berdasarkan tingkat minat atau tingkat kemampuan penggunanya dapat membantu para pembeli untuk membeli barang-barang kebutuhan hobi tersebut. Berdasarkan kasus di pertanyaan keenam ini, dengan menandai produk-produk tersebut dengan penilaian tingkat pemula atau \textit{beginner friendly} dapat membantu para penggunanya untuk mencari barang-barang kebutuhan hobi sebagai titik awal untuk memulai kegiatan hobi baru. Berikut adalah bukti visualisasi jawaban pada pertanyaan keenam ini:
+Pertanyaan survei keenam yang diajukan adalah \textit{"Menurut anda, apakah dengan menandakan sebuah produk itu 'beginner friendly' atau tidak akan membantu anda untuk memasuki hobi baru?"}. Dari pertanyaan keenam ini, sebanyak 67.5\% atau sebanyak 83 responden menjawab \textit{"Iya"}. Ini menandakan bahwa dengan melabelkan atau menandai produk-produk kebutuhan hobi tersebut berdasarkan interest level atau tingkat kemampuan penggunanya dapat membantu para pembeli untuk membeli barang-barang kebutuhan hobi tersebut. Berdasarkan kasus di pertanyaan keenam ini, dengan menandai produk-produk tersebut dengan penilaian tingkat pemula atau \textit{beginner friendly} dapat membantu para penggunanya untuk mencari barang-barang kebutuhan hobi sebagai titik awal untuk memulai kegiatan hobi baru. Berikut adalah bukti visualisasi jawaban pada pertanyaan keenam ini:
 \newpage
 \begin{figure}[h]
     \centering
@@ -1744,7 +1766,7 @@ Kemudian, untuk pertanyaan ketujuh dan kedelapan, kedua pertanyaan tersebut sama
     \caption{Hasil visualisasi jawaban untuk pertanyaan kedelapan}
 \end{figure}
 
-Dari hasil jawaban kedua pertanyaan diatas, dapat dilihat bahwa selisih antara jawaban \textit{"Iya"} dan \textit{"Tidak"} tidak begitu jauh. Walaupun begitu, tetap saja hasil dari jawaban yang memilih \textit{"Iya"} masih lebih tinggi dibanding yang memilih \textit{"Tidak"}. Pertanyaan ketujuh tersebut tersebut membuktikan bahwa masih ada kesulitan yang dihadapi oleh para calon pembeli dalam memilih barang-barang kebutuhan hobi untuk hobi yang telah lama mereka jalani walaupun tidak sesulit dengan mencari barang untuk kebutuhan hobi yang baru dijalani. Sedangkan pertanyaan kedelapan juga menunjukkan bahwa dengan melabelkan atau menandai produk-produk kebutuhan hobi berdasarkan tingkat minat atau tingkat kemampuan penggunanya dapat membantu para pembeli untuk membeli barang-barang kebutuhan hobi yang mereka inginkan. Dalam kasus pertanyaan kedelapan ini, dengan menandai produk-produk tersebut dengan penilaian tingkat lebih tinggi atau seperti \textit{professional grade} dapat membantu para penggunanya untuk mencari barang-barang kebutuhan hobi yang sudah mereka jalani sejak lama tersebut.
+Dari hasil jawaban kedua pertanyaan diatas, dapat dilihat bahwa selisih antara jawaban \textit{"Iya"} dan \textit{"Tidak"} tidak begitu jauh. Walaupun begitu, tetap saja hasil dari jawaban yang memilih \textit{"Iya"} masih lebih tinggi dibanding yang memilih \textit{"Tidak"}. Pertanyaan ketujuh tersebut tersebut membuktikan bahwa masih ada kesulitan yang dihadapi oleh para calon pembeli dalam memilih barang-barang kebutuhan hobi untuk hobi yang telah lama mereka jalani walaupun tidak sesulit dengan mencari barang untuk kebutuhan hobi yang baru dijalani. Sedangkan pertanyaan kedelapan juga menunjukkan bahwa dengan melabelkan atau menandai produk-produk kebutuhan hobi berdasarkan interest level atau tingkat kemampuan penggunanya dapat membantu para pembeli untuk membeli barang-barang kebutuhan hobi yang mereka inginkan. Dalam kasus pertanyaan kedelapan ini, dengan menandai produk-produk tersebut dengan penilaian tingkat lebih tinggi atau seperti \textit{professional grade} dapat membantu para penggunanya untuk mencari barang-barang kebutuhan hobi yang sudah mereka jalani sejak lama tersebut.
 
 Kemudian, untuk pertanyaan terakhir yang diajukan pada survei ini adalah, \textit{"Sebagai pembeli, menurut anda apakah sistem rekomendasi itu membantu anda untuk menemukan barang yang ingin dibeli?"}. Hasil jawaban dari pertanyaan ini memiliki selisih yang sanagat signifikan, yakni sebanyak 88.6\% atau sebanyak 109 responden menjawab \textit{"Iya"} dan hanyak sebanyak 14 responden atau sekitar 11.4\%-nya yang menjawab \textit{"Tidak"}. Ini membuktikan banyaknya responden yang setuju bahwa implementasi sistem rekomendasi pada sebuah aplikasi (khususnya disini aplikasi \textit{marketplace}) sangatlah penting. Dalam konteks ini, sistem rekomendasi dapat membantu para penggunanya untuk menemukan barang-barang yang ingin dibeli. Berikut adalah hasil visualisasi dari jawaban untuk pertanyaan terakhir ini:
 
@@ -1754,11 +1776,11 @@ Kemudian, untuk pertanyaan terakhir yang diajukan pada survei ini adalah, \texti
     \caption{Hasil visualisasi jawaban untuk pertanyaan kesembilan}
 \end{figure}
 \newpage
-Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama, terbuktinya tingkat kesulitan yang tinggi untuk memulai suatu hobi baru dan untuk mencari barang-barang kebutuhan hobi yang cocok sebagai titik awal memulainya. Kedua, tingkat kesulitan untuk mencari barang-barang kebutuhan hobi bagi para pengguna yang sudah lama menjalaninya tidak setinggi seperti ingin mencari hobi yang baru. Ketiga, pemberian label atau tanda pada produk-produk kebutuhan hobi sesuai dengan tingkat minat atau tingkat kemampuan dari penggunanya dapat membantu mereka untuk mencari barang-barang kebutuhan hobi yang cocok. Terakhir, mengimplementasikan sebuah sistem rekomendasi merupakan salah satu cara yang banyak diminati oleh para pengguna agar dapat membantu mereka menemukan barang atau produk yang sesuai dengan keinginan mereka.
+Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama, terbuktinya tingkat kesulitan yang tinggi untuk memulai suatu hobi baru dan untuk mencari barang-barang kebutuhan hobi yang cocok sebagai titik awal memulainya. Kedua, tingkat kesulitan untuk mencari barang-barang kebutuhan hobi bagi para pengguna yang sudah lama menjalaninya tidak setinggi seperti ingin mencari hobi yang baru. Ketiga, pemberian label atau tanda pada produk-produk kebutuhan hobi sesuai dengan interest level atau tingkat kemampuan dari penggunanya dapat membantu mereka untuk mencari barang-barang kebutuhan hobi yang cocok. Terakhir, mengimplementasikan sebuah sistem rekomendasi merupakan salah satu cara yang banyak diminati oleh para pengguna agar dapat membantu mereka menemukan barang atau produk yang sesuai dengan keinginan mereka.
 
 \subsubbab{Usulan Pemecahan Masalah}
 
-\textit{Shumishumi} adalah aplikasi \textit{website} yang dapat digunakan sebagai tempat berjual-belinya barang kebutuhan hobi, untuk memenuhi fungsi ini \textit{website Shumishumi} mempunya fitur utama seperti pengelompokkan bedasarkan \textit{Interest level} dan sistem rekomendasi yang menggunakan implenetasi dari \textit{Knowledge graph}, selain itu \textit{Shumishumi} juga mempunyai fitur lain untuk membantu fitur utama melaksanakan tugasnya seperti,
+Shumishumi adalah aplikasi \textit{website} yang dapat digunakan sebagai tempat berjual-belinya barang kebutuhan hobi, untuk memenuhi fungsi ini \textit{website Shumishumi} mempunya fitur utama seperti pengelompokkan bedasarkan \textit{Interest level} dan sistem rekomendasi yang menggunakan implenetasi dari \textit{Knowledge graph}, selain itu Shumishumi juga mempunyai fitur lain untuk membantu fitur utama melaksanakan tugasnya seperti,
 \begin{enumerate}
     \item \textit{Account management} (\textit{register, update profile, apply to merchant})
     \item \textit{Session management} (\textit{login, logout})
@@ -1777,16 +1799,16 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
 \begin{enumerate}[label=\alph*. ]
     \item Deskripsi \textit{software}
 
-        \textit{Shumishumi} adalah sebuah marketplace dimana user bisa membeli suatu barang sesuai dengan hobi dan setinggi apa \textit{interest level} mereka. Tujuan dari aplikasi ini adalah mempermudah pengguna pembeli untuk mencari barang hobi yang cocok, mempermudah penjual dalam mempromosikan barang-nya kepada pelanggan dengan fitur filter \textit{Interest Level}. \textit{Shumishumi} juga bisa menjadi sarana untuk berdiskusi mengenai topik dan hobi yang diminati, dengan fitur ini \textit{user} diharapkan dapat mencari hobi baru dengan mudah.
+        Shumishumi adalah sebuah marketplace dimana user bisa membeli suatu barang sesuai dengan hobi dan setinggi apa \textit{interest level} mereka. Tujuan dari aplikasi ini adalah mempermudah pengguna pembeli untuk mencari barang hobi yang cocok, mempermudah penjual dalam mempromosikan barang-nya kepada pelanggan dengan fitur filter \textit{Interest Level}. Shumishumi juga bisa menjadi sarana untuk berdiskusi mengenai topik dan hobi yang diminati, dengan fitur ini \textit{user} diharapkan dapat mencari hobi baru dengan mudah.
 
     \item Fungsi-fungsi \textit{software}
-        \textit{Shumishumi} merupakan sebuah aplikasi \textit{website} yang fungsi utamanya sebagai \textit{marketplace} yang digunakan untuk berjual-beli barang, berikut adalah daftar fitur yang ada di\textit{website shumishumi}:
+        Shumishumi merupakan sebuah aplikasi \textit{website} yang fungsi utamanya sebagai \textit{marketplace} yang digunakan untuk berjual-beli barang, berikut adalah daftar fitur yang ada di\textit{website shumishumi}:
         \begin{itemize}
             \item \textit{Account management}, fitur ini terdiri dari beberapa fungsi, yaitu:
             \begin{itemize}
                 \item \textit{Register}
 
-                Dimana \textit{user} bisa mengisi form untuk membuat akun \textit{shumishumi} baru.
+                Dimana \textit{user} bisa mengisi form untuk membuat akun Shumishumi baru.
                 \begin{figure}[h]
                     \centering
                     \includegraphics*[height=4cm]{./diagram/flowchart/chart/register.png}
@@ -1805,7 +1827,7 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
 
                 \item \textit{Forgot password}
                 
-                Fitur ini dibuat untuk membantu \textit{user} jika terjadi kelupaan \textit{password} atau kata sandi akun \textit{shumishumi}
+                Fitur ini dibuat untuk membantu \textit{user} jika terjadi kelupaan \textit{password} atau kata sandi akun Shumishumi
                 \begin{figure}[h]
                     \centering
                     \includegraphics*[height=6cm]{./diagram/flowchart/chart/forgot password.png}
@@ -1931,7 +1953,7 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
                         \item dan yang terakhir \textit{springboot} memiliki fitur \textit{Inversion of Control} dan \textit{Dependency Injection}.
                     \end{itemize}
 
-                    Didalam \textit{springboot} sendiri ada beberapa \textit{extension} yang dipakai, seperti:
+                    Di dalam \textit{springboot} sendiri ada beberapa \textit{extension} yang dipakai, seperti:
                     \begin{enumerate}
                         \item \textit{Spring JPA}
 
@@ -1946,7 +1968,7 @@ Kesimpulan yang didapat dari survei yang telah dilakukan tersebut adalah pertama
                         \textit{JUnit} adalah \textit{open-source testing framework} yang banyak digunakan dengan proyek \textit{spring}. \textit{JUnit} menyediakan anotasi, pernyataan, dan \textit{unit testing} secara efektif. \textit{JUnit} memungkinkan \textit{developer} untuk melakukan \textit{whitebox testing} secara otomatis dan dapat diulang\autocite{junit-documentation}.
                     \end{enumerate}
 
-                    Untuk \textit{deployment} sendiri, proyek ini menggunakan \textit{Google cloud platform} (\textbf{GCP}) sebagai jasa \textit{hosting}, GCP sendiri terdiri dari aset fisik yang berada didalam \textit{data center google} yang tersebar diseluruh dunia, diproyek ini GCP digunakan untuk meng-\textit{host} \textit{instance database} dan \textit{instance backend} dengan spesifikasi:
+                    Untuk \textit{deployment} sendiri, proyek ini menggunakan \textit{Google cloud platform} (\textbf{GCP}) sebagai jasa \textit{hosting}, GCP sendiri terdiri dari aset fisik yang berada di dalam \textit{data center google} yang tersebar diseluruh dunia, diproyek ini GCP digunakan untuk meng-\textit{host} \textit{instance database} dan \textit{instance backend} dengan spesifikasi:
                     \begin{enumerate}
                         \item \textit{instance backend}
                         \begin{itemize}
@@ -2125,7 +2147,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
             \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Register}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
             \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User} dan \textit{merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
             \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
-            \multicolumn{1}{|l|}{\textit{User, merchant}: untuk membuat akun \textit{shumishumi} baru. }                                                     &                               &                               \\ \hline
+            \multicolumn{1}{|l|}{\textit{User, merchant}: untuk membuat akun Shumishumi baru. }                                                     &                               &                               \\ \hline
             \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{Usecase} untuk membuat akun baru.}                                                                         \\ \hline
             \multicolumn{3}{|l|}{\textit{Trigger}: Membuka\textit{ register page}}                                                                                   \\ \hline
             \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
@@ -2262,7 +2284,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Login}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{High}}   \\ \hline
     \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
     \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
-    \multicolumn{1}{|l|}{\textit{User, Merchant}: \textit{login} ke akun \textit{shumishumi}.}                                                     &                               &                               \\ \hline
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: \textit{login} ke akun Shumishumi.}                                                     &                               &                               \\ \hline
     \multicolumn{3}{|l|}{\textit{Brief Description}: \textit{usecase} untuk \textit{login} ke akun \textit{textit}}                                                                         \\ \hline
     \multicolumn{3}{|l|}{\textit{Trigger}: \textit{click login button}}                                                                                   \\ \hline
     \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
@@ -2282,7 +2304,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \multicolumn{1}{|l|}{\textit{Use Case Name}: \textit{Logout}}             & \multicolumn{2}{l|}{\textit{Importance}: \textit{Medium}}   \\ \hline
     \multicolumn{1}{|l|}{\textit{Primary Actor}: \textit{User, Merchant}}             & \multicolumn{2}{l|}{\textit{Use case Type}: \textit{Essential}} \\ \hline
     \multicolumn{1}{|l|}{\textit{Stake Holders and Interest}} &                               &                               \\ \cline{1-1}
-    \multicolumn{1}{|l|}{\textit{User, Merchant}: \textit{logout} dari user \textit{shumishumi}}                                                     &                               &                               \\ \hline
+    \multicolumn{1}{|l|}{\textit{User, Merchant}: \textit{logout} dari user Shumishumi}                                                     &                               &                               \\ \hline
     \multicolumn{3}{|l|}{\textit{Brief Description}: untuk \textit{logout} dari akun yang sudah di\textit{login}}                                                                         \\ \hline
     \multicolumn{3}{|l|}{\textit{Trigger}: \textit{logout button}}                                                                                   \\ \hline
     \multicolumn{3}{|l|}{\textit{Relationship:}}                                                                              \\ \hline
@@ -2612,11 +2634,11 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
                 \caption{\textit{Activity diagram} untuk melihat \textit{cart}}
             \end{figure}
             \newpage
-            \item merubah jumlah barang yang ada didalam \textit{cart}
+            \item merubah jumlah barang yang ada di dalam \textit{cart}
             \begin{figure}[h]
                 \centering
                 \includegraphics*[height=6cm]{./diagram/activity diagram/13. cart/update cart/update cart.png}
-                \caption{\textit{Activity diagram} untuk merubah jumlah barang yang ada didalam \textit{cart}}
+                \caption{\textit{Activity diagram} untuk merubah jumlah barang yang ada di dalam \textit{cart}}
             \end{figure}
             \item memilih barang yang ingin dibeli
             \begin{figure}[h]
@@ -3348,13 +3370,13 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     \begin{figure}[h]
         \centering
         \includegraphics*[height=13cm]{./diagram/class diagram/class diagram.png}
-        \caption{\textit{Class diagram} untuk aplikasi \textit{Shumishumi}}
+        \caption{\textit{Class diagram} untuk aplikasi Shumishumi}
     \end{figure}
     \newpage
 
     \item Perancangan \textit{User Interface}
     
-    Berikut adalah rancangan dari \textit{User Interface} (UI) pada aplikasi \textit{ShumiShumi} yang telah digambarkan dalam bentuk \textit{wireframe}:
+    Berikut adalah rancangan dari \textit{User Interface} (UI) pada aplikasi Shumishumi yang telah digambarkan dalam bentuk \textit{wireframe}:
 
     \begin{figure}[h]
         \centering
@@ -3499,7 +3521,7 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
     
     \newpage
     \item Perancangan \textit{database}
-    berikut ini adalah perancangan dari \textit{database} yang dipakai oleh \textit{Shumishumi}:
+    berikut ini adalah perancangan dari \textit{database} yang dipakai oleh Shumishumi:
     \begin{figure}[h]
         \centering
         \includegraphics*[height=13cm]{./diagram/erd/erd.png}
@@ -3508,14 +3530,15 @@ Pengembangan \textit{website Shumishumi} ini menggunakan pendekatan \textbf{OOAD
 \end{enumerate}
 
 \newpage
+\addtocounter{page}{1}
 % \bab{Bab 4. Hasil dan Pembahasan}
 \bab{Bab 4}{Hasil dan Pembahasan}
 
 \subbab{Spesifikasi \textit{System}}
 
-Berikut adalah spesifikasi perangkat yang diperlukan untuk menjalankan aplikasi web \textit{ShumiShumi} baik untuk pengguna.
+Berikut adalah spesifikasi perangkat yang diperlukan untuk menjalankan aplikasi web Shumishumi baik untuk pengguna.
 	
-Spesifikasi minimum yang dibutuhkan oleh pengguna aplikasi web \textit{ShumiShumi} adalah minimum spesifikasi yang dibutuhkan untuk menjalankan sebuah \textit{browser} untuk membuka aplikasi web kami, adalah sebagai berikut:
+Spesifikasi minimum yang dibutuhkan oleh pengguna aplikasi web Shumishumi adalah minimum spesifikasi yang dibutuhkan untuk menjalankan sebuah \textit{browser} untuk membuka aplikasi web kami, adalah sebagai berikut:
 
 \begin{centering}
 \captionof{table}{Tabel spesifikasi}
@@ -3537,7 +3560,7 @@ Spesifikasi minimum yang dibutuhkan oleh pengguna aplikasi web \textit{ShumiShum
 \newpage
 \subbab{Prosedur Penggunaan Aplikasi}
 
-Prosedur penggunaan aplikasi akan dipaparkan untuk kedua sisi dari pengguna aplikasi \textit{ShumiShumi}, pengguna untuk membeli dan juga penjual barang. Dimana pembeli memiliki aksi-aksi dan fitur yang sama dengan pembeli dengan fitur tambahan yang bersangkutan dengan manajemen barang yang mereka jual. Oleh karena itu prosedur untuk pengguna berlaku juga untuk penjual.
+Prosedur penggunaan aplikasi akan dipaparkan untuk kedua sisi dari pengguna aplikasi Shumishumi, pengguna untuk membeli dan juga penjual barang. Dimana pembeli memiliki aksi-aksi dan fitur yang sama dengan pembeli dengan fitur tambahan yang bersangkutan dengan manajemen barang yang mereka jual. Oleh karena itu prosedur untuk pengguna berlaku juga untuk penjual.
 
 \begin{enumerate}
 
@@ -3549,7 +3572,7 @@ Prosedur penggunaan aplikasi akan dipaparkan untuk kedua sisi dari pengguna apli
     \caption{Halaman \textit{Login} Pengguna}
 \end{figure}
 
-Pengguna, baik pembeli maupun penjual menggunakkan halaman untuk masuk ke dalam aplikasi \textit{ShumiShumi}. Pengguna akan memasukan email dan kata sandi mereka sesuai dengan akun yang sudah mereka daftar atau register sebelumnya. Kalau mereka lupa atas kata sandi dari akun mereka, terdapat tombol \textit{Forgot Password} untuk mulai tahapan merubah kata sandi. Jika calon pengguna ingin membuat sebuah akun juga terdapat tombol untuk daftar.
+Pengguna, baik pembeli maupun penjual menggunakkan halaman untuk masuk ke dalam aplikasi Shumishumi. Pengguna akan memasukan email dan kata sandi mereka sesuai dengan akun yang sudah mereka daftar atau register sebelumnya. Kalau mereka lupa atas kata sandi dari akun mereka, terdapat tombol \textit{Forgot Password} untuk mulai tahapan merubah kata sandi. Jika calon pengguna ingin membuat sebuah akun juga terdapat tombol untuk daftar.
 
 \item Prosedur Pengguna \textit{Register} Aplikasi
 
@@ -3570,7 +3593,7 @@ Calon pengguna dapat mengisi data diri mereka dalam halaman register ini untuk m
     \caption{Halaman Aktivasi Akun}
 \end{figure}
 
-Di halaman aktivasi ini, pengguna mengisi kode yang diterima dari email lalu tekan tombol \textit{Activate} untuk aktivasi akun supaya dapat masuk ke aplikasi \textit{ShumiShumi}. Jika pengguna membutuhkan dikirim email dan kode baru maka ada tombol \textit{Resend} untuk melakukan email dengan kode lagi ke email yang terdaftar dari halaman \textit{register}.
+Di halaman aktivasi ini, pengguna mengisi kode yang diterima dari email lalu tekan tombol \textit{Activate} untuk aktivasi akun supaya dapat masuk ke aplikasi Shumishumi. Jika pengguna membutuhkan dikirim email dan kode baru maka ada tombol \textit{Resend} untuk melakukan email dengan kode lagi ke email yang terdaftar dari halaman \textit{register}.
 
 \newpage
 \item Prosedur Pengguna \textit{Logout} Aplikasi
@@ -3621,7 +3644,7 @@ Di halaman utama atau \textit{Home Page}, diatas halaman tapi dibawah \textit{Na
     \caption{Halaman Mencari Barang}
 \end{figure}
 
-Pengguna dapat mencari barang-barang yang mereka tertarik di halaman \textit{Search} ini. Pengguna dapat mencari hanya dengan nama barang atau juga bisa menggunakkan \textit{filter-filter} yang ada di kiri halaman, atau diatas halaman (jika dibuka di ponsel, atau perangkat lain dengan layar kecil). Dari \textit{filter} yang ada, pengguna dapat mencari berdasarkan harga, tipe hobi, kategori hobi, dan tingkat kemahiran dari komunitas (pengguna lain yang sudah membeli) atau tingkat kemahiran dari penjual.
+Pengguna dapat mencari barang-barang yang mereka tertarik di halaman \textit{Search} ini. Pengguna dapat mencari hanya dengan nama barang atau juga bisa menggunakkan \textit{filter-filter} yang ada di kiri halaman, atau diatas halaman (jika dibuka di ponsel, atau perangkat lain dengan layar kecil). Dari \textit{filter} yang ada, pengguna dapat mencari berdasarkan harga, tipe hobi, kategori hobi, dan \textit{interest level} dari komunitas (pengguna lain yang sudah membeli) atau \textit{interest level} dari penjual.
 
 \item Prosedur Pengguna Melihat Detail Barang
 
@@ -3631,7 +3654,7 @@ Pengguna dapat mencari barang-barang yang mereka tertarik di halaman \textit{Sea
     \caption{Halaman detail barang}
 \end{figure}
 
-Halaman detail barang adalah halaman yang muncul ketika suatu barang di klik oleh pengguna, di halaman inilah pengguna dapat membaca detail dan deskripsi dari barang dan melihat foto-foto lain dari sebuah barang. Di halaman detail barang inilah dimana pengguna dapat menambahkan barang kedalam \textit{cart} mereka untuk mereka beli sesuai dengan jumlah yang mereka inginkan. Di bagian bawah ada tempat untuk fitur diskusi. Dari halaman ini juga pengguna dapat membuka halaman pembeli.
+Halaman detail barang adalah halaman yang muncul ketika suatu barang di klik oleh pengguna, di halaman inilah pengguna dapat membaca detail dan deskripsi dari barang dan melihat foto-foto lain dari sebuah barang. Di halaman detail barang inilah dimana pengguna dapat menambahkan barang ke dalam \textit{cart} mereka untuk mereka beli sesuai dengan jumlah yang mereka inginkan. Di bagian bawah ada tempat untuk fitur diskusi. Dari halaman ini juga pengguna dapat membuka halaman pembeli.
 
 \newpage
 \item Prosedur Pengguna Diskusi Barang
@@ -3683,7 +3706,7 @@ Pada halaman ini pengguna dapat melihat transaksi yang sudah terjadi dari barang
     \caption{Halaman \textit{Wishlist}}
 \end{figure}
 
-Pengguna dapat memasukan barang kedalam \textit{wishlist} mereka untuk menyimpan barang yang mereka tertarik kedalam suatu tampungan dan memiliki halaman sendiri. Cara pengguna dapat memasukan adalah melalui klik tombol bersimbol hati yang ada di barang-barang ketika mencari barang atau tombol bersimbol hati yang ada di detail barang. Di halaman \textit{wishlist} sendiri akan ditampilkan barang-barang yang sudah dimasukkan oleh pengguna dan disini dapat mencari barang khusus yang pengguna sudah masukan saja. Terdapat fitur \textit{filter} yang identikal dengan di halaman mencari barang. Barang yang sudah dimasukan dapat dihapus dengan klik tombol simbol tong sampah atau barang dapat dimasukan kedalam \textit{cart} dengan klik tombol troli.
+Pengguna dapat memasukan barang ke dalam \textit{wishlist} mereka untuk menyimpan barang yang mereka tertarik ke dalam suatu tampungan dan memiliki halaman sendiri. Cara pengguna dapat memasukan adalah melalui klik tombol bersimbol hati yang ada di barang-barang ketika mencari barang atau tombol bersimbol hati yang ada di detail barang. Di halaman \textit{wishlist} sendiri akan ditampilkan barang-barang yang sudah dimasukkan oleh pengguna dan disini dapat mencari barang khusus yang pengguna sudah masukan saja. Terdapat fitur \textit{filter} yang identikal dengan di halaman mencari barang. Barang yang sudah dimasukan dapat dihapus dengan klik tombol simbol tong sampah atau barang dapat dimasukan ke dalam \textit{cart} dengan klik tombol troli.
 
 \item Prosedur Menghapus Barang \textit{Wishlist} Pengguna
 
@@ -3846,7 +3869,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
     \begin{enumerate}
         \item \textit{Strive for Consistency}
         
-        Aplikasi \textit{ShumiShumi} ini sudah memiliki desain yang konsisten di seluruh aplikasi. Mulai dari tema warna dan penggunaan bahasa serta \textit{font} kata yang dipakai hingga urutan aksi yang diperlukan untuk melakukan sesuatu. Salah satu contohnya dapat dilihat dari pilihan tema warna yang konsisten yakni biru dan putih serta penggunaan bahasa yang digunakan di seluruh bagian aplikasi ini. 
+        Aplikasi Shumishumi ini sudah memiliki desain yang konsisten di seluruh aplikasi. Mulai dari tema warna dan penggunaan bahasa serta \textit{font} kata yang dipakai hingga urutan aksi yang diperlukan untuk melakukan sesuatu. Salah satu contohnya dapat dilihat dari pilihan tema warna yang konsisten yakni biru dan putih serta penggunaan bahasa yang digunakan di seluruh bagian aplikasi ini. 
 
         \begin{figure}[h]
             \centering
@@ -3856,11 +3879,11 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Seek Universal Usability}
         
-        Untuk aturan emas kedua ini, aplikasi \textit{ShumiShumi} ini memiliki fitur yang cocok yaitu dengan \textit{font} yang mudah dibaca, tampilan warna pada aplikasi yang tidak tabrakan dan \textit{responsive} sehingga bisa diakses dan digunakkan di perangkat yang kecil.
+        Untuk aturan emas kedua ini, aplikasi Shumishumi ini memiliki fitur yang cocok yaitu dengan \textit{font} yang mudah dibaca, tampilan warna pada aplikasi yang tidak tabrakan dan \textit{responsive} sehingga bisa diakses dan digunakkan di perangkat yang kecil.
 
         \item \textit{Offer Information Feedback}
         
-        Aplikasi \textit{ShumiShumi} dianggap sudah memenuhi aturan emas yang ketiga ini, aplikasi \textit{ShumiShumi} akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna memasukan barang kedalam \textit{wishlist} akan memunculkan notifikasi diatas yang mengabarkan status proses tersebut apakah berhasil atau gagal.
+        Aplikasi Shumishumi dianggap sudah memenuhi aturan emas yang ketiga ini, aplikasi Shumishumi akan memberikan ataupun menampilkan informasi kepada penggunanya untuk setiap aksi yang telah dilakukannya. Seperti contoh, saat pengguna memasukan barang ke dalam \textit{wishlist} akan memunculkan notifikasi diatas yang mengabarkan status proses tersebut apakah berhasil atau gagal.
 
         \begin{figure}[h]
             \centering
@@ -3870,7 +3893,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Design Dialogs to Yield Closure}
         
-        Aplikasi \textit{ShumiShumi} memenuhi aturan emas yang keempat ini, dimana dalam proses aksi ketika sudah selesai ada sebuah respons dari aplikasi yang menandakan dan memberitahu kepada pengguna bahwa proses tersebut sudah selesai. Dapat dicontohkan dengan proses memperbaharui profil yang memiliki respons bahwa profil selesai dan berhasil diperbarui dan juga proses transaksi yang di halaman transaksi akan ada informasi dimana transaksi tersebut telah selesai yang ditandakan dengan status \textit{"Done"}.
+        Aplikasi Shumishumi memenuhi aturan emas yang keempat ini, dimana dalam proses aksi ketika sudah selesai ada sebuah respons dari aplikasi yang menandakan dan memberitahu kepada pengguna bahwa proses tersebut sudah selesai. Dapat dicontohkan dengan proses memperbaharui profil yang memiliki respons bahwa profil selesai dan berhasil diperbarui dan juga proses transaksi yang di halaman transaksi akan ada informasi dimana transaksi tersebut telah selesai yang ditandakan dengan status \textit{"Done"}.
 
         \newpage
         \begin{figure}[h]
@@ -3887,7 +3910,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
         
         \item \textit{Prevent Errors}
         
-        Aplikasi \textit{ShumiShumi} juga telah mengimplementasikan fitur pencegahan agar pengguna tidak melakukan kesalahan pada aplikasi yang dapat berujung untuk menghasilkan sebuah \textit{error}/kerusakan. Seperti contoh, pesan warna merah yang diberikan oleh aplikasi apabila pengguna kelupaan untuk memasukkan informasi kredensialnya dan langsung menekan tombol \textit{login} saat ingin masuk ke dalam aplikasi.
+        Aplikasi Shumishumi juga telah mengimplementasikan fitur pencegahan agar pengguna tidak melakukan kesalahan pada aplikasi yang dapat berujung untuk menghasilkan sebuah \textit{error}/kerusakan. Seperti contoh, pesan warna merah yang diberikan oleh aplikasi apabila pengguna kelupaan untuk memasukkan informasi kredensialnya dan langsung menekan tombol \textit{login} saat ingin masuk ke dalam aplikasi.
 
         \begin{figure}[h]
             \centering
@@ -3897,7 +3920,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
         \newpage
         \item \textit{Permit Easy Reversal of Actions}
         
-        Aplikasi  \textit{ShumiShumi} ini telah dilengkapi dengan fitur untuk mengembalikan suatu aksi yang telah dilakukan oleh user. Seperti tombol hapus yang ada pada halaman \textit{cart} apabila pengguna tidak jadi untuk membeli produk tersebut. 
+        Aplikasi  Shumishumi ini telah dilengkapi dengan fitur untuk mengembalikan suatu aksi yang telah dilakukan oleh user. Seperti tombol hapus yang ada pada halaman \textit{cart} apabila pengguna tidak jadi untuk membeli produk tersebut. 
 
         \begin{figure}[h]
             \centering
@@ -3907,22 +3930,22 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Keep Users in Control}
         
-        Aplikasi \textit{ShumiShumi} ini memenuhi aturan ini dengan fiturnya dimana pengguna dengan mudah dapat melakukan perbahuan informasi personal, mengatur \textit{cart} dan \textit{wishlist} sendiri dan juga mencari dan filter barang.
+        Aplikasi Shumishumi ini memenuhi aturan ini dengan fiturnya dimana pengguna dengan mudah dapat melakukan perbahuan informasi personal, mengatur \textit{cart} dan \textit{wishlist} sendiri dan juga mencari dan filter barang.
 
         \item \textit{Reduce Short-Term Memory Load}
         
-        Untuk aturan emas yang terakhir ini, aplikasi \textit{ShumiShumi} dianggap telah menguasainya. Seperti peletakan tombol-tombol pada aplikasi yang mudah untuk diingat hingga fitur-fitur yang dapat mengingat data apa saja yang pengguna telah masukkan ke dalam aplikasi, sehingga pengguna tidak perlu lagi memasukkannya kembali satu per satu. Salah satu contohnya adalah fitur \textit{remember me} pada halaman login yang dapat mengingat \textit{session} pengguna sehingga mereka tidak perlu login kembali apabila secara sengaja/tidak sengaja menutup aplikasi web \textit{ShumiShumi} pada \textit{web browser} mereka.
+        Untuk aturan emas yang terakhir ini, aplikasi Shumishumi dianggap telah menguasainya. Seperti peletakan tombol-tombol pada aplikasi yang mudah untuk diingat hingga fitur-fitur yang dapat mengingat data apa saja yang pengguna telah masukkan ke dalam aplikasi, sehingga pengguna tidak perlu lagi memasukkannya kembali satu per satu. Salah satu contohnya adalah fitur \textit{remember me} pada halaman login yang dapat mengingat \textit{session} pengguna sehingga mereka tidak perlu login kembali apabila secara sengaja/tidak sengaja menutup aplikasi web Shumishumi pada \textit{web browser} mereka.
 
     \end{enumerate}
     \newpage
     \item Evaluasi \textit{User Interface} berdasarkan lima faktor manusia terukur
     
-    Untuk mengevaluasi lebih lanjut desain \textit{user interface} pada aplikasi \textit{ShumiShumi} ini, maka dilakukan sebuah pengujian langsung terhadap para penggunanya dengan menggunakan suatu pengukuran tertentu yakni, berdasarkan atas lima faktor manusia terukur (\textit{five measurable human factor}). Cara yang digunakan pada penelitian ini adalah dengan menyebarkan survei kepada para calon pengguna untuk menguji langsung aplikasi tersebut. Para calon pengguna yang telah mengisi survei ada sebanyak 141 responden yang berperan sebagai pembeli biasa dan 35 sebagai penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Di dalam survei diberikan tautan yang menuju ke alamat \textit{website} yang sudah di \textit{deploy} dan sebuah video demonstrasi dari aplikasi \textit{ShumiShumi} ini. Melalui tautan yang telah diberikan, para pengguna dapat langsung menguji dan menilai desain dari aplikasi web \textit{ShumiShumi}. Ada empat pertanyaan yang diberikan (dua untuk pembeli dan dua untuk penjual) dan tujuh pernyataan yang perlu dinilai kesetujuannya atau tidak oleh para pengguna. Skala penilaian dari pernyataan-pernyataan tersebut berkisar antara angka \textbf{satu} hingga \textbf{lima}, satu untuk 'sangat tidak setuju' dan lima untuk 'sangat setuju'. Berikut adalah hasil dari survei yang telah diberikan berdasarkan lima faktor manusia terukur yang telah diuji: 
+    Untuk mengevaluasi lebih lanjut desain \textit{user interface} pada aplikasi Shumishumi ini, maka dilakukan sebuah pengujian langsung terhadap para penggunanya dengan menggunakan suatu pengukuran tertentu yakni, berdasarkan atas lima faktor manusia terukur (\textit{five measurable human factor}). Cara yang digunakan pada penelitian ini adalah dengan menyebarkan survei kepada para calon pengguna untuk menguji langsung aplikasi tersebut. Para calon pengguna yang telah mengisi survei ada sebanyak 141 responden yang berperan sebagai pembeli biasa dan 35 sebagai penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Di dalam survei diberikan tautan yang menuju ke alamat \textit{website} yang sudah di \textit{deploy} dan sebuah video demonstrasi dari aplikasi Shumishumi ini. Melalui tautan yang telah diberikan, para pengguna dapat langsung menguji dan menilai desain dari aplikasi web Shumishumi. Ada empat pertanyaan yang diberikan (dua untuk pembeli dan dua untuk penjual) dan tujuh pernyataan yang perlu dinilai kesetujuannya atau tidak oleh para pengguna. Skala penilaian dari pernyataan-pernyataan tersebut berkisar antara angka \textbf{satu} hingga \textbf{lima}, satu untuk 'sangat tidak setuju' dan lima untuk 'sangat setuju'. Berikut adalah hasil dari survei yang telah diberikan berdasarkan lima faktor manusia terukur yang telah diuji: 
 
     \begin{itemize}
         \item \textit{Time for users to learn specific functions}
         
-        Ada dua pernyataan yang mengaju pada faktor pertama ini, kedua pernyataan yang diajukan adalah, \textit{"User interface dari website shumishumi mudah dipelajari"} dan \textit{"User interface dari website shumishumi enak untuk dilihat"}. Untuk pernyataan pertama sebanyak 70.9\% dari 141 pengguna menjawab sangat setuju ('5'). Sedangkan untuk pernyataan kedua, sebanyak 66.7\% menjawab sangat setuju ('5'). Hal ini menandakan bahwa sebagian besar pengguna setuju bahwa aplikasi web \textit{ShumiShumi} cukup mudah untuk dipelajari dan dilihat.
+        Ada dua pernyataan yang mengaju pada faktor pertama ini, kedua pernyataan yang diajukan adalah, \textit{"User interface dari website shumishumi mudah dipelajari"} dan \textit{"User interface dari website shumishumi enak untuk dilihat"}. Untuk pernyataan pertama sebanyak 70.9\% dari 141 pengguna menjawab sangat setuju ('5'). Sedangkan untuk pernyataan kedua, sebanyak 66.7\% menjawab sangat setuju ('5'). Hal ini menandakan bahwa sebagian besar pengguna setuju bahwa aplikasi web Shumishumi cukup mudah untuk dipelajari dan dilihat.
 
         \newpage
         \begin{figure}[h]
@@ -3939,7 +3962,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Speed of task performance}
         
-        Untuk faktor manusia yang kedua ini, terdapat dua pernyataan juga yang mengajukannya. Pernyataan pertama adalah \textit{"User interface dari website shumishumi mudah untuk dinavigasi"} dan \textit{"Tidak ada proses yang berbelit - belit diwebsite shumishumi"}. Maksud dari kedua pernyataan tersebut adalah untuk menanyakan para penggunanya apakah aplikasi web \textit{ShumiShumi} ini memiliki desain yang susah untuk dinavigasi dan berbelit-belit sehingga para pengguna kesulitan untuk menyelesaikan suatu aksi yang dapat memperlambat alur kerja mereka. Untuk hasilnya sendiri, pada pernyataan pertama untuk faktor terukur kedua ini, sebanyak 63.1\% pengguna menjawab sangat setuju ('5'). Sedangkan untuk pernyataan kedua, sebanyak 63.1\% menjawab sangat setuju ('5'). Itu artinya, masih banyak dari antara pengguna yang setuju bahwa desain aplikasi web \textit{ShumiShumi} tidak memperlambat waktu mereka untuk melakukan berbagai jenis aksi di dalam aplikasi ini. 
+        Untuk faktor manusia yang kedua ini, terdapat dua pernyataan juga yang mengajukannya. Pernyataan pertama adalah \textit{"User interface dari website shumishumi mudah untuk dinavigasi"} dan \textit{"Tidak ada proses yang berbelit - belit diwebsite shumishumi"}. Maksud dari kedua pernyataan tersebut adalah untuk menanyakan para penggunanya apakah aplikasi web Shumishumi ini memiliki desain yang susah untuk dinavigasi dan berbelit-belit sehingga para pengguna kesulitan untuk menyelesaikan suatu aksi yang dapat memperlambat alur kerja mereka. Untuk hasilnya sendiri, pada pernyataan pertama untuk faktor terukur kedua ini, sebanyak 63.1\% pengguna menjawab sangat setuju ('5'). Sedangkan untuk pernyataan kedua, sebanyak 63.1\% menjawab sangat setuju ('5'). Itu artinya, masih banyak dari antara pengguna yang setuju bahwa desain aplikasi web Shumishumi tidak memperlambat waktu mereka untuk melakukan berbagai jenis aksi di dalam aplikasi ini. 
 
         \begin{figure}[h]
             \centering
@@ -3955,7 +3978,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Rate of errors by users}
         
-        Untuk faktor ketiga ini, hanya ada satu pernyataan yang membahasnya. Pernyataan tersebut adalah \textit{"Saat menggunakan website shumishumi jarang ketemu error"}. Untuk hasilnya sendiri, sebanyak 69.5\% pengguna menjawab setuju ('4'). Ini menunjukkan bahwa para pengguna jarang mendapatkan \textit{error} pada sistem di aplikasi web \textit{ShumiShumi} ini. 
+        Untuk faktor ketiga ini, hanya ada satu pernyataan yang membahasnya. Pernyataan tersebut adalah \textit{"Saat menggunakan website shumishumi jarang ketemu error"}. Untuk hasilnya sendiri, sebanyak 69.5\% pengguna menjawab setuju ('4'). Ini menunjukkan bahwa para pengguna jarang mendapatkan \textit{error} pada sistem di aplikasi web Shumishumi ini. 
         \newpage
         \begin{figure}[h]
             \centering
@@ -3965,7 +3988,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{User retention of commands over time}
         
-        Faktor keempat ini yang menguji seberapa lama pengguna dapat mengingat informasi mengenai aplikasi \textit{ShumShumi} ini setelah rentan waktu yang cukup lama. Ada dua pernyataan yang diajukan pada survei, yakni \textit{"User interface dari website shumishumi mudah diingat"} dan \textit{"User interface dari website shumishumi memberikan semua informasi dengan cukup dan ringkas"}. Kedua pernyataan tersebut bermaksud untuk menanyakan kepada pengguna apakah desain aplikasi \textit{ShumiShumi} mudah untuk diingat dalam jangka waktu yang cukup panjang. Dan hasil yang didapatkan adalah sebanyak 70.9\% menjawab setuju ('4'). Ini menunjukkan para pengguna setuju bahwa desain dari aplikasi \textit{ShumiShumi} mudah untuk diingat untuk jangka waktu yang cukup lama. 
+        Faktor keempat ini yang menguji seberapa lama pengguna dapat mengingat informasi mengenai aplikasi \textit{ShumShumi} ini setelah rentan waktu yang cukup lama. Ada dua pernyataan yang diajukan pada survei, yakni \textit{"User interface dari website shumishumi mudah diingat"} dan \textit{"User interface dari website shumishumi memberikan semua informasi dengan cukup dan ringkas"}. Kedua pernyataan tersebut bermaksud untuk menanyakan kepada pengguna apakah desain aplikasi Shumishumi mudah untuk diingat dalam jangka waktu yang cukup panjang. Dan hasil yang didapatkan adalah sebanyak 70.9\% menjawab setuju ('4'). Ini menunjukkan para pengguna setuju bahwa desain dari aplikasi Shumishumi mudah untuk diingat untuk jangka waktu yang cukup lama. 
 
         \newpage
         \begin{figure}[h]
@@ -3982,9 +4005,9 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
 
         \item \textit{Subjective user satisfaction}
         
-        Faktor terakhir merupakan kepuasan dari para pengguna yang telah mencoba untuk menggunakan aplikasi \textit{ShumiShumi}. Disini, nilai kepuasan dari para pengguna dibagi menjadi dua sudut pandang yang berbeda yakni, dari sudut pandang pengguna yang merupakan pembeli biasa dan dari sudut pandang penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Akan ada dua pertanyaan yang diajukan untuk masing-masing pembeli biasa dan penjual dengan bentuk jawaban dari kedua pertanyaan tersebut yang berupa sebuah skala penilaian yang dimulai dari angka \textbf{satu} hingga \textbf{lima}. Satu untuk menggambarkan jawaban 'tidak membantu' sedangkan lima untuk 'sangat membantu'.
+        Faktor terakhir merupakan kepuasan dari para pengguna yang telah mencoba untuk menggunakan aplikasi Shumishumi. Disini, nilai kepuasan dari para pengguna dibagi menjadi dua sudut pandang yang berbeda yakni, dari sudut pandang pengguna yang merupakan pembeli biasa dan dari sudut pandang penjual (atau pembeli yang telah merubah \textit{role} nya pada aplikasi menjadi penjual). Akan ada dua pertanyaan yang diajukan untuk masing-masing pembeli biasa dan penjual dengan bentuk jawaban dari kedua pertanyaan tersebut yang berupa sebuah skala penilaian yang dimulai dari angka \textbf{satu} hingga \textbf{lima}. Satu untuk menggambarkan jawaban 'tidak membantu' sedangkan lima untuk 'sangat membantu'.
 
-        Berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{pembeli}, \textit{"Apakah anda sebagai pengguna yang bertujuan untuk membeli barang, dapat menggunakkan fitur filter Interest Level kami untuk mencari barang yang tepat?"} dan \textit{"Apakah anda tertarik atas rekomendasi yang berada di Home Page kami?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasan para pembeli setelah menggunakan kedua fitur utama yang aplikasi ini berikan, yaitu fitur penyaringan tingkat minat pengguna (\textit{interest level filtering}) dan sistem rekomendasinya. Hasil yang didapat untuk pertanyaan pertama adalah sebanyak 51.8\% menjawab sangat setuju ('5'). Sedangkan untuk pertanyaan kedua, hasil yang didapat adalah sebanyak 56.7\% menjawab sangat setuju ('5'). Dengan demikian, dapat disimpulkan bahwa semua pembeli yang telah mencoba aplikasi \textit{ShumiShumi} merasa \textbf{puas} dengan fitur yang diberikan dan desain yang ditampilkan. 
+        Berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{pembeli}, \textit{"Apakah anda sebagai pengguna yang bertujuan untuk membeli barang, dapat menggunakkan fitur filter Interest Level kami untuk mencari barang yang tepat?"} dan \textit{"Apakah anda tertarik atas rekomendasi yang berada di Home Page kami?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasan para pembeli setelah menggunakan kedua fitur utama yang aplikasi ini berikan, yaitu fitur penyaringan interest level pengguna (\textit{interest level filtering}) dan sistem rekomendasinya. Hasil yang didapat untuk pertanyaan pertama adalah sebanyak 51.8\% menjawab sangat setuju ('5'). Sedangkan untuk pertanyaan kedua, hasil yang didapat adalah sebanyak 56.7\% menjawab sangat setuju ('5'). Dengan demikian, dapat disimpulkan bahwa semua pembeli yang telah mencoba aplikasi Shumishumi merasa \textbf{puas} dengan fitur yang diberikan dan desain yang ditampilkan. 
 
         \begin{figure}[h]
             \centering
@@ -4000,7 +4023,7 @@ Penjual juga dapat menghapus barang jual mereka dengan tombol \textit{Delete Ite
             \label{fig:userSistemRekomendasi}
         \end{figure}
 
-        Sedangkan, berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{penjual}, \textit{"Apakah adanya fitur interest level ini membantu anda untuk menjual produk anda ke pembeli yang tepat?"} dan \textit{"Apakah keberadaan sistem rekomendasi membantu produk yang anda jual untuk ditemukan oleh banyak calon pembeli?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasan para penjual mengenai keberadaan dan kegunaan fitur penyaringan tingkat minat pengguna (\textit{interest level filtering}) dan sistem rekomendasi terhadap tingkat penjualan toko mereka. Hasil yang didapat dari pertanyaan pertama adalah sebanyak 45.7\% menjawab  setuju ('4'). Sedangkan, untuk pertanyaan kedua sebanyak 48.6\% menjawab sangat setuju ('5'). Dari penilaian tersebut dapat disimpulkan bahwa para penjual merasa \textbf{cukup puas} dengan adanya fitur yang diberikan dan desain yang ditampilkan. 
+        Sedangkan, berikut adalah isi dari masing-masing pertanyaan yang ditanyakan kepada para \textbf{penjual}, \textit{"Apakah adanya fitur interest level ini membantu anda untuk menjual produk anda ke pembeli yang tepat?"} dan \textit{"Apakah keberadaan sistem rekomendasi membantu produk yang anda jual untuk ditemukan oleh banyak calon pembeli?"}. Kedua pertanyaan tersebut secara langsung menanyakan tentang kepuasan para penjual mengenai keberadaan dan kegunaan fitur penyaringan interest level pengguna (\textit{interest level filtering}) dan sistem rekomendasi terhadap tingkat penjualan toko mereka. Hasil yang didapat dari pertanyaan pertama adalah sebanyak 45.7\% menjawab  setuju ('4'). Sedangkan, untuk pertanyaan kedua sebanyak 48.6\% menjawab sangat setuju ('5'). Dari penilaian tersebut dapat disimpulkan bahwa para penjual merasa \textbf{cukup puas} dengan adanya fitur yang diberikan dan desain yang ditampilkan. 
 
         \begin{figure}[h]
             \centering
@@ -4173,12 +4196,13 @@ Recommend & \begin{tabular}[c]{@{}l@{}}user can get \\ item recommendation\end{t
 
 \newpage
 
+\addtocounter{page}{1}
 % \bab{Bab 5. Kesimpulan dan Saran}
 \bab{Bab 5}{Kesimpulan dan saran}
 \subbab{Kesimpulan}
-Pada bagian akhir skripsi ini, ada beberapa kesimpulan yang dapat diambil yang didasarkan dari pembuatan projek dan hasil penelitian ini, secara umum kesimpulan yang bisa ditarik adalah sistem rekomendasi dan filtrasi menggunakan \textit{interest level} itu membantu pengguna untuk mencari barang yang diinginkan menjadi lebih mudah dan penjual untuk memasarkan produknya ke pengguna yang lebih tepat. Secara lebih khusus kesimpulan yang bisa ditarik sebagai berikut:
+Pada bagian akhir skripsi ini, ada beberapa kesimpulan yang dapat diambil yang didasarkan dari pembuatan proyek dan hasil penelitian ini, secara umum kesimpulan yang bisa ditarik adalah sistem rekomendasi dan filtrasi menggunakan \textit{interest level} itu membantu pengguna untuk mencari barang yang diinginkan menjadi lebih mudah dan penjual untuk memasarkan produknya ke pengguna yang lebih tepat. Secara lebih khusus kesimpulan yang bisa ditarik sebagai berikut:
 \begin{enumerate}
-    \item Penelitian ini berhasil membuat aplikasi yang membantu pengguna untuk mencari produk yang lebih cocok dengan cara mencari produk dengan menggunakan filtrasi \textit{interest level} untuk mendapatkan produk yang lebih spesifik dibanding dengan seberapa dalam mereka dihobi tertentu dan fitur sistem rekomendasi dari website \textit{shumishumi} membantu pengguna untuk menemukan barang dengan kriteria sama dengan apa yang sedang pengguna minati, hal dapat dilihat dari hasil  survei 51.8\% responden sangat setuju dan 48.2\% responden setuju bahwa fitur filtrasi \textit{interest level} memudahkan mereka untuk mencari produk untuk sistem rekomendasi bisa lihat dari hasil survei bahwa 56.7\% responden sangat tertarik dengan fitur tersebut.
+    \item Penelitian ini berhasil membuat aplikasi yang membantu pengguna untuk mencari produk yang lebih cocok dengan cara mencari produk dengan menggunakan filtrasi \textit{interest level} untuk mendapatkan produk yang lebih spesifik dibanding dengan seberapa dalam mereka dihobi tertentu dan fitur sistem rekomendasi dari website Shumishumi membantu pengguna untuk menemukan barang dengan kriteria sama dengan apa yang sedang pengguna minati, hal dapat dilihat dari hasil  survei 51.8\% responden sangat setuju dan 48.2\% responden setuju bahwa fitur filtrasi \textit{interest level} memudahkan mereka untuk mencari produk untuk sistem rekomendasi bisa lihat dari hasil survei bahwa 56.7\% responden sangat tertarik dengan fitur tersebut.
     \item Penelitian ini berhasil membuat aplikasi yang membantu penjual untuk memasarkan produk mereka ke pengguna yang lebih tepat dengan cara memberikan kriteria \textit{interest level} yang tepat dan fitur rekomendasi di \textit{website shumishumi} membantu penjual dengan cara membuat produk penjual dapat dilihat oleh pengguna-pengguna yang sedang meminati kriteria yang sama dengan produk penjual, hal ini bisa dilihat dari survei yang telah dilakukan bahwa 62.8\% responden \textit{merchant} menjawab puas dan sangat puas saat ditanyakan mengenai fitur \textit{interest level} dan untuk sistem rekomendasi 77.2\% responden \textit{merchant} menjawab puas dan cukup puas terhadap fitur tersebut.
 \end{enumerate}
 
